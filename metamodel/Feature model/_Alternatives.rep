@@ -1,0 +1,24 @@
+Report '_Alternatives'
+do ~Has features.() {
+	'<tr><td><b>' 
+	id 
+	'</b></td><td>' newline
+}
+do ~(^Has features) {
+	'<input type="'
+	do >() {  
+		if type = 'Alternative feature' then
+			'radio'
+		else
+			'checkbox'
+		endif;
+		'" name="' 	
+		oid
+	} 
+	do .() { 
+		'" value="' id '">' id; '&nbsp;' 
+	}	
+	subreport '_cardinality' run
+}
+'</td></tr>'
+endreport

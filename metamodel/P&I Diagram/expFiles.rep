@@ -1,0 +1,15 @@
+expFiles()
+/* produces exp files to be imported into twincat */
+_PItranslators()
+_main()
+_functionBlock()
+_componentType()
+_controllerStates()
+
+/* simulation */
+_test_main()
+_FB_Simulation()
+_FB_AppSim()
+
+/* task configuration */
+_taskConfiq()

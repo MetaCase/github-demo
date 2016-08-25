@@ -1,0 +1,14 @@
+_checkings()
+/* Checkings for the Dependability */
+_ItemChecks()
+_HazardEvent()
+_Hazard()
+_FeatureFlaw()
+_SafetyReq()
+_SafetyConstraint()
+_FaultFailure()
+
+if $extendedCheck = 'T' then
+	foreach .SafetyCase
+	{	do explosions { _checkings() }}
+endif

@@ -1,0 +1,204 @@
+==========================
+Graph Type
+==========================
+WatchFamily
+	A WatchFamily diagram is a top level graph for watch product family showing the watch models (ie. all logical watch application and display configurations) of a certain product family.
+	---------------------------------------------
+	Name: String
+	Models selected for generation: OrderedCollection (Watch)
+		If this list is empty, all Watches in the WatchFamily will be generated. To generate just some Watches, add them here.
+		---------------------------------------------
+	Generation target platform: String
+	MIDP Emulator: String
+	Language Frameworks: OrderedCollection (Language Framework)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Display
+	A Display defines the icons, zones and buttons for a certain display type.
+	---------------------------------------------
+	Display name: String
+	Icons: OrderedCollection (Icon)
+	UnitZones: OrderedCollection (UnitZone)
+	Buttons: OrderedCollection (Button)
+ItemGroup
+	An ItemGroup is a simple box for grouping elements in a WatchFamily diagram.
+	---------------------------------------------
+	Items: String
+LogicalWatch
+	A LogicalWatch is an object with decomposition to the top-level state automaton that defines a certain logical watch application.
+	---------------------------------------------
+Note [Watch]
+	A Note shows textual information in the diagram.
+	---------------------------------------------
+	Note text: Text
+
+==========================
+Relationship Types
+==========================
+Watch
+	A WatchModel describes a configuration of a watch model. Each watch model links one display and one logical watch application.
+	---------------------------------------------
+	Model name: String
+	Documentation: Text
+
+==========================
+Role Types
+==========================
+Display
+LogicalWatch
+
+==========================
+Extra Types
+==========================
+WatchApplication
+	A WatchApplication diagram defines the state automaton that implements a logical watch or a watch application.
+	---------------------------------------------
+	Application name: String
+	Documentation: Text
+Button
+	A Button represents both a physical watch button (in WatchFamily diagram) and an event raised when button is pressed (in WatchApplication diagram).
+	---------------------------------------------
+	Button name: String
+Framework Component
+	A Framework Component contains the code for a pre-defined component.
+	---------------------------------------------
+	Component Name: String
+	Platform condition: Platform condition
+	Source Code: Text
+Icon
+	An Icon represents a graphical indicator shown on display when a certain service is active.
+	---------------------------------------------
+	IconID: String
+Language Framework
+	Language: String
+	Included Components: OrderedCollection (Framework Component)
+		The framework classes. If a class has different versions for different generation platforms, the most generic is listed first. The last version - i.e. the most specific - matching the current platform will be the one that is used.
+		---------------------------------------------
+Platform
+	Generation target platform: String
+Platform condition
+	Description: String
+	Platforms: OrderedCollection (Platform)
+UnitZone
+	A UnitZone represents a slot in display, where the time unit is shown.
+	---------------------------------------------
+	Zone name: String
+WatchModel
+	A WatchModel describes a configuration of a watch model. Each watch model is a combination of one display and one logical watch application.
+	---------------------------------------------
+	Model name: String
+	Display: Display
+	LogicalWatch: LogicalWatch
+	Documentation: Text
+
+==========================
+Bindings
+==========================
+Watch
+	Display: Display
+	LogicalWatch: LogicalWatch
+
+==========================
+Constraints
+==========================
+Property "Display name" in Display must have unique values
+Property "Items" in ItemGroup must have unique values
+Property "Model name" in WatchModel must have unique values
+
+==========================
+Subgraphs
+==========================
+Decompositions:
+	LogicalWatch
+		WatchApplication
+
+==========================
+Generators
+==========================
+!Build
+!Html
+Autobuild
+Watch family documentation
+
+==========================
+Sub-Generators
+==========================
+_build and run C#
+_compile and execute for C#: API
+_compile and execute for C#: Windows
+_compile and execute for C#: WP 7
+_compile and execute for Java: Android
+_compile and execute for Java: API
+_compile and execute for Java: Linux
+_compile and execute for Java: Mac OS X
+_compile and execute for Java: MIDP
+_compile and execute for Java: Windows
+_create .classpath
+_create .project
+_create Android resource files
+_create AndroidManifest.xml
+_create drawable xml files
+_create Eclipse resource files
+_create eclipse resource files for JavaME
+_create layout.xml
+_create MainActivity
+_create MainFrame
+_create MainPage
+_create MainWindow
+_create make for C#: API
+_create make for C#: Windows
+_create make for C#: WP 7
+_create make for Java: Android
+_create make for Java: API
+_create make for Java: Linux
+_create make for Java: Mac OS X
+_create make for Java: MIDP
+_create make for Java: Windows
+_create midlet descriptors
+_create miniapi.config
+_create miniapi.cs
+_create org.eclipse.jdt.core.prefs
+_create project.properties
+_create R.java
+_create strings.xml
+_create Visual studio csproj file
+_create Visual studio csproj-API file
+_create Visual Studio manifest
+_create Visual Studio sln file
+_create Visual studio wp 7 csproj file
+_Cs_Display
+_Cs_Display_file
+_Cs_Watch
+_Cs_Watch_Xaml_cs
+_Cs_Watch_Xaml_for_API
+_Cs_Watch_Xaml_for_Windows
+_Cs_Watch_Xaml_for_WP 7
+_Framework Components
+_imagemap_href
+_Java_Applet
+_Java_Display
+_Java_Watch
+_Language Framework
+_Models
+_nonRecursingPropertyTypes
+_prebuild for C#: API
+_prebuild for C#: Windows
+_prebuild for C#: WP 7
+_prebuild for Java: Android
+_prebuild for Java: API
+_prebuild for Java: Linux
+_prebuild for Java: Mac OS X
+_prebuild for Java: MIDP
+_prebuild for Java: Windows
+_read INI file
+_set .NET dir
+_Watch family documentation in HTML
+_WatchesToGenerate
+_Watch_translators
+_write main class to INI file
+_write project name to INI file
+__Paths
+

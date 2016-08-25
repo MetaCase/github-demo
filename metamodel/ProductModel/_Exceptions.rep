@@ -1,0 +1,18 @@
+Report '_Exceptions'
+if :Exceptions; then
+	'		// ********************************************************************' newline
+	'		// Exceptions' newline
+	'		// ********************************************************************' newline
+	do :Exceptions { 
+		'		MofException ' :Exception name ' = new MofException ("' :Exception name '")' newline
+		do :Parameters {
+			'		   parameter = new Parameter("' id '", new DataType("' :Type '"));' newline
+			do :Tags {'		   ' :Java instance name '.addTaggedModelElement(parameter);' newline}
+			'		   ' :Exception name '.addParameter(parameter)' newline
+		}
+		do :Tags {'		' :Java instance name '.addTaggedModelElement(MofException);' newline}
+		newline
+	 }
+endif
+newline
+endreport

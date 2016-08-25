@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="RequirementsAllocation_symbol">
+		<objectSymbol offset="50,40" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="50,40 69,40 69,59 50,59 50,40" targetPointX="59.5" targetPointY="49.5" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="59" version="1.2" width="69" xmlns="http://www.w3.org/2000/svg">
+				<g fill="none" stroke="rgb(0,0,0)" stroke-width="1" sym:height="19" sym:width="19" sym:x="5.0e1" sym:y="4.0e1">
+					<polygon fill="rgb(213,213,213)" points="69,40 58.7297,43.2522 65.5764,49.7568" stroke="rgb(0,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polygon>
+					<line stroke="rgb(0,0,0)" stroke-width="1" x1="60.2703" x2="56.8467" y1="48.7297" y2="52.1532">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="1" x1="53.4234" x2="50" y1="55.5766" y2="59">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

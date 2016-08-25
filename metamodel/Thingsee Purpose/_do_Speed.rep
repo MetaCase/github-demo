@@ -1,0 +1,21 @@
+_do_Speed()
+@sep = ''
+
+'                  "thresholds": {' 
+if :Trigger if over \(km\/h\); = '' and :Trigger if under \(km\/h\); = '' then
+	newline
+	'                    "isAny": true' newline
+else
+	if :Trigger if over \(km\/h\); then
+		newline
+		'                    "isGt": ' math :Trigger if over \(km\/h\);'*1000/3600.0' evaluate
+		@sep = ','
+	endif
+	if :Trigger if under \(km\/h\); then
+		@sep newline
+		'                    "isLt": ' math :Trigger if under \(km\/h\);'*1000/3600.0' evaluate
+	endif
+	newline
+endif
+'                  }
+'

@@ -1,0 +1,5 @@
+Report '_check for cycles'
+foreach .root node
+{	_followAndCheck()
+}
+endreport

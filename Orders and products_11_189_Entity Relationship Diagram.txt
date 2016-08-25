@@ -1,0 +1,200 @@
+Graph_Entity_Relationship_Diagram_user_3012740829
+Orders and products
+11_189
+Entity Relationship Diagram
+Graph: Orders and products <Entity Relationship Diagram> 11_189
+	Model name: Orders and products
+	Status: draft
+	Authors: Joe Smith
+	Object: Joe Smith <Person> 11_1447
+		Name: Joe Smith
+		E-mail: mailto:info@metacase.com
+		Contact address: www.metacase.com
+	Documentation: ER model was made by JS 5.8.2006
+Object: Buy-order <Entity> 11_313
+	Entity name: Buy-order
+	Documentation: Sale department can do a new buy-order, when the "do buy order"-level of has been achieved.
+Object: Project <Entity> 11_1056
+	Entity name: Project
+	Documentation: Project is the certain task to be finished, which is limited on time recourses and costs.
+Object: Supplier <Entity> 11_1865
+	Entity name: Supplier
+	Documentation: Supplier delivers the products and part to the company.
+Object: Department <Entity> 11_2544
+	Entity name: Department
+	Documentation: Company has own departments for Sales, Delivery, Marketing and Research and Development 
+Object: Product <Entity> 11_3234
+	Entity name: Product
+	Documentation: Product is stored in the central warehouse
+Object: Worker <Entity> 11_3273
+	Entity name: Worker
+	Documentation: Company has two kinds of employees (full time and part-time workers).
+Object: Project ID <ERAttribute> 11_361
+	Attribute name: Project ID
+	Type of data: INTEGER
+	Constraints: NOT NULL PRIMARY KEY
+	Documentation: Each project has it's own ID code.
+Object: OrderID <ERAttribute> 11_369
+	Attribute name: OrderID
+	Type of data: REAL
+	Constraints: NOT NULL PRIMARY KEY
+	Documentation: OrderID identifies the order
+Object: WorkerID <ERAttribute> 11_435
+	Attribute name: WorkerID
+	Type of data: REAL
+	Constraints: NOT NULL PRIMARY KEY
+	Documentation: WorkerID identifies the employee.
+Object: Colour <ERAttribute> 11_1131
+	Attribute name: Colour
+	Type of data: INTEGER
+	Constraints: 
+	Documentation: 
+Object: DepartmentID <ERAttribute> 11_1135
+	Attribute name: DepartmentID
+	Type of data: INTEGER
+	Constraints: NOT NULL PRIMARY KEY
+	Documentation: DepartmentID identifies the department.
+011 means Sales
+012 means Delivery
+013 means Marketing
+014 means Research and Development
+Object: Part# <ERAttribute> 11_1206
+	Attribute name: Part#
+	Type of data: INTEGER
+	Constraints: NOT NULL PRIMARY KEY
+	Documentation: Part code identifies the part, which is used in this project.
+Object: Delivery date <ERAttribute> 11_1842
+	Attribute name: Delivery date
+	Type of data: DATE
+	Constraints: 
+	Documentation: Each part has it's own delivery date.
+Object: Amount <ERAttribute> 11_2538
+	Attribute name: Amount
+	Type of data: INTEGER
+	Constraints: 
+	Documentation: 
+Object: Order date <ERAttribute> 11_2612
+	Attribute name: Order date
+	Type of data: DATE
+	Constraints: 
+	Documentation: 
+Object: Name <ERAttribute> 11_3333
+	Attribute name: Name
+	Type of data: CHAR
+	Constraints: NOT NULL UNIQUE
+	Documentation: Name-field values can't be Null. Only duplicate values are allowed.
+Object: Address <ERAttribute> 11_3335
+	Attribute name: Address
+	Type of data: CHAR
+	Constraints: 
+	Documentation: Postal address
+Object: SupplierID <ERAttribute> 11_3949
+	Attribute name: SupplierID
+	Type of data: INTEGER
+	Constraints: NOT NULL PRIMARY KEY
+	Documentation: SupplierID identifies the supplying company.
+Object: Entities are reused in the architecture model. Hence, change of Product in ER model changes product information also in the architecture model and vice versa. See Process/Entity Matrix on sales and inventory.  <Note> 11_2618
+	Documentation: Entities are reused in the architecture model. Hence, change of Product in ER model changes product information also in the architecture model and vice versa. See Process/Entity Matrix on sales and inventory. 
+Object: Contains <Relationship> 11_275
+	Relationship name: Contains
+	Documentation: 
+Object: Makes <Relationship> 11_1757
+	Relationship name: Makes
+	Documentation: 
+Object: Participates <Relationship> 11_1901
+	Relationship name: Participates
+	Documentation: 
+Object: Belongs <Relationship> 11_3204
+	Relationship name: Belongs
+	Documentation: Each employee is working for some department.
+Object: Delivery <Relationship> 11_3889
+	Relationship name: Delivery
+	Documentation: 
+Relationship: Attribute of <Attribute of> 11_287
+  Role: Attribute part <Attribute part>  Object: <ERAttribute> 11_369
+  Role: Owner part <Owner part>  Object: <Entity> 11_313
+Relationship: Attribute of <Attribute of> 11_293
+  Role: Attribute part <Attribute part>  Object: <ERAttribute> 11_3949
+  Role: Owner part <Owner part>  Object: <Entity> 11_1865
+Relationship: Attribute of <Attribute of> 11_933
+  Role: Attribute part <Attribute part>  Object: <ERAttribute> 11_1131
+  Role: Owner part <Owner part>  Object: <Entity> 11_3234
+Relationship: Attribute of <Attribute of> 11_1147
+  Role: Attribute part <Attribute part>  Object: <ERAttribute> 11_1842
+  Role: Owner part <Owner part>  Object: <Entity> 11_313
+Relationship: Attribute of <Attribute of> 11_1155
+  Role: Attribute part <Attribute part>  Object: <ERAttribute> 11_361
+  Role: Owner part <Owner part>  Object: <Entity> 11_1056
+Relationship: Attribute of <Attribute of> 11_1612
+  Role: Attribute part <Attribute part>  Object: <ERAttribute> 11_435
+  Role: Owner part <Owner part>  Object: <Entity> 11_3273
+Relationship: Attribute of <Attribute of> 11_1850
+  Role: Attribute part <Attribute part>  Object: <ERAttribute> 11_2538
+  Role: Owner part <Owner part>  Object: <Relationship> 11_275
+Relationship: Attribute of <Attribute of> 11_2258
+  Role: Attribute part <Attribute part>  Object: <ERAttribute> 11_3333
+  Role: Owner part <Owner part>  Object: <Entity> 11_2544
+Relationship: Attribute of <Attribute of> 11_2475
+  Role: Attribute part <Attribute part>  Object: <ERAttribute> 11_2612
+  Role: Owner part <Owner part>  Object: <Entity> 11_313
+Relationship: Attribute of <Attribute of> 11_3157
+  Role: Attribute part <Attribute part>  Object: <ERAttribute> 11_3335
+  Role: Owner part <Owner part>  Object: <Entity> 11_3273
+Relationship: Attribute of <Attribute of> 11_3345
+  Role: Attribute part <Attribute part>  Object: <ERAttribute> 11_3335
+  Role: Owner part <Owner part>  Object: <Entity> 11_2544
+Relationship: Attribute of <Attribute of> 11_3517
+  Role: Attribute part <Attribute part>  Object: <ERAttribute> 11_3333
+  Role: Owner part <Owner part>  Object: <Entity> 11_1865
+Relationship: Attribute of <Attribute of> 11_3901
+  Role: Attribute part <Attribute part>  Object: <ERAttribute> 11_3333
+  Role: Owner part <Owner part>  Object: <Entity> 11_3273
+Relationship: Attribute of <Attribute of> 11_4067
+  Role: Attribute part <Attribute part>  Object: <ERAttribute> 11_1206
+  Role: Owner part <Owner part>  Object: <Entity> 11_3234
+Relationship: Attribute of <Attribute of> 11_4069
+  Role: Attribute part <Attribute part>  Object: <ERAttribute> 11_3333
+  Role: Owner part <Owner part>  Object: <Entity> 11_1056
+Relationship: Attribute of <Attribute of> 11_4286
+  Role: Attribute part <Attribute part>  Object: <ERAttribute> 11_1135
+  Role: Owner part <Owner part>  Object: <Entity> 11_2544
+Relationship: In relationship <In relationship> 11_517
+  Role: M <Entity part>  Object: <Entity> 11_1865
+	Cardinality: M
+  Role: Relationship role <Relationship role>  Object: <Relationship> 11_3889
+Relationship: In relationship <In relationship> 11_723
+  Role: M <Entity part>  Object: <Entity> 11_3273
+	Cardinality: M
+  Role: Relationship role <Relationship role>  Object: <Relationship> 11_3204
+Relationship: In relationship <In relationship> 11_935
+  Role: M <Entity part>  Object: <Entity> 11_313
+	Cardinality: M
+  Role: Relationship role <Relationship role>  Object: <Relationship> 11_3889
+Relationship: In relationship <In relationship> 11_2032
+  Role: 1 <Entity part>  Object: <Entity> 11_313
+	Cardinality: 1
+  Role: Relationship role <Relationship role>  Object: <Relationship> 11_275
+Relationship: In relationship <In relationship> 11_2038
+  Role: 1 <Entity part>  Object: <Entity> 11_3273
+	Cardinality: 1
+  Role: Relationship role <Relationship role>  Object: <Relationship> 11_1757
+Relationship: In relationship <In relationship> 11_2264
+  Role: 1 <Entity part>  Object: <Entity> 11_2544
+	Cardinality: 1
+  Role: Relationship role <Relationship role>  Object: <Relationship> 11_3204
+Relationship: In relationship <In relationship> 11_2699
+  Role: M <Entity part>  Object: <Entity> 11_3273
+	Cardinality: M
+  Role: Relationship role <Relationship role>  Object: <Relationship> 11_1901
+Relationship: In relationship <In relationship> 11_3343
+  Role: M <Entity part>  Object: <Entity> 11_313
+	Cardinality: M
+  Role: Relationship role <Relationship role>  Object: <Relationship> 11_1757
+Relationship: In relationship <In relationship> 11_3699
+  Role: 1,M <Entity part>  Object: <Entity> 11_3234
+	Cardinality: 1,M
+  Role: Relationship role <Relationship role>  Object: <Relationship> 11_275
+Relationship: In relationship <In relationship> 11_4288
+  Role: M <Entity part>  Object: <Entity> 11_1056
+	Cardinality: M
+  Role: Relationship role <Relationship role>  Object: <Relationship> 11_1901

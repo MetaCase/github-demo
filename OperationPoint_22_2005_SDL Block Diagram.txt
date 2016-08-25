@@ -1,0 +1,17 @@
+Graph_SDL_Block_Diagram_user_3577030438
+OperationPoint
+22_2005
+SDL Block Diagram
+Graph: OperationPoint <SDL Block Diagram> 22_2005
+	Name: OperationPoint
+	Description: 
+	Show in LiveCheck: Checking
+Object: tIn <Gate> 22_2020
+	Name: tIn
+	Direction: in
+Object: o <Gate> 22_2030
+	Name: o
+	Direction: inout
+Object: tOut <Gate> 22_2040
+	Name: tOut
+	Direction: out

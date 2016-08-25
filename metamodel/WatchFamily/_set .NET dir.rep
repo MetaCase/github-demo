@@ -1,0 +1,14 @@
+Report '_set .NET dir'
+'
+:: try .NET
+set dotNetDir=%windir%\Microsoft.NET\Framework
+if exist "%dotNetDir%64" set dotNetDir=%dotNetDir%64
+for %%g in (%dotNetDir%\v3.5 %dotNetDir%\v4.0.30319) do if exist "%%g\MSBuild.exe" set dotNetDir=%%g
+if exist "%dotNetDir%\MSBuild.exe" goto gotDotNet
+echo Could not find .NET Framework 3.5 or 4.0, please install!
+pause
+goto end
+:gotDotNet
+
+'
+endreport

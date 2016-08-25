@@ -1,0 +1,198 @@
+Graph_ClockApplication_sysadmin_3150525787
+Time
+9_374
+WatchApplication
+Graph: Time <WatchApplication> 9_374
+	Application name: Time
+	Documentation: Application for showing the current time. Allows editing of hours, minutes and seconds. While we're running on a PC, we don't want to set the real time, so these changes apply to the clockOffset and hence to the clockTime perceived by the running watch.
+Object: Action <Action> 9_793
+Object: Action <Action> 9_1070
+Object: Action <Action> 9_1862
+Object: Action <Action> 9_2324
+Object: Action <Action> 9_2615
+Object: Action <Action> 9_2624
+Object: Action <Action> 9_3227
+Object: Action <Action> 9_3320
+Object: Up <Button> 9_886
+	Button name: Up
+Object: Set <Button> 9_1072
+	Button name: Set
+Object: Down <Button> 9_1963
+	Button name: Down
+Object: Mode <Button> 9_2489
+	Button name: Mode
+Object:  <DisplayFn> 9_1258
+	Name: 
+	Central: MINUTE
+Object: editTime <DisplayFn> 9_3080
+	Name: editTime
+	Central: MINUTE
+Object: Start [Watch] <Start [Watch]> 9_1572
+Object: EditMinutes <State [Watch]> 9_1386
+	State name: EditMinutes
+	DisplayFn: editTime
+	Object: editTime <DisplayFn> 9_3080
+		Name: editTime
+		Central: MINUTE
+	Blinking: MINUTE
+	Documentation: 
+Object: EditHours <State [Watch]> 9_1562
+	State name: EditHours
+	DisplayFn: editTime
+	Blinking: HOUR_OF_DAY
+	Documentation: 
+Object: ExitEdit <State [Watch]> 9_2034
+	State name: ExitEdit
+	DisplayFn: editTime
+	Blinking: 
+	Documentation: 
+Object: EditSeconds <State [Watch]> 9_2802
+	State name: EditSeconds
+	DisplayFn: editTime
+	Blinking: SECOND
+	Documentation: 
+Object: Show <State [Watch]> 9_3478
+	State name: Show
+	DisplayFn: 
+	Blinking: 
+	Documentation: 
+Object: Stop [Watch] <Stop [Watch]> 9_908
+Object: tempOffset <Variable> 9_604
+	Name: tempOffset
+	Type: METime
+	Documentation: 
+Object: sysTime <VariableRef> 9_2804
+	Name: sysTime
+	Type: METime
+	Documentation: This is the underlying system's real clock, unaffected by changing clockOffset to set the time the running Watch perceives.
+Object: clockTime <VariableRef> 9_3229
+	Name: clockTime
+	Type: METime
+	Documentation: This is the time as seen in the running watch. Internally it is generated on request from your real system time plus the clockOffset.
+Object: clockOffset <VariableRef> 9_3469
+	Name: clockOffset
+	Type: METime
+	Documentation: This is the offset between your computer's real clock and the clock time shown in the watch when it is running.
+Relationship: F <Roll> 9_404
+	Up?: F
+	Time unit: HOUR_OF_DAY
+  Role:  <ActionBody>  Object: <Action> 9_1862
+	Order: 
+  Role: Set <Set>  Object: <Variable> 9_604
+Relationship: F <Roll> 9_539
+	Up?: F
+	Time unit: MINUTE
+  Role:  <ActionBody>  Object: <Action> 9_793
+	Order: 
+  Role: Set <Set>  Object: <Variable> 9_604
+Relationship: F <Roll> 9_696
+	Up?: F
+	Time unit: SECOND
+  Role:  <ActionBody>  Object: <Action> 9_2615
+	Order: 
+  Role: Set <Set>  Object: <Variable> 9_604
+Relationship: T <Roll> 9_1172
+	Up?: T
+	Time unit: HOUR_OF_DAY
+  Role:  <ActionBody>  Object: <Action> 9_1070
+	Order: 
+  Role: Set <Set>  Object: <Variable> 9_604
+Relationship: T <Roll> 9_2263
+	Up?: T
+	Time unit: MINUTE
+  Role:  <ActionBody>  Object: <Action> 9_3227
+	Order: 
+  Role: Set <Set>  Object: <Variable> 9_604
+Relationship: T <Roll> 9_2303
+	Up?: T
+	Time unit: SECOND
+  Role:  <ActionBody>  Object: <Action> 9_2624
+	Order: 
+  Role: Set <Set>  Object: <Variable> 9_604
+Relationship: Set <Set> 9_1362
+  Role: DisplayFnBody <DisplayFnBody>  Object: <DisplayFn> 9_3080
+  Role: Get <Get>  Object: <VariableRef> 9_2804
+  Role: Plus <Plus>  Object: <Variable> 9_604
+Relationship: Set <Set> 9_2761
+  Role:  <ActionBody>  Object: <Action> 9_3320
+	Order: 
+  Role: Get <Get>  Object: <VariableRef> 9_3469
+  Role: Set <Set>  Object: <Variable> 9_604
+Relationship: Set <Set> 9_2813
+  Role: DisplayFnBody <DisplayFnBody>  Object: <DisplayFn> 9_1258
+  Role: Get <Get>  Object: <VariableRef> 9_3229
+Relationship: Set <Set> 9_2851
+  Role:  <ActionBody>  Object: <Action> 9_2324
+	Order: 
+  Role: Get <Get>  Object: <Variable> 9_604
+  Role: Set <Set>  Object: <VariableRef> 9_3469
+Relationship: Transition <Transition> 9_499
+  Role: From <From>  Object: <Start [Watch]> 9_1572
+  Role: To <To>  Object: <State [Watch]> 9_3478
+Relationship: Transition <Transition> 9_577
+  Role: Action <Action>  Object: <Action> 9_793
+  Role: Event <Event>  Object: <Button> 9_1963
+  Role: From <From>  Object: <State [Watch]> 9_1386
+  Role: To <To>  Object: <State [Watch]> 9_1386
+Relationship: Transition <Transition> 9_660
+  Role: Event <Event>  Object: <Button> 9_2489
+  Role: From <From>  Object: <State [Watch]> 9_1562
+  Role: To <To>  Object: <State [Watch]> 9_1386
+Relationship: Transition <Transition> 9_905
+  Role: Action <Action>  Object: <Action> 9_3227
+  Role: Event <Event>  Object: <Button> 9_886
+  Role: From <From>  Object: <State [Watch]> 9_1386
+  Role: To <To>  Object: <State [Watch]> 9_1386
+Relationship: Transition <Transition> 9_1122
+  Role: Action <Action>  Object: <Action> 9_2615
+  Role: Event <Event>  Object: <Button> 9_1963
+  Role: From <From>  Object: <State [Watch]> 9_2802
+  Role: To <To>  Object: <State [Watch]> 9_2802
+Relationship: Transition <Transition> 9_1347
+  Role: Action <Action>  Object: <Action> 9_2624
+  Role: Event <Event>  Object: <Button> 9_886
+  Role: From <From>  Object: <State [Watch]> 9_2802
+  Role: To <To>  Object: <State [Watch]> 9_2802
+Relationship: Transition <Transition> 9_1756
+  Role: Action <Action>  Object: <Action> 9_2324
+  Role: From <From>  Object: <State [Watch]> 9_2034
+  Role: To <To>  Object: <State [Watch]> 9_3478
+Relationship: Transition <Transition> 9_1794
+  Role: Event <Event>  Object: <Button> 9_1072
+  Role: From <From>  Object: <State [Watch]> 9_1562
+  Role: To <To>  Object: <State [Watch]> 9_2034
+Relationship: Transition <Transition> 9_1869
+  Role: Event <Event>  Object: <Button> 9_2489
+  Role: From <From>  Object: <State [Watch]> 9_1386
+  Role: To <To>  Object: <State [Watch]> 9_2802
+Relationship: Transition <Transition> 9_2427
+  Role: Action <Action>  Object: <Action> 9_1070
+  Role: Event <Event>  Object: <Button> 9_886
+  Role: From <From>  Object: <State [Watch]> 9_1562
+  Role: To <To>  Object: <State [Watch]> 9_1562
+Relationship: Transition <Transition> 9_2632
+  Role: Event <Event>  Object: <Button> 9_2489
+  Role: From <From>  Object: <State [Watch]> 9_3478
+  Role: To <To>  Object: <Stop [Watch]> 9_908
+Relationship: Transition <Transition> 9_2726
+  Role: Event <Event>  Object: <Button> 9_1072
+  Role: From <From>  Object: <State [Watch]> 9_2802
+  Role: To <To>  Object: <State [Watch]> 9_2034
+Relationship: Transition <Transition> 9_2849
+  Role: Event <Event>  Object: <Button> 9_1072
+  Role: From <From>  Object: <State [Watch]> 9_1386
+  Role: To <To>  Object: <State [Watch]> 9_2034
+Relationship: Transition <Transition> 9_2941
+  Role: Action <Action>  Object: <Action> 9_3320
+  Role: Event <Event>  Object: <Button> 9_1072
+  Role: From <From>  Object: <State [Watch]> 9_3478
+  Role: To <To>  Object: <State [Watch]> 9_1562
+Relationship: Transition <Transition> 9_3233
+  Role: Action <Action>  Object: <Action> 9_1862
+  Role: Event <Event>  Object: <Button> 9_1963
+  Role: From <From>  Object: <State [Watch]> 9_1562
+  Role: To <To>  Object: <State [Watch]> 9_1562
+Relationship: Transition <Transition> 9_3435
+  Role: Event <Event>  Object: <Button> 9_2489
+  Role: From <From>  Object: <State [Watch]> 9_2802
+  Role: To <To>  Object: <State [Watch]> 9_1562

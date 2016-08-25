@@ -1,0 +1,15 @@
+_checkingsForPrototypes()
+foreach .(AnalysisFunctionPrototype | DesignFunctionPrototype | HardwareComponentPrototype)
+{	do decompositions 
+	{	if not $visited =~ oid%wildsp then
+			variable 'visited' append oid ' ' close
+			
+			/* All prototypes handled in the same report */
+			_checkingsForFunctionAndHardwarePrototypes()
+			
+			/* Relationships */
+			subreport '_checkings for the relationships' run
+		endif
+	}
+}
+

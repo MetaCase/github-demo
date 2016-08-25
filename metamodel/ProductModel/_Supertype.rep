@@ -1,0 +1,24 @@
+Report '_Supertype'
+/* creates addSuperType clause for MOFClass subtypes */
+if :Composite?; then
+	if :Supertype; then
+		'		icomposite'
+		Type '.addSuperType((Composite' Type ') productpackage_.lookupElementExtended("' :Supertype '"));' newline
+	else
+		if ~Subclass; then
+			'		icomposite' Type '.addSuperType((' Type ') productpackage_.lookupElementExtended("'
+			~Subclass~Superclass.():Class name '"));' newline
+		endif
+	endif
+else
+	if :Supertype; then
+		'		i' 
+		Type;'.addSuperType((' Type ') productpackage_.lookupElementExtended("' :Supertype '"));' newline
+	else
+		if ~Subclass; then
+			'		i' Type '.addSuperType((' Type ') productpackage_.lookupElementExtended("'
+			~Subclass~Superclass.():Class name '"));' newline
+		endif
+	endif
+endif
+endreport

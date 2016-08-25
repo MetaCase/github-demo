@@ -1,0 +1,179 @@
+==========================
+Graph Type
+==========================
+Metamodel [GOPRR]
+	This modeling language allows you to design domain-specific languages. The generator called Export to MXT exports the language design into a file using the MetaEdit+ XML Type format. The generated file can be imported into MetaEdit+ to create the metamodel including basic abstract syntax of the language.
+	---------------------------------------------
+	Graph name: String
+	__UUID: String
+	Namespace: String
+	Properties: OrderedCollection (Property [GOPRR])
+	Constraints: OrderedCollection (_Connectivity constraint [GOPRR])
+	Object order: OrderedCollection (Object [GOPRR])
+	Description: Text
+
+==========================
+Object Types
+==========================
+Object [GOPRR]
+	Object concept is used to specify main modeling concepts of the language, such as states, entities, classes etc. 
+	---------------------------------------------
+	Object name: String
+		Object must have a unique mandatory name.
+		---------------------------------------------
+	__UUID: String
+	Properties: OrderedCollection (Property [GOPRR])
+	Occurrence: String
+	Description: Text
+Object set [GOPRR]
+	Object set is used to define a collection of objects. This concept is used for making the metamodel smaller by connecting it to the role of bindings (instead of specifying own binding for each object in the object set). 
+	---------------------------------------------
+	Objects: OrderedCollection (Object [GOPRR])
+
+==========================
+Relationship Types
+==========================
+Binding [GOPRR]
+	Relationship: Relationship [GOPRR]
+Inheritance [GOPRR]
+Property [GOPRR]
+	A property can include an object as a property too. This object has own properties and can again include other objects are properties too. Such structures are defined using the property relationship.
+	---------------------------------------------
+	Local name: String
+	__UUID: String
+	Uniqueness: String
+
+==========================
+Role Types
+==========================
+Subtype [GOPRR]
+Has property [GOPRR]
+First role [GOPRR]
+	Role: Role [GOPRR]
+	Minimum cardinality: String
+	Maximum cardinality: String
+	Dynamic Ports: OrderedCollection (Object [GOPRR])
+Intermediate role [GOPRR]
+	Role: Role [GOPRR]
+	Minimum cardinality: String
+	Maximum cardinality: String
+	Order: String
+		Will be sorted alphabetically
+		---------------------------------------------
+	Dynamic Ports: OrderedCollection (Object [GOPRR])
+Supertype [GOPRR]
+NonProperty of [GOPRR]
+	Collection: Boolean
+Last role [GOPRR]
+	Role: Role [GOPRR]
+	Minimum cardinality: String
+	Maximum cardinality: String
+	Can be drawn in both directions: Boolean
+	Dynamic Ports: OrderedCollection (Object [GOPRR])
+
+==========================
+Extra Types
+==========================
+Property [GOPRR]
+	Property name: String
+		Property must have a unique mandatory name.
+		---------------------------------------------
+	__UUID: String
+	Local name: String
+	Datatype: String
+	Object Datatype: Object [GOPRR]
+	Default value(s): Text
+	Uniqueness: String
+	Description: Text
+Relationship connectivity constraint [GOPRR]
+	Object of type: Object [GOPRR]
+	may be in at most: Number
+	relationships of type: Relationship [GOPRR]
+Relationship [GOPRR]
+	Relationship name: String
+		Relationship must have a unique mandatory name.
+		---------------------------------------------
+	__UUID: String
+	Properties: OrderedCollection (Property [GOPRR])
+	Description: Text
+Role connectivity constraint [GOPRR]
+	Object of type: Object [GOPRR]
+	may be in at most: Number
+	roles of type: Role [GOPRR]
+Role [GOPRR]
+	Role name: String
+		Role must have a unique mandatory name.
+		---------------------------------------------
+	__UUID: String
+	Properties: OrderedCollection (Property [GOPRR])
+	Description: Text
+_Connectivity constraint [GOPRR]
+	Abstract type for choosing connectivity constraint
+	---------------------------------------------
+	Object of type: Object [GOPRR]
+	may be in at most: Number
+Connection [GOPRR]
+
+==========================
+Bindings
+==========================
+Binding [GOPRR]
+1	First role [GOPRR]: Object set [GOPRR], Object [GOPRR]
+0..N	Intermediate role [GOPRR]: Object set [GOPRR], Object [GOPRR]
+1	Last role [GOPRR]: Object set [GOPRR], Object [GOPRR]
+Inheritance [GOPRR]
+1..N	Subtype [GOPRR]: Object [GOPRR]
+1	Supertype [GOPRR]: Object [GOPRR]
+Property [GOPRR]
+1	Has property [GOPRR]: Object [GOPRR]
+1	NonProperty of [GOPRR]: Object [GOPRR]
+
+==========================
+Constraints
+==========================
+Object [GOPRR] may be in at most 1 Subtype [GOPRR] role
+
+==========================
+Subgraphs
+==========================
+
+==========================
+Generators
+==========================
+!Build
+!MXT
+Export and Build MXT
+Export and Open MXT
+Export graph type to MXT file
+
+==========================
+Sub-Generators
+==========================
+_AddToObjSet
+_binding role
+_bindings
+_check
+_check_bindings
+_check_objects
+_check_unique_type_name
+_constraints
+_dataType
+_default value
+_export graph type to MXT
+_GOPRRtag
+_namespace
+_nonProperties
+_occurrence constraint
+_reverse role order
+_rolelabel
+_slots
+_supertype
+_timestamp
+_typeAttributes
+_typeNPContent
+_typeproperties
+_types
+_type_name_oid
+_uniqueness constraint
+_uniqueness constraints
+

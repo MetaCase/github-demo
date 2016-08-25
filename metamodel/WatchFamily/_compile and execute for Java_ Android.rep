@@ -1,0 +1,10 @@
+Report '_compile and execute for Java: Android'
+
+if $IDE = '' then
+	external '"' $projPath 'makeWatch.bat"' execute	
+else
+	external '"' $projPath 'makeWatch.bat"' executeBlocking		
+endif
+
+
+endreport

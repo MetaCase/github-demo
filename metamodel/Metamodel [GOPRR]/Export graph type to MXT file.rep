@@ -1,0 +1,12 @@
+Report 'Export graph type to MXT file'
+subreport '_GOPRRtag' run
+/* Produces MXT file from GOPRR basic metamodel */
+$types=' '
+/* collection including alredy reported types */
+filename subreport '_default directory' run id '.mxt' encoding 'UTF-8' write
+'<?xml version="1.0" encoding="UTF-8"?>
+<gxl xmlns="http://www.metacase.com/gxlGOPRRType" xmlns:sym="http://www.metacase.com/symbol">' newline
+subreport '_export graph type to MXT' run
+'</gxl>'
+close
+endreport

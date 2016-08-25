@@ -1,0 +1,544 @@
+Graph_Simple_GOPRR_user_3334325822
+WatchApplication
+14_275
+Metamodel [GOPRR]
+Graph: WatchApplication <Metamodel [GOPRR]> 14_275
+	Graph name: WatchApplication
+	__UUID: aUVQT8Q/QgOYk9pwqW6Cog
+	Namespace: 
+	Properties: Name [Watch] Documentation [Watch]
+	Object: Name [Watch] <Property [GOPRR]> 14_1384
+		Property name: Name [Watch]
+		__UUID: pkPpM3K7QT2VVrYuAZjIgw
+		Local name: Application name
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Object: Documentation [Watch] <Property [GOPRR]> 14_2154
+		Property name: Documentation [Watch]
+		__UUID: EQS42TmTRXeF9hi79iLkQA
+		Local name: Documentation
+		Datatype: Text
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Constraints: Alarm<object> in max 1 From<role> DisplayFn<object> in max 1 DisplayFnBody<role> VariableRef<object> in max 0 Roll<relationship> Start [Watch]<object> in max 1 From<role>
+	Object: Alarm<object> in max 1 From<role> <Role connectivity constraint [GOPRR]> 14_1563
+		Object of type: Alarm
+		Object: Alarm <Object [GOPRR]> 14_1579
+			Object name: Alarm
+			__UUID: X51g+XYUQtexrkcXK6FFhg
+			Properties: Name [Watch] Senses Local Time
+			Object: Name [Watch] <Property [GOPRR]> 14_1316
+				Property name: Name [Watch]
+				__UUID: Oal16oK6QY+3kr8WYso+VA
+				Local name: Name
+				Datatype: String
+				Object Datatype: 
+				Default value(s): 
+				Uniqueness: per graph
+				Description: 
+			Object: Senses Local Time <Property [GOPRR]> 14_1625
+				Property name: Senses Local Time
+				__UUID: zqB/Vd+XQrOE7nUAF1NhXQ
+				Local name: 
+				Datatype: Boolean
+				Object Datatype: 
+				Default value(s): 
+				Uniqueness: 
+				Description: 
+			Occurrence: N
+			Description: An Alarm represents an instance of system alarm.
+		may be in at most: 1
+		roles of type: From
+		Object: From <Role [GOPRR]> 14_597
+			Role name: From
+			__UUID: jEkNkXnQQ4KduzqWGamNsA
+			Properties: 
+			Description: 
+	Object: DisplayFn<object> in max 1 DisplayFnBody<role> <Role connectivity constraint [GOPRR]> 14_1388
+		Object of type: DisplayFn
+		Object: DisplayFn <Object [GOPRR]> 14_2186
+			Object name: DisplayFn
+			__UUID: 6KxfitMQRHmTzmWcDAGVQg
+			Properties: Name [Watch] Obligatory time unit
+			Object: Obligatory time unit <Property [GOPRR]> 14_2625
+				Property name: Obligatory time unit
+				__UUID: EpCB1GLeThuA4z8H7FnuYg
+				Local name: Central
+				Datatype: Fixed List
+				Object Datatype: 
+				Default value(s): HOUR_OF_DAY
+MINUTE
+SECOND
+HUNDREDTH
+				Uniqueness: 
+				Description: 
+			Occurrence: N
+			Description: A DisplayFn is the definition of a display function that is used to present the time on display.
+		may be in at most: 1
+		roles of type: DisplayFnBody
+		Object: DisplayFnBody <Role [GOPRR]> 14_1668
+			Role name: DisplayFnBody
+			__UUID: HZYyXSqeQfSqoJmMHr9kKQ
+			Properties: 
+			Description: Used in Set relationship to show the outcome of an operation with a display function associated with this role.
+	Object: VariableRef<object> in max 0 Roll<relationship> <Relationship connectivity constraint [GOPRR]> 14_1924
+		Object of type: VariableRef
+		Object: VariableRef <Object [GOPRR]> 14_1935
+			Object name: VariableRef
+			__UUID: 2GXcVpQISJ2YcgR9/UTu+Q
+			Properties: 
+			Occurrence: N
+			Description: A VariableRef is a reference to a variable.
+		may be in at most: 0
+		relationships of type: Roll
+		Object: Roll <Relationship [GOPRR]> 14_410
+			Relationship name: Roll
+			__UUID: GCrZ321ZSrm9u0VjJ6uFqg
+			Properties: Up-Down Time unit
+			Object: Up-Down <Property [GOPRR]> 14_1598
+				Property name: Up-Down
+				__UUID: quSfSal+SbioI3ymBDnJ1A
+				Local name: Up?
+				Datatype: Boolean
+				Object Datatype: 
+				Default value(s): 
+				Uniqueness: 
+				Description: 
+			Object: Time unit <Property [GOPRR]> 14_917
+				Property name: Time unit
+				__UUID: JYoRb241ROeJmDOB7Mv1ZQ
+				Local name: 
+				Datatype: Fixed List
+				Object Datatype: 
+				Default value(s): HOUR_OF_DAY
+MINUTE
+SECOND
+HUNDREDTH
+				Uniqueness: 
+				Description: 
+			Description: A Roll relationship rolls the given time unit up or down.
+	Object: Start [Watch]<object> in max 1 From<role> <Role connectivity constraint [GOPRR]> 14_1538
+		Object of type: Start [Watch]
+		Object: Start [Watch] <Object [GOPRR]> 14_998
+			Object name: Start [Watch]
+			__UUID: rWkGyoW6RV2Ucws3gj8l8Q
+			Properties: 
+			Occurrence: 1
+			Description: A Start state for the watch application state automaton.
+		may be in at most: 1
+		roles of type: From
+	Object order: 
+	Description: A WatchApplication diagram defines the state automaton that implements a logical watch or a watch application.
+Object: State [Watch] Stop [Watch] <Object set [GOPRR]> 14_622
+	Objects: State [Watch] Stop [Watch]
+	Object: State [Watch] <Object [GOPRR]> 14_404
+		Object name: State [Watch]
+		__UUID: nVZG7QibStGbLgKdYD+1cg
+		Properties: Name [Watch] Blinking Documentation [Watch]
+		Object: Name [Watch] <Property [GOPRR]> 14_1784
+			Property name: Name [Watch]
+			__UUID: Yj9Z0wklRjec4m7IRkE4kg
+			Local name: State name
+			Datatype: String
+			Object Datatype: 
+			Default value(s): 
+			Uniqueness: per graph
+			Description: 
+		Object: Blinking <Property [GOPRR]> 14_853
+			Property name: Blinking
+			__UUID: 2ASkoq2gTUiuj2SdvqfpbA
+			Local name: Time unit
+			Datatype: Overridable List
+			Object Datatype: 
+			Default value(s): HOUR_OF_DAY
+MINUTE
+SECOND
+HUNDREDTH
+
+			Uniqueness: 
+			Description: 
+		Occurrence: N
+		Description: A State is an intermediate state in state automaton that defines a logical watch application. State has certain persistency and certain activities that are carried out while the state is active.
+	Object: Stop [Watch] <Object [GOPRR]> 14_521
+		Object name: Stop [Watch]
+		__UUID: 3yZpv4CURz+Qkjfkmm5Cqw
+		Properties: 
+		Occurrence: 1
+		Description: A Stop state for watch application state automaton (escapes the current state automaton, returning focus on higher level state automaton if possible)
+Object: State [Watch] <Object [GOPRR]> 14_404
+	Object name: State [Watch]
+	__UUID: nVZG7QibStGbLgKdYD+1cg
+	Properties: Name [Watch] Blinking Documentation [Watch]
+	Occurrence: N
+	Description: A State is an intermediate state in state automaton that defines a logical watch application. State has certain persistency and certain activities that are carried out while the state is active.
+Object: Button <Object [GOPRR]> 14_992
+	Object name: Button
+	__UUID: K0/9igrQTKWZ0DPIJDatOQ
+	Properties: Name [Watch]
+	Object: Name [Watch] <Property [GOPRR]> 14_675
+		Property name: Name [Watch]
+		__UUID: ICAdeEbkSmmYeBxSph0vfg
+		Local name: Button name
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Occurrence: N
+	Description: A Button represents both a physical watch button (in WatchFamily diagram) and an event raised when button is pressed (in WatchApplication diagram).
+Object: Start [Watch] <Object [GOPRR]> 14_998
+	Object name: Start [Watch]
+	__UUID: rWkGyoW6RV2Ucws3gj8l8Q
+	Properties: 
+	Occurrence: 1
+	Description: A Start state for the watch application state automaton.
+Object: Variable <Object [GOPRR]> 14_1222
+	Object name: Variable
+	__UUID: kKyyfdy1Qt+D3nJRVs/p0Q
+	Properties: Name [Watch] Documentation [Watch] Type
+	Object: Type <Property [GOPRR]> 14_2061
+		Property name: Type
+		__UUID: lyKOQvxDSyiIdwrlqAu6HA
+		Local name: 
+		Datatype: Fixed List
+		Object Datatype: 
+		Default value(s): METime
+		Uniqueness: 
+		Description: 
+	Occurrence: N
+	Description: A Value represents a variable with type and value.
+Object: Alarm <Object [GOPRR]> 14_1579
+	Object name: Alarm
+	__UUID: X51g+XYUQtexrkcXK6FFhg
+	Properties: Name [Watch] Senses Local Time
+	Occurrence: N
+	Description: An Alarm represents an instance of system alarm.
+Object: Icon <Object [GOPRR]> 14_1810
+	Object name: Icon
+	__UUID: Fs5yaAuhQ6qjLvER+wWDHA
+	Properties: IconID
+	Object: IconID <Property [GOPRR]> 14_2172
+		Property name: IconID
+		__UUID: jSJmfpHdRsiqRJeW6AvqgQ
+		Local name: 
+		Datatype: Fixed List
+		Object Datatype: 
+		Default value(s): alarm
+stopwatch
+timer
+world
+		Uniqueness: 
+		Description: 
+	Occurrence: N
+	Description: An Icon represents a graphical indicator shown on display when a certain service is active.
+Object: VariableRef <Object [GOPRR]> 14_1935
+	Object name: VariableRef
+	__UUID: 2GXcVpQISJ2YcgR9/UTu+Q
+	Properties: 
+	Occurrence: N
+	Description: A VariableRef is a reference to a variable.
+Object: DisplayFn <Object [GOPRR]> 14_2186
+	Object name: DisplayFn
+	__UUID: 6KxfitMQRHmTzmWcDAGVQg
+	Properties: Name [Watch] Obligatory time unit
+	Occurrence: N
+	Description: A DisplayFn is the definition of a display function that is used to present the time on display.
+Object: Action <Object [GOPRR]> 14_2525
+	Object name: Action
+	__UUID: OX2k7sxFTf6V4SaJdvuabA
+	Properties: 
+	Occurrence: N
+	Description: An Action is a top-level construct for all operations carried out during the state transition in a state automaton.
+Relationship: Alarm <Binding [GOPRR]> 14_468
+	Relationship: Alarm
+	Object: Alarm <Relationship [GOPRR]> 14_2631
+		Relationship name: Alarm
+		__UUID: 0PTgOkeESbSjXlzKokDo+A
+		Properties: 
+		Description: An Alarm is a relationship that operates on system alarms, setting them on or off.
+  Role: ActionBody <First role [GOPRR]>  Object: <Object [GOPRR]> 14_2525
+	Role: ActionBody
+	Object: ActionBody <Role [GOPRR]> 14_441
+		Role name: ActionBody
+		__UUID: LzTg3DfoQPOHFWlwhY66vA
+		Properties: Order
+		Object: Order <Property [GOPRR]> 14_1864
+			Property name: Order
+			__UUID: I/a52QFwSGOCj2a0hIsaxQ
+			Local name: 
+			Datatype: String
+			Object Datatype: 
+			Default value(s): 
+			Uniqueness: 
+			Description: 
+		Description: Used with Alarm, Icon, Roll and Set relationships to associate a  operation with a certain Action object.
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Dynamic Ports: 
+  Role: Off <Last role [GOPRR]>  Object: <Object [GOPRR]> 14_1579
+	Role: Off
+	Object: Off <Role [GOPRR]> 14_1674
+		Role name: Off
+		__UUID: 2egXjJX5QmCx6vTLlY4lQg
+		Properties: 
+		Description: 
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Can be drawn in both directions: F
+	Dynamic Ports: 
+Relationship: Set <Binding [GOPRR]> 14_592
+	Relationship: Set
+	Object: Set <Relationship [GOPRR]> 14_883
+		Relationship name: Set
+		__UUID: T9zSVtJ1RzanydQM9ryyGA
+		Properties: 
+		Description: A Set relationship stores the result of an action into the given element.
+  Role: DisplayFnBody <First role [GOPRR]>  Object: <Object [GOPRR]> 14_2186
+	Role: DisplayFnBody
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Dynamic Ports: 
+  Role: Get <Intermediate role [GOPRR]>  Object: <Object [GOPRR]> 14_1222
+	Role: Get
+	Object: Get <Role [GOPRR]> 14_348
+		Role name: Get
+		__UUID: TQmpNVioRTCDmXPREaiwVA
+		Properties: 
+		Description: Used with Set and Alarm relationships to retrieve a value from a variable for execution of an operation (like plus, minus, etc.).
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Order: 
+	Dynamic Ports: 
+  Role: Minus <Intermediate role [GOPRR]>  Object: <Object [GOPRR]> 14_1222
+	Role: Minus
+	Object: Minus <Role [GOPRR]> 14_471
+		Role name: Minus
+		__UUID: 2dsygXEjR3qw+qD9dqJSCQ
+		Properties: 
+		Description: Used with Set and Alarm relationships to subtract a value of a variable associated with this role from a value of a variable associated by the preceeding Get role. The outcome is store into a variable associated with the following Set role.
+	Minimum cardinality: 0
+	Maximum cardinality: N
+	Order: 
+	Dynamic Ports: 
+  Role: Plus <Last role [GOPRR]>  Object: <Object [GOPRR]> 14_1222
+	Role: Plus
+	Object: Plus <Role [GOPRR]> 14_1586
+		Role name: Plus
+		__UUID: vDDxb7KTR3SLJK7VDktGoQ
+		Properties: 
+		Description: Used with Set and Alarm relationships to add a value of a variable associated with this role to a value of a variable associated by the preceeding Get role. The outcome is store into a variable associated with the following Set role.
+	Minimum cardinality: 0
+	Maximum cardinality: N
+	Can be drawn in both directions: F
+	Dynamic Ports: 
+Relationship: Icon <Binding [GOPRR]> 14_626
+	Relationship: Icon
+	Object: Icon <Relationship [GOPRR]> 14_767
+		Relationship name: Icon
+		__UUID: 0flm7QBVQWC24Bj6N52MmQ
+		Properties: 
+		Description: An Icon relationship is used to set icons on or off.
+  Role: ActionBody <First role [GOPRR]>  Object: <Object [GOPRR]> 14_2525
+	Role: ActionBody
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Dynamic Ports: 
+  Role: Boolean <Last role [GOPRR]>  Object: <Object [GOPRR]> 14_1810
+	Role: Boolean
+	Object: Boolean <Role [GOPRR]> 14_1232
+		Role name: Boolean
+		__UUID: zhifbwvqT0K7Fnyzx3UBZQ
+		Properties: BooleanOp
+		Object: BooleanOp <Property [GOPRR]> 14_2088
+			Property name: BooleanOp
+			__UUID: MU9uKmZqRpms3IvTqXUfkA
+			Local name: Operation
+			Datatype: Fixed List
+			Object Datatype: 
+			Default value(s): On
+Off
+Toggle
+			Uniqueness: 
+			Description: 
+		Description: Used with Icon relationship to toggle icon on and off.
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Can be drawn in both directions: F
+	Dynamic Ports: 
+Relationship: Roll <Binding [GOPRR]> 14_900
+	Relationship: Roll
+  Role: ActionBody <First role [GOPRR]>  Object: <Object [GOPRR]> 14_2525
+	Role: ActionBody
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Dynamic Ports: 
+  Role: Set <Last role [GOPRR]>  Object: <Object [GOPRR]> 14_1222
+	Role: Set
+	Object: Set <Role [GOPRR]> 14_2484
+		Role name: Set
+		__UUID: 75sU404ASS6POANlJ64RGg
+		Properties: 
+		Description: Used with Set, Alarm and Roll relationships to store the outcome of preceeding operation into a variable.
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Can be drawn in both directions: F
+	Dynamic Ports: 
+Relationship: Alarm <Binding [GOPRR]> 14_1694
+	Relationship: Alarm
+  Role: ActionBody <First role [GOPRR]>  Object: <Object [GOPRR]> 14_2525
+	Role: ActionBody
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Dynamic Ports: 
+  Role: Get <Intermediate role [GOPRR]>  Object: <Object [GOPRR]> 14_1222
+	Role: Get
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Order: 
+	Dynamic Ports: 
+  Role: Minus <Intermediate role [GOPRR]>  Object: <Object [GOPRR]> 14_1222
+	Role: Minus
+	Minimum cardinality: 0
+	Maximum cardinality: N
+	Order: 
+	Dynamic Ports: 
+  Role: Plus <Intermediate role [GOPRR]>  Object: <Object [GOPRR]> 14_1222
+	Role: Plus
+	Minimum cardinality: 0
+	Maximum cardinality: N
+	Order: 
+	Dynamic Ports: 
+  Role: Set <Last role [GOPRR]>  Object: <Object [GOPRR]> 14_1579
+	Role: Set
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Can be drawn in both directions: F
+	Dynamic Ports: 
+Relationship: Set <Binding [GOPRR]> 14_2111
+	Relationship: Set
+  Role: ActionBody <First role [GOPRR]>  Object: <Object [GOPRR]> 14_2525
+	Role: ActionBody
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Dynamic Ports: 
+  Role: Get <Intermediate role [GOPRR]>  Object: <Object [GOPRR]> 14_1222
+	Role: Get
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Order: 
+	Dynamic Ports: 
+  Role: Minus <Intermediate role [GOPRR]>  Object: <Object [GOPRR]> 14_1222
+	Role: Minus
+	Minimum cardinality: 0
+	Maximum cardinality: N
+	Order: 
+	Dynamic Ports: 
+  Role: Plus <Intermediate role [GOPRR]>  Object: <Object [GOPRR]> 14_1222
+	Role: Plus
+	Minimum cardinality: 0
+	Maximum cardinality: N
+	Order: 
+	Dynamic Ports: 
+  Role: Set <Last role [GOPRR]>  Object: <Object [GOPRR]> 14_1222
+	Role: Set
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Can be drawn in both directions: F
+	Dynamic Ports: 
+Relationship: Transition <Binding [GOPRR]> 14_2256
+	Relationship: Transition
+	Object: Transition <Relationship [GOPRR]> 14_1906
+		Relationship name: Transition
+		__UUID: GNw0/8uRSASNonGVyJqb8Q
+		Properties: 
+		Description: 
+  Role: From <First role [GOPRR]>  Object: <Object [GOPRR]> 14_404
+	Role: From
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Dynamic Ports: 
+  Role: Action <Intermediate role [GOPRR]>  Object: <Object [GOPRR]> 14_2525
+	Role: Action
+	Object: Action <Role [GOPRR]> 14_1782
+		Role name: Action
+		__UUID: gA9kKBbuRsidYvlxeFMx5A
+		Properties: 
+		Description: Used with Transition relationship to associate the transtition with Action object that defines the actions carried out during the transition.
+	Minimum cardinality: 0
+	Maximum cardinality: 1
+	Order: 
+	Dynamic Ports: 
+  Role: Event <Intermediate role [GOPRR]>  Object: <Object [GOPRR]> 14_992
+	Role: Event
+	Object: Event <Role [GOPRR]> 14_911
+		Role name: Event
+		__UUID: BWGC2+iTSbG7MHvXxyV98w
+		Properties: 
+		Description: Used with Transition relationship to associate the transition with its triggering event.
+	Minimum cardinality: 0
+	Maximum cardinality: 1
+	Order: 
+	Dynamic Ports: 
+  Role: To <Last role [GOPRR]>  Object: <Object set [GOPRR]> 14_622
+	Role: To
+	Object: To <Role [GOPRR]> 14_1495
+		Role name: To
+		__UUID: iHRgvblFTDCcqO+EsfI6Yw
+		Properties: 
+		Description: 
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Can be drawn in both directions: F
+	Dynamic Ports: 
+Relationship: Transition <Binding [GOPRR]> 14_2333
+	Relationship: Transition
+  Role: From <First role [GOPRR]>  Object: <Object [GOPRR]> 14_998
+	Role: From
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Dynamic Ports: 
+  Role: Action <Intermediate role [GOPRR]>  Object: <Object [GOPRR]> 14_2525
+	Role: Action
+	Minimum cardinality: 0
+	Maximum cardinality: 1
+	Order: 
+	Dynamic Ports: 
+  Role: To <Last role [GOPRR]>  Object: <Object [GOPRR]> 14_404
+	Role: To
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Can be drawn in both directions: F
+	Dynamic Ports: 
+Relationship: RingState <Binding [GOPRR]> 14_2424
+	Relationship: RingState
+	Object: RingState <Relationship [GOPRR]> 14_2488
+		Relationship name: RingState
+		__UUID: FJ7TYfrzTWu0yDC/e/kjRA
+		Properties: 
+		Description: A RingState is a special case of Transition which is triggered by the system alarm when alarm time is reached.
+  Role: From <First role [GOPRR]>  Object: <Object [GOPRR]> 14_1579
+	Role: From
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Dynamic Ports: 
+  Role: To <Last role [GOPRR]>  Object: <Object set [GOPRR]> 14_622
+	Role: To
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Can be drawn in both directions: F
+	Dynamic Ports: 
+Relationship: Inheritance [GOPRR] <Inheritance [GOPRR]> 14_2656
+  Role: Subtype [GOPRR] <Subtype [GOPRR]>  Object: <Object [GOPRR]> 14_1935
+  Role: Supertype [GOPRR] <Supertype [GOPRR]>  Object: <Object [GOPRR]> 14_1222
+Relationship: DisplayFn <Property [GOPRR]> 14_662
+	Local name: DisplayFn
+	__UUID: x6zfRI3KRKWgW6IjWI2cxQ
+	Uniqueness: 
+  Role: Has property [GOPRR] <Has property [GOPRR]>  Object: <Object [GOPRR]> 14_404
+  Role: F <NonProperty of [GOPRR]>  Object: <Object [GOPRR]> 14_2186
+	Collection: F

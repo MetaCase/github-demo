@@ -1,0 +1,7 @@
+_DoPen()
+if :Pen down?; <> $penDown then 
+	$indent
+	$penDown = :Pen down?;
+	if :Pen down?; then 'pendown()' else 'penup()' endif
+	newline
+endif

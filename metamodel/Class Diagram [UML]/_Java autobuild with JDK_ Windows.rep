@@ -1,0 +1,17 @@
+Report '_Java autobuild with JDK: Windows'
+
+filename subreport '_default directory' run 'autobuild.bat' write
+
+'cd ' subreport '_default directory' run '
+for /d %%g in ("%programfiles%*") do (for /f %%h in (''dir /b "%%g\java\jdk*"'') do if exist "%%g\java\%%h\bin\javac.exe" set javacDir=%%g\java\%%h\bin\)
+"%javacDir%javac" ' $appletClass '.java
+@if errorlevel 1 goto noexit
+start "applet" /min "%javacDir%appletviewer" ' $appletClass '.html
+exit
+:noexit'
+
+close
+
+external subreport '_default directory' run 'autobuild.bat' execute
+
+endreport

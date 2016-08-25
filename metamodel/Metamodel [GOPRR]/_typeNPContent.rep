@@ -1,0 +1,4 @@
+_typeNPContent()
+_typeAttributes() '>' newline
+_supertype()
+_slots()

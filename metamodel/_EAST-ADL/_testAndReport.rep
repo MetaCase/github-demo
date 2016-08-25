@@ -1,0 +1,9 @@
+_testAndReport(@myPropertyType)
+/* Testing and reporting the undefined property */
+do :Type
+{
+	if not $datatypes =~ oid%wildsp then
+		_reportWarnings()
+		'Warning: ' id;2 ' <' type;2 '> has ' @myPropertyType' property defined as ' id;1 ' <' type;1 '>. This ' id ' <' type '> is not defined in anywhere in this hierarchy.' newline			
+	endif
+}

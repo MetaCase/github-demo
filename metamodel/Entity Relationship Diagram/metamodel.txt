@@ -1,0 +1,132 @@
+==========================
+Graph Type
+==========================
+Entity Relationship Diagram
+	Entity Relationship Diagrams are used to specify the data structures of the system, e.g. to model the contents of the data stores in more detail. 
+	
+	The objects in this method are 'entity' and 'attribute'. Entities can be related to each other with 'relationship'.
+	
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Entity
+	Entities are objects about which the system stores information. Examples of entities are 'order', 'customer' and 'worker'. An entity is represented by a solid rectangle with a name inside it. Entity has two properties: name and documentation. An entity name is reserved for entering the identifying name of the entity and documentation for entering additional information about entity.
+	---------------------------------------------
+	Entity name: String
+	Documentation: Text
+ERAttribute
+	Attribute defines properties or characters of entities and relationships. Thus, it can be connected both to entity and relationship. An attribute is symbolized by a solid ellipse with a name of the attribute inside the symbol. Attribute has four properties: attribute name, type of data, constraints and documentation.
+	---------------------------------------------
+	Attribute name: String
+	Type of data: String
+	Constraints: String
+	Documentation: Text
+Note
+	Note is a special object for adding additional text anywhere in the graphs. Note belongs to many languages and has only one property, Documentation.
+	---------------------------------------------
+	Documentation: Text
+Relationship
+	A relationship describes the connections between at least two entities. An example of a relationship is 'belong' which connects entity 'workers' to entity 'departments'. A relationship is represented by a solid diamond with a name inside the symbol. Relationship has name and documentation as properties, as well as cardinality, that specifies the connections between entities and relationships. The cardinality can be selected either from one of defaults (0,1,M) or by entering some other values.
+	---------------------------------------------
+	Relationship name: String
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Attribute of
+	Attribute of is used to model connections between defined attributes and other objects, i.e. entities and relationships.
+	---------------------------------------------
+In relationship
+Supertype/subtype
+	Supertype/subtype relationship describes subcategories (entities) of one entity. Supertype/subtype relationship is represented with a diamond and cross line at the supertype part of the relationship line.
+	---------------------------------------------
+
+==========================
+Role Types
+==========================
+Attribute part
+Entity part
+	Cardinality: String
+Generalization part
+Owner part
+Relationship role
+Specialization
+
+==========================
+Extra Types
+==========================
+State Transition Diagram
+	State Transition Diagram can be used to highlight the time-dependent behaviour of a system. Process in Data Flow Diagram can be exploded to State Transition Diagram, or Class in Object Model can be exploded to State Transition Diagram as well.
+	
+	The major components of the diagram are states and arrows representing state changes.
+	
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+_Structured Analysis and Design
+Person
+	Person is used to describe developers involved in a project (i.e. attached to the project model) and authors of developed models. Person can be characterized with a name, e-mail address, and with a contact address. 
+	---------------------------------------------
+	Name: String
+	E-mail: String
+	Contact address: Text
+From
+Generalization
+
+==========================
+Bindings
+==========================
+Attribute of
+	Attribute part: ERAttribute
+	Owner part: Entity, Relationship
+Attribute of
+	Owner part: Entity, Relationship
+	Attribute part: ERAttribute
+In relationship
+	Entity part: Entity
+	Relationship role: Relationship
+In relationship
+	Relationship role: Relationship
+	Entity part: Entity
+Supertype/subtype
+	Generalization part: Entity
+1..N	Specialization: Entity
+
+==========================
+Constraints
+==========================
+Property "Entity name" in Entity must have unique values
+Property "Relationship name" in Relationship must have unique values
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	Entity
+		State Transition Diagram
+	Relationship
+		State Transition Diagram
+
+==========================
+Generators
+==========================
+Create SQL
+Entity list
+
+==========================
+Sub-Generators
+==========================
+_create entity tables
+_create own attributes
+_create related entity FKs
+_create relationship tables
+

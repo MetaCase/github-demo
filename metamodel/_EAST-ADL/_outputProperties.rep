@@ -1,0 +1,14 @@
+_outputProperties(@tab)
+/* Outputs properties of the element */
+@tab id ' <' type '>' newline
+local 'tab' append '	' close
+do :() {
+	@tab containers ': ' id
+	newline
+	do contents where projectid = $thisProject and (metatype <> 'Text' and metatype <> 'String') {
+		if not $reported =~ oid%wildsp then
+			variable 'reported' append oid ' ' close
+			_outputProperties(@tab)
+		endif
+	}
+}

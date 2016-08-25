@@ -1,0 +1,8 @@
+Report '_Stop'
+/* Produces application stop code */
+'def ' type oid '():' newline
+'	# Application stops here' newline
+'	global exit_flag' newline
+'	exit_flag = True' newline
+'	return (lambda: None, False)' newline
+endreport

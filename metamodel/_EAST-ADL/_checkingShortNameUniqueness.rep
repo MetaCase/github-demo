@@ -1,0 +1,40 @@
+_checkingShortNameUniqueness()
+@shortNames = ' '
+@reported = ' '
+foreach .( * | ^Comment | ^Generic* | ^User* ) 
+{	@this = ''
+	if type = 'EAType' then
+		do decompositions 
+		{	if type =~ '*FunctionType' then
+				local 'this' write :FunctionName; close
+			else
+				if type = 'HardwareComponentType' then
+					do :Type { local 'this' write :Short name; close }
+				else
+					local 'this' write :Short name; close
+				endif
+			endif
+		}
+	else
+		if type = 'Package' or type = 'SystemModel' then
+			do decompositions 
+			{	local 'this' write :Short name; close }
+		else
+			local 'this' write :Short name; close
+		endif
+	endif
+	
+	if @shortNames =~ @this%wildsp; and not @reported =~ @this%wildsp then
+		local 'reported' append @this ' ' close
+		_reportWarnings()
+		'Warning: ' :Short name;1 ' contains several elements with' 
+		if @this then 
+			' the same name ' @this 
+		else 
+			' empty identifier e.g. ' type 
+		endif 
+		newline
+	else
+		local 'shortNames' append @this ' ' close
+	endif
+}

@@ -1,0 +1,14 @@
+Report '_typeproperties'
+/* generator for labels */
+do :Properties; {
+	if :Local name; then 
+		:Local name; 
+	else
+		:Property name;
+	endif
+	': ' :Datatype;
+	if :Object Datatype; then ' (' :Object Datatype; ')' endif;
+	if :Uniqueness; <> '' then ' (unique ' :Uniqueness; ')' endif
+	newline
+}
+endreport

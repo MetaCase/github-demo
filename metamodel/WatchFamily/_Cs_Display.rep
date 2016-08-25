@@ -1,0 +1,12 @@
+Report '_Cs_Display'
+
+variable 'sourceFile' write 'Display' id '.cs' close
+if not $sourceFiles =~ $sourceFile%wildsp then		
+	variable 'sourceFiles' append $sourceFile ' ' close
+
+	filename $srcPath 'Display' id '.cs' encoding 'UTF-8' write
+		subreport '_Cs_Display_file' run 
+	close 
+endif
+
+endreport

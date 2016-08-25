@@ -1,0 +1,22 @@
+Report '_slots'
+do :Properties; {
+	'<slot id="u' _timestamp() '" name="' 
+	if :Local name; then
+		:Local name%xml; 
+	else
+		:Property name%xml;
+	endif
+	'" unique="' if :Uniqueness; = 'globally' then 'true' else 'false' endif '">' newline
+	'<property'
+	_typeAttributes()
+	'>' newline
+	subreport '_dataType' run
+	'</property>' newline
+	'</slot>' newline
+}
+if metatype <> 'Graph' then 
+	if ~Has property [GOPRR]; then
+		subreport '_nonProperties' run
+	endif
+endif
+endreport

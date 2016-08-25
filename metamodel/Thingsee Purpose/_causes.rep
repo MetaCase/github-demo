@@ -1,0 +1,22 @@
+_causes()
+@sep = '' newline
+'              "causes": [' 
+if ~(*Trigger) then 
+	do ~(*Trigger) {
+		do .() {
+			if :Trigger = 'when sense has any value' then
+				_AnyLocationValue()
+			else
+				@sep newline
+				'                {' newline
+				_causeEvent()
+				subreport '_do_' type run;
+				'                }' 
+				@sep = ','
+			endif
+		}
+	}
+	newline
+	'              ' 
+endif
+']' newline

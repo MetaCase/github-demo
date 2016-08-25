@@ -1,0 +1,28 @@
+_state()
+$st_sep newline
+'        {' newline
+'          "stId": ' variable 'state_' oid read ',
+          "name": "' :Name '",' newline
+if :Always active; then
+	'          "isGlobal": true,' newline
+endif
+if not ~From; then
+'          "events": []' newline
+else
+	'          "events": [' 
+	$evid = '0'
+	@ev_sep = ''
+	do ~From>() {
+		@ev_sep newline
+		'            {' newline
+		_events()
+		$evid++%null
+		_causes()
+		'            }' 
+		@ev_sep = ','	
+	}
+	newline
+	'          ]' newline
+endif
+'        }' 
+$st_sep = ','

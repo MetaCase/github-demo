@@ -1,0 +1,8 @@
+_WatchesToGenerate()
+/* Return the Watch models to generate, one per line */
+@sep = ''
+foreach >Watch
+where (:Models selected for generation;1 = '') or (:Models selected for generation;1 =~ id%wild) 
+{	@sep id
+	@sep = newline
+}

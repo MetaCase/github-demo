@@ -1,0 +1,25 @@
+Report '_Operations'
+if :Operations; then
+	'		//  ********* Operations and exceptions *********' newline
+	do :Operations {
+			'		operation = new Operation("' id '");' newline
+			if :Documentation; then do :Documentation { '		// ' id newline } endif
+			'		operation.setIsQuery(' if :Is Query?; then 'true' else 'false' endif; ');' newline
+			do :Parameters {
+				'		   parameter = new Parameter("' id '", new DataType("' :Type '"));' newline
+				'		   parameter.setDirection(DirectionType.' :Direction ');' newline
+				do :Tags {'		   ' :Java instance name '.addTaggedModelElement(parameter);' newline}
+				'		   operation.addParameter(parameter)' newline
+			}
+			do :Constraints {
+				'		operation.addConstraint((Constraint)i' 
+				if :Composite?;1; then 'composite' endif;
+				Type; '.lookupElementExtended("' id '"));' newline
+			}
+			do :Tags {'		' :Java instance name '.addTaggedModelElement(operation);' newline}
+			do :Raised exceptions {'		operation.addRaisableException(' :Exception name; ');' newline}
+			'		i' if :Composite?;1; then 'composite' endif
+			type;1; '_.addOperation(operation);' newline newline
+	}
+endif
+endreport

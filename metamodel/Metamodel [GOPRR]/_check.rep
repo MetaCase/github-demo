@@ -1,0 +1,9 @@
+_check()
+/* check if there are types created with the same name but without namespace */
+
+if :Namespace = '' then
+	_translators()
+	do :Properties { _check_unique_type_name() }
+	_check_objects()
+	_check_bindings()
+endif

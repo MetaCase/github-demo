@@ -1,0 +1,8 @@
+Report '!Check'
+'Model checking:' newline
+$warnings_found=$total='0'
+subreport '_model check' run
+subreport '_check back flows' run
+variable 'total' write math $warnings_found evaluate close
+if $total > '0' then $total ' warnings found' else 'No warnings' endif
+endreport

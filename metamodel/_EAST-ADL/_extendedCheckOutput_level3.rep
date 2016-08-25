@@ -1,0 +1,9 @@
+_extendedCheckOutput_level3()
+/* Report generating the graph name and type to the checking output */
+if $extendedCheck = 'T' then
+	if type;3 <> '' then
+		'in the model ' id;3 ' <' type;3 '>'
+	else
+		'in the model ' id;1 ' <' type;1 '>'
+	endif	
+endif

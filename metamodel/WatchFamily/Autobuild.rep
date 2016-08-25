@@ -1,0 +1,30 @@
+Report 'Autobuild'
+
+subreport '_Watch_translators' run
+
+/*Set various java paths */
+subreport '__Paths' run
+
+subreport '_read INI file' run
+
+/* initialize the variable to hold the generated files */
+$sourceFiles=' '
+$XAMLFiles='WatchCanvas
+'
+
+/* Create directories etc. */
+ subreport '_prebuild for ' :Generation target platform; run
+
+/* Create static shared components */
+subreport '_Language Framework' run
+
+/* Create code for Watch models */
+subreport '_Models' run
+
+/* Create compilation script, HTML files etc. */
+subreport '_create make for ' :Generation target platform; run 
+
+/* Compile and execute */
+subreport '_compile and execute for ' :Generation target platform; run
+
+endreport

@@ -1,0 +1,12 @@
+Report '_reverse role order'
+'<binding>
+<relationship href="#' 
+do >Binding [GOPRR] {	do :Relationship; { subreport '_type_name_oid' run }}
+'"></relationship>' newline
+subreport '_binding role' run
+do >Binding [GOPRR]~Intermediate role [GOPRR]
+orderby type, :Order, id, oid
+{ subreport '_binding role' run}
+do >Binding [GOPRR]~First role [GOPRR] {subreport '_binding role' run}
+'</binding>' newline
+endreport

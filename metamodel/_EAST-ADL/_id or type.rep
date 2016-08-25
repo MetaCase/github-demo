@@ -1,0 +1,4 @@
+Report '_id or type'
+/* Returns the id, if its not given returns the type */
+if id then id else '<' type '>' endif
+endreport

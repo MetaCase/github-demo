@@ -1,0 +1,69 @@
+_checkRelationships()
+foreach .(System end | Vessel | Sensor) 
+{	if not >() then
+		if not type = 'Comment' then
+			if id then id ' ' endif
+			'<' type '>'
+			' has no relationships'
+			$errors++%null
+			newline
+		endif
+	endif
+}
+foreach .Sensor; where :Measured variable; <> 'Flow';
+{ 	$connections = '0'
+	do ~() { 
+		$connections++%null
+	}
+	if $connections > '1' num then
+		id; ' <Sensor> has ' $connections ' pipe connections. Only one is allowed' newline
+		$errors++%null
+	endif
+}
+foreach .Sensor; where :Measured variable; = 'Flow';
+{	$connections = '0'
+	do ~() { 
+		$connections++%null
+	}
+	if $connections < '2' num then
+		id; ' <Sensor> has only ' $connections ' pipe connections. Two is needed' newline
+	 	$errors++%null
+	endif
+}
+foreach .Valve {
+	$connections = '0'
+	do ~() { 
+		$connections++%null
+	}
+	if :Number of valve ends; = 'Three' then 
+			$valveEnds = '3'
+	else
+			$valveEnds = '2'
+	endif
+	if $valveEnds < $connections; num then
+			id; ' <Valve> has ' $connections ' pipe connections, but only ' :Number of valve ends ' is allowed. Change valve or remove pipe connections.' newline	
+			$errors++%null
+	endif
+}
+
+foreach .Pump {
+	if not ~PipeIn; then 
+		id; ' <' :Pump type;%firstUpper; '> does not have incoming pipe' newline
+		$errors++%null
+	endif
+	if not ~PipeOut; then 
+		id; ' <' :Pump type;%firstUpper; '> does not have outgoing pipe' newline
+		$errors++%null
+	endif
+}
+
+foreach .(Valve | Radiator | Boiler | Burner | Joint )
+{	$connections = '0'
+	do ~() { 
+		$connections++%null
+	}
+	if $connections < '2' num then
+		id; ' <'Type'> has only ' $connections ' pipe connections. At least two is needed' newline
+		$errors++%null
+	endif
+}

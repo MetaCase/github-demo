@@ -1,0 +1,38 @@
+_events()
+'              "evId": ' $evid ',
+              "name": "' id '",
+'
+'              "actions": {' newline
+
+do ~To.State {
+	if oid <> oid;2 then
+		'                "engine": {
+                  "gotoStId": '
+						variable 'state_' oid read newline
+		'                },' newline
+	endif
+}
+_OtherPurpose()
+
+'                "cloud": {' 
+if not ~Action.Action; then
+	newline
+	'                  "sendEvent": false,'
+
+	@falseNeeded = 'F'
+	do ~(*Trigger).(Timer | Acceleration | Humidity | Pressure | Luminance | Charger | Battery | Location ) {@falseNeeded = 'T'}
+	if @falseNeeded = 'T' then
+		newline
+		'                  "sendLog": false,' 
+	endif
+	newline
+	'                  "sendPush": false' newline
+	'                }' 
+else 
+	do ~Action.Action {
+		_cloud()
+	}
+endif
+_display()
+newline
+'              },'

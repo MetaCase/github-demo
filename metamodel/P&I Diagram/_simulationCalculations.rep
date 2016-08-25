@@ -1,0 +1,38 @@
+_simulationCalculations()
+/* produces fixed simulation calculation as in reference app */
+'
+END_FUNCTION_BLOCK
+
+ACTION	simulationCalculations:
+IF MDL_MV3.bIsOpen THEN
+	(* Simulate flow of water by reducing the boiler temperature *)
+	MDL_B1_TS2.lrTemperature := MDL_B1_TS2.lrTemperature - 0.005;
+	IF MDL_B1_TS2.lrTemperature <= 1.0 THEN
+		MDL_B1_TS2.lrTemperature := 1.0;
+	END_IF
+END_IF
+
+IF MDL_CV1.bThreeValveLeft AND MDL_HU1_B1.bIsOn THEN
+	(* Simulate heating up the boiler water *)
+	MDL_B1_TS2.lrTemperature := MDL_B1_TS2.lrTemperature + 0.005;
+	IF MDL_B1_TS2.lrTemperature >= 99.0 THEN
+		MDL_B1_TS2.lrTemperature := 99.0;
+	END_IF
+END_IF
+
+IF MDL_CV1.bThreeValveRight AND MDL_HU1_B1.bIsOn THEN
+	(* Simulate heating up the radiator *)
+	MDL_TH1.lrRoomTemperature := MDL_TH1.lrRoomTemperature + 0.005;
+	IF MDL_TH1.lrRoomTemperature >= 99.0 THEN
+		MDL_TH1.lrRoomTemperature := 99.0;
+	END_IF
+ELSE
+	(* Simulate cooling down the radiator *)
+	MDL_TH1.lrRoomTemperature := MDL_TH1.lrRoomTemperature - 0.0005;
+	IF MDL_TH1.lrRoomTemperature <= 1.0 THEN
+		MDL_TH1.lrRoomTemperature := 1.0;
+	END_IF
+END_IF
+
+END_ACTION
+'

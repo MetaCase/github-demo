@@ -1,0 +1,31 @@
+__sym_LED()
+/* Form the value as the sum of the input bits, each found by traversing the roles, recursing at the 'out' role. If no inputs are attached, just show the property value */
+@value = '0'
+do ~() 
+{	@in=''
+	do #() where :Direction = 'in' { @in='T' @mult=:Port name;}
+	if @in then 
+		local 'value' append
+			' + (('
+			do ~()
+			{	subreport '_out_' do .() { type } run
+			}
+			')*(2^' @mult '))'
+		close
+	endif
+}
+
+local 'value' write
+	if @value = '0' then 
+		/* If no inputs, just show the property value */
+		:Value
+	else
+		math @value evaluate
+	endif
+close
+
+/* Prefix with 0 as necessary to get two digits */
+if not @value =~ '##' then '0' endif
+if @value = '' then '0' endif
+@value
+		

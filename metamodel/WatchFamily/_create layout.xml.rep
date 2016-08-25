@@ -1,0 +1,42 @@
+Report '_create layout.xml'
+filename $projPath 'res' sep 'layout' sep 'main.xml' encoding 'UTF-8' write
+'<?xml version="1.0" encoding="UTF-8"?>
+<ScrollView
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:orientation="vertical"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+		
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="vertical" >
+		
+			<TextView
+				android:layout_height="wrap_content" 
+				android:layout_width="wrap_content" 
+				android:gravity="center_horizontal" 
+				android:text="@string/app_name" 
+				android:textSize="48dip" 
+				android:layout_gravity="center" 
+				android:textAppearance="?android:attr/textAppearanceLarge" 
+				android:id="@+id/textView1" > 
+					
+			</TextView>				
+'
+do _WatchesToGenerate()
+{
+'			<Button 
+				android:layout_height="wrap_content" 
+				android:layout_width="match_parent" 
+				android:text="@string/button' :Model name; '" 
+				android:id="@+id/button' :Model name; '" 
+				android:layout_margin="5dip"> 
+			
+			</Button>
+'
+}
+'	</LinearLayout>
+</ScrollView>'
+close
+endreport

@@ -1,0 +1,9 @@
+Report '_next query element'
+/* reports next flow element for single and multi query */
+do ~From>Flow { 
+	subreport '_Relationship code' run
+	do ~To.() {
+		'		return (' subreport '_Internal name' run ', ' subreport '_non-stack elements' run ')' newline
+	}
+}
+endreport

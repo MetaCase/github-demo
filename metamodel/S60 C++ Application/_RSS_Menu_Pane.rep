@@ -1,0 +1,21 @@
+Report '_RSS_Menu_Pane'
+'//----------------------------------------------------
+//   
+//     ' subreport '_rli' run newline
+do ~Menu 		{ '//     MenuPane for ' do ~Menu Bar.View { id } ' view' newline }
+do ~Submenu	{ '//     Submenu of ' id ' item' newline }
+'//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE ' subreport '_rli' run '
+    {
+    items=
+        {'
+	dowhile :Menu Items; 
+	{	subreport '_RSS_Menu_Item' run ',' }
+'
+        };
+    }
+
+'
+endreport

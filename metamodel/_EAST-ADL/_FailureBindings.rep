@@ -1,0 +1,19 @@
+_FailureBindings()
+do $modes {
+	foreach .(Out* | ClientPort) {
+'		<binding id="_b' id;1%xml oid'">
+			<relationship type="Relationship_InstanceRef_sysadmin_3510315611">
+			</relationship>
+			<connection id="1">
+				<role type="Role_FaultFailure_sysadmin_3509613865"></role>
+				<object href="#_' id;1 '"></object>
+			</connection>
+			<connection id="2">
+				<role type="Role_ErrorModelPort_sysadmin_3509614493"></role>
+				<object href="#_pt' oid;2 '"></object>
+				<port href="#_' oid '"></port>
+			</connection>
+		</binding>
+'
+	}
+}

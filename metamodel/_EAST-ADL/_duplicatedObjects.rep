@@ -1,0 +1,10 @@
+_duplicatedObjects()
+/* Finding the duplicated objects, where the short names are identical */
+@prev = ' '
+foreach .(^Comment | ^Operator) orderby :Short name;
+{	if :Short name; = @prev then 
+		:Short name; newline
+	else
+		@prev = :Short name;
+	endif
+}

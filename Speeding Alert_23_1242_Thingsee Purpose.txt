@@ -1,0 +1,56 @@
+Graph_Thingsee_app_sysadmin_3617045505
+Speeding Alert
+23_1242
+Thingsee Purpose
+Graph: Speeding Alert <Thingsee Purpose> 23_1242
+	Name: Speeding Alert
+	Description: Monitors if kid is driving too fast with the car.
+Object: cloud, SMS555-5555(The kid speeding!) <Action> 23_1299
+	Send saved logs to cloud: F
+	Send event to: cloud
+	Send event to cloud URL: 
+	Send SMS message: 555-5555(The kid speeding!)
+	Object: 555-5555(The kid speeding!) <Send SMS message> 23_1317
+		To (phone number): 555-5555
+		Message: The kid speeding!
+Object: Thingsee Purpose is based on the sensors and services of Internet of Things device Thingsee.  The language allows to use various sensors (Accelerator, Timer, Geofence, Location, Speed, Temperature, Humidity, Pressure, Luminance) and interact with the world via services (cloud, mobile, sms). Language provides also capabilities to follow the status of the device like its batter level and charging status.  The language guides creating applications as well as checks if they try to monitor the device in unsafe situations (too warm, too big G forces).
+
+Generator produces the jsn code that can be uploaded to the IoT device and executed there. <Comment> 23_1808
+	Description: Thingsee Purpose is based on the sensors and services of Internet of Things device Thingsee.  The language allows to use various sensors (Accelerator, Timer, Geofence, Location, Speed, Temperature, Humidity, Pressure, Luminance) and interact with the world via services (cloud, mobile, sms). Language provides also capabilities to follow the status of the device like its batter level and charging status.  The language guides creating applications as well as checks if they try to monitor the device in unsafe situations (too warm, too big G forces).
+
+Generator produces the jsn code that can be uploaded to the IoT device and executed there.
+Object: Application monitors the speed of the vehicle and sends SMS if driving in high speed. <Comment> 23_1828
+	Description: Application monitors the speed of the vehicle and sends SMS if driving in high speed.
+Object: >120  km/h <Speed> 23_1289
+	Trigger if over (km/h): 120
+	Trigger if under (km/h): 
+Object: <117 km/h <Speed> 23_1327
+	Trigger if over (km/h): 
+	Trigger if under (km/h): 117
+Object: Below limit <State> 23_1253
+	Name: Below limit
+	Start state: T
+	Always active: F
+	Description: 
+Object: Above limit <State> 23_1271
+	Name: Above limit
+	Start state: F
+	Always active: F
+	Description: 
+Relationship: Speed check <Transition> 23_2243
+	Name: Speed check
+  Role: Action <Action>  Object: <Action> 23_1299
+  Role: From <From>  Object: <State> 23_1253
+  Role: F <PollTrigger>  Object: <Speed> 23_1289
+	Log values to device: F
+	Poll values after every: 15
+	Poll unit: seconds
+  Role: To <To>  Object: <State> 23_1271
+Relationship: Speed check <Transition> 23_2267
+	Name: Speed check
+  Role: From <From>  Object: <State> 23_1271
+  Role: F <PollTrigger>  Object: <Speed> 23_1327
+	Log values to device: F
+	Poll values after every: 10
+	Poll unit: seconds
+  Role: To <To>  Object: <State> 23_1253

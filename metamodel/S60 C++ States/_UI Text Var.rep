@@ -1,0 +1,7 @@
+Report '_UI Text Var'
+if :UI Text Var; then
+	:UI Text Var;
+else
+	to '%var' translate :UI Text; endto
+endif
+endreport

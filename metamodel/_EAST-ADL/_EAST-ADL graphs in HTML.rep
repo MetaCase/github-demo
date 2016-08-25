@@ -1,0 +1,14 @@
+Report '_EAST-ADL graphs in HTML'
+if not $Graphs =~ oid%wildsp then
+	variable 'Graphs' append oid ' ' close
+	filename subreport '_default directory' run subreport '_id and oid' run '.html' write
+		'<html>'
+		subreport '__stylesheet in HTML' run
+		'<body>'
+		'<a href="' $starting_graph '.html">Root package</a><br />'		
+		subreport '_EAST-ADL Dictionary in HTML' run
+		'<a href="' $starting_graph '.html">Root package</a><br />'				
+		'</body></html>'
+	close
+endif
+endreport

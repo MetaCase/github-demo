@@ -1,0 +1,50 @@
+_out_Dynamic\ Port()
+/* we have to find our parent object in its graph, and continue there. Since our current graph may be the decomposition graph of many parent objects in many graphs, we need to get the correct context from the stack. Since the stack contains both decompositions (which we are looking for) and recursions through other Circuits (which we don't want), we need to find the previous time where we entered this graph as a decomposition of an object in a parent graph */
+
+do .() { @dynamicPortOid = oid }
+
+@thisGraphOid = ''
+@stackIx = '0'
+@state = 'findThisGraph'
+do stack 
+{	@stackIx = @++stackIx
+	if @state = 'done' then
+		/* do nothing anymore */
+	else if @state = 'findThisGraph' then
+		if metatype = 'Graph' then 
+			@thisGraphOid = oid 
+			@lastThisGraphIx = @stackIx
+			@state = 'findCircuit'
+		endif
+	else if @state = 'findCircuit' then
+		if type = 'Circuit [Dynamic Ports]' then
+			@parentCircuitOid = oid
+			@state = 'findParentGraph'
+		else /* Only accept Circuit right after this graph, i.e. parent obj */
+			@state = 'findThisGraphAgain'
+		endif
+	else if @state = 'findThisGraphAgain' then
+		if oid = @thisGraphOid then
+			@lastThisGraphIx = @stackIx
+			@state = 'findCircuit'
+		endif
+	else if @state = 'findParentGraph' then
+		if metatype = 'Graph' then
+			@state = 'done'
+			/* Continue from here in parent graph */
+			foreach .Circuit [Dynamic Ports]; where oid = @parentCircuitOid
+			{	do ~()
+				{	@foundPort = ''
+					do #() where @dynamicPortOid = oid
+					{	@foundPort = 'T'
+					}
+					if @foundPort then
+						do ~()
+						{	subreport '_out_' do .() { type } run 
+						}
+					endif
+				}
+			}
+		endif
+	endif endif endif endif endif /* one per state */
+}

@@ -1,0 +1,27 @@
+Report '_next choiced element'
+/* Reports next choiced element for lists and popups */
+do ~From choice; {
+	/* If there is specified value in Choice property */
+	if :Choice; <>'' then
+	'	elif choices' oid;1 '[index] == u"' :Choice; '":' newline
+	do >Flow {
+		subreport '_Relationship code' run
+		do ~To.() {
+			'		return (' subreport '_Internal name' run ', ' subreport '_non-stack elements' run ')' newline
+		}
+	}
+	endif
+}
+/* To get the path where the choise value is empty (as a last item (else) in the if structure) */
+do ~From choice; {
+	/* If Choise property is not specified */
+	if :Choice; ='' then
+		do >Flow {
+			'	else:' newline
+			subreport '_Relationship code' run
+			do ~To.() {
+				'		return (' subreport '_Internal name' run ', ' subreport '_non-stack elements' run ')' newline
+		}}
+	endif
+}
+endreport

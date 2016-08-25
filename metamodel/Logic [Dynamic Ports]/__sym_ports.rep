@@ -1,0 +1,8 @@
+__sym_ports(@direction)
+do decompositions
+{	foreach .Dynamic Port
+	where :Direction = @direction
+	orderby x num
+	{	id newline
+	}
+}

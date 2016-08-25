@@ -1,0 +1,9 @@
+Report '_compile and execute for Java: API'
+
+if $IDE = 'eclipse' then
+	external '"' $projPath 'makeWatch.bat"' executeBlocking
+else 
+	external '"' $projPath 'makeWatch.bat"' execute
+endif
+
+endreport

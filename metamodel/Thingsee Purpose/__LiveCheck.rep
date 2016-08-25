@@ -1,0 +1,38 @@
+__LiveCheck()
+
+/* one start state only */
+_translators()
+@stno = '0'
+
+foreach .State; where :Start state; = 'T' {
+	@stno++%null
+}
+
+if @stno <> '1' then
+	'Warning: one state must be a start state' newline
+endif
+
+foreach .State; where not ~() {
+	'Warning: State ' id ' is not connected to any other state' newline
+}
+
+/* only one trigger of a kind */
+foreach >Transition {
+	@types = ' '
+	do ~(*Trigger).() {
+		if not @types =~ type%wildsp then
+			local 'types' append type ' ' close
+		else
+			if type <> 'Acceleration' and type <> 'Location' then
+				'Transition ' id;1 ' has already another ' type'. Only one allowed.' newline
+			endif
+		endif
+	}
+}
+
+/* disconnected element */
+foreach .(^State | ^Comment) {
+	if not ~() then
+		id ' ' type ' is not connected to any transition.' newline
+	endif
+}

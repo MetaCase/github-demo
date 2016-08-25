@@ -1,0 +1,77 @@
+Report '_class'
+$cname=$in=$out=$comment=$cabstract=''
+
+/* Store the current Java file contents in a variable */
+variable 'file' write
+	filename $filename read
+close
+
+/* Goes through the current Java file line-by-line */
+do $file%removeCComments
+{
+	if $cname='' then
+		if id =/ '\s*((public|protected|private|abstract|static|final|strictfp)\s+)*class .*' then 
+			$token=''
+			do id%spaces 
+			{	if $token='' and id='class' then
+					$token++%null
+				else
+					if $token='1' then
+						$token++%null
+						$cname = id%strip
+						subreport '_c_start' run
+					else
+						if $token='' then
+							if id='abstract' then $cabstract='T' endif
+						else 
+							if id =~ '*{*' then $in++%null endif
+						endif
+					endif
+				endif
+			}
+		endif
+	else
+		if $out='' then
+			if $in='' then
+				if id =~ '*{*' then
+					$in++%null
+				endif
+			else
+				if (id =~ '*}*' and not id =~ '*=*}*') or (id =~ '*(*' and not id =~ '*=*(*') then
+					$out++%null
+					subreport '_c_end' run
+				else
+					$token=$evisibility=$escope=$eaccess=''
+					do id%spacesAndEquals
+					{	if id =~ '//*' then $comment++%null endif
+						if (id and not $comment) then
+							if id=/ '(public|protected|private|static|final|transient|volatile)' then
+								if id=/'(public|private|protected)' then
+									$evisibility=id
+								endif
+								if id='static' then $escope='class' endif
+								if id='final' then $eaccess='readonly' endif
+							else
+								$token++%null
+								/* Sets the attribute type as type variable */
+								if $token='1' then
+									$type = id
+								endif
+								/* Sets the attribute name as element variable */
+								if $token='2' then
+									$element = id%strip
+									subreport '_c_element' run
+								endif
+							endif
+						endif
+					}
+					$comment=''
+				endif
+			endif
+		endif
+	endif
+}
+if $in<>'' and $out='' then 
+	subreport '_c_end' run
+endif
+endreport

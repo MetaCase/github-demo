@@ -1,0 +1,94 @@
+==========================
+Graph Type
+==========================
+VoiceOutput
+	Name: String
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Start
+Stop
+SystemCall
+	Commands: OrderedCollection (Command)
+Text
+	Text fragments: OrderedCollection (TextFragment)
+If
+	Test: String
+	Parameter: String
+	Not: Boolean
+GotoPoint
+Note
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Flow
+True
+False
+
+==========================
+Role Types
+==========================
+From
+To
+
+==========================
+Extra Types
+==========================
+Command
+	Command: String
+	Parameter: String
+TextFragment
+	Label: String
+	Start address: String
+	Length: String
+
+==========================
+Bindings
+==========================
+False
+	From: If
+	To: GotoPoint, If, Stop, SystemCall, Text
+Flow
+1	From: GotoPoint, Start, SystemCall, Text
+1	To: GotoPoint, If, Stop, SystemCall, Text
+True
+	From: If
+	To: GotoPoint
+
+==========================
+Constraints
+==========================
+GotoPoint may be in at most 1 From role
+If may be in at most 1 To role
+If may be in at most 1 True relationship
+If may be in at most 2 From roles
+Start may be in at most 1 From role
+SystemCall may be in at most 1 From role
+SystemCall may be in at most 1 To role
+Text may be in at most 1 From role
+Text may be in at most 1 To role
+Start may occur at most 1 time
+
+==========================
+Subgraphs
+==========================
+
+==========================
+Generators
+==========================
+VoiceOutput generator
+
+==========================
+Sub-Generators
+==========================
+_doGotoPoint
+_doIf
+_doStop
+_doSystemCall
+_doText
+_followFlow
+

@@ -1,0 +1,28 @@
+Graph_Turtle_sysadmin_3526813991
+KTurtle curly
+21_183
+Turtle
+Graph: KTurtle curly <Turtle> 21_183
+	Name: KTurtle curly
+	Format: 
+	Animation: 20
+	Object: 20 <Animation> 21_356
+		Milliseconds Per Frame: 20
+		Display Every Nth Frame: 
+	Documentation: 
+Object: curl <For> 21_310
+	Variable: curl
+	Start: 1
+	End: 4
+Object: x <For> 21_812
+	Variable: x
+	Start: 1
+	End: 100
+Object: 12 <Forward> 21_625
+	Pen down?: T
+	Distance: 12
+Object: 100-x <Right> 21_593
+	Degrees: 100-x
+Relationship: Sequence <Sequence> 21_739
+  Role: From <From>  Object: <Forward> 21_625
+  Role: To <To>  Object: <Right> 21_593

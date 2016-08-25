@@ -1,0 +1,8 @@
+Report '_number of relationships'
+variable '_number_of_relatioships' write '0' close
+do ~From 
+{
+	variable '_number_of_relatioships' append '+1' close
+}
+math $_number_of_relatioships evaluate
+endreport

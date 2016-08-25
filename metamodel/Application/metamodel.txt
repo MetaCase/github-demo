@@ -1,0 +1,323 @@
+==========================
+Graph Type
+==========================
+Application
+	Describes a single view application.
+	---------------------------------------------
+	Application name: String
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Start
+	Initiates the application.
+	---------------------------------------------
+Stop
+	Stops the application.
+	---------------------------------------------
+Form
+	A dynamically configurable, editable multi-field dialog. Each field is defines by label, type and initial value if form field, or by label and a collection of values if combo field. Form can be configured by flags of mode of Edit (form remains in edit mode all through its execution) or View (form can't be edited at all). Own flags are given for disabling the automatic support for allowing the user to edit the labels of form's fields; and or specifying a double spaced layout (one field takes two lines as the label and the value field are on different lines). Save validation is used to specify the function for validating saving of form fields.
+	---------------------------------------------
+	Fields: OrderedCollection (_field)
+	Internal name (optional): String
+	Form mode: String
+	Edit labels?: Boolean
+	Form field double spacing?: Boolean
+	Return variable (optional): String
+	Save validation: Text
+Text_editor
+	A text editor UI control.
+	---------------------------------------------
+	Text editor title: String
+	Internal name (optional): String
+	Return variable (optional): String
+	Initial text: Text
+	Editing code: Text
+Listbox
+	Listbox shows a list of strings or a list of tuples of strings.
+	---------------------------------------------
+	Listbox name: String
+	Internal name (optional): String
+	Return variable (optional): String
+	Content creation function: Function
+	Content creation functions return variable (optional): String
+List
+	A dialog that allows the user to select a list item and return the index of the chosen item, or None if the selection is cancelled by the user. List is a list of unicode strings.
+	---------------------------------------------
+	List: OrderedCollection (String)
+	Internal name (optional): String
+	Return variable (optional): String
+	Search field enabled: Boolean
+Multi_query
+	A two-field text (unicode) input dialog. Both queries show prompt label and have return value.
+	---------------------------------------------
+	Prompt1: String
+	Prompt2: String
+	Internal name (optional): String
+	Return variable1: String
+	Return variable2: String
+Note
+	Displays a note dialog of chosen type with text (unicode), code result or function result. Type may be one of the following strings: 'error', 'info', 'conf'.
+	---------------------------------------------
+	Text or code: Text
+	Treat as code: Boolean
+	Internal name (optional): String
+	Note type: String
+	Function used: Function
+Popup_menu
+	A popup menu -style dialog. list representing the menu contents may be a list of unicode strings or list of unicode string pairs (tuples). The resulting dialog list is then a single- or double-style list. On cancellation, None is returned.
+	---------------------------------------------
+	Label: String
+	Internal name (optional): String
+	List: OrderedCollection (String)
+	Return variable (optional): String
+Query
+	A query with a single-field dialog. The prompt is set to label, and the type of the query is defined by type. It can be any of the following strings: 'text', 'code', 'number', 'date', 'time', 'query'. The type of the optional initial_value parameter and the returned input depend on the value of type, it is unicode, unicode, numeric, Time, Time, or True/None, correspondingly. All queries return None if the user cancels the dialog.
+	---------------------------------------------
+	Prompt: String
+	Internal name (optional): String
+	Query type: String
+	Initial value: String
+	Return variable (optional): String
+Condition
+	Condition variable: String
+	Condition: Text
+Open
+	Shows the file filename (unicode) in its handler application if one has been registered for the particular MIME type.
+	---------------------------------------------
+	File name: String
+Open_as_standalone
+	File name: String
+SendSMS
+	SMS sending: a given string starting with a keyword, followed by message elements, is sent to a recipient  number. If complex data types (e.g. Form) is used, that should be defined as used variable.
+	---------------------------------------------
+	Message keyword: String
+	Internal name (optional): String
+	Message elements: OrderedCollection (_SMS element)
+	Recipient: String
+Start_exe
+	Application: String
+		List of predefined S60 applications
+		---------------------------------------------
+	Application to be launched (with path): String
+Comment
+	Allows to enter free text to model elements and to show model checking data.
+	---------------------------------------------
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Flow
+	Describes the flow between UI elements. Can include own code or refer to a function defined elsewhere. Function parameters are then added to the "Text" or code property.
+	---------------------------------------------
+	Code: Text
+	Function used: Function
+Back
+	Describes abnormal back operations in cases where normal default back (returning the calling flow to the sender) should be different.
+	---------------------------------------------
+	Code: Text
+	Function used: Function
+Condition
+
+==========================
+Role Types
+==========================
+Back from
+	Source of abnormal back.
+	---------------------------------------------
+Back to
+	Target of abnormal back (Cancel, Exit)
+	---------------------------------------------
+Condition from
+Condition to
+	Condition rule: String
+From
+	Source of next element Flow relationship.
+	---------------------------------------------
+From choice
+	Source of next element based on choice made in a List or Popup. Choice property should include the same value as the List or Popup value.
+	---------------------------------------------
+	Choice: String
+Menu
+	Shows the menu item and related callback adding a new menu item to the options menu and to activate a new function. Menu item specifies the menu text visible to the user.
+	---------------------------------------------
+	Menu item: String
+Menu to
+Selection OK
+To
+	Target of next element relationship flow.
+	---------------------------------------------
+
+==========================
+Extra Types
+==========================
+Combo_field
+	Label: String
+	Form field type: String
+	Initial value: String
+	Values: OrderedCollection (String)
+Form_field
+	Label: String
+	Form field type: String
+	Initial value: String
+Function
+	Function describes a reusable unit (definition) that is characterised by its name, parameters, body and documentation.
+	---------------------------------------------
+	Function name: String
+	Parameters: String
+	Function body: Text
+	Documentation: Text
+		Documentation allows to give freeform element description text.
+		---------------------------------------------
+Message element
+	Name: String
+Optional delimiter
+	Name: String
+	Delimiter character: String
+_field
+	Label: String
+	Form field type: String
+	Initial value: String
+_SMS element
+	Name: String
+Left softkey
+	Name of the softkey: String
+Right softkey
+	Name of the softkey: String
+Selection
+	Name of the softkey: String
+
+==========================
+Bindings
+==========================
+Back
+	Back from: List, Multi_query, Popup_menu, Query
+	Back to #(Right softkey): Form, Listbox, Text_editor
+Back
+	Back from: List, Multi_query, Popup_menu, Query
+	Back to: List, Multi_query, Note, Open, Popup_menu, Query, SendSMS, Stop
+Condition
+	Condition from: Condition
+1..N	Condition to: Condition, List, Multi_query, Note, Open, Open_as_standalone, Popup_menu, Query, SendSMS, Start_exe, Stop
+Condition
+	Condition from: Condition
+1..N	Condition to #(Right softkey): Form, Listbox, Text_editor
+Flow
+	From #(Right softkey): Form, Listbox, Text_editor
+	To: Condition, List, Multi_query, Note, Open, Open_as_standalone, Popup_menu, Query, SendSMS, Start_exe, Stop
+Flow
+	From #(Right softkey): Form, Listbox, Text_editor
+	To #(Right softkey): Form, Listbox, Text_editor
+Flow
+	From: Multi_query, Note, Open, Open_as_standalone, Query, SendSMS, Start, Start_exe
+	To: Condition, List, Multi_query, Note, Open, Open_as_standalone, Popup_menu, Query, SendSMS, Start_exe, Stop
+Flow
+	From: Multi_query, Note, Open, Open_as_standalone, Query, SendSMS, Start, Start_exe
+	To #(Right softkey): Form, Listbox, Text_editor
+Flow
+	From choice: List, Popup_menu
+	To: Condition, List, Multi_query, Note, Open, Open_as_standalone, Popup_menu, Query, SendSMS, Start_exe, Stop
+Flow
+	From choice: List, Popup_menu
+	To #(Right softkey): Form, Listbox, Text_editor
+Flow
+	Menu #(Left softkey): Form, Listbox, Text_editor
+	Menu to #(Right softkey): Form, Listbox, Text_editor
+Flow
+	Menu #(Left softkey): Form, Listbox, Text_editor
+	Menu to: Multi_query, Note, Open, Open_as_standalone, Query, SendSMS, Start_exe, Stop
+Flow
+	Selection OK #(Selection): Listbox
+	To #(Right softkey): Form, Listbox, Text_editor
+Flow
+	Selection OK #(Selection): Listbox
+	To: List, Multi_query, Note, Open, Open_as_standalone, Popup_menu, Query, SendSMS, Start_exe, Stop
+
+==========================
+Constraints
+==========================
+Form may be in at most 1 From role
+List may be in at most 1 Back from role
+Listbox may be in at most 1 From role
+Multi_query may be in at most 1 Back from role
+Multi_query may be in at most 1 From role
+Note may be in at most 1 From role
+Open may be in at most 1 From role
+Open_as_standalone may be in at most 1 From role
+Popup_menu may be in at most 1 Back from role
+Query may be in at most 1 Back from role
+Query may be in at most 1 From role
+SendSMS may be in at most 1 From role
+Start may be in at most 1 From role
+Text_editor may be in at most 1 From role
+Start may occur at most 1 time
+Property "Internal name (optional)" in Form must have unique values
+Property "Internal name (optional)" in List must have unique values
+Property "Internal name (optional)" in Listbox must have unique values
+Property "Internal name (optional)" in Multi_query must have unique values
+Property "Internal name (optional)" in Note must have unique values
+Property "Internal name (optional)" in Popup_menu must have unique values
+Property "Internal name (optional)" in Query must have unique values
+Property "Internal name (optional)" in SendSMS must have unique values
+Property "Internal name (optional)" in Text_editor must have unique values
+
+==========================
+Subgraphs
+==========================
+
+==========================
+Generators
+==========================
+!Build
+!Check
+!Code
+!Doc
+Autobuild
+Python script
+
+==========================
+Sub-Generators
+==========================
+_Back
+_Back code
+_check back flows
+_Condition
+_Form
+_Form field validation functions
+_Form fields
+_Form flags
+_Function
+_function library
+_Function with indent
+_Generate Python file
+_global variables
+_imported modules
+_Internal name
+_left softkey menu functions
+_left softkey menus
+_List
+_Listbox
+_listbox selection
+_local_exit_handler
+_model check
+_Multi_query
+_next choiced element
+_next condition element
+_next element
+_next query element
+_non-stack elements
+_Note
+_Open
+_Open_as_standalone
+_Popup_menu
+_Query
+_Relationship code
+_Return variable name
+_SendSMS
+_stack_pop
+_Start_exe
+_Stop
+_Text_editor
+

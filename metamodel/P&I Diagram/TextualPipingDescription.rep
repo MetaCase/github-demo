@@ -1,0 +1,17 @@
+TextualPipingDescription()
+foreach >Pipe
+{	
+	'Pipe with diameter ':Diameter' and '
+	if :Length; then :Length; else 'undefined'; endif
+	' length with ' 
+	if :Cover = 'none' then 'no' else :Cover; endif
+	' cover is connected to: ' newline
+	do ~().() {
+		'	'
+			do :() {
+				containers ' ' id ' '
+			}
+		newline
+	}
+	newline
+}

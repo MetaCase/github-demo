@@ -1,0 +1,21 @@
+Report '_EntryHTMLforeignTables'
+/* Tables in the form for each field pointing to multiple foreign keys */
+
+do ~()~(Association Role | Part); 
+where :Multiplicity =/ '.*\*' and :Navigable?
+{  do .()
+	{	'
+    <tr>
+      <td class="foreignTableLabel">' id%xml
+		do '*s *sh *z *x *ch'%words { /* plural should end in -es */
+			if id;1 =~ id then 'e' endif 
+		}
+		's</td>
+      <td>
+        <table class="foreignTable" id="' id%var 'Table"><tbody></tbody></table>
+      </td>
+    </tr>
+'
+	}
+}
+endreport

@@ -1,0 +1,463 @@
+==========================
+Graph Type
+==========================
+ProductModel
+	Name: String
+	Authors: OrderedCollection (Author)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Product
+	Class name: String
+	Display name: String
+	Type: String
+	order: Number
+	Tags: OrderedCollection (Tag)
+	Package: Package
+	Supertype: Product
+	Currency: String
+Product bundle
+	Class name: String
+	Display name: String
+	Type: String
+	order: Number
+	Tags: OrderedCollection (Tag)
+	Package: Package
+	Supertype: Product bundle
+Calculation basis
+	Class name: String
+	Display name: String
+	Type: String
+	order: Number
+	Tags: OrderedCollection (Tag)
+	Package: Package
+	Computation purpose: String
+	Supertype: Calculation basis
+Damage
+	Class name: String
+	Display name: String
+	Type: String
+	order: Number
+	Tags: OrderedCollection (Tag)
+	Package: Package
+	Supertype: Damage
+Danger Composite
+	Class name: String
+	Display name: String
+	Type: String
+	order: Number
+	Tags: OrderedCollection (Tag)
+	Package: Package
+	Composite?: Boolean
+	Supertype: _Danger abstract
+Insured object Composite
+	Class name: String
+	Display name: String
+	Type: String
+	order: Number
+	Tags: OrderedCollection (Tag)
+	Package: Package
+	Composite?: Boolean
+	Supertype: _Insured object abstract
+Danger
+	Class name: String
+	Display name: String
+	Type: String
+	order: Number
+	Tags: OrderedCollection (Tag)
+	Package: Package
+	Composite?: Boolean
+	Supertype: _Danger abstract
+Insured object
+	Class name: String
+	Display name: String
+	Type: String
+	order: Number
+	Tags: OrderedCollection (Tag)
+	Package: Package
+	Composite?: Boolean
+	Supertype: _Insured object abstract
+Elementary product cover
+	Class name: String
+	Display name: String
+	Type: String
+	order: Number
+	Tags: OrderedCollection (Tag)
+	Package: Package
+	Supertype: Elementary product cover
+Event
+	Class name: String
+	Display name: String
+	Type: String
+	order: Number
+	Tags: OrderedCollection (Tag)
+	Package: Package
+	Supertype: Event
+Payment
+	Class name: String
+	Display name: String
+	Type: String
+	order: Number
+	Tags: OrderedCollection (Tag)
+	Package: Package
+	Leistungsart: String
+	Supertype: Payment
+Policyholder
+	Class name: String
+	Display name: String
+	Type: String
+	order: Number
+	Tags: OrderedCollection (Tag)
+	Package: Package
+	Supertype: Policyholder
+Risk
+	Class name: String
+	Display name: String
+	Type: String
+	order: Number
+	Tags: OrderedCollection (Tag)
+	Package: Package
+	Supertype: Risk
+Insured person
+	Class name: String
+	Display name: String
+	Type: String
+	order: Number
+	Tags: OrderedCollection (Tag)
+	Package: Package
+	Composite?: Boolean
+	Supertype: _Insured object abstract
+	Role: String
+Tariff
+	Class name: String
+	Display name: String
+	Type: String
+	order: Number
+	Tags: OrderedCollection (Tag)
+	Package: Package
+	Supertype: Tariff
+Package
+	Package name: String
+	Path: String
+	Tags: OrderedCollection (Tag)
+	Imported packages: OrderedCollection (Package)
+	Exceptions: OrderedCollection (Exception)
+	Root or leaf: String
+	Documentation: Text
+Note
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Association
+	Name: String
+Dependency
+Contains
+	Name: String
+Generalization
+
+==========================
+Role Types
+==========================
+Associationend
+	Name: String
+	Multiplicity: String
+	Navigability: String
+	Is changeable?: Boolean
+	Is ordered?: Boolean
+	Is reference?: Boolean
+EPend
+	Name: String
+	Multiplicity: String
+	Navigability: String
+	Is changeable?: Boolean
+	Is ordered?: Boolean
+	Is reference?: Boolean
+From
+Covering danger
+	Name: String
+	Multiplicity: String
+	Navigability: String
+	Is changeable?: Boolean
+	Is ordered?: Boolean
+	Is reference?: Boolean
+Has
+	Name: String
+	Multiplicity: String
+	Navigability: String
+	Is changeable?: Boolean
+	Is ordered?: Boolean
+	Is reference?: Boolean
+Whole
+	Name: String
+	Type: String
+	Multiplicity: String
+	Navigability: String
+	Is changeable?: Boolean
+	Is reference?: Boolean
+Subclass
+Superclass
+Part
+	Name: String
+	Multiplicity: String
+	Navigability: String
+	Is changeable?: Boolean
+	Is ordered?: Boolean
+	Is reference?: Boolean
+To
+Enclosure event
+	Name: String
+	Multiplicity: String
+	Navigability: String
+	Is changeable?: Boolean
+	Is ordered?: Boolean
+	Is reference?: Boolean
+Enclosure damage
+	Name: String
+	Multiplicity: String
+	Navigability: String
+	Is changeable?: Boolean
+	Is ordered?: Boolean
+	Is reference?: Boolean
+Agreeing upon achievement
+	Name: String
+	Multiplicity: String
+	Navigability: String
+	Is changeable?: Boolean
+	Is ordered?: Boolean
+	Is reference?: Boolean
+Insuring article
+	Name: String
+	Multiplicity: String
+	Navigability: String
+	Is changeable?: Boolean
+	Is ordered?: Boolean
+	Is reference?: Boolean
+
+==========================
+Extra Types
+==========================
+Author
+	Author name: String
+	Documentation: Text
+DomainClass
+	Class name: String
+	Display name: String
+	Type: String
+	order: Number
+	Tags: OrderedCollection (Tag)
+	Package: Package
+Exception
+	Exception name: String
+	Parameters: OrderedCollection (Exception parameter)
+	Tags: OrderedCollection (Tag)
+	Scope: String
+	Documentation: Text
+Exception parameter
+	Parameter name: String
+	Type: String
+	Multiplicity: String
+	Is ordered?: Boolean
+	Is unique?: Boolean
+	Tags: OrderedCollection (Tag)
+MOFClass
+	Class name: String
+Tag
+	- Java instance value = used in the model elements
+	- Tag name
+	- TagID
+	- Added value = Tag can have the followng value
+	
+	---------------------------------------------
+	TagID: String
+	Tag name: String
+	Added value: String
+	Java instance name: String
+_Agreement
+	Class name: String
+	Display name: String
+	Type: String
+	order: Number
+	Tags: OrderedCollection (Tag)
+	Package: Package
+_Danger abstract
+	Class name: String
+	Display name: String
+	Type: String
+	order: Number
+	Tags: OrderedCollection (Tag)
+	Package: Package
+	Composite?: Boolean
+	Supertype: _Danger abstract
+_Insured object abstract
+	Class name: String
+	Display name: String
+	Type: String
+	order: Number
+	Tags: OrderedCollection (Tag)
+	Package: Package
+	Composite?: Boolean
+	Supertype: _Insured object abstract
+MOFAssociation
+	Name: String
+
+==========================
+Bindings
+==========================
+Association
+	Agreeing upon achievement: Risk
+	Associationend: Payment
+Association
+	Associationend: Damage
+	Enclosure damage: _Danger abstract
+Association
+	Associationend: Event
+	Enclosure event: _Danger abstract
+Association
+	Associationend: Payment
+	Agreeing upon achievement: Risk
+Association
+	Associationend: Policyholder
+	Has: _Agreement
+Association
+	Associationend: Risk
+	EPend: Elementary product cover
+Association
+	Associationend: _Danger abstract
+	Covering danger: Risk
+Association
+	Associationend: _Insured object abstract
+	Insuring article: Risk
+Association
+	Covering danger: Risk
+	Associationend: _Danger abstract
+Association
+	Enclosure damage: _Danger abstract
+	Associationend: Damage
+Association
+	Enclosure event: _Danger abstract
+	Associationend: Event
+Association
+	EPend: Elementary product cover
+	Associationend: Risk
+Association
+	Has: _Agreement
+	Associationend: Policyholder
+Association
+	Insuring article: Risk
+	Associationend: _Insured object abstract
+Contains
+	Whole: Calculation basis
+	Part: Calculation basis
+Contains
+	Whole: Danger Composite
+	Part: _Danger abstract
+Contains
+	Whole: Insured object Composite
+	Part: _Insured object abstract
+Contains
+	Whole: Package
+	Part: Package
+Contains
+	Whole: Product
+	Part: Elementary product cover, Tariff
+Contains
+	Whole: Product bundle
+	Part: Product
+Contains
+	Whole: Tariff
+	Part: Calculation basis, Tariff
+Dependency
+	From: Package
+	To: Package
+Generalization
+	Subclass: Damage
+	Superclass: Damage
+Generalization
+	Subclass: Elementary product cover
+	Superclass: Elementary product cover
+Generalization
+	Subclass: Event
+	Superclass: Event
+Generalization
+	Subclass: Insured person
+	Superclass: Insured person
+Generalization
+1	Subclass: Package
+	Superclass: Package
+Generalization
+	Subclass: Payment
+	Superclass: Payment
+Generalization
+	Subclass: Policyholder
+	Superclass: Policyholder
+Generalization
+	Subclass: Product
+	Superclass: Product
+Generalization
+1	Subclass: Product bundle
+	Superclass: Product bundle
+Generalization
+	Subclass: Risk
+	Superclass: Risk
+Generalization
+	Subclass: _Danger abstract
+	Superclass: _Danger abstract
+Generalization
+	Subclass: _Insured object abstract
+	Superclass: _Insured object abstract
+
+==========================
+Constraints
+==========================
+Danger Composite may be in at most 1 Enclosure damage role
+Danger Composite may be in at most 1 Enclosure event role
+Danger may be in at most 1 Enclosure damage role
+Danger may be in at most 1 Enclosure event role
+Product bundle may be in at most 1 Has role
+Product may be in at most 1 Has role
+Risk may be in at most 1 Agreeing upon achievement role
+Risk may be in at most 1 Covering danger role
+Risk may be in at most 1 Insuring article role
+Product bundle may occur at most 1 time
+
+==========================
+Subgraphs
+==========================
+Decompositions:
+	Package
+		ProductModel
+
+==========================
+Generators
+==========================
+!Java
+Java export
+
+==========================
+Sub-Generators
+==========================
+_Associationend properties
+_Attributes
+_Constraints
+_DataTypes
+_Def_aggregations
+_Def_associations
+_Exceptions
+_Global instances
+_ImportPackages
+_isLeaf
+_isRoot
+_isSingleton
+_MOFClasses
+_MOFClasses_Attributs
+_MOFClasses_Supertypes
+_Operations
+_Package class main
+_Products
+_Supertype
+_Tags
+

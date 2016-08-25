@@ -1,0 +1,50 @@
+_checkingPortDatatypes()
+/* Checkings for the Port datatypes */
+to '%typeName
+$EABoolean $Boolean
+'
+endto
+
+/* Next is executed only by running the explicit Check report button from toolbar, not by real time LiveCheck */
+if $LiveCheck <> 'T' then 
+	foreach >(Flow | Power | ClientServerInterface)
+	{	@port1Type = @port2Type = ''
+		@element1Type = @element2Type = ''
+		
+		/* Port1 */
+		do ~(OutFlowPort | OutPowerPort | ClientPort | InFlow | InPower | Server) 
+		{	do .() { @element1Type = type }
+			local 'port1Type' write
+				if @element1Type =~ '*Prototype' then
+					do #() {	do :Type { type }}
+				else
+					do .() {	do :Type { type }}
+				endif
+			close
+		}
+
+		/* Port2 */
+		do ~(InFlowPort | InPowerPort | ServerPort | OutFlow | OutPower | Client) 
+		{	do .() { @element2Type = type }
+			local 'port2Type' write
+				if @element2Type =~ '*Prototype' then
+					do #() {	do :Type { type }}
+				else
+					do .() {	do :Type { type }}
+				endif
+			close
+		}
+
+		/* Reporting */
+		if @port1Type <> @port2Type; then 
+			/* Data-types are different */
+			_reportWarnings()
+			'Warning: Relationship ' id ' <' type '> has ports with different types: ' 
+			if @port1Type then '<' @port1Type%typeName '>' else '<undefined>' endif 
+				' and ' 
+			if @port2Type then '<' @port2Type%typeName '> ' else '<undefined> ' endif 
+			_extendedCheckOutput_level1()
+			newline 	
+		endif
+	}
+endif

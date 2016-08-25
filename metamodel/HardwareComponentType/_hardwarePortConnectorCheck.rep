@@ -1,0 +1,24 @@
+_hardwarePortConnectorCheck()
+/* Checks is there a wires (HarwareConnectors) listed in the model which are not used in the same model */
+do :Connectors 
+{	@connector_found = 'F'
+	@connector_oid = oid
+	foreach >HardwareConnector 
+	{	if oid = @connector_oid then
+			@connector_found = 'T'
+		endif
+	}
+	if @connector_found = 'F' then 
+		_reportWarnings()
+		'Warning: ' id ' <' type '> listed in ' id;1 ' <' type;1 '> is not defined anywhere in the model ' id;2 
+		if $extendedCheck = 'T' then
+			' <' type;2 '>'
+		endif
+newline
+	endif
+}
+if :BusSpeed = '' then 
+	_reportWarnings()
+	'Warning: Undefined BusSpeed property for ' id newline
+endif
+

@@ -1,0 +1,19 @@
+_Python()
+_translators()
+$indent=''
+$penDown='T'
+
+'import turtle' newline
+
+do :Format { _DoActionFormat() }
+do :Animation { _DoActionAnimation() }
+
+foreach .()
+where not ~To; and not containers
+{	_DoAndMove()
+}
+
+'
+print(''Finished, click drawing to exit'')
+turtle.exitonclick()
+'

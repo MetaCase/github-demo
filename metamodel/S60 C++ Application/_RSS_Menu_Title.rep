@@ -1,0 +1,8 @@
+Report '_RSS_Menu_Title'
+'
+        MENU_TITLE 
+            {
+            txt = ' subreport '_qtn' run to '%lower' translate :Menu title var; endto ';
+            menu_pane = ' to '%lower' translate subreport '_r' run do .Menu Pane; { id } endto ';
+            }'
+endreport

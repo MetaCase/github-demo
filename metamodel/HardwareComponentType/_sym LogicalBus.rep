@@ -1,0 +1,17 @@
+Report '_sym LogicalBus'
+/*Generator for checking the LogicalBus usage in HDA */
+$found = 'F'
+do >HardwareConnector {
+	$connectorOID = oid
+	foreach .HardwarePortConnector
+	{	
+		do :Connectors 
+		{
+			if oid = $connectorOID; then 
+				$found = 'T' 
+			endif
+		}
+	}
+}
+$found
+endreport

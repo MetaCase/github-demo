@@ -1,0 +1,18 @@
+_decompSource()
+do stack;1 unique '1' { 
+	do decompositions { 
+		@reported = 'F' /* to report only once */
+		foreach .Object [GOPRR]; where oid = oid;3 {
+			'<object href="#' _type_name_oid() '" />' newline
+			@reported = 'T'
+		}
+		foreach .Object set [GOPRR]; {
+			do :Objects; where oid = oid;4 {
+				if @reported = 'F' then
+					'<object href="#' _type_name_oid() '" />' newline
+					@reported = 'T'
+				endif
+			}
+		}
+	}
+}

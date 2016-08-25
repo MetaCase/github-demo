@@ -1,0 +1,48 @@
+Report '_create Visual Studio manifest'
+
+filename $srcPath 'Properties' sep 'WMAppManifest.xml' encoding 'UTF-8' write
+'<?xml version="1.0" encoding="UTF-8"?>
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.0">
+  <App xmlns="" ProductID="{d4615f52-e1a8-4cce-9107-94cbd9a3c839}" Title="Digital Watch Example" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Author" Description="Sample description" Publisher="">
+    <IconPath IsRelative="true" IsResource="false">' :Name; '.png</IconPath>
+    <Capabilities>
+      <Capability Name="ID_CAP_GAMERSERVICES" />
+      <Capability Name="ID_CAP_IDENTITY_DEVICE" />
+      <Capability Name="ID_CAP_IDENTITY_USER" />
+      <Capability Name="ID_CAP_LOCATION" />
+      <Capability Name="ID_CAP_MEDIALIB" />
+      <Capability Name="ID_CAP_MICROPHONE" />
+      <Capability Name="ID_CAP_NETWORKING" />
+      <Capability Name="ID_CAP_PHONEDIALER" />
+      <Capability Name="ID_CAP_PUSH_NOTIFICATION" />
+      <Capability Name="ID_CAP_SENSORS" />
+      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
+    </Capabilities>
+    <Tasks>
+      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="Digital_watchToken" TaskName="_default">
+        <TemplateType5>
+			 <BackgroundImageURI IsRelative="true" IsResource="false">' :Name; '.png</BackgroundImageURI>
+          <Count>0</Count>
+          <Title>Digital Watch Example</Title>
+        </TemplateType5>
+      </PrimaryToken>
+    </Tokens>
+  </App>
+</Deployment>'
+close 
+
+filename $srcPath 'Properties' sep 'AppManifest.xml' encoding 'UTF-8' write
+'<?xml version="1.0" encoding="UTF-8"?>
+<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+>
+    <Deployment.Parts>
+    </Deployment.Parts>
+</Deployment>
+'
+close 
+
+endreport

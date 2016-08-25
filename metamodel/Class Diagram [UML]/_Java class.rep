@@ -1,0 +1,68 @@
+Report '_Java class'
+if :Stereotype; = 'widget' then 
+	'import java.awt.*;	// Stereotype was widget' newline
+endif
+if ~Specialization~Superclass.():Class name; = 'Applet' then 
+	'import java.applet.Applet;	// Superclass was Applet' newline 
+endif
+if :Documentation; <> '' then
+	'//' newline 
+	do :Documentation; {'// ' id newline}
+	'//' newline 
+endif
+if not ~Specialization>Generalization [UML]; then 
+	'public '
+else
+	~Specialization>Generalization [UML]:Visibility; ' '
+endif
+if :Abstract?; then 'abstract ' endif
+'class '
+:Class name;
+if ~Specialization; then
+	' extends '
+	~Specialization>Generalization [UML]~Superclass.():Class name;
+endif
+' {' newline 
+if :Attributes; then '// member data' newline endif
+'	// private' newline
+do :Attributes; {if :Visibility; = 'private' then subreport '_Java attribute' run endif}
+md5id 'Protected block for private attributes' md5block 
+'	// Enter own private attributes here' newline 
+md5sum 
+
+'	// protected' newline
+do :Attributes; {if :Visibility; = 'protected' then subreport '_Java attribute' run endif}
+md5id 'Protected block for protected attributes' md5block 
+'	// Enter own protected attributes here' newline 
+md5sum 
+
+'	// public' newline
+do :Attributes; {if :Visibility; = 'public' then subreport '_Java attribute' run endif}
+md5id 'Protected block for public attributes' md5block
+'	// Enter own public attributes here' newline 
+md5sum
+
+do ~Whole>Aggregation~Part;
+{	'	' .():Class name; ' '
+	if :Role name; then :Role name; else
+		if >Aggregation:Association name; then >Aggregation:Association name; else
+			'_' .():Class name; ';'
+		endif
+	endif
+	'	// aggregation based data'
+	newline
+}
+do :Attributes; {if :Visibility; = 'package' then subreport '_Java attribute' run endif}
+newline
+if :Operations; then '// member functions' newline endif
+do :Operations; { if :Visibility; = 'private' then subreport '_Java operation' run endif }
+do :Operations; { if :Visibility; = 'protected' then subreport '_Java operation' run endif }
+do :Operations; { if :Visibility; = 'public' then subreport '_Java operation' run endif }
+do :Operations; { if :Visibility; = 'package' then subreport '_Java operation' run endif }
+'	// Protected block for manually added member functions' newline
+md5id oid ' manually added member functions' md5block
+'	// Enter code here' newline
+md5sum newline
+'} // end of class ' :Class name;
+newline newline
+endreport

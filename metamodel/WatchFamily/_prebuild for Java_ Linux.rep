@@ -1,0 +1,44 @@
+Report '_prebuild for Java: Linux'
+
+$projPath=''
+$srcPath=''
+$frameworkpackage = 'com
+metacase
+watch
+framework'
+$generatedpackage = 'com
+metacase
+watch
+generated'
+
+variable 'projPath' write
+	if $IDE = 'eclipse' and	$workspace then
+		$workspace sep 
+	else
+		subreport '_default directory' run 
+	endif
+	:Name; sep
+close
+
+variable 'srcPath' write
+	$projPath 'src' sep
+close
+
+/* Create necessary folder structure */
+filename 'makeDirs.sh' write
+	to '%undent' translate
+		'mkdir -p "' $projPath '"
+		cd "' $projPath '"
+		mkdir -p src/com/metacase/watch/generated
+		mkdir -p src/com/metacase/watch/framework
+		mkdir -p bin/com/metacase/watch/generated
+		mkdir -p bin/com/metacase/watch/framework
+		mkdir -p .settings
+		exit'
+	endto
+close
+
+/* Run the batch file */
+external 'chmod +x makeDirs.sh; ./makeDirs.sh' executeBlocking
+
+endreport

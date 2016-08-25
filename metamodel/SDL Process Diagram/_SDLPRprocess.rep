@@ -1,0 +1,25 @@
+_SDLPRprocess()
+/* produces textual SDL from SDL state machine */
+_translators()
+
+/* Translator for the SDL statenames, including the special states named as * or - 
+Both * and - defined as range: \*-\* and \--\- 
+*/
+to '%SDLvar
+a-zA-Z0-9\*-\*\--\- *
+* _'
+endto
+
+'PROCESS ' id%var ';' newline 
+_inits()
+
+foreach .Start {
+	'START' 
+	_nextTransition()
+}
+newline newline
+foreach .State; where ~Source {
+	_doState()
+}	
+
+'ENDPROCESS ' id%var ';' newline

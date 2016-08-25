@@ -1,0 +1,184 @@
+Report '_entry_formJS'
+'
+// functions for Web Application pages with forms
+
+function displayForeignRows() {
+  if (!db) {
+    return;
+  }
+  for (var i=0; i<referredAsForeign.length; i++){
+    displayForeignRowsForCol(referredAsForeign[i]);
+  }
+}
+
+
+function displayForeignRowsForCol(col) {
+  var listTable = getElementById(col.pageName+"Table");
+  var oldRows = listTable.rows.length;
+  for (var rowI = 0; rowI < oldRows; rowI++) {
+    listTable.deleteRow(0);
+  }
+
+  var listBody = listTable.getElementsByTagName("tbody")[0];
+  var listRow = document.createElement("tr");
+  listRow.className="tableheader";
+  var rowNewLink = col.pageName + ".html";
+  var rowNewButton = "<button type=\"button\" onclick=\"location.href=''" + rowNewLink + "'';\">New<\/button>";
+  var rowViewAllLink = col.pageName + "List.html";
+  var rowViewAllButton = "<button type=\"button\" onclick=\"location.href=''" + rowViewAllLink + "'';\">View All<\/button>";
+  addCellHTML(listRow, rowNewButton);
+  if (col.foreignCols.length===0){
+    addCellHTML(listRow, "ID");
+  } else {
+    for (j=0; j<col.foreignCols.length; j++){
+      addCellHTML(listRow, col.foreignCols[j]);
+    }
+  }
+  addCellHTML(listRow, rowViewAllButton);
+  listBody.appendChild(listRow);
+
+  var foreignColsString = "";
+  for (var j=0; j<col.foreignCols.length; j++){
+    foreignColsString += ", " + col.foreignCols[j];
+  }
+  db.executeThen("select rowID" + foreignColsString + " from " + col.tableName + " where " + col.name + "=?", [rowID], function (tx, rs) {
+    for(var rowIndex = 0; rowIndex < rs.rows.length; rowIndex++) {
+      var row=rs.rows.item(rowIndex);
+      var rowEditLink = col.pageName+".html?rowID="+row["rowID"];
+      var rowEditButton = "<button type=\"button\" onclick=\"location.href=''" + rowEditLink + "'';\">Edit<\/button>";
+      var rowDeleteButton = "<button type=\"button\" onclick=\"deleteForeignDBRow(" + row["rowID"] + ", ''" + col.tableName + "'');\">Delete<\/button>";
+      listRow = document.createElement("tr");
+      addCellHTML(listRow, rowEditButton);
+      if (col.foreignCols.length===0){
+        addCellHTML(listRow, row["rowID"]);
+      } else {
+        for (var key in row) {
+          if (row.hasOwnProperty(key) && key != "rowID") {
+            addCellHTML(listRow, row[key]);
+          }
+        }
+      }
+      addCellHTML(listRow, rowDeleteButton);
+      listBody.appendChild(listRow);
+    }
+  });
+}
+
+
+function clearForNew() {
+  // Update the UI.
+  for (var i=0; i<cols.length; i++){
+    cols[i].elt.value = cols[i].defaultValue;
+  }
+}
+
+
+function initForeign() {
+  if (!rowID) {
+    clearForNew();
+  }
+  if (!db) {
+    return;
+  }
+  displayForeignRows();
+  for (var i=0; i<allForeign.length; i++){
+    initForeignMenu(allForeign[i]);
+  }
+}
+
+
+function initForeignMenu(col) {
+  // Adds the foreign values to a menu for this field. Has to be its own 
+  // function, else async calls cause all menu items to be added to last menu
+  var foreignColsString = "";
+  for (var j=0; j<col.foreignCols.length; j++){
+    foreignColsString += ", " + col.foreignCols[j];
+  }
+  db.executeThen("select rowID" + foreignColsString + " from " + col.tableName, [], function (tx, rs) {
+    for(var rowIndex = 0; rowIndex < rs.rows.length; rowIndex++) {
+      var row=rs.rows.item(rowIndex);
+      if (col.foreignCols.length > 0){
+        var optionString = "";
+        for (j=0; j<col.foreignCols.length; j++){
+          if (j>0){
+            optionString += " ";
+          }
+          optionString += row[col.foreignCols[j]];
+        }
+      } else {
+        optionString = row["rowID"];
+      }
+      // www.quirksmode.org/js/options.html#example
+      var option = new Option(optionString, row["rowID"]);
+      if (col.initialValue == row["rowID"]) {
+        option.selected = true;
+      }
+      col.elt.options[col.elt.options.length]=option;
+    }
+  });
+}
+
+
+function deleteForeignDBRow(_rowID, _tableName) {
+  if (!db) {
+    return;
+  }
+  db.executeThen("delete from " + _tableName + " where rowID=?", [_rowID], function (tx, rs) {
+    displayForeignRows();
+  });
+}
+
+
+function handleSubmit() {
+  if (!db) {
+    return;
+  }
+
+  var values = [rowID];
+  for (var i=0; i<allForeign.length; i++){
+    var selCol=allForeign[i];
+    var sel=selCol.elt;
+    if (sel.selectedIndex==-1){
+      sel.focus();
+      alert("You must select a " + selCol.pageName + " from this list");
+      return null;
+    }
+    values.push(parseInt(sel.options[sel.selectedIndex].value, 10));
+  }
+  for (i=0; i<cols.length; i++){
+    values.push(cols[i].elt.value);
+  }
+  var currTime = new Date().getTime();
+  values.push(currTime);
+
+  // Insert the new item.
+  // The database automatically escapes/unescapes inserted values.
+  if (!rowID) {
+    db.executeThen("insert into " + tableName + " (rowID, " + insertCols + "Timestamp) values (?, " + paramCols + "?)", values, function (tx, rs) {
+      clearForNew();
+      displayRecentRows();
+    });
+  } else {
+    db.executeThen("update " + tableName + " set rowID=?, " + updateCols + "Timestamp=? where rowID=" + rowID, values, function (tx, rs) {
+      displayRecentRows();
+    });
+  }
+}
+
+
+function editForeign(_fk) {
+  for (var i=0; i<allForeign.length; i++){
+    var col=allForeign[i];
+    if (col.name == _fk){
+      if (col.elt.selectedIndex>=0) {
+        var _id = col.elt.options[col.elt.selectedIndex].value;
+        location.href=col.pageName + ".html?rowID=" + _id;
+      } else { 
+        location.href=col.pageName + ".html";
+      }
+      break;
+    }
+  }
+}
+'
+endreport

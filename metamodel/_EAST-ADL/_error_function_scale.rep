@@ -1,0 +1,15 @@
+_error_function_scale()
+/* Creates scaling from function prototypes */
+if width <> '170' or height <> '120' then 
+	' scale="'
+	local 'xscale' write
+		width '/170.0'
+	close 
+	math @xscale evaluate 
+	','
+	local 'yscale' write
+		height '/120.0'
+	close 
+	math @yscale evaluate 
+	'"'
+endif

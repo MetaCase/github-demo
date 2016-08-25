@@ -1,0 +1,4 @@
+Report '_stack_pop'
+/* Returns the previous state (object) from the stack, removes it from the stack */
+'		return ((call_stack.pop()), False)' newline
+endreport

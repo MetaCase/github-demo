@@ -1,0 +1,12 @@
+__fetchCandles()
+
+foreach .() orderby y num, x num
+{
+	if $--numLeft >= '0' num then
+		id newline
+	endif
+}
+
+if $numLeft > '0' num then
+	__fetchCandles()
+endif

@@ -1,0 +1,23 @@
+Report '_Object properties in HTML'
+
+foreach .() { 
+	variable 'mainObjects' append oid ' ' close
+	_tabContent(id;1 '_' oid;1)
+}
+
+_reportExtraObjectsInHTML()
+
+variable oid '_extraObjects' write $extraObjects close
+
+if $single_graph <> 'true' then
+	foreach .()
+	{	do decompositions
+		{	subreport '_graphs in HTML' run
+		}
+		do explosions
+		{	subreport '_graphs in HTML' run
+		}
+	}
+endif
+
+endreport

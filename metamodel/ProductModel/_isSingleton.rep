@@ -1,0 +1,13 @@
+Report '_isSingleton'
+/* Singleton is true if multiplicity value is 0,1 or 1,1 */
+if :Multiplicity = '1,1' 
+	then '.setIsSingleton(true);'
+else
+	if :Multiplicity; = '0,1'
+		then '.setIsSingleton(true);'
+	else
+		'.setIsSingleton(false);'
+	endif
+endif
+newline
+endreport

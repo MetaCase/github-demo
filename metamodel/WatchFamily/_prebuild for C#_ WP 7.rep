@@ -1,0 +1,23 @@
+Report '_prebuild for C#: WP 7'
+
+$frameworkpackage=''
+$generatedpackage=''
+
+variable 'projPath' write
+	if $IDE = 'visualstudio' and $workspace then
+		$workspace sep
+	else
+		subreport '_default directory' run 'Visual Studio' sep :Name; sep
+	endif
+close
+
+variable 'srcPath' write 
+	$projPath :Name; sep
+close
+
+
+external 
+   'cmd /x /c mkdir "' $srcPath 'Properties"'
+executeBlocking 
+
+endreport

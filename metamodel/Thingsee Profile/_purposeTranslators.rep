@@ -1,0 +1,9 @@
+_purposeTranslators()
+
+to '%purpose
+/(.*)(_)(.*)/ $$3'
+endto
+
+to '%state
+/(.*)(_)(.*)/ $$1'
+endto

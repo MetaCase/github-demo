@@ -1,0 +1,7 @@
+Report '_time details'
+'<time '
+do :Time parameters; {
+	:Parameter type; '="' :Value; '"' newline
+}
+'>' newline
+endreport

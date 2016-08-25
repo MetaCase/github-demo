@@ -1,0 +1,228 @@
+==========================
+Graph Type
+==========================
+Communication Diagram
+	Communication diagrams focus on the interaction between instances of classes where the architecture of the internal structure and how this corresponds with the message passing is central. The sequencing of messages is given through a sequence numbering scheme.
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Package
+	A package is used for grouping elements and organizing models: a system may be thought of as a single high-level package included other model elements and other packages. Depending on the graph type used a package can contain a set of use cases, classes or other packages. Each package is represented with a folder symbol with name of the package inside the symbol and steretotype of the package above the symbol.
+	---------------------------------------------
+	Package name: String
+	Stereotype: String
+	Documentation: Text
+Object [UML]
+	An object denotes to an instance of a class. An object has six properties: name of instance, name of class of that instance, multiplicity, it's attribute values, stereotype and documentation.
+	---------------------------------------------
+	Object name: String
+	Class: Class [UML]
+	Multiple?: Boolean
+	Variables: OrderedCollection (Variable [UML])
+	Stereotype: String
+	Documentation: Text
+Frame
+	Frame describes an interaction unit of behavior that focuses on the observable exchange of information between connected elements.
+	---------------------------------------------
+	Name: String
+	Interaction occurance?: Boolean
+Note text
+	Note is a special object for adding additional text anywhere in the graphs. It can be linked to another design objects with a note connection relationship.
+	---------------------------------------------
+	Note text: Text
+	Stereotype: String
+
+==========================
+Relationship Types
+==========================
+Message link
+	A message link shows communication from one object to another that conveys control and information. A message link is characterized by a direction shown with a small arrow symbol depending on the message type, number of predecessor messages, guard condition, sequence number among all message links in a graph, condition/iteration clause and whether the clause is iteration. Furthermore, message links are characterized with a name of a message together with its arguments and return value and with type of link (e.g. global, local, parameter, self, vote, broadcast). Each link role can be furthermore characterized with a role name, message type (simple, synchronous, asynchronous, synchronous with immediate return, balking and timeout) and adornment (association link, field of object, global variable, local variable, procedure parameter, self reference).
+	---------------------------------------------
+	Predecessor: String
+	Guard condition: Text
+	Sequence: String
+	Condition-Iteration clause: Text
+	Iteration clause?: Boolean
+	Message name: String
+	Arguments: OrderedCollection (Argument)
+	Return value: String
+	Link type: String
+Dependency [UML]
+	Dependency show client-supplier links dependencies between logical elements. The client, pointed by an arrow, is dependent in some way on the client.
+	---------------------------------------------
+	Stereotype: String
+	Alias name: String
+Note connection
+	Note connection can be used to link a note text to related element in a model. A note connection is represented by a grey line.
+	---------------------------------------------
+
+==========================
+Role Types
+==========================
+Client
+Note part
+Object part
+Receive message
+	Role name: String
+	Message type: String
+	Adornment: String
+Send message
+Supplier
+
+==========================
+Extra Types
+==========================
+_Unified Modeling Language
+	This UML metamodel is based on the 2.0 Draft Adopted Specification.
+	---------------------------------------------
+Argument
+	Argument: String
+	Parameter: Parameter
+Attribute [UML]
+	Name: String
+	Data type: String
+	Default value: String
+	Stereotype: String
+	Visibility: String
+	Scope: String
+	Access: String
+	Derived?: Boolean
+	Persistent?: Boolean
+	Constraints: Text
+	Documentation: Text
+Class [UML]
+	An class describes a group of objects with similar properties (attributes), common behaviour (operations), common relationships to other objects, and common semantics. Class is represented as a box with three parts each including different properties. Class name is in the first part of the class box toghether with a stereotype. List of attributes are in the second part, and list of operations are in the last box. Class can be characterized according to:
+	- package they belong
+	- whether it is abstract
+	- whether it is persistent
+	- how the element may be overridden by the subclass. Values: virtual - fully defined and may be overridden, leaf - fully defined and may not be overridden, deferred - protocol only defined and must be overridden, extensible - may be extended but not overridden
+	- role (model, view, controller)
+	- template parameters
+	- constraints
+	- invariant information
+	- derivation rules
+	- responsibility
+	- documentation, and 
+	- simple symbol? to choose whether the whole class symbol is shown or only class name and possible template parameters.
+	
+	Each attribute in a list field is used for entering in more detail characteristics of an attribute. These include: 
+	- attribute name
+	- data type
+	- initial value
+	- stereotype
+	- visibility (public, private, or protected)
+	- scope (class, instance, or class-instance)
+	- access for the value
+	- derived? to inform that the actual value is derived
+	- persistent?
+	- constraints
+	- documentation
+	
+	A operation is a specific behavior that an object is responsible for exhibiting. Operation list field is used for adding in more detail specifications of an operation. Each operation can be specified by:
+	- name
+	- parameters containing parameter name, type and default value
+	- return type (i.e. possibly object to be returned)
+	- method body or operation specification
+	- whether the operation can be overridden (virtual - fully defined and may be overridden, leaf - fully defined and may not be overridden, deferred - protocol only defined and must be overridden, extensible - may be extended but not overridden)
+	- stereotype (e.g for Smalltalk protocols)
+	- visibility (public, private, or protected)
+	- operation type (class or instance)
+	- preconditions
+	- postconditions
+	- documentation
+	---------------------------------------------
+	Class name: String
+	Attributes: OrderedCollection (Attribute [UML])
+	Operations: OrderedCollection (Operation [UML])
+	Package: Package
+	Abstract?: Boolean
+	Persistent?: Boolean
+	Stereotype: String
+	Overridability: String
+		How the element may be overridden by the subclass. Values:
+		virtual - fully defined and may be overridden
+		leaf - fully defined and may not be overridden
+		deferred - protocol only defined and must be overridden
+		extensible - may be extended but not overridden
+		---------------------------------------------
+	Role: String
+	Parameters: OrderedCollection (Parameter)
+	Constraints: Text
+	Invariant: Text
+	Derivation rules: OrderedCollection (String)
+	Responsibility: Text
+	Documentation: Text
+	Simple symbol?: Boolean
+Operation [UML]
+	Operation name: String
+	Parameters: OrderedCollection (Parameter)
+	Return type: String
+	Overridability: String
+		How the element may be overridden by the subclass. Values:
+		virtual - fully defined and may be overridden
+		leaf - fully defined and may not be overridden
+		deferred - protocol only defined and must be overridden
+		extensible - may be extended but not overridden
+		---------------------------------------------
+	Stereotype: String
+	Visibility: String
+	Operation type: String
+	Preconditions: Text
+	Postconditions: Text
+	Body: Text
+	Documentation: Text
+Parameter
+	Parameter: String
+	Data type: String
+	Direction: String
+	Default value: String
+Person
+	Person is used to describe developers involved in a project (i.e. attached to the project model) and authors of developed models. Person can be characterized with a name, e-mail address, and with a contact address. 
+	---------------------------------------------
+	Name: String
+	E-mail: String
+	Contact address: Text
+Variable [UML]
+	Value: String
+	Attribute: Attribute [UML]
+Use [UML]
+
+==========================
+Bindings
+==========================
+Dependency [UML]
+	Client: Object [UML], Package
+	Supplier: Object [UML], Package
+Message link
+	Send message: Frame, Object [UML]
+1..N	Receive message: Frame, Object [UML]
+Note connection
+	Note part: Note text
+	Object part: Frame, Object [UML], Package
+Note connection
+	Object part: Frame, Object [UML], Package
+	Note part: Note text
+
+==========================
+Constraints
+==========================
+Property "Name" in Frame must have unique values
+Property "Object name" in Object [UML] must have unique values
+Property "Package name" in Package must have unique values
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	Frame
+		Communication Diagram
+Decompositions:
+	Package
+		Communication Diagram
+

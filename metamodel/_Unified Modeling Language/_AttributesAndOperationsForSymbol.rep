@@ -1,0 +1,9 @@
+_AttributesAndOperationsForSymbol()
+
+if not :Attributes; then
+	type newline
+else
+	do :Attributes { type newline }
+endif
+
+do :Operations { type newline }

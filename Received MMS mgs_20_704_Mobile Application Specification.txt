@@ -1,0 +1,32 @@
+Graph_eSWT_model_user_3387784239
+Received MMS mgs
+20_704
+Mobile Application Specification
+Graph: Received MMS mgs <Mobile Application Specification> 20_704
+	Model name: Received MMS mgs
+	Description: 
+	View: Detail view
+	Display: Primary
+	UI category: U2
+Object: Message log <Form> 20_1308
+	Form title: Message log
+	Form title ID: FORM_DETAILS_TEXT
+	Title icon: 
+	Form list: Received text messages
+Object: 1 <Reference> 20_1014
+	Reference ID: 1
+	Explode to: Secure code check <Mobile Application Specification>
+Object: Start <Start> 20_2623
+Object: Complete <Stop> 20_1830
+	Stop type: Complete
+Relationship: Back <Back> 20_1336
+  Role: Back from <Back from>  Port: RSK <Softkey port>  Object: <Form> 20_1308
+  Role: Back to <Back to>  Object: <Stop> 20_1830
+Relationship: Flow <Flow> 20_2257
+  Role: From <From>  Object: <Start> 20_2623
+  Role: To <To>  Object: <Form> 20_1308
+Relationship: Clear <Soft key> 20_736
+	Soft key label: Clear
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <Form> 20_1308
+  Role: To <To>  Object: <Reference> 20_1014

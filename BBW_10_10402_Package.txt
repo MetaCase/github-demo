@@ -1,0 +1,11 @@
+Graph_PackageModel_sysadmin_3555309892
+BBW
+10_10402
+Package
+Graph: BBW <Package> 10_10402
+	__UUID: QIRoRJ12RuiJh3Doupk80g
+	Short name: BBW
+	Name: 
+	Description: 
+Object: BBW_SM <SystemModel> 10_10421
+	Decomposed to: BBW_SM <SystemModel>

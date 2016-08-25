@@ -1,0 +1,3 @@
+Report '_rui'
+to '%upper' translate subreport '_r' run id endto
+endreport

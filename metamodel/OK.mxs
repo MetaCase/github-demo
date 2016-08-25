@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="OK">
+		<relationshipSymbol offset="42,21.6667" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="62,31.6667 61.2388,27.8399 59.0711,24.5956 55.8268,22.4279 52,21.6667 48.1732,22.4279 44.9289,24.5956 42.7612,27.8399 42,31.6667 42.7612,35.4935 44.9289,38.7378 48.1732,40.9055 52,41.6667 55.8268,40.9055 59.0711,38.7378 61.2388,35.4935 62,31.6667" targetPointX="52" targetPointY="31.6667" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="41" version="1.2" width="61" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<radialGradient cx="0.5" cy="0.5" gradientUnits="objectBoundingBox" id="gradient1" r="0.707107" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(255,255,0)"></stop>
+					</radialGradient>
+				</defs>
+				<ellipse cx="51.5" cy="31.5" fill="rgb(0,128,0)" rx="9.5" ry="9.5" stroke="rgb(0,128,0)" stroke-width="0" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</ellipse>
+				<polygon fill="url(#gradient1)" points="43.3333,30 47.7778,38.3333 56.6667,21.6667 47.7778,32.7778" stroke="none" stroke-width="1">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</polygon>
+			</svg>
+		</relationshipSymbol>
+	</librarySymbol>
+</symbolLibrary>

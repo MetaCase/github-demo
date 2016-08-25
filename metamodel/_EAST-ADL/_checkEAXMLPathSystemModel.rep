@@ -1,0 +1,12 @@
+_checkEAXMLPathSystemModel()
+@shortnames = ' '
+foreach .(*Prototype) 
+{	subreport '_name checks' run
+	@prototypeName = :Short name;
+	if @shortnames =~ @prototypeName%wildsp; then
+		_reportWarnings()
+		'Warning: ' id;1 ' contains several prototypes with the same short name ' :Short name; newline
+	else
+		local 'shortnames' append :Short name; ' ' close
+	endif
+}

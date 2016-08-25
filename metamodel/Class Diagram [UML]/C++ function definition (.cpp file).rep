@@ -1,0 +1,18 @@
+Report 'C++ function definition (.cpp file)'
+/*	Creates C++ function definition file from UML class diagrams according to the following rules:
+*	Operations are inspected for each class together
+*	Return type for operation is mandatory: If not entered uses void instead. 
+*	Each operation is specified by name and related class together with possible parameters and their data types
+*	Documentation of operations are included into comments and marked with "//" 
+*	Operation body is included into the function declaration and are indented
+*/
+foreach .Class [UML];
+{	filename subreport '_default directory' run id '.cpp'
+	md5start '	// MEPMD5 ' md5stop '	' newline merge 
+	'// From MetaEdit+, graph: ' id;1 newline
+	'// function definition (.cpp file) for class ' id newline newline
+	'#include <' id '.h>' newline newline
+	subreport '_C++ class functions' run
+	close
+ }
+endreport

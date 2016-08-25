@@ -1,0 +1,73 @@
+Report '_checkings for the relationships'
+/***********************************/
+/* Checkings for the relationships */
+/***********************************/
+$emptyIdFound = 'F'
+foreach >(Flow | ClientServerInterface | Power | HardwareConnector | FaultFailurePropagationLink )
+{	/* Relationship Name checkings */
+	subreport '_name checks' run
+	
+	if type = 'HardwareConnector' then
+	/* Finding the incorrect pin types */
+	@checkIO = 'F'
+	do ~() 
+	{ 	if type =~ 'IO*' then 			
+			@checkIO = 'T'
+		endif
+	}
+	if @checkIO; = 'T' then
+		subreport '_inCorrectPinTypes' run 
+		if $fromtype <> $totype then 
+			_reportWarnings()
+			'Warning: Incompatible pin types in relationship ' id ' <' type '>: ' $fromtype ' <> ' $totype; newline 
+		endif
+	endif
+	endif
+}
+
+/* Reporting the empty relationship ids */
+@delimeter = ''
+if $emptyIdFound; = 'T' then
+	_reportWarnings()
+	'Warning: Short name missing for relationship: '
+	foreach >() where :Short name; = '' 
+	{ 	@delimeter 
+		subreport '_id or type' run 
+		@delimeter = ', '
+	}
+	if $extendedCheck = 'T' then
+		' in the model ' id ' <' type '>. '
+	else
+		'. Give a unique short name to every relationship.'
+	endif
+	newline
+endif
+$emptyIdFound = 'F'
+@delimeter = ''
+
+/* Finding the duplicate relationship short names */
+@duplicatedRelationships = _duplicatedRelationships()
+if @duplicatedRelationships; then
+	_reportWarnings()
+	'Warning: Same relationship short name used for ' 
+	dowhile @duplicatedRelationships; where id orderby id unique id
+	{	@temp = id
+		'"' @temp '":'
+		@prefix = ' '
+		foreach >(^Comment) where :Short name; = :Short name;1 orderby x NUM, y NUM
+		{	@prefix
+			@prefix = ', '
+			'<' type '>'
+		}
+	}
+	if $extendedCheck = 'T' then
+		' in the model ' id ' <' type '>. '
+	else
+		'. Give a unique short name for every relationship.'
+	endif
+	newline
+endif
+
+_checkingPortDatatypes()
+
+endreport

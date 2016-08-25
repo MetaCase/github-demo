@@ -1,0 +1,9 @@
+_setSMvariables()
+newline
+_gName()'_SM_bIsEntry := ' _gName()'_SM_bATransitionWasPerformed;
+
+IF '_gName()'_SM_bIsEntry THEN
+		'_gName()'_SM_eLastState := '_gName()'_SM_eCurrentState;
+		'_gName()'_SM_bATransitionWasPerformed := FALSE;
+END_IF'
+newline newline

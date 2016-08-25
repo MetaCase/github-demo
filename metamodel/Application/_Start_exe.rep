@@ -1,0 +1,47 @@
+Report '_Start_exe'
+/* Produces Start_exe code */
+'def ' subreport '_Internal name' run '():' newline
+subreport '_local_exit_handler' run newline
+'	appuifw.app.exit_key_handler = local_exit_handler' newline
+'	e32.start_exe(''z:\\system\\programs\\apprun.dll'', '''
+If :Application; <> '' then
+	if :Application; = 'Calculator' then
+		'z:\\system\\apps\\calcsoft\\calcsoft.app'''
+	endif
+	if :Application; = 'Calendar' then
+		'z:\\system\\apps\\calendar\\calendar.app'''
+	endif
+	if :Application; = 'Camera' then
+		'z:\\system\\apps\\camcorder\\camcorder.app'''
+	endif
+	if :Application; = 'Clock' then
+		'z:\\system\\apps\\clockapp\\clockapp.app'''
+	endif
+	if :Application; = 'Converter' then
+		'z:\\system\\apps\\converter\\converter.app'''
+	endif
+	if :Application; = 'FileManager' then
+		'z:\\system\\apps\\filemanager\\filemanager.app'''
+	endif
+	if :Application; = 'ImageViewer' then
+		'z:\\system\\apps\\imageviewer\\Imageviewer.app'''
+	endif
+	if :Application; = 'MusicPlayer' then
+		'z:\\system\\apps\\MusicPlayer\\MusicPlayer.app'''
+	endif
+	if :Application; = 'Notepad' then
+		'z:\\system\\apps\\notepad\\notepad.app'''
+	endif
+	if :Application; = 'PhoneBook' then
+		'z:\\system\\apps\\phonebook\\phonebook.app'''
+	endif
+	if :Application; = 'ToDo' then
+		'z:\\system\\apps\\todo\\todo.app'''
+	endif
+	', 0)' newline
+else
+	:Application to be launched \(with path\); ''')' newline
+endif
+'	lock.wait()' newline
+'	return (next_state, False)' newline
+endreport

@@ -1,0 +1,19 @@
+Report '_List'
+/* Produces selection list dialog code */
+'def ' subreport '_Internal name' run '():' newline
+'# List ' :List; newline
+if :Return variable \(optional\); then
+	'	global ' subreport '_Return variable name' run newline
+endif
+'	choices' oid ' = ['
+dowhile :List; { 'u"' id '", ' }
+'"]' newline
+'	index = appuifw.selection_list(choices' oid
+	if (not $dir =~ '*\7.0s\*') and :Search field enabled; then ', 1' endif
+')' newline
+'	if index <> None:' newline
+'		' subreport '_Return variable name' run ' = choices' oid '[index]' newline
+'	if index == None:' newline
+subreport '_Back' run
+subreport '_next choiced element' run
+endreport

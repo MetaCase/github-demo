@@ -1,0 +1,64 @@
+Report '_dataType'
+'<dataType>' newline
+if :Object Datatype; then
+	do :Object Datatype; 
+	{	if :Datatype;1 = 'Collection' then
+			'<simpleType>OrderedCollection</simpleType>' newline
+			'</dataType>' newline
+			'<contentsDataType>' newline
+			subreport '_types' run 
+			'</contentsDataType>'
+		else
+			subreport '_types' run 
+			'</dataType>' newline
+		endif
+	}
+else
+	'<simpleType>'
+	if :Datatype; = 'Collection' then
+		'OrderedCollection</simpleType>' newline
+		'</dataType>' newline
+		'<contentsDataType>' newline
+		'<simpleType>String</simpleType>' newline
+		'</contentsDataType>' 
+	else 
+		if :Datatype; = 'Text' or :Datatype; = 'Number' or :Datatype; = 'Boolean' or :Datatype; = 'Creation Timestamp' then
+			:Datatype; 
+			'</simpleType>' newline
+			'</dataType>' newline
+			if :Datatype; <> 'Creation Timestamp' AND :Default value\(s\); then
+				@defValue = __(subreport '_default value' run)
+				to '%defValueType' newline
+					'$Boolean $bool' newline 
+					'$Text $text' newline
+					'$Number $' if @defValue=~'*.*' then 'float' else 'int' endif
+				endto
+				@defValueType = :Datatype%defValueType
+				'<defaultValue>' newline
+				'<' @defValueType '>' @defValue '</' @defValueType '>' newline
+				'</defaultValue>' newline
+			endif
+		else
+			'String'
+			'</simpleType>' newline
+			'</dataType>' newline
+			if :Datatype; <> 'UUID Base64' AND :Datatype; <> 'UUID Hex' AND :Default value\(s\); then
+				'<defaultValue>' newline
+				'<string>' subreport '_default value' run '</string>' newline
+				'</defaultValue>' newline
+			endif
+			'<widget>'
+			if :Datatype; = 'String' then 
+				'Input Field' '</widget>' newline
+			else 
+				:Datatype; '</widget>' newline
+				if :Datatype <> 'External Element' then
+					'<listValues>' newline
+					do :Default value\(s\); {'<string>' id%xml '</string>'}
+					'</listValues>' newline
+				endif
+			endif
+		endif
+	endif
+endif
+endreport

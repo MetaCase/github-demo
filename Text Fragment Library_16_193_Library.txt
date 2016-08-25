@@ -1,0 +1,78 @@
+Graph_TextFragmentLibrary_user_3343680371
+Text Fragment Library
+16_193
+Library
+Graph: Text Fragment Library <Library> 16_193
+	Name: Text Fragment Library
+Object: Press 2 for version info <TextFragment> 16_257
+	Label: Press 2 for version info
+	Start address: 0x14
+	Length: 8
+Object: Pause 0.5 sec <TextFragment> 16_272
+	Label: Pause 0.5 sec
+	Start address: 0x01
+	Length: 5
+Object: for... <TextFragment> 16_277
+	Label: for...
+	Start address: 0x09
+	Length: 1
+Object: Press 1 for the main menu <TextFragment> 16_385
+	Label: Press 1 for the main menu
+	Start address: 0x16
+	Length: 11
+Object: ...mode... <TextFragment> 16_441
+	Label: ...mode...
+	Start address: 0x04
+	Length: 1
+Object: ...press... <TextFragment> 16_530
+	Label: ...press...
+	Start address: 0x00
+	Length: 1
+Object: Invalid input! <TextFragment> 16_538
+	Label: Invalid input!
+	Start address: 0x11
+	Length: 5
+Object: Pause 0.3 sec <TextFragment> 16_579
+	Label: Pause 0.3 sec
+	Start address: 0x06
+	Length: 3
+Object: ...current... <TextFragment> 16_627
+	Label: ...current...
+	Start address: 0x03
+	Length: 2
+Object: Welcome to the version info! <TextFragment> 16_672
+	Label: Welcome to the version info!
+	Start address: 0x15
+	Length: 10
+Object: ...another... <TextFragment> 16_674
+	Label: ...another...
+	Start address: 0x08
+	Length: 3
+Object: Press 1 for mode menu <TextFragment> 16_692
+	Label: Press 1 for mode menu
+	Start address: 0x13
+	Length: 7
+Object: ...is... <TextFragment> 16_724
+	Label: ...is...
+	Start address: 0x05
+	Length: 1
+Object: Timeout! <TextFragment> 16_762
+	Label: Timeout!
+	Start address: 0x10
+	Length: 3
+Object: the... <TextFragment> 16_836
+	Label: the...
+	Start address: 0x02
+	Length: 1
+Object: This is VoiceMenu v1.2 <TextFragment> 16_842
+	Label: This is VoiceMenu v1.2
+	Start address: 0x17
+	Length: 11
+Object: select... <TextFragment> 16_895
+	Label: select...
+	Start address: 0x07
+	Length: 2
+Object: Welcome to the system! <TextFragment> 16_911
+	Label: Welcome to the system!
+	Start address: 0x12
+	Length: 8

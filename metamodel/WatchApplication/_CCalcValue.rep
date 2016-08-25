@@ -1,0 +1,15 @@
+Report '_CCalcValue'
+	do ~Get.(Variable | VariableRef)
+	{	id
+	}
+	do ~(Minus | Plus)
+	{	if type ='Minus' then
+			' - '
+		else
+			' + '
+		endif
+		do .(Variable | VariableRef)
+		{	id 
+		}
+	}
+endreport

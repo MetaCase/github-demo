@@ -1,0 +1,28 @@
+_checkingsForFunctionPrototypes()
+/* Checkings for FAA and FDA */
+/* Empty Type properties */
+foreach .(*Port)
+{
+	if :Type = '' then
+		_reportWarnings()
+		'Warning: ' id; ' <' type '> does not have Type property defined in model ' id;1 ' <' type;1 '>' newline
+	endif
+}
+
+/* Undefined subgraph */
+foreach .(*FunctionPrototype)
+{	
+	/* Subgraph undefined */
+	if not decompositions then
+		_reportWarnings()
+		'Warning: Type undefined for ' :Short name; ' <' type '> in model ' id;1 newline
+	endif
+	/* Follow the subgraph hiearhcy */
+	do decompositions 
+	{ 
+		if not $visited =~ oid%wildsp then
+			variable 'visited' append oid ' ' close
+			_checkingsForFunctionPrototypes()	
+		endif
+	}
+}

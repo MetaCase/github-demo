@@ -1,0 +1,34 @@
+Graph_Problem_Table_user_3013235856
+Problems in current inventory system
+11_5242
+Problem Table
+Graph: Problems in current inventory system <Problem Table> 11_5242
+	Model name: Problems in current inventory system
+	Status: draft
+	Authors: David Hill
+	Object: David Hill <Person> 11_3226
+		Name: David Hill
+		E-mail: 
+		Contact address: Inventory use cases model was made by DH&JS 5.5.1998
+	Documentation: Problems in current inventory system was made by DH 5.5.2006
+Object: Partial or wrong product codes from supplier <Problem [BSP]> 11_5261
+	Problem cause: Partial or wrong product codes from supplier
+	Problem result: Products get wrong codes in our system
+	Value: 
+	Causing process: Unpack
+	Causing entity: Product
+	Suggested solution: Provide training on product code formulas
+Object: Reminders not used on late or priority deliveries <Problem [BSP]> 11_5287
+	Problem cause: Reminders not used on late or priority deliveries
+	Problem result: Service level low for priority deliveries
+	Value: 
+	Causing process: Priority check
+	Causing entity: Reminder order
+	Suggested solution: Make reminder information more visible for faster checking
+Object: Inventory is updated at the end of the day <Problem [BSP]> 11_5313
+	Problem cause: Inventory is updated at the end of the day
+	Problem result: Acquisition starts late, service level low
+	Value: 
+	Causing process: Customer service
+	Causing entity: Inventory info
+	Suggested solution: Customer service must update their delivery changes to the inventory system constantly.

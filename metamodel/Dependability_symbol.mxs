@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol">
+	<librarySymbol name="Dependability_symbol">
+		<objectSymbol offset="30,20" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="30,20 49,20 49,39 30,39 30,20" targetPointX="39.5" targetPointY="29.5" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="39" version="1.2" width="49" xmlns="http://www.w3.org/2000/svg">
+				<polygon fill="none" points="32.7557,20 30,23.8 30,35.2 32.7557,39 46.5343,39 49,34.6154 49,23.6538 46.5343,20" stroke="rgb(255,0,0)" stroke-width="1">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</polygon>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

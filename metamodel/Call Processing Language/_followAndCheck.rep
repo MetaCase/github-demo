@@ -1,0 +1,37 @@
+Report '_followAndCheck'
+do ~(From*)~(To*).()
+{	@error = ''
+
+	/* optimized test for fastest initial answer, cycle or no cycle */
+	do stack;1
+	where oid = oid;1
+	unique 'first'
+	{  @error = 'cycle!' }
+
+	if @error then
+		@found=''
+		@length=@skip=@ix='0'
+
+		/* First iterate back along the route we took, to find */
+		/* cycle length and elements before cycle started      */
+		do stack;1
+		{	if not @found then @length=@++length else @skip=@++skip endif
+			if oid = oid;1 then @found = 'T' endif
+		}
+		'Warning: "Cycle of length ' @length ' found" ' 
+		
+		/* Iterate stack in reverse, i.e. in From-To order */
+		do stack;-1
+		orderby @++ix num desc
+		{	if @--skip < '0' num then id ' <' type '>, ' endif
+		}
+		id ' <' type '>' newline
+		
+		variable 'warnings_found' append '+1' close
+	else
+		/* Only recurse if no cycle was found here */
+		_followAndCheck()
+	endif
+}
+
+endreport

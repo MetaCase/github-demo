@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol">
+	<librarySymbol name="Class [UML] First Slot">
+		<objectSymbol offset="75,30" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="75,30 180,30 180,30 75,30 75,30" targetPointX="127.5" targetPointY="30" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="30" version="1.2" width="180" xmlns="http://www.w3.org/2000/svg">
+				<line stroke="rgb(128,0,0)" stroke-width="1" x1="75" x2="180" y1="30" y2="30">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</line>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

@@ -1,0 +1,11 @@
+Report '_CRunWatch'
+'void runWatch()
+{  
+	while (state != Stop) 
+	{
+		handleEvent();
+		button = getButton(); /* waits for and returns next button press */
+	}
+}
+' newline
+endreport

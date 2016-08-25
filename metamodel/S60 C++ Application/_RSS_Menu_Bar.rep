@@ -1,0 +1,26 @@
+Report '_RSS_Menu_Bar'
+'//----------------------------------------------------
+//   
+//    ' subreport '_rli' run '
+//    Menubar for ' id;1; ' view
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR ' subreport '_rli' run '
+    {
+    titles=
+        {'
+
+dowhile ~Menu
+{	subreport '_RSS_Menu_Title' run ',' }
+
+'
+        };
+    }
+
+'
+
+do ~Menu.Menu Pane;
+{ subreport '_RSS_Menu_Pane' run }
+
+endreport

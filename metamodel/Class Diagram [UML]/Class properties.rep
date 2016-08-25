@@ -1,0 +1,23 @@
+Report 'Class properties'
+_translators()
+filename subreport '_default directory' run id%file ' class properties.html' write
+'<html><head>'
+subreport '__stylesheet in HTML' run
+'</head><body>' newline
+'<h2>Classes and packages in the diagram "' id '" </h2>' newline
+'<h3>Packages</h3>' newline
+foreach .Package
+{
+	subreport '_Package properties in HTML' run
+	'<br />'
+}
+'<h3>Classes</h3>' newline
+foreach .Class [UML]
+{
+	subreport '_Class properties in HTML' run
+	'<br />'
+}
+'</body></html>'
+close
+external '"' subreport '_default directory' run id%file ' class properties.html"' execute
+endreport

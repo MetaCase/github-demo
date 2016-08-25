@@ -1,0 +1,12 @@
+Report 'Create SQL'
+/* Creates SQL tables. Note: the generator and metamodel can be extended to provide more complete ER to relation mapping. Tested in mySQL.  */
+
+subreport '_translators' run
+
+/* the subgenerators fill in $allForeignDeclarations and it is output */
+$allForeignDeclarations='' 
+subreport '_create entity tables' run
+subreport '_create relationship tables' run
+$allForeignDeclarations
+
+endreport

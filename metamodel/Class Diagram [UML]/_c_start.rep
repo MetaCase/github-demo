@@ -1,0 +1,29 @@
+Report '_c_start'
+'			<object type="Class [UML]">
+				<slot name="Class name">
+					<value>
+						<string>' $cname%xml '</string>
+					</value>
+				</slot>
+'
+if $package<>'' then
+'				<slot name="Package">
+					<value>
+						<object href="#_' $package '" />
+					</value>
+				</slot>
+'
+endif
+if $cabstract<>'' then 
+'				<slot name="Abstract?">
+					<value>
+						<bool>true</bool>
+					</value>
+				</slot>
+'
+endif
+'				<slot name="Attributes">
+					<value>
+						<seq>
+'
+endreport

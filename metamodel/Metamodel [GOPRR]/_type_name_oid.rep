@@ -1,0 +1,6 @@
+_type_name_oid(@tag, @coll)
+/* if @coll is supplied as 's', this is a collection property type */
+if @tag then @tag else type%tagUpper endif
+'_' id%var @coll
+_namespace()
+'_' _timestamp(@coll)

@@ -1,0 +1,273 @@
+Graph_eSWT_model_user_3387784239
+Shopping list
+20_710
+Mobile Application Specification
+Graph: Shopping list <Mobile Application Specification> 20_710
+	Model name: Shopping list
+	Description: 
+	View: User view
+	Display: Primary
+	UI category: U2
+Object: Changes made? <Condition> 20_1897
+	Condition: Changes made?
+	Comparison: 
+	Condition value: 
+Object: Changes made? <Condition> 20_2687
+	Condition: Changes made?
+	Comparison: 
+	Condition value: 
+Object: Add a new item <Form> 20_780
+	Form title: Add a new item
+	Form title ID: FORM_NEW_ITEM_TEXT
+	Title icon: Add.ico
+	Form list: Item: ?
+Quantity: ?
+Object: Shopping list <Form> 20_892
+	Form title: Shopping list
+	Form title ID: FORM_SHOPPINGLIST_TEXT
+	Title icon: 
+	Form list: 1.2.2008, 13:45:
+Item: Milk
+Quantity: 2 pcs
+
+Item: Butter
+Quantity: 1 pcs
+Object: Create a shopping list <Form> 20_1710
+	Form title: Create a shopping list
+	Form title ID: FORM_SHOPPINGLIST_TEXT
+	Title icon: Add
+	Form list: New entry
+Object: Edit item <Form> 20_1891
+	Form title: Edit item
+	Form title ID: FORM_DETAILS_TEXT
+	Title icon: Item
+	Form list: Item name: ABC
+Quantity: 123
+
+Object: Select operation <List> 20_1784
+	List title: Select operation
+	List title ID: LIST_SELECT_OPERATION
+	Title icon: List
+	Selection type: Multi
+	Scrolling: Vertical
+	Density level: Medium
+	List items: Stored list #1, ddmmyyyy, hh:mm
+Stored list #2, ddmmyyyy, hh:mm
+
+
+	Sorting order: Unordered
+	Search enabled: Yes
+Object: Add new item Remove item Edit item Exit <Menu> 20_2108
+	Menu items: Add new item Remove item Edit item Exit
+	Object: Add new item <Softkey menu> 20_908
+		Menu label: Add new item
+		Localization ID: 
+	Object: Remove item <Softkey menu> 20_2032
+		Menu label: Remove item
+		Localization ID: 
+	Object: Edit item <Softkey menu> 20_719
+		Menu label: Edit item
+		Localization ID: 
+	Object: Exit <Softkey menu> 20_1531
+		Menu label: Exit
+		Localization ID: 
+Object: Asking a password <Query> 20_972
+	Query title: Asking a password
+	Title ID: QUERY_PASSWORD_TEXT
+	Title icon: 
+	Prompt: Password?
+	Prompt ID: PROMPT_PASSWORD_TEXT
+	Query type: Password
+	Style: Application modal
+Object: Accept changes <Query> 20_1477
+	Query title: Accept changes
+	Title ID: QUERY_ACCEPT_TEXT
+	Title icon: Query.ico
+	Prompt: Accept changes
+	Prompt ID: PROMPT_SURE_TEXT
+	Query type: Query
+	Style: Application modal
+Object: Confirmation <Query> 20_2595
+	Query title: Confirmation
+	Title ID: QUERY_CONF_TEXT
+	Title icon: asking_confirmation
+	Prompt: Are you sure
+	Prompt ID: PROMPT_SURE_TEXT
+	Query type: Query
+	Style: Application modal
+Object: 2 <Reference> 20_2221
+	Reference ID: 2
+	Explode to: Accept changes <Mobile Application Specification>
+Object: 1 <Reference> 20_2414
+	Reference ID: 1
+Object: Welcoming tune <Sound> 20_1180
+	Sound: Welcoming tune
+	Sound ID: welcome.mp3
+	Sound ID format: *.mp3: 
+Object: Simple <Sound> 20_1588
+	Sound: Simple
+	Sound ID: Basic.mp3
+	Sound ID format: *.mp3: 
+Object: Closing <Sound> 20_2752
+	Sound: Closing
+	Sound ID: Close_tune.mp3
+	Sound ID format: *.mp3: 
+Object: Start <Start> 20_1270
+Object: Complete <Stop> 20_774
+	Stop type: Complete
+Object: Shopping list application <TimedMessageBox> 20_1081
+	Message text: Shopping list application
+	Message text ID: MB_WELCOME_TEXT
+	Style: Working
+	Timeout: 3
+Object: Changes not saved <TimedMessageBox> 20_1403
+	Message text: Changes not saved
+	Message text ID: MB_NO_SAVING_TEXT
+	Style: Information
+	Timeout: 2
+Object: Item removed <TimedMessageBox> 20_2298
+	Message text: Item removed
+	Message text ID: 
+	Style: Working
+	Timeout: 3
+Relationship: Back <Back> 20_1998
+  Role: Back from <Back from>  Port: RSK <Softkey port>  Object: <Query> 20_1477
+  Role: Back to <Back to>  Object: <TimedMessageBox> 20_1403
+Relationship: Back <Back> 20_2558
+  Role: Back from <Back from>  Port: RSK <Softkey port>  Object: <Query> 20_972
+  Role: Back to <Back to>  Object: <Sound> 20_2752
+Relationship: Back <Back> 20_2606
+  Role: Back from <Back from>  Port: RSK <Softkey port>  Object: <Form> 20_892
+  Role: Back to <Back to>  Object: <Condition> 20_1897
+Relationship: False <Condition> 20_793
+	Result: False
+  Role: Condition from <Condition from>  Object: <Condition> 20_1897
+  Role: Condition to <Condition to>  Object: <List> 20_1784
+Relationship: True <Condition> 20_1162
+	Result: True
+  Role: Condition from <Condition from>  Object: <Condition> 20_2687
+  Role: Condition to <Condition to>  Object: <Reference> 20_2221
+Relationship: True <Condition> 20_1626
+	Result: True
+  Role: Condition from <Condition from>  Object: <Condition> 20_1897
+  Role: Condition to <Condition to>  Object: <Query> 20_1477
+Relationship: False <Condition> 20_1630
+	Result: False
+  Role: Condition from <Condition from>  Object: <Condition> 20_2687
+  Role: Condition to <Condition to>  Object: <Menu> 20_2108
+Relationship: Flow <Flow> 20_896
+  Role: From <From>  Object: <Query> 20_2595
+  Role: To <To>  Object: <Form> 20_1891
+Relationship: Flow <Flow> 20_1012
+  Role: From <From>  Object: <TimedMessageBox> 20_2298
+  Role: To <To>  Object: <Sound> 20_1588
+Relationship: Flow <Flow> 20_1485
+  Role: From <From>  Object: <Sound> 20_1588
+  Role: To <To>  Object: <Form> 20_1710
+Relationship: Flow <Flow> 20_2027
+  Role: From <From>  Object: <Start> 20_1270
+  Role: To <To>  Object: <TimedMessageBox> 20_1081
+Relationship: Flow <Flow> 20_2049
+  Role: From <From>  Object: <Sound> 20_2752
+  Role: To <To>  Object: <Stop> 20_774
+Relationship: Flow <Flow> 20_2080
+  Role: From <From>  Object: <Reference> 20_2414
+  Role: To <To>  Object: <Menu> 20_2108
+Relationship: Flow <Flow> 20_2342
+  Role: From <From>  Object: <TimedMessageBox> 20_1403
+  Role: To <To>  Object: <List> 20_1784
+Relationship: Flow <Flow> 20_2536
+  Role: From <From>  Object: <TimedMessageBox> 20_1081
+  Role: To <To>  Object: <Sound> 20_1180
+Relationship: Flow <Flow> 20_2579
+  Role: From <From>  Object: <Sound> 20_1180
+  Role: To <To>  Object: <Query> 20_972
+Relationship: Flow <Flow> 20_2671
+  Role: From <From>  Object: <Reference> 20_2221
+  Role: To <To>  Object: <Menu> 20_2108
+Relationship: Add new item <Menu> 20_1765
+	Menu label: Add new item
+  Role: From <From>  Object: <Menu> 20_2108
+  Role: To <To>  Object: <Form> 20_780
+Relationship: Edit <Menu> 20_1791
+	Menu label: Edit
+  Role: From <From>  Object: <Menu> 20_2108
+  Role: To <To>  Object: <Form> 20_1891
+Relationship: Exit <Menu> 20_1972
+	Menu label: Exit
+  Role: From <From>  Object: <Menu> 20_2108
+  Role: To <To>  Object: <List> 20_1784
+Relationship: Remove item <Menu> 20_2419
+	Menu label: Remove item
+  Role: From <From>  Object: <Menu> 20_2108
+  Role: To <To>  Object: <Query> 20_2595
+Relationship: Cancel <Soft key> 20_822
+	Soft key label: Cancel
+	Softkey label ID: SK_CANCEL
+  Role: From <From>  Port: RSK <Softkey port>  Object: <Form> 20_780
+  Role: To <To>  Object: <Condition> 20_2687
+Relationship: Edit <Soft key> 20_1043
+	Soft key label: Edit
+	Softkey label ID: SK_EDIT
+  Role: From <From>  Port: LSK <Softkey port>  Object: <Form> 20_892
+  Role: To <To>  Object: <Reference> 20_2414
+Relationship: Save <Soft key> 20_1061
+	Soft key label: Save
+	Softkey label ID: SK_SAVE
+  Role: From <From>  Port: MSK <Softkey port>  Object: <Form> 20_780
+  Role: To <To>  Object: <Condition> 20_2687
+Relationship: Open <Soft key> 20_1137
+	Soft key label: Open
+	Softkey label ID: SK_OPEN
+  Role: From <From>  Port: LSK <Softkey port>  Object: <List> 20_1784
+  Role: To <To>  Object: <Form> 20_892
+Relationship: Yes <Soft key> 20_1302
+	Soft key label: Yes
+	Softkey label ID: SK_YES
+  Role: From <From>  Port: LSK <Softkey port>  Object: <Query> 20_2595
+  Role: To <To>  Object: <TimedMessageBox> 20_2298
+Relationship: Close <Soft key> 20_1343
+	Soft key label: Close
+	Softkey label ID: SK_CLOSE
+  Role: From <From>  Port: RSK <Softkey port>  Object: <List> 20_1784
+  Role: To <To>  Object: <Sound> 20_2752
+Relationship: Yes <Soft key> 20_1376
+	Soft key label: Yes
+	Softkey label ID: SK_YES
+  Role: From <From>  Port: LSK <Softkey port>  Object: <Query> 20_1477
+  Role: To <To>  Object: <List> 20_1784
+Relationship: Save <Soft key> 20_1415
+	Soft key label: Save
+	Softkey label ID: SK_SAVE
+  Role: From <From>  Port: MSK <Softkey port>  Object: <Form> 20_1891
+  Role: To <To>  Object: <Condition> 20_2687
+Relationship: Edit <Soft key> 20_1570
+	Soft key label: Edit
+	Softkey label ID: SK_EDIT
+  Role: From <From>  Port: LSK <Softkey port>  Object: <Form> 20_1710
+  Role: To <To>  Object: <Reference> 20_2414
+Relationship: No <Soft key> 20_1598
+	Soft key label: No
+	Softkey label ID: SK_NO
+  Role: From <From>  Port: RSK <Softkey port>  Object: <Query> 20_2595
+  Role: To <To>  Object: <Form> 20_1710
+Relationship: OK <Soft key> 20_1740
+	Soft key label: OK
+	Softkey label ID: SK_OK
+  Role: From <From>  Port: MSK <Softkey port>  Object: <Query> 20_972
+  Role: To <To>  Object: <List> 20_1784
+Relationship: New <Soft key> 20_1905
+	Soft key label: New
+	Softkey label ID: SK_NEW
+  Role: From <From>  Port: MSK <Softkey port>  Object: <List> 20_1784
+  Role: To <To>  Object: <Form> 20_1710
+Relationship: Cancel <Soft key> 20_1946
+	Soft key label: Cancel
+	Softkey label ID: SK_CANCEL
+  Role: From <From>  Port: RSK <Softkey port>  Object: <Form> 20_1891
+  Role: To <To>  Object: <Condition> 20_2687
+Relationship: Save <Soft key> 20_2650
+	Soft key label: Save
+	Softkey label ID: SK_SAVE
+  Role: From <From>  Port: MSK <Softkey port>  Object: <Form> 20_892
+  Role: To <To>  Object: <Query> 20_1477

@@ -1,0 +1,14 @@
+_collectGraphsInThisHierarchy()
+
+/* collects the hierarchy of graphs based on the model hierarchy via packages and system models */
+if not $myGraphs =~ oid%wildsp then
+	variable 'myGraphs' append oid ' ' close /* add to the list of graphs */
+	foreach .() {
+		do decompositions {
+			_collectGraphsInThisHierarchy()
+		}
+		do explosions {
+			_collectGraphsInThisHierarchy()
+		}
+	}
+endif

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="EventFunctionCSPort_symbol">
+		<objectSymbol offset="35,36" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="35,36 70,36 70,62 35,62 35,36" targetPointX="52.5" targetPointY="49" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="62" version="1.2" width="70" xmlns="http://www.w3.org/2000/svg">
+				<g fill="none" stroke="none" stroke-width="1" sym:height="26" sym:width="35" sym:x="3.5e1" sym:y="3.6e1">
+					<polyline fill="none" points="40.216,36 40.216,62 61.0797,62 61.0797,41.525 56.1706,36.325 56.1706,37.95 56.1706,41.525 61.0797,41.525" stroke="rgb(0,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polyline>
+					<line stroke="rgb(0,0,0)" stroke-width="1" x1="40.216" x2="56.1706" y1="36" y2="36">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<ellipse cx="41.1363" cy="50.95" fill="rgb(255,255,255)" rx="6.13635" ry="6.5" stroke="rgb(0,0,0)" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<polyline fill="none" points="41.1364,47.7 41.1364,50.95 44.2047,54.2 44.2047,54.2" stroke="rgb(0,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polyline>
+					<polygon fill="rgb(128,0,0)" points="53.4091,42.825 46.0456,50.95 49.7274,50.95 46.0456,57.45 55.2501,49.325 51.5682,49.325" stroke="rgb(128,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polygon>
+					<polyline fill="none" points="57.3978,48.35 59.2387,49.325 57.3978,50.3" stroke="rgb(0,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polyline>
+					<line stroke="rgb(0,0,0)" stroke-width="1" x1="59.2387" x2="55.2501" y1="49.325" y2="49.325">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<polyline fill="none" points="56.7842,48.35 54.9432,49.325 56.7842,50.3" stroke="rgb(0,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polyline>
+					<ellipse cx="64.5" cy="50.5" fill="rgb(255,255,255)" rx="5.5" ry="5.5" stroke="rgb(0,0,0)" stroke-width="1" sym:startAngle="0.0e0" sym:sweepAngle="3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

@@ -1,0 +1,12 @@
+Report '_outputs'
+/* Report is accessed from _proxy and _lookup objects */
+do ~From>()
+{ 
+	'<' :name; '>' newline
+	do ~To.()
+	{
+		subreport '_check object type' run
+	}
+	'</' :name; '>' newline
+}
+endreport

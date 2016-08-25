@@ -1,0 +1,41 @@
+Report '_prebuild for Java: MIDP'
+
+$projPath=''
+$srcPath=''
+$frameworkpackage = 'com
+metacase
+watch
+framework'
+$generatedpackage = 'com
+metacase
+watch
+generated'
+
+variable 'projPath' write
+	if $IDE = 'eclipse' and	$workspace then
+		$workspace sep 
+	else
+		subreport '_default directory' run
+	endif
+	:Name '_MIDlet' sep
+close
+
+variable 'srcPath' write
+	$projPath 'src' sep
+close
+
+/* Create needed folder structure */
+filename 'makeDirs.bat' write
+'mkdir "' $projPath 'src\com\metacase\watch\generated"' newline
+'mkdir "' $projPath 'src\com\metacase\watch\framework"' newline
+if $IDE = 'eclipse' then
+	'mkdir "' $projPath 'res"' newline
+	'mkdir "' $projPath '.settings"' newline
+endif
+'exit'
+close
+
+/* Run the batch file */
+external 'makeDirs.bat' executeBlocking
+
+endreport

@@ -1,0 +1,15 @@
+Report '_Cs_Actions_Alarm'
+if ~Set; then 
+	/* calculate time to alarm as in _Set, create this alarm */
+	'setAlarm(' do ~Set.Alarm; 
+	{	'"' id '", '
+		if :Senses Local Time; = 'T' then 'true' else 'false' endif
+		', "' do ~From>RingState~To.(); { id } '", '
+	}
+	subreport '_Cs_calcValue' run
+	');'
+else
+	/* kill existing alarm of this name */
+	do ~Off.Alarm; { 'killAlarm("' id '");' }
+endif
+endreport

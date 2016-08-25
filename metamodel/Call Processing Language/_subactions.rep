@@ -1,0 +1,16 @@
+Report '_subactions'
+/* Reports the contents of all subaction objects */
+
+foreach .subaction
+{
+	do decompositions
+	{
+	'<subaction id="' id '">' newline
+		foreach .root node
+		{
+			subreport '_subaction nodes' run
+		}
+	'</subaction>' newline
+}
+}
+endreport

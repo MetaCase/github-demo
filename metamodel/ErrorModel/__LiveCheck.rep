@@ -1,0 +1,9 @@
+__LiveCheck()
+_translators()
+$warnings = '0'
+$LiveCheck = 'T'
+_checkings()
+
+if $warnings = '0' then
+	'No warnings' newline
+endif

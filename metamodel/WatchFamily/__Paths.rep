@@ -1,0 +1,18 @@
+Report '__Paths'
+
+$winJDK='C:\Program Files (x86)\Java\jdk1.7.0_51'
+$linuxJDK='/usr'
+$macJDK='/usr'
+$Axis='C:\Java\axis-1_4'
+$Xerces='C:\Java\xerces-2_11_0'
+$androidSDK='C:\Program Files (x86)\Android\android-sdk'
+$MIDP='C:\Java_ME_platform_SDK_3.4'
+$S40SDK='C:\Nokia\Devices\Nokia_SDK_2_0_Java'
+$visualStudio=''	/* Better to use .NET or the VisualStudio plugin,      */
+						/* but if desired set to e.g. C:\Program Files (x86)\  */
+						/* Microsoft Visual Studio 10.0\Common7\IDE\devenv.exe */
+$visualStudioWP='C:\Program Files\Microsoft Visual Studio 12.0\Common7\IDE\VSWinExpress.exe'
+$IDE=''
+$workspace=''
+
+endreport

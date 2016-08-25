@@ -1,0 +1,12 @@
+_states()
+$st_sep = ''
+'      "states": ['  
+foreach .State; where :Start state; = 'T' {
+	_state()
+}
+foreach .State; where :Start state; = 'F' {
+	_state()
+}
+newline
+'      ]
+'

@@ -1,0 +1,14 @@
+_checkEmptyNames()
+foreach .() 
+{ do :()
+ { if not id then 
+		if id;1 then id;1 ' ' endif
+		'<' type;1
+		'>: Property "'
+		containers
+		'" is empty'
+		$errors++%null
+		newline
+	endif
+ }
+}

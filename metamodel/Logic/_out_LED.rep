@@ -1,0 +1,7 @@
+_out_LED()
+/* Get the value shown by the LED, then extract this port's bit */
+@bit = #():Port name; 
+local 'value' write
+	do .() { __sym_LED() }
+close
+math @value '// (2^' @bit ') \\ 2' evaluate

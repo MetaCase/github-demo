@@ -1,0 +1,54 @@
+_validateLiterals()
+/* Validation checks for Enumeration literals */
+subreport '_name checks' run
+@litValue = '0'
+do :Literals {	@litValue++%null }
+
+if not :Literals; then
+	_reportWarnings()
+	'Warning: ' id; ' <' type '> does not have any Literals defined '
+	if type;1 <> 'Package' then
+		_extendedCheckOutput_level2()
+	else 
+		_extendedCheckOutput_level1()
+	endif
+	newline
+else
+	if @litValue = '1' then
+		_reportWarnings()
+		'Warning: '
+		if type;1 <> 'Package' then
+			/* When the Type is used in some FAA/FDA model */
+			id; ' <' type '> in ' id;1 ' <' type;1 '> has only one literal defined'
+			if $extendedCheck = 'T' then
+				' in the model ' id;2 ' <' type;2 '>'
+			endif
+		else
+			/* When the Type is defined in Package model */	
+			id; ' <' type '> has only one literal defined'
+			if $extendedCheck = 'T' then
+				' in the model ' id;1 ' <' type;1 '>'
+			endif
+		endif
+		if $extendedCheck <> 'T' then
+			'. Two or more expected.'
+		endif
+		newline
+	endif
+	do :Literals 
+	{	if not id =/ '[a-zA-Z]([a-zA-Z0-9]|_[a-zA-Z0-9])*_?' then
+			_reportWarnings()
+			'Warning: '
+			if type;2 <> 'Package' then
+				/* When the Type is used in some FAA/FDA model */
+				id;1 ' <' type;1 '> in ' id;2 ' <' type;2 '> has illegal character(s) in literal value ' id ' '
+				_extendedCheckOutput_level3()
+			else
+				/* When the Type is defined in Package model */	
+				id;1 ' <' type;1 '> has illegal character(s) in literal value ' id ' '
+				_extendedCheckOutput_level2()
+			endif
+			newline
+		endif
+	}
+endif

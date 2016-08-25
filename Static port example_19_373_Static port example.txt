@@ -1,0 +1,22 @@
+Graph_Port_example_sysadmin_3222657877
+Static port example
+19_373
+Static port example
+Graph: Static port example <Static port example> 19_373
+	Name: Static port example
+Object: B <Entity [Port]> 19_758
+	Name: B
+Object: A <Entity [Port]> 19_941
+	Name: A
+Object: Basic static ports
+Each edge of the object symbol has a connectable with a port, In or Out. 
+The binding only allows connections from Out to In. <Note> 19_1760
+	Documentation: Basic static ports
+Each edge of the object symbol has a connectable with a port, In or Out. 
+The binding only allows connections from Out to In.
+Relationship: Transition [Port] <Transition [Port]> 19_443
+  Role: From [Port] <From [Port]>  Port: OUT <EntityPort>  Object: <Entity [Port]> 19_941
+  Role: To [Port] <To [Port]>  Port: IN <EntityPort>  Object: <Entity [Port]> 19_758
+Relationship: Transition [Port] <Transition [Port]> 19_607
+  Role: From [Port] <From [Port]>  Port: OUT <EntityPort>  Object: <Entity [Port]> 19_758
+  Role: To [Port] <To [Port]>  Port: IN <EntityPort>  Object: <Entity [Port]> 19_941

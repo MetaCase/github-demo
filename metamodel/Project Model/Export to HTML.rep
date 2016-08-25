@@ -1,0 +1,19 @@
+Report 'Export to HTML'
+/*	Creates Project documentation in HTML with frames according to the following rules:
+*  Calls the _translators subreport (to change the id as variable for the filename)
+*	Generates index.html file to the default directory (defined in the subreport named _default directory in the Graph)
+* 	index.html has automatic redirect link to the main HTML file (named as graphs id_oid+project.html)
+* 	Generates graph id_oid+right.html-file, which includes project models information to the right frame
+*	Calls _Project model documentation in HTML-subreport
+*	Executes the projects html-file with the default www browser
+*/
+subreport '_translators' run
+filename subreport '_default directory' run 'index.html' write
+	'<html><head><meta http-equiv="refresh" content="0; URL=' subreport '_id and oid' run 'project.html">' newline
+	'</head><body><a href ="' subreport '_id and oid' run 'project.html">Please click here</a></body></html>' newline
+close
+filename subreport '_default directory' run subreport '_id and oid' run 'right.html' write
+	subreport '_Project model documentation in HTML' run
+close
+external '"' subreport '_default directory' run subreport '_id and oid' run 'project.html"' execute
+endreport

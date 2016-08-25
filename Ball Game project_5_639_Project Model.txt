@@ -1,0 +1,48 @@
+Graph_Project_Model_sysadmin_3084195615
+Ball Game project
+5_639
+Project Model
+Graph: Ball Game project <Project Model> 5_639
+	Project name: Ball Game project
+	Status: draft
+	Project manager: David Hill
+	Object: David Hill <Person> 5_6156
+		Name: David Hill
+		E-mail: mailto:info@metacase.com
+		Contact address: Park Court
+Upper Essex Street
+City 5
+B8 6QB
+	Authors: David Hill Joe Smith
+	Object: Joe Smith <Person> 5_12069
+		Name: Joe Smith
+		E-mail: mailto:info@metacase.com
+		Contact address: www.metacase.com
+	Documentation: The Ball Game project is concerned with developing a video game, where the player attempts to break through a wall by knocking out bricks with a ball, which he or she bounces on his paddle.
+Object: Class Diagram [UML]: Ball Game structure - design <Graph> 5_763
+	Decomposed to: Ball Game structure - design <Class Diagram [UML]>
+Object: Class Diagram [UML]: Ball Game structure - analysis <Graph> 5_4907
+	Decomposed to: Ball Game structure - analysis <Class Diagram [UML]>
+Object: State Machine Diagram: States of the Ball <Graph> 5_10371
+	Decomposed to: States of the Ball <State Machine Diagram>
+Object: Use Case Diagram: Ball Game requirements <Graph> 5_10388
+	Decomposed to: Ball Game requirements <Use Case Diagram>
+Object: Sequence Diagram: Ball Game behaviour - Design <Graph> 5_10413
+	Decomposed to: Ball Game behaviour - Design <Sequence Diagram>
+Object: Generate documentation for the ball game project by running a generator for this model by pressing the Word Doc or HTML buttons at the end of the toolbar. <Note> 5_732
+	Documentation: Generate documentation for the ball game project by running a generator for this model by pressing the Word Doc or HTML buttons at the end of the toolbar.
+Relationship:  <Relates> 5_5700
+	Link type: traceability
+	Documentation: 
+  Role: From <From>  Object: <Graph> 5_4907
+  Role: To <To>  Object: <Graph> 5_763
+Relationship:  <Relates> 5_9060
+	Link type: explode
+	Documentation: 
+  Role: From <From>  Object: <Graph> 5_10388
+  Role: To <To>  Object: <Graph> 5_10413
+Relationship:  <Relates> 5_12435
+	Link type: explode
+	Documentation: 
+  Role: From <From>  Object: <Graph> 5_763
+  Role: To <To>  Object: <Graph> 5_10371

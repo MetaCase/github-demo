@@ -1,0 +1,35 @@
+Graph_MovablePorts_sysadmin_3445676549
+Movable static ports
+19_400
+MovableStaticPorts
+Graph: Movable static ports <MovableStaticPorts> 19_400
+	Model name: Movable static ports
+Object: A <Component> 19_468
+	Name: A
+Object:  <Component> 19_631
+	Name: 
+Object: B <Component> 19_720
+	Name: B
+Object: C <Component> 19_900
+	Name: C
+Object: Movable static ports
+This example is suitable for cases where you have some component types, each of which has its own fixed set of static ports, and you want to connect them and be able to move the ports along the edges of the components to desired positions. A, B, C and the enclosing unnamed object are all instances of the same component type. That type of component has three static ports, p1-p3, all in the same connectable. 
+    Click the "Connection" button on the toolbar to start creating a relationship, click inside the edge of the first object where you want the port to appear, and you will be prompted to select one of the legal ports for that object. Similarly click inside the edge of the second object, and select the desired port. You can later move the port around the edge to a new position if desired, by clicking its role and then dragging the handle at the port end. The ports will also move automatically where necessary, e.g. if the relationship would otherwise go across the middle of the object. <Note> 19_1755
+	Documentation: Movable static ports
+This example is suitable for cases where you have some component types, each of which has its own fixed set of static ports, and you want to connect them and be able to move the ports along the edges of the components to desired positions. A, B, C and the enclosing unnamed object are all instances of the same component type. That type of component has three static ports, p1-p3, all in the same connectable. 
+    Click the "Connection" button on the toolbar to start creating a relationship, click inside the edge of the first object where you want the port to appear, and you will be prompted to select one of the legal ports for that object. Similarly click inside the edge of the second object, and select the desired port. You can later move the port around the edge to a new position if desired, by clicking its role and then dragging the handle at the port end. The ports will also move automatically where necessary, e.g. if the relationship would otherwise go across the middle of the object.
+Relationship: Connection <Connection> 19_491
+  Role: PortRole <PortRole>  Port: p1 <MovablePort>  Object: <Component> 19_631
+  Role: PortRole <PortRole>  Port: p3 <MovablePort>  Object: <Component> 19_468
+Relationship: Connection <Connection> 19_498
+  Role: PortRole <PortRole>  Port: p3 <MovablePort>  Object: <Component> 19_631
+  Role: PortRole <PortRole>  Port: p1 <MovablePort>  Object: <Component> 19_720
+Relationship: Connection <Connection> 19_570
+  Role: PortRole <PortRole>  Port: p3 <MovablePort>  Object: <Component> 19_900
+  Role: PortRole <PortRole>  Port: p2 <MovablePort>  Object: <Component> 19_468
+Relationship: Connection <Connection> 19_652
+  Role: PortRole <PortRole>  Port: p1 <MovablePort>  Object: <Component> 19_468
+  Role: PortRole <PortRole>  Port: p3 <MovablePort>  Object: <Component> 19_720
+Relationship: Connection <Connection> 19_752
+  Role: PortRole <PortRole>  Port: p2 <MovablePort>  Object: <Component> 19_720
+  Role: PortRole <PortRole>  Port: p1 <MovablePort>  Object: <Component> 19_900

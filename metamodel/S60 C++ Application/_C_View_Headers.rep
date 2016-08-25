@@ -1,0 +1,7 @@
+Report '_C_View_Headers'
+do explosions
+{	foreach .(PopupMenu | Note | Query)
+	{	'        ' subreport '_C_View_Dialog_Header' run ';' newline
+	}
+}
+endreport

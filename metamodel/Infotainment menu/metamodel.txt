@@ -1,0 +1,66 @@
+==========================
+Graph Type
+==========================
+Infotainment menu
+	Model name: String
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Display
+	Name: String
+	Items list: OrderedCollection (String)
+	UI style: String
+Note
+	Note: Text
+
+==========================
+Relationship Types
+==========================
+Connects
+Roll
+
+==========================
+Role Types
+==========================
+From
+To
+Roll from
+	Action: String
+Roll to
+	Choice: String
+
+==========================
+Extra Types
+==========================
+Roll
+
+==========================
+Bindings
+==========================
+Connects
+	From: Display
+	To: Display
+Roll
+	Roll from #(Roll): Display
+1..N	Roll to: Display
+
+==========================
+Constraints
+==========================
+Display may be in at most 4 From roles
+
+==========================
+Subgraphs
+==========================
+
+==========================
+Generators
+==========================
+
+==========================
+Sub-Generators
+==========================
+_number of relationships
+

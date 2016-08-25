@@ -1,0 +1,45 @@
+Report '_subgraphs and projects in HTML'
+'<table border="0" cellspacing="0" cellpadding="0"><tr>' newline
+'<td><img src="images/tree_with_three_branches.png" width="17" height="16"></td>' newline
+'<td><a href="' subreport '_id and oid' run 'project.html" target="_top" >' newline
+'<img src="images/folder_root.png" alt="' id%xml ' <' type%xml '>" width="17" height="16" border="0"></a></td>' newline
+'<td nowrap="nowrap"><a href="' subreport '_id and oid' run 'project.html" target="_top"><b>' id%xml '</b>' newline
+'</a></td></tr></table>' newline
+foreach .Graph 
+{	'<table border="0" cellspacing="0" cellpadding="0"><tr>' newline
+	do decompositions
+	{	'<td><img src="images/tree_direct.png" width="17" height="16"></td>' newline
+		subreport '_graphs with icons in HTML' run
+	}	
+	'</tr></table>' newline
+}
+foreach .Subproject 
+{	'<table border="0" cellspacing="0" cellpadding="0"><tr>' newline
+	do decompositions
+	{	'<td><img src="images/tree_direct.png" alt="tree_direct" width="17" height="16"></td>' newline
+		'<td><img src="images/tree_with_three_branches.png" width="17" height="16"></td>' newline
+		'<td><a href="' subreport '_id and oid' run 'project.html" target="_top">' newline
+			'<img src="images/folder_with_subprojects.png" alt="' id%xml ' <' type%xml '>' newline
+			'" width="18" height="16" border="0"></a></td>' newline
+		'<td nowrap="nowrap"><a href="' subreport '_id and oid' run 'project.html" target="_top"><b>' id%xml '</b></a></td>' newline
+	}
+	'</tr></table>' newline
+}
+'<table border="0" cellspacing="0" cellpadding="0"><tr>' newline
+'<td><img src="images/tree_direct.png" width="17" height="16"></td>' newline
+'<td><img src="images/tree_with_two_branches.png" width="17" height="16"></td>' newline
+'<td><img src="images/email.png" alt="Email to subproject manager" width="18" height="16"></td>' newline
+do :Project manager
+{	'<td nowrap="nowrap">'
+	if :E-mail; then
+		'<a href="' 
+		if not :E-mail; =~ 'mailto:*' then 'mailto:' endif 
+		:E-mail; 
+		'">Email to ' id%xml '</a>'
+	else 
+		'&nbsp;'
+	endif
+	'</td>' newline
+}	
+'</tr></table>' newline
+endreport

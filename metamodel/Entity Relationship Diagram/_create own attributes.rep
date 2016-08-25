@@ -1,0 +1,10 @@
+Report '_create own attributes'
+/* USED FOR: .Entity or .Relationship */
+
+dowhile ~Owner part~Attribute part.() {	
+	:Attribute name;%var; ' '
+	:Type of data;
+	if :Constraints; then ' ' :Constraints; endif
+	',' 	newline
+}
+endreport

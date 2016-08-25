@@ -1,0 +1,92 @@
+Graph_Feature_model_user_3381090525
+Watch products
+13_167
+Feature model
+Graph: Watch products <Feature model> 13_167
+	Feature name: Watch products
+	Description: This model illustrates the features of digital wrist watch.
+Object: Minute <Feature> 13_178
+	Name: Minute
+	Binding time: 
+	Description: 
+Object: Application <Feature> 13_209
+	Name: Application
+	Binding time: 
+	Description: 
+	Decomposed to: Watch Apps <Feature model>
+Object: Hour <Feature> 13_230
+	Name: Hour
+	Binding time: 
+	Description: 
+Object: Hundredth <Feature> 13_252
+	Name: Hundredth
+	Binding time: 
+	Description: 
+Object: Rotate <Feature> 13_258
+	Name: Rotate
+	Binding time: 
+	Description: 
+Object: Button <Feature> 13_277
+	Name: Button
+	Binding time: 
+	Description: 
+Object: TimeUnit <Feature> 13_297
+	Name: TimeUnit
+	Binding time: 
+	Description: Description of the TimeUnit
+Object: Watch model <Feature> 13_329
+	Name: Watch model
+	Binding time: 
+	Description: 
+Object: Second <Feature> 13_353
+	Name: Second
+	Binding time: 
+	Description: 
+Object: Display <Feature> 13_399
+	Name: Display
+	Binding time: 
+	Description: 
+Object: Press <Feature> 13_419
+	Name: Press
+	Binding time: 
+	Description: 
+Object: Icon <Feature> 13_468
+	Name: Icon
+	Binding time: 
+	Description: 
+Relationship: Alternative feature <Alternative feature> 13_464
+  Role: Has features <Has features>  Object: <Feature> 13_277
+  Role:  <Optional>  Object: <Feature> 13_419
+	Cardinality: 
+  Role:  <Optional>  Object: <Feature> 13_258
+	Cardinality: 
+Relationship: Has feature <Has feature> 13_180
+  Role: Has features <Has features>  Object: <Feature> 13_399
+  Role:  <Mandatory>  Object: <Feature> 13_297
+	Cardinality: 
+Relationship: Has feature <Has feature> 13_337
+  Role: Has features <Has features>  Object: <Feature> 13_329
+  Role:  <Mandatory>  Object: <Feature> 13_399
+	Cardinality: 
+Relationship: Has feature <Has feature> 13_355
+  Role: Has features <Has features>  Object: <Feature> 13_399
+  Role: 0-4 <Optional>  Object: <Feature> 13_468
+	Cardinality: 0-4
+Relationship: Has feature <Has feature> 13_387
+  Role: Has features <Has features>  Object: <Feature> 13_399
+  Role: 2-4 <Mandatory>  Object: <Feature> 13_277
+	Cardinality: 2-4
+Relationship: Has feature <Has feature> 13_473
+  Role: Has features <Has features>  Object: <Feature> 13_329
+  Role: 1-M <Mandatory>  Object: <Feature> 13_209
+	Cardinality: 1-M
+Relationship: Or feature <Or feature> 13_228
+  Role: Has features <Has features>  Object: <Feature> 13_297
+  Role:  <Optional>  Object: <Feature> 13_252
+	Cardinality: 
+  Role:  <Optional>  Object: <Feature> 13_230
+	Cardinality: 
+  Role:  <Optional>  Object: <Feature> 13_178
+	Cardinality: 
+  Role:  <Optional>  Object: <Feature> 13_353
+	Cardinality: 

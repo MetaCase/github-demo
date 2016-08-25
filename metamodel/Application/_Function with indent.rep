@@ -1,0 +1,8 @@
+Report '_Function with indent'
+/* Produces intended function code definition used in Listbox content creation and OK selection */
+'	def ' :Function name; '(' :Parameters; '):' newline
+if :Documentation; <> '' then
+	do :Documentation; {'	# ' id newline}
+endif
+do :Function body; {'		' id newline}
+endreport

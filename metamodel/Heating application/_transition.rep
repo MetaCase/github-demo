@@ -1,0 +1,42 @@
+_transition()
+do ~From {
+	'		IF NOT MDL_'id;2%firstUpper%var'_SM_bATransitionWasPerformed THEN' newline
+	do ~(*condition) { 
+		'			IF ' 
+		if :NOT?; then 'NOT (' endif 
+		do .() {
+			if type = 'Condition' then
+				$cond = ''
+				dowhile ~cond~() {
+					$cond
+					_condition()
+					variable 'cond' write ' ' id;1 ' ' close
+				}
+			else
+				if type = 'Comparison' then
+					do ~Left~() { _condition() }
+					' ' :Comparison; ' '
+					do ~Right~() { _condition() }
+				else
+					_oName()
+					'.'
+					:Condition;1
+				endif
+			endif	
+		}
+		if :NOT?; then ')' endif 
+ 		' THEN' newline
+	}
+	'				MDL_'id;2%firstUpper%var'_SM_eCurrentState := MDL_'id;2%firstUpper%var'_SM_' 
+	do ~To.() {id%var%upper} ';' newline
+	'				MDL_'id;2%firstUpper%var'_SM_bATransitionWasPerformed := TRUE;' newline
+	do ~(*action) {
+		'				'
+		do .() { _gName()}
+			'.' id :Valve position;'();' newline
+		} 
+	if ~(*condition); then
+		'			END_IF' newline 
+	endif
+	'		END_IF' newline newline
+}

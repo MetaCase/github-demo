@@ -1,0 +1,36 @@
+_portdtArrayDatatype()
+'					<object id="_'oid'" type="Object_ArrayDatatype_sysadmin_3536999064">
+						<slot name="Short name">
+							<value>
+								<string>Err' :Short name%xml '</string>
+							</value>
+						</slot>
+						<slot name="Name">
+							<value>
+								<string>' :Name%xml '</string>
+							</value>
+						</slot>						
+						<slot name="MinLength">
+							<value>
+								<string>' :MinLength%xml '</string>
+							</value>
+						</slot>
+						<slot name="MaxLength">
+							<value>
+								<string>' :MaxLength%xml '</string>
+							</value>
+						</slot>
+						<slot name="Type">
+							<value>'
+								do :Type {
+									if not $reportedDatatypes  =~ oid%wildsp then
+										variable 'reportedDatatypes' append oid ' ' close
+										subreport '_portdt' type run 
+									else
+										'<object href="#_' oid '"></object>' newline
+									endif
+								}	
+								'</value>
+						</slot>
+					</object>
+'

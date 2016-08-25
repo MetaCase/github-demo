@@ -1,0 +1,25 @@
+Report '_Java_Applet'
+
+'package ' dowhile $generatedpackage { id '.' } ';
+
+import 'do $frameworkpackage { id '.' } '*;
+
+public class ' id ' extends AbstractWatchApplet {
+
+	private static final long serialVersionUID = 1L;
+
+	public ' id '() {
+		master=new Master();
+		master.init(this, '
+			do .Display; 
+			{	'new Display' id '()' }
+			', '
+			do .LogicalWatch; 
+			{	do decompositions; 
+				{	'new ' id '(master)'
+				}
+			}
+		');
+	}
+}'
+endreport

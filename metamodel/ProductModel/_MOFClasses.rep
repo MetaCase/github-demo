@@ -1,0 +1,38 @@
+Report '_MOFClasses'
+foreach .( * | ^Product ) { 				/* all other elements than product  */
+  if :Package = :Package name;2; then 	/* Package name with 2 means package from the package diagram */ 
+										/* product must belong to the same package than the package the code is geneated */
+	if :Composite?; then
+		'		// ********* composite' type ' ' id ' **********' newline
+		if :Documentation; then do :Documentation { '		//' id newline } endif
+		'		icomposite' type ' = new Composite' type; '("' id '");' newline
+		if :Composite?; then '		icomposite' type '.setDisplayname("' :Composite? '");' newline endif
+		'		icomposite' type subreport '_isSingleton' run
+		'			icomposite' type subreport '_isRoot' run
+		'			icomposite' type subreport '_isLeaf' run
+		/*subreport '_Supertype' run */
+		if :Type; then '		icomposite' type '.setType("' :Type '");' newline endif
+		do :Tags {'		' :Java instance name '.addTaggedModelElement(icomposite' Type;1;');' newline}
+	else 
+		'		// ********* ' type ' ' id ' **********' newline
+		if :Documentation; then do :Documentation { '		//' id newline } endif
+		'		i' type ' = new ' type '("'; id; '");' newline
+		if :Display name; then '		i' type '.setDisplayname("' :Display name '");' newline endif
+		'		i' type subreport '_isSingleton' run
+		'			i' type subreport '_isRoot' run
+		'			i' type subreport '_isLeaf' run
+		if :order; then '			i' type '.setReihenfolge(' :order ');' newline endif
+		/*subreport '_Supertype' run */
+		if :Type; then '		i' type '.setType("' :Type '") '; newline endif
+		do :Tags {'		' :Java instance name; '.addTaggedModelElement(i' Type;1;');' newline}
+	endif
+	newline
+  	subreport '_Operations' run
+	subreport '_Constraints' run
+  	'		productpackage_.addMofClass(i'
+	if :Composite?; then 'composite' endif
+	type; ');'
+	newline newline newline
+ endif
+}
+endreport

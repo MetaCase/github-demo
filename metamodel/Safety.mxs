@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="Safety">
+		<objectSymbol offset="51,23" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="51,23 71,23 71,43 51,43 51,23" targetPointX="61" targetPointY="33" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="48" version="1.2" width="71" xmlns="http://www.w3.org/2000/svg">
+				<polygon fill="rgb(255,255,0)" points="61,23 51,43 71,43" stroke="rgb(0,0,0)" stroke-width="2">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</polygon>
+				<textArea display-align="center" fill="rgb(0,0,0)" font-family="#sans serif" font-size="18" font-style="normal" font-weight="bold" height="24" sym:characterBackgroundFill="none" sym:textboxFill="none" sym:textboxStroke="none" sym:textboxStroke-width="1" sym:wordWrap="true" text-anchor="middle" width="17" x="53" y="24">
+					!
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</textArea>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

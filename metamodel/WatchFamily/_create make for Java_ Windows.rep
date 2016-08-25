@@ -1,0 +1,28 @@
+Report '_create make for Java: Windows'
+
+if $IDE = 'eclipse' then
+	subreport '_create Eclipse resource files' run
+	subreport '_write main class to INI file' arguments :Name; run
+endif
+
+subreport '_create MainFrame' run
+
+if not $IDE = 'eclipse' then
+	filename $projPath 'makeWatch.bat' write
+		to '%undent' translate
+			'@cd /D ' $srcPath '
+			@if exist *.class del *.class
+			@echo on
+			"' $winJDK '\bin\javac" -d ..' sep 'bin @javaFiles
+			@cd ..' sep 'bin
+			"' $winJDK '\bin\javaw" ' do $generatedpackage { id '.' } '_' :Name '
+			exit'
+		endto
+	close
+
+	filename $srcPath 'javaFiles' write
+		$sourceFiles
+	close
+endif
+
+endreport

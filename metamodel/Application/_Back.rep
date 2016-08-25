@@ -1,0 +1,19 @@
+Report '_Back'
+/* Generates back code for default and abnormal cases */
+if ~Back from; then  /* checks first situations that an element has a (starting) back flow drawn */
+	subreport '_Back code' run
+else /* then situations without abnormal backflow */
+	if ~To; then
+		/* cases when there is abnormal back (ending) drawn to this object */
+		if ~Back to; then
+			subreport '_stack_pop' run
+		else
+			subreport '_stack_pop' run
+		endif
+	else
+		if (~Back to; or ~Condition to;) then
+			subreport '_stack_pop' run
+		endif
+	endif
+endif
+endreport

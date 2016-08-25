@@ -1,0 +1,41 @@
+_ErrorFailureKindBinding()
+
+foreach .(OutFlowPort | ClientPort) {
+'		<binding id="_b' oid '">
+			<relationship type="Relationship_reference_sysadmin_3524947284"></relationship>
+			<connection id="1">
+				<role type="Role_FailureKind_sysadmin_3627561116">
+					<slot name="Short name">
+						<value>
+							<string>O</string>
+						</value>
+					</slot>
+					<slot name="Name">
+						<value>
+							<string>' id '_OmissionFailure</string>
+						</value>
+					</slot>
+				</role>
+				<object href="#_Oper_' oid '"></object>
+			</connection>
+			<connection id="2">
+				<role type="Role_refer_to_sysadmin_3524947529"></role>
+				<object href="#_' oid '"></object>
+			</connection>
+		</binding>' newline
+}
+foreach .(OutFlowPort | ClientPort) {
+	foreach .(InFlowPort | ServerPort) {
+'		<binding id="_ob' oid '_' oid;1 '">
+		<relationship type="Relationship_reference_sysadmin_3524947284"></relationship>
+		<connection id="1">
+			<role type="Role_referred_from_sysadmin_3524947545"></role>
+			<object href="#_' oid'"></object>
+		</connection>
+		<connection id="2">
+			<role type="Role_ConditionTo_sysadmin_3627560810"></role>
+			<object href="#_Oper_' oid;1 '"></object>
+		</connection>
+	</binding>' newline
+	}
+}

@@ -1,0 +1,16 @@
+Report '_checkings'
+/* Check generator for EAST-ADL DesignFunctionType models */
+
+/* Checkings for Objects */
+subreport '_checkings for the objects' run
+
+/* Checkings for Roles */
+subreport '_checkings for the roles' run
+
+/* Checkings for relationships */
+subreport '_checkings for the relationships' run
+
+/* Checkings for the Model */
+subreport '_checkings for the graph' run
+
+endreport

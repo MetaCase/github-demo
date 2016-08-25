@@ -1,0 +1,17 @@
+Report '_ImportPackages'
+/* Reports both attributes and constants of MOFclass subtypes */
+if :Imported packages; then
+	'		// ********* Import packages *********' newline
+	'		//' newline
+	'		MofPackage iPackage;' newline
+	'		MofImport mofImport;' newline
+	do :Imported packages; {
+	'		// Import ' :Package name; newline
+	'		' id 'ProductRepository i' id ' = ' id 'ProductRepository.getInstance();' newline
+	'		iPackage = (MofPackage) i' id;'.lookupElement("'; id;'");' newline
+	'		mofImport = MofImport.importNameSpace("' id '", iPackage, productpackage_ , false);' newline
+	'		productpackage_.addMofImport(mofImport);' newline
+	newline
+	}
+endif
+endreport

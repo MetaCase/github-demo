@@ -1,0 +1,70 @@
+==========================
+Graph Type
+==========================
+Logic
+	Logic name: String
+	Show values on wires?: Boolean
+
+==========================
+Object Types
+==========================
+And
+Circuit
+Label
+	Description: Text
+LED
+	Value: String
+Or
+V+
+Xor
+
+==========================
+Relationship Types
+==========================
+Connection
+
+==========================
+Role Types
+==========================
+Wire
+
+==========================
+Extra Types
+==========================
+Logic Element
+Logic port
+	Port name: String
+	Direction: String
+
+==========================
+Bindings
+==========================
+Connection
+1	Wire #(Logic port): Logic Element
+1	Wire #(Logic port): Logic Element
+
+==========================
+Constraints
+==========================
+All ports of type Logic port in the binding must have a different Direction
+
+==========================
+Subgraphs
+==========================
+
+==========================
+Generators
+==========================
+
+==========================
+Sub-Generators
+==========================
+_out_And
+_out_Circuit
+_out_LED
+_out_Or
+_out_V+
+_out_Xor
+__sym_Connection
+__sym_LED
+

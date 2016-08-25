@@ -1,0 +1,112 @@
+Graph_HardwareDesignArchitecture_user_3400132575
+HDA
+10_12397
+HardwareComponentType
+Graph: HDA <HardwareComponentType> 10_12397
+	__UUID: RPzSFcb+R0K0VUqxZs3t1w
+	Type: HDA <HardwareComponentType>
+	Object: HDA <HardwareComponentType> <HardwareComponentType> 10_12414
+		__UUID: AshLNcckT3y8U1a6EzWOEA
+		Short name: HDA
+		Name: 
+		Description: This is the comment for HDA
+	Show report: Checking
+	Show allocated prototypes: F
+	Show oid: F
+Object: Brake: BrakeType <Node> <HardwareComponentPrototype> 10_12438
+	__UUID: bqE6vLDzRW2rWLh+YWVjJw
+	Short name: Brake
+	Name: 
+	Description: 
+	Decomposed to: BrakeType <HardwareComponentType>
+Object: BrakeActuator: aBA <Actuator> <HardwareComponentPrototype> 10_12556
+	__UUID: 2bkvkKjISoyH5JsqnFwoTw
+	Short name: BrakeActuator
+	Name: 
+	Description: 
+	Decomposed to: aBA <HardwareComponentType>
+Object: BrakePedal: BS <Sensor> <HardwareComponentPrototype> 10_12643
+	__UUID: NPbgF0NNTEuryzJhhrfwWA
+	Short name: BrakePedal
+	Name: 
+	Description: 
+	Decomposed to: BS <HardwareComponentType>
+Object: Lock: LN <Node> <HardwareComponentPrototype> 10_12753
+	__UUID: 5N7lm80NQ2yT4N+IR5fJVA
+	Short name: Lock
+	Name: 
+	Description: 
+	Decomposed to: LN <HardwareComponentType>
+Object: LockActuator: LA <Actuator> <HardwareComponentPrototype> 10_12894
+	__UUID: UzvUkI2+Ruq54kGX1UZwcw
+	Short name: LockActuator
+	Name: 
+	Description: 
+	Decomposed to: LA <HardwareComponentType>
+Object: LockButton: LBS <Sensor> <HardwareComponentPrototype> 10_12977
+	__UUID: Ayg+5dy9QqaHbEWcnUgxhw
+	Short name: LockButton
+	Name: 
+	Description: 
+	Decomposed to: LBS <HardwareComponentType>
+Object: Wheel: aWN <Node> <HardwareComponentPrototype> 10_13064
+	__UUID: mHTmlo9NTBOT2vJyzQvXZw
+	Short name: Wheel
+	Name: 
+	Description: 
+	Decomposed to: aWN <HardwareComponentType>
+Object: WheelSpeed: aWSS <Sensor> <HardwareComponentPrototype> 10_13209
+	__UUID: YAzJj52AThGwOTfqaZrV8g
+	Short name: WheelSpeed
+	Name: 
+	Description: 
+	Decomposed to: aWSS <HardwareComponentType>
+Relationship: BS <HardwareConnector> 10_13296
+	__UUID: gi5blyBnTuiW5TxmAnVF2Q
+	Short name: BS
+	Name: 
+	Description: 
+  Role:  <IOHardwarePin_From>  Port: <IOHardwarePinOut> 10_13179  Object: <HardwareComponentPrototype> 10_13064
+  Role:  <IOHardwarePin_To>  Port: <IOHardwarePinIn> 10_12615  Object: <HardwareComponentPrototype> 10_12556
+Relationship: BStrength <HardwareConnector> 10_13318
+	__UUID: 2siNFRuTR16HEzr7scYp4Q
+	Short name: BStrength
+	Name: 
+	Description: 
+  Role:  <IOHardwarePin_From>  Port: <IOHardwarePinOut> 10_12724  Object: <HardwareComponentPrototype> 10_12643
+  Role:  <IOHardwarePin_To>  Port: <IOHardwarePinIn> 10_12501  Object: <HardwareComponentPrototype> 10_12438
+Relationship: LockCmd <HardwareConnector> 10_13340
+	__UUID: gAk3+R2XSQqfjGbUSpbW0Q
+	Short name: LockCmd
+	Name: 
+	Description: 
+  Role: CommunicationHardwarePin_From <CommunicationHardwarePin_From>  Port: <CommunicationHardwarePinOut> 10_12816  Object: <HardwareComponentPrototype> 10_12753
+  Role: CommunicationHardwarePin_To <CommunicationHardwarePin_To>  Port: <CommunicationHardwarePinIn> 10_12953  Object: <HardwareComponentPrototype> 10_12894
+Relationship: LockStatus <HardwareConnector> 10_13362
+	__UUID: N3DcKFl1TPiUPeJNIeImLg
+	Short name: LockStatus
+	Name: 
+	Description: 
+  Role:  <IOHardwarePin_From>  Port: <IOHardwarePinOut> 10_12864  Object: <HardwareComponentPrototype> 10_12753
+  Role:  <IOHardwarePin_To>  Port: <IOHardwarePinIn> 10_12527  Object: <HardwareComponentPrototype> 10_12438
+Relationship: Lock_sts <HardwareConnector> 10_13384
+	__UUID: iUkXFNAQSTWGVgw4rvPQdQ
+	Short name: Lock_sts
+	Name: 
+	Description: 
+  Role:  <IOHardwarePin_From>  Port: <IOHardwarePinOut> 10_12864  Object: <HardwareComponentPrototype> 10_12753
+  Role:  <IOHardwarePin_To>  Port: <IOHardwarePinIn> 10_13127  Object: <HardwareComponentPrototype> 10_13064
+Relationship: Status <HardwareConnector> 10_13406
+	__UUID: MBTVX2nOQJmmZr7oku8GuQ
+	Short name: LBStats
+	Name: Status
+	Description: 
+  Role:  <IOHardwarePin_From>  Port: <IOHardwarePinOut> 10_13036  Object: <HardwareComponentPrototype> 10_12977
+  Role:  <IOHardwarePin_To>  Port: <IOHardwarePinIn> 10_12838  Object: <HardwareComponentPrototype> 10_12753
+Relationship: WheelSpeed <HardwareConnector> 10_13428
+	__UUID: afMKeGksT/miiXiFajx4Bg
+	Short name: WheelSpeed
+	Name: 
+	Description: 
+  Role:  <IOHardwarePin_From>  Port: <IOHardwarePinOut> 10_13268  Object: <HardwareComponentPrototype> 10_13209
+  Role:  <IOHardwarePin_To>  Port: <IOHardwarePinIn> 10_13153  Object: <HardwareComponentPrototype> 10_13064

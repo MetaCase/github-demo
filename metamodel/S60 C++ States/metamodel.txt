@@ -1,0 +1,103 @@
+==========================
+Graph Type
+==========================
+S60 C++ States
+	Graph name: String
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Application
+	App name: String
+	Name in Grid: String
+	Name in List: String
+	Uid: String
+	Resource Identifier: String
+		4 characters
+		---------------------------------------------
+Note
+	State name: String
+	UI Text: String
+	UI Text Var: String
+	Note Type: String
+PopupMenu
+	State name: String
+	UI Text: String
+	UI Text Var: String
+	Popup Menu Items: OrderedCollection (Popup Menu Item)
+Query
+	State name: String
+	UI Text: String
+	UI Text Var: String
+	Query Type: String
+	Initial value: String
+	Buttons: String
+Start
+Stop
+Comment
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Transition
+Popup Menu choice
+	Popup Menu Item: Popup Menu Item
+
+==========================
+Role Types
+==========================
+From
+To
+
+==========================
+Extra Types
+==========================
+Dialog
+	State name: String
+	UI Text: String
+	UI Text Var: String
+Popup Menu Item
+	UI Text: String
+	UI Text Var: String
+
+==========================
+Bindings
+==========================
+Popup Menu choice
+	From: PopupMenu
+	To: Dialog, Stop
+Transition
+	From: Note, Query, Start
+	To: Dialog, Stop
+
+==========================
+Constraints
+==========================
+Start may be in at most 1 From role
+Start may occur at most 1 time
+
+==========================
+Subgraphs
+==========================
+
+==========================
+Generators
+==========================
+
+==========================
+Sub-Generators
+==========================
+_app
+_C_View_Dialog_Header
+_C_View_Note
+_C_View_PopupMenu
+_C_View_Query
+_r
+_rli
+_RSS_PopupMenu
+_RSS_Query
+_rui
+_UI Text Var
+

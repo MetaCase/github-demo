@@ -1,0 +1,275 @@
+Graph_Simple_GOPRR_user_3334325822
+Turtle
+21_195
+Metamodel [GOPRR]
+Graph: Turtle <Metamodel [GOPRR]> 21_195
+	Graph name: Turtle
+	__UUID: UwADkJCeSHOSsDo/My/AOg
+	Namespace: 
+	Properties: Name Format Animation Documentation [Turtle]
+	Object: Name <Property [GOPRR]> 21_258
+		Property name: Name
+		__UUID: yXAONzCtS9+JSooZaFwYdQ
+		Local name: 
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Object: Format <Property [GOPRR]> 21_263
+		Property name: Format
+		__UUID: l+l6EVCjSYuTJNOKoxNlag
+		Local name: 
+		Datatype: Object
+		Object Datatype: Format
+		Object: Format <Object [GOPRR]> 21_842
+			Object name: Format
+			__UUID: zNiOQvu6SmW+W7opvrMnlQ
+			Properties: Color Width
+			Object: Color <Property [GOPRR]> 21_292
+				Property name: Color
+				__UUID: TzcfG8/JRbq+rOw/INP/9g
+				Local name: 
+				Datatype: Overridable List
+				Object Datatype: 
+				Default value(s): "black"
+"red3"
+"orange"
+"yellow"
+"seagreen4"
+"orchid4"
+"royalblue1"
+"dodgerblue4"
+				Uniqueness: 
+				Description: 
+			Object: Width <Property [GOPRR]> 21_822
+				Property name: Width
+				__UUID: EHx/c91zTvSj+WR4uNrxHg
+				Local name: 
+				Datatype: String
+				Object Datatype: 
+				Default value(s): 1
+				Uniqueness: 
+				Description: 
+			Occurrence: N
+			Description: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Object: Animation <Property [GOPRR]> 21_273
+		Property name: Animation
+		__UUID: lyyfcnvxTCmtZzLgzRovZw
+		Local name: 
+		Datatype: Object
+		Object Datatype: Animation
+		Object: Animation <Object [GOPRR]> 21_576
+			Object name: Animation
+			__UUID: /CFcaSSETQu3cR+dc4fZGA
+			Properties: Milliseconds Per Frame Display Every Nth Frame
+			Object: Milliseconds Per Frame <Property [GOPRR]> 21_306
+				Property name: Milliseconds Per Frame
+				__UUID: liqBn02dQdKZmd5r9egX2g
+				Local name: 
+				Datatype: String
+				Object Datatype: 
+				Default value(s): 10
+				Uniqueness: 
+				Description: 
+			Object: Display Every Nth Frame <Property [GOPRR]> 21_589
+				Property name: Display Every Nth Frame
+				__UUID: huEfyuX9R8alt4DbqpEmgQ
+				Local name: 
+				Datatype: String
+				Object Datatype: 
+				Default value(s): 1
+				Uniqueness: 
+				Description: 
+			Occurrence: 0
+			Description: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Object: Documentation [Turtle] <Property [GOPRR]> 21_968
+		Property name: Documentation [Turtle]
+		__UUID: n7aCnmDNShqsUSkM24iibg
+		Local name: Documentation
+		Datatype: Text
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Constraints: 
+	Object order: 
+	Description: 
+Object: Right <Object [GOPRR]> 21_211
+	Object name: Right
+	__UUID: n0+E1T29Q7KkTG5po6ihsw
+	Properties: 
+	Occurrence: N
+	Description: 
+Object: For <Object [GOPRR]> 21_314
+	Object name: For
+	__UUID: VSXYYAWwTZq2eMiVEysN8A
+	Properties: Variable Start End
+	Object: Variable <Property [GOPRR]> 21_766
+		Property name: Variable
+		__UUID: eqcFIepsRByNVXJRFk9TtA
+		Local name: 
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Object: Start <Property [GOPRR]> 21_637
+		Property name: Start
+		__UUID: rLeUU2TkS/yTgkOojs0uzw
+		Local name: 
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Object: End <Property [GOPRR]> 21_455
+		Property name: End
+		__UUID: VFjTAwVwRbCWjJZws2te0g
+		Local name: 
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Occurrence: N
+	Description: 
+Object: _Action <Object [GOPRR]> 21_346
+	Object name: _Action
+	__UUID: khTsrB0yQkOOTOt8kkfwhQ
+	Properties: 
+	Occurrence: 0
+	Description: 
+Object: _Control <Object [GOPRR]> 21_392
+	Object name: _Control
+	__UUID: 4lGsoqchQ3eHoa2y1gN8sQ
+	Properties: 
+	Occurrence: 0
+	Description: 
+Object: Backward <Object [GOPRR]> 21_427
+	Object name: Backward
+	__UUID: zhhnN0A8RO+dZAIndtwqmw
+	Properties: 
+	Occurrence: N
+	Description: 
+Object: _Turn <Object [GOPRR]> 21_537
+	Object name: _Turn
+	__UUID: QkcQK5hJQY21KDDGRT2ZPA
+	Properties: Degrees
+	Object: Degrees <Property [GOPRR]> 21_745
+		Property name: Degrees
+		__UUID: wGrYSELQQg2SMr46hFtFcA
+		Local name: 
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Occurrence: 0
+	Description: 
+Object: Animation <Object [GOPRR]> 21_576
+	Object name: Animation
+	__UUID: /CFcaSSETQu3cR+dc4fZGA
+	Properties: Milliseconds Per Frame Display Every Nth Frame
+	Occurrence: 0
+	Description: 
+Object: Forward <Object [GOPRR]> 21_607
+	Object name: Forward
+	__UUID: p4Z0wZ55Qfuqh7K8RBNeWw
+	Properties: 
+	Occurrence: N
+	Description: 
+Object: _Move <Object [GOPRR]> 21_716
+	Object name: _Move
+	__UUID: 6juANhw2RRyDnVZn/aSC5w
+	Properties: Pen down? Distance
+	Object: Pen down? <Property [GOPRR]> 21_627
+		Property name: Pen down?
+		__UUID: F3hGWShzTZ28T/Wv6+9PHw
+		Local name: 
+		Datatype: Boolean
+		Object Datatype: 
+		Default value(s): true
+		Uniqueness: 
+		Description: 
+	Object: Distance <Property [GOPRR]> 21_203
+		Property name: Distance
+		__UUID: yjlIGtOBTbO0JfLzeBBHtQ
+		Local name: 
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Occurrence: 0
+	Description: 
+Object: Left <Object [GOPRR]> 21_751
+	Object name: Left
+	__UUID: WqoQNjD8TYStQFFJ6x+h+A
+	Properties: 
+	Occurrence: N
+	Description: 
+Object: Format <Object [GOPRR]> 21_842
+	Object name: Format
+	__UUID: zNiOQvu6SmW+W7opvrMnlQ
+	Properties: Color Width
+	Occurrence: N
+	Description: 
+Object: Note [Turtle] <Object [GOPRR]> 21_984
+	Object name: Note [Turtle]
+	__UUID: UuVt1YEIT82mmojpa2D+rQ
+	Properties: Documentation [Turtle]
+	Occurrence: N
+	Description: 
+Relationship: Sequence <Binding [GOPRR]> 21_833
+	Relationship: Sequence
+	Object: Sequence <Relationship [GOPRR]> 21_793
+		Relationship name: Sequence
+		__UUID: kCXVsaFST1qykRh96DA7Ig
+		Properties: 
+		Description: 
+  Role: From <First role [GOPRR]>  Object: <Object [GOPRR]> 21_392
+	Role: From
+	Object: From <Role [GOPRR]> 21_267
+		Role name: From
+		__UUID: XovqJueaTxOo954N1DGJyw
+		Properties: 
+		Description: 
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Dynamic Ports: 
+  Role: To <Last role [GOPRR]>  Object: <Object [GOPRR]> 21_392
+	Role: To
+	Object: To <Role [GOPRR]> 21_732
+		Role name: To
+		__UUID: hO0eXNtMRBiMPe23dv7FTQ
+		Properties: 
+		Description: 
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Can be drawn in both directions: F
+	Dynamic Ports: 
+Relationship: Inheritance [GOPRR] <Inheritance [GOPRR]> 21_201
+  Role: Subtype [GOPRR] <Subtype [GOPRR]>  Object: <Object [GOPRR]> 21_607
+  Role: Subtype [GOPRR] <Subtype [GOPRR]>  Object: <Object [GOPRR]> 21_427
+  Role: Supertype [GOPRR] <Supertype [GOPRR]>  Object: <Object [GOPRR]> 21_716
+Relationship: Inheritance [GOPRR] <Inheritance [GOPRR]> 21_269
+  Role: Subtype [GOPRR] <Subtype [GOPRR]>  Object: <Object [GOPRR]> 21_576
+  Role: Subtype [GOPRR] <Subtype [GOPRR]>  Object: <Object [GOPRR]> 21_842
+  Role: Subtype [GOPRR] <Subtype [GOPRR]>  Object: <Object [GOPRR]> 21_346
+  Role: Subtype [GOPRR] <Subtype [GOPRR]>  Object: <Object [GOPRR]> 21_314
+  Role: Supertype [GOPRR] <Supertype [GOPRR]>  Object: <Object [GOPRR]> 21_392
+Relationship: Inheritance [GOPRR] <Inheritance [GOPRR]> 21_457
+  Role: Subtype [GOPRR] <Subtype [GOPRR]>  Object: <Object [GOPRR]> 21_537
+  Role: Subtype [GOPRR] <Subtype [GOPRR]>  Object: <Object [GOPRR]> 21_716
+  Role: Supertype [GOPRR] <Supertype [GOPRR]>  Object: <Object [GOPRR]> 21_346
+Relationship: Inheritance [GOPRR] <Inheritance [GOPRR]> 21_726
+  Role: Subtype [GOPRR] <Subtype [GOPRR]>  Object: <Object [GOPRR]> 21_751
+  Role: Subtype [GOPRR] <Subtype [GOPRR]>  Object: <Object [GOPRR]> 21_211
+  Role: Supertype [GOPRR] <Supertype [GOPRR]>  Object: <Object [GOPRR]> 21_537

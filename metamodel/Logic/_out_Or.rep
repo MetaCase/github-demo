@@ -1,0 +1,14 @@
+_out_Or()
+
+@result='0'
+do .()~() 
+{	if #():Direction = 'in'  then
+		local 'in' write
+			do ~()
+			{	subreport '_out_' do .() { type } run
+			}
+		close
+		if @in = '1' then @result = '1' endif
+	endif
+}
+@result

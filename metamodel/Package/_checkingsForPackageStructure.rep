@@ -1,0 +1,43 @@
+_checkingsForPackageStructure()
+/* Goes through the Package hiearchy */
+foreach .(Package | SystemModel | EAType)
+{	if type = 'EAType' And not decompositions then
+		_reportWarnings()
+		'Warning: ' type; ' in model ' id;1 ' <' type; 1 '> does not have a subgraph containing the type definition.'
+		if $extendedCheck <> 'T' then
+			' You may add it by Ctrl + double click the ' type
+		endif
+		newline
+	endif
+
+	if type = 'Package' And not decompositions then
+		_reportWarnings()
+		'Warning: ' type ' in model ' id;1 ' <' type; 1 '> does not have a subgraph containing the package structure.'
+		if $extendedCheck <> 'T' then
+			' You may add it by Ctrl + double click the ' type
+		endif
+		newline
+	endif
+	
+	do decompositions 
+	{ 	if not $visited =~ oid%wildsp then
+			variable 'visited' append oid ' ' close
+			if type = 'Package'; then 
+				_checkingsForPackageStructure() 
+			else
+				if type = 'AnalysisFunctionType' or type = 'DesignFunctionType' or type = 'HardwareComponentType' then
+					_validateFunctionsAndHardwareComponents()
+					_checkings()
+				else
+					if type = 'SystemModel'; then 
+						_checkingsForPrototypes()
+					else
+						if type = 'TimingModel' or type = 'Dependability' or type = 'BehaviorGraph' or type = 'EnvironmentModel' or type = 'SafetyCase' or type = 'Variability' then
+							_checkings()
+						endif
+					endif
+				endif
+			endif
+		endif
+	}
+}

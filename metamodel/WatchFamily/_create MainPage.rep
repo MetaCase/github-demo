@@ -1,0 +1,115 @@
+Report '_create MainPage'
+
+variable 'XAMLFiles' append 
+	$cr 'MainPage' 
+close
+$cr = newline
+
+filename $srcPath 'MainPage.xaml.cs' encoding 'UTF-8' write
+'using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Shapes;
+using Microsoft.Phone.Controls;
+using Microsoft.Phone.Tasks;
+
+namespace Digital_watch
+{
+    public partial class MainPage : PhoneApplicationPage
+    {
+        // Constructor
+        public MainPage()
+        {
+            InitializeComponent();
+        }
+'
+
+$modelCount='0'
+
+do _WatchesToGenerate()
+{	$modelCount++%null
+'
+        // Click event for button ''' :Model name; '''.
+        private void button' :Model name; '_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/' :Model name; '.xaml", UriKind.Relative));
+        }
+' 
+}
+
+'   }
+}'
+close 
+
+filename $srcPath 'MainPage.xaml' encoding 'UTF-8' write
+'<?xml version="1.0" encoding="UTF-8"?>
+<phone:PhoneApplicationPage 
+    x:Class="Digital_watch.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" d:DesignHeight="768" d:DesignWidth="480">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="Digital Watch Example" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="' :Name '" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+           <ListBox HorizontalAlignment="Stretch" >
+'
+do _WatchesToGenerate()
+{ 
+'                <ListBoxItem HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" >                 
+                    <Button Height="Auto" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" BorderBrush="Black" Click="button' :Model name; '_Click" Margin="0,10,0,0">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock HorizontalAlignment="Left" FontSize="40">' :Model name; '</TextBlock>
+                            <TextBlock HorizontalAlignment="Left" FontSize="16">' :Documentation '</TextBlock>
+                        </StackPanel>  
+                    </Button>
+                </ListBoxItem>
+'
+} 
+'           </ListBox>
+        </Grid>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>'	
+close 
+
+endreport

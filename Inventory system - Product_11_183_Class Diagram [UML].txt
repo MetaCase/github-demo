@@ -1,0 +1,841 @@
+Graph_Class_diagram__UML__sysadmin_3019387957
+Inventory system - Product
+11_183
+Class Diagram [UML]
+Graph: Inventory system - Product <Class Diagram [UML]> 11_183
+	Model name: Inventory system - Product
+	Status: draft
+	Authors: David Hill
+	Object: David Hill <Person> 11_4154
+		Name: David Hill
+		E-mail: mailto:info@metacase.com
+		Contact address: Park Court
+Upper Essex Street
+City 5
+B8 6QB
+	Documentation: Inventory system - Product Class diagram was made by DH 18.8.2006
+Object: Order <Class [UML]> 11_818
+	Class name: Order
+	Attributes: +Product name:string +Amount:number +Date of order:date +Price:number
+	Object: +Product name:string <Attribute [UML]> 11_1890
+		Name: Product name
+		Data type: string
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: Product name as a string.
+	Object: +Amount:number <Attribute [UML]> 11_1885
+		Name: Amount
+		Data type: number
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +Date of order:date <Attribute [UML]> 11_3385
+		Name: Date of order
+		Data type: date
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: Date of order is the date of order creation
+	Object: +Price:number <Attribute [UML]> 11_2728
+		Name: Price
+		Data type: number
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: Price of the oder can be represented also in different currency (EURO or USD)
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: Customer or sales person enters the order.
+	Simple symbol?: F
+Object: Order-handler <Class [UML]> 11_821
+	Class name: Order-handler
+	Attributes: 
+	Operations: +void Update product's information() +number Check the product's availability(real productID, number partno, array list)
+	Object: +void Update product's information() <Operation [UML]> 11_2046
+		Operation name: Update product's information
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: 
+	Object: +number Check the product's availability(real productID, number partno, array list) <Operation [UML]> 11_1341
+		Operation name: Check the product's availability
+		Parameters: in real productID number partno array list
+		Object: in real productID <Parameter> 11_1035
+			Parameter: productID
+			Data type: real
+			Direction: in
+			Default value: 
+		Object: number partno <Parameter> 11_3858
+			Parameter: partno
+			Data type: number
+			Direction: 
+			Default value: 
+		Object: array list <Parameter> 11_342
+			Parameter: list
+			Data type: array
+			Direction: 
+			Default value: 
+		Return type: number
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: Returns the number of products available.
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Store <Class [UML]> 11_1492
+	Class name: Store
+	Attributes: +StoreID:real +Address:Text +Town:string +Country:string
+	Object: +StoreID:real <Attribute [UML]> 11_424
+		Name: StoreID
+		Data type: real
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +Address:Text <Attribute [UML]> 11_1962
+		Name: Address
+		Data type: Text
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +Town:string <Attribute [UML]> 11_1244
+		Name: Town
+		Data type: string
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +Country:string <Attribute [UML]> 11_2804
+		Name: Country
+		Data type: string
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: +void Update()
+	Object: +void Update() <Operation [UML]> 11_2084
+		Operation name: Update
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: Company has currently 12 stores for the domestic market and 9 stores abroad for international customers. 
+	Simple symbol?: F
+Object: Shelf <Class [UML]> 11_1563
+	Class name: Shelf
+	Attributes: +Height:real +Length:real +ShelfID:real
+	Object: +Height:real <Attribute [UML]> 11_808
+		Name: Height
+		Data type: real
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: Height for the shelf in the store.
+	Object: +Length:real <Attribute [UML]> 11_2351
+		Name: Length
+		Data type: real
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: Length for the shelf in the store.
+	Object: +ShelfID:real <Attribute [UML]> 11_3780
+		Name: ShelfID
+		Data type: real
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: ShelfID identifies the shelf in the store. This is needed for locating the products.
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: Each shelf in the store has it's own identifier code.
+	Simple symbol?: F
+Object: Product <Class [UML]> 11_1568
+	Class name: Product
+	Attributes: +ProductID:real +Product name:string +Colour:real +Place:real
+	Object: +ProductID:real <Attribute [UML]> 11_2747
+		Name: ProductID
+		Data type: real
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: ProductID code
+	Object: +Colour:real <Attribute [UML]> 11_2028
+		Name: Colour
+		Data type: real
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +Place:real <Attribute [UML]> 11_3513
+		Name: Place
+		Data type: real
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: +void Replace the product(real productID, real corridorID, real shelfID) +void Place the product(real productID, real corridorID, real shelfID) +void Update product information(real productID)
+	Object: +void Replace the product(real productID, real corridorID, real shelfID) <Operation [UML]> 11_2889
+		Operation name: Replace the product
+		Parameters: in real productID real corridorID real shelfID
+		Object: real corridorID <Parameter> 11_2167
+			Parameter: corridorID
+			Data type: real
+			Direction: 
+			Default value: 
+		Object: real shelfID <Parameter> 11_792
+			Parameter: shelfID
+			Data type: real
+			Direction: 
+			Default value: 
+		Return type: void
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: 
+	Object: +void Place the product(real productID, real corridorID, real shelfID) <Operation [UML]> 11_2252
+		Operation name: Place the product
+		Parameters: in real productID real corridorID real shelfID
+		Return type: void
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: This method will place the product to the store by giving both corridorID and shelfID.
+	Object: +void Update product information(real productID) <Operation [UML]> 11_1533
+		Operation name: Update product information
+		Parameters: in real productID
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: Definition for goods to be ordered and stored in central warehouses and stores.
+	Simple symbol?: F
+	Explode to: States of the product <State Machine Diagram>
+Object: Customer <Class [UML]> 11_2283
+	Class name: Customer
+	Attributes: +CustomerID:real +Name:string +Address:real +Country:string +Phone number:string
+	Object: +CustomerID:real <Attribute [UML]> 11_2502
+		Name: CustomerID
+		Data type: real
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +Name:string <Attribute [UML]> 11_3420
+		Name: Name
+		Data type: string
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +Address:real <Attribute [UML]> 11_2778
+		Name: Address
+		Data type: real
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +Country:string <Attribute [UML]> 11_4138
+		Name: Country
+		Data type: string
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +Phone number:string <Attribute [UML]> 11_1435
+		Name: Phone number
+		Data type: string
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: Customer's phone number.
+	Operations: +void Order products() +number Check the product's availability(real productID, number partno, array list)
+	Object: +void Order products() <Operation [UML]> 11_2206
+		Operation name: Order products
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: 
+	Object: +number Check the product's availability(real productID, number partno, array list) <Operation [UML]> 11_3735
+		Operation name: Check the product's availability
+		Parameters: in real productID number partno array list
+		Return type: number
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: Returns the number of products available.
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: Customer can be either house economic or some big customer.
+	Simple symbol?: F
+Object: After-order <Class [UML]> 11_2986
+	Class name: After-order
+	Attributes: +Due date:date
+	Object: +Due date:date <Attribute [UML]> 11_281
+		Name: Due date
+		Data type: date
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: +void Create a note for the customer()
+	Object: +void Create a note for the customer() <Operation [UML]> 11_3893
+		Operation name: Create a note for the customer
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: When the shortage of product delivery occurs, after-order has to be made to fulfil the customer's order completely.
+	Simple symbol?: F
+Object: Corridor <Class [UML]> 11_3062
+	Class name: Corridor
+	Attributes: +CorridorID:real
+	Object: +CorridorID:real <Attribute [UML]> 11_2550
+		Name: CorridorID
+		Data type: real
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: CorridorID identifies the corridor in the store. This is needed for locating the products.
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: Each corridor in the store has it's own identifier code.
+	Simple symbol?: F
+Object: Buy-order <Class [UML]> 11_3659
+	Class name: Buy-order
+	Attributes: +Discount%:real
+	Object: +Discount%:real <Attribute [UML]> 11_4208
+		Name: Discount%
+		Data type: real
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: Each customer has own discount%, based on the aggreement. 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: Buy-order is made by sales person to keep product amount in the store at the optimal level.
+	Simple symbol?: F
+Object: Sell-order <Class [UML]> 11_3723
+	Class name: Sell-order
+	Attributes: +Discount%:real
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: From the company point of view order made by the customer is Sell-order. Products or parts of them will then be delivered to the customer.
+	Simple symbol?: F
+Object: Sales person <Class [UML]> 11_4314
+	Class name: Sales person
+	Attributes: +Name:string +PersonID:real +Address:Text +Department:string
+	Object: +PersonID:real <Attribute [UML]> 11_2175
+		Name: PersonID
+		Data type: real
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +Department:string <Attribute [UML]> 11_3042
+		Name: Department
+		Data type: string
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: Department code
+	Operations: +void Make an after order() +void Make an invoice() +number Check the product's availability(real productID, number partno, array list) +void Order products()
+	Object: +void Make an after order() <Operation [UML]> 11_2342
+		Operation name: Make an after order
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: After-order has to be made, when customer order can't be completely fulfilled.
+	Object: +void Make an invoice() <Operation [UML]> 11_1622
+		Operation name: Make an invoice
+		Parameters: 
+		Return type: void
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: 
+	Object: +number Check the product's availability(real productID, number partno, array list) <Operation [UML]> 11_3163
+		Operation name: Check the product's availability
+		Parameters: in real productID number partno array list
+		Return type: number
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: Returns the number of products available.
+	Object: +void Order products() <Operation [UML]> 11_307
+		Operation name: Order products
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: Sales person works in the Sales department (main building).
+	Simple symbol?: F
+Object: The Product class has an associated state diagram. Select Product and you can see its subgraph from the Subgraph(s) info bar (alternatively select Graph | Graph Info). To open the subgraph Ctrl + double click Product, or select Open Subgraph from its pop-up menu. <Note text> 11_884
+	Note text: The Product class has an associated state diagram. Select Product and you can see its subgraph from the Subgraph(s) info bar (alternatively select Graph | Graph Info). To open the subgraph Ctrl + double click Product, or select Open Subgraph from its pop-up menu.
+	Stereotype: 
+Relationship:  <Aggregation> 11_1024
+	Association name: 
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 11_3062
+	Role name: 
+	Multiplicity: 1..*
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 11_1492
+	Multiplicity: 
+	Composition?: F
+Relationship:  <Aggregation> 11_2850
+	Association name: 
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 11_1563
+	Role name: 
+	Multiplicity: 0..*
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 11_1492
+	Multiplicity: 
+	Composition?: F
+Relationship:  <Association [UML]> 11_1279
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 11_2283
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 11_818
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship: Creates <Association [UML]> 11_1283
+	Association name: Creates
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 11_1568
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 11_2283
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 11_2581
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 11_1568
+	Role name: 
+	Multiplicity: 0..*
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 11_1492
+	Role name: 
+	Multiplicity: 0..*
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 11_4028
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 11_821
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 11_818
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 11_4195
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 11_1568
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 11_4314
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 11_4199
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 11_1568
+	Role name: 
+	Multiplicity: 1..*
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 11_818
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Generalization [UML]> 11_2648
+	Discriminator: 
+	Constraint: 
+	Visibility: public
+	Virtual?: F
+	Completeness: 
+	Derivation rules: 
+  Role: Specialization <Specialization>  Object: <Class [UML]> 11_3723
+  Role: Specialization <Specialization>  Object: <Class [UML]> 11_3659
+  Role: Specialization <Specialization>  Object: <Class [UML]> 11_2986
+  Role: Superclass <Superclass>  Object: <Class [UML]> 11_818

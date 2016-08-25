@@ -1,0 +1,26 @@
+Report 'Java'
+/*	Creates a .java file for each class from UML class diagram according to the following rules:
+*	
+*	Documentation of classes are included into comments and marked with "//" 
+*	Abstract classes identified from the class property Abstract?
+*	Attributes and operations are listed according their access level: public, private, protected, package
+*	If data type is not entered comments out the attribute by asking to enter data type  
+*	Static attributes and operations are created for attributes and operations which have "class" scope 
+*	Final attributes are created for attributes which have stereotype "constant"
+*	Return type for operation uses void if not entered, or nothing if stereotype is construct
+*	Abstract operations are created if overridability is "deferred"
+*	Constraints of attributes and operations are marked with "//" 
+*	
+*/
+foreach .Class [UML]; 
+{	/* Rough test: don't generate interfaces or into 3rd party namespaces */
+	if not (:Stereotype; = 'exampleonly' OR :Stereotype; = 'interface' OR :Package; =~ 'java.*' OR :Package; =~ 'javax.*' OR :Package; =~ 'org.omg.*' OR :Package; =~ 'org.w3c.*' OR :Package; =~ 'org.xml.*') then
+		filename subreport '_default directory' run id '.java'
+		md5start '	// MEPMD5 ' md5stop '	' newline merge
+		'// From MetaEdit+, graph: ' id;1 newline
+		'// .java file for class ' id newline newline
+		subreport '_Java class' run
+		close
+	endif
+}
+endreport

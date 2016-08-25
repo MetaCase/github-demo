@@ -1,0 +1,27 @@
+!\.jsn()
+_translators()
+_purposeTranslators()
+
+$puId = '1'
+_GetReferences()
+
+filename subreport '_default directory' run id%file'.jsn' write
+'{
+  "pId": "1",
+  "apiVersion": "00.18",
+  "name": "' :Name '",
+  "initPuId": 1,
+  "purposes": [
+    {' newline
+	foreach .Purpose {
+		do decompositions {
+			_stateIds()
+			_app()
+			_states() 
+		}
+		$puId++%null
+	}
+'    }
+  ]
+}'
+close

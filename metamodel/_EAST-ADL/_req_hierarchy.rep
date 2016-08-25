@@ -1,0 +1,7 @@
+_req_hierarchy(@tab)
+local 'tab' append '	' close
+do :Child hierarchy; {
+	@tab '['
+	id ']' newline
+	_req_hierarchy(@tab)
+}

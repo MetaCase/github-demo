@@ -1,0 +1,29 @@
+Report '_Framework Components'
+do :Included Components;
+{	@platformOK = ''
+	if :Platform condition; = '' then 
+		@platformOK = 'T'
+	else
+		do :Platform condition:Platforms;
+		{	if :Generation target platform; = :Generation target platform;3 then
+				@platformOK = 'T'
+			endif
+		}
+	endif
+	
+	if @platformOK then
+		variable 'sourceFile' write 
+			do $frameworkpackage { id sep } 
+			:Component Name; 
+		close
+		if not $sourceFiles =~ $sourceFile%wildsp then		
+			variable 'sourceFiles' append	$sourceFile ' ' close
+		endif
+		/* Always write: versions for different platforms are from least to most specific, so last wins */ 
+		filename $srcPath $sourceFile write
+			:Source Code;
+		close
+	endif
+}
+
+endreport

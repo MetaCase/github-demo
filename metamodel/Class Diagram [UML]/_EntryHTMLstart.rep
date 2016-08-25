@@ -1,0 +1,16 @@
+Report '_EntryHTMLstart'
+/* The common elements for the start of all HTML pages */
+'<!-- (Start of MetaEdit+ generator _EntryHTMLstart -->
+<html>
+<head>
+<title>' id%xml '</title>
+<link rel="stylesheet" type="text/css" href="sample.css">
+</head>
+
+<body>
+<h1>' id%xml '</h1>' newline
+/* '<div id="view-source">&nbsp;</div>' newline */
+'<!-- End of MetaEdit+ generator _EntryHTMLstart) -->
+
+'
+endreport

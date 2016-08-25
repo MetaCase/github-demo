@@ -1,0 +1,11 @@
+__sym_Connection()
+
+if :Show values on wires?;1; = 'T' then
+	@isSubgraph = ''
+	foreach .Dynamic Port; unique '1' { @isSubgraph = 'T' }
+	if @isSubgraph then
+		'?'
+	else
+		subreport '__sym_Connection' runSuper
+	endif
+endif

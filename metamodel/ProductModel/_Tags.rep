@@ -1,0 +1,16 @@
+Report '_Tags'
+if :Tags; then
+	'		// ********************************************************************' newline
+	'		// Tags' newline
+	'		// ********************************************************************' newline
+	do :Tags { 
+		'		' :Java instance name ' = new Tag("' :Tag name '",MofModelConstants.' :TagID');' newline
+		if :Added value; then 
+			'		' :Java instance name '.addValue("' :Added value '");' newline 
+		endif;
+		'		productpackage_.addContainedTag(' :Java instance name ');' newline
+		newline
+	}
+endif
+newline
+endreport

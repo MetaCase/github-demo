@@ -1,0 +1,50 @@
+Report '_RSS_PopupMenu'
+'
+//----------------------------------------------------
+//   
+//     ' subreport '_rli' run '
+//     Popup Menu Dialog for view
+//
+//----------------------------------------------------
+//
+RESOURCE DIALOG ' subreport '_rli' run '
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items = 
+        {
+        DLG_LINE
+            {
+            type = EAknCtListQueryControl;
+            id = EListQueryControl;
+            control = AVKON_LIST_QUERY_CONTROL
+                {
+                listtype = EAknCtSinglePopupMenuListBox;
+                listbox = LISTBOX
+                    {
+                    flags = EAknListBoxMenuList;
+                    height = 3;
+                    width = 3;
+                    array_id = ' subreport '_rli' run '_item;
+                    };
+                heading = "' :UI Text; '";
+                };
+            }
+        };
+    }
+    RESOURCE ARRAY ' subreport '_rli' run '_item
+    {
+    items =
+        {'
+dowhile :Popup Menu Items;
+{	'
+        LBUF { txt = "' :UI Text; 
+	if 'true' then '"; }' endif
+	','
+}
+'
+        };
+    }
+
+'
+endreport

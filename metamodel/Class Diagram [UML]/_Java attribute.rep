@@ -1,0 +1,23 @@
+Report '_Java attribute'
+if :Data type; = '' then
+	'	// please specify data type:'
+endif
+'	'
+:Visibility; ' '
+if :Scope; = 'class'  then 'static ' endif
+if :Stereotype; = 'constant' then 'final ' endif
+:Data type; ' ' :Name;
+if :Default value; then '=' :Default value; endif
+';'
+if :Constraints; <> '' then 
+	'	// ' 
+else 
+	if :Documentation; <> '' then 
+		'	// '
+	endif
+endif
+dowhile :Constraints; {id ' '}
+' '
+dowhile :Documentation; {id ' '}
+newline
+endreport

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="Component [UML] symbol">
+		<objectSymbol offset="30,23" scaleFilter="0,0">
+			<defaultConnectable isSticky="true" points="30,23 48,23 48,40 30,40 30,23" targetPointX="39" targetPointY="31.5" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="40" version="1.2" width="48" xmlns="http://www.w3.org/2000/svg">
+				<g fill="rgb(255,255,255)" stroke="rgb(0,0,0)" stroke-width="1" sym:height="17" sym:width="18" sym:x="3.0e1" sym:y="2.3e1">
+					<rect fill="rgb(255,255,255)" height="17" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="15" x="33" y="23">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<rect fill="rgb(255,255,255)" height="4" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="14" x="30" y="27">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<rect fill="rgb(255,255,255)" height="4" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="14" x="30" y="33">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

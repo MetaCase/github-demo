@@ -1,0 +1,9 @@
+_write\ main\ class\ to\ INI\ file(@name)
+
+filename 'plugin.ini' append
+	'classToLaunch='
+	if @name then
+		do $generatedpackage {id '.'} '_' @name 
+	endif	
+	newline
+close		

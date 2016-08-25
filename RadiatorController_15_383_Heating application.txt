@@ -1,0 +1,64 @@
+Graph_Heating_application_user_3504901597
+RadiatorController
+15_383
+Heating application
+Graph: RadiatorController <Heating application> 15_383
+	System name: RadiatorController
+	Description: Radiator application checks the room temperature and warms radiator R1 accordingly.
+	Use visualization: F
+Object: >= <Comparison> 15_927
+	Comparison: >=
+Object: <= <Comparison> 15_1388
+	Comparison: <=
+Object: R1 <Radiator> 15_1305
+	Name: R1
+Object: Start <Start> 15_765
+Object: Initializing <State> 15_492
+	State name: Initializing
+	Description: 
+Object: Monitor room temperature <State> 15_1219
+	State name: Monitor room temperature
+	Description: 
+Object: TH1 <Thermostat> 15_1139
+	Name: TH1
+	Description: Thermostate controlling room temperature
+Relationship: Condition <Condition> 15_806
+  Role: Right <Right>  Object: <Comparison> 15_1388
+  Role: lrTempSetpointLow <Thermostat condition>  Object: <Thermostat> 15_1139
+	NOT?: F
+	Condition: lrTempSetpointLow
+Relationship: Condition <Condition> 15_977
+  Role: Left <Left>  Object: <Comparison> 15_927
+  Role: lrRoomTemperature <Thermostat condition>  Object: <Thermostat> 15_1139
+	NOT?: F
+	Condition: lrRoomTemperature
+Relationship: Condition <Condition> 15_1191
+  Role: Right <Right>  Object: <Comparison> 15_927
+  Role: lrTempSetPointHigh <Thermostat condition>  Object: <Thermostat> 15_1139
+	NOT?: F
+	Condition: lrTempSetPointHigh
+Relationship: Condition <Condition> 15_1343
+  Role: Left <Left>  Object: <Comparison> 15_1388
+  Role: lrRoomTemperature <Thermostat condition>  Object: <Thermostat> 15_1139
+	NOT?: F
+	Condition: lrRoomTemperature
+Relationship: Transition <Transition> 15_421
+  Role: From <From>  Object: <State> 15_492
+  Role: To <To>  Object: <State> 15_1219
+Relationship: Transition <Transition> 15_455
+  Role: From <From>  Object: <Start> 15_765
+  Role: To <To>  Object: <State> 15_492
+Relationship: Transition <Transition> 15_597
+  Role: F <Condition>  Object: <Comparison> 15_927
+	NOT?: F
+  Role: From <From>  Object: <State> 15_1219
+  Role: DontWarmUp <Heat exchanger action>  Object: <Radiator> 15_1305
+	Action: DontWarmUp
+  Role: To <To>  Object: <State> 15_1219
+Relationship: Transition <Transition> 15_1337
+  Role: F <Condition>  Object: <Comparison> 15_1388
+	NOT?: F
+  Role: From <From>  Object: <State> 15_1219
+  Role: DoWarmUp <Heat exchanger action>  Object: <Radiator> 15_1305
+	Action: DoWarmUp
+  Role: To <To>  Object: <State> 15_1219

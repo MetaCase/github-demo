@@ -1,0 +1,208 @@
+Graph_State_diagram__UML__sysadmin_3019388223
+States of the Ball
+5_636
+State Machine Diagram
+Graph: States of the Ball <State Machine Diagram> 5_636
+	Model name: States of the Ball
+	Status: frozen
+	Authors: Joe Smith
+	Object: Joe Smith <Person> 5_12069
+		Name: Joe Smith
+		E-mail: mailto:info@metacase.com
+		Contact address: www.metacase.com
+	Documentation: This diagram describes the states of the ball and possible transitions between the states. It reuses events and operations from the class diagram (e.g. Start game, move, calculateNewDirection).
+Object: This diagram describes the states of the ball and possible transitions between the states. It reuses events and operations from the class diagram (e.g. initialize, move, calculateNewDirection). <Note text> 5_3405
+	Note text: This diagram describes the states of the ball and possible transitions between the states. It reuses events and operations from the class diagram (e.g. initialize, move, calculateNewDirection).
+	Stereotype: 
+Object: Start <Start> 5_14576
+Object: Initialized <State [UML]> 5_3358
+	State name: Initialized
+	Internal actions: 
+	Documentation: In the beginning the direction of the ball is initialized to 0 which means movement directly up.
+	Symbol transparent?: F
+Object: Moving <State [UML]> 5_3384
+	State name: Moving
+	Internal actions: do / move
+	Object: do / move <Internal activity> 5_15259
+		Activity: move
+		Activity label: do
+		Arguments: 
+		Documentation: 
+	Documentation: When the game has begun, the ball is mostly moving with the current direction and speed.
+	Symbol transparent?: F
+Object: Hits a wall <State [UML]> 5_5794
+	State name: Hits a wall
+	Internal actions: entry / calculateNewDirection
+	Object: entry / calculateNewDirection <Internal activity> 5_4338
+		Activity: calculateNewDirection
+		Activity label: entry
+		Arguments: 
+		Documentation: 
+	Documentation: When the ball hits the wall, a new direction for the ball is calculated.
+	Symbol transparent?: F
+Object: Hits a brick <State [UML]> 5_9122
+	State name: Hits a brick
+	Internal actions: entry / playHitSound entry / increaseScore(1) exit / calculateNewDirection
+	Object: entry / playHitSound <Internal activity> 5_12581
+		Activity: playHitSound
+		Activity label: entry
+		Arguments: 
+		Documentation: 
+	Object: entry / increaseScore(1) <Internal activity> 5_12540
+		Activity: increaseScore
+		Activity label: entry
+		Arguments: 1
+		Object: 1 <Argument> 5_9203
+			Argument: 1
+			Parameter: 
+		Documentation: 
+	Object: exit / calculateNewDirection <Internal activity> 5_9182
+		Activity: calculateNewDirection
+		Activity label: exit
+		Arguments: 
+		Documentation: 
+	Documentation: When the ball hits a brick the Hit sound is played, the brick's value is added to the player's scores and new direction for the ball is calculated.
+	Symbol transparent?: F
+Object: Play a game <State [UML]> 5_9146
+	State name: Play a game
+	Internal actions: 
+	Documentation: 
+	Symbol transparent?: T
+Object: Behind the paddle <State [UML]> 5_9170
+	State name: Behind the paddle
+	Internal actions: entry / playTune entry / decrementBalls(1, bar)
+	Object: entry / playTune <Internal activity> 5_11858
+		Activity: playTune
+		Activity label: entry
+		Arguments: 
+		Documentation: 
+	Object: entry / decrementBalls(1, bar) <Internal activity> 5_2556
+		Activity: decrementBalls
+		Activity label: entry
+		Arguments: param1=1 param2=bar
+		Object: param1=1 <Argument> 5_13944
+			Argument: 1
+			Parameter: in dataType param1=2
+			Object: in dataType param1=2 <Parameter> 5_14672
+				Parameter: param1
+				Data type: dataType
+				Direction: in
+				Default value: 2
+		Object: param2=bar <Argument> 5_13923
+			Argument: bar
+			Parameter: out dataType param2=defaultValue
+			Object: out dataType param2=defaultValue <Parameter> 5_11264
+				Parameter: param2
+				Data type: dataType
+				Direction: out
+				Default value: defaultValue
+		Documentation: 
+	Documentation: When player misses the ball, the number of balls left decreases by one and a tune is played. 
+	Symbol transparent?: F
+Object: Hits the paddle <State [UML]> 5_14602
+	State name: Hits the paddle
+	Internal actions: entry / playHitSound entry / calculateNewDirection
+	Object: entry / playHitSound <Internal activity> 5_2577
+		Activity: playHitSound
+		Activity label: entry
+		Arguments: 
+		Documentation: 
+	Object: entry / calculateNewDirection <Internal activity> 5_13969
+		Activity: calculateNewDirection
+		Activity label: entry
+		Arguments: 
+		Documentation: 
+	Documentation: When ball hits the paddle the Hit sound is played, and new direction for the ball is calculated. 
+	Symbol transparent?: F
+Object: Stop <Stop> 5_9102
+Relationship:  <Transition [UML]> 5_2512
+	Trigger: 
+	Constraint: ball position = paddle position
+	Activity: 
+	Arguments: 
+	Documentation: When ball hits the paddle.
+  Role: From <From>  Object: <State [UML]> 5_3384
+  Role: To <To>  Object: <State [UML]> 5_14602
+Relationship:  <Transition [UML]> 5_2595
+	Trigger: 
+	Constraint: 
+	Activity: 
+	Arguments: 
+	Documentation: 
+  Role: From <From>  Object: <State [UML]> 5_3358
+  Role: To <To>  Object: <State [UML]> 5_3384
+Relationship:  <Transition [UML]> 5_3425
+	Trigger: 
+	Constraint: ball position = wall position
+	Activity: 
+	Arguments: 
+	Documentation: Ball hits a wall
+  Role: From <From>  Object: <State [UML]> 5_3384
+  Role: To <To>  Object: <State [UML]> 5_5794
+Relationship:  <Transition [UML]> 5_6410
+	Trigger: 
+	Constraint: 
+	Activity: 
+	Arguments: 
+	Documentation: 
+  Role: From <From>  Object: <State [UML]> 5_9122
+  Role: To <To>  Object: <State [UML]> 5_3384
+Relationship: decrementBalls <Transition [UML]> 5_7064
+	Trigger: 
+	Constraint: balls left
+	Activity: decrementBalls
+	Arguments: 1
+	Object: 1 <Argument> 5_10467
+		Argument: 1
+		Parameter: 
+	Documentation: If any balls remain, a new one will be initialised.
+  Role: From <From>  Object: <State [UML]> 5_9170
+  Role: To <To>  Object: <State [UML]> 5_3358
+Relationship:  <Transition [UML]> 5_7134
+	Trigger: 
+	Constraint: 
+	Activity: 
+	Arguments: 
+	Documentation: When player misses the ball, it will be hided.
+  Role: From <From>  Object: <State [UML]> 5_3384
+  Role: To <To>  Object: <State [UML]> 5_9170
+Relationship:  <Transition [UML]> 5_9774
+	Trigger: 
+	Constraint: ball position = brick position
+	Activity: 
+	Arguments: 
+	Documentation: When ball hits the brick.
+  Role: From <From>  Object: <State [UML]> 5_3384
+  Role: To <To>  Object: <State [UML]> 5_9122
+Relationship:  <Transition [UML]> 5_9841
+	Trigger: 
+	Constraint: 
+	Activity: 
+	Arguments: 
+	Documentation: 
+  Role: From <From>  Object: <State [UML]> 5_14602
+  Role: To <To>  Object: <State [UML]> 5_3384
+Relationship:  <Transition [UML]> 5_10491
+	Trigger: 
+	Constraint: No more balls left
+	Activity: 
+	Arguments: 
+	Documentation: Player has no more balls left. Game over text is displayed.
+  Role: From <From>  Object: <State [UML]> 5_9170
+  Role: To <To>  Object: <Stop> 5_9102
+Relationship: initialize <Transition [UML]> 5_13232
+	Trigger: Start game
+	Constraint: 
+	Activity: initialize
+	Arguments: 
+	Documentation: 
+  Role: From <From>  Object: <Start> 5_14576
+  Role: To <To>  Object: <State [UML]> 5_3358
+Relationship:  <Transition [UML]> 5_13884
+	Trigger: 
+	Constraint: 
+	Activity: 
+	Arguments: 
+	Documentation: 
+  Role: From <From>  Object: <State [UML]> 5_5794
+  Role: To <To>  Object: <State [UML]> 5_3384

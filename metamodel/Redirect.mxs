@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="Redirect">
+		<objectSymbol offset="90,58" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="90,58 103,58 103,77 90,77 90,58" targetPointX="96.5" targetPointY="67.5" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="77" version="1.2" width="103" xmlns="http://www.w3.org/2000/svg">
+				<polygon fill="rgb(0,0,255)" points="98,69 98,77 103,73" stroke="rgb(0,0,255)" stroke-width="1">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</polygon>
+				<path d="M100,60 L95.1852,62.3333 L91.4815,64.6667 L90,67 L91.4815,69.3333 L95.1852,71.6667 L100,74" fill="none" stroke="rgb(0,0,255)" stroke-width="3" sym:controlPoints="100,60 90,67 100,74">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</path>
+				<ellipse cx="99.5" cy="60.5" fill="rgb(255,255,179)" rx="2.5" ry="2.5" stroke="rgb(0,0,0)" stroke-width="1" sym:startAngle="0.0e0" sym:sweepAngle="3.6e2">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</ellipse>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

@@ -1,0 +1,8 @@
+_sym_hide_PortName()
+@this = ''
+do ~();1 {
+	do #() {
+		if oid = oid;2 then @this='X' endif
+	}
+}
+@this

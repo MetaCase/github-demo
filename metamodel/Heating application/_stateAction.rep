@@ -1,0 +1,9 @@
+_stateAction()
+/* generates entry and exit actions */
+newline '			'
+do ~(*action) {
+	do .() { _gName() }
+	'.'
+	id; :Valve position; '(); ' 
+}
+newline

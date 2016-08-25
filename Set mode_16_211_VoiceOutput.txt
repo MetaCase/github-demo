@@ -1,0 +1,23 @@
+Graph_VoiceOutput_user_3190467743
+Set mode
+16_211
+VoiceOutput
+Graph: Set mode <VoiceOutput> 16_211
+	Name: Set mode
+	Documentation: 
+Object: Start <Start> 16_928
+Object: Stop <Stop> 16_959
+Object: SaveDTMF A SetMode A <SystemCall> 16_711
+	Commands: SaveDTMF A SetMode A
+	Object: SaveDTMF A <Command> 16_883
+		Command: SaveDTMF A
+		Parameter: 
+	Object: SetMode A <Command> 16_226
+		Command: SetMode A
+		Parameter: 
+Relationship: Flow <Flow> 16_678
+  Role: From <From>  Object: <SystemCall> 16_711
+  Role: To <To>  Object: <Stop> 16_959
+Relationship: Flow <Flow> 16_774
+  Role: From <From>  Object: <Start> 16_928
+  Role: To <To>  Object: <SystemCall> 16_711

@@ -1,0 +1,50 @@
+Report '_create make for C#: API'
+
+filename $projPath 'vs.bat' write
+	to '%undent' translate
+		'@echo on
+		cd /D ' $projPath '
+'
+		subreport '_set .NET dir' run
+'		set wsdlFile=MetaEditAPI.wsdl
+		set pfiles=%ProgramFiles(x86)%
+		if "%pfiles%"=="" set pfiles=%ProgramFiles%
+		for /d %%g in ("%pfiles%\Microsoft SDKs\Windows\v*") do if exist "%%g\Bin\SvcUtil.exe" set SvcUtil=%%g\Bin\SvcUtil.exe
+		del ' :Name '*.config
+		@echo on
+		if exist "%SvcUtil%" (
+		"%SvcUtil%" /t:code /config:' :Name '.config %wsdlFile%
+		) else (
+		copy /Y miniapi.cs MetaEditAPI.cs
+		copy /Y miniapi.config ' :Name '.config
+		)
+		"%dotNetDir%\csc.exe" /target:library /out:MetaEditAPI.dll MetaEditAPI.cs
+		@echo off
+		copy ' :Name '.config ' :Name '.exe.config
+'
+	endto
+
+	if $IDE = '' then
+		subreport '_build and run C#' run
+	endif
+close 
+
+subreport '_create MainWindow' run
+
+filename $projPath 'miniapi.cs' encoding 'UTF-8' write
+	subreport '_create miniapi.cs' run 
+close
+
+filename $projPath 'miniapi.config' encoding 'UTF-8' write
+	subreport '_create miniapi.config' run 
+close
+
+filename $projPath :Name;'.sln' encoding 'UTF-8' write
+	subreport '_create Visual Studio sln file' run 
+close
+
+filename $srcPath :Name;'.csproj' encoding 'UTF-8' write
+	subreport '_create Visual studio csproj-API file' run
+close
+
+endreport

@@ -1,0 +1,202 @@
+Graph_FeatureModel_user_3399887714
+RegenerativeBrakingSystem
+10_13635
+VehicleFeatureModel
+Graph: RegenerativeBrakingSystem <VehicleFeatureModel> 10_13635
+	__UUID: zLN2CFoxTnigf7dkrfhV6A
+	Short name: RegenerativeBrakingSystem
+	Name: 
+	FeatureConstraints: 
+	Description: 
+Object: ABSBraking <Feature> 10_13658
+	__UUID: 3QDx56eIRHuV6mvHpeaobA
+	Short name: ABSBraking
+	Name: 
+	Cardinality: 1
+	ActualBindingTime: SystemDesignTime
+	RequiredBindingTime: 
+	FeatureParameter: 
+	Description: 
+Object: AdaptiveCruiseControl <Feature> 10_13692
+	__UUID: Y1dKiPZJRMKJjhtVnQIdlw
+	Short name: AdaptiveCruiseControl
+	Name: 
+	Cardinality: 0..1
+	ActualBindingTime: SystemDesignTime
+	RequiredBindingTime: 
+	FeatureParameter: 
+	Description: 
+Object: AdvancedBraking <Feature> 10_13726
+	__UUID: BCMlNc6eTgeyke1ertob/g
+	Short name: AdvancedBraking
+	Name: 
+	Cardinality: 0..1
+	ActualBindingTime: SystemDesignTime
+	RequiredBindingTime: 
+	FeatureParameter: 
+	Description: 
+Object: BasicBraking <Feature> 10_13760
+	__UUID: 9OHQepWhTWuVmuinurG16Q
+	Short name: BasicBraking
+	Name: 
+	Cardinality: 0..1
+	ActualBindingTime: SystemDesignTime
+	RequiredBindingTime: 
+	FeatureParameter: 
+	Description: 
+Object: BasicCruiseControl <Feature> 10_13794
+	__UUID: yroKYjXVSwea6ArSaMwV6A
+	Short name: BasicCruiseControl
+	Name: 
+	Cardinality: 0..1
+	ActualBindingTime: SystemDesignTime
+	RequiredBindingTime: 
+	FeatureParameter: 
+	Description: 
+Object: BrakingControl <Feature> 10_13828
+	__UUID: LU9Qu7BFTwSxyO5rmZhnJA
+	Short name: BrakingControl
+	Name: 
+	Cardinality: 1
+	ActualBindingTime: SystemDesignTime
+	RequiredBindingTime: 
+	FeatureParameter: 
+	Description: 
+Object: CruiseControl <Feature> 10_13862
+	__UUID: dHVGmIj5SueuocHXXoBZuQ
+	Short name: CruiseControl
+	Name: 
+	Cardinality: 0..1
+	ActualBindingTime: SystemDesignTime
+	RequiredBindingTime: 
+	FeatureParameter: 
+	Description: 
+Object: EEFeature <Feature> 10_13896
+	__UUID: sOW6y2v2Qa6Z8hLsJeip4A
+	Short name: EEFeature
+	Name: 
+	Cardinality: 1
+	ActualBindingTime: SystemDesignTime
+	RequiredBindingTime: CodeGenerationTime
+	FeatureParameter: 
+	Description: 
+Object: ESPBraking <Feature> 10_13930
+	__UUID: wCgaKghESq+dTts5GR4KNw
+	Short name: ESPBraking
+	Name: 
+	Cardinality: 0..1
+	ActualBindingTime: SystemDesignTime
+	RequiredBindingTime: 
+	FeatureParameter: 
+	Description: 
+Object: PowerControl <Feature> 10_13964
+	__UUID: JKo1T4myT5C2FhofQ0Rlwg
+	Short name: PowerControl
+	Name: 
+	Cardinality: 0..1
+	ActualBindingTime: SystemDesignTime
+	RequiredBindingTime: 
+	FeatureParameter: 
+	Description: 
+Object: PowerGenerationControl <Feature> 10_13998
+	__UUID: KYhA4aBjQA+JOhUsqTTiIA
+	Short name: PowerGenerationControl
+	Name: 
+	Cardinality: 1
+	ActualBindingTime: SystemDesignTime
+	RequiredBindingTime: 
+	FeatureParameter: 
+	Description: 
+Object: PowerSupplyControl <Feature> 10_14032
+	__UUID: W88KPKRsTLualJ+EF31JUQ
+	Short name: PowerSupplyControl
+	Name: 
+	Cardinality: 1
+	ActualBindingTime: SystemDesignTime
+	RequiredBindingTime: 
+	FeatureParameter: 
+	Description: 
+Object: RegenerativeBrakingControl <Feature> 10_14066
+	__UUID: KjyE9Ie5TWWvMulF5XC1Xg
+	Short name: RegenerativeBrakingControl
+	Name: 
+	Cardinality: 0..1
+	ActualBindingTime: SystemDesignTime
+	RequiredBindingTime: 
+	FeatureParameter: 
+	Description: 
+Object: VehicleCtrl <Feature> 10_14100
+	__UUID: xEriQr2pQTeQWx321EAEiA
+	Short name: VehicleCtrl
+	Name: 
+	Cardinality: 1
+	ActualBindingTime: SystemDesignTime
+	RequiredBindingTime: 
+	FeatureParameter: 
+	Description: 
+Relationship: 1 <FeatureComposition> 10_14134
+	Feature composition cardinality: 1
+  Role: Child <Child>  Object: <Feature> 10_13658
+  Role: Parent <Parent>  Object: <Feature> 10_13726
+Relationship: 1 <FeatureComposition> 10_14144
+	Feature composition cardinality: 1
+  Role: Child <Child>  Object: <Feature> 10_13930
+  Role: Parent <Parent>  Object: <Feature> 10_13726
+Relationship: 1 <FeatureComposition> 10_14154
+	Feature composition cardinality: 1
+  Role: Child <Child>  Object: <Feature> 10_13726
+  Role: Child <Child>  Object: <Feature> 10_13760
+  Role: Parent <Parent>  Object: <Feature> 10_13828
+Relationship: 1 <FeatureComposition> 10_14166
+	Feature composition cardinality: 1
+  Role: Child <Child>  Object: <Feature> 10_13794
+  Role: Child <Child>  Object: <Feature> 10_13692
+  Role: Parent <Parent>  Object: <Feature> 10_13862
+Relationship: 1 <FeatureComposition> 10_14178
+	Feature composition cardinality: 1
+  Role: Child <Child>  Object: <Feature> 10_13964
+  Role: Parent <Parent>  Object: <Feature> 10_13896
+Relationship: 1 <FeatureComposition> 10_14188
+	Feature composition cardinality: 1
+  Role: Child <Child>  Object: <Feature> 10_14100
+  Role: Parent <Parent>  Object: <Feature> 10_13896
+Relationship: 1 <FeatureComposition> 10_14198
+	Feature composition cardinality: 1
+  Role: Child <Child>  Object: <Feature> 10_13998
+  Role: Parent <Parent>  Object: <Feature> 10_13964
+Relationship: 1 <FeatureComposition> 10_14208
+	Feature composition cardinality: 1
+  Role: Child <Child>  Object: <Feature> 10_14032
+  Role: Parent <Parent>  Object: <Feature> 10_13964
+Relationship: 1 <FeatureComposition> 10_14218
+	Feature composition cardinality: 1
+  Role: Child <Child>  Object: <Feature> 10_14066
+  Role: Parent <Parent>  Object: <Feature> 10_13998
+Relationship: 1 <FeatureComposition> 10_14228
+	Feature composition cardinality: 1
+  Role: Child <Child>  Object: <Feature> 10_13828
+  Role: Parent <Parent>  Object: <Feature> 10_14100
+Relationship: 1 <FeatureComposition> 10_14238
+	Feature composition cardinality: 1
+  Role: Child <Child>  Object: <Feature> 10_13862
+  Role: Parent <Parent>  Object: <Feature> 10_14100
+Relationship:  <FeatureLink> 10_14248
+	CustomType: 
+	Kind: needs
+  Role: End <End>  Object: <Feature> 10_13726
+  Role: Start <Start>  Object: <Feature> 10_13692
+Relationship:  <FeatureLink> 10_14262
+	CustomType: 
+	Kind: needs
+  Role: End <End>  Object: <Feature> 10_13658
+  Role: Start <Start>  Object: <Feature> 10_13930
+Relationship:  <FeatureLink> 10_14276
+	CustomType: 
+	Kind: needs
+  Role: End <End>  Object: <Feature> 10_13828
+  Role: Start <Start>  Object: <Feature> 10_14066
+Relationship: foobar <FeatureLink> 10_14290
+	CustomType: foobar
+	Kind: needs
+  Role: End <End>  Object: <Feature> 10_14100
+  Role: Start <Start>  Object: <Feature> 10_14032

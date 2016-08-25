@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="EventChain_symbol">
+		<objectSymbol offset="20,20" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="20,20 50,20 50,40 20,40 20,20" targetPointX="35" targetPointY="30" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="40" version="1.2" width="50" xmlns="http://www.w3.org/2000/svg">
+				<g fill="none" stroke="rgb(0,0,0)" sym:height="20" sym:width="30" sym:x="2.0e1" sym:y="2.0e1">
+					<g fill="none" stroke="rgb(0,0,0)" stroke-width="1" sym:height="20" sym:width="12" sym:x="2.0e1" sym:y="2.0e1">
+						<polyline fill="rgb(255,255,255)" points="20,20 20,40 32,40 32,24.25 29.1765,20.25 29.1765,21.5 29.1765,24.25 32,24.25" stroke="rgb(0,0,0)" stroke-width="1">
+							<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+						</polyline>
+						<line stroke="rgb(0,0,0)" stroke-width="1" x1="20" x2="29.1765" y1="20" y2="20">
+							<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+						</line>
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</g>
+					<g fill="none" stroke="rgb(0,0,0)" stroke-width="1" sym:height="20" sym:width="12" sym:x="3.8e1" sym:y="2.0e1">
+						<polyline fill="rgb(255,255,255)" points="38,20 38,40 50,40 50,24.25 47.1765,20.25 47.1765,21.5 47.1765,24.25 50,24.25" stroke="rgb(0,0,0)" stroke-width="1">
+							<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+						</polyline>
+						<line stroke="rgb(0,0,0)" stroke-width="1" x1="38" x2="47.1765" y1="20" y2="20">
+							<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+						</line>
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</g>
+					<ellipse cx="35" cy="30" fill="rgb(255,255,255)" rx="9" ry="3.33333" stroke="rgb(0,0,0)" stroke-width="3" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

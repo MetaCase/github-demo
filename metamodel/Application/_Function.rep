@@ -1,0 +1,9 @@
+Report '_Function'
+/* Produces function code definition */
+'def ' :Function name; '(' :Parameters; '):' newline
+if :Documentation; <> '' then
+	do :Documentation; {'# ' id newline}
+endif
+do :Function body; {'	' id newline}
+newline
+endreport

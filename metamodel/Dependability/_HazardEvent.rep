@@ -1,0 +1,26 @@
+_HazardEvent()
+foreach .HazardousEvent 
+{	/* OperationalSituationUseCase */
+	if not ~HazardousEvent~UseCase.UseCase; then 
+		_reportWarnings()
+		'Warning: ' id ' <' type '> does not refer to an operational situation use case'
+		if $extendedCheck = 'T' then
+			' in the model ' id;1 ' <' type;1 '>. '
+		else
+			'. Create a relationship between ' type ' and UseCase!'
+		endif
+		newline
+	endif
+	
+	/* Hazard */
+	if not ~HazardousEvent~Hazard.Hazard; then
+		_reportWarnings()
+		'Warning: ' id ' <' type '> does not refer to any hazard'
+		if $extendedCheck = 'T' then
+			' in the model ' id;1 ' <' type;1 '>. '
+		else
+			'. Create a relationship between ' type ' and Hazard!'
+		endif
+		newline
+	endif
+}

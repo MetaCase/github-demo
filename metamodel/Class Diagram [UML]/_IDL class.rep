@@ -1,0 +1,15 @@
+Report '_IDL class'
+	'interface ' id
+	if ~Specialization; then ' : ' endif
+	dowhile ~Specialization~Superclass.Class [UML] { :Class name; ', ' }
+	' {' newline
+	if :Documentation; <> '' then
+			'//' newline 
+			do :Documentation; {'// ' id newline}
+			'//' newline
+	endif
+	do :Attributes; {subreport '_IDL attribute' run}
+	do :Operations; {subreport '_IDL operation' run}
+	'	};'
+	newline newline
+endreport

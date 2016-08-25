@@ -1,0 +1,259 @@
+==========================
+Graph Type
+==========================
+Thingsee Purpose
+	Thingsee application describes the state-based logic of the application. In addition to state and transitions the application consist of triggers that cause transitions and actions that are performed during transitions.
+	---------------------------------------------
+	Name: String
+		Name of the application (also called purpose).
+		---------------------------------------------
+	Description: Text
+		Free from comment or description of the element.
+		---------------------------------------------
+
+==========================
+Object Types
+==========================
+State
+	State of the application.
+	---------------------------------------------
+	Name: String
+		Name of the state.
+		---------------------------------------------
+	Start state: Boolean
+	Always active: Boolean
+	Description: Text
+		Free from comment or description of the element.
+		---------------------------------------------
+Action
+	Action sending messages or events to cloud.
+	---------------------------------------------
+	Send saved logs to cloud: Boolean
+	Send event to: String
+	Send event to cloud URL: Cloud URL
+	Send SMS message: Send SMS message
+Acceleration
+	Acceleration events get triggered at the exact moment of measurement. Note that this may generate a lot of events when the trigger thresholds are near zero. Acceleration should be between +/- 6 g.
+	---------------------------------------------
+	Direction: String
+		Direction of g.
+		---------------------------------------------
+	Trigger if over (g): Number
+		Impact must be less than +/- 6 g.
+		---------------------------------------------
+	Trigger if under (g): Number
+		Impact must be less than +/- 6 g.
+		---------------------------------------------
+Timer
+	Sets timer for the triggering event in seconds.
+	---------------------------------------------
+	Trigger timer after (sec): Number
+		Number of seconds after the event is triggered.
+		---------------------------------------------
+Location
+	Measuring location, accuracy and altitude.
+	---------------------------------------------
+	Trigger: String
+	Trigger if over (meters): String
+		Meters can be empty to include any value or set specific meter value.
+		---------------------------------------------
+	Trigger if under (meters): String
+		Meters can be empty to include any value or set specific meter value.
+		---------------------------------------------
+Geofence
+	Measuring geofence.
+	---------------------------------------------
+	Geofence value: Text
+	Trigger if: String
+Speed
+	Measuring speed.
+	---------------------------------------------
+	Trigger if over (km/h): String
+		Speed can be empty to mean any value or include  value less than 300 km/h.
+		---------------------------------------------
+	Trigger if under (km/h): String
+		Speed can be empty to mean any value or include  value less than 300 km/h.
+		---------------------------------------------
+Temperature
+	Temperature sensor. For safe operation of the device and its battery the values must be set to measure between -20 and 60 degrees.
+	---------------------------------------------
+	Trigger if over (celcius): String
+		Temperature must be between -20 and 60 celcius (for safe operations with battery), or be set to mean any temperature.
+		---------------------------------------------
+	Trigger if under (celcius): String
+		Temperature must be between -20 and 60 celcius (for safe operations with battery), or be set to mean any temperature.
+		---------------------------------------------
+Humidity
+	Humidity sensor measures values between 0 and 100 %rh.
+	---------------------------------------------
+	Trigger if over (%rh): String
+		Value must be between 0 and 100, or empty for any value.
+		---------------------------------------------
+	Trigger if under (%rh): String
+		Value must be between 0 and 100, or empty for any value.
+		---------------------------------------------
+Pressure
+	Measured pressure in hPa.
+	---------------------------------------------
+	Trigger if over (hPa): String
+		Pressure must be between 260 and 1260 or empty for meaning any value.
+		---------------------------------------------
+	Trigger if under (hPa): String
+		Pressure must be between 260 and 1260 or empty for meaning any value.
+		---------------------------------------------
+Luminance
+	Measured luminance in lux.
+	---------------------------------------------
+	Trigger if over (lux): String
+		Luminance value must between 0 and 187269, or empty meaning any value.
+		---------------------------------------------
+	Trigger if under (lux): String
+		Luminance value must between 0 and 187269, or empty meaning any value.
+		---------------------------------------------
+Battery
+	Battery energy level. Empty values mean any value.
+	---------------------------------------------
+	Trigger if battery over (%): String
+		Battery level must be between 0 and 100% or defined empty to mean any value.
+		---------------------------------------------
+	Trigger if battery under (%): String
+		Battery level must be between 0 and 100% or defined empty to mean any value.
+		---------------------------------------------
+Charger
+	Charging status
+	---------------------------------------------
+	Trigger when: String
+Display
+	Display to show text.
+	---------------------------------------------
+	Text shown: Text
+		If display is used it must show some text. A mandatory property.
+		---------------------------------------------
+Other Purpose
+	Refers to state in other purpose.
+	---------------------------------------------
+	State in other purpose: State
+		Mandatory value.
+		---------------------------------------------
+Comment
+	Description: Text
+		Free from comment or description of the element.
+		---------------------------------------------
+
+==========================
+Relationship Types
+==========================
+Transition
+	Transition specifies changes in the states of the application.
+	---------------------------------------------
+	Name: String
+
+==========================
+Role Types
+==========================
+From
+To
+Action
+PollTrigger
+	Log values to device: Boolean
+	Poll values after every: String
+		Polling value in seconds is a mandatory value.
+		---------------------------------------------
+	Poll unit: String
+Trigger
+	Log values to device: Boolean
+
+==========================
+Extra Types
+==========================
+Cloud URL
+	Cloud URL the message is sent.
+	---------------------------------------------
+	Host: String
+		Host is a mandatory property.
+		---------------------------------------------
+	Port: String
+	API: String
+Low energy senses
+Polling senses
+Send SMS message
+	To (phone number): String
+		Mandatory field
+		---------------------------------------------
+	Message: Text
+		Mandatory field
+		---------------------------------------------
+Trigger
+	Abstract trigger
+	---------------------------------------------
+
+==========================
+Bindings
+==========================
+Transition
+1	From: State
+0..N	PollTrigger: Polling senses
+0..N	Trigger: Low energy senses
+0..1	Action: Action
+0..1	Action: Display
+1	To: Other Purpose, State
+
+==========================
+Constraints
+==========================
+Property "Name" in State must have unique values
+
+==========================
+Subgraphs
+==========================
+
+==========================
+Generators
+==========================
+!.jsn
+!Check
+!Doc
+IoTAppCode
+
+==========================
+Sub-Generators
+==========================
+_AnyLocationValue
+_app
+_calculateInterval
+_causeEvent
+_causes
+_check
+_cloud
+_code_Acceleration
+_code_Battery
+_code_Charger
+_code_Geofence
+_code_Humidity
+_code_Location
+_code_Luminance
+_code_Pressure
+_code_Speed
+_code_Temperature
+_code_Timer
+_display
+_do_Acceleration
+_do_Battery
+_do_Charger
+_do_Geofence
+_do_Humidity
+_do_Location
+_do_Luminance
+_do_Pressure
+_do_Speed
+_do_Temperature
+_do_Timer
+_events
+_jsn
+_measurement
+_OtherPurpose
+_state
+_stateIds
+_states
+__LiveCheck
+

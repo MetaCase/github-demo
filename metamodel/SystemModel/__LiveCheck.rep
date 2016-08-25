@@ -1,0 +1,32 @@
+Report '__LiveCheck'
+_translators()
+_checkingShortNameUniqueness()
+'VehicleLevel: - ' 
+foreach .Vehicle Level {
+	@sep = ''
+	dowhile explosions { 
+		@sep; id ' <FeatureModel>'  @sep = ', '
+	}  
+}
+newline
+'AnalysisLevel: - ' 
+foreach .AnalysisFunctionPrototype; {
+	id; ' <AnalysisFunction>'
+}
+newline
+@sep = ''
+'DesignLevel: - ' 
+foreach .DesignFunctionPrototype { 
+	id ' <DesignFunction>' 
+	@sep = ', '
+}
+foreach .HardwareComponentPrototype { 
+	@sep id ' <HardwareComponent>' 
+	@sep = ', '
+}
+foreach .Allocations {
+	dowhile explosions { 
+		@sep	id  ' <Allocation>'  @sep = ', '
+	}  
+}
+endreport

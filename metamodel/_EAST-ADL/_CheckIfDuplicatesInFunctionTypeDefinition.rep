@@ -1,0 +1,16 @@
+_CheckIfDuplicatesInFunctionTypeDefinition()
+/* checks that not duplicate F*A elements in the hierarchy */
+foreach .(*Prototype | *Port ) {
+	if not $prototypes =~ oid%wildsp then
+		variable 'prototypes' append oid ' ' close
+	else
+		$error = 'T'
+		'Warning: ' type ' ' id ' exists in several types. Open Info... for it' newline
+	endif
+	do decompositions {
+		if not $visitedGraphs =~ oid%wildsp then
+			variable 'visitedGraphs' append oid ' ' close
+			_CheckIfDuplicatesInFunctionTypeDefinition()
+		endif
+	}
+}

@@ -1,0 +1,10 @@
+Report '_includeScript'
+/* id is the name of a JavaScript file (without .js). If $inline is set, include it inline, otherwise include it by reference to the file */
+if $inline then 
+	'<script type="text/javascript">' newline
+	subreport '_' id 'JS' run
+	'</script>' newline newline
+else
+	'<script type="text/javascript" src="' id '.js"></script>' newline
+endif
+endreport

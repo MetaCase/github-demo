@@ -1,0 +1,7 @@
+Report '_compile and execute for Java: Windows'
+
+if $IDE = '' then
+	external '"' $projPath 'makeWatch.bat"' execute
+endif
+
+endreport

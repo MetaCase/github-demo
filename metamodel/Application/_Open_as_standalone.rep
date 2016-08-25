@@ -1,0 +1,8 @@
+Report '_Open_as_standalone'
+/* Produces Content_handler open named file as a standalone mode */
+'def ' subreport '_Internal name' run '():' newline
+'# Opens the specified file as a standalone' newline
+'	appuifw.app.content_handler = appuifw.Content_handler()' newline
+'	appuifw.app.content_handler.open_standalone(u"' :File name; '")' newline
+subreport '_next element' run
+endreport

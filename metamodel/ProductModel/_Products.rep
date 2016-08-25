@@ -1,0 +1,30 @@
+Report '_Products'
+/* Own report for instance of product because of the sorting need and product specific parts */
+/* Otherwise very similar to report _MOFClasses */
+'		// ********************************************************************' newline
+'		//  Product' newline
+'		// ********************************************************************' newline
+foreach .Product {
+  if :Package = :Package name;2; then 	/* Package name with 2 means package from the package diagram */ 
+										/* product must belong to the same package than the package the code is geneated */
+		'		String PRODUCT_NAME = "' :Class name '";' newline
+	'		Product iProduct = new Product("' :Class name '");' newline
+	if :Documentation; then do :Documentation { '		// ' id newline } endif
+	'		iProduct.setContainer(productpackage_);' newline
+	'		iProduct.setDisplayname("' :Display name;'");' newline
+	'		iProduct' subreport '_isSingleton' run
+	'			iProduct' subreport '_isRoot'; run
+	'			iProduckt' subreport '_isLeaf' run
+	if :order; then '		iProduct.setReihenfolge(' :order ');' newline endif
+	if :Currency; then '		iProduct.setCurrency(Currency.' :Currency ');' newline endif
+	subreport '_Supertype' run
+	do :Tags {'		' :Java instance name '.addTaggedModelElement(iProduct);' newline}
+	newline
+	subreport '_Attributes' run
+	subreport '_Operations' run
+	subreport '_Constraints' run
+	'		productpackage_.addMofClass(iProduct);'
+	newline newline newline
+  endif
+}
+endreport

@@ -1,0 +1,33 @@
+Graph_Project_Model_sysadmin_3084195615
+2. Symbian S60 C++
+20_4765
+Project Model
+Graph: 2. Symbian S60 C++ <Project Model> 20_4765
+	Project name: 2. Symbian S60 C++
+	Status: 
+	Project manager: 
+	Authors: 
+	Documentation: 
+Object: S60 C++ Application: MenuApp <Graph> 20_4781
+	Decomposed to: MenuApp <S60 C++ Application>
+Object: S60 C++ States: View <Graph> 20_4784
+	Decomposed to: View <S60 C++ States>
+Object: The Graphs in this Project Model demonstrate the modeling of applications for mobile phones, for generation of S60 native C++ as described in Section 8.8 of the book "Domain-Specific Modeling", http://dsmbook.com.  <Note> 20_4793
+	Documentation: The Graphs in this Project Model demonstrate the modeling of applications for mobile phones, for generation of S60 native C++ as described in Section 8.8 of the book "Domain-Specific Modeling", http://dsmbook.com. 
+Object: This example "adventure" application uses essentially the same modeling concepts as the S60 Python phone examples. S60 native C++ code can be generated from the top MenuApp graph in this project. <Note> 20_4815
+	Documentation: This example "adventure" application uses essentially the same modeling concepts as the S60 Python phone examples. S60 native C++ code can be generated from the top MenuApp graph in this project.
+Object: This simple example shows the menu and view structure of the S60 SDK example of menu controls, and its subgraph shows a simple example application. <Note> 20_4849
+	Documentation: This simple example shows the menu and view structure of the S60 SDK example of menu controls, and its subgraph shows a simple example application.
+Object: This example requires Nokia Series 60 SDK FP1, Visual C++ 6.0 SP3, Perl 5.005_07. After installing them you must manually map U: to the Symbian drive, e.g.:
+subst u: C:\Symbian\6.1\Series60
+and copy *.BMP from U:\Series60Ex\menu\aif to U:\ExMenu\aif
+You can then use the Build button in the MenuApp diagram. <Note> 20_5069
+	Documentation: This example requires Nokia Series 60 SDK FP1, Visual C++ 6.0 SP3, Perl 5.005_07. After installing them you must manually map U: to the Symbian drive, e.g.:
+subst u: C:\Symbian\6.1\Series60
+and copy *.BMP from U:\Series60Ex\menu\aif to U:\ExMenu\aif
+You can then use the Build button in the MenuApp diagram.
+Relationship:  <Relates> 20_4800
+	Link type: 
+	Documentation: 
+  Role: From <From>  Object: <Graph> 20_4781
+  Role: To <To>  Object: <Graph> 20_4784

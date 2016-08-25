@@ -1,0 +1,17 @@
+_validateArrayDatatype()
+/* Validation checks for ArrayDatatypes */
+subreport '_name checks' run
+if not :Type; then
+	_reportWarnings()
+	'Warning: '
+	if type;1 <> 'Package' then
+		/* When the Type is used in some FAA/FDA model */	
+		'Undefined Type value for ' id ' <' type '> '
+		_extendedCheckOutput_level2()
+	else
+		/* When the Type is defined in Package model */	
+		 'Undefined Type value for ' id ' <' type '> ' 
+		_extendedCheckOutput_level1()
+	endif
+	newline
+endif

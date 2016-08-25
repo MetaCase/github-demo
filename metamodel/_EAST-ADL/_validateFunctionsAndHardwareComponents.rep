@@ -1,0 +1,23 @@
+_validateFunctionsAndHardwareComponents()
+@path = ' '
+
+/* All the prototypes */
+foreach .(*Prototype) 
+{	subreport '_name checks' run
+	@prototypeName = :Short name;
+	if @path =~ @prototypeName%wildsp; then
+		_reportWarnings()
+		'Warning: ' id;1 ' contains several prototypes with the same name ' :Short name; newline
+	else
+		local 'path' append @prototypeName%var ' ' close
+	endif
+
+	do decompositions 
+	{	if not $visited =~ oid%wildsp then
+			variable 'visited' append oid ' ' close
+			_validateFunctionsAndHardwareComponents()
+		endif
+	}
+}
+
+

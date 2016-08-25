@@ -1,0 +1,3 @@
+_doCreate()
+'	CREATE ' :Process name;%var '(' :Parameters ');' 
+_nextTransition()

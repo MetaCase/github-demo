@@ -1,0 +1,8 @@
+Report '_Return variable name'
+/* Gives internal variable name for the element (other than multiquery) - either given in the model or generated */
+if :Return variable \(optional\); then 
+	:Return variable \(optional\);
+else
+	'var' type oid
+endif
+endreport

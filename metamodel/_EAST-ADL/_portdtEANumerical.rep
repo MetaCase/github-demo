@@ -1,0 +1,25 @@
+_portdtEANumerical()
+'					<object id="_'oid'" type="Object_EANumerical_sysadmin_3536996437">
+						<slot name="Short name">
+							<value>
+								<string>Err' :Short name%xml '</string>
+							</value>
+						</slot>
+						<slot name="Name">
+							<value>
+								<string>' :Name%xml '</string>
+							</value>
+						</slot>												
+						<slot name="Min">
+							<value>
+								<string>' :Min%xml '</string>
+							</value>
+						</slot>
+						<slot name="Max">
+							<value>
+								<string>' :Max%xml '</string>
+							</value>
+						</slot>'
+						_portdtUnit()
+'					</object>
+'

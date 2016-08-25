@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="DFwithGenerator">
+		<objectSymbol offset="90,30" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="260.75,204.75 260.293,207.046 258.993,208.993 257.046,210.293 254.75,210.75 94.75,210.75 92.4539,210.293 90.5074,208.993 89.2067,207.046 88.75,204.75 88.75,34.75 89.2067,32.4539 90.5074,30.5074 92.4539,29.2067 94.75,28.75 254.75,28.75 257.046,29.2067 258.993,30.5074 260.293,32.4539 260.75,34.75 260.75,204.75" targetPointX="174.75" targetPointY="119.75" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="210" version="1.2" width="260" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<linearGradient gradientUnits="objectBoundingBox" id="gradient3" sym:correctGamma="true" x1="0.511765" x2="0.508758" y1="0.0556523" y2="1.26087">
+						<stop offset="0" stop-color="rgb(224,239,255)"></stop>
+						<stop offset="0.107851" stop-color="rgb(234,244,255)"></stop>
+						<stop offset="0.246784" stop-color="rgb(251,253,255)"></stop>
+						<stop offset="1" stop-color="rgb(255,255,255)"></stop>
+					</linearGradient>
+					<linearGradient gradientUnits="objectBoundingBox" id="gradient1" sym:correctGamma="true" x1="0.505882" x2="0.508758" y1="0.0556523" y2="1.26087">
+						<stop offset="0" stop-color="rgb(239,224,255)"></stop>
+						<stop offset="0.0829943" stop-color="rgb(242,229,255)"></stop>
+						<stop offset="0.296669" stop-color="rgb(253,251,255)"></stop>
+						<stop offset="1" stop-color="rgb(255,255,255)"></stop>
+					</linearGradient>
+					<linearGradient gradientUnits="objectBoundingBox" id="gradient2" sym:correctGamma="true" x1="0.505882" x2="0.508758" y1="0.0556523" y2="1.26087">
+						<stop offset="0" stop-color="rgb(255,239,224)"></stop>
+						<stop offset="0.165999" stop-color="rgb(255,248,240)"></stop>
+						<stop offset="0.346519" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(255,255,255)"></stop>
+					</linearGradient>
+				</defs>
+				<rect fill="none" height="180" rx="6" ry="6" stroke="rgb(0,0,0)" stroke-width="3" width="170" x="90" y="30">
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="X" xmlns="http://www.w3.org/2000/svg">ReportTextSource:if decompositions; then 'X' endif</displayCondition>
+					</metaInfo>
+				</rect>
+				<rect fill="url(#gradient1)" height="180" rx="6" ry="6" stroke="none" stroke-width="2" width="170" x="90" y="30">
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="HardwareFunctionType" xmlns="http://www.w3.org/2000/svg">ReportTextSource:do decompositions {
+:Type
+}</displayCondition>
+					</metaInfo>
+				</rect>
+				<rect fill="url(#gradient2)" height="180" rx="6" ry="6" stroke="none" stroke-width="1" width="170" x="90" y="30">
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="BasicSoftwareFunctionType" xmlns="http://www.w3.org/2000/svg">ReportTextSource:do decompositions {
+:Type
+}</displayCondition>
+					</metaInfo>
+				</rect>
+				<rect fill="url(#gradient3)" height="180" rx="6" ry="6" stroke="none" stroke-width="1" width="170" x="90" y="30">
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="LocalDeviceManager" xmlns="http://www.w3.org/2000/svg">ReportTextSource:do decompositions {
+:Type
+}</displayCondition>
+					</metaInfo>
+				</rect>
+				<rect fill="none" height="180" rx="6" ry="6" stroke="rgb(0,0,0)" stroke-width="0" width="170" x="90" y="30">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</rect>
+				<textArea display-align="before" fill="rgb(0,0,0)" font-family="#sans serif" font-size="14" font-style="normal" font-weight="normal" height="180" sym:characterBackgroundFill="none" sym:textboxFill="none" sym:textboxStroke="none" sym:textboxStroke-width="1" sym:wordWrap="true" text-anchor="middle" width="170" x="90" y="30">
+					ReportTextSource:newline
+if :Name; then :Name; else 'id undefined' endif
+if decompositions; then
+	do decompositions {
+		':' 
+		if :No AUTOSAR implementation;1 &lt;&gt;'T' then
+			:FunctionName
+		else
+			:FunctionName
+		endif
+	}
+else
+	': function type undefined'
+endif
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</textArea>
+				<textArea display-align="before" fill="rgb(0,0,0)" font-family="#sans serif" font-size="12" font-style="normal" font-weight="normal" height="180" sym:characterBackgroundFill="none" sym:textboxFill="none" sym:textboxStroke="none" sym:textboxStroke-width="1" sym:wordWrap="true" text-anchor="end" width="170" x="90" y="30">
+					ReportTextSource:subreport '_sym type checking' run
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</textArea>
+				<textArea display-align="before" fill="rgb(255,0,0)" font-family="#sans serif" font-size="18" font-style="normal" font-weight="bold" height="180" sym:characterBackgroundFill="none" sym:textboxFill="none" sym:textboxStroke="none" sym:textboxStroke-width="1" sym:wordWrap="true" text-anchor="start" width="170" x="90" y="30">
+					X
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="T" xmlns="http://www.w3.org/2000/svg">PropertyTextSource:ckgypr</displayCondition>
+					</metaInfo>
+				</textArea>
+				<template aligmentPointX="0.5" aligmentPointY="0.5" isMovable="false" revealConnectables="true" rotation="false" scaleFilter="0,0" subsymbolExtentX="20" subsymbolExtentY="20" useTargetpoint="false" width="1" xmlns="http://www.metacase.com/symbol">
+					<pathLayout allocation="start" layoutDistance="40" lineSegmentTable="" points="90,30" startDistance="0">
+						<layoutPath allocation="start" layoutDistance="28" lineSegmentTable="true" points="0,0 0,170" startDistance="50"></layoutPath>
+					</pathLayout>
+					<generatorNPSource>do decompositions {
+	foreach .(InFlowPort | ServerPort | InPowerPort) orderby y num {
+		id newline
+	}
+}</generatorNPSource>
+					<librarySubsymbolSource>ReportTextSource:type '_subsymbol'</librarySubsymbolSource>
+					<metaInfo></metaInfo>
+				</template>
+				<template aligmentPointX="0.5" aligmentPointY="0.5" isMovable="false" revealConnectables="true" rotation="false" scaleFilter="0,0" subsymbolExtentX="20" subsymbolExtentY="20" useTargetpoint="false" width="1" xmlns="http://www.metacase.com/symbol">
+					<pathLayout allocation="start" layoutDistance="40" lineSegmentTable="" points="260,30" startDistance="0">
+						<layoutPath allocation="start" layoutDistance="28" lineSegmentTable="true,true" points="0,0 0,85 0,170" startDistance="50"></layoutPath>
+					</pathLayout>
+					<generatorNPSource>do decompositions {
+	foreach .(OutFlowPort | ClientPort | OutPowerPort) orderby y num {
+		id newline
+	}
+}</generatorNPSource>
+					<librarySubsymbolSource>ReportTextSource:type '_subsymbol'</librarySubsymbolSource>
+					<metaInfo></metaInfo>
+				</template>
+				<textArea display-align="before" fill="rgb(0,0,0)" font-family="#sans serif" font-size="14" font-style="normal" font-weight="normal" height="180" sym:characterBackgroundFill="none" sym:textboxFill="none" sym:textboxStroke="none" sym:textboxStroke-width="1" sym:wordWrap="true" text-anchor="start" width="120" x="100" y="30">
+					ReportTextSource:newline newline newline
+do decompositions {
+	foreach .(InFlowPort | ServerPort | InPowerPort) orderby y num {
+		id newline newline 
+	}
+}
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</textArea>
+				<textArea display-align="before" fill="rgb(0,0,0)" font-family="#sans serif" font-size="14" font-style="normal" font-weight="normal" height="180" sym:characterBackgroundFill="none" sym:textboxFill="none" sym:textboxStroke="none" sym:textboxStroke-width="1" sym:wordWrap="true" text-anchor="end" width="120" x="130" y="30">
+					ReportTextSource:newline newline newline
+do decompositions {
+	foreach .(OutFlowPort | ClientPort | OutPowerPort) orderby y num {
+		id newline newline
+	}
+}
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</textArea>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

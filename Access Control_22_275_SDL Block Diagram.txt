@@ -1,0 +1,152 @@
+Graph_SDL_Block_Diagram_user_3577030438
+Access Control
+22_275
+SDL Block Diagram
+Graph: Access Control <SDL Block Diagram> 22_275
+	Name: Access Control
+	Description: 
+	Show in LiveCheck: Checking
+Object: ap(100): AccessPoint <Block> 22_290
+	Name: ap
+	Number of instances: 100
+	Description: 
+	Decomposed to: AccessPoint <SDL Block Diagram>
+Object: op: OperationPoint <Block> 22_1991
+	Name: op
+	Number of instances: 1
+	Description: 
+	Decomposed to: OperationPoint <SDL Block Diagram>
+Object: ControlUnit: AccessControlUnit <Block> 22_2054
+	Name: ControlUnit
+	Number of instances: 1
+	Description: 
+	Decomposed to: AccessControlUnit <SDL Block Diagram>
+Object: Signals of the system: <Comment> 22_1608
+	Description: Signals of the system:
+	Show signals: T
+Object: panelIn <Gate> 22_2263
+	Name: panelIn
+	Direction: in
+Object: terminalOut <Gate> 22_2273
+	Name: terminalOut
+	Direction: out
+Object: doorIn <Gate> 22_2283
+	Name: doorIn
+	Direction: in
+Object: doorOut <Gate> 22_2293
+	Name: doorOut
+	Direction: out
+Object: panelOut <Gate> 22_2303
+	Name: panelOut
+	Direction: out
+Object: terminalIn <Gate> 22_2313
+	Name: terminalIn
+	Direction: in
+Relationship: Validation <Channel> 22_2323
+	Name: Validation
+	Delayed: T
+	Signal list: req
+	Object: req <Signal> 22_1900
+		Signal name: req
+		Type:  
+		Parameters: Validate
+ConfigReq
+  Role: Source <Source>  Port: <Gate> 22_1578  Object: <Block> 22_290
+  Role: Target <Target>  Port: <Gate> 22_2105  Object: <Block> 22_2054
+Relationship: Operation <Channel> 22_2341
+	Name: Operation
+	Delayed: F
+	Signal list: Modify
+	Object: Modify <Signal> 22_2177
+		Signal name: Modify
+		Type:  
+		Parameters: 
+  Role: Source <Source>  Port: <Gate> 22_2030  Object: <Block> 22_1991
+  Role: Target <Target>  Port: <Gate> 22_2115  Object: <Block> 22_2054
+Relationship: Terminal <Channel> 22_2359
+	Name: Terminal
+	Delayed: F
+	Signal list: Tin
+	Object: Tin <Signal> 22_2373
+		Signal name: Tin
+		Type:  
+		Parameters: 
+  Role: Source <Source>  Port: <Gate> 22_2313  Object: <Gate> 22_2313
+  Role: Target <Target>  Port: <Gate> 22_2020  Object: <Block> 22_1991
+Relationship: Terminal <Channel> 22_2391
+	Name: Terminal
+	Delayed: F
+	Signal list: Tout
+	Object: Tout <Signal> 22_2405
+		Signal name: Tout
+		Type:  
+		Parameters: 
+  Role: Source <Source>  Port: <Gate> 22_2040  Object: <Block> 22_1991
+  Role: Target <Target>  Port: <Gate> 22_2273  Object: <Gate> 22_2273
+Relationship: Door <Channel> 22_2423
+	Name: Door
+	Delayed: F
+	Signal list: Din
+	Object: Din <Signal> 22_1836
+		Signal name: Din
+		Type:  
+		Parameters: DoorPassed
+  Role: Source <Source>  Port: <Gate> 22_2283  Object: <Gate> 22_2283
+  Role: Target <Target>  Port: <Gate> 22_1558  Object: <Block> 22_290
+Relationship: Door <Channel> 22_2441
+	Name: Door
+	Delayed: F
+	Signal list: Dout
+	Object: Dout <Signal> 22_1868
+		Signal name: Dout
+		Type:  
+		Parameters: Open
+Close
+  Role: Source <Source>  Port: <Gate> 22_1598  Object: <Block> 22_290
+  Role: Target <Target>  Port: <Gate> 22_2293  Object: <Gate> 22_2293
+Relationship: Panel <Channel> 22_2459
+	Name: Panel
+	Delayed: F
+	Signal list: Pin
+	Object: Pin <Signal> 22_1772
+		Signal name: Pin
+		Type:  
+		Parameters: Digit
+Card
+  Role: Source <Source>  Port: <Gate> 22_2263  Object: <Gate> 22_2263
+  Role: Target <Target>  Port: <Gate> 22_1548  Object: <Block> 22_290
+Relationship: Panel <Channel> 22_2477
+	Name: Panel
+	Delayed: F
+	Signal list: Pout
+	Object: Pout <Signal> 22_1804
+		Signal name: Pout
+		Type:  
+		Parameters: Pass
+AccessDenied
+EnterPIN
+EnterCard
+  Role: Source <Source>  Port: <Gate> 22_1588  Object: <Block> 22_290
+  Role: Target <Target>  Port: <Gate> 22_2303  Object: <Gate> 22_2303
+Relationship: Validation <Channel> 22_2495
+	Name: Validation
+	Delayed: T
+	Signal list: resp
+	Object: resp <Signal> 22_1932
+		Signal name: resp
+		Type:  
+		Parameters: Accepted
+Rejected
+Configure
+  Role: Source <Source>  Port: <Gate> 22_2125  Object: <Block> 22_2054
+  Role: Target <Target>  Port: <Gate> 22_1568  Object: <Block> 22_290
+Relationship: Operation <Channel> 22_2513
+	Name: Operation
+	Delayed: F
+	Signal list: Ack
+	Object: Ack <Signal> 22_2227
+		Signal name: Ack
+		Type:  
+		Parameters: 
+  Role: Source <Source>  Port: <Gate> 22_2135  Object: <Block> 22_2054
+  Role: Target <Target>  Port: <Gate> 22_2030  Object: <Block> 22_1991

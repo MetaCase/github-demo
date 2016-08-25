@@ -1,0 +1,15 @@
+_ErrorBehaviourOperators()
+/* generate default error logic for omission case now. Other defaults like comission, timing, value could be generated as well */
+
+foreach .(OutFlowPort | ClientPort) {
+'		<object id="_Oper_'oid'" type="Object_Operator_sysadmin_3627560660">
+			<slot name="Operator">
+				<value>
+					<string>OR</string>
+				</value>
+			</slot>
+		</object>
+'
+}
+_ErrorFailureKindBinding()
+_DiagramBehaviorRepr()

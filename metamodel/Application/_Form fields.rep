@@ -1,0 +1,27 @@
+Report '_Form fields'
+/* Generates the form fields */
+'		# Form fields' newline
+dowhile :Fields; {
+	'		(u"' :Label; '", "'
+	if type; = 'Form_field' then
+		:Form field type; '"'
+		if :Initial value; then 
+			if :Form field type; ='text' then 
+				', u"' :Initial value; '"' 
+			else
+				', ' :Initial value;
+			endif
+		endif
+		')'
+	else
+		'combo"'
+		if :Values; then 
+			', (['
+			dowhile :Values; { 'u"' id '", ' } 
+			'"], 0))'
+		endif
+	endif
+	',\' newline
+}
+'],\' newline
+endreport

@@ -1,0 +1,20 @@
+Report '_webAppTranslators'
+subreport '_translators' run
+
+/* turn space-separated list into newline-separated */
+to '%words
+\  \
+' endto
+
+/* escape strings for JavaScript */
+/* use \x5C not \\ to avoid recursion on second \ in replacement */
+to '%js
+\\ $\\x5C
+'' $\\''
+" $\\"
+\
+ $\\n
+	 $\\t'
+endto
+
+endreport

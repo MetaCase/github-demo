@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="Male">
+		<objectSymbol offset="30,30" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="30,30 175,30 175,140 30,140 30,30" targetPointX="102" targetPointY="85" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="140" version="1.2" width="175" xmlns="http://www.w3.org/2000/svg">
+				<rect fill="rgb(255,255,255)" height="110" rx="7" ry="7" stroke="rgb(0,0,255)" stroke-width="2" width="145" x="30" y="30">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</rect>
+				<textArea display-align="center" fill="rgb(0,0,0)" font-family="#sans serif" font-size="16" font-style="normal" font-weight="bold" height="20" sym:characterBackgroundFill="none" sym:textboxFill="none" sym:textboxStroke="none" sym:textboxStroke-width="1" sym:wordWrap="true" text-anchor="start" width="90" x="35" y="35">
+					First name
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</textArea>
+				<textArea display-align="center" fill="rgb(0,0,0)" font-family="#sans serif" font-size="16" font-style="normal" font-weight="normal" height="20" sym:characterBackgroundFill="none" sym:textboxFill="none" sym:textboxStroke="none" sym:textboxStroke-width="1" sym:wordWrap="true" text-anchor="start" width="90" x="35" y="55">
+					Family name
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</textArea>
+				<textArea display-align="center" fill="rgb(0,0,0)" font-family="#sans serif" font-size="16" font-style="normal" font-weight="normal" height="20" sym:characterBackgroundFill="none" sym:textboxFill="none" sym:textboxStroke="none" sym:textboxStroke-width="0" sym:wordWrap="true" text-anchor="start" width="45" x="35" y="95">
+					Birth:
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</textArea>
+				<textArea display-align="center" fill="rgb(0,0,0)" font-family="#sans serif" font-size="16" font-style="normal" font-weight="normal" height="20" sym:characterBackgroundFill="none" sym:textboxFill="rgb(255,255,255)" sym:textboxStroke="none" sym:textboxStroke-width="1" sym:wordWrap="true" text-anchor="start" width="90" x="80" y="95">
+					Date of birth
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</textArea>
+				<textArea display-align="center" fill="rgb(0,0,0)" font-family="#sans serif" font-size="16" font-style="normal" font-weight="normal" height="20" sym:characterBackgroundFill="none" sym:textboxFill="none" sym:textboxStroke="none" sym:textboxStroke-width="0" sym:wordWrap="true" text-anchor="start" width="45" x="35" y="115">
+					Death:
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</textArea>
+				<textArea display-align="center" fill="rgb(0,0,0)" font-family="#sans serif" font-size="16" font-style="normal" font-weight="normal" height="20" sym:characterBackgroundFill="none" sym:textboxFill="rgb(255,255,255)" sym:textboxStroke="none" sym:textboxStroke-width="1" sym:wordWrap="true" text-anchor="start" width="90" x="80" y="115">
+					Date of death
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</textArea>
+				<ellipse cx="143" cy="57" fill="rgb(255,255,255)" rx="10" ry="10" stroke="rgb(0,0,255)" stroke-width="2" sym:startAngle="0.0e0" sym:sweepAngle="3.6e2">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</ellipse>
+				<line stroke="rgb(0,0,255)" stroke-width="2" x1="148" x2="154" y1="50" y2="42">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</line>
+				<polyline fill="none" points="155,47 155,42 150,42" stroke="rgb(0,0,255)" stroke-width="2">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</polyline>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

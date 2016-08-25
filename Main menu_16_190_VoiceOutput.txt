@@ -1,0 +1,29 @@
+Graph_VoiceOutput_user_3190467743
+Main menu
+16_190
+VoiceOutput
+Graph: Main menu <VoiceOutput> 16_190
+	Name: Main menu
+	Documentation: 
+Object: Start <Start> 16_219
+Object: Stop <Stop> 16_955
+Object: Welcome to the system! Press 1 for mode menu Press 2 for version info <Text> 16_731
+	Text fragments: Welcome to the system! Press 1 for mode menu Press 2 for version info
+	Object: Welcome to the system! <TextFragment> 16_911
+		Label: Welcome to the system!
+		Start address: 0x12
+		Length: 8
+	Object: Press 1 for mode menu <TextFragment> 16_692
+		Label: Press 1 for mode menu
+		Start address: 0x13
+		Length: 7
+	Object: Press 2 for version info <TextFragment> 16_257
+		Label: Press 2 for version info
+		Start address: 0x14
+		Length: 8
+Relationship: Flow <Flow> 16_230
+  Role: From <From>  Object: <Start> 16_219
+  Role: To <To>  Object: <Text> 16_731
+Relationship: Flow <Flow> 16_812
+  Role: From <From>  Object: <Text> 16_731
+  Role: To <To>  Object: <Stop> 16_955

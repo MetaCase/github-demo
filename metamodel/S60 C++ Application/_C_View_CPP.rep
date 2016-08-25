@@ -1,0 +1,123 @@
+Report '_C_View_CPP'
+filename
+	subreport '_default directory' run
+	'src\'
+	subreport '_app' run 
+	id 'View.cpp'
+write
+'/*
+* ============================================================================
+*  Name     : C' subreport '_app' run id 'View from CAknView
+*  Part of  : ' subreport '_app' run '
+*  ' subreport '_copyright' run '
+* ============================================================================
+*/
+
+// INCLUDE FILES
+#include <eikmenub.h>
+#include <aknviewappui.h>
+#include <avkon.hrh>
+#include <AknListQueryDialog.h>
+#include <aknnotewrappers.h>
+
+#include <' subreport '_app' run '.rsg>
+#include "' subreport '_app' run id 'View.h"
+#include "' subreport '_app' run id 'Container.h" 
+#include "' subreport '_app' run '.hrh"
+#include "' subreport '_app' run 'AppUi.h"
+
+// ================= MEMBER FUNCTIONS =======================
+
+// EPOC default constructor can leave.
+void C' subreport '_app' run id 'View::ConstructL(TInt aResId)
+    {
+    BaseConstructL(aResId);    
+    }
+
+// Destructor
+C' subreport '_app' run id 'View::~C' subreport '_app' run id 'View()
+    {
+    if (iContainer)
+        {
+        AppUi()->RemoveFromStack(iContainer);
+        }
+
+    delete iContainer;
+    }
+
+// ---------------------------------------------------------
+// TUid C' subreport '_app' run id 'View::Id()
+// return Uid
+// ---------------------------------------------------------
+TUid C' subreport '_app' run id 'View::Id() const
+    {
+    return K' id 'ViewId;
+    }
+
+// ---------------------------------------------------------
+// C' subreport '_app' run id 'View::HandleCommandL(TInt aCommand)
+// takes care of command handling.
+// ---------------------------------------------------------
+void C' subreport '_app' run id 'View::HandleCommandL(TInt aCommand)
+    {   
+    switch (aCommand)
+        {
+        case EAknSoftkeyBack:
+            {
+            AppUi()->HandleCommandL(EAknCmdExit);
+            break;
+            }
+        default:
+            {
+            AppUi()->HandleCommandL(aCommand);
+            break;
+            }
+        }
+    }
+
+// ---------------------------------------------------------
+// C' subreport '_app' run id 'View::DoActivateL(...)
+// activate an AknView
+// ---------------------------------------------------------
+void C' subreport '_app' run id 'View::DoActivateL(const TVwsViewId& /*aPrevViewId*/,TUid /*aCustomMessageId*/,const TDesC8& /*aCustomMessage*/)
+    {
+    iContainer = new(ELeave) C' subreport '_app' run id 'Container;
+    iContainer->SetMopParent(this);
+    iContainer->ConstructL(ClientRect(), this);
+    AppUi()->AddToStackL(*this, iContainer);
+'; 
+do explosions
+{	foreach .Start
+	{	do .(^Stop)
+		{	'    ' id%lower '();' newline
+		}
+	}
+}
+'    }
+
+// ---------------------------------------------------------
+// C' subreport '_app' run id 'View::DoDeactivate(TInt aCommand)
+// deactivate an AknView
+// ---------------------------------------------------------
+void C' subreport '_app' run id 'View::DoDeactivate()
+    {
+    if (iContainer)
+        {
+        AppUi()->RemoveFromStack(iContainer);
+        }
+    
+    delete iContainer;
+    iContainer = NULL;
+    }
+
+';
+do explosions
+{	foreach .(PopupMenu | Note | Query)
+	{	subreport '_C_View_' type run
+	}
+}
+'// End of File
+
+'
+close
+endreport

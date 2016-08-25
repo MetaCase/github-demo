@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="CommunicationHardwarePinOut_subsymbol">
+		<objectSymbol offset="42,32" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="42,32 56,32 56,46 42,46 42,32" targetPointX="49" targetPointY="39" usesGrid="true"></defaultConnectable>
+			<svg baseProfile="tiny" height="46" version="1.2" width="56" xmlns="http://www.w3.org/2000/svg">
+				<g fill="none" stroke="rgb(0,0,0)" sym:height="14" sym:width="14" sym:x="4.2e1" sym:y="3.2e1">
+					<rect fill="rgb(255,255,255)" height="14" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="14" x="42" y="32">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<polygon fill="rgb(128,128,128)" points="44.8,34.1 54.6,39 44.8,43.9" stroke="rgb(0,0,0)" stroke-width="0">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polygon>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

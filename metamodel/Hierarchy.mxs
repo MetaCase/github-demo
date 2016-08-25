@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="Hierarchy">
+		<objectSymbol offset="60,20" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="60,20 80,20 80,40 60,40 60,20" targetPointX="70" targetPointY="30" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="40" version="1.2" width="80" xmlns="http://www.w3.org/2000/svg">
+				<g fill="none" stroke="rgb(0,0,0)" stroke-width="1" sym:height="20" sym:width="20" sym:x="6.0e1" sym:y="2.0e1">
+					<rect fill="rgb(128,128,255)" height="4" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="10" x="60" y="20">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<rect fill="rgb(128,128,255)" height="4" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="10" x="70" y="28">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<rect fill="rgb(128,128,255)" height="4" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="10" x="70" y="36">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<polyline fill="none" points="65,24 65,30 70,30 65,30 65,38 70,38" stroke="rgb(0,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polyline>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

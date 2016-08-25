@@ -1,0 +1,27 @@
+Graph_Project_Model_sysadmin_3084195615
+3. Mobile UI example
+20_4858
+Project Model
+Graph: 3. Mobile UI example <Project Model> 20_4858
+	Project name: 3. Mobile UI example
+	Status: 
+	Project manager: 
+	Authors: 
+	Documentation: 
+Object: Mobile Application Specification: Date and time settings <Graph> 20_4874
+	Decomposed to: Date and time settings <Mobile Application Specification>
+Object: Mobile Application Specification: Shopping list <Graph> 20_5019
+	Decomposed to: Shopping list <Mobile Application Specification>
+Object: Mobile Application Specification: Accept changes <Graph> 20_5022
+	Decomposed to: Accept changes <Mobile Application Specification>
+Object: The Graphs in this Project Model are from an example language for mobile device user interfaces. There are three examples below, of increasing complexity from left to right. This example does not generate code. 
+	Ctrl+double-click to open the graphs. By changing the graph properties, you can show a User View or Detailed View of the model. <Note> 20_5064
+	Documentation: The Graphs in this Project Model are from an example language for mobile device user interfaces. There are three examples below, of increasing complexity from left to right. This example does not generate code. 
+	Ctrl+double-click to open the graphs. By changing the graph properties, you can show a User View or Detailed View of the model.
+Object: Mobile UI: Messaging Example <Subproject> 20_4880
+	Decomposed to: Mobile UI: Messaging Example <Project Model>
+Relationship:  <Relates> 20_5025
+	Link type: 
+	Documentation: 
+  Role: From <From>  Object: <Graph> 20_5019
+  Role: To <To>  Object: <Graph> 20_5022

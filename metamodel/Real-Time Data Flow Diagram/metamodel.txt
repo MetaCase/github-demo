@@ -1,0 +1,186 @@
+==========================
+Graph Type
+==========================
+Real-Time Data Flow Diagram
+	Real-Time Data Flow Diagram is an extension of data flow diagrams whereas it introduce new concepts (e.g. Control transformation, Buffer) and relationships (e.g. Signal, De/activation) to model real-time systems.
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Process
+	A process describes the functions of the system which transform the flows. A process is represented by a solid circle with two properties (i.e. process number and process name) inside it. Process has three properties: process ID, process name and documentation.
+	---------------------------------------------
+	Process ID: String
+	Process name: String
+	Process specification: Text
+	Documentation: Text
+Control transformation
+	Control transformations control the behaviour of data transformations by activating or deactivating them. In other words, a control transformation is an abstraction on some portion of a systems control logic. A control transformation is symbolized by a grey circle with a name and number of control transformation inside the symbol. 
+	---------------------------------------------
+	Process ID: String
+	Process name: String
+	Process specification: Text
+	Documentation: Text
+External
+	An external is an object which represents a source or a destination of data flows in the modelled system. Thus, externals which e.g. are 'customers', 'suppliers', 'employees' are considered to be outside the system but still either accepting or providing data to it or both. An external is represented by a solid square with a name of the external inside the symbol. External has two properties: external name and documentation.
+	---------------------------------------------
+	Name: String
+	Documentation: Text
+Store
+	A store acts as a repository for data. Thus, a store allows you to define parts of the system where you need data stored between processes. A store is symbolized by a rounded rectangle where the name of the store is shown inside the symbol. Store has two properties: store name and documentation.
+	---------------------------------------------
+	Name: String
+	Documentation: Text
+Buffer
+	A buffer is a special type of a store in which flows produced by one or more transformations subject to a storage delay before being consumed by one or more transformations. A buffer has three properties: a name, documentation field and capacity (i.e. a number of units that can be stored at a given point of time into the buffer). A buffer is symbolized by a pair of dotted line segments.
+	---------------------------------------------
+	Name: String
+	Documentation: Text
+	Capacity: String
+Note
+	Note is a special object for adding additional text anywhere in the graphs. Note belongs to many languages and has only one property, Documentation.
+	---------------------------------------------
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Continuous data flow
+	Continuous data flows are associated with a value or a set of values defined continuously over a time interval. A continuous data flow is represented by a solid line with a double arrowhead.
+	---------------------------------------------
+	Flow name: String
+	Documentation: Text
+Discrete data flow
+	Discrete flows are associated with a variable value or a set of variable values that is defined at discrete points of time. A solid line with a single arrowhead presents a discrete flow. 
+	---------------------------------------------
+	Flow name: String
+	Documentation: Text
+Signal flow
+	A signal shows the sender's intention to report that something has happened, and the absence of any knowledge on the sender's part of the use to which the signal is put. A solid blue line with a single arrowhead presents a signal flow.
+	---------------------------------------------
+	Flow name: String
+	Documentation: Text
+Activation flow
+	Activation show the sender's intention to cause a receiver to produce some output. A solid blue line with double arrowhead on senders part of the flow represent an activation flow.
+	---------------------------------------------
+	Flow name: String
+	Documentation: Text
+Deactivation flow
+	Deactivations show the sender's intention to prevent a receiver from producing some output. A solid blue line with double arrowhead on a receiver represent a deactivation flow.
+	---------------------------------------------
+	Flow name: String
+	Documentation: Text
+
+==========================
+Role Types
+==========================
+Activates
+Continuous
+Deactivates
+Event from
+From
+Signal to
+To
+
+==========================
+Extra Types
+==========================
+Entity Relationship Diagram
+	Entity Relationship Diagrams are used to specify the data structures of the system, e.g. to model the contents of the data stores in more detail. 
+	
+	The objects in this method are 'entity' and 'attribute'. Entities can be related to each other with 'relationship'.
+	
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+State Transition Diagram
+	State Transition Diagram can be used to highlight the time-dependent behaviour of a system. Process in Data Flow Diagram can be exploded to State Transition Diagram, or Class in Object Model can be exploded to State Transition Diagram as well.
+	
+	The major components of the diagram are states and arrows representing state changes.
+	
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+Structure Chart
+	Structure Chart is one of the most common model for organizing the activity within a single and synchronous unit. This unit is a structure chart which shows the hierarchical organization of modules within one task. Each process in Data Flow Diagram can be exploded to Structure Chart.
+	
+	The object in this method is 'module' and relationship is 'call'.
+	
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+_Structured Analysis and Design
+Person
+	Person is used to describe developers involved in a project (i.e. attached to the project model) and authors of developed models. Person can be characterized with a name, e-mail address, and with a contact address. 
+	---------------------------------------------
+	Name: String
+	E-mail: String
+	Contact address: Text
+
+==========================
+Bindings
+==========================
+Activation flow
+	Event from: Control transformation
+	Activates: Process
+Continuous data flow
+	From: Process
+	Continuous: Process
+Deactivation flow
+	Event from: Control transformation
+	Deactivates: Process
+Discrete data flow
+	From: Buffer, External, Store
+	To: Process
+Discrete data flow
+	From: Process
+	To: Buffer, External, Process, Store
+Signal flow
+	Event from: Buffer, External, Process
+	Signal to: Control transformation
+Signal flow
+	Event from: Control transformation
+	Signal to: Buffer, Control transformation, External, Process
+
+==========================
+Constraints
+==========================
+Property "Name" in Buffer must have unique values
+Property "Name" in External must have unique values
+Property "Name" in Store must have unique values
+Property "Process name" in Control transformation must have unique values
+Property "Process name" in Process must have unique values
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	Control transformation
+		State Transition Diagram
+		Structure Chart
+	Process
+		State Transition Diagram
+		Structure Chart
+	Store
+		Entity Relationship Diagram
+	Continuous data flow
+		Entity Relationship Diagram
+	Discrete data flow
+		Entity Relationship Diagram
+Decompositions:
+	Control transformation
+		Real-Time Data Flow Diagram
+	Process
+		Real-Time Data Flow Diagram
+

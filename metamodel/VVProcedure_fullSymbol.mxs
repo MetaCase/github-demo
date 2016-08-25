@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="VVProcedure_fullSymbol">
+		<objectSymbol offset="30,20" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="30,20 135,20 135,35 30,35 30,20" targetPointX="82.5" targetPointY="27.5" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="35" version="1.2" width="136.09" xmlns="http://www.w3.org/2000/svg">
+				<textArea display-align="center" fill="rgb(0,0,0)" font-family="#sans serif" font-size="14" font-style="normal" font-weight="normal" height="15" sym:characterBackgroundFill="none" sym:textboxFill="none" sym:textboxStroke="rgb(128,0,0)" sym:textboxStroke-width="1" sym:wordWrap="false" text-anchor="start" width="106.09" x="30" y="20">
+					ReportTextSource:id
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</textArea>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

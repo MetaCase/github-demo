@@ -1,0 +1,21 @@
+_do_Acceleration()
+@sep = ''
+
+'                  "thresholds": {' 
+if :Direction = 'Any' and :Trigger if over \(g\); = '0' then
+	newline
+	'                    "isAny": true'	newline
+else 
+	if :Trigger if over \(g\); <> '0' then
+		newline
+		'                    "isGt": ' :Trigger if over \(g\); 
+		@sep = ','		
+	endif
+	if :Trigger if under \(g\); <> '0' then
+		@sep newline
+		'                    "isLt": ' :Trigger if under \(g\); 
+	endif
+	newline
+endif
+'                  }
+'

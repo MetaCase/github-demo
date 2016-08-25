@@ -1,0 +1,88 @@
+Graph_State_sysadmin_3211545744
+View
+20_4033
+S60 C++ States
+Graph: View <S60 C++ States> 20_4033
+	Graph name: View
+	Documentation: This example "adventure" application uses essentially the same modeling concepts as the S60 Python phone examples. S60 native C++ code can be generated from the top MenuApp graph in this project.
+Object: ExMenu <Application> 20_4036
+	App name: ExMenu
+	Name in Grid: Cave
+	Name in List: Cave Adventure
+	Uid: 0x10005C30
+	Resource Identifier: EXMN
+Object: This example "adventure" application uses essentially the same modeling concepts as the S60 Python phone examples. S60 native C++ code can be generated from the top MenuApp graph in this project. <Comment> 20_4288
+	Documentation: This example "adventure" application uses essentially the same modeling concepts as the S60 Python phone examples. S60 native C++ code can be generated from the top MenuApp graph in this project.
+Object: The Graphs in this Project Model demonstrate the modeling of applications for mobile phones, for generation of S60 native C++ as described in Section 8.8 of the book "Domain-Specific Modeling", http://dsmbook.com.  <Comment> 20_4854
+	Documentation: The Graphs in this Project Model demonstrate the modeling of applications for mobile phones, for generation of S60 native C++ as described in Section 8.8 of the book "Domain-Specific Modeling", http://dsmbook.com. 
+Object: Blunder <Note> 20_4080
+	State name: Blunder
+	UI Text: You blunder into a wall
+	UI Text Var: 
+	Note Type: Information
+Object: Monster <Note> 20_4256
+	State name: Monster
+	UI Text: You find a monster and run back
+	UI Text Var: 
+	Note Type: Information
+Object: Treasure <Note> 20_4463
+	State name: Treasure
+	UI Text: You find a wealth of treasure and return a hero
+	UI Text Var: 
+	Note Type: Information
+Object: Dark_Room <PopupMenu> 20_4422
+	State name: Dark_Room
+	UI Text: A Dark Room
+	UI Text Var: 
+	Popup Menu Items: Go East Go West Light lamp
+	Object: Go East <Popup Menu Item> 20_4038
+		UI Text: Go East
+		UI Text Var: 
+	Object: Go West <Popup Menu Item> 20_4596
+		UI Text: Go West
+		UI Text Var: 
+	Object: Light lamp <Popup Menu Item> 20_4345
+		UI Text: Light lamp
+		UI Text Var: 
+Object: Light_Room <PopupMenu> 20_4602
+	State name: Light_Room
+	UI Text: A Light Room
+	UI Text Var: 
+	Popup Menu Items: Go East Go West Snuff out lamp
+	Object: Go East <Popup Menu Item> 20_4275
+		UI Text: Go East
+		UI Text Var: 
+	Object: Go West <Popup Menu Item> 20_4677
+		UI Text: Go West
+		UI Text Var: 
+	Object: Snuff out lamp <Popup Menu Item> 20_4503
+		UI Text: Snuff out lamp
+		UI Text Var: 
+Object: Start <Start> 20_4567
+Relationship: Go West <Popup Menu choice> 20_4507
+	Popup Menu Item: Go West
+  Role: From <From>  Object: <PopupMenu> 20_4422
+  Role: To <To>  Object: <Note> 20_4080
+Relationship: Snuff out lamp <Popup Menu choice> 20_4578
+	Popup Menu Item: Snuff out lamp
+  Role: From <From>  Object: <PopupMenu> 20_4602
+  Role: To <To>  Object: <PopupMenu> 20_4422
+Relationship: Go West <Popup Menu choice> 20_4590
+	Popup Menu Item: Go West
+  Role: From <From>  Object: <PopupMenu> 20_4602
+  Role: To <To>  Object: <Note> 20_4463
+Relationship: Light lamp <Popup Menu choice> 20_4669
+	Popup Menu Item: Light lamp
+  Role: From <From>  Object: <PopupMenu> 20_4422
+  Role: To <To>  Object: <PopupMenu> 20_4602
+Relationship: Go East <Popup Menu choice> 20_4679
+	Popup Menu Item: Go East
+  Role: From <From>  Object: <PopupMenu> 20_4422
+  Role: To <To>  Object: <Note> 20_4080
+Relationship: Go East <Popup Menu choice> 20_4683
+	Popup Menu Item: Go East
+  Role: From <From>  Object: <PopupMenu> 20_4602
+  Role: To <To>  Object: <Note> 20_4256
+Relationship: Transition <Transition> 20_4495
+  Role: From <From>  Object: <Start> 20_4567
+  Role: To <To>  Object: <PopupMenu> 20_4422

@@ -1,0 +1,43 @@
+Report '_C_View_PopupMenu'
+'// ---------------------------------------------------------
+// ' subreport '_C_View_Dialog_Header' run '
+// ---------------------------------------------------------
+
+enum
+    {' 
+dowhile :Popup Menu Items;
+{	newline '    ' to '%lower' translate id;1; '_' endto subreport '_UI Text Var' run ','
+}
+'
+    };
+
+'
+subreport '_C_View_Dialog_Header' run '
+    {
+    TInt index = 0;
+    CAknListQueryDialog* singleListDlg;
+    TBool notexit = ETrue;
+    while(notexit) 
+        {
+        singleListDlg = new (ELeave) CAknListQueryDialog( &index );
+        TBool result = singleListDlg->ExecuteLD(' subreport '_rui' run ');
+        if (result)
+            {
+'
+do ~From>Popup Menu choice;
+{	'            if (index == '
+	do :Popup Menu Item; {	to '%lower' translate id;2; '_' endto subreport '_UI Text Var' run }
+	') ' 
+	do ~To.() { to '%lower' translate id endto '();' }
+	newline
+} 
+'            }
+        else
+            {
+            notexit = EFalse;
+            }
+        }
+    }
+
+'
+endreport

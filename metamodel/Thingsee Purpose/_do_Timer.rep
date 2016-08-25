@@ -1,0 +1,7 @@
+_do_Timer()
+'                  "thresholds": {
+                    "isOneOf": [
+                      ' :Trigger timer after \(sec\); '
+                    ]
+                  }
+'

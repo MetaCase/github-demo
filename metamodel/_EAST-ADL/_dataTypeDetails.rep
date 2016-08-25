@@ -1,0 +1,6 @@
+_dataTypeDetails()
+newline; newline;
+do :() where id <> id;1 and type <> '__UUID' and type <> 'Description' 
+{
+	containers ': ' id newline
+}

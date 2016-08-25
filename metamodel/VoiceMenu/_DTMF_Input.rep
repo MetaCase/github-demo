@@ -1,0 +1,52 @@
+Report '_DTMF_Input'
+
+':' oid newline
+'	GetDTMF'
+
+do >Timeout
+{
+	' Timeout ' :Timeout; newline
+	'	IfNot' newline
+	'	Jump ' oid
+}
+
+newline
+
+do ~From>ConditionalFlow
+{
+	'	Test DTMF '
+	if :Condition =/ '[0-9*#]+' then 
+		'= '  /* simple cases just specify keys with no operator */
+	endif
+	:Condition; newline
+	'	If' newline
+	'	Jump '  do ~To.() { oid }
+	newline
+}
+
+do >InvalidInput
+{
+	do explosions
+	{
+		subreport 'VoiceOutput generator' run
+	}
+	do ~To.()
+	{
+		'	Jump ' oid newline
+	}
+}
+
+do >Timeout
+{
+	':' oid newline
+	do explosions
+	{
+		subreport 'VoiceOutput generator' run
+	}
+	do ~To.()
+	{
+		'	Jump ' oid newline
+	}
+}
+
+endreport

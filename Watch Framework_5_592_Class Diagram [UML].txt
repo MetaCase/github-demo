@@ -1,0 +1,2857 @@
+Graph_Class_diagram__UML__sysadmin_3019387957
+Watch Framework
+5_592
+Class Diagram [UML]
+Graph: Watch Framework <Class Diagram [UML]> 5_592
+	Model name: Watch Framework
+	Status: 
+	Authors: 
+	Documentation: This documents the domain framework used in the Watch Example. The actual classes used there are stored as text properties in the Watch Family graph's properties, with different versions of some classes depending on the runtime platform.
+Object: Result <Class [UML]> 5_2058
+	Class name: Result
+	Attributes: +action:int +targetState:String
+	Object: +action:int <Attribute [UML]> 5_11656
+		Name: action
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +targetState:String <Attribute [UML]> 5_13751
+		Name: targetState
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: +Result(int a, String t)
+	Object: +Result(int a, String t) <Operation [UML]> 5_10347
+		Operation name: Result
+		Parameters: int a String t
+		Object: int a <Parameter> 5_10273
+			Parameter: a
+			Data type: int
+			Direction: 
+			Default value: 
+		Object: String t <Parameter> 5_15748
+			Parameter: t
+			Data type: String
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: constructor
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: action = a;
+targetState = t;
+		Documentation: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: METime <Class [UML]> 5_2130
+	Class name: METime
+	Attributes: +HOUR_OF_DAY:int = 0 +MINUTE:int = 1 +SECOND:int = 2 +HUNDREDTH:int = 3 +sizes:int[] = {24, 60, 60, 100} +unit:int[] = new int[4]
+	Object: +HOUR_OF_DAY:int = 0 <Attribute [UML]> 5_2258
+		Name: HOUR_OF_DAY
+		Data type: int
+		Default value: 0
+		Stereotype: constant
+		Visibility: public
+		Scope: class
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +MINUTE:int = 1 <Attribute [UML]> 5_8164
+		Name: MINUTE
+		Data type: int
+		Default value: 1
+		Stereotype: constant
+		Visibility: public
+		Scope: class
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +SECOND:int = 2 <Attribute [UML]> 5_10253
+		Name: SECOND
+		Data type: int
+		Default value: 2
+		Stereotype: constant
+		Visibility: public
+		Scope: class
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +HUNDREDTH:int = 3 <Attribute [UML]> 5_15695
+		Name: HUNDREDTH
+		Data type: int
+		Default value: 3
+		Stereotype: constant
+		Visibility: public
+		Scope: class
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +sizes:int[] = {24, 60, 60, 100} <Attribute [UML]> 5_6831
+		Name: sizes
+		Data type: int[]
+		Default value: {24, 60, 60, 100}
+		Stereotype: constant
+		Visibility: public
+		Scope: class
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +unit:int[] = new int[4] <Attribute [UML]> 5_8918
+		Name: unit
+		Data type: int[]
+		Default value: new int[4]
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: +METime() +METime(int hours, int minutes, int seconds) +METime meMinus(METime t) +METime mePlus(METime t) +void add(int field, int value) +int get(int field) +void roll(int field, boolean up, METime displayTime) +int asMilliseconds() +void setFromMilliseconds(int mills) +void normalise() +void setFromSysClock()
+	Object: +METime() <Operation [UML]> 5_5525
+		Operation name: METime
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: constructor
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: for(int i=HOUR_OF_DAY; i<=HUNDREDTH; i++)
+	set(i,0);
+
+		Documentation: 
+	Object: +METime(int hours, int minutes, int seconds) <Operation [UML]> 5_5464
+		Operation name: METime
+		Parameters: int hours int minutes int seconds
+		Object: int hours <Parameter> 5_1402
+			Parameter: hours
+			Data type: int
+			Direction: 
+			Default value: 
+		Object: int minutes <Parameter> 5_7563
+			Parameter: minutes
+			Data type: int
+			Direction: 
+			Default value: 
+		Object: int seconds <Parameter> 5_13006
+			Parameter: seconds
+			Data type: int
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: constructor
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: set(HOUR_OF_DAY, hours);
+set(MINUTE, minutes);
+set(SECOND, seconds);
+set(HUNDREDTH, 0);
+		Documentation: 
+	Object: +METime meMinus(METime t) <Operation [UML]> 5_4003
+		Operation name: meMinus
+		Parameters: METime t
+		Object: METime t <Parameter> 5_9576
+			Parameter: t
+			Data type: METime
+			Direction: 
+			Default value: 
+		Return type: METime
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: METime t1 = new METime();
+for(int i=HOUR_OF_DAY; i<=HUNDREDTH; i++)
+{
+	t1.add(i, get(i)-(t.get(i)));
+}
+return t1;
+		Documentation: 
+	Object: +METime mePlus(METime t) <Operation [UML]> 5_15083
+		Operation name: mePlus
+		Parameters: METime t
+		Object: METime t <Parameter> 5_6192
+			Parameter: t
+			Data type: METime
+			Direction: 
+			Default value: 
+		Return type: METime
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: METime t1 = new METime();
+for(int i=HOUR_OF_DAY; i<=HUNDREDTH; i++)
+{
+	t1.add(i, get(i)+t.get(i));
+}
+return t1;
+		Documentation: 
+	Object: +void add(int field, int value) <Operation [UML]> 5_11632
+		Operation name: add
+		Parameters: int field int value
+		Object: int field <Parameter> 5_2256
+			Parameter: field
+			Data type: int
+			Direction: 
+			Default value: 
+		Object: int value <Parameter> 5_8194
+			Parameter: value
+			Data type: int
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: unit[field]=unit[field]+value;
+normalise();
+		Documentation: 
+	Object: +int get(int field) <Operation [UML]> 5_13665
+		Operation name: get
+		Parameters: int field
+		Object: int field <Parameter> 5_4770
+			Parameter: field
+			Data type: int
+			Direction: 
+			Default value: 
+		Return type: int
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: return unit[field];
+		Documentation: 
+	Object: +void roll(int field, boolean up, METime displayTime) <Operation [UML]> 5_10236
+		Operation name: roll
+		Parameters: int field boolean up METime displayTime
+		Object: int field <Parameter> 5_15672
+			Parameter: field
+			Data type: int
+			Direction: 
+			Default value: 
+		Object: boolean up <Parameter> 5_6848
+			Parameter: up
+			Data type: boolean
+			Direction: 
+			Default value: 
+		Object: METime displayTime <Parameter> 5_12303
+			Parameter: displayTime
+			Data type: METime
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: METime newDisplayTime = new METime();
+newDisplayTime.setFromMilliseconds(displayTime.asMilliseconds());
+newDisplayTime.roll(field, up);
+setFromMilliseconds(newDisplayTime.asMilliseconds() - displayTime.asMilliseconds() + this.asMilliseconds());
+		Documentation: 
+	Object: +int asMilliseconds() <Operation [UML]> 5_3147
+		Operation name: asMilliseconds
+		Parameters: 
+		Return type: int
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: int i;
+int factor=10;
+int mills=0;
+
+for (i=HUNDREDTH; i>=HOUR_OF_DAY; i--)
+{
+	mills=mills+(get(i)*factor);
+	factor=factor*sizes[i];
+}
+return mills;
+		Documentation: 
+	Object: +void setFromMilliseconds(int mills) <Operation [UML]> 5_8872
+		Operation name: setFromMilliseconds
+		Parameters: int mills
+		Object: int mills <Parameter> 5_10950
+			Parameter: mills
+			Data type: int
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: int i;
+int left;
+int temp;
+int factor=10;
+
+left=mills;
+
+for (i=HUNDREDTH; i>=HOUR_OF_DAY; i--)
+	factor=factor*sizes[i];
+
+for (i=HOUR_OF_DAY; i<=HUNDREDTH; i++)
+{
+	factor = factor / sizes[i];
+	temp = left / factor;
+	set(i, temp % sizes[i]);
+	left = left - (temp * factor);
+}
+		Documentation: 
+	Object: +void normalise() <Operation [UML]> 5_1477
+		Operation name: normalise
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: setFromMilliseconds(asMilliseconds());
+		Documentation: 
+	Object: +void setFromSysClock() <Operation [UML]> 5_7574
+		Operation name: setFromSysClock
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: Calendar cal = Calendar.getInstance();
+set(HOUR_OF_DAY, cal.get(Calendar.HOUR_OF_DAY));
+set(MINUTE, cal.get(Calendar.MINUTE));
+set(SECOND, cal.get(Calendar.SECOND));
+set(HUNDREDTH, ((int)((System.currentTimeMillis())%1000))/10);
+		Documentation: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: Our own time class: existing time classes provide poor support for the behaviour we need, and seem downright buggy in places
+	Simple symbol?: F
+Object: AbstractWatchApplet <Class [UML]> 5_2152
+	Class name: AbstractWatchApplet
+	Attributes: +buttonPanel:Panel +debugPanel:Panel +tf:TextField
+	Object: +buttonPanel:Panel <Attribute [UML]> 5_14314
+		Name: buttonPanel
+		Data type: Panel
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +debugPanel:Panel <Attribute [UML]> 5_5452
+		Name: debugPanel
+		Data type: Panel
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +tf:TextField <Attribute [UML]> 5_10844
+		Name: tf
+		Data type: TextField
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: +void init() +void start() +void stop() +void actionPerformed(ActionEvent e) +void ringAlarm()
+	Object: +void init() <Operation [UML]> 5_7477
+		Operation name: init
+		Parameters: 
+		Return type: void
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: Button button;
+int i;
+
+setBackground(Color.white);
+watchCanvas = new WatchCanvas(master);
+add("Screen", watchCanvas);
+
+buttonPanel = new Panel();
+add("Buttons", buttonPanel);
+for (i=0; i<master.display.buttons.size(); i++)
+{
+	button=new Button((String)(master.display.buttons.elementAt(i)));
+	button.setForeground(Color.red);
+	buttonPanel.add(button); button.addActionListener(this);
+}
+
+debugPanel = new Panel();
+add("Debug", debugPanel);
+tf=new TextField("State           ");
+debugPanel.add(tf);
+		Documentation: 
+	Object: +void start() <Operation [UML]> 5_9572
+		Operation name: start
+		Parameters: 
+		Return type: void
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: watchCanvas.startAnimation();
+		Documentation: 
+	Object: +void stop() <Operation [UML]> 5_15025
+		Operation name: stop
+		Parameters: 
+		Return type: void
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: watchCanvas.stopAnimation();
+		Documentation: 
+	Object: +void actionPerformed(ActionEvent e) <Operation [UML]> 5_6124
+		Operation name: actionPerformed
+		Parameters: ActionEvent e
+		Object: ActionEvent e <Parameter> 5_8206
+			Parameter: e
+			Data type: ActionEvent
+			Direction: 
+			Default value: 
+		Return type: void
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: master.sendEvent(e.getActionCommand());
+		Documentation: 
+	Object: +void ringAlarm() <Operation [UML]> 5_2184
+		Operation name: ringAlarm
+		Parameters: 
+		Return type: void
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: 
+	Package: 
+	Abstract?: T
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: The applet. Handles input via buttons, delegates state machine to Master and displaying to WatchCanvas
+	Simple symbol?: F
+Object: DecompPair <Class [UML]> 5_2186
+	Class name: DecompPair
+	Attributes: +name:String
+	Object: +name:String <Attribute [UML]> 5_6432
+		Name: name
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: +DecompPair(String n, Application a)
+	Object: +DecompPair(String n, Application a) <Operation [UML]> 5_2585
+		Operation name: DecompPair
+		Parameters: String n Application a
+		Object: String n <Parameter> 5_2506
+			Parameter: n
+			Data type: String
+			Direction: 
+			Default value: 
+		Object: Application a <Parameter> 5_8406
+			Parameter: a
+			Data type: Application
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: constructor
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: name=n;
+application=a;
+		Documentation: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Ace <Class [UML]> 5_4627
+	Class name: Ace
+	Attributes: 
+	Operations: +Ace()
+	Object: +Ace() <Operation [UML]> 5_11024
+		Operation name: Ace
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: constructor
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: master=new Master();
+master.init(this, new DisplayX334(), new TASTW(master));
+
+		Documentation: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: exampleonly
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: DisplayX334 <Class [UML]> 5_4660
+	Class name: DisplayX334
+	Attributes: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: exampleonly
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: WatchCanvas <Class [UML]> 5_4691
+	Class name: WatchCanvas
+	Attributes: -MILLIS_PER_TICK:int = 40 -bgRGB:int = 0xdae5da -textRGB:int = 0x000000 -animationThread:volatile Thread = null +appField:String = "" +stateField:String = "" +offscreen:Image
+	Object: -MILLIS_PER_TICK:int = 40 <Attribute [UML]> 5_11672
+		Name: MILLIS_PER_TICK
+		Data type: int
+		Default value: 40
+		Stereotype: 
+		Visibility: private
+		Scope: class
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: update screen every * ms
+	Object: -bgRGB:int = 0xdae5da <Attribute [UML]> 5_2297
+		Name: bgRGB
+		Data type: int
+		Default value: 0xdae5da
+		Stereotype: 
+		Visibility: private
+		Scope: class
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: background color
+	Object: -textRGB:int = 0x000000 <Attribute [UML]> 5_8190
+		Name: textRGB
+		Data type: int
+		Default value: 0x000000
+		Stereotype: 
+		Visibility: private
+		Scope: class
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: text color
+	Object: -animationThread:volatile Thread = null <Attribute [UML]> 5_10285
+		Name: animationThread
+		Data type: volatile Thread
+		Default value: null
+		Stereotype: 
+		Visibility: private
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: animation thread
+	Object: +appField:String = "" <Attribute [UML]> 5_6911
+		Name: appField
+		Data type: String
+		Default value: ""
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +stateField:String = "" <Attribute [UML]> 5_12341
+		Name: stateField
+		Data type: String
+		Default value: ""
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +offscreen:Image <Attribute [UML]> 5_3139
+		Name: offscreen
+		Data type: Image
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: +WatchCanvas(Master master) +void startAnimation() +void stopAnimation() +void run() -synchronized void tick() +void invalidate() +void update(Graphics g) +void paint(Graphics g) +void dbPaint(Graphics g)
+	Object: +WatchCanvas(Master master) <Operation [UML]> 5_14341
+		Operation name: WatchCanvas
+		Parameters: Master master
+		Object: Master master <Parameter> 5_10946
+			Parameter: master
+			Data type: Master
+			Direction: 
+			Default value: 
+		Return type: WatchCanvas
+		Overridability: 
+		Stereotype: constructor
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: this.master  = master;
+setSize(new Dimension(120, 80));
+		Documentation: 
+	Object: +void startAnimation() <Operation [UML]> 5_1473
+		Operation name: startAnimation
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: animationThread = new Thread(this);
+animationThread.start();
+		Documentation: 
+	Object: +void stopAnimation() <Operation [UML]> 5_7572
+		Operation name: stopAnimation
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: animationThread = null;
+		Documentation: 
+	Object: +void run() <Operation [UML]> 5_12975
+		Operation name: run
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: Thread currentThread = Thread.currentThread();
+
+try
+{
+	// This ends when animationThread is set to null, or when
+	// it is subsequently set to a new Thread.  Either way, the
+	// current thread should terminate.
+	while (currentThread == animationThread)
+	{
+		long startTime = System.currentTimeMillis();
+		tick();
+		repaint(10);
+		long elapsedTime = 10 + System.currentTimeMillis() - startTime;
+		if (elapsedTime < MILLIS_PER_TICK)
+		{
+			synchronized(this)
+			{
+				wait(MILLIS_PER_TICK - elapsedTime);
+			}
+		}
+	}
+}
+catch(InterruptedException e)
+{
+}
+		Documentation: While this thread has not been stopped, it will perform a
+tick() action approximately every MILLIS_PER_TICK milliseconds
+(as close to that period as possible).
+	Object: -synchronized void tick() <Operation [UML]> 5_15111
+		Operation name: tick
+		Parameters: 
+		Return type: synchronized void
+		Overridability: 
+		Stereotype: 
+		Visibility: private
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: AbstractWatchApplication application;
+METime time;
+String value;
+Vector zones;
+Zone zone;
+int keyUnit;
+int center;
+int i;
+
+application=(AbstractWatchApplication)(master.appStack.peek());
+appField=application.appName();
+stateField=application.currentState;
+time=application.displayTime();
+keyUnit=application.keyUnit();
+zones=master.display.times;
+center=zones.size()/2;
+
+// Allocate units to zones from roughly center (keyUnit) outwards
+for (i=0; i<=center; i++)
+{
+	zone=(Zone)(zones.elementAt(center-i));
+	zone.unit=keyUnit-i;
+	if (i + center >= zones.size()) 
+		break;
+	zone=(Zone)(zones.elementAt(center+i));
+	zone.unit=keyUnit+i;
+}
+
+// Set blinking and string values for each zone
+for (i=0; i<zones.size(); i++)
+{
+	zone=(Zone)(zones.elementAt(i));
+	if (zone.unit==master.blinkingUnit)
+		zone.blinking=true;
+	else
+		zone.blinking=false;
+	if(zone.unit<METime.HOUR_OF_DAY || zone.unit>METime.HUNDREDTH)
+		value="  ";
+	else
+		value=String.valueOf(time.get(zone.unit));
+	zone.setValue(value);
+}
+		Documentation: What to do each run() tick
+	Object: +void invalidate() <Operation [UML]> 5_6218
+		Operation name: invalidate
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: super.invalidate();
+offscreen = null;
+		Documentation: null out the offscreen buffer as part of invalidation
+	Object: +void update(Graphics g) <Operation [UML]> 5_11622
+		Operation name: update
+		Parameters: Graphics g
+		Object: Graphics g <Parameter> 5_13719
+			Parameter: g
+			Data type: Graphics
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: paint(g);
+		Documentation: override update to NOT erase the background before painting
+	Object: +void paint(Graphics g) <Operation [UML]> 5_4867
+		Operation name: paint
+		Parameters: Graphics g
+		Object: Graphics g <Parameter> 5_10283
+			Parameter: g
+			Data type: Graphics
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: if(offscreen == null) {
+	offscreen = createImage(getSize().width, getSize().height);
+}
+
+Graphics og = offscreen.getGraphics();
+og.setClip(0,0,getSize().width, getSize().height);
+dbPaint(og);
+g.drawImage(offscreen, 0, 0, null);
+og.dispose();
+		Documentation: paint children into an offscreen buffer, then blast entire image at once
+	Object: +void dbPaint(Graphics g) <Operation [UML]> 5_15760
+		Operation name: dbPaint
+		Parameters: Graphics g
+		Object: Graphics g <Parameter> 5_6887
+			Parameter: g
+			Data type: Graphics
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: master.applet.tf.setText(stateField);
+int width=getSize().width;
+int height=getSize().height;
+int x, y, charWidth, jdk1;
+Font f;
+FontMetrics fm;
+
+// Clear display
+g.setColor(new Color(bgRGB));
+g.fillRect(0, 0, width, height);
+
+// Paint current app name
+f=Font.decode("Arial-PLAIN-12");
+g.setFont(f);
+fm=g.getFontMetrics();
+jdk1=fm.getMaxAscent();
+
+g.setColor(new Color(textRGB));
+g.drawString(appField, (width-fm.stringWidth(appField))/2, 0+jdk1);
+y=2*fm.getHeight();
+
+// Paint icons
+f=Font.decode("Arial-BOLD-14");
+g.setFont(f);
+fm=g.getFontMetrics();
+jdk1=fm.getMaxAscent();
+charWidth=fm.stringWidth("m");
+
+x=(width-charWidth*(2*master.display.icons.size()-1))/2;
+
+for (Enumeration e = master.display.icons.elements() ; e.hasMoreElements() ;)
+{
+	Icon icon=(Icon)(e.nextElement());
+	if (icon.on)
+	{
+		g.drawRect(x-2, y-1, charWidth+2, fm.getHeight()+1);
+		g.drawString(icon.iconName.substring(0,1), x, y+jdk1);
+	}
+	x+=2*charWidth;
+}
+y+=fm.getHeight();
+
+// Paint time digits
+f=Font.decode("Arial-BOLD-18");
+g.setFont(f);
+fm=g.getFontMetrics();
+jdk1=fm.getMaxAscent();
+charWidth=fm.stringWidth("1");
+
+x=(width-charWidth*(3*master.display.times.size()-1))/2;
+y+=(height-y-fm.getHeight())/2;
+
+for (Enumeration e = master.display.times.elements() ; e.hasMoreElements() ;)
+{
+	String zoneString;
+	
+	Zone zone=(Zone)(e.nextElement());
+	if (zone.blinking && ((System.currentTimeMillis())%1000)<500)
+	{
+		zoneString="  ";
+	}
+	else
+	{
+		zoneString=zone.zoneValue;
+	}
+		
+	g.drawString(zoneString, x, y+jdk1);
+	x+=3*charWidth;
+}
+		Documentation: Draw the background and the time digit pairs
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: The display canvas. Uses a separate thread for updating the display
+	Simple symbol?: F
+Object: Applet <Class [UML]> 5_8067
+	Class name: Applet
+	Attributes: 
+	Operations: 
+	Package: java.applet
+	Object: java.applet <Package> 5_7550
+		Package name: java.applet
+		Stereotype: 
+		Documentation: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: T
+Object: AbstractDisplay <Class [UML]> 5_8087
+	Class name: AbstractDisplay
+	Attributes: +icons:Vector = new Vector() +times:Vector = new Vector() +buttons:Vector = new Vector()
+	Object: +icons:Vector = new Vector() <Attribute [UML]> 5_10138
+		Name: icons
+		Data type: Vector
+		Default value: new Vector()
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +times:Vector = new Vector() <Attribute [UML]> 5_12282
+		Name: times
+		Data type: Vector
+		Default value: new Vector()
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +buttons:Vector = new Vector() <Attribute [UML]> 5_3046
+		Name: buttons
+		Data type: Vector
+		Default value: new Vector()
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: T
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: AbstractWatchApplication <Class [UML]> 5_8105
+	Class name: AbstractWatchApplication
+	Attributes: -START:String = "Start [Watch]" -STOP:String = "Stop [Watch]" +decompositions:Hashtable = new Hashtable() +stateTransitions:Hashtable = new Hashtable() +stateDisplays:Hashtable = new Hashtable() +currentState:String = START
+	Object: -START:String = "Start [Watch]" <Attribute [UML]> 5_14546
+		Name: START
+		Data type: String
+		Default value: "Start [Watch]"
+		Stereotype: constant
+		Visibility: private
+		Scope: class
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: -STOP:String = "Stop [Watch]" <Attribute [UML]> 5_5686
+		Name: STOP
+		Data type: String
+		Default value: "Stop [Watch]"
+		Stereotype: constant
+		Visibility: private
+		Scope: class
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +decompositions:Hashtable = new Hashtable() <Attribute [UML]> 5_11066
+		Name: decompositions
+		Data type: Hashtable
+		Default value: new Hashtable()
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +stateTransitions:Hashtable = new Hashtable() <Attribute [UML]> 5_13210
+		Name: stateTransitions
+		Data type: Hashtable
+		Default value: new Hashtable()
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +stateDisplays:Hashtable = new Hashtable() <Attribute [UML]> 5_4164
+		Name: stateDisplays
+		Data type: Hashtable
+		Default value: new Hashtable()
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +currentState:String = START <Attribute [UML]> 5_9728
+		Name: currentState
+		Data type: String
+		Default value: START
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: +AbstractWatchApplication(Master master, String oopString) +void addStateOop(String stateName, String oopString) +String appName() +METime getclockTime() +void setclockTime(METime newClockTime) +METime getsysTime() +void setsysTime(METime time) +METime getclockOffset() +void setclockOffset(METime newOffset) +void setAlarm(String name, boolean localTimeAwarenewss, String alarmState, METime sleepTime) +void killAlarm(String name) +void addDecomposition(String decompState, String appName, AbstractWatchApplication app) +void addTransition(String initialState, String event, int action, String targetState) +void addStateDisplay(String state, int blinking, int keyUnit, int displayMethod) +void handleEvent(String button) +void iconOn(String name) +void iconOff(String name) +void iconToggle(String name) +int keyUnit() +METime displayTime() +Object perform(int methodId)
+	Object: +AbstractWatchApplication(Master master, String oopString) <Operation [UML]> 5_6340
+		Operation name: AbstractWatchApplication
+		Parameters: Master master String oopString
+		Object: Master master <Parameter> 5_2500
+			Parameter: master
+			Data type: Master
+			Direction: 
+			Default value: 
+		Object: String oopString <Parameter> 5_8394
+			Parameter: oopString
+			Data type: String
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: constructor
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: this.master=master;
+		Documentation: 
+	Object: +void addStateOop(String stateName, String oopString) <Operation [UML]> 5_13870
+		Operation name: addStateOop
+		Parameters: String stateName String oopString
+		Object: String stateName <Parameter> 5_4984
+			Parameter: stateName
+			Data type: String
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: This method is needed when generated for API
+Implemented as empty here due to the compliance reasons
+
+	Object: +String appName() <Operation [UML]> 5_10435
+		Operation name: appName
+		Parameters: 
+		Return type: String
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: String fullName = getClass().getName();
+return fullName.substring(1+fullName.lastIndexOf('.'));
+
+		Documentation: 
+	Object: +METime getclockTime() <Operation [UML]> 5_736
+		Operation name: getclockTime
+		Parameters: 
+		Return type: METime
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: return getclockOffset().mePlus(getsysTime());
+		Documentation: 
+	Object: +void setclockTime(METime newClockTime) <Operation [UML]> 5_3411
+		Operation name: setclockTime
+		Parameters: METime newClockTime
+		Object: METime newClockTime <Parameter> 5_9106
+			Parameter: newClockTime
+			Data type: METime
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: setclockOffset(newClockTime.meMinus(getsysTime()));
+		Documentation: 
+	Object: +METime getsysTime() <Operation [UML]> 5_14560
+		Operation name: getsysTime
+		Parameters: 
+		Return type: METime
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: METime sysTime = new METime();
+sysTime.setFromSysClock();
+return sysTime;
+		Documentation: 
+	Object: +void setsysTime(METime time) <Operation [UML]> 5_5704
+		Operation name: setsysTime
+		Parameters: METime time
+		Object: METime time <Parameter> 5_11088
+			Parameter: time
+			Data type: METime
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: A null operation
+	Object: +METime getclockOffset() <Operation [UML]> 5_1641
+		Operation name: getclockOffset
+		Parameters: 
+		Return type: METime
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: return master.clockOffset.mePlus(new METime());
+		Documentation: always return a copy not the real thing, thus same as sysTime and clockTime
+	Object: +void setclockOffset(METime newOffset) <Operation [UML]> 5_4248
+		Operation name: setclockOffset
+		Parameters: METime newOffset
+		Object: METime newOffset <Parameter> 5_9782
+			Parameter: newOffset
+			Data type: METime
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: METime offsetChange=newOffset.meMinus(getclockOffset());
+master.clockOffset=newOffset;
+master.clockOffsetChanged(offsetChange);
+		Documentation: 
+	Object: +void setAlarm(String name, boolean localTimeAwarenewss, String alarmState, METime sleepTime) <Operation [UML]> 5_15247
+		Operation name: setAlarm
+		Parameters: String name boolean localTimeAwarenewss String alarmState METime sleepTime
+		Object: String name <Parameter> 5_6374
+			Parameter: name
+			Data type: String
+			Direction: 
+			Default value: 
+		Object: boolean localTimeAwarenewss <Parameter> 5_11820
+			Parameter: localTimeAwarenewss
+			Data type: boolean
+			Direction: 
+			Default value: 
+		Object: String alarmState <Parameter> 5_2540
+			Parameter: alarmState
+			Data type: String
+			Direction: 
+			Default value: 
+		Object: METime sleepTime <Parameter> 5_8436
+			Parameter: sleepTime
+			Data type: METime
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: Alarm alarm;
+alarm=new Alarm(name, localTimeAwareness, this, alarmState, sleepTime, master);
+master.alarms.addElement(alarm);
+alarm.start();
+		Documentation: 
+	Object: +void killAlarm(String name) <Operation [UML]> 5_2470
+		Operation name: killAlarm
+		Parameters: String name
+		Object: String name <Parameter> 5_5033
+			Parameter: name
+			Data type: String
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: for (int i=0; i<master.alarms.size(); i++)
+	{
+		Alarm alarm=(Alarm)(master.alarms.elementAt(i));
+		if(alarm.name.equals(name) && alarm.alarmApplication==this) master.killAlarm(alarm);
+	}
+		Documentation: 
+	Object: +void addDecomposition(String decompState, String appName, AbstractWatchApplication app) <Operation [UML]> 5_10479
+		Operation name: addDecomposition
+		Parameters: String decompState String appName AbstractWatchApplication app
+		Object: String decompState <Parameter> 5_788
+			Parameter: decompState
+			Data type: String
+			Direction: 
+			Default value: 
+		Object: String appName <Parameter> 5_7070
+			Parameter: appName
+			Data type: String
+			Direction: 
+			Default value: 
+		Object: AbstractWatchApplication app <Parameter> 5_12534
+			Parameter: app
+			Data type: AbstractWatchApplication
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: decompositions.put(decompState, new DecompPair(appName, app));
+		Documentation: 
+	Object: +void addTransition(String initialState, String event, int action, String targetState) <Operation [UML]> 5_3433
+		Operation name: addTransition
+		Parameters: String initialState String event int action String targetState
+		Object: String initialState <Parameter> 5_9124
+			Parameter: initialState
+			Data type: String
+			Direction: 
+			Default value: 
+		Object: String event <Parameter> 5_14578
+			Parameter: event
+			Data type: String
+			Direction: 
+			Default value: 
+		Object: int action <Parameter> 5_5770
+			Parameter: action
+			Data type: int
+			Direction: 
+			Default value: 
+		Object: String targetState <Parameter> 5_14516
+			Parameter: targetState
+			Data type: String
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: Hashtable eventTable = (Hashtable) (stateTransitions.get(initialState));
+if (eventTable == null)
+{ 
+	eventTable = new Hashtable();
+	stateTransitions.put(initialState, eventTable);
+}
+eventTable.put(event, new Result(action, targetState));
+		Documentation: 
+	Object: +void addStateDisplay(String state, int blinking, int keyUnit, int displayMethod) <Operation [UML]> 5_5698
+		Operation name: addStateDisplay
+		Parameters: String state int blinking int keyUnit int displayMethod
+		Object: String state <Parameter> 5_7811
+			Parameter: state
+			Data type: String
+			Direction: 
+			Default value: 
+		Object: int blinking <Parameter> 5_1633
+			Parameter: blinking
+			Data type: int
+			Direction: 
+			Default value: 
+		Object: int keyUnit <Parameter> 5_7755
+			Parameter: keyUnit
+			Data type: int
+			Direction: 
+			Default value: 
+		Object: int displayMethod <Parameter> 5_13204
+			Parameter: displayMethod
+			Data type: int
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: stateDisplays.put(state, new DisplayInfo(blinking, keyUnit, displayMethod));
+		Documentation: 
+	Object: +void handleEvent(String button) <Operation [UML]> 5_4212
+		Operation name: handleEvent
+		Parameters: String button
+		Object: String button <Parameter> 5_9756
+			Parameter: button
+			Data type: String
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: Hashtable eventTable;
+Result result;
+String decompApp;
+
+eventTable=(Hashtable)(stateTransitions.get(currentState));
+if (eventTable == null) return;
+result=(Result)(eventTable.get(button));
+if (result == null) return;
+if (result.action != 0) perform(result.action);
+if (result.targetState.equals(STOP)) 
+{
+	master.appStack.pop();
+	master.jog();
+	return;
+}
+currentState=result.targetState;
+DisplayInfo info = (DisplayInfo) (stateDisplays.get(currentState));
+master.setBlinks(info.blinking);
+DecompPair decompPair=(DecompPair)(decompositions.get(currentState));
+if (decompPair != null) 
+{
+	master.startWatchApp(decompPair.name);
+	return;
+}
+master.jog();
+		Documentation: 
+	Object: +void iconOn(String name) <Operation [UML]> 5_15223
+		Operation name: iconOn
+		Parameters: String name
+		Object: String name <Parameter> 5_2593
+			Parameter: name
+			Data type: String
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: for (int i=0; i<master.display.icons.size();i++)
+{
+	Icon icon=(Icon)(master.display.icons.elementAt(i));
+	if(name.equals(icon.iconName)) icon.setOn();
+}
+
+		Documentation: 
+	Object: +void iconOff(String name) <Operation [UML]> 5_11794
+		Operation name: iconOff
+		Parameters: String name
+		Object: String name <Parameter> 5_13906
+			Parameter: name
+			Data type: String
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: for (int i=0; i<master.display.icons.size();i++)
+{
+	Icon icon=(Icon)(master.display.icons.elementAt(i));
+	if(name.equals(icon.iconName)) icon.setOff();
+}
+
+		Documentation: 
+	Object: +void iconToggle(String name) <Operation [UML]> 5_5073
+		Operation name: iconToggle
+		Parameters: String name
+		Object: String name <Parameter> 5_10473
+			Parameter: name
+			Data type: String
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: for (int i=0; i<master.display.icons.size();i++)
+{
+	Icon icon=(Icon)(master.display.icons.elementAt(i));
+	if(name.equals(icon.iconName)) 
+	{	icon.toggle();
+		break; // in case it is included multiple times in the display
+	}
+}
+
+		Documentation: 
+	Object: +int keyUnit() <Operation [UML]> 5_839
+		Operation name: keyUnit
+		Parameters: 
+		Return type: int
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: DisplayInfo info = (DisplayInfo) (stateDisplays.get(currentState));
+return info.keyUnit;
+		Documentation: 
+	Object: +METime displayTime() <Operation [UML]> 5_7066
+		Operation name: displayTime
+		Parameters: 
+		Return type: METime
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: DisplayInfo info = (DisplayInfo) (stateDisplays.get(currentState));
+if (info == null) return getclockTime();
+int mId = info.displayMethod;
+METime displayTime = (METime)(perform(mId));
+return displayTime;
+
+		Documentation: 
+	Object: +Object perform(int methodId) <Operation [UML]> 5_3427
+		Operation name: perform
+		Parameters: int methodId
+		Object: int methodId <Parameter> 5_9118
+			Parameter: methodId
+			Data type: int
+			Direction: 
+			Default value: 
+		Return type: Object
+		Overridability: deferred
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: 
+	Package: 
+	Abstract?: T
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: The main workhorse: implements a state machine with submachines maintaining their own state. 
+Only one state machine is active, and a transition to a Stop state doesn't actually occur, 
+but instead returns control to the parent, leaving the submachine dormant in the state preceding the transition.
+From each Watch Application graph we generate a subclass of this class, 
+providing its own state transition and display function tables, and methods for actions and display functions.
+	Simple symbol?: F
+Object: Icon <Class [UML]> 5_8126
+	Class name: Icon
+	Attributes: +iconName:String +on:boolean
+	Object: +iconName:String <Attribute [UML]> 5_9740
+		Name: iconName
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +on:boolean <Attribute [UML]> 5_15183
+		Name: on
+		Data type: boolean
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: +Icon(String name) +void setOn() +void setOff() +void toggle()
+	Object: +Icon(String name) <Operation [UML]> 5_11756
+		Operation name: Icon
+		Parameters: String name
+		Object: String name <Parameter> 5_8359
+			Parameter: name
+			Data type: String
+			Direction: 
+			Default value: 
+		Return type:  
+		Overridability: 
+		Stereotype: constructor
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: iconName=name;
+on=false;
+
+		Documentation: 
+	Object: +void setOn() <Operation [UML]> 5_2389
+		Operation name: setOn
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: on=true;
+		Documentation: 
+	Object: +void setOff() <Operation [UML]> 5_4948
+		Operation name: setOff
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: on=false;
+		Documentation: 
+	Object: +void toggle() <Operation [UML]> 5_10369
+		Operation name: toggle
+		Parameters: 
+		Return type: void
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: on=!on;
+		Documentation: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: DisplayInfo <Class [UML]> 5_10150
+	Class name: DisplayInfo
+	Attributes: +blinking:int +keyUnit:int +displayMethod:int
+	Object: +blinking:int <Attribute [UML]> 5_3866
+		Name: blinking
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +keyUnit:int <Attribute [UML]> 5_6186
+		Name: keyUnit
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +displayMethod:int <Attribute [UML]> 5_11576
+		Name: displayMethod
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: +DisplayInfo(int b, int k, int d)
+	Object: +DisplayInfo(int b, int k, int d) <Operation [UML]> 5_8174
+		Operation name: DisplayInfo
+		Parameters: int b int k int d
+		Object: int b <Parameter> 5_4786
+			Parameter: b
+			Data type: int
+			Direction: 
+			Default value: 
+		Object: int k <Parameter> 5_13574
+			Parameter: k
+			Data type: int
+			Direction: 
+			Default value: 
+		Object: int d <Parameter> 5_4696
+			Parameter: d
+			Data type: int
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: constructor
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: blinking = b;
+keyUnit = k;
+displayMethod = d;
+		Documentation: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Alarm <Class [UML]> 5_11446
+	Class name: Alarm
+	Attributes: +name:String +localTimeAwareness:boolean +alarmState:String +sleepTime:int +dayMs:final int = 24*60*60*1000 +isLive:volatile boolean = false
+	Object: +name:String <Attribute [UML]> 5_6977
+		Name: name
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +localTimeAwareness:boolean <Attribute [UML]> 5_12401
+		Name: localTimeAwareness
+		Data type: boolean
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +alarmState:String <Attribute [UML]> 5_3214
+		Name: alarmState
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +sleepTime:int <Attribute [UML]> 5_5632
+		Name: sleepTime
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +dayMs:final int = 24*60*60*1000 <Attribute [UML]> 5_11012
+		Name: dayMs
+		Data type: final int
+		Default value: 24*60*60*1000
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +isLive:volatile boolean = false <Attribute [UML]> 5_1499
+		Name: isLive
+		Data type: volatile boolean
+		Default value: false
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: +Alarm(String alarmName, boolean aware, AbstractWatchApplication application, String state, METime time, Master masterObject) +void run() +void stopAlarm()
+	Object: +Alarm(String alarmName, boolean aware, AbstractWatchApplication application, String state, METime time, Master masterObject) <Operation [UML]> 5_13076
+		Operation name: Alarm
+		Parameters: String alarmName boolean aware AbstractWatchApplication application String state METime time Master masterObject
+		Object: String alarmName <Parameter> 5_9676
+			Parameter: alarmName
+			Data type: String
+			Direction: 
+			Default value: 
+		Object: boolean aware <Parameter> 5_15165
+			Parameter: aware
+			Data type: boolean
+			Direction: 
+			Default value: 
+		Object: AbstractWatchApplication application <Parameter> 5_6317
+			Parameter: application
+			Data type: AbstractWatchApplication
+			Direction: 
+			Default value: 
+		Object: String state <Parameter> 5_11762
+			Parameter: state
+			Data type: String
+			Direction: 
+			Default value: 
+		Object: METime time <Parameter> 5_2472
+			Parameter: time
+			Data type: METime
+			Direction: 
+			Default value: 
+		Object: Master masterObject <Parameter> 5_11702
+			Parameter: masterObject
+			Data type: Master
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: constructor
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: name=alarmName;
+localTimeAwareness=aware;
+alarmApplication=application;
+alarmState=state;
+master=masterObject;
+sleeptime=time.asMilliseconds();
+while (sleeptime < 0) // set time to be next 'day'
+{
+	sleeptime=sleeptime+dayMs;
+}
+while (sleeptime > dayMs) // set time to be next 'day'
+{
+	sleeptime=sleeptime-dayMs;
+}
+		Documentation: 
+	Object: +void run() <Operation [UML]> 5_4146
+		Operation name: run
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: isLive=true;
+try
+{
+	sleep(sleeptime);
+}
+       catch (InterruptedException e) {}
+if (isLive) master.raiseAlarm(this);
+		Documentation: 
+	Object: +void stopAlarm() <Operation [UML]> 5_4952
+		Operation name: stopAlarm
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: isLive=false;
+		Documentation: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Zone <Class [UML]> 5_11470
+	Class name: Zone
+	Attributes: +zoneName:String +zoneValue:String +blinking:boolean = false +unit:int
+	Object: +zoneName:String <Attribute [UML]> 5_15117
+		Name: zoneName
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +zoneValue:String <Attribute [UML]> 5_2437
+		Name: zoneValue
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +blinking:boolean = false <Attribute [UML]> 5_8296
+		Name: blinking
+		Data type: boolean
+		Default value: false
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +unit:int <Attribute [UML]> 5_13727
+		Name: unit
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: +Zone(String name) +void setValue(String value)
+	Object: +Zone(String name) <Operation [UML]> 5_10315
+		Operation name: Zone
+		Parameters: String name
+		Object: String name <Parameter> 5_13304
+			Parameter: name
+			Data type: String
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: constructor
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: zoneName=name;
+zoneValue="00";
+		Documentation: 
+	Object: +void setValue(String value) <Operation [UML]> 5_12423
+		Operation name: setValue
+		Parameters: String value
+		Object: String value <Parameter> 5_3244
+			Parameter: value
+			Data type: String
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: zoneValue=("00"+value).substring(value.length());
+		Documentation: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: TASTW <Class [UML]> 5_11496
+	Class name: TASTW
+	Attributes: 
+	Operations: +TASTW(Master master) +Object perform(int methodId)
+	Object: +TASTW(Master master) <Operation [UML]> 5_6905
+		Operation name: TASTW
+		Parameters: Master master
+		Object: Master master <Parameter> 5_3230
+			Parameter: master
+			Data type: Master
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: constructor
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: 
+	Object: +Object perform(int methodId) <Operation [UML]> 5_8997
+		Operation name: perform
+		Parameters: int methodId
+		Object: int methodId <Parameter> 5_14390
+			Parameter: methodId
+			Data type: int
+			Direction: 
+			Default value: 
+		Return type: Object
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: exampleonly
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Stopwatch <Class [UML]> 5_13486
+	Class name: Stopwatch
+	Attributes: +stopTime:METime = new METime()
+	Object: +stopTime:METime = new METime() <Attribute [UML]> 5_6140
+		Name: stopTime
+		Data type: METime
+		Default value: new METime()
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: exampleonly
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Master <Class [UML]> 5_13516
+	Class name: Master
+	Attributes: +appStack:Stack = new Stack() +clockOffset:METime = new METime() +blinkingUnit:int = -1
+	Object: +appStack:Stack = new Stack() <Attribute [UML]> 5_4122
+		Name: appStack
+		Data type: Stack
+		Default value: new Stack()
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +clockOffset:METime = new METime() <Attribute [UML]> 5_9690
+		Name: clockOffset
+		Data type: METime
+		Default value: new METime()
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +blinkingUnit:int = -1 <Attribute [UML]> 5_11792
+		Name: blinkingUnit
+		Data type: int
+		Default value: -1
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: +void int(AbstractWatchApplet applet, AbstractDisplay display, AbstractWatchApplication topApp) +void setBlinks(int unit) +void sendEvent(String eventName) +void jog() +void addThisAndSubApps(String appName, AbstractWatchApplication app) +void startWatchApp(String appName) +void clockOffsetChanged(METime offsetChange) +void killAlarm(Alarm alarm) +void raiseAlarm(Alarm alarm)
+	Object: +void int(AbstractWatchApplet applet, AbstractDisplay display, AbstractWatchApplication topApp) <Operation [UML]> 5_8384
+		Operation name: int
+		Parameters: AbstractWatchApplet applet AbstractDisplay display AbstractWatchApplication topApp
+		Object: AbstractWatchApplet applet <Parameter> 5_13817
+			Parameter: applet
+			Data type: AbstractWatchApplet
+			Direction: 
+			Default value: 
+		Object: AbstractDisplay display <Parameter> 5_4972
+			Parameter: display
+			Data type: AbstractDisplay
+			Direction: 
+			Default value: 
+		Object: AbstractWatchApplication topApp <Parameter> 5_10427
+			Parameter: topApp
+			Data type: AbstractWatchApplication
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: this.applet=applet;
+this.display=display;
+addThisAndSubApps(topApp.appName(), topApp);
+startWatchApp(topApp.appName());
+		Documentation: 
+	Object: +void setBlinks(int unit) <Operation [UML]> 5_779
+		Operation name: setBlinks
+		Parameters: int unit
+		Object: int unit <Parameter> 5_7020
+			Parameter: unit
+			Data type: int
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: blinkingUnit = unit;
+		Documentation: 
+	Object: +void sendEvent(String eventName) <Operation [UML]> 5_12486
+		Operation name: sendEvent
+		Parameters: String eventName
+		Object: String eventName <Parameter> 5_3324
+			Parameter: eventName
+			Data type: String
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: ((AbstractWatchApplication)(appStack.peek())).handleEvent(eventName);
+		Documentation: 
+	Object: +void jog() <Operation [UML]> 5_9078
+		Operation name: jog
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: sendEvent("");
+		Documentation: 
+	Object: +void addThisAndSubApps(String appName, AbstractWatchApplication app) <Operation [UML]> 5_14484
+		Operation name: addThisAndSubApps
+		Parameters: String appName AbstractWatchApplication app
+		Object: String appName <Parameter> 5_1685
+			Parameter: appName
+			Data type: String
+			Direction: 
+			Default value: 
+		Object: AbstractWatchApplication app <Parameter> 5_11050
+			Parameter: app
+			Data type: AbstractWatchApplication
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: applications.put(appName, app);
+try
+{
+	for (Enumeration e = app.decompositions.elements() ; e.hasMoreElements() ;)
+	{
+		DecompPair decompPair = (DecompPair)(e.nextElement());
+		addThisAndSubApps(decompPair.name, decompPair.application);
+	}
+}
+catch (Exception e) {}
+		Documentation: 
+	Object: +void startWatchApp(String appName) <Operation [UML]> 5_1587
+		Operation name: startWatchApp
+		Parameters: String appName
+		Object: String appName <Parameter> 5_4198
+			Parameter: appName
+			Data type: String
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: try
+{
+	appStack.push((AbstractWatchApplication)(applications.get(appName)));
+	jog();
+}
+catch (Exception e) {}
+		Documentation: 
+	Object: +void clockOffsetChanged(METime offsetChange) <Operation [UML]> 5_13136
+		Operation name: clockOffsetChanged
+		Parameters: METime offsetChange
+		Object: METime offsetChange <Parameter> 5_15217
+			Parameter: offsetChange
+			Data type: METime
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: Alarm oldAlarm;
+Alarm newAlarm;
+METime newTime;
+
+for (int i=0; i<alarms.size() ; i++)
+{
+	oldAlarm=(Alarm)(alarms.elementAt(i));
+	if(oldAlarm.localTimeAwareness)
+	{
+		newTime=new METime();
+		newTime.add(METime.HUNDREDTH, oldAlarm.sleeptime/10);
+		newTime=newTime.meMinus(offsetChange);
+		newAlarm=new Alarm(oldAlarm.name, oldAlarm.localTimeAwareness, oldAlarm.alarmApplication, oldAlarm.alarmState, newTime, this);
+		alarms.setElementAt(newAlarm, i);
+		newAlarm.start();
+		oldAlarm.stopAlarm();
+	}
+}
+		Documentation: 
+	Object: +void killAlarm(Alarm alarm) <Operation [UML]> 5_6382
+		Operation name: killAlarm
+		Parameters: Alarm alarm
+		Object: Alarm alarm <Parameter> 5_11790
+			Parameter: alarm
+			Data type: Alarm
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: alarms.removeElement(alarm);
+alarm.stopAlarm();
+		Documentation: 
+	Object: +void raiseAlarm(Alarm alarm) <Operation [UML]> 5_2504
+		Operation name: raiseAlarm
+		Parameters: Alarm alarm
+		Object: Alarm alarm <Parameter> 5_8353
+			Parameter: alarm
+			Data type: Alarm
+			Direction: 
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: alarm.alarmApplication.currentState=alarm.alarmState;
+if (((AbstractWatchApplication)(appStack.peek()))==alarm.alarmApplication)
+	jog();
+else
+	startWatchApp(alarm.alarmApplication.appName());
+killAlarm(alarm);
+applet.ringAlarm();
+		Documentation: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: The basic watch behaviour. Handles state machine stack and event dispatching, and alarms. 
+Actual individual state machines are specified in generated classes, generic state machine behaviour in AbstractWatchApplication
+
+	Simple symbol?: F
+Object: Thread <Class [UML]> 5_13542
+	Class name: Thread
+	Attributes: 
+	Operations: 
+	Package: java.lang
+	Object: java.lang <Package> 5_12398
+		Package name: java.lang
+		Stereotype: 
+		Documentation: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: T
+Object: Canvas <Class [UML]> 5_13569
+	Class name: Canvas
+	Attributes: 
+	Operations: 
+	Package: java.awt
+	Object: java.awt <Package> 5_13134
+		Package name: java.awt
+		Stereotype: 
+		Documentation: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: T
+Object: This documents the domain framework used in the Watch Example. The actual classes used there are stored as text properties in the Watch Family graph's properties, with different versions of some classes depending on the runtime platform. <Note text> 5_2096
+	Note text: This documents the domain framework used in the Watch Example. The actual classes used there are stored as text properties in the Watch Family graph's properties, with different versions of some classes depending on the runtime platform.
+	Stereotype: 
+Relationship: display <Aggregation> 5_1248
+	Association name: display
+	Derivation rules: 
+	Documentation: currently unused
+  Role:  <Part>  Object: <Class [UML]> 5_8087
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 5_13516
+	Multiplicity: 
+	Composition?: F
+Relationship: master <Aggregation> 5_1342
+	Association name: master
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_13516
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 5_2152
+	Multiplicity: 
+	Composition?: T
+Relationship: master <Aggregation> 5_3818
+	Association name: master
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_13516
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 5_4691
+	Multiplicity: 
+	Composition?: F
+Relationship: applications <Aggregation> 5_7397
+	Association name: applications
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_8105
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role: 0..* <Whole>  Object: <Class [UML]> 5_13516
+	Multiplicity: 0..*
+	Composition?: F
+Relationship: watchCanvas <Aggregation> 5_7471
+	Association name: watchCanvas
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_4691
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 5_2152
+	Multiplicity: 
+	Composition?: T
+Relationship: application <Aggregation> 5_9522
+	Association name: application
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_8105
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 5_2186
+	Multiplicity: 
+	Composition?: T
+Relationship: alarms <Aggregation> 5_10167
+	Association name: alarms
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_11446
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role: 0..* <Whole>  Object: <Class [UML]> 5_13516
+	Multiplicity: 0..*
+	Composition?: T
+Relationship: master <Aggregation> 5_12235
+	Association name: master
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_13516
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 5_8105
+	Multiplicity: 
+	Composition?: F
+Relationship: applet <Aggregation> 5_12887
+	Association name: applet
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_2152
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 5_13516
+	Multiplicity: 
+	Composition?: F
+Relationship: alarmApplication <Aggregation> 5_13555
+	Association name: alarmApplication
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_8105
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 5_11446
+	Multiplicity: 
+	Composition?: F
+Relationship: master.display <Association [UML]> 5_2201
+	Association name: master.display
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 5_4627
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 5_4660
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship: decompositions <Association [UML]> 5_4625
+	Association name: decompositions
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 5_8105
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 5_2186
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship: decomposition <Association [UML]> 5_4715
+	Association name: decomposition
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 5_11496
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 5_13486
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship: stateDisplays <Association [UML]> 5_6090
+	Association name: stateDisplays
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 5_10150
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 5_8105
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship: icons <Association [UML]> 5_9456
+	Association name: icons
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 5_8126
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 5_8087
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship: times <Association [UML]> 5_11492
+	Association name: times
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 5_8087
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 5_11470
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship: stateTransitions <Association [UML]> 5_12160
+	Association name: stateTransitions
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 5_2058
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 5_8105
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship: clockOffset <Association [UML]> 5_14887
+	Association name: clockOffset
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 5_13516
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 5_2130
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship: master.applications <Association [UML]> 5_15599
+	Association name: master.applications
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 5_4627
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 5_11496
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Generalization [UML]> 5_2114
+	Discriminator: 
+	Constraint: 
+	Visibility: public
+	Virtual?: F
+	Completeness: 
+	Derivation rules: 
+  Role: Specialization <Specialization>  Object: <Class [UML]> 5_4627
+  Role: Superclass <Superclass>  Object: <Class [UML]> 5_2152
+Relationship:  <Generalization [UML]> 5_5426
+	Discriminator: 
+	Constraint: 
+	Visibility: public
+	Virtual?: F
+	Completeness: 
+	Derivation rules: 
+  Role: Specialization <Specialization>  Object: <Class [UML]> 5_4691
+  Role: Superclass <Superclass>  Object: <Class [UML]> 5_13569
+Relationship:  <Generalization [UML]> 5_8122
+	Discriminator: 
+	Constraint: 
+	Visibility: public
+	Virtual?: F
+	Completeness: 
+	Derivation rules: 
+  Role: Specialization <Specialization>  Object: <Class [UML]> 5_4660
+  Role: Superclass <Superclass>  Object: <Class [UML]> 5_8087
+Relationship:  <Generalization [UML]> 5_8785
+	Discriminator: 
+	Constraint: 
+	Visibility: public
+	Virtual?: F
+	Completeness: 
+	Derivation rules: 
+  Role: Specialization <Specialization>  Object: <Class [UML]> 5_2152
+  Role: Superclass <Superclass>  Object: <Class [UML]> 5_8067
+Relationship:  <Generalization [UML]> 5_10820
+	Discriminator: 
+	Constraint: 
+	Visibility: public
+	Virtual?: F
+	Completeness: 
+	Derivation rules: 
+  Role: Specialization <Specialization>  Object: <Class [UML]> 5_11496
+  Role: Specialization <Specialization>  Object: <Class [UML]> 5_13486
+  Role: Superclass <Superclass>  Object: <Class [UML]> 5_8105
+Relationship:  <Generalization [UML]> 5_14959
+	Discriminator: 
+	Constraint: 
+	Visibility: public
+	Virtual?: F
+	Completeness: 
+	Derivation rules: 
+  Role: Specialization <Specialization>  Object: <Class [UML]> 5_11446
+  Role: Superclass <Superclass>  Object: <Class [UML]> 5_13542

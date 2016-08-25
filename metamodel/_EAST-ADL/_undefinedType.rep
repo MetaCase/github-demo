@@ -1,0 +1,28 @@
+_undefinedType()
+/* Reporting the undefined Type for Ports */
+foreach .(*Prototype) 
+{	$undefinedTypeFound = 'F'
+	do decompositions 
+	{	foreach .(*Port) where :Type = '' { $undefinedTypeFound = 'T' }}
+	/* Reporting the results */
+	if $undefinedTypeFound = 'T' then
+		@delimeter = ''
+		_reportWarnings()
+		'Warning: Prototype: ' id 
+		if $extendedCheck = 'T' then
+			' in the model ' id;1 ' <' type;1 '>'
+		endif
+		' has following port(s) with undefined Type: '
+		do decompositions 
+		{	foreach .(*Port) where :Type = ''
+			{	@delimeter id ' <' type '> '
+				@delimeter = ', '
+			}
+		}
+		@delimeter = ''
+		newline
+	endif
+	do decompositions 
+	{	foreach .() {	subreport '_name checks' run }}	
+}
+$undefinedTypeFound = 'F'

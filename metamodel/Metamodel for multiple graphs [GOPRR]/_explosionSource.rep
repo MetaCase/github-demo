@@ -1,0 +1,34 @@
+_explosionSource()
+do stack;1 unique '1' { 
+	do decompositions { 
+		@reported = 'F' /* to report only once */
+		foreach .Object [GOPRR]; where oid = oid;3 {
+			'<' type;%tag; ' href="#' _type_name_oid() '" />' newline
+			@reported = 'T'
+		}
+		foreach .Object set [GOPRR]; {
+			do :Objects; where oid = oid;4 {
+				if @reported = 'F' then
+					'<' type;%tag; ' href="#' _type_name_oid() '" />' newline
+					@reported = 'T'
+				endif
+			}
+		}
+		foreach >Binding [GOPRR]; {
+			do :Relationship; where oid = oid;4 {
+				if @reported = 'F' then
+					'<' type;%tag; ' href="#' _type_name_oid() '" />' newline
+					@reported = 'T'
+				endif
+			}
+			do ~(*role [GOPRR]) {
+				do :Role; where oid = oid;5 {
+					if @reported = 'F' then
+						'<' type;%tag; ' href="#' _type_name_oid() '" />' newline
+						@reported = 'T'
+					endif						
+				}
+			}
+		}		
+	}
+}

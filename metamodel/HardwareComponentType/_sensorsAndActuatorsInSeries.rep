@@ -1,0 +1,18 @@
+_sensorsAndActuatorsInSeries()
+/* Finding the sensors and actuators connected in series */
+local 'object_type1' write
+	subreport '_type of object' run
+close
+if (@object_type1 = 'SensorType') or (@object_type1 = 'ActuatorType') then
+	do ~(*Pin_To)~(*Pin_From).() 
+	{	local 'object_type2' write
+			subreport '_type of object' run
+		close
+		if @object_type1 = @object_type2; then 
+			_reportWarnings()
+			'Warning: ' @object_type1%legal 's connected in series: ' id ' and ' id;1 ' '
+			_extendedCheckOutput_level2()
+			newline 
+		endif
+	}	
+endif

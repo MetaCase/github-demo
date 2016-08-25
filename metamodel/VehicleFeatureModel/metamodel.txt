@@ -1,0 +1,731 @@
+==========================
+Graph Type
+==========================
+VehicleFeatureModel
+	EAST-ADL version M2.1.12
+	FeatureModel describes the features and their dependencies.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	FeatureConstraints: OrderedCollection (FeatureConstraint)
+		Captures a constraint on the containing feature model's configuration which is too complex to be 
+		expressed by way of a FeatureLink. 
+		---------------------------------------------
+	Description: Text
+
+==========================
+Object Types
+==========================
+Feature
+	Feature is a (non)functional characteristic, constraint or property that can be present or not in a (vehicle) product line.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Cardinality: String
+		Specifies the Feature's cardinality stating how often this feature may be selected during configuration.
+		---------------------------------------------
+	ActualBindingTime: String
+		BindingTimeKind represents the set of possible binding times.
+		---------------------------------------------
+	RequiredBindingTime: String
+	FeatureParameter: _EADatatype
+	Description: Text
+VehicleFeature
+	A VehicleFeature is a functional or non-functional characteristic, constraint or property that can be present or not in a vehicle product line on the level of the complete system, i.e. vehicle.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Cardinality: String
+		Specifies the Feature's cardinality stating how often this feature may be selected during configuration.
+		---------------------------------------------
+	ActualBindingTime: String
+		BindingTimeKind represents the set of possible binding times.
+		---------------------------------------------
+	RequiredBindingTime: String
+	FeatureParameter: _EADatatype
+	Description: Text
+	IsCustomerVisible: Boolean
+		This attribute states whether the VehicleFeature is customer visible (in contrast to a VehicleFeature that is e.g. technically driven).
+		---------------------------------------------
+	IsDesignVariabilityRationale: Boolean
+		A VehicleFeature marked as a design variability rationale captures a variant showing up on a concrete artifact level that needs to be modeled on the VehicleLevel as well, in order to be directly available for immediate configuration on vehicle level.
+		---------------------------------------------
+	IsRemoved: Boolean
+		This attribute describes if the VehicleFeature is removed (but kept in the database for tracking of evolution, which is required by the multi-level concept).
+		---------------------------------------------
+	DeviationAttributeSet: DeviationAttributeSet
+AnalysisFunctionPrototype
+	The AnalysisFunctionPrototype represents an occurrence of the AnalysisFunctionType that types it via the submodel structure.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+DesignFunctionPrototype
+	The DesignFunctionPrototype represents an occurrence of the DesignFunctionType that types it via the submodel structure.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+HardwareComponentPrototype
+	HardwareComponentPrototype presents an element of the hardware architecture. Its type is set in the subgraph and can be one of the following:
+	The Actuator prototype is the element that represents electrical actuators, such as valves, motors, lamps, brake units, etc. It refers to the type definition via decomposed submodel.
+	The Node protototype represents an ECU, i.e. an Electronic Control Unit, and an allocation target of FunctionPrototypes. Node represents the computer nodes of the embedded electrical/electronic system. Nodes consist of processor(s) and may be connected to sensors, actuators and other ECUs via a BusConnector. It refers to the type definition via decomposed submodel.
+	ElectricalComponent prototype represents a hardware element that supplies power. It refers to the type definition via decomposed submodel.
+	Sensor prototype represents a hardware entity for digital or analog sensor elements. It refers to the type definition via decomposed submodel.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+EAType
+	EAType refers to the subgraph specifying the type, such as hardware component type, analysis function type, or design function type.
+	---------------------------------------------
+Requirement
+	The Requirement represents a capability or condition that must (or should) be satisfied.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Formalism: String
+		Specifies the language used for the requirement statement. 
+		---------------------------------------------
+	Url: String
+		Reference to possible external file containing the requirement statement. 
+		---------------------------------------------
+	Modes: OrderedCollection (Mode)
+		The mode(s) where this requirement is valid.
+		---------------------------------------------
+	Description: Text
+QualityRequirement
+	QualityRequirement element represent a requirement which is non-functional. 
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Formalism: String
+		Specifies the language used for the requirement statement. 
+		---------------------------------------------
+	Url: String
+		Reference to possible external file containing the requirement statement. 
+		---------------------------------------------
+	Modes: OrderedCollection (Mode)
+		The mode(s) where this requirement is valid.
+		---------------------------------------------
+	Description: Text
+	Kind: String
+		QualityRequirementKind represents the kind of QualityRequirement given by the definition of the respective Enumeration Literal.
+		---------------------------------------------
+UserAttributedElement
+	UserAttributedElement is used to attach user attribute values to model elements. What user attributes a certain element should be supplied with can be defined beforehand with UserElementTypes.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Values: OrderedCollection (Value)
+	Types: OrderedCollection (UserElementType)
+	Description: Text
+GenericConstraint
+	The GenericConstraint denotes a property, requirement, or a validation result for the identified element of the model.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Value: GenericConstraintValue
+	Kind: String
+	Modes: OrderedCollection (Mode)
+		The mode(s) where this requirement is valid.
+		---------------------------------------------
+	TargetTypes: OrderedCollection (Graph)
+	TargetObjects: OrderedCollection (Object)
+	TargetRelationships: OrderedCollection (Relationship)
+	Description: Text
+Comment
+	Commenting the metamodel or model, can be connected to all objects.
+	---------------------------------------------
+	Comment: String
+	Description: Text
+
+==========================
+Relationship Types
+==========================
+FeatureComposition
+	FeatureComposition specifies how features are been composed from other features.
+	---------------------------------------------
+	Feature composition cardinality: String
+		Specifies the  feature composition cardinality stating how many features may be selected.
+		---------------------------------------------
+FeatureLink
+	The FeatureLink is a relationship between Features that may constrain the selection of Features involved in the relationship.
+	---------------------------------------------
+	CustomType: String
+		The custom type of this FeatureLink identified by a String value. This attribute's value is ignored if attribute 'kind' is set to some other value than 'custom'.
+		---------------------------------------------
+	Kind: String
+		The kind determines the precise semantics of the relation between the FeatureLink's start 
+		and end feature.
+		---------------------------------------------
+Realization
+	Realization specifies a mapping between two elements and how the other element is realizing the functionality or feature. For example, how analysis level function is been realized by the design level function.
+	---------------------------------------------
+Satisfy
+	The Satisfy relationship signifies a satisfied requirement/satisfied by relationship between a set of Requirements and a set of satisfying entities.
+	---------------------------------------------
+Comment
+	Comment creates a link between comment or constraint and other design element.
+	---------------------------------------------
+
+==========================
+Role Types
+==========================
+Realized
+RealizedBy
+SatisfiedBy
+SatisfiedRequirement
+Comment
+End
+	The target [client] Feature of the dependency.
+	---------------------------------------------
+Start
+	The source [supplier] Feature of the relationship.
+	---------------------------------------------
+Child
+Parent
+
+==========================
+Extra Types
+==========================
+AnalysisFunctionType
+	EAST-ADL version M2.1.12
+	The AnalysisFunctionType represents a node in a tree structure corresponding to the functional decomposition of a top level AnalysisFunction. The AnalysisFunction represents the analysis function used to describe the functionalities provided by a vehicle on the AnalysisLevel. At the AnalysisLevel, AnalysisFunctions are defined and structured according to the functional requirements, i.e., the functionalities provided to the user. 
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	FunctionName: String
+		FunctionName is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Type: String
+		The FunctionalDevice represents an abstract sensor or actuator that encapsulates sensor/actuator dynamics and the interfacing software.
+		---------------------------------------------
+	IsElementary: Boolean
+		True, when this type must not have any parts.
+		---------------------------------------------
+	Description: Text
+	Show oid: Boolean
+DesignFunctionType
+	EAST-ADL version M2.1.12
+	The DesignFunctionType represents a node in a tree structure corresponding to the functional decomposition of a top level DesignFunction. The DesignFunction represents the design function used to describe the functionalities provided by a vehicle on the DesignLevel. At the DesignLevel, DesignFunctions are defined and structured according to the functional and hardware system design.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	FunctionName: String
+		FunctionName is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Type: String
+	IsElementary: Boolean
+		True, when this type must not have any parts.
+		---------------------------------------------
+	Description: Text
+	Show oid: Boolean
+HardwareComponentType
+	EAST-ADL version M2.1.12
+	HardwareModeling contains the elements to model physical entities of the embedded electrical/electronic system.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Type: HardwareComponentType
+		Type is a mandatory field.
+		---------------------------------------------
+	Show report: String
+		Choosing the LiveCheck output choise (bottom pane of the diagram editor)
+		---------------------------------------------
+	Show allocated prototypes: Boolean
+	Show oid: Boolean
+_EAST-ADL
+	Abstract supertype of all EAST-ADL graph types
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+ActuatorType
+	The Actuator is the element that represents electrical actuators, such as valves, motors, lamps, brake units, etc. Non-electrical actuators such as the engine, hydraulics, etc. are considered part of the plant model (environment). Plant models are not part of the Hardware Design Architecture. 
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+ArrayDatatype
+	ArrayDatatype is a datatype for an array of datatypes of the same type.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	MinLength: String
+	MaxLength: String
+	Type: _EADatatype
+	Description: Text
+CompositeDatatype
+	A CompositeDatatype represents a non-scalar datatype. The contained datatypePrototypes act as record variables to identify the ordered datatype instances of the tuple (the CompositeDatatype).
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	DatatypePrototypes: OrderedCollection (EADatatypePrototype)
+	Description: Text
+DeviationAttributeSet
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	AllowChangeAttribute: String
+		The DeviationPermissionKind is an enumeration with enumeration literals defining possible values
+		for deviation attributes.
+		---------------------------------------------
+	AllowChangeCardinality: String
+		The DeviationPermissionKind is an enumeration with enumeration literals defining possible values
+		for deviation attributes.
+		---------------------------------------------
+	AllowChangeDescription: String
+		The DeviationPermissionKind is an enumeration with enumeration literals defining possible values
+		for deviation attributes.
+		---------------------------------------------
+	AllowChangeName: String
+		The DeviationPermissionKind is an enumeration with enumeration literals defining possible values
+		for deviation attributes.
+		---------------------------------------------
+	AllowMove: String
+		The DeviationPermissionKind is an enumeration with enumeration literals defining possible values
+		for deviation attributes.
+		---------------------------------------------
+	AllowReduction: String
+		The DeviationPermissionKind is an enumeration with enumeration literals defining possible values
+		for deviation attributes.
+		---------------------------------------------
+	AllowRefinement: String
+		The DeviationPermissionKind is an enumeration with enumeration literals defining possible values
+		for deviation attributes.
+		---------------------------------------------
+	AllowRegrouping: String
+		The DeviationPermissionKind is an enumeration with enumeration literals defining possible values
+		for deviation attributes.
+		---------------------------------------------
+	AllowRemoval: String
+		The DeviationPermissionKind is an enumeration with enumeration literals defining possible values
+		for deviation attributes.
+		---------------------------------------------
+EABoolean
+	EABoolean is the primitive type that holds two literals: true, false.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	Description: Text
+EADatatypePrototype
+	The EADatatypePrototype represents a typed variable. It acts as an appearance of a datatype.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Type: _EADatatype
+EAExpression
+	The mixed string EAExpression allow for modeling of expressions with references to elements in the model. Specializations within the metamodel define their syntax and the referred metaclasses used in the expressions.
+	---------------------------------------------
+	Value: String
+	Type: _EADatatype
+	Description: Text
+EANumerical
+	EANumerical has attributes for modeling of the allowed range.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	Min: String
+		The minimum value of the range. Decimal values should be specified with .
+		---------------------------------------------
+	Max: String
+		The maximal value of the range. Decimal values should be specified with .
+		---------------------------------------------
+	Unit: Unit
+		The unit of data.
+		---------------------------------------------
+	Description: Text
+EAString
+	EAString is the primitive type that defines a sequence of characters in some suitable character set used to display information.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	Description: Text
+ElectricalComponentType
+	ElectricalComponent represents a hardware element as e.g. relays, batteries, capacitors and other non-computational, non-interactional (with plant) elements.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+	IsActive: String
+		Indicates if the PowerSupply is active or passive.
+		---------------------------------------------
+Enumeration
+	Enumeration is a kind of datatype, whose instances may be any number > 1 of user-defined enumeration literals. Enumerations contain at least two literals, otherwise it would be a constant. The contained literals need to be ordered.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	IsMultiValued: Boolean
+		This boolean attribute is true, if multiple enumeration values can be selected. It is false, if only one enumeration value is allowed to be selected.
+		---------------------------------------------
+	Literals: OrderedCollection (String)
+		Collection of literals (value) of the enumeration.
+		---------------------------------------------
+	Description: Text
+FeatureConstraint
+	Captures a constraint on the containing feature model's configuration which is too complex to be expressed by way of a FeatureLink.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Criterion: String
+		The actual constraint.
+		---------------------------------------------
+GenericConstraintValue
+	Store typed values in the model. The semantics of this element is defined by the element typed by the corresponding datatype.
+	---------------------------------------------
+	Value: String
+	Type: _EADatatype
+HardwareComponentType
+	The HardwareComponentType represents hardware element on an abstract level, allowing preliminary engineering activities related to hardware.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+Mode
+	Modes are a way to introduce various configurations in the system to account for different states of the system, or of a hardware entity, or an application. The use of modes can be used to filter different views of the model. Modes are characterized by a Boolean condition provided as a String, which evaluates to true when the Mode is active. The Mode is active if and only if the condition is true.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Condition: String
+		A Boolean expression that characterizes the Mode, it evaluates to true when the Mode is active. The syntax and grammar of this expression is unspecified.
+		---------------------------------------------
+	Description: Text
+NodeType
+	NodeType represents the computer nodes of the embedded electrical/electronic system. Nodes consist of processor(s) and may be connected to sensors, actuators and other ECUs via a BusConnector. Node denotes an electronic control unit that acts as a computing element executing Functions. In case a single CPU-single core ECU is represented, it is sufficient to have a single, non-hierarchical Node. 
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+	ExecutionRate: String
+		ExecutionRate is used to compute an approximate execution time. A nominal execution time divided by executionRate provides the actual execution time to be used e.g. for timing analysis in feasibility studies.
+		---------------------------------------------
+Quantity
+	The Quantity describes a physical dimension for use in numerical datatypes and expressions to facilitate dimension consistency and control.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	AmountOfSubstanceExp: String
+	ElectricCurrentExp: String
+	LengthExp: String
+	LuminousIntensityExp: String
+	MassExp: String
+	ThermodynamicTemperatureExp: String
+	TimeExp: String
+	Description: Text
+RangeableValueType
+	The RangeableValueType adds the ability to describe the accuracy, resolution, and the significant digits of the baseRangeable datatype.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	Accuracy: String
+		The accuracy of the data (e.g., the FunctionFlowports input or output).
+		---------------------------------------------
+	Resolution: String
+		The resolution of the data expressed as the size of the minimum difference between data values.
+		---------------------------------------------
+	SignificantDigits: String
+		SignificantDigits must be positive interger number.
+		---------------------------------------------
+	BaseRangeable: EANumerical
+		The datatype with additional attributes specified by this concept.
+		---------------------------------------------
+	Description: Text
+SensorType
+	SensorType represents a hardware entity for digital or analog sensor elements. The Sensor is connected electrically to the electrical entities of the Hardware Design Architecture. 
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+TimingExpression
+	A Timing Expression, denoted by texp, is a term built from an arithmetic expression by applying an optional unit and referencing an optional time base. It stands for a value in the real number system extended with positive and negative infinity.
+	---------------------------------------------
+	Value: String
+	Type: _EADatatype
+	Description: Text
+Unit
+	Unit descibes the unit of typed numerical values.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Factor: String
+	Offset: String
+	Symbol: String
+	Quantity: Quantity
+	UnitReference: Unit
+	Description: Text
+UserAttributeDefinition
+	The name of a UserAttributeDefinition should be used in editing tools as a label for the input field representing the user attribute and its description should be presented to the user to explain the meaning of this user attribute.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Default value: Value
+	Type: _EADatatype
+UserElementType
+	UserElementType defines a certain set of user attributes.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Key: String
+		Key is globally unique identifier.
+		---------------------------------------------
+	Valid for: Text
+	User Attribute Definitions: OrderedCollection (UserAttributeDefinition)
+	Description: Text
+Value
+	Value: String
+	Type: _EADatatype
+	Description: Text
+_EADatatype
+	EADatatype metaclass is a special kind of classifier, similar to a class. It differs from the class in that instances of a data type are identified only by their value.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+_FunctionPrototype
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+_HardwareComponents
+	The HardwareComponentType is a structural entity that defines a part of an electrical architecture.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+
+==========================
+Bindings
+==========================
+Comment
+	Comment: AnalysisFunctionPrototype, DesignFunctionPrototype, EAType, Feature, HardwareComponentPrototype, Requirement
+	Comment: Comment, GenericConstraint, UserAttributedElement
+Comment
+	Comment: Comment, GenericConstraint, UserAttributedElement
+	Comment: AnalysisFunctionPrototype, DesignFunctionPrototype, EAType, Feature, HardwareComponentPrototype, Requirement
+FeatureComposition
+	Parent: Feature
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+1..N	Child: Feature
+FeatureLink
+	Start: Feature
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+1..N	End: Feature
+Realization
+	Realized: Feature
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+	RealizedBy: AnalysisFunctionPrototype, DesignFunctionPrototype, EAType, Feature, HardwareComponentPrototype
+Realization
+	RealizedBy: AnalysisFunctionPrototype, DesignFunctionPrototype, EAType, Feature, HardwareComponentPrototype
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+	Realized: Feature
+Satisfy
+	SatisfiedBy: Feature
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+	SatisfiedRequirement: Requirement
+Satisfy
+	SatisfiedRequirement: Requirement
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+	SatisfiedBy: Feature
+
+==========================
+Constraints
+==========================
+Feature may be in at most 1 Child role
+UserAttributedElement may be in at most 1 Comment relationship
+VehicleFeature may be in at most 1 Child role
+Property "Short name" in Feature must have unique values
+Property "Short name" in UserAttributedElement must have unique values
+Property "Short name" in VehicleFeature must have unique values
+
+==========================
+Subgraphs
+==========================
+Decompositions:
+	AnalysisFunctionPrototype
+		AnalysisFunctionType
+	DesignFunctionPrototype
+		DesignFunctionType
+	EAType
+		AnalysisFunctionType
+		DesignFunctionType
+		HardwareComponentType
+	Feature
+		VehicleFeatureModel
+	HardwareComponentPrototype
+		HardwareComponentType
+	VehicleFeature
+		VehicleFeatureModel
+
+==========================
+Generators
+==========================
+Trace all features
+
+==========================
+Sub-Generators
+==========================
+_symCheckFeatureCardinality
+

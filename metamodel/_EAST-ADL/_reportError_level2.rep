@@ -1,0 +1,6 @@
+_reportError_level2(@errorType)
+/* Reporting the undefined value and hierarchy for it */
+'Undefined ' @errorType' value for ' id ' <' type '> '
+if type;1 <> 'Package' then
+	'in ' id;1 ' <' type;1 '> | ' id;2 ' <' type;2 '> '
+endif

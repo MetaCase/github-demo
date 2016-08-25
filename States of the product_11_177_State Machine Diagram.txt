@@ -1,0 +1,159 @@
+Graph_State_diagram__UML__sysadmin_3019388223
+States of the product
+11_177
+State Machine Diagram
+Graph: States of the product <State Machine Diagram> 11_177
+	Model name: States of the product
+	Status: draft
+	Authors: David Hill
+	Object: David Hill <Person> 11_2189
+		Name: David Hill
+		E-mail: mailto:info@metacase.com
+		Contact address: Park Court
+Upper Essex Street
+City 5
+B8 6QB
+	Documentation: States of the product model was made by DH 19.8.2006
+Object: Note that Activities of the Transitions and Internal actions of the States are shared with related Operations in the class diagram. Hence, if you change "Make an after order" the change reflects to class diagram as well. <Note text> 11_3719
+	Note text: Note that Activities of the Transitions and Internal actions of the States are shared with related Operations in the class diagram. Hence, if you change "Make an after order" the change reflects to class diagram as well.
+	Stereotype: 
+Object: Start <Start> 11_244
+Object: Gathering the product <State [UML]> 11_955
+	State name: Gathering the product
+	Internal actions: 
+	Documentation: When product is ordered, warehouse worker gathers the products for delivery.
+	Symbol transparent?: F
+Object: Delivering product <State [UML]> 11_1643
+	State name: Delivering product
+	Internal actions: 
+	Documentation: Products are delivered to the customer.
+	Symbol transparent?: F
+Object: Quantity checking <State [UML]> 11_1649
+	State name: Quantity checking
+	Internal actions: do / Check quantity
+	Object: do / Check quantity <Internal activity> 11_2511
+		Activity: Check quantity
+		Activity label: do
+		Arguments: 
+		Documentation: Product's quantity is checked to match to ordererd ones. This is checked by the warehouse workers.
+	Documentation: Product quantity is checked each time when product is arrived to the store.
+	Symbol transparent?: F
+Object: After-ordering <State [UML]> 11_2417
+	State name: After-ordering
+	Internal actions: Make an after order
+	Object: Make an after order <Internal activity> 11_2428
+		Activity: Make an after order
+		Activity label: 
+		Arguments: 
+		Documentation: After-order has to be made, when customer order can't be completely fulfilled.
+	Documentation: If some product(s)/part(s) are missing, after order is made.
+	Symbol transparent?: F
+Object: Invoicing <State [UML]> 11_3119
+	State name: Invoicing
+	Internal actions: 
+	Documentation: After delivering the products to the customer, invoice will be made.
+	Symbol transparent?: F
+Object: Placing the product <State [UML]> 11_3788
+	State name: Placing the product
+	Internal actions: do / Place the product
+	Object: do / Place the product <Internal activity> 11_1504
+		Activity: Place the product
+		Activity label: do
+		Arguments: 
+		Documentation: 
+	Documentation: After quality checking product is placed to the store.
+	Symbol transparent?: F
+Object: Quality checking <State [UML]> 11_4370
+	State name: Quality checking
+	Internal actions: do / Check quality
+	Object: do / Check quality <Internal activity> 11_470
+		Activity: Check quality
+		Activity label: do
+		Arguments: 
+		Documentation: Product's quality is checked to pass the company's quality standards.
+	Documentation: After quantity checking the Product quality is checked.
+	Symbol transparent?: F
+Object: Stop <Stop> 11_880
+Relationship: Note connection <Note connection> 11_542
+  Role: Note part <Note part>  Object: <Note text> 11_3719
+  Role: Object part <Object part>  Object: <State [UML]> 11_2417
+Relationship:  <Transition [UML]> 11_540
+	Trigger: Quality checked
+	Constraint: 
+	Activity: 
+	Arguments: 
+	Documentation: Product(s) will be placed to the store.
+  Role: From <From>  Object: <State [UML]> 11_4370
+  Role: To <To>  Object: <State [UML]> 11_3788
+Relationship:  <Transition [UML]> 11_750
+	Trigger: 
+	Constraint: 
+	Activity: 
+	Arguments: 
+	Documentation: 
+  Role: From <From>  Object: <State [UML]> 11_3119
+  Role: To <To>  Object: <Stop> 11_880
+Relationship: Replace the product <Transition [UML]> 11_962
+	Trigger: Product's place change
+	Constraint: 
+	Activity: Replace the product
+	Arguments: 
+	Documentation: 
+  Role: From <From>  Object: <State [UML]> 11_3788
+  Role: To <To>  Object: <State [UML]> 11_3788
+Relationship:  <Transition [UML]> 11_2057
+	Trigger: Product is gathered
+	Constraint: Product is missing
+	Activity: 
+	Arguments: 
+	Documentation: When some or part of the products are missing to fulfil the customer's order.
+  Role: From <From>  Object: <State [UML]> 11_955
+  Role: To <To>  Object: <State [UML]> 11_2417
+Relationship: Gather the products <Transition [UML]> 11_2285
+	Trigger: Product is sold
+	Constraint: 
+	Activity: Gather the products
+	Arguments: 
+	Documentation: When product has been sold to the customer.
+  Role: From <From>  Object: <State [UML]> 11_3788
+  Role: To <To>  Object: <State [UML]> 11_955
+Relationship:  <Transition [UML]> 11_2291
+	Trigger: Product is gathered
+	Constraint: All products found
+	Activity: 
+	Arguments: 
+	Documentation: All ordered products have been found and gathered.
+  Role: From <From>  Object: <State [UML]> 11_955
+  Role: To <To>  Object: <State [UML]> 11_1643
+Relationship: Sign the invoice <Transition [UML]> 11_3366
+	Trigger: Product is delivered
+	Constraint: 
+	Activity: Sign the invoice
+	Arguments: 
+	Documentation: Customer has received his/hers order completely.
+  Role: From <From>  Object: <State [UML]> 11_1643
+  Role: To <To>  Object: <State [UML]> 11_3119
+Relationship: Move to quality control <Transition [UML]> 11_3542
+	Trigger: Quantity checked
+	Constraint: 
+	Activity: Move to quality control
+	Arguments: 
+	Documentation: Product(s) will be transferred to quality control.
+  Role: From <From>  Object: <State [UML]> 11_1649
+  Role: To <To>  Object: <State [UML]> 11_4370
+Relationship:  <Transition [UML]> 11_3546
+	Trigger: Re-ordered product(s) / part(s) arrive
+	Constraint: 
+	Activity: 
+	Arguments: 
+	Documentation: When re-ordered product(s) or part(s) arrive to the store
+  Role: From <From>  Object: <State [UML]> 11_2417
+  Role: To <To>  Object: <State [UML]> 11_1649
+Relationship:  <Transition [UML]> 11_3725
+	Trigger: 
+	Constraint: 
+	Activity: 
+	Arguments: 
+	Documentation: 
+  Role: From <From>  Object: <Start> 11_244
+  Role: To <To>  Object: <State [UML]> 11_1649

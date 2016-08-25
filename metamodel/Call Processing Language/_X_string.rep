@@ -1,0 +1,7 @@
+Report '_X_string'
+/* Report String-switch objects */
+'<' type '-switch field="' id '">' newline
+'<string ' :String; '="' :String value; '">' newline
+/* Report the objects after the String-switch */
+subreport '_next node' run
+endreport

@@ -1,0 +1,18 @@
+Report '_inCorrectPinTypes'
+/* Checking incompatable pin types for IO relationship */
+$fromtype = ''
+$totype = ''
+/* separate checks for ports and prototypes */
+do ~(IOPort_To).() {
+	$totype = :Type; 
+}
+do ~(IO*_To)#() {
+	$totype = :Type; 
+}
+do ~(IOPort_From).() {
+	$fromtype = :Type;
+}
+do ~(IO*_From)#() {
+	$fromtype = :Type;
+}
+endreport

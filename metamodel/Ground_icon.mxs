@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="Ground_icon">
+		<objectSymbol offset="70,47" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="70,47 90,47 90,70 70,70 70,47" targetPointX="80" targetPointY="58.5" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="70" version="1.2" width="90" xmlns="http://www.w3.org/2000/svg">
+				<g fill="none" stroke="rgb(0,0,0)" stroke-width="1" sym:height="20" sym:width="20" sym:x="7.0e1" sym:y="5.0e1">
+					<line stroke="rgb(0,0,0)" stroke-width="1" x1="80" x2="80" y1="50" y2="63.3333">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="1" x1="70" x2="90" y1="63.3333" y2="63.3333">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<polyline fill="none" points="74,66.6667 86,66.6667 86,66.6667" stroke="rgb(0,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polyline>
+					<polyline fill="none" points="78,70 82,70 82,70" stroke="rgb(0,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polyline>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+				<line stroke="none" stroke-width="1" x1="70" x2="90" y1="47" y2="47">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</line>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

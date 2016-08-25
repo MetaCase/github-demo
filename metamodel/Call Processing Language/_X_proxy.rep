@@ -1,0 +1,12 @@
+Report '_X_proxy'
+/* Report Proxy object */
+if id then
+	'<proxy timeout="' id '">' newline
+	subreport '_outputs' run
+	'</proxy>' newline
+else
+	'<proxy>'
+	subreport '_outputs' run
+	'</proxy>' newline
+endif
+endreport

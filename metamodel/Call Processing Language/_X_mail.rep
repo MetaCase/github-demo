@@ -1,0 +1,7 @@
+Report '_X_mail'
+/* Report Mail object */
+'<mail url="' :Url; '">' newline
+/* Report objects after Mail object */
+subreport '_next object or otherwise' run
+'</mail>' newline
+endreport

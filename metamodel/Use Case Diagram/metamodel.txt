@@ -1,0 +1,255 @@
+==========================
+Graph Type
+==========================
+Use Case Diagram
+	Use Case Model is technique for capturing external requirements of the system. It shows the external users, 'actors', which interact with the system performing a sequence of actions that yields an observable result. These actions are called as an 'use case'.
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Actor [UML]
+	An actor defines a coherent set of roles that users of an entity can play when interacting with the entity. An actor has one role for each use case with which it communicates. Each actor can be characterized with a name (linked to class names) and a documentation.
+	---------------------------------------------
+	Actor name: String
+	Documentation: Text
+Use case [UML]
+	Use case is a sequence of transactions with the user and the system. Hence, each use case is a specific way of using the system. Use cases can be characterized with the same properties than classes (i.e. attributes, operations) and with extension points and links to external documentation files. Extension point is a location at which the use case can be extended with additional behavior. Documentation file refers to files outside the MetaEdit repository which contain descriptions of use cases (inventory.doc). The external documentation file can be opened by selecting execute from the field related pop-up menu.
+	---------------------------------------------
+	Use case name: String
+	Attributes: OrderedCollection (Attribute [UML])
+	Operations: OrderedCollection (Operation [UML])
+	Documentation file: String
+	Extension points: OrderedCollection (String)
+	Documentation: Text
+System [UML]
+	System describes the boundary of the developed system. It can be an software application, business process, or a machine. System is represented with a transparent rectangle and it can be scaled to include selected use cases.
+	---------------------------------------------
+	System name: String
+	Documentation: Text
+Package
+	A package is used for grouping elements and organizing models: a system may be thought of as a single high-level package included other model elements and other packages. Depending on the graph type used a package can contain a set of use cases, classes or other packages. Each package is represented with a folder symbol with name of the package inside the symbol and steretotype of the package above the symbol.
+	---------------------------------------------
+	Package name: String
+	Stereotype: String
+	Documentation: Text
+Note text
+	Note is a special object for adding additional text anywhere in the graphs. It can be linked to another design objects with a note connection relationship.
+	---------------------------------------------
+	Note text: Text
+	Stereotype: String
+
+==========================
+Relationship Types
+==========================
+Association [UML]
+	An association describes a semantic connection between two classes. Each association relationship is characterized derivation rules and documentation. The roles of the association are further characterized to define associations in more detaile with the following properties:
+	- association name according to the direction of the associaton 
+	- role name to characterize the class/objects role in the relationship
+	- multiplicity constraint 
+	- ordered? to define whether links between objects have order
+	- navigable? to indicate that navigation is supported along the association relationship towards the class/object attached to the arrow, and 
+	- qualifiers to define values which serve to partition the set of objects associated with an object across an association.
+	Binary associations are most common, but n-ary connection can be specified with an ternary association. Also association class, OR association, and note connection can be attached to aggregations by selecting the relationship and then adding a new role to the relationship through a selection from a pop-up menu.
+	---------------------------------------------
+	Association name: String
+	Derived?: Boolean
+	Derivation rules: OrderedCollection (String)
+	Documentation: Text
+Generalization [UML]
+	Generalization is used to identify inheritance hierarchies between classes. With inheritance we can identify specialized classes (ie. subclasses) and generalized classes (ie. superclasses). It has following properties: 
+	- discriminator to define the partition of the subtypes of the superclass.
+	- constraints to specify whether the descendant can be descended from more than one of the subclasses (value = overlapping) (i.e. can use multiple inheritance), or not (constraint value = disjoint). 
+	- visibility to define in more detail (e.g. public) what is the scope of the of inheritance
+	- complete? to specify that all subclasses are specified and thus no additional subclasses are not expected.
+	- derivation rules to define rules for applying the inheritance.
+	---------------------------------------------
+	Discriminator: String
+	Constraint: String
+	Visibility: String
+	Virtual?: Boolean
+	Completeness: String
+	Derivation rules: OrderedCollection (String)
+Dependency [UML]
+	Dependency show client-supplier links dependencies between logical elements. The client, pointed by an arrow, is dependent in some way on the client.
+	---------------------------------------------
+	Stereotype: String
+	Alias name: String
+Note connection
+	Note connection can be used to link a note text to related element in a model. A note connection is represented by a grey line.
+	---------------------------------------------
+
+==========================
+Role Types
+==========================
+Association role
+	Role name: String
+	Multiplicity: String
+	Ordered?: Boolean
+	Navigable?: Boolean
+	Properties: String
+	Qualifiers: OrderedCollection (Attribute [UML])
+	Association name: String
+Client
+Note part
+Object part
+Specialization
+Superclass
+Supplier
+
+==========================
+Extra Types
+==========================
+Activity Diagram
+	Activity diagram is a special kind of state diagram: all or most of the states are action nodes and transitions are triggered by completion of actions in the source states.
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+Class Diagram [UML]
+	Class diagrams show the static structure with classes and their definitions and relationships.
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+Sequence Diagram
+	A sequence diagram describes an interaction by focusing on the sequence of messages that are exchanged, along with their corresponding occurrences on the lifelines. 
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+State Machine Diagram
+	A state machine diagram is used to show the state space of an instance of a class, the events that cause a transition from one state to another, and the actions that result from a state change.
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+_Unified Modeling Language
+	This UML metamodel is based on the 2.0 Draft Adopted Specification.
+	---------------------------------------------
+Attribute [UML]
+	Name: String
+	Data type: String
+	Default value: String
+	Stereotype: String
+	Visibility: String
+	Scope: String
+	Access: String
+	Derived?: Boolean
+	Persistent?: Boolean
+	Constraints: Text
+	Documentation: Text
+Operation [UML]
+	Operation name: String
+	Parameters: OrderedCollection (Parameter)
+	Return type: String
+	Overridability: String
+		How the element may be overridden by the subclass. Values:
+		virtual - fully defined and may be overridden
+		leaf - fully defined and may not be overridden
+		deferred - protocol only defined and must be overridden
+		extensible - may be extended but not overridden
+		---------------------------------------------
+	Stereotype: String
+	Visibility: String
+	Operation type: String
+	Preconditions: Text
+	Postconditions: Text
+	Body: Text
+	Documentation: Text
+Parameter
+	Parameter: String
+	Data type: String
+	Direction: String
+	Default value: String
+Person
+	Person is used to describe developers involved in a project (i.e. attached to the project model) and authors of developed models. Person can be characterized with a name, e-mail address, and with a contact address. 
+	---------------------------------------------
+	Name: String
+	E-mail: String
+	Contact address: Text
+From
+General association role
+	Role name: String
+	Multiplicity: String
+	Ordered?: Boolean
+	Navigable?: Boolean
+	Properties: String
+Generalization
+Part
+	Role name: String
+	Multiplicity: String
+	Ordered?: Boolean
+	Navigable?: Boolean
+	Properties: String
+	Qualifiers: OrderedCollection (Attribute [UML])
+
+==========================
+Bindings
+==========================
+Association [UML]
+	Association role: Actor [UML]
+	Association role: Use case [UML]
+0..1	Note part: Note text
+Association [UML]
+	Association role: Use case [UML]
+	Association role: Actor [UML]
+0..1	Note part: Note text
+Dependency [UML]
+	Client: Package
+	Supplier: Package
+0..1	Note part: Note text
+Dependency [UML]
+	Client: Use case [UML]
+	Supplier: Use case [UML]
+0..1	Note part: Note text
+Generalization [UML]
+1..N	Specialization: Actor [UML]
+	Superclass: Actor [UML]
+0..1	Note part: Note text
+Generalization [UML]
+1..N	Specialization: Package
+	Superclass: Package
+0..1	Note part: Note text
+Generalization [UML]
+1..N	Specialization: Use case [UML]
+	Superclass: Use case [UML]
+0..1	Note part: Note text
+Note connection
+	Note part: Note text
+	Object part: Actor [UML], Package, System [UML], Use case [UML]
+Note connection
+	Object part: Actor [UML], Package, System [UML], Use case [UML]
+	Note part: Note text
+
+==========================
+Constraints
+==========================
+Property "Package name" in Package must have unique values
+Property "System name" in System [UML] must have unique values
+Property "Use case name" in Use case [UML] must have unique values
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	Actor [UML]
+		State Machine Diagram
+	System [UML]
+		Class Diagram [UML]
+	Use case [UML]
+		Activity Diagram
+		Sequence Diagram
+		State Machine Diagram
+Decompositions:
+	Package
+		Use Case Diagram
+

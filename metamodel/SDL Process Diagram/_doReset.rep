@@ -1,0 +1,3 @@
+_doReset()
+'	RESET (' :Timer name;');' 
+_nextTransition()

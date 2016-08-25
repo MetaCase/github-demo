@@ -1,0 +1,3 @@
+Report '_Icon'
+do ~Boolean; { 'icon' id do .Icon; {'("' id '");'}}
+endreport

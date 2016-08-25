@@ -1,0 +1,235 @@
+==========================
+Graph Type
+==========================
+BPMN
+	Business Process Modeling Notation (BPMN) version 1.0
+	---------------------------------------------
+	Id: String
+	Model name: String
+		Name is an attribute that is text description of the Diagram.
+		---------------------------------------------
+	Version: String
+		This defines the Version number of the Diagram.
+		---------------------------------------------
+	Author: String
+		This holds the name of the author of the Diagram.
+		---------------------------------------------
+	Language: String
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Start
+	Start Event indicates where a particular process will start.
+	---------------------------------------------
+	Trigger: _Trigger (start)
+	Event name: String
+	Description: Text
+Intermediate
+	Intermediate event occur between a Start Event and an End Event. It will affect the flow of the process, but will not start or (directly) terminate the process.
+	---------------------------------------------
+	Trigger: _Trigger (intermediate)
+	Event name: String
+	Target: Task
+	Description: Text
+End
+	End event indicates where a process will end.
+	---------------------------------------------
+	Result: _Result
+	Event name: String
+	Description: Text
+Task
+	A Task is an atomic activity that is included within a Process.
+	---------------------------------------------
+	Task name: String
+	Task type: _Task type
+	LoopType: String
+	AdHoc: _AdHoc
+	Intermediate: Intermediate
+	Compensation: Boolean
+	Description: Text
+Gateway
+	A Gateway is used to control the divergence and convergence of Sequence Flow.
+	---------------------------------------------
+	Gateway type: String
+	Decision: String
+Artifact
+	Artifact type: String
+	Artifact name: String
+Pool
+	Pool name: String
+Lane
+	Lane name: String
+
+==========================
+Relationship Types
+==========================
+Sequence flow
+	Name: String
+Message flow
+	A Message Flow is used to show the flow of messages between two participants that are prepared to send and receive them.
+	---------------------------------------------
+	Flow name: String
+Association
+	An Association is used to associate information with Flow Objects.
+	---------------------------------------------
+Exception flow
+	Exception Flow occurs outside the Normal Flow of the Process and is based upon an Intermediate Event that occurs
+	during the performance of the Process.
+	---------------------------------------------
+	Value: String
+Compensation association
+
+==========================
+Role Types
+==========================
+From
+	Conditional: Boolean
+To
+Gateway from
+	Is default?: Boolean
+Gateway to
+Conditional from
+Association from
+Association to
+Message from
+Message to
+Text annotation
+
+==========================
+Extra Types
+==========================
+Cancel
+Cancel
+Compensation
+	Activity: Task
+Compensation
+	Activity: Task
+Error
+	ErrorCode: String
+Error
+	ErrorCode: String
+False
+Link
+	LinkId: String
+	ProcessRef: String
+Link
+	LinkId: String
+	ProcessRef: String
+Link
+	LinkId: String
+	ProcessRef: String
+Manual
+	Performers: OrderedCollection (String)
+Message
+	Message: Text
+	Implementation: String
+Message
+	Message: Text
+	Implementation: String
+Message
+	Message: Text
+	Implementation: String
+Multiple
+	Triggers: OrderedCollection (__Triggers (intermediate))
+Multiple
+	Results: OrderedCollection (__Results)
+Multiple
+	Triggers: OrderedCollection (__Triggers)
+None
+None
+None
+None
+Receive
+	Message: Text
+	Instantiate False: Boolean
+	Implementation: String
+Reference
+	TaskRef: Task
+Rule
+	Rule name: String
+Rule
+	Rule name: String
+Script
+	Script: String
+Send
+	Message: Text
+	Implementation: String
+Service
+	InMessage: Text
+	OutMessage: Text
+	Implementation: String
+Terminate
+Timer
+	TimerDate: String
+	TimerCycle: String
+Timer
+	TimerDate: String
+	TimerCycle: String
+True
+	AdHocOrdering: String
+	AdHocCompletionCondition: Text
+User
+	Performers: OrderedCollection (String)
+	InMessage: Text
+	OutMessage: Text
+	Implementation: String
+_AdHoc
+_Result
+_Task type
+_Trigger (intermediate)
+_Trigger (start)
+__Results
+__Triggers
+__Triggers (intermediate)
+
+==========================
+Bindings
+==========================
+Association
+	Association from: Artifact
+	Association to: Task
+Association
+	Association from: Artifact
+	Text annotation: End, Gateway, Intermediate, Start, Task
+Association
+	Association from: Task
+	Association to: Artifact
+Association
+	Text annotation: End, Gateway, Intermediate, Start, Task
+	Association from: Artifact
+Compensation association
+	Association from: Intermediate
+	Association to: Task
+Exception flow
+	From: Intermediate
+	To: Gateway, Task
+Message flow
+	Message from: End, Lane, Task
+	Message to: Intermediate, Lane, Start, Task
+0..N	Association from: Artifact
+Sequence flow
+	From: Gateway, Intermediate, Start, Task
+	To: End, Gateway, Intermediate, Task
+0..N	Text annotation: Artifact
+Sequence flow
+	From #(Intermediate): Task
+	To: End, Gateway, Intermediate, Task
+0..N	Text annotation: Artifact
+Sequence flow
+	Gateway from: Gateway
+	Gateway to: End, Gateway, Task
+0..N	Text annotation: Artifact
+
+==========================
+Constraints
+==========================
+
+==========================
+Subgraphs
+==========================
+Decompositions:
+	Task
+		BPMN
+

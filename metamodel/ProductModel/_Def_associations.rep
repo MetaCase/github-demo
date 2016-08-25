@@ -1,0 +1,50 @@
+Report '_Def_associations'
+'		// **************************************************************' newline
+'		//  Associations' newline
+'		// **************************************************************' newline newline
+foreach >Association {
+	'		// ********* ' 
+	do ~(^Associationend).() {if :Composite?; then 'Composite' endif type id}
+	'_X_'
+	do ~Associationend.() {if :Composite?; then 'Composite' endif type id} 
+	' **********' newline 
+	do ~(^Associationend) {subreport '_Associationend properties' run}
+	newline
+	do ~Associationend {subreport '_Associationend properties' run}
+	newline
+	'		mofAssociation = MofAssociation.createAssociation("' 
+	do ~(^Associationend).() {if :Composite?; then 'Composite' endif type oid}
+	'_X_'
+	do ~Associationend.() {if :Composite?; then 'Composite' endif type oid} 
+	'", '
+	do ~(^Associationend) {'end' oid ', '}
+	do ~Associationend {'end' oid}
+	');' newline
+	'		productpackage_.addMofAssociation(mofAssociation);' newline newline
+	do ~(^Associationend) {
+		if :Is reference?; then
+			'		reference = new Reference("' 
+			do .(); {
+				if :Composite?; then 'Composite' endif 
+				type oid
+			}
+			'_X_'
+			do >()~Associationend.() {
+				if :Composite?; then 'Composite' endif
+				type oid
+			} 
+			'", '
+			'end' oid ', '
+			do >()~Associationend {'end' oid}
+			');' newline
+			do .() {
+				'		i' if :Composite?; then 'composite' endif  
+				type
+				'.addReference(reference);' newline 
+				}
+	/* all bindings have only one associationend role type and the report supposes that there can not be two directed reference, checked via reports */
+		endif
+	}
+	newline
+}
+endreport

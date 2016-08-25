@@ -1,0 +1,31 @@
+Report 'Java autobuild with JDK'
+/*	Calls JDK compiler to compile the generated code (change bold path below)
+*	The applet class must inherit directly from Applet
+*	Makes and runs a bat file which compiles the code and opens the resulting applet
+*/
+subreport 'Java' run
+
+foreach .Class [UML] 
+where ~Specialization~Superclass.():Class name; = 'Applet' 
+unique 'first'
+{	$appletClass = id
+}
+
+if not $appletClass then 
+	variable 'appletClass' write
+		prompt 'Your model must have a subclass of Applet, please enter its name or press Cancel' ask 
+	close
+endif
+
+filename subreport '_default directory' run $appletClass '.html' write
+	'<html><title>Java test: ' $appletClass '</title><body>' newline
+	'<applet code="' $appletClass '.class" width="200" height="225"></applet><hr />' newline
+	'</body></html>'
+close
+
+subreport 
+	'_Java autobuild with JDK: ' 
+	if sep = '\' then 'Windows' else 'Unix' endif
+run
+
+endreport

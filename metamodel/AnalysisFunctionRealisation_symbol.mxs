@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="AnalysisFunctionRealisation_symbol">
+		<objectSymbol offset="80,40" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="80,40 99,40 99,59 80,59 80,40" targetPointX="89.5" targetPointY="49.5" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="59" version="1.2" width="99" xmlns="http://www.w3.org/2000/svg">
+				<g fill="none" stroke="rgb(0,0,0)" stroke-width="1" sym:height="19" sym:width="19" sym:x="8.0e1" sym:y="4.0e1">
+					<polygon fill="rgb(255,255,255)" points="99,40 88.7297,43.2522 95.5764,49.7568" stroke="rgb(0,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polygon>
+					<line stroke="rgb(0,0,0)" stroke-width="1" x1="90.2703" x2="86.8468" y1="48.7297" y2="52.1532">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="1" x1="83.4234" x2="80" y1="55.5766" y2="59">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

@@ -1,0 +1,70 @@
+==========================
+Graph Type
+==========================
+Thingsee Profile
+	Profile contains all applications run in Thingsee called Purposes.
+	---------------------------------------------
+	Name: String
+	Description: Text
+		Free from comment or description of the element.
+		---------------------------------------------
+
+==========================
+Object Types
+==========================
+Purpose
+Comment
+	Description: Text
+		Free from comment or description of the element.
+		---------------------------------------------
+
+==========================
+Relationship Types
+==========================
+
+==========================
+Role Types
+==========================
+
+==========================
+Extra Types
+==========================
+Thingsee Purpose
+	Thingsee application describes the state-based logic of the application. In addition to state and transitions the application consist of triggers that cause transitions and actions that are performed during transitions.
+	---------------------------------------------
+	Name: String
+		Name of the application (also called purpose).
+		---------------------------------------------
+	Description: Text
+		Free from comment or description of the element.
+		---------------------------------------------
+
+==========================
+Bindings
+==========================
+
+==========================
+Constraints
+==========================
+
+==========================
+Subgraphs
+==========================
+Decompositions:
+	Purpose
+		Thingsee Purpose
+
+==========================
+Generators
+==========================
+!.jsn
+!Doc
+IoTAppCode
+
+==========================
+Sub-Generators
+==========================
+_GetReferences
+_purposeTranslators
+_sensorIcons
+

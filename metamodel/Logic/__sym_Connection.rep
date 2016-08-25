@@ -1,0 +1,9 @@
+Report '__sym_Connection'
+if :Show values on wires?;1; = 'T' then
+	do ~()
+	{	if #():Direction = 'out' then
+			subreport '_out_' do .() { type } run
+		endif
+	}
+endif
+endreport

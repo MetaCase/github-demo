@@ -1,0 +1,30 @@
+Report '_MatrixToHTMLTable'
+$columns = ''
+'<table border="1">'
+'<tr><th>&nbsp;</th>'
+foreach .() where y = '0' orderby x 
+{	'<th bgcolor="#F2F2F2"><a href="#' oid '">' id%trunc80%xml '</a></th>'
+	variable 'columns' append oid newline close
+}
+'</tr>'
+newline
+foreach .() where x = '0' orderby y 
+{	'<tr>'
+	'<td bgcolor="#F2F2F2"><strong><a href="#' oid '">' id%trunc80%xml '<strong></a></td>' 
+	do $columns where id {
+		'<td>'
+		do ~();1>() 
+		{
+			do ~().() where oid <> oid;3 
+			{
+				if oid = id;2 then 
+					if id;1 then id;1%xml else 'X' endif
+				endif
+			}
+		}
+		'&nbsp;</td>'
+	}
+	'</tr>'
+}
+'</table>'
+endreport

@@ -1,0 +1,4 @@
+_namespace()
+do stack where metatype='Graph' unique '1'
+{	if :Namespace; then '_' :Namespace%var endif
+}

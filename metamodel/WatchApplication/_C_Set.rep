@@ -1,0 +1,8 @@
+Report '_C_Set'
+	do ~Set.(Variable |VariableRef)
+	{	id ' = ' 
+	}
+	subreport '_CCalcValue' run
+	';'
+	newline
+endreport

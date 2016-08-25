@@ -1,0 +1,51 @@
+==========================
+Graph Type
+==========================
+XmasTree Decoration
+	Name: String
+
+==========================
+Object Types
+==========================
+XmasTree
+	Top decoration: String
+Note
+	Note is a special object for adding additional text anywhere in the graphs. Note belongs to many languages and has only one property, Documentation.
+	---------------------------------------------
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+
+==========================
+Role Types
+==========================
+
+==========================
+Extra Types
+==========================
+CandleSet
+	Name: String
+	Number of Candles: String
+DecoBox
+	Name: String
+
+==========================
+Bindings
+==========================
+
+==========================
+Constraints
+==========================
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	XmasTree
+		DecoBox
+Decompositions:
+	XmasTree
+		CandleSet
+

@@ -1,0 +1,12 @@
+_hasRelationships()
+foreach .(^Comment) 
+{	if not >() then
+		if not type = 'Comment' then
+			if id then id ' ' endif
+			'<' type '>'
+			' has no relationships'
+			$errors++%null
+			newline
+		endif
+	endif
+}

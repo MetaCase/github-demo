@@ -1,0 +1,15 @@
+_types(@tag)
+/* compares if type already reported and adds it to the variable of reported types */
+if not @tag then @tag = type;%tag endif
+'<' @tag
+if @tag <> type;%tag then
+	' metaType="' type;%tagUpper '"'
+endif
+local 'this' write oid '_' _namespace() close
+if not $types =~ @this%wildsp then
+	variable 'types' append @this ' ' close
+	subreport '_typeNPContent' run
+else
+	' href="#' subreport '_type_name_oid' run '">'
+endif
+'</' @tag '>' newline

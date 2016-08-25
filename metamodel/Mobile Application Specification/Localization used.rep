@@ -1,0 +1,17 @@
+Report 'Localization used'
+/* Produces localization string  */
+'Localization strings used: ' newline;
+foreach .(^Sound | ^Reference) {        
+	do :() {
+		if type =~ '*ID' then
+			if id = ''; then
+					'Localization ID is not defined'
+				else
+					id
+				endif
+				' for ' id;1; ' <' type;1 '>'
+				newline
+		endif
+	}
+}
+endreport

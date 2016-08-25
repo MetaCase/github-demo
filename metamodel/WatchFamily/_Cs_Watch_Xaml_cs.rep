@@ -1,0 +1,38 @@
+Report '_Cs_Watch_Xaml_cs'
+'using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace Digital_watch
+{
+    /// <summary>
+    /// Interaction logic for ' :Model name; '.xaml
+    ///
+    /// ' :Documentation '
+    ///
+    /// </summary>
+    public partial class ' :Model name; ' : AbstractWatchWindow
+    {
+        public ' :Model name; '() : base()
+        {
+            InitializeComponent();
+
+            master = new Master();
+            master.init(new Display' do ~().Display { id } '(), new ' do ~().LogicalWatch { id } '(master));
+
+            WatchCanv.init(master, this.GetType().ToString().Split(''.'').Last<String>(), nameLabels, zoneLabels, iconLabels);
+        }
+    }
+}
+'
+endreport

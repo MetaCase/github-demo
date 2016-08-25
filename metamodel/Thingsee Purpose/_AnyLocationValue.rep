@@ -1,0 +1,22 @@
+_AnyLocationValue()
+'
+                {
+                  "sId": "0x00010100",
+                  "threshold": {
+                    "count": 1
+                  },' newline
+						_measurement()
+'                  "thresholds": {
+                    "isAny": true
+                  }
+                },
+                {
+                  "sId": "0x00010200",
+                  "threshold": {
+                    "count": 1
+                  },' newline
+						_measurement()
+'                  "thresholds": {
+                    "isAny": true
+                  }
+                }'

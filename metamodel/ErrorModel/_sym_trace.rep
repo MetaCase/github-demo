@@ -1,0 +1,18 @@
+Report '_sym_trace'
+_translators()
+variable oid;1 '_reportedRoles' write ' ' close
+$found = ' '  
+variable 'found' write
+foreach .() where :Has error? {
+	oid ' ' 
+	do ~FaultIn~FailureOut {
+		_sym_subTrace(oid;3, oid;3, oid;3)
+	}
+}
+close
+local 'thisElem' write oid '_' oid;1 close
+/* oid%wildsp */
+if $found =~ @thisElem%wildsp then
+	'T'
+endif
+endreport

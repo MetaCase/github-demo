@@ -1,0 +1,37 @@
+Graph_HardwareDesignArchitecture_user_3400132575
+aWN
+10_13082
+HardwareComponentType
+Graph: aWN <HardwareComponentType> 10_13082
+	__UUID: CT1tK3xCS32g0eUQZYHIlQ
+	Type: aWN <NodeType>
+	Object: aWN <NodeType> <NodeType> 10_13099
+		__UUID: GgkSnoXmRE+JoJXo8DVurA
+		Short name: aWN
+		Name: 
+		Description: 
+		ExecutionRate: 1.0
+	Show report: Checking
+	Show allocated prototypes: F
+	Show oid: F
+Object: LockingStatus <IOHardwarePinIn> 10_13127
+	__UUID: y2qJwThxR1Oq5q0T2cq04A
+	Short name: LockingStatus
+	Name: 
+	IsGround: F
+	Type: digital
+	Description: 
+Object: WheelSpeed <IOHardwarePinIn> 10_13153
+	__UUID: +EgkS/PFRCiJ2Z+1EbMFQQ
+	Short name: WheelSpeed
+	Name: 
+	IsGround: F
+	Type: analog
+	Description: 
+Object: BrakeStrength <IOHardwarePinOut> 10_13179
+	__UUID: paLOn/qdRd+dp07z6Y2m0A
+	Short name: BrakeStrength
+	Name: 
+	IsGround: F
+	Type: digital
+	Description: 

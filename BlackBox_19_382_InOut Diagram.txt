@@ -1,0 +1,30 @@
+Graph_InOut_Diagram_sysadmin_3496403299
+BlackBox
+19_382
+InOut Diagram
+Graph: BlackBox <InOut Diagram> 19_382
+	Name: BlackBox
+Object: 5 <BigIn [Port]> 19_459
+	Name: 5
+Object: 1 <BigIn [Port]> 19_648
+	Name: 1
+Object: 4 <BigIn [Port]> 19_999
+	Name: 4
+Object: 4 <BigOut [Port]> 19_489
+	Name: 4
+Object: 1 <BigOut [Port]> 19_762
+	Name: 1
+Object: 6 <BigOut [Port]> 19_925
+	Name: 6
+Object: 3 <BigOut [Port]> 19_991
+	Name: 3
+Object: 6 <LittleIn [Port]> 19_627
+	Name: 6
+Object: 3 <LittleIn [Port]> 19_667
+	Name: 3
+Object: 2 <LittleIn [Port]> 19_993
+	Name: 2
+Object: 2 <LittleOut [Port]> 19_715
+	Name: 2
+Object: 5 <LittleOut [Port]> 19_819
+	Name: 5

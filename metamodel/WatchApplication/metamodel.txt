@@ -1,0 +1,242 @@
+==========================
+Graph Type
+==========================
+WatchApplication
+	A WatchApplication diagram defines the state automaton that implements a logical watch or a watch application.
+	---------------------------------------------
+	Application name: String
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Action
+	An Action is a top-level construct for all operations carried out during the state transition in a state automaton.
+	---------------------------------------------
+Alarm
+	An Alarm represents an instance of system alarm.
+	---------------------------------------------
+	Name: String
+	Senses Local Time: Boolean
+Button
+	A Button represents both a physical watch button (in WatchFamily diagram) and an event raised when button is pressed (in WatchApplication diagram).
+	---------------------------------------------
+	Button name: String
+DisplayFn
+	A DisplayFn is the definition of a display function that is used to present the time on display.
+	---------------------------------------------
+	Name: String
+	Central: String
+Icon
+	An Icon represents a graphical indicator shown on display when a certain service is active.
+	---------------------------------------------
+	IconID: String
+Start [Watch]
+	A Start state for the watch application state automaton.
+	---------------------------------------------
+State [Watch]
+	A State is an intermediate state in state automaton that defines a logical watch application. State has certain persistency and certain activities that are carried out while the state is active.
+	---------------------------------------------
+	State name: String
+	DisplayFn: DisplayFn
+	Blinking: String
+	Documentation: Text
+Stop [Watch]
+	A Stop state for watch application state automaton (escapes the current state automaton, returning focus on higher level state automaton if possible)
+	---------------------------------------------
+Variable
+	A Value represents a variable with type and value.
+	---------------------------------------------
+	Name: String
+	Type: String
+	Documentation: Text
+VariableRef
+	A VariableRef is a reference to a variable.
+	---------------------------------------------
+	Name: String
+	Type: String
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Alarm
+	An Alarm is a relationship that operates on system alarms, setting them on or off.
+	---------------------------------------------
+Icon
+	An Icon relationship is used to set icons on or off.
+	---------------------------------------------
+RingState
+	A RingState is a special case of Transition which is triggered by the system alarm when alarm time is reached.
+	---------------------------------------------
+Roll
+	A Roll relationship rolls the given time unit up or down.
+	---------------------------------------------
+	Up?: Boolean
+	Time unit: String
+Set
+	A Set relationship stores the result of an action into the given element.
+	---------------------------------------------
+Transition
+	A Transition describes the situation where system state changes. The transition is triggered by an event (usually raised when a button is pressed) and a set of actions can be executed during the transition before entering the new state.
+	---------------------------------------------
+
+==========================
+Role Types
+==========================
+Action
+	Used with Transition relationship to associate the transtition with Action object that defines the actions carried out during the transition.
+	---------------------------------------------
+ActionBody
+	Used with Alarm, Icon, Roll and Set relationships to associate a  operation with a certain Action object.
+	---------------------------------------------
+	Order: String
+Boolean
+	Used with Icon relationship to toggle icon on and off.
+	---------------------------------------------
+	Operation: String
+DisplayFnBody
+	Used in Set relationship to show the outcome of an operation with a display function associated with this role.
+	---------------------------------------------
+Event
+	Used with Transition relationship to associate the transition with its triggering event.
+	---------------------------------------------
+From
+	Used with Transition relationship to denote the State object from which the transition is started. Used with RingState relationship to associate the raising of alarm with activating system alarm.
+	---------------------------------------------
+Get
+	Used with Set and Alarm relationships to retrieve a value from a variable for execution of an operation (like plus, minus, etc.).
+	---------------------------------------------
+Minus
+	Used with Set and Alarm relationships to subtract a value of a variable associated with this role from a value of a variable associated by the preceeding Get role. The outcome is store into a variable associated with the following Set role.
+	---------------------------------------------
+Off
+	Used with Alarm relationship to turn off the Alarm that has been set.
+	---------------------------------------------
+Plus
+	Used with Set and Alarm relationships to add a value of a variable associated with this role to a value of a variable associated by the preceeding Get role. The outcome is store into a variable associated with the following Set role.
+	---------------------------------------------
+Set
+	Used with Set, Alarm and Roll relationships to store the outcome of preceeding operation into a variable.
+	---------------------------------------------
+To
+	Used with Transition relationship to denote the destination State object for the transition. Used with RingState relationship to associate the raising of alarm with the State object that will handle the alarm.
+	---------------------------------------------
+
+==========================
+Extra Types
+==========================
+
+==========================
+Bindings
+==========================
+Alarm
+	ActionBody: Action
+	Get: Variable
+0..N	Minus: Variable
+0..N	Plus: Variable
+	Set: Alarm
+Alarm
+	ActionBody: Action
+	Off: Alarm
+Icon
+	ActionBody: Action
+	Boolean: Icon
+RingState
+	From: Alarm
+	To: State [Watch], Stop [Watch]
+Roll
+	ActionBody: Action
+	Set: Variable
+Set
+	ActionBody: Action
+	Get: Variable
+0..N	Minus: Variable
+0..N	Plus: Variable
+	Set: Variable
+Set
+	DisplayFnBody: DisplayFn
+	Get: Variable
+0..N	Minus: Variable
+0..N	Plus: Variable
+Transition
+	From: Start [Watch]
+0..1	Action: Action
+	To: State [Watch]
+Transition
+	From: State [Watch]
+0..1	Event: Button
+0..1	Action: Action
+	To: State [Watch]
+Transition
+	From: State [Watch]
+0..1	Event: Button
+0..1	Action: Action
+	To: Stop [Watch]
+
+==========================
+Constraints
+==========================
+Alarm may be in at most 1 From role
+DisplayFn may be in at most 1 DisplayFnBody role
+Start [Watch] may be in at most 1 From role
+VariableRef may be in at most 0 Roll relationships
+Start [Watch] may occur at most 1 time
+Property "Name" in Alarm must have unique values
+Property "Name" in DisplayFn must have unique values
+Property "Name" in Variable must have unique values
+Property "State name" in State [Watch] must have unique values
+
+==========================
+Subgraphs
+==========================
+Decompositions:
+	State [Watch]
+		WatchApplication
+
+==========================
+Generators
+==========================
+C state machine
+Cs state machine
+Java state machine
+
+==========================
+Sub-Generators
+==========================
+_Actions
+_Alarm
+_calcValue
+_CCalcValue
+_CDisplayFns
+_CEnums
+_CRunWatch
+_Cs_Actions
+_Cs_Actions_Alarm
+_Cs_Actions_Icon
+_Cs_Actions_Roll
+_Cs_Actions_Set
+_Cs_calcValue
+_Cs_csfile
+_Cs_DisplayFns
+_Cs_getSet
+_Cs_LogicalWatches
+_Cs_variables
+_C_Alarm
+_C_Icon
+_C_Roll
+_C_Set
+_Decompositions
+_DisplayFns
+_getSet
+_Icon
+_Java
+_JavaFile
+_Roll
+_Set
+_StateData
+_StateDisplayData
+_StateDisplayDataContent
+_TransitionData
+_Variables
+

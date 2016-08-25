@@ -1,0 +1,27 @@
+_checkPrototypesInEAXML()
+foreach .(*Prototype) 
+{	do decompositions 
+	{	if not $TypesInEAXML =~ oid%wildsp and not $ReportedTypeDefsErrors =~ oid%wildsp then
+			variable 'ReportedTypeDefsErrors' append oid ' ' close
+			_reportWarnings()
+			'Warning: ' id ' <' type '> is not defined in any package' newline
+			_checkPrototypesInEAXML()
+		endif 
+		
+		if not $EATypeGraphs =~ oid%wildsp then
+			variable 'ReportedTypeDefsErrors' append oid ' ' close
+			_reportWarnings()
+			'Warning: ' id ' <' type '> referred via '
+			do stack 
+			{	if type = 'SystemModel' and metatype = 'Graph' then 
+					id ' <' type '> is not defined in any package' newline
+				endif
+			}
+		endif
+		
+		if type = 'AnalysisFunctionType' or type = 'DesignFunctionType' then
+			variable 'typesChecked' append oid ' ' close
+			_EAXML_CheckDataTypesInFunctionTypes()				
+		endif
+	}
+}

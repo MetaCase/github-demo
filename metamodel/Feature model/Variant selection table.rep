@@ -1,0 +1,14 @@
+Report 'Variant selection table'
+_translators()
+filename subreport '_default directory' run '"' id%file '.html"' write
+'<html><head>'
+subreport '__stylesheet in HTML' run
+'</head><body>' newline
+'<table border="1">' newline
+'<tr><th><b>Feature</b></th><th><b>Choices</b></th></tr>' newline
+subreport '_features' run
+'</table>'newline; 
+'</body></html>'
+close
+external subreport '_default directory' run '"' id%file '.html"' execute
+endreport

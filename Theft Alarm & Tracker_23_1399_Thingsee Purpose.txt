@@ -1,0 +1,126 @@
+Graph_Thingsee_app_sysadmin_3617045505
+Theft Alarm & Tracker
+23_1399
+Thingsee Purpose
+Graph: Theft Alarm & Tracker <Thingsee Purpose> 23_1399
+	Name: Theft Alarm & Tracker
+	Description: Checks location of the device.
+Object: Impact >1.2 (g) <Acceleration> 23_1464
+	Direction: Any
+	Trigger if over (g): 1.2
+	Trigger if under (g): 0
+Object: SMS555-5555(Battery level is below 10%) <Action> 23_1488
+	Send saved logs to cloud: F
+	Send event to: none
+	Send event to cloud URL: 
+	Send SMS message: 555-5555(Battery level is below 10%)
+	Object: 555-5555(Battery level is below 10%) <Send SMS message> 23_1506
+		To (phone number): 555-5555
+		Message: Battery level is below 10%
+Object: SMS555-5555(Your IoT device has been stolen!) <Action> 23_1516
+	Send saved logs to cloud: F
+	Send event to: none
+	Send event to cloud URL: 
+	Send SMS message: 555-5555(Your IoT device has been stolen!)
+	Object: 555-5555(Your IoT device has been stolen!) <Send SMS message> 23_1534
+		To (phone number): 555-5555
+		Message: Your IoT device has been stolen!
+Object: push notification <Action> 23_1558
+	Send saved logs to cloud: F
+	Send event to: push notification
+	Send event to cloud URL: 
+	Send SMS message: 
+Object: SMS555-5555(Never mind.) <Action> 23_1576
+	Send saved logs to cloud: F
+	Send event to: none
+	Send event to cloud URL: 
+	Send SMS message: 555-5555(Never mind.)
+	Object: 555-5555(Never mind.) <Send SMS message> 23_1594
+		To (phone number): 555-5555
+		Message: Never mind.
+Object: <10%  <Battery> 23_1478
+	Trigger if battery over (%): 
+	Trigger if battery under (%): 10
+Object: Thingsee Purpose is based on the sensors and services of Internet of Things device Thingsee.  The language allows to use various sensors (Accelerator, Timer, Geofence, Location, Speed, Temperature, Humidity, Pressure, Luminance) and interact with the world via services (cloud, mobile, sms). Language provides also capabilities to follow the status of the device like its batter level and charging status.  The language guides creating applications as well as checks if they try to monitor the device in unsafe situations (too warm, too big G forces).
+
+Generator produces the jsn code that can be uploaded to the IoT device and executed there. <Comment> 23_1808
+	Description: Thingsee Purpose is based on the sensors and services of Internet of Things device Thingsee.  The language allows to use various sensors (Accelerator, Timer, Geofence, Location, Speed, Temperature, Humidity, Pressure, Luminance) and interact with the world via services (cloud, mobile, sms). Language provides also capabilities to follow the status of the device like its batter level and charging status.  The language guides creating applications as well as checks if they try to monitor the device in unsafe situations (too warm, too big G forces).
+
+Generator produces the jsn code that can be uploaded to the IoT device and executed there.
+Object: Application monitors if the boat leaves the harbor and informs the user via SMS. It uses accelerator to monitor first impact before using GPP (to save battery). <Comment> 23_1834
+	Description: Application monitors if the boat leaves the harbor and informs the user via SMS. It uses accelerator to monitor first impact before using GPP (to save battery).
+Object: 43.7368715467591,7.421779632568359,43.73764672417157,7.429547309875488,43.73507309651425,7.430577278137207,43.73330560140726,7.428045272827148,43.73253036779729,7.422552108764648 outside geofence <Geofence> 23_1604
+	Geofence value: 43.7368715467591,7.421779632568359,43.73764672417157,7.429547309875488,43.73507309651425,7.430577278137207,43.73330560140726,7.428045272827148,43.73253036779729,7.422552108764648
+	Trigger if: outside geofence
+Object: 43.7368715467591,7.421779632568359,43.73764672417157,7.429547309875488,43.73507309651425,7.430577278137207,43.73330560140726,7.428045272827148,43.73253036779729,7.422552108764648 inside geofence <Geofence> 23_1614
+	Geofence value: 43.7368715467591,7.421779632568359,43.73764672417157,7.429547309875488,43.73507309651425,7.430577278137207,43.73330560140726,7.428045272827148,43.73253036779729,7.422552108764648
+	Trigger if: inside geofence
+Object: Loc <Location> 23_1544
+	Trigger: when sense has any value
+	Trigger if over (meters): 
+	Trigger if under (meters): 
+Object: Sleeping <State> 23_1410
+	Name: Sleeping
+	Start state: T
+	Always active: F
+	Description: 
+Object: Area check <State> 23_1428
+	Name: Area check
+	Start state: F
+	Always active: F
+	Description: 
+Object: Tracking <State> 23_1446
+	Name: Tracking
+	Start state: F
+	Always active: F
+	Description: 
+Relationship: Battery warning <Transition> 23_1892
+	Name: Battery warning
+  Role: Action <Action>  Object: <Action> 23_1488
+  Role: From <From>  Object: <State> 23_1410
+  Role: F <PollTrigger>  Object: <Battery> 23_1478
+	Log values to device: F
+	Poll values after every: 12
+	Poll unit: hours
+  Role: To <To>  Object: <State> 23_1410
+Relationship: In area <Transition> 23_1926
+	Name: In area
+  Role: Action <Action>  Object: <Action> 23_1576
+  Role: From <From>  Object: <State> 23_1446
+  Role: F <PollTrigger>  Object: <Geofence> 23_1614
+	Log values to device: F
+	Poll values after every: 15
+	Poll unit: minutes
+  Role: To <To>  Object: <State> 23_1410
+Relationship: Report location <Transition> 23_1956
+	Name: Report location
+  Role: Action <Action>  Object: <Action> 23_1558
+  Role: From <From>  Object: <State> 23_1446
+  Role: F <PollTrigger>  Object: <Location> 23_1544
+	Log values to device: F
+	Poll values after every: 15
+	Poll unit: minutes
+  Role: To <To>  Object: <State> 23_1446
+Relationship: Bump detection <Transition> 23_1980
+	Name: Bump detection
+  Role: From <From>  Object: <State> 23_1410
+  Role: To <To>  Object: <State> 23_1428
+  Role: F <Trigger>  Object: <Acceleration> 23_1464
+	Log values to device: F
+Relationship: In area <Transition> 23_1988
+	Name: In area
+  Role: From <From>  Object: <State> 23_1428
+  Role: F <PollTrigger>  Object: <Geofence> 23_1614
+	Log values to device: F
+	Poll values after every: 1
+	Poll unit: seconds
+  Role: To <To>  Object: <State> 23_1410
+Relationship: Out-of-area <Transition> 23_2014
+	Name: Out-of-area
+  Role: Action <Action>  Object: <Action> 23_1516
+  Role: From <From>  Object: <State> 23_1428
+  Role: F <PollTrigger>  Object: <Geofence> 23_1604
+	Log values to device: F
+	Poll values after every: 1
+	Poll unit: seconds
+  Role: To <To>  Object: <State> 23_1446

@@ -1,0 +1,14 @@
+Report '_Constraints'
+if :Constraints; then
+	'		// ********************************************************************' newline
+	'		// Constraints' newline
+	'		// ********************************************************************' newline
+	do :Constraints { 
+			'		iConstraint = new Constraint("' id '","' :Expression '","' :Language spec '","' :Evaluation policy '");' newline
+			'		i' Type;1;'.addConstraint(iConstraint);' newline 
+			do :Tags {'		' :Java instance name '.addTaggedModelElement(iConstraint);' newline}
+		newline
+ 	}
+endif
+newline
+endreport

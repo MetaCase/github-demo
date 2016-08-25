@@ -1,0 +1,23 @@
+_outputBindings(@tab)
+/* Outputs bindings in the graph */
+foreach >() orderby type, objectid num
+{
+	'  Relationship: '
+	_outputProperties(@tab)
+	
+	do explosions orderby type, objectid {
+		'	Explode to: ' id ' <' type '>' newline
+	}
+	
+	do ~() {
+		'    Role: ' 
+		_outputProperties(@tab)
+		do #() {
+			'	Port: ' id ' <' type '>' newline
+		}
+
+		do explosions orderby type, objectid {
+			'	Explode to:  ' id ' <' type '>' newline
+		}	
+	}
+}

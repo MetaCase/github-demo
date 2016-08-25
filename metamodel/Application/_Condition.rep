@@ -1,0 +1,10 @@
+Report '_Condition'
+/* Produce condition code */
+'def ' type oid '():' newline
+'	# Condition terms' newline
+if :Condition; then
+	do :Condition; { '	' id newline }
+endif
+'	# Condition results' newline
+subreport '_next condition element' run
+endreport

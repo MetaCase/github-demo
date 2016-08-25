@@ -1,0 +1,14 @@
+Report '_Multi_query'
+/* Produce two-field text input dialog code */
+'def ' subreport '_Internal name' run '():' newline
+'# Multi Query ' :Prompt1; ' and ' :Prompt2; newline
+'	global ' :Return variable1; newline
+'	global ' :Return variable2; newline
+'	tempVar' oid ' = appuifw.multi_query(u"' :Prompt1; '",u"' :Prompt2; '")' newline
+'	if tempVar' oid ':' newline
+'		' :Return variable1; ' = tempVar' oid '[0]' newline
+'		' :Return variable2; ' = tempVar' oid '[1]' newline
+subreport '_next query element' run
+'	else: # Cancel selected' newline
+subreport '_Back' run
+endreport

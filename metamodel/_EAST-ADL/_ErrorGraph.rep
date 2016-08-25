@@ -1,0 +1,44 @@
+_ErrorGraph()
+
+@root = 'T' /* does not have prototypes */
+foreach .(*FunctionPrototype) {
+	@root = 'F'
+}
+
+'	<graph id="_'oid'" type="Graph_ErrorModel_sysadmin_3509186594">
+		<slot name="Short name">
+			<value>
+				<string>' :FunctionName%xml '</string>
+			</value>
+		</slot>
+		<slot name="Name">
+			<value>
+				<string>' :Name%xml '</string>
+			</value>
+		</slot>
+		<slot name="Description">
+			<value>
+				<text>':Description%xml '</text>
+			</value>
+		</slot>' newline
+		_ErrorFaultInPorts()
+		_ErrorFailureOutPorts()		
+		if @root = 'F' then
+			_ErrorModelPrototypes()
+			_ErrorBindings()	
+			_DiagramRepr()
+		else
+			@addOperator = ''
+			foreach .(InFlowPort | ServerPort) { @addOperator++%null }
+			if @addOperator = '' then
+				_ErrorBehaviorInternal()
+			else 
+				if @addOperator = '1' then
+					_ErrorBehaviorSingle()
+				else
+					_ErrorBehaviourOperators() 	/* generate default error behavior logic */
+				endif
+			endif 
+		endif
+'	</graph>
+'

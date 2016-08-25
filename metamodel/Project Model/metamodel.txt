@@ -1,0 +1,83 @@
+==========================
+Graph Type
+==========================
+Project Model
+	Project model forms the home-page of the project. It is used to illustrate graphs and subprojects related to a project, create project documentation to all graphs and subprojects described in the project model and it can be used to illustrate different versions of project documentation.  
+	---------------------------------------------
+	Project name: String
+	Status: String
+	Project manager: Person
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Graph
+Subproject
+Note
+	Note is a special object for adding additional text anywhere in the graphs. Note belongs to many languages and has only one property, Documentation.
+	---------------------------------------------
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Relates
+	Link type: String
+	Documentation: Text
+
+==========================
+Role Types
+==========================
+From
+To
+
+==========================
+Extra Types
+==========================
+Person
+	Person is used to describe developers involved in a project (i.e. attached to the project model) and authors of developed models. Person can be characterized with a name, e-mail address, and with a contact address. 
+	---------------------------------------------
+	Name: String
+	E-mail: String
+	Contact address: Text
+
+==========================
+Bindings
+==========================
+Relates
+	From: Graph, Subproject
+	To: Graph, Subproject
+
+==========================
+Constraints
+==========================
+
+==========================
+Subgraphs
+==========================
+Decompositions:
+	Graph
+		Graph
+	Subproject
+		Project Model
+
+==========================
+Generators
+==========================
+!Doc
+!HTML
+Export to HTML
+Export to Word
+
+==========================
+Sub-Generators
+==========================
+_frameset in HTML
+_imagemap_href
+_left frame in HTML
+_Project model documentation in HTML
+_Project model documentation in RTF
+_subgraphs and projects in HTML
+

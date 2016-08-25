@@ -1,0 +1,8 @@
+Report 'Check'
+$warnings_found=$total='0'
+subreport '_check for cycles' run
+subreport '_objects with no relationships' run
+subreport '_proxy and lookup relationships' run
+variable 'total' write math $warnings_found evaluate close
+if $total > '0' then $total ' warnings found' else 'No warnings' endif
+endreport

@@ -1,0 +1,8 @@
+_HardwareComponentsWithoutAllocations()
+foreach .(^DesignFunctionPrototype | ^FunctionConnector*) 
+{
+	if not ~() then
+		_reportWarnings()
+		'Warning: ' id ' does not have any allocated DesignFunctionPrototypes or FunctionConnectors' newline
+	endif
+}

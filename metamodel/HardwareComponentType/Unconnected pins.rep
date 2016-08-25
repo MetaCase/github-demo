@@ -1,0 +1,28 @@
+Report 'Unconnected pins'
+subreport '_translators' run
+/* Reports the unconnected pins */
+foreach .HardwareComponentPrototype
+{
+	$pins = ' '
+	$found = 'F'
+	$unused_pins = ''
+	/* Set the pins variable to include all the connected pins */
+	do #() { 
+		variable 'pins' append oid ' ' close
+	}
+	/* Compares all the pins the the connected pins (pins variable) */
+	do decompositions {
+		foreach .(*Pin*) {
+			if not $pins =~ oid%wildsp then
+				variable 'unused_pins' append '- ' id ' <' type '>' newline close
+				$found = 'T'
+			endif
+		}
+	}
+	/* Report all the unconnected pins */
+	if $found = 'T' then
+		id ' <' type '> has unconnected pin(s): 'newline
+		$unused_pins 
+	endif
+}
+endreport

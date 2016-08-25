@@ -1,0 +1,9 @@
+_Cycle()
+do ~(Realized | Start | Parent ) {
+	do .(*) { $this = oid }
+	do ~(RealizedBy | End | Child ).() {
+		if oid = $this; then
+			'Error: cycle '
+		endif
+	}
+}

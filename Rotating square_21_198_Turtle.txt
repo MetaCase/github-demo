@@ -1,0 +1,27 @@
+Graph_Turtle_sysadmin_3526813991
+Rotating square
+21_198
+Turtle
+Graph: Rotating square <Turtle> 21_198
+	Name: Rotating square
+	Format: "red"
+	Object: "red" <Format> 21_237
+		Color: "red"
+		Width: 1
+	Animation: 0
+	Object: 0 <Animation> 21_517
+		Milliseconds Per Frame: 0
+		Display Every Nth Frame: 25
+	Documentation: 
+Object: d <For> 21_659
+	Variable: d
+	Start: 1
+	End: 500
+Object: d <Forward> 21_876
+	Pen down?: T
+	Distance: d
+Object: 89 <Right> 21_373
+	Degrees: 89
+Relationship: Sequence <Sequence> 21_218
+  Role: From <From>  Object: <Forward> 21_876
+  Role: To <To>  Object: <Right> 21_373

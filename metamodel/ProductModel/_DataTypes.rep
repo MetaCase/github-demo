@@ -1,0 +1,16 @@
+Report '_DataTypes'
+'		// ********************************************************************' newline
+'		//  Datatypes' newline
+'		// ********************************************************************' newline
+'		DataType iDataType;' newline
+'		ORB orb = ORB.init();' newline
+'		ORB ORB_ = orb '; newline
+foreach .DataType {
+	/* product must belong to the same package than the package the code is geneated */
+	'		iDataType = new ' :JavaMof ';' newline 
+	if :Documentation; then do :Documentation { '		// ' id newline } endif
+	'		productpackage_.addDataType(iDataType);' newline
+	newline newline 
+}
+
+endreport

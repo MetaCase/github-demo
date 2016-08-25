@@ -1,0 +1,97 @@
+==========================
+Graph Type
+==========================
+Turtle
+	The Turtle language is based on the concepts of Logo Turtle graphics, and generates code to run on Python. The language gives commands to a turtle with a pen, which draws lines along its path as it moves Forward and Backward, and turns Left and Right. The commands can be repeated by enclosing them in a For loop, whose variable can be used as a parameter in those commands.
+	---------------------------------------------
+	Name: String
+	Format: Format
+	Animation: Animation
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Forward
+	Pen down?: Boolean
+	Distance: String
+Backward
+	Pen down?: Boolean
+	Distance: String
+Right
+	Degrees: String
+Left
+	Degrees: String
+For
+	Variable: String
+	Start: String
+	End: String
+Format
+	Color: String
+	Width: String
+Note [Turtle]
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Sequence
+
+==========================
+Role Types
+==========================
+From
+To
+
+==========================
+Extra Types
+==========================
+Animation
+	Milliseconds Per Frame: String
+	Display Every Nth Frame: String
+_Action
+_Control
+_Move
+	Pen down?: Boolean
+	Distance: String
+_Turn
+	Degrees: String
+
+==========================
+Bindings
+==========================
+Sequence
+	From: _Control
+	To: _Control
+
+==========================
+Constraints
+==========================
+
+==========================
+Subgraphs
+==========================
+
+==========================
+Generators
+==========================
+!Build
+Autobuild
+
+==========================
+Sub-Generators
+==========================
+_DoAction
+_DoActionAnimation
+_DoActionBackward
+_DoActionFor
+_DoActionFormat
+_DoActionForward
+_DoActionLeft
+_DoActionRight
+_DoAndMove
+_DoPen
+_indent
+_outdent
+_Python
+

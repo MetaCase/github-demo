@@ -1,0 +1,25 @@
+Report '_XMI operations'
+/*	Operation will get its id from operation oid + classes oid
+*	visibility value comes from visibility field otherwise its set to "public"
+*	ownerScope value comes from scope field, if empty its set to "instance"
+
+*	isQuery value is set to "false"
+*	specification value comes from Body field
+*	isPolymorphic value is set to "false"
+*	concurrency value is set to "concurrent"
+*/
+	'<Foundation.Core.Operation xmi.id = "S.' oid '_' oid;1 '">' newline
+	'<Foundation.Core.ModelElement.name>' :Operation name;%xml '</Foundation.Core.ModelElement.name>' newline
+	'<Foundation.Core.ModelElement.visibility xmi.value = "' :Visibility; '"/>' newline
+	'<Foundation.Core.Feature.ownerScope xmi.value = "'
+	if :Operation type; ='instance' then 
+		:Operation type;
+		else 'classifier' 
+		endif
+	 '"/>' newline
+	'<Foundation.Core.BehavioralFeature.isQuery xmi.value = "false"/>' newline
+	'<Foundation.Core.Operation.specification>' :Body; '</Foundation.Core.Operation.specification>' newline
+	'<Foundation.Core.Operation.isPolymorphic xmi.value = "true"/>' newline
+	'<Foundation.Core.Operation.concurrency xmi.value= "concurrent"/>' newline
+	'</Foundation.Core.Operation>' newline
+endreport

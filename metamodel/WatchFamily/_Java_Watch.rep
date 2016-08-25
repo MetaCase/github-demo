@@ -1,0 +1,32 @@
+Report '_Java_Watch'
+
+variable 'sourceFile' write do $generatedpackage { id sep } id '.java' close
+if not $sourceFiles =~ $sourceFile%wildsp then		
+	variable 'sourceFiles' append $sourceFile ' ' close
+
+	filename $srcPath $sourceFile write
+		subreport '_Java_Applet' run
+	close
+
+	do .Display;
+	{
+		variable 'sourceFile' write do $generatedpackage { id sep } 'Display' id '.java' close
+		if not $sourceFiles =~ $sourceFile%wildsp then		
+			variable 'sourceFiles' append $sourceFile ' ' close
+			filename $srcPath $sourceFile write
+				subreport '_Java_Display' run
+			close
+		endif
+	}
+
+	do .LogicalWatch
+	{
+		do decompositions
+		{
+			subreport '_JavaFile' run
+		}
+	}
+
+endif
+
+endreport

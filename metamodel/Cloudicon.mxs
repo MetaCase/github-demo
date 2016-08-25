@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="Cloudicon">
+		<objectSymbol offset="40,20" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="40,20 105,20 105,61 40,61 40,20" targetPointX="72.5" targetPointY="40.5" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="61" version="1.2" width="105" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<radialGradient cx="0.5" cy="0.5" gradientUnits="objectBoundingBox" id="gradient3" r="0.70711" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="0.489443" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(170,170,170)"></stop>
+					</radialGradient>
+					<radialGradient cx="0.5" cy="0.5" gradientUnits="objectBoundingBox" id="gradient4" r="0.70711" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="0.489443" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(170,170,170)"></stop>
+					</radialGradient>
+					<radialGradient cx="0.5" cy="0.5" gradientUnits="objectBoundingBox" id="gradient1" r="0.70711" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="0.489443" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(170,170,170)"></stop>
+					</radialGradient>
+					<radialGradient cx="0.8875" cy="0.516667" gradientUnits="objectBoundingBox" id="gradient5" r="1.01264" sym:correctGamma="true" sym:fillType="SquareFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(0,0,0)"></stop>
+					</radialGradient>
+					<radialGradient cx="0.5" cy="0.5" gradientUnits="objectBoundingBox" id="gradient2" r="0.70711" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="0.489443" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(170,170,170)"></stop>
+					</radialGradient>
+				</defs>
+				<g fill="none" stroke="none" sym:height="41" sym:width="51" sym:x="4.0e1" sym:y="2.0e1">
+					<ellipse cx="51.7205" cy="45.625" fill="url(#gradient1)" rx="11.7205" ry="13.5114" stroke="rgb(170,170,170)" stroke-width="0" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<ellipse cx="64.7081" cy="33.5113" fill="url(#gradient2)" rx="11.7205" ry="13.5113" stroke="rgb(170,170,170)" stroke-width="0" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<ellipse cx="64.7081" cy="46.5568" fill="url(#gradient3)" rx="11.7205" ry="13.5113" stroke="rgb(170,170,170)" stroke-width="0" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<ellipse cx="79.2795" cy="47.4886" fill="url(#gradient4)" rx="11.7205" ry="13.5114" stroke="rgb(170,170,170)" stroke-width="0" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<ellipse cx="65.9751" cy="45.1591" fill="rgb(255,255,255)" rx="22.4906" ry="10.7159" stroke="rgb(255,255,255)" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<ellipse cx="64.708" cy="39.5682" fill="rgb(255,255,255)" rx="9.18636" ry="14.4432" stroke="rgb(255,255,255)" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="X" xmlns="http://www.w3.org/2000/svg">ReportTextSource:if :Send saved logs to cloud; or :Send event to; &lt;&gt; 'none' then
+'X'
+endif</displayCondition>
+					</metaInfo>
+				</g>
+				<g fill="none" stroke="none" stroke-width="1" sym:height="10" sym:width="10" sym:x="6.0e1" sym:y="2.0e1">
+					<rect fill="rgb(255,255,255)" height="10" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="10" x="60" y="20">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<polyline fill="none" points="61.3333,26.6 62.3333,24.2 63.6667,27.6 65.3333,22.4 65.8333,24.8 67,21.4 68,26.2 68.8333,24" stroke="rgb(255,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polyline>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="T" xmlns="http://www.w3.org/2000/svg">PropertyTextSource:p31_266</displayCondition>
+					</metaInfo>
+				</g>
+				<polygon fill="url(#gradient5)" points="105,25 89.375,25 89.375,20 80,27.5 89.375,35 89.375,30 105,30" stroke="rgb(0,0,0)" stroke-width="1">
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="push notification" xmlns="http://www.w3.org/2000/svg">PropertyTextSource:a1bgol</displayCondition>
+					</metaInfo>
+				</polygon>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

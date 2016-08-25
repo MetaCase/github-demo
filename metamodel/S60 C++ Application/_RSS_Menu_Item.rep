@@ -1,0 +1,24 @@
+Report '_RSS_Menu_Item'
+'
+        MENU_ITEM 
+            {
+            command = ' :Command ';
+            txt = ' subreport '_qtn' run to '%lower' translate :UI Text Var; endto ';
+'
+foreach .Menu Pane;
+{	do ~Submenu
+	{	if :UI Text; = :UI Text;2; then
+			do ~Parent Menu.()
+			{	if oid = oid;4; then
+				'            cascade = ' to '%lower' translate subreport '_r' run id;2; endto ';' newline
+				endif
+			}
+		endif
+	}
+}
+
+if :Separator After; = 'T' then
+'            flags = EEikMenuItemSeparatorAfter;' newline
+endif
+'            }'
+endreport

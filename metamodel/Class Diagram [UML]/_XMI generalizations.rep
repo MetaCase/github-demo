@@ -1,0 +1,35 @@
+Report '_XMI generalizations'
+/*	Goes through each Generalization relationship by using classes Spacialization role 
+*	Generalization relationship get its xmi id from relatioships oid + specialization roles oid
+*	visibility value comes from visibility field 
+*	discriminator value comes from discriminator field 
+*	subtype will get its xmi id value from the Class which is in specialization role
+*	supertype will get its xmi id value from the Class which is in supertype role
+*/
+
+foreach ~Specialization
+	{
+	do >Generalization [UML];
+	{
+		'<Foundation.Core.Namespace.ownedElement>' newline
+		'<Foundation.Core.Generalization xmi.id = "G.' oid '_' oid;1 '">' newline
+		'<Foundation.Core.ModelElement.name>' id%xml '</Foundation.Core.ModelElement.name>' newline
+		'<Foundation.Core.ModelElement.visibility xmi.value = "' :Visibility; '"/>' newline
+		'<Foundation.Core.Generalization.discriminator>' :Discriminator;%xml '</Foundation.Core.Generalization.discriminator>' newline
+	}
+do .()
+	{ 
+		'<Foundation.Core.Generalization.subtype>' newline
+		'<Foundation.Core.Class xmi.idref = "S.' oid '"/>	<!--' id '-->' newline
+		'</Foundation.Core.Generalization.subtype>' newline
+	}
+do >Generalization [UML]~Superclass.()
+	{ 
+		'<Foundation.Core.Generalization.supertype>' newline 
+		'<Foundation.Core.Class xmi.idref = "S.' oid '"/>	<!--' id '-->' newline
+		'</Foundation.Core.Generalization.supertype>' newline
+	}
+	'</Foundation.Core.Generalization>' newline
+	'</Foundation.Core.Namespace.ownedElement>' newline
+}
+endreport

@@ -1,0 +1,405 @@
+==========================
+Graph Type
+==========================
+AllocationMatrix
+	EAST-ADL version M2.1.12
+	AllocationMatrix specifies how design functions are been allocated to hardware components.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+
+==========================
+Object Types
+==========================
+DesignFunctionPrototype
+	The DesignFunctionPrototype represents an occurrence of the DesignFunctionType that types it via the submodel structure.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+FunctionConnector
+	FunctionConnector allocates flow, power and client-server connections to hardware architecture.
+	---------------------------------------------
+	Connector: _FunctionConnector
+FunctionConnectors
+	FunctionConnectors is used to combine several function connectors for a single allocation.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+	Name: String
+	FunctionConnectors: OrderedCollection (_FunctionConnector)
+	Description: Text
+HardwareComponentPrototype
+	HardwareComponentPrototype presents an element of the hardware architecture. Its type is set in the subgraph and can be one of the following:
+	The Actuator prototype is the element that represents electrical actuators, such as valves, motors, lamps, brake units, etc. It refers to the type definition via decomposed submodel.
+	The Node protototype represents an ECU, i.e. an Electronic Control Unit, and an allocation target of FunctionPrototypes. Node represents the computer nodes of the embedded electrical/electronic system. Nodes consist of processor(s) and may be connected to sensors, actuators and other ECUs via a BusConnector. It refers to the type definition via decomposed submodel.
+	ElectricalComponent prototype represents a hardware element that supplies power. It refers to the type definition via decomposed submodel.
+	Sensor prototype represents a hardware entity for digital or analog sensor elements. It refers to the type definition via decomposed submodel.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+HardwarePortConnector
+	The HardwarePortConnector represents a logical connection that carries data from any sender to all receivers.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	BusSpeed: String
+		The net bus speed in bits per second, this is a mandatory value.
+		---------------------------------------------
+	BusType: String
+		HardwareBusKind is an enumeration type representing different kinds of busses.
+		---------------------------------------------
+	Description: Text
+	Connectors: OrderedCollection (HardwareConnector)
+		Collection of the wires using the HardwarePortConnector.
+		---------------------------------------------
+GenericConstraint
+	The GenericConstraint denotes a property, requirement, or a validation result for the identified element of the model.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Value: GenericConstraintValue
+	Kind: String
+	Modes: OrderedCollection (Mode)
+		The mode(s) where this requirement is valid.
+		---------------------------------------------
+	TargetTypes: OrderedCollection (Graph)
+	TargetObjects: OrderedCollection (Object)
+	TargetRelationships: OrderedCollection (Relationship)
+	Description: Text
+
+==========================
+Relationship Types
+==========================
+FunctionAllocation
+	Function Allocation specifies the mapping between a design function and hardware component.
+	---------------------------------------------
+Comment
+	Comment creates a link between comment or constraint and other design element.
+	---------------------------------------------
+
+==========================
+Role Types
+==========================
+InstanceRef
+Target
+Comment
+
+==========================
+Extra Types
+==========================
+_EAST-ADL
+	Abstract supertype of all EAST-ADL graph types
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+ArrayDatatype
+	ArrayDatatype is a datatype for an array of datatypes of the same type.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	MinLength: String
+	MaxLength: String
+	Type: _EADatatype
+	Description: Text
+CompositeDatatype
+	A CompositeDatatype represents a non-scalar datatype. The contained datatypePrototypes act as record variables to identify the ordered datatype instances of the tuple (the CompositeDatatype).
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	DatatypePrototypes: OrderedCollection (EADatatypePrototype)
+	Description: Text
+EABoolean
+	EABoolean is the primitive type that holds two literals: true, false.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	Description: Text
+EADatatypePrototype
+	The EADatatypePrototype represents a typed variable. It acts as an appearance of a datatype.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Type: _EADatatype
+EANumerical
+	EANumerical has attributes for modeling of the allowed range.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	Min: String
+		The minimum value of the range. Decimal values should be specified with .
+		---------------------------------------------
+	Max: String
+		The maximal value of the range. Decimal values should be specified with .
+		---------------------------------------------
+	Unit: Unit
+		The unit of data.
+		---------------------------------------------
+	Description: Text
+EAString
+	EAString is the primitive type that defines a sequence of characters in some suitable character set used to display information.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	Description: Text
+Enumeration
+	Enumeration is a kind of datatype, whose instances may be any number > 1 of user-defined enumeration literals. Enumerations contain at least two literals, otherwise it would be a constant. The contained literals need to be ordered.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	IsMultiValued: Boolean
+		This boolean attribute is true, if multiple enumeration values can be selected. It is false, if only one enumeration value is allowed to be selected.
+		---------------------------------------------
+	Literals: OrderedCollection (String)
+		Collection of literals (value) of the enumeration.
+		---------------------------------------------
+	Description: Text
+GenericConstraintValue
+	Store typed values in the model. The semantics of this element is defined by the element typed by the corresponding datatype.
+	---------------------------------------------
+	Value: String
+	Type: _EADatatype
+Mode
+	Modes are a way to introduce various configurations in the system to account for different states of the system, or of a hardware entity, or an application. The use of modes can be used to filter different views of the model. Modes are characterized by a Boolean condition provided as a String, which evaluates to true when the Mode is active. The Mode is active if and only if the condition is true.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Condition: String
+		A Boolean expression that characterizes the Mode, it evaluates to true when the Mode is active. The syntax and grammar of this expression is unspecified.
+		---------------------------------------------
+	Description: Text
+Quantity
+	The Quantity describes a physical dimension for use in numerical datatypes and expressions to facilitate dimension consistency and control.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	AmountOfSubstanceExp: String
+	ElectricCurrentExp: String
+	LengthExp: String
+	LuminousIntensityExp: String
+	MassExp: String
+	ThermodynamicTemperatureExp: String
+	TimeExp: String
+	Description: Text
+RangeableValueType
+	The RangeableValueType adds the ability to describe the accuracy, resolution, and the significant digits of the baseRangeable datatype.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	Accuracy: String
+		The accuracy of the data (e.g., the FunctionFlowports input or output).
+		---------------------------------------------
+	Resolution: String
+		The resolution of the data expressed as the size of the minimum difference between data values.
+		---------------------------------------------
+	SignificantDigits: String
+		SignificantDigits must be positive interger number.
+		---------------------------------------------
+	BaseRangeable: EANumerical
+		The datatype with additional attributes specified by this concept.
+		---------------------------------------------
+	Description: Text
+Unit
+	Unit descibes the unit of typed numerical values.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Factor: String
+	Offset: String
+	Symbol: String
+	Quantity: Quantity
+	UnitReference: Unit
+	Description: Text
+_EADatatype
+	EADatatype metaclass is a special kind of classifier, similar to a class. It differs from the class in that instances of a data type are identified only by their value.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+_FunctionPrototype
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+ClientServerInterface
+	The ClientServerInterface is used to specify the operations between client ports and server port. It indicates that the connected prototypes exchange client-server requests/responses via the ports.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+	Name: String
+	Description: Text
+Flow
+	Flow indicates that the connected FlowPorts exchange signals.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+	Name: String
+	Description: Text
+HardwareConnector
+	Hardware connectors represent wires that electrically connect the hardware components through its pins.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+	Name: String
+	Description: Text
+Power
+	Power indicates that the connected prototypes via their PowerPorts have physical interactions.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+	Name: String
+	Description: Text
+_FunctionConnector
+	The FunctionConnector indicates that the connected FunctionPorts exchange signals or client-server requests/responses.
+	---------------------------------------------
+
+==========================
+Bindings
+==========================
+Comment
+	Comment: DesignFunctionPrototype, FunctionConnector, FunctionConnectors, HardwareComponentPrototype, HardwarePortConnector
+	Comment: GenericConstraint
+Comment
+	Comment: GenericConstraint
+	Comment: DesignFunctionPrototype, FunctionConnector, FunctionConnectors, HardwareComponentPrototype, HardwarePortConnector
+FunctionAllocation
+	InstanceRef: DesignFunctionPrototype
+0..N	Comment: GenericConstraint
+	Target: HardwareComponentPrototype
+FunctionAllocation
+	InstanceRef: FunctionConnector, FunctionConnectors
+0..N	Comment: GenericConstraint
+	Target: HardwarePortConnector
+FunctionAllocation
+	Target: HardwareComponentPrototype
+0..N	Comment: GenericConstraint
+	InstanceRef: DesignFunctionPrototype
+FunctionAllocation
+	Target: HardwarePortConnector
+0..N	Comment: GenericConstraint
+	InstanceRef: FunctionConnector, FunctionConnectors
+
+==========================
+Constraints
+==========================
+Property "Connector" in FunctionConnector must have unique values
+Property "Short name" in DesignFunctionPrototype must have unique values
+Property "Short name" in HardwareComponentPrototype must have unique values
+Property "Short name" in HardwarePortConnector must have unique values
+
+==========================
+Subgraphs
+==========================
+
+==========================
+Generators
+==========================
+!Allocation report
+!Check
+Check
+Double axis checking
+Unallocated
+
+==========================
+Sub-Generators
+==========================
+_checkings
+_HardwareComponentsWithoutAllocations
+_Non-allocatedFunctions
+

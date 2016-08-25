@@ -1,0 +1,53 @@
+Report '_XMI associations'
+/*	Goes through each Association relationship
+*	Association will get its xmi id from own oid 
+*	visibility value is set to "public"
+*	isRoot value is set to "false"
+*	isLeaf value is set to "false"
+*	isAbstract value is set to "false"
+*	association role will get its id from association roles oid 
+*		visibility value is set to "public"
+*		isNavigable value comes from isNavigable? field, if empty its set to "false"
+*		isOrdered value comes from isOrdered? field, if empty its set to "false"
+*		aggregation value is set to "none"
+*		multiplicity value comes from Multiplicity field
+*		changeable value is set to "true"
+*		targeScope tvalue is set to "instance"
+*		associationEnd will get its xmi id value from the Classes oid 
+*/
+foreach >Association [UML]
+{
+	'<Foundation.Core.Namespace.ownedElement>' newline
+	'<Foundation.Core.Association xmi.id = "G.' oid '">
+	<Foundation.Core.ModelElement.name>' id '</Foundation.Core.ModelElement.name>
+	<Foundation.Core.ModelElement.visibility xmi.value = "public"/>
+	<Foundation.Core.GeneralizableElement.isRoot xmi.value = "false"/>
+	<Foundation.Core.GeneralizableElement.isLeaf xmi.value = "false"/>
+	<Foundation.Core.GeneralizableElement.isAbstract xmi.value = "false"/>' newline
+	'<Foundation.Core.Association.connection>' newline
+	do ~Association role
+		{ 
+		'<Foundation.Core.AssociationEnd xmi.id = "G.' oid '">' newline
+		'<Foundation.Core.ModelElement.name>' id '</Foundation.Core.ModelElement.name>' newline
+		'<Foundation.Core.ModelElement.visibility xmi.value = "public"/>
+		<Foundation.Core.AssociationEnd.isNavigable xmi.value = "'
+			if :Navigable?; then 'true' else 'false' endif '"/>
+		<Foundation.Core.AssociationEnd.isOrdered xmi.value = "'
+			if :Ordered?; then 'true' else 'false' endif '"/>
+		<Foundation.Core.AssociationEnd.aggregation xmi.value = "none"/>'
+		'<Foundation.Core.AssociationEnd.multiplicity>' :Multiplicity; '</Foundation.Core.AssociationEnd.multiplicity>
+		<Foundation.Core.AssociationEnd.changeable xmi.value = "none"/>' newline
+		'<Foundation.Core.AssociationEnd.targetScope xmi.value = "instance"/>' newline
+			do .()
+			{
+			'<Foundation.Core.AssociationEnd.type>'
+			'<Foundation.Core.Class xmi.idref = "S.' oid '"/>	<!--' id '-->' newline
+			'</Foundation.Core.AssociationEnd.type>' newline
+			}
+		'</Foundation.Core.AssociationEnd>' newline
+		}
+	'</Foundation.Core.Association.connection>' newline
+	'</Foundation.Core.Association>' newline
+	'</Foundation.Core.Namespace.ownedElement>' newline
+}
+endreport

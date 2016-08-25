@@ -1,0 +1,57 @@
+_cloud()
+newline
+if :Send event to; <> 'none'; then 
+	'                  "sendEvent": true,'
+else 
+	'                  "sendEvent": false,'
+endif
+
+if :Send saved logs to cloud; then
+	newline
+	'                  "sendLog": true,' 
+else
+	@falseNeeded = 'T'
+	do ~(*Trigger);1.(Timer | Humidity | Pressure | Luminance | Charger | Battery | Location | Geofence) 	{@falseNeeded = 'F'}
+	if @falseNeeded = 'T' then
+		newline
+		'                  "sendLog": false,' 
+	endif
+endif
+if :Send event to; = 'custom cloud URL' then 
+	newline
+	'                  "sendPush": false,' 
+	do :Send event to cloud URL; {
+		newline
+		'                  "host": "' :Host '"'
+		if :Port; then
+			',' newline
+			'                  "port": "' :Port '"'
+		endif
+		if :API; then
+			',' newline
+			'                  "api": "' :API '"' 
+		endif
+	}
+endif
+if :Send event to; = 'push notification'; then
+	newline 
+	'                  "sendPush": true'
+else
+	if :Send event to; <> 'custom cloud URL' then
+		newline
+		'                  "sendPush": false'
+	endif
+endif
+newline	
+'                }' 
+if :Send SMS message; then 
+	',' newline
+	do :Send SMS message; {
+		'                "sms": {
+                  "phoneNumber": [
+                    "' :To \(phone number\); '"
+                  ],
+                  "text": "' :Message '"
+                }'
+	}
+endif

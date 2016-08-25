@@ -1,0 +1,44 @@
+Report '_nonProperties'
+if metatype <> 'Graph' then
+do ~Has property [GOPRR]>() {
+	@coll=''
+	@localName = __(
+		do ~NonProperty of [GOPRR]
+		{	do .Object [GOPRR] {id;}
+			if :Collection; then 
+				@coll='s' 
+				's' 
+			endif
+		}
+	)
+	if :Local name; then @localName = :Local name; endif
+	'<slot id="u' _timestamp() '"'
+	' name="' @localName%xml '"'
+	' unique="' if :Uniqueness; = 'globally' then 'true' else 'false' endif '"'
+	'>' newline
+	do ~NonProperty of [GOPRR].Object [GOPRR]
+	{	'<property'
+		' id="' _type_name_oid('Property', @coll) '"'
+		' typeName="' id%xml @coll '"'
+		if _namespace() then
+			' type="' _type_name_oid('Property', @coll) '"'
+		endif
+		'>' newline
+		'<dataType>' newline
+		if @coll then 
+			'<simpleType>OrderedCollection</simpleType>' newline 
+			'</dataType>' newline
+			'<contentsDataType>' newline
+		endif
+		subreport '_types' run
+		if @coll then
+			'</contentsDataType>' newline
+		else
+			'</dataType>' newline
+		endif
+		'</property>' newline
+ 	}
+   '</slot>' newline
+}
+endif
+endreport

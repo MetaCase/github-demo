@@ -1,0 +1,14 @@
+Report 'Java state machine'
+
+	$frameworkpackage = 'com
+metacase
+watch
+framework'
+	$generatedpackage = 'com
+metacase
+watch
+generated'
+
+	subreport '_Java' run
+
+endreport

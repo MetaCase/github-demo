@@ -1,0 +1,13 @@
+Report '_MOFClasses_Supertypes'
+foreach .( * | ^Product ) { 				
+  if :Package = :Package name;2; then 	
+	if :Supertype; then
+		newline
+		'		// Supertypes for Object :' :Display name newline
+		'		i' type ' = (' type ') productpackage_.lookupElementExtended("' id '");' newline
+  		subreport '_Supertype' run
+  	 	newline newline
+	endif
+ endif
+}
+endreport

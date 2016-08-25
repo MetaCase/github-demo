@@ -1,0 +1,26 @@
+Report '_Reverse engineer Java dir'
+/* List all .java files under $dir into $files as absolute filenames */
+filename $dd 'dirclasses.bat' write
+	'dir /b /s "' $dir sep '*.java" >"' $dd 'classfiles.txt"' newline
+	/* canonicalize $dir while we're here */
+	'cd /D ' $dd newline
+	'set absdd=%CD%' newline
+	'cd /D ' $dir newline
+	'cd >"%absdd%\dir.txt"'
+close
+external '"' $dd 'dirclasses.bat' '"' executeBlocking
+variable 'files' write
+	filename $dd 'classfiles.txt' read
+close
+
+/* Make sure $dir is an absolute path with a final separator */
+variable 'dir' write
+	filename $dd 'dir.txt' read
+close
+do $dir where id<>'' 
+{	variable 'dir' write
+		id
+		if not id =~ '*\' then '\' endif
+	close
+}
+endreport

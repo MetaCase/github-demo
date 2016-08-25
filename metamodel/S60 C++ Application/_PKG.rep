@@ -1,0 +1,26 @@
+Report '_PKG'
+filename
+	subreport '_default directory' run 
+	'sis\' 
+	subreport '_app' run 
+	'_for_v09.pkg'
+write
+'; ' subreport '_app' run '.pkg
+
+; Languages
+&EN
+
+; Header
+#{"' subreport '_app' run '"},('  foreach .Application { :Uid } '),1,01,223
+
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+; Target
+"..\..\..\epoc32\release\thumb\urel\' subreport '_app' run '.app"-"!:\system\apps\' subreport '_app' run '\' subreport '_app' run '.app"
+"..\..\..\epoc32\release\thumb\urel\' subreport '_app' run '.rsc"-"!:\system\apps\' subreport '_app' run '\' subreport '_app' run '.rsc"
+"..\..\..\epoc32\release\thumb\urel\' subreport '_app' run '.aif"-"!:\system\apps\' subreport '_app' run '\' subreport '_app' run '.aif"
+"..\..\..\epoc32\release\thumb\urel\' subreport '_app' run '_caption.rsc"-"!:\system\apps\' subreport '_app' run '\' subreport '_app' run '_caption.rsc"'
+
+close
+
+endreport

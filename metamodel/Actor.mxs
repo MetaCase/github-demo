@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="Actor">
+		<objectSymbol offset="50,30" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="50,30 76.4,30 76.4,75.76 50,75.76 50,30" targetPointX="63.2" targetPointY="52.88" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="75.76" version="1.2" width="76.4" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<radialGradient cx="0.342857" cy="0.225" gradientUnits="objectBoundingBox" id="gradient1" r="1.12887" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(0,128,0)"></stop>
+					</radialGradient>
+					<radialGradient cx="0.348485" cy="0.351852" gradientUnits="objectBoundingBox" id="gradient2" r="0.919004" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(0,128,0)"></stop>
+					</radialGradient>
+				</defs>
+				<g fill="none" stroke="rgb(0,128,0)" stroke-width="0" sym:height="45.76" sym:width="26.4" sym:x="5.0e1" sym:y="3.0e1">
+					<ellipse cx="63.2" cy="60.36" fill="url(#gradient1)" rx="13.2" ry="15.4" stroke="rgb(0,128,0)" stroke-width="0" sym:startAngle="1.8e2" sym:sweepAngle="1.8e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<ellipse cx="63.2" cy="37.48" fill="url(#gradient2)" rx="6.6" ry="7.48" stroke="rgb(0,128,0)" stroke-width="0" sym:startAngle="0.0e0" sym:sweepAngle="3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

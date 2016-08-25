@@ -1,0 +1,115 @@
+Graph_ClockApplication_sysadmin_3150525787
+Simple
+9_371
+WatchApplication
+Graph: Simple <WatchApplication> 9_371
+	Application name: Simple
+	Documentation: A simple application for showing the current time. Allows setting of minutes and hours with only two buttons.
+Object: Action <Action> 9_606
+Object: Action <Action> 9_1253
+Object: Action <Action> 9_1566
+Object: Action <Action> 9_2317
+Object: Set <Button> 9_1072
+	Button name: Set
+Object: Mode <Button> 9_2489
+	Button name: Mode
+Object: editOffset <DisplayFn> 9_1260
+	Name: editOffset
+	Central: MINUTE
+Object:  <DisplayFn> 9_1854
+	Name: 
+	Central: MINUTE
+Object: Start [Watch] <Start [Watch]> 9_3074
+Object: EditMinutes <State [Watch]> 9_785
+	State name: EditMinutes
+	DisplayFn: editOffset
+	Object: editOffset <DisplayFn> 9_1260
+		Name: editOffset
+		Central: MINUTE
+	Blinking: MINUTE
+	Documentation: 
+Object: EditHours <State [Watch]> 9_2026
+	State name: EditHours
+	DisplayFn: editOffset
+	Blinking: HOUR_OF_DAY
+	Documentation: 
+Object: Show <State [Watch]> 9_2326
+	State name: Show
+	DisplayFn: 
+	Object:  <DisplayFn> 9_1854
+		Name: 
+		Central: MINUTE
+	Blinking: 
+	Documentation: 
+Object: tempOffset <Variable> 9_2617
+	Name: tempOffset
+	Type: METime
+	Documentation: 
+Object: sysTime <VariableRef> 9_2804
+	Name: sysTime
+	Type: METime
+	Documentation: This is the underlying system's real clock, unaffected by changing clockOffset to set the time the running Watch perceives.
+Object: clockTime <VariableRef> 9_3229
+	Name: clockTime
+	Type: METime
+	Documentation: This is the time as seen in the running watch. Internally it is generated on request from your real system time plus the clockOffset.
+Object: clockOffset <VariableRef> 9_3469
+	Name: clockOffset
+	Type: METime
+	Documentation: This is the offset between your computer's real clock and the clock time shown in the watch when it is running.
+Relationship: T <Roll> 9_491
+	Up?: T
+	Time unit: HOUR_OF_DAY
+  Role:  <ActionBody>  Object: <Action> 9_1253
+	Order: 
+  Role: Set <Set>  Object: <Variable> 9_2617
+Relationship: T <Roll> 9_2249
+	Up?: T
+	Time unit: MINUTE
+  Role:  <ActionBody>  Object: <Action> 9_2317
+	Order: 
+  Role: Set <Set>  Object: <Variable> 9_2617
+Relationship: Set <Set> 9_1164
+  Role:  <ActionBody>  Object: <Action> 9_1566
+	Order: 
+  Role: Get <Get>  Object: <VariableRef> 9_3469
+  Role: Set <Set>  Object: <Variable> 9_2617
+Relationship: Set <Set> 9_1473
+  Role:  <ActionBody>  Object: <Action> 9_606
+	Order: 
+  Role: Get <Get>  Object: <Variable> 9_2617
+  Role: Set <Set>  Object: <VariableRef> 9_3469
+Relationship: Set <Set> 9_2446
+  Role: DisplayFnBody <DisplayFnBody>  Object: <DisplayFn> 9_1854
+  Role: Get <Get>  Object: <VariableRef> 9_3229
+Relationship: Set <Set> 9_2674
+  Role: DisplayFnBody <DisplayFnBody>  Object: <DisplayFn> 9_1260
+  Role: Get <Get>  Object: <VariableRef> 9_2804
+  Role: Plus <Plus>  Object: <Variable> 9_2617
+Relationship: Transition <Transition> 9_1338
+  Role: Action <Action>  Object: <Action> 9_1253
+  Role: Event <Event>  Object: <Button> 9_1072
+  Role: From <From>  Object: <State [Watch]> 9_2026
+  Role: To <To>  Object: <State [Watch]> 9_2026
+Relationship: Transition <Transition> 9_1514
+  Role: Action <Action>  Object: <Action> 9_2317
+  Role: Event <Event>  Object: <Button> 9_1072
+  Role: From <From>  Object: <State [Watch]> 9_785
+  Role: To <To>  Object: <State [Watch]> 9_785
+Relationship: Transition <Transition> 9_1611
+  Role: Event <Event>  Object: <Button> 9_2489
+  Role: From <From>  Object: <State [Watch]> 9_2026
+  Role: To <To>  Object: <State [Watch]> 9_785
+Relationship: Transition <Transition> 9_2533
+  Role: From <From>  Object: <Start [Watch]> 9_3074
+  Role: To <To>  Object: <State [Watch]> 9_2326
+Relationship: Transition <Transition> 9_2621
+  Role: Action <Action>  Object: <Action> 9_1566
+  Role: Event <Event>  Object: <Button> 9_2489
+  Role: From <From>  Object: <State [Watch]> 9_2326
+  Role: To <To>  Object: <State [Watch]> 9_2026
+Relationship: Transition <Transition> 9_2809
+  Role: Action <Action>  Object: <Action> 9_606
+  Role: Event <Event>  Object: <Button> 9_2489
+  Role: From <From>  Object: <State [Watch]> 9_785
+  Role: To <To>  Object: <State [Watch]> 9_2326

@@ -1,0 +1,39 @@
+Report '_LOC'
+filename
+	subreport '_default directory' run 
+	'inc\'
+	subreport '_app' run 
+	'.loc'
+write
+'/*
+* ============================================================================
+*  Name     : ' subreport '_app' run '.loc
+*  Part of  : ' subreport '_app' run '
+*  ' subreport '_copyright' run '
+* ============================================================================
+*/
+
+#include <bldvariant.hrh>
+
+// Caption
+#define ' subreport '_caption prefix' run 'list          "' foreach .Application {:Name in List;} '"
+#define ' subreport '_caption prefix' run 'grid          "' foreach .Application {:Name in Grid;} '"
+
+//  LOCALISATION STRINGS
+
+#define ' subreport '_qtn' run 'title               "' subreport '_app' run '"
+
+'
+
+	foreach .View
+	{	'#define ' subreport '_qtn' run :View name var; '_tab	"' :View name; '"' newline}
+
+	foreach ~Menu
+	{	'#define ' subreport '_qtn' run :Menu title var; '	"' :Menu title txt; '"' newline}
+	
+	foreach .Menu Pane
+	{	do :Menu Items;
+		{	'#define ' subreport '_qtn' run :UI Text Var; '	"' :UI Text; '"' newline }
+	}
+close
+endreport

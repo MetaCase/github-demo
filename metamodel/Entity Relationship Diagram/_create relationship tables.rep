@@ -1,0 +1,39 @@
+Report '_create relationship tables'
+
+foreach .Relationship
+{
+	/* if NN relationship, create a table */
+	$isNNRelationship='T'
+	do >In relationship~Entity part {
+		if not :Cardinality =~ '*M*'
+			then $isNNRelationship=''
+		endif
+	}
+	if $isNNRelationship then  
+		variable 'targetTable' write :Relationship name;%var; close
+		'CREATE TABLE ' $targetTable ' (' newline
+		/* create direct attributes of the relationship */
+		variable 'ownAttributes' write
+			subreport '_create own attributes' run 
+		close
+		/* create foreign key attributes */
+		variable 'foreignAttributes' write
+			subreport '_create related entity FKs' run
+		close
+		
+		$ownAttributes
+		if $ownAttributes and $foreignAttributes then ',' newline endif
+		$foreignAttributes 
+	  	');'
+	   newline newline
+
+		if $foreignAttributes then
+			variable 'allForeignDeclarations' append
+				$foreignDeclarations
+				newline
+			close
+		endif
+	endif
+} /* relationships */
+
+endreport

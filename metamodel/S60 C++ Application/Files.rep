@@ -1,0 +1,23 @@
+Report 'Files'
+subreport '_translators' run 
+subreport '_RSS' run 
+subreport '_HRH' run 
+subreport '_LOC' run 
+subreport '_RSS_Aif' run 
+subreport '_RSS_caption' run 
+subreport '_PKG' run 
+subreport '_MMP' run 
+subreport '_INF' run 
+subreport '_C_App_CPP' run 
+subreport '_C_App_H' run 
+subreport '_C_AppUi_CPP' run 
+subreport '_C_AppUi_H' run 
+subreport '_C_Document_CPP' run 
+subreport '_C_Document_H' run 
+foreach .View 
+{	subreport '_C_View_CPP' run 
+	subreport '_C_View_H' run 
+	subreport '_C_Container_CPP' run 
+	subreport '_C_Container_H' run 
+}
+endreport

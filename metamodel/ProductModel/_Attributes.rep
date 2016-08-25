@@ -1,0 +1,41 @@
+Report '_Attributes'
+/* Reports both attributes and constants of MOFclass subtypes */
+if :Attributes; then
+	'		// ********* Attributes and constants *********' newline
+	do :Attributes {
+	  if not :Constant?; then
+		'		attribute = new Typeattribut("' id'");' newline
+		'		attribute.setMultiplicity(new MultiplicityType('
+		if :Multiplicity; then :Multiplicity else '1,1' endif
+		if :Is ordered?; then ', true' else ', false' endif
+		if :Is unique?; then ', true' else ', false ' endif
+		'));' newline
+      	if :Type; then '		attribute.setType((DataType) productpackage_.lookupElementExtended("' :Type '"));' newline
+		else '		attribute.setType((Classifier) productpackage_.lookupElementExtended("' :ObjectType:Class Name '"));' newline endif
+		
+		if :Initial value; then '		attribute.setInitial(' :Initial value ');' newline endif
+		if :Display name; then '		attribute.setDisplayname("'; :Display name; '");' newline endif
+		if :Documentation; then '		attribute.setAnnotation("'; :Documentation; '");' newline endif
+		do :Constraints {
+			'		iConstraint = new Constraint("' id '","' :Expression '","' :Language spec '","' :Evaluation policy '");' newline
+			'		attribute.addConstraint(iConstraint);' newline 
+			do :Tags {'		' :Java instance name '.addTaggedModelElement(iConstraint);' newline}
+		}
+		do :Tags {'		' :Java instance name '.addTaggedModelElement(attribute);' newline}
+	      '		i' if :Composite?;1; then 'composite' endif	 /* 1 for composite of MOFClass not attribute */
+		Type;1; '.addMofAttribute(attribute);' newline newline
+	  endif
+	}
+	do :Attributes {
+		if :Constant?; then
+			'		constant = Constant.create_constant("' id '",' newline
+			'			"' :Documentation '",' newline
+			'			new ' :Initial value ');' newline
+			'		constant.setType((DataType) productpackage_.lookupElementExtended("' :Type '"));' newline
+			do :Tags {'		' :Java instance name '.addTaggedModelElement(constant);' newline}
+			'		i' if :Composite?;1; then 'composite' endif	/* 1 for composite of MOFClass not attribute */
+			Type;1; '.addConstant(constant);' newline newline 
+		endif
+	}
+endif
+endreport

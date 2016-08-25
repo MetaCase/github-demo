@@ -1,0 +1,6 @@
+_sym_hide_PinName()
+/* hides pin name for library symbol from perimeter when connected to a role */
+@oid = oid
+do ~();1#(*PinInOut) where oid = @oid unique '1' 
+{	'T'
+}

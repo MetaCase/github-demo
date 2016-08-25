@@ -1,0 +1,25 @@
+Report '_XMI data types'
+/*	Goes through each Class [UML] and its attribute
+*	If data type found, data type will get its xmi id from own oid + classes oid
+*	visibility value is set to "public"
+*	isRoot value is set to "false"
+*	isLeaf value is set to "false"
+*	isAbstract value is set to "false"
+*/
+foreach .Class [UML] 
+{
+	do :Attributes;
+	{	if :Data type; <>'' then 
+		'<Foundation.Core.Namespace.ownedElement>' newline
+		'<Foundation.Core.DataType xmi.id = "G.' :Data type;%xml oid '_' oid;1 '">' newline
+		'<Foundation.Core.ModelElement.name>' :Data type;%xml '</Foundation.Core.ModelElement.name>' newline
+		'<Foundation.Core.ModelElement.visibility xmi.value = "public"/>' newline
+		'<Foundation.Core.GeneralizableElement.isRoot xmi.value = "false"/>' newline
+		'<Foundation.Core.GeneralizableElement.isLeaf xmi.value = "false"/>' newline
+		'<Foundation.Core.GeneralizableElement.isAbstract xmi.value = "false"/>' newline
+		'</Foundation.Core.DataType>' newline
+		'</Foundation.Core.Namespace.ownedElement>' newline
+	endif
+	}
+}
+endreport

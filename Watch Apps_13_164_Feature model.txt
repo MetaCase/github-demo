@@ -1,0 +1,51 @@
+Graph_Feature_model_user_3381090525
+Watch Apps
+13_164
+Feature model
+Graph: Watch Apps <Feature model> 13_164
+	Feature name: Watch Apps
+	Description: 
+Object: Time <Feature> 13_174
+	Name: Time
+	Binding time: 
+	Description: 
+Object: Alarm <Feature> 13_207
+	Name: Alarm
+	Binding time: 
+	Description: 
+Object: Timer <Feature> 13_312
+	Name: Timer
+	Binding time: 
+	Description: 
+Object: World time <Feature> 13_325
+	Name: World time
+	Binding time: 
+	Description: 
+Object: Application <Feature> 13_395
+	Name: Application
+	Binding time: 
+	Description: 
+Object: Stopwatch <Feature> 13_417
+	Name: Stopwatch
+	Binding time: 
+	Description: 
+Object: Laptime <Feature> 13_444
+	Name: Laptime
+	Binding time: 
+	Description: 
+Relationship: Has feature <Has feature> 13_458
+  Role: Has features <Has features>  Object: <Feature> 13_417
+  Role:  <Optional>  Object: <Feature> 13_444
+	Cardinality: 
+Relationship: Or feature <Or feature> 13_316
+  Role: Has features <Has features>  Object: <Feature> 13_395
+  Role:  <Optional>  Object: <Feature> 13_325
+	Cardinality: 
+  Role:  <Optional>  Object: <Feature> 13_174
+	Cardinality: 
+  Role:  <Optional>  Object: <Feature> 13_417
+	Cardinality: 
+  Role:  <Optional>  Object: <Feature> 13_207
+	Cardinality: 
+  Role:  <Optional>  Object: <Feature> 13_312
+	Cardinality: 

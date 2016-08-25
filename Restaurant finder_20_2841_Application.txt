@@ -1,0 +1,145 @@
+Graph_Amaratto_application_user_3250237231
+Restaurant finder
+20_2841
+Application
+Graph: Restaurant finder <Application> 20_2841
+	Application name: Restaurant finder
+	Documentation: Restaurant finding application. 
+Search can be done by type or by name.
+Object: Restaurant finding application. 
+Search can be done by type or by name. <Comment> 20_2893
+	Documentation: Restaurant finding application. 
+Search can be done by type or by name.
+Object: legal_zip <Condition> 20_3543
+	Condition variable: legal_zip
+	Condition: if len(str(Location)) ==5:
+	legal_zip=True
+else:
+	legal_zip=False
+Object: SMS message sent <Note> 20_3670
+	Text or code: SMS message sent
+	Treat as code: F
+	Internal name (optional): 
+	Note type: conf
+	Function used: 
+Object: ZIP must have 5 digits <Note> 20_3861
+	Text or code: ZIP must have 5 digits
+	Treat as code: F
+	Internal name (optional): 
+	Note type: info
+	Function used: 
+Object: Select restaurant <Popup_menu> 20_3261
+	Label: Select restaurant
+	Internal name (optional): 
+	List: by name by type exit
+	Return variable (optional): 
+Object: Restaurant type <Popup_menu> 20_3725
+	Label: Restaurant type
+	Internal name (optional): 
+	List: Chinese Greek Italian
+	Return variable (optional): Type
+Object: Provide location ZIP code <Query> 20_3074
+	Prompt: Provide location ZIP code
+	Internal name (optional): 
+	Query type: number
+	Initial value: 
+	Return variable (optional): Location
+Object: Enter name <Query> 20_3445
+	Prompt: Enter name
+	Internal name (optional): 
+	Query type: text
+	Initial value: 
+	Return variable (optional): Name
+Object: Restname <SendSMS> 20_3169
+	Message keyword: Restname
+	Internal name (optional): 
+	Message elements: Name
+	Object: Name <Message element> 20_3506
+		Name: Name
+	Recipient: 555648606
+Object: Resttype <SendSMS> 20_3950
+	Message keyword: Resttype
+	Internal name (optional): 
+	Message elements: Type ,  Location
+	Object: Type <Message element> 20_3090
+		Name: Type
+	Object: ,  <Optional delimiter> 20_3192
+		Name: 
+		Delimiter character: , 
+	Object: Location <Message element> 20_3286
+		Name: Location
+	Recipient: 555648606
+Object: Start <Start> 20_2981
+Object: Stop <Stop> 20_3355
+Relationship:  <Back> 20_3807
+	Code: 
+	Function used: 
+  Role: Back from <Back from>  Object: <Query> 20_3074
+  Role: Back to <Back to>  Object: <Popup_menu> 20_3261
+Relationship: Condition <Condition> 20_3272
+  Role: Condition from <Condition from>  Object: <Condition> 20_3543
+  Role: ==True <Condition to>  Object: <SendSMS> 20_3950
+	Condition rule: ==True
+Relationship: Condition <Condition> 20_3897
+  Role: Condition from <Condition from>  Object: <Condition> 20_3543
+  Role: ==False <Condition to>  Object: <Note> 20_3861
+	Condition rule: ==False
+Relationship:  <Flow> 20_3233
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <SendSMS> 20_3950
+  Role: To <To>  Object: <Note> 20_3670
+Relationship:  <Flow> 20_3257
+	Code: 
+	Function used: 
+  Role:  <From choice>  Object: <Popup_menu> 20_3725
+	Choice: 
+  Role: To <To>  Object: <Query> 20_3074
+Relationship:  <Flow> 20_3276
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <SendSMS> 20_3169
+  Role: To <To>  Object: <Note> 20_3670
+Relationship:  <Flow> 20_3304
+	Code: 
+	Function used: 
+  Role: exit <From choice>  Object: <Popup_menu> 20_3261
+	Choice: exit
+  Role: To <To>  Object: <Stop> 20_3355
+Relationship:  <Flow> 20_3312
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Query> 20_3074
+  Role: To <To>  Object: <Condition> 20_3543
+Relationship:  <Flow> 20_3337
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Note> 20_3861
+  Role: To <To>  Object: <Query> 20_3074
+Relationship:  <Flow> 20_3823
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Query> 20_3445
+  Role: To <To>  Object: <SendSMS> 20_3169
+Relationship:  <Flow> 20_3836
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Start> 20_2981
+  Role: To <To>  Object: <Popup_menu> 20_3261
+Relationship:  <Flow> 20_3855
+	Code: 
+	Function used: 
+  Role: by name <From choice>  Object: <Popup_menu> 20_3261
+	Choice: by name
+  Role: To <To>  Object: <Query> 20_3445
+Relationship:  <Flow> 20_3868
+	Code: 
+	Function used: 
+  Role: by type <From choice>  Object: <Popup_menu> 20_3261
+	Choice: by type
+  Role: To <To>  Object: <Popup_menu> 20_3725
+Relationship:  <Flow> 20_3903
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Note> 20_3670
+  Role: To <To>  Object: <Stop> 20_3355

@@ -1,0 +1,198 @@
+==========================
+Graph Type
+==========================
+SDL Process Diagram
+	SDL processes are defined as a state machine.
+	---------------------------------------------
+	Name: String
+	Description: Text
+		Enter description of the model or element.
+		---------------------------------------------
+
+==========================
+Object Types
+==========================
+Start
+	Each process has a start transition which is executed when the process is created. Typically the start transition includes initializations of variables and it ends with a statement which defines the initial state of the process. The start statement is followed by a normal transition.
+	---------------------------------------------
+State
+	The state of a process corresponds to a state of an finite state automaton, i.e. when in a state a process is ready to read an input from its queue. Inputs can occur only in a state. The SDL state declaration can define only part of the state behaviour:
+	- Aspects of state can be defined in different state declarations
+	- One state declaration can define behaviour for several states
+	---------------------------------------------
+	State name: String
+Input
+	The message input represent the type of message that is expected in a state.
+	---------------------------------------------
+	Name: String
+	Parameters: Text
+Save
+	The save statement can be used to keep a signal in the input queue (or moved to a "save queue") for possible handling in some other state. Save prevents implicit consumption of the specified signals.
+	---------------------------------------------
+	Message name: String
+Output
+	Sends the signal to a process instance, with the data (if any). 
+	---------------------------------------------
+	Name: String
+	To process: String
+	Parameters: Text
+Task
+	Task statements can assign statements for variables, calls of foreign code or SDL functions, be empty statements, or informal tasks.
+	
+	---------------------------------------------
+	Action code: Text
+Create
+	Creates a new instance of the process type given as an argument.
+	---------------------------------------------
+	Process name: String
+	Parameters: Text
+Call
+	The CALL statement is used to call a SDL procedure that does not return a value.
+	
+	---------------------------------------------
+	Procedure name: String
+	Parameters: Text
+Decision
+	The decision statement is used to implement a conditional branching. When executing a decision statement: the condition expression is evaluated (once), the branch that matches the result is executed.
+	---------------------------------------------
+	Decision: String
+Set
+	Set sets a timer. The first parameter is always of form NOW+interval, where the interval is a time in 10ms units.
+	
+	---------------------------------------------
+	Timer name: String
+	Timer interval: String
+Reset
+	Reset resets the timer.
+	---------------------------------------------
+	Timer name: String
+Join
+	A jump to the place in the code indicated by a label.
+	
+	---------------------------------------------
+	Join label: String
+Stop
+	Stop kills the executing process. It destroys the possible signals in the queue and resets the timers.
+	
+	---------------------------------------------
+Return
+	Return is used to return from a procedure.
+	---------------------------------------------
+	Return statement: Text
+Comment
+	The commenallows to write any type of informal text and connect it to the desired model element.  If needed the comment can be left unconnected. 
+	---------------------------------------------
+	Description: Text
+		Enter description of the model or element.
+		---------------------------------------------
+	Show signals: Boolean
+Variable
+	Variables: Text
+
+==========================
+Relationship Types
+==========================
+Transition
+	Transition shows ordering for symbols.
+	---------------------------------------------
+Conditional transition
+	Conditional transition is used to specify transition from a decision including the condition value.
+	---------------------------------------------
+	Condition: Text
+Comment link
+	Comment link can be used to connect a particular comment to another model element.
+	---------------------------------------------
+
+==========================
+Role Types
+==========================
+Source
+Target
+Comment role
+Condition source
+Condition target
+
+==========================
+Extra Types
+==========================
+While
+	Repeats a sub-transition while a condition is true (has the value T).
+	
+	---------------------------------------------
+	Condition: Text
+
+==========================
+Bindings
+==========================
+Comment link
+1	Comment role: Call, Create, Decision, Input, Join, Output, Reset, Return, Save, Set, Start, State, Stop, Task
+1	Comment role: Comment
+Comment link
+1	Comment role: Comment
+1	Comment role: Call, Create, Decision, Input, Join, Output, Reset, Return, Save, Set, Start, State, Stop, Task
+Conditional transition
+1	Condition source: Decision
+1	Condition target: Call, Create, Decision, Input, Join, Output, Reset, Return, Save, Set, State, Stop, Task
+Transition
+1..N	Source: Call, Create, Decision, Input, Output, Reset, Save, Set, Start, Task, While
+1..N	Target: Call, Comment, Create, Decision, Input, Join, Output, Reset, Return, Save, Set, State, Stop, Task
+Transition
+1..N	Source: Save, State
+1..N	Target: Input, Save
+
+==========================
+Constraints
+==========================
+Call may be in at most 1 Source role
+Create may be in at most 1 Source role
+Decision may be in at most 1 Source role
+Decision may be in at most 1 Target role
+Input may be in at most 1 Source role
+Output may be in at most 1 Source role
+Reset may be in at most 1 Source role
+Save may be in at most 1 Source role
+Save may be in at most 1 Target role
+Set may be in at most 1 Source role
+Start may be in at most 1 Source role
+State may be in at most 1 Source role
+Task may be in at most 1 Source role
+Start may occur at most 1 time
+Property "State name" in State must have unique values
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	Join
+		SDL Process Diagram
+Decompositions:
+	State
+		SDL Process Diagram
+
+==========================
+Generators
+==========================
+!CheckSignalConsistency
+!SDL PR
+
+==========================
+Sub-Generators
+==========================
+_conditionTransition
+_doCall
+_doCreate
+_doDecision
+_doInput
+_doOutput
+_doReset
+_doReturn
+_doSave
+_doSet
+_doState
+_doStop
+_doTask
+_inits
+_nextTransition
+_SDLPRprocess
+__LiveCheck
+

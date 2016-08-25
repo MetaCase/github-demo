@@ -1,0 +1,48 @@
+==========================
+Graph Type
+==========================
+Mapping Diagram
+	Name: String
+
+==========================
+Object Types
+==========================
+Table
+	Name: String
+	Elements: OrderedCollection (MappableElement)
+Note
+	Note is a special object for adding additional text anywhere in the graphs. Note belongs to many languages and has only one property, Documentation.
+	---------------------------------------------
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Mapping
+
+==========================
+Role Types
+==========================
+MapRole
+
+==========================
+Extra Types
+==========================
+MappableElement
+	Name: String
+
+==========================
+Bindings
+==========================
+Mapping
+	MapRole #(MappableElement): Table
+	MapRole #(MappableElement): Table
+
+==========================
+Constraints
+==========================
+
+==========================
+Subgraphs
+==========================
+

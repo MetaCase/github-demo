@@ -1,0 +1,26 @@
+_symLegalType()
+$givenValues = ''
+$givenTypes = ''
+$definedValues = ''
+$definedTypes = ''
+do :Values {
+	do :Type {
+		variable 'givenValues' append :Short name; ' ' close
+		variable 'givenTypes' append type ' ' close		
+	}
+}
+do :Types {
+	do :User Attribute Definitions {
+		do :Type {
+			variable 'definedValues' append :Short name; ' ' close
+			variable 'definedTypes' append type ' ' close		
+		}
+	}
+}
+if $givenValues <> $definedValues; then 
+	'Given values do not match with defined values' 
+endif
+if $givenTypes <> $definedTypes; then 
+	newline
+	'Given types of values do not match with defined types' 
+endif

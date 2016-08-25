@@ -1,0 +1,66 @@
+Report '_Def_aggregations'
+'		// **************************************************************' newline
+'		//  Contains' newline
+'		// **************************************************************' newline newline
+foreach >Contains {
+	'		// ********* ' 
+	do ~Whole.() {if :Composite?; then 'Composite' endif type id}
+	 '_X_' 
+	do ~Part.()  {if :Composite?; then 'Composite' endif type id}
+	' **********' newline
+	do ~Whole {
+		do .() {
+			'		i' if :Composite?; then 'composite' endif type ' = (' if :Composite?; then 'Composite' endif type ') productpackage_.lookupElementExtended(' 
+			if Type = 'Product' then 'PRODUCT_NAME' else '"' id '"' endif
+			');' newline  /* product not inside commas, composite yes */
+			'		end1 = new AssociationEnd("end1", i' if :Composite?; then 'composite' endif  type ');' newline
+		}
+		'		end1.setMultiplicity(new MultiplicityType('; if :Multiplicity; then :Multiplicity else '1,1' endif 
+		if :Is ordered?; then ',true' else ',false' endif 
+		',true));' newline	/* implicitly unique always true in MOF */
+		'		end1.setAggregation(AggregationType.' :Type; ');' newline
+	}
+	newline
+	do ~Part {
+		do .() {	
+			'		i' if :Composite?; then 'composite' endif 
+			type ' = (' if :Composite?; then 'Composite' endif type 
+			') productpackage_.lookupElementExtended("' id '");' newline 
+			'		end2 = new AssociationEnd("end2", i' if :Composite?; then 'composite' endif type ');'; newline;
+			}
+			'		end2.setMultiplicity(new MultiplicityType('; if :Multiplicity; then :Multiplicity; else '1,1' endif 
+			if :Is ordered?; then ',true' else ',false' endif 
+			',true));' newline	/* implicitly unique always true in MOF */
+			'		end2.setAggregation(AggregationType.SHARED);' newline 
+	}
+	newline
+	'		mofAssociation = MofAssociation.createAssociation("' 
+	do ~Whole.() {if :Composite?; then 'Composite' endif type oid; '_'}
+	do ~Part.() {if :Composite?; then 'Composite' endif type oid}
+	'", end1, end2);' newline
+	'		productpackage_.addMofAssociation(mofAssociation);' newline newline
+	do ~Whole {
+		if :Is reference?; then
+			'		reference = new Reference("'
+			do >() {
+				do ~Whole.() {
+					if :Composite?; then 'Composite' endif 
+					type oid '_'
+					}
+				do ~Part.() {
+					if :Composite?; then 'Composite' endif
+					type oid
+					}
+			}
+			'", end1, end2);' newline
+			'		' 
+			do .() { 'i' 
+				if :Composite?; then 'composite' endif
+				type;
+				'.addReference(reference);' newline 
+			}
+			newline 
+		endif
+	}
+ }
+endreport

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="Magnifier">
+		<objectSymbol offset="143,50" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="143,50 160,50 160,62 143,62 143,50" targetPointX="151.5" targetPointY="56" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="62" version="1.2" width="160" xmlns="http://www.w3.org/2000/svg">
+				<ellipse cx="149" cy="56" fill="rgb(255,255,255)" rx="6" ry="6" stroke="rgb(170,170,170)" stroke-width="2" sym:startAngle="0.0e0" sym:sweepAngle="3.6e2">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</ellipse>
+				<line stroke="rgb(170,170,170)" stroke-width="5" x1="154" x2="160" y1="59" y2="62">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</line>
+				<g fill="none" stroke="rgb(64,160,255)" stroke-width="3" sym:height="8" sym:width="8" sym:x="1.45e2" sym:y="5.2e1">
+					<line stroke="rgb(64,160,255)" stroke-width="3" x1="149" x2="149" y1="52" y2="60">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(64,160,255)" stroke-width="3" x1="145" x2="153" y1="56" y2="56">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

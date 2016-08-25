@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol">
+	<librarySymbol name="FunctionTrigger">
+		<objectSymbol offset="130,20" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="130,20 140,20 140,50 130,50 130,20" targetPointX="135" targetPointY="35" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="50" version="1.2" width="140" xmlns="http://www.w3.org/2000/svg">
+				<polygon fill="rgb(0,128,0)" points="135,20 130,30 140,30" stroke="rgb(0,128,0)" stroke-width="1">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</polygon>
+				<polyline fill="none" points="136,30 136,43.3333 131,36.6667 131,50" stroke="rgb(0,128,0)" stroke-width="1">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</polyline>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

@@ -1,0 +1,27 @@
+Report '_listbox selection'
+'	# OK selection function' newline
+'	# By default the code (written in flow relationships code property fields) is followed by next state' newline
+if ~Selection OK; then
+	do ~Selection OK>Flow {	
+		if :Function used; then
+			do :Function used; {
+				subreport '_Function with indent' run}
+			newline
+			'	def listbox_callback():' newline
+			'		global next_state' newline
+			do :Function used; {'		' :Function name;}
+			'(' :Code; ')' newline
+		else
+			'	def listbox_callback():' newline
+			'		global next_state' newline
+			if :Code; then
+				do :Code; { '		' id newline }
+			endif
+		endif
+		'		lock.signal()' newline
+		'		next_state = '
+		do ~To.() {	subreport '_Internal name' run }	
+	}
+	newline
+endif
+endreport

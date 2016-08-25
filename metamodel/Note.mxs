@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol">
+	<librarySymbol name="Note">
+		<objectSymbol offset="60,20" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="60,20 70,20 70,50 60,50 60,20" targetPointX="65" targetPointY="45" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="50" version="1.2" width="70" xmlns="http://www.w3.org/2000/svg">
+				<line stroke="rgb(0,0,0)" stroke-width="1" x1="69.5" x2="69.5" y1="45" y2="20">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</line>
+				<polygon fill="rgb(0,0,0)" points="70,42.8437 68.3614,40.4687 65.6685,40 62.1772,41.3504 60.1683,44.0937 60,47.7745 61.5548,49.5312 64.2476,50 67.6931,48.712 69.874,46.0937" stroke="none" stroke-width="0">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</polygon>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

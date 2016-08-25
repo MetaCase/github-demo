@@ -1,0 +1,59 @@
+==========================
+Graph Type
+==========================
+Electronics
+	Name: String
+
+==========================
+Object Types
+==========================
+Battery
+	Name: String
+Digital Meter
+	Name: String
+Meter
+	Name: String
+Power
+	Name: String
+Note
+	Note is a special object for adding additional text anywhere in the graphs. Note belongs to many languages and has only one property, Documentation.
+	---------------------------------------------
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+ElecRel
+
+==========================
+Role Types
+==========================
+ElecRole
+
+==========================
+Extra Types
+==========================
+ElecPort
+	Name: String
+	Direction: String
+	Voltage: String
+	Signal Type: String
+
+==========================
+Bindings
+==========================
+ElecRel
+2	ElecRole #(ElecPort): Object
+
+==========================
+Constraints
+==========================
+Power may be in at most 2 ElecRole roles
+All ports of type ElecPort in the binding must have a different Direction
+All ports of type ElecPort in the binding must have the same Signal Type
+All ports of type ElecPort in the binding must have the same Voltage
+
+==========================
+Subgraphs
+==========================
+

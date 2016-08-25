@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="Warranty_icon">
+		<objectSymbol offset="90,37" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="90,37 110,37 110,65 90,65 90,37" targetPointX="100" targetPointY="51" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="65" version="1.2" width="110" xmlns="http://www.w3.org/2000/svg">
+				<line stroke="rgb(128,0,0)" stroke-width="3" x1="100" x2="90" y1="45" y2="65">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</line>
+				<line stroke="rgb(128,0,0)" stroke-width="3" x1="100" x2="110" y1="45" y2="65">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</line>
+				<ellipse cx="100" cy="50" fill="rgb(255,0,0)" rx="10" ry="10" stroke="rgb(255,0,0)" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</ellipse>
+				<ellipse cx="100" cy="50" fill="rgb(255,0,0)" rx="4" ry="4" stroke="rgb(224,0,0)" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</ellipse>
+				<line stroke="none" stroke-width="1" x1="90" x2="110" y1="37" y2="37">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</line>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

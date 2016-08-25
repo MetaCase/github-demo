@@ -1,0 +1,21 @@
+_do_Luminance()
+@sep = ''
+
+'                  "thresholds": {' 
+if :Trigger if over \(lux\); = '' and :Trigger if under \(lux\); = '' then
+	newline
+	'                    "isAny": true'	newline
+else 
+	if :Trigger if over \(lux\); <> '' then
+		newline
+		'                    "isGt": ' :Trigger if over \(lux\); 
+	endif
+	@sep = ','
+	if :Trigger if under \(lux\); <> '' then
+		@sep newline
+		'                    "isLt": ' :Trigger if under \(lux\); 
+	endif
+	newline	
+endif
+'                  }
+'

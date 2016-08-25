@@ -1,0 +1,121 @@
+_validateQuantity()
+/* Validation checks for Quantity */
+
+/* AmountOfSubstanceExp is undefined */
+if :AmountOfSubstanceExp = '' then
+	_reportWarnings()
+	@errorType = 'AmountOfSubstanceExp'
+	'Warning: '
+	if type;3 <> 'Package' then
+		/* When the Type is used in some FAA/FDA model */	
+		_reportError_level3(@errorType)
+		_extendedCheckOutput_level4()
+	else
+		/* When the Type is defined in Package model */	
+		_reportError_level2(@errorType)
+		_extendedCheckOutput_level2()
+	endif
+	newline
+endif
+
+/* ElectricCurrentExp is undefined */
+if :ElectricCurrentExp = '' then
+	_reportWarnings()
+	@errorType = 'ElectricCurrentExp'
+	'Warning: '
+	if type;3 <> 'Package' then
+		/* When the Type is used in some FAA/FDA model */	
+		_reportError_level3(@errorType)
+		_extendedCheckOutput_level4()
+	else
+		/* When the Type is defined in Package model */	
+		_reportError_level2(@errorType)
+		_extendedCheckOutput_level2()
+	endif
+	newline
+endif
+
+/* LengthExp is undefined */
+if :LengthExp = '' then
+	_reportWarnings()
+	@errorType = 'LengthExp'
+	'Warning: '
+	if type;3 <> 'Package' then
+		/* When the Type is used in some FAA/FDA model */	
+		_reportError_level3(@errorType)
+		_extendedCheckOutput_level4()
+	else
+		/* When the Type is defined in Package model */	
+		_reportError_level2(@errorType)
+		_extendedCheckOutput_level2()
+	endif
+	newline
+endif
+
+/* LuminousIntensityExp is undefined */
+if :LuminousIntensityExp = '' then
+	_reportWarnings()
+	@errorType = 'LuminousIntensityExp'
+	'Warning: '
+	if type;3 <> 'Package' then
+		/* When the Type is used in some FAA/FDA model */	
+		_reportError_level3(@errorType)
+		_extendedCheckOutput_level4()
+	else
+		/* When the Type is defined in Package model */	
+		_reportError_level2(@errorType)
+		_extendedCheckOutput_level2()
+	endif
+	newline
+endif
+
+/* MassExp is undefined */
+if :MassExp = '' then
+	_reportWarnings()
+	@errorType = 'MassExp'
+	'Warning: '
+	if type;3 <> 'Package' then
+		/* When the Type is used in some FAA/FDA model */	
+		_reportError_level3(@errorType)
+		_extendedCheckOutput_level4()
+	else
+		/* When the Type is defined in Package model */	
+		_reportError_level2(@errorType)
+		_extendedCheckOutput_level2()
+	endif
+	newline
+endif
+
+/* ThermodynamicTemperatureExp is undefined */
+if :ThermodynamicTemperatureExp = '' then
+	_reportWarnings()
+	@errorType = 'ThermodynamicTemperatureExp'
+	'Warning: '
+	if type;3 <> 'Package' then
+		/* When the Type is used in some FAA/FDA model */	
+		_reportError_level3(@errorType)
+		_extendedCheckOutput_level4()
+	else
+		/* When the Type is defined in Package model */	
+		_reportError_level2(@errorType)
+		_extendedCheckOutput_level2()
+	endif
+	newline
+endif
+
+/* TimeExp is undefined */
+if :TimeExp = '' then
+	_reportWarnings()
+	@errorType = 'TimeExp'
+	'Warning: '
+	if type;3 <> 'Package' then
+		/* When the Type is used in some FAA/FDA model */	
+		_reportError_level3(@errorType)
+		_extendedCheckOutput_level4()
+	else
+		/* When the Type is defined in Package model */	
+		_reportError_level2(@errorType)
+		_extendedCheckOutput_level2()
+	endif
+	newline
+endif

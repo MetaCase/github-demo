@@ -1,0 +1,21 @@
+Graph_CPL_method_user_3207293682
+Call redirected to the voicemail address
+8_324
+Call Processing Language
+Graph: Call redirected to the voicemail address <Call Processing Language> 8_324
+	Name: Call redirected to the voicemail address
+	Documentation: 
+Object: sip:jones@voicemail.example.com <location> 8_548
+	Url: sip:jones@voicemail.example.com
+	Priority (0.0 -> 1.0): 
+	Clear: No
+Object: no <redirect> 8_398
+	Permanent: no
+Object: root node <root node> 8_684
+Relationship: default path <default path> 8_421
+  Role: From <From>  Object: <location> 8_548
+  Role: To <To>  Object: <redirect> 8_398
+Relationship: incoming <session phase> 8_481
+	Session type: incoming
+  Role: From <From>  Object: <root node> 8_684
+  Role: To <To>  Object: <location> 8_548

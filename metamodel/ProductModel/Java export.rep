@@ -1,0 +1,33 @@
+Report 'Java export'
+/* Note: Generator is modified from the production version to illustrate the basic principle */
+foreach .Package {
+	if decompositions then 
+		filename subreport '_default directory' run id 'ProductRepository.java' write
+		'package ' :Path ';' newline 
+		if :Documentation; then do :Documentation; { '// ' id newline } endif 
+		newline newline
+		subreport '_Package class main' run
+		subreport '_Global instances' run
+		subreport '_ImportPackages' run
+		subreport '_Tags' run
+		subreport '_Exceptions' run
+		do decompositions {	
+			subreport '_DataTypes'; run
+			subreport '_MOFClasses'; run	
+			subreport '_Products'; run
+			subreport '_MOFClasses_Supertypes' run
+			subreport '_MOFClasses_Attributs' run
+			subreport '_Def_aggregations' run   
+			subreport '_Def_associations' run	
+			'		return productpackage_;' newline
+			'	}' newline
+			'	private static MofPackage productpackage_;' newline
+		}
+		do :Tags {'	private static Tag ' :Java instance name ';' newline	}
+		'	MofPackage datetypepackage_;' newline
+		'	MofPackage modelpackage_;' newline
+		'}' newline
+		close
+	endif
+ }
+endreport

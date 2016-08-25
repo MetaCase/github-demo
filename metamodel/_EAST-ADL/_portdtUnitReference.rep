@@ -1,0 +1,10 @@
+_portdtUnitReference()
+/* Unit references are currently not reused */
+'						<slot name="UnitReference">
+							<value>' newline
+do :UnitReference { 
+		_portdtUnitDetails()
+}								
+'							</value>
+						</slot> ' 
+						newline

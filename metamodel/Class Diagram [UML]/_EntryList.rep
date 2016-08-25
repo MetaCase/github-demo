@@ -1,0 +1,29 @@
+Report '_EntryList'
+/* The View All page for a class, with just a list of all entries */
+$pageSize='100'
+'<!DOCTYPE html>
+<!-- (Start of MetaEdit+ generator _EntryList -->
+'
+subreport '_EntryHTMLstart' run
+'<p><b>Showing at most ' $pageSize ' ' id%xml ' entries:</b></p>
+
+'
+subreport '_EntryHTMLmid' run
+do 'sample globals entry_common'%words
+{	subreport '_includeScript' run
+}
+'<script type="text/javascript">
+
+function initForeign(){
+}
+
+'
+subreport '_EntryJSparams' run
+subreport '_EntryJSvariable' run
+
+'</script>
+</body>
+</html>
+<!-- End of MetaEdit+ generator _EntryList) -->
+'
+endreport

@@ -1,0 +1,10 @@
+Report 'Autobuild'
+/* Generates Amaretto Python script and starts the emulator */
+
+$dir='C:\Symbian\8.0a\S60_2nd_FP2\'
+
+subreport '_Generate Python file' run
+
+external $dir 'epoc32\release\wins\udeb\Epoc.exe' execute
+
+endreport

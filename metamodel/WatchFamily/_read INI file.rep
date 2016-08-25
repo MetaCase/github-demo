@@ -1,0 +1,27 @@
+Report '_read INI file'
+
+/* In case there is no plugin.ini file create it */
+filename 'plugin.ini' append close
+
+/* Read ini file contents to variable */
+variable 'pluginIni' write
+	filename 'plugin.ini' read
+close
+
+/* Define translators for parsing an ini line */
+to '%iniKey
+/([^=]+)=(.*)/ $$1'
+endto
+
+to '%iniValue
+/([^=]+)=(.*)/ $$2'
+endto
+
+/* Parse the ini file contents line by line, creating a variable from each */
+do $pluginIni where id
+{
+	if id%iniKey = 'IDE' 		then	$IDE 			= 	id%iniValue endif 	
+	if id%iniKey = 'workspace' then	$workspace 	= 	id%iniValue endif 	
+}
+
+endreport

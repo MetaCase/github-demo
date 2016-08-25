@@ -1,0 +1,22 @@
+Report '_IDL operation'
+if :Stereotype; = 'oneway' then 
+	'	oneway '
+else '	' endif
+if :Stereotype; = 'exception' then 
+	'exception'
+else
+	if :Return type; = '' then 'void'
+	else :Return type; endif
+endif
+' ' :Operation name;
+if :Stereotype; = 'exception' then 
+	' {' dowhile :Parameters; { if :Direction; then :Direction; ' ' endif :Data type; ' ' :Parameter; ', ' } '};'
+else
+	' (' dowhile :Parameters; { if :Direction; then :Direction; ' ' endif :Data type; ' ' :Parameter; ', ' } ');'
+endif
+if :Documentation; <> '' then 
+	'	// '
+	dowhile :Documentation; {id ' '}
+endif
+newline
+endreport

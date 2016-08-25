@@ -1,0 +1,4 @@
+Report '_not part of graph type'
+if not containers then 'Error: 
+Not part of graph' endif
+endreport

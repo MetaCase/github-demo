@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol">
+	<librarySymbol name="FunctionConnector_subsymbol">
+		<objectSymbol offset="35,38" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="35,38 70,38 70,58 35,58 35,38" targetPointX="52.5" targetPointY="48" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="58" version="1.2" width="70" xmlns="http://www.w3.org/2000/svg">
+				<rect fill="rgb(255,255,255)" height="20" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="0" width="10" x="35" y="38">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</rect>
+				<rect fill="rgb(255,255,255)" height="20" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="0" width="10" x="60" y="38">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</rect>
+				<line stroke="rgb(0,0,0)" stroke-width="2" x1="40" x2="65" y1="48" y2="48">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</line>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

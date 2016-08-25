@@ -1,0 +1,62 @@
+Graph_Project_Model_sysadmin_3084195615
+Mobile UI: Messaging Example
+20_4883
+Project Model
+Graph: Mobile UI: Messaging Example <Project Model> 20_4883
+	Project name: Mobile UI: Messaging Example
+	Status: 
+	Project manager: 
+	Authors: 
+	Documentation: 
+Object: Mobile Application Specification: Messaging <Graph> 20_4877
+	Decomposed to: Messaging <Mobile Application Specification>
+Object: Mobile Application Specification: Message log <Graph> 20_4900
+	Decomposed to: Message log <Mobile Application Specification>
+Object: Mobile Application Specification: Messaging <Graph> 20_4903
+	Decomposed to: Messaging <Mobile Application Specification>
+Object: Mobile Application Specification: Secure code check <Graph> 20_4906
+	Decomposed to: Secure code check <Mobile Application Specification>
+Object: Mobile Application Specification: Received MMS mgs <Graph> 20_4948
+	Decomposed to: Received MMS mgs <Mobile Application Specification>
+Object: Mobile Application Specification: Sent MMS log <Graph> 20_4990
+	Decomposed to: Sent MMS log <Mobile Application Specification>
+Relationship:  <Relates> 20_4909
+	Link type: 
+	Documentation: 
+  Role: From <From>  Object: <Graph> 20_4877
+  Role: To <To>  Object: <Graph> 20_4900
+Relationship:  <Relates> 20_4922
+	Link type: 
+	Documentation: 
+  Role: From <From>  Object: <Graph> 20_4877
+  Role: To <To>  Object: <Graph> 20_4903
+Relationship:  <Relates> 20_4935
+	Link type: 
+	Documentation: 
+  Role: From <From>  Object: <Graph> 20_4900
+  Role: To <To>  Object: <Graph> 20_4906
+Relationship:  <Relates> 20_4951
+	Link type: 
+	Documentation: 
+  Role: From <From>  Object: <Graph> 20_4903
+  Role: To <To>  Object: <Graph> 20_4948
+Relationship:  <Relates> 20_4964
+	Link type: 
+	Documentation: 
+  Role: From <From>  Object: <Graph> 20_4948
+  Role: To <To>  Object: <Graph> 20_4906
+Relationship:  <Relates> 20_4977
+	Link type: 
+	Documentation: 
+  Role: From <From>  Object: <Graph> 20_4903
+  Role: To <To>  Object: <Graph> 20_4906
+Relationship:  <Relates> 20_4993
+	Link type: 
+	Documentation: 
+  Role: From <From>  Object: <Graph> 20_4990
+  Role: To <To>  Object: <Graph> 20_4906
+Relationship:  <Relates> 20_5006
+	Link type: 
+	Documentation: 
+  Role: From <From>  Object: <Graph> 20_4903
+  Role: To <To>  Object: <Graph> 20_4990

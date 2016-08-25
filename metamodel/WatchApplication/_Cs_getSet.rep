@@ -1,0 +1,9 @@
+Report '_Cs_getSet'
+
+'        public ' :Type ' ' id '
+        {
+            get { return _' id ';    }
+            set { _' id ' = value;   }  
+        }
+'
+endreport

@@ -1,0 +1,28 @@
+_checkingsForFunctionAndHardwarePrototypes()
+/* Checkings for the Model */
+subreport '_checkings for the graph' run
+
+/* Checkings for FAA, FDA and HDA prototypes */
+subreport '_checkings for the objects' run
+
+/* Checkings for Roles */
+subreport '_checkings for the roles' run
+
+/* Undefined subgraph */
+foreach .(*Prototype)
+{	/* Follow the subgraph hiearchy */
+	do decompositions 
+	{	if not $visited =~ oid%wildsp then
+			variable 'visited' append oid ' ' close
+			_checkingsForFunctionAndHardwarePrototypes()	
+		endif
+	}
+}
+
+/* Reporting the Requirements which are not defined in any Package, but still used in the model (path information may be missing in EAXML output) */
+foreach .(*Requirement)
+{	if not $requirementsInThisPackageHiearchy =~ oid%wildsp then
+		_reportWarnings()
+		'Warning: ' id ' <' type '> has been used in model ' id;1 ' <' type; 1 '>, but it is not defined in any Package, so reference path may be missing in EAXML output.' newline
+	endif
+}

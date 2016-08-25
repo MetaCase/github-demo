@@ -1,0 +1,6 @@
+Report '_type of object'
+/* Returns the type of the decomposed submodel (HardwareComponentType) */
+do decompositions {
+	do :Type { type }
+}
+endreport

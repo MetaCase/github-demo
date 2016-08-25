@@ -1,0 +1,55 @@
+_elementsInHTML()
+'<a name="' oid '"></a>' newline
+'<h2>Installation Guide for: ' id%xml '</h2>' newline
+do :()
+{
+	if id;1 <> id then 
+		'<b>' to '%xml' translate containers endto ': </b>'
+		id%xml '<br />' newline
+	endif
+}
+'<br />' newline
+filename subreport '_default directory' run subreport '_id and oid' run '.png' print
+'<img src="' subreport '_id and oid' run '.png" border="0"><br />' newline
+$TotalLength = '0'
+foreach >Pipe {
+	if :Length; then 
+		variable 'TotalLength' append '+' :Length; close
+	endif
+}
+'<h3>Total pipe length needed:  ' math $TotalLength evaluate '</h3>'
+
+'<h3>Heat exchanger units</h3>' newline
+subreport '__Table HTML' run newline
+'<tr><th>Name</th><th>Type</th></tr>' newline
+foreach .( Burner | Boiler | Radiator ) 
+{	'<tr><td>' newline
+	if id; then id%xml else '&nbsp;' endif
+	'&nbsp;<br /></td>'
+	'<td> ' type%xml '&nbsp;</td>' newline
+	'</tr>' newline
+}
+'</table><br /><hr />' newline
+
+ 
+'<h3>Sensor units</h3>' newline
+subreport '__Table HTML' run newline
+'<tr><th>Name</th><th>Mounting</th><th>Measured variable</th><th>Function</th></tr>' newline
+foreach .Sensor 
+{	'<tr><td>' newline
+	if id; then id%xml else '&nbsp;' endif
+	'&nbsp;<br /></td><td> ' :Mounting%xml '&nbsp;</td>' newline
+	'<td> ' :Measured variable%xml '&nbsp;</td>' newline
+	'<td> ' :Function%xml '&nbsp;</td></tr>' newline
+}
+'</table><br />' newline
+'<h3>Valves</h3>' newline
+subreport '__Table HTML' run newline
+'<tr><th>Name</th><th>Valve type</th><th>Closing by</th></tr>' newline
+foreach .Valve
+{	'<tr><td>' newline
+	if id; then id%xml else '&nbsp;' endif
+	'&nbsp;<br /></td><td> ' :Valve type%xml '&nbsp;</td>' newline
+	'<td> ' :Closing by%xml '&nbsp;</td></tr>' newline
+}
+'</table><br /><hr />' newline

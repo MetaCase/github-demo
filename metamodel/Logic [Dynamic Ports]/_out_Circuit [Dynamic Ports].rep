@@ -1,0 +1,14 @@
+_out_Circuit\ [Dynamic\ Ports]()
+
+/* we are on a role connecting to a port that is a Dynamic Port object, and need to find that object in the subgraph */
+
+do #() {	@DynamicPortOid = oid }
+do .()
+{	do decompositions
+	{	foreach .Dynamic Port; where @DynamicPortOid = oid
+		{	do ~()~()
+			{	subreport '_out_' do .() { type } run
+			}
+		}
+	}
+}

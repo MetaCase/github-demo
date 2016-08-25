@@ -1,0 +1,27 @@
+Report '_RSS_Query'
+'RESOURCE DIALOG ' subreport '_rli' run '
+    {
+    flags = EGeneralQueryFlags;
+    buttons = ' :Buttons ';
+    items =
+        {
+'
+if :Query Type; = 'Confirmation' then 
+'        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control = AVKON_CONFIRMATION_QUERY
+                {
+                layout = EConfirmationQueryLayout;
+                label = "' :UI Text; '";
+                };
+            }
+        };'
+endif
+'
+    }
+
+'
+
+endreport

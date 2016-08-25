@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="sym_statemachine">
+		<objectSymbol offset="110,30" scaleFilter="0,0">
+			<defaultConnectable isSticky="true" points="110,30 130,30 130,50 110,50 110,30" targetPointX="120" targetPointY="40" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="50" version="1.2" width="130" xmlns="http://www.w3.org/2000/svg">
+				<g fill="rgb(255,255,255)" stroke="rgb(0,0,0)" stroke-width="1" sym:height="20" sym:width="20" sym:x="1.1e2" sym:y="3.0e1">
+					<ellipse cx="122.5" cy="43.3333" fill="rgb(255,255,255)" rx="7.5" ry="6.66667" stroke="rgb(0,0,0)" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<ellipse cx="117.5" cy="36.6667" fill="rgb(255,255,255)" rx="7.5" ry="6.66667" stroke="rgb(0,0,0)" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

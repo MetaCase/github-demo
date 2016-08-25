@@ -1,0 +1,145 @@
+==========================
+Graph Type
+==========================
+Composite Structure Diagram
+	Depicts the internal structure of a classifier (such as a class, component, or use case), including the interaction points of the classifier to other parts of the system.   
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Collaboration
+	A collaboration describes a structure of collaborating elements (roles), each performing a specialized function, which collectively accomplish some desired functionality. Its primary purpose is to explain how a system works.
+	---------------------------------------------
+	Name: String
+	Documentation: Text
+Property
+	A property represents a set of instances that are owned by a containing classifier instance.
+	---------------------------------------------
+	Object name: String
+	Class name: String
+	Variables [UML]: OrderedCollection (Variable [UML])
+	Multiplicity: String
+	Documentation: Text
+Note text
+	Note is a special object for adding additional text anywhere in the graphs. It can be linked to another design objects with a note connection relationship.
+	---------------------------------------------
+	Note text: Text
+	Stereotype: String
+
+==========================
+Relationship Types
+==========================
+Aggregation
+	Aggregation is a mechanism for structuring the class/object model. It permits the construction of aggregate class/object from other component classes/object. Each aggregation relationship is characterized with name, derivation rules, and documentation attached to the relationship and with the role related properties. The whole role has multiplicity constraint and composition? to define whether the composite owns its parts (i.e. parts live inside the whole and they will be destroyed together with the whole). The part role is characterized by the role name, multiplicity, whether links between objects have order, indicate that navigation is supported along the aggregation towards the class attached to the arrow, and to define values which serve to partition the set of objects associated with an object across an association (Qualifiers).
+	Also association class, OR associations, and note connections can be attached to aggregations by selecting the relationship and then adding a new role to the relationship through a selection from a pop-up menu.
+	---------------------------------------------
+	Association name: String
+	Derivation rules: OrderedCollection (String)
+	Documentation: Text
+Connection
+	A connector specifies a link that enables communication/collaboration between two or more instances.
+	---------------------------------------------
+	Name: String
+Dependency [UML]
+	Dependency show client-supplier links dependencies between logical elements. The client, pointed by an arrow, is dependent in some way on the client.
+	---------------------------------------------
+	Stereotype: String
+	Alias name: String
+Note connection
+	Note connection can be used to link a note text to related element in a model. A note connection is represented by a grey line.
+	---------------------------------------------
+
+==========================
+Role Types
+==========================
+Client
+Connected
+	Multiplicity: String
+Note part
+Object part
+Part
+	Role name: String
+	Multiplicity: String
+	Ordered?: Boolean
+	Navigable?: Boolean
+	Properties: String
+	Qualifiers: OrderedCollection (Attribute [UML])
+Supplier
+Whole
+	Multiplicity: String
+	Composition?: Boolean
+
+==========================
+Extra Types
+==========================
+_Unified Modeling Language
+	This UML metamodel is based on the 2.0 Draft Adopted Specification.
+	---------------------------------------------
+Attribute [UML]
+	Name: String
+	Data type: String
+	Default value: String
+	Stereotype: String
+	Visibility: String
+	Scope: String
+	Access: String
+	Derived?: Boolean
+	Persistent?: Boolean
+	Constraints: Text
+	Documentation: Text
+Person
+	Person is used to describe developers involved in a project (i.e. attached to the project model) and authors of developed models. Person can be characterized with a name, e-mail address, and with a contact address. 
+	---------------------------------------------
+	Name: String
+	E-mail: String
+	Contact address: Text
+Variable [UML]
+	Value: String
+	Attribute: Attribute [UML]
+Communication
+	Communication shows the dialog between the actor and use case.
+	---------------------------------------------
+General association role
+	Role name: String
+	Multiplicity: String
+	Ordered?: Boolean
+	Navigable?: Boolean
+	Properties: String
+
+==========================
+Bindings
+==========================
+Aggregation
+	Whole: Collaboration, Property
+1..N	Part: Collaboration, Property
+0..1	Note part: Note text
+Connection
+2..N	Connected: Collaboration, Property
+Dependency [UML]
+	Client: Collaboration, Property
+	Supplier: Collaboration, Property
+0..1	Note part: Note text
+Note connection
+	Note part: Note text
+	Object part: Collaboration, Property
+Note connection
+	Object part: Collaboration, Property
+	Note part: Note text
+
+==========================
+Constraints
+==========================
+Property "Name" in Collaboration must have unique values
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	Collaboration
+		Composite Structure Diagram
+

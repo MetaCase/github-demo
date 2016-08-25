@@ -1,0 +1,227 @@
+Graph_Productmodell_user_3143453874
+DisabilityInsurance_1
+17_314
+ProductModel
+Graph: DisabilityInsurance_1 <ProductModel> 17_314
+	Name: DisabilityInsurance_1
+	Authors: 
+	Documentation: To see the Java code generated for this graph, please follow the instructions in the root ProjectModel, SampleProduct_part.
+Object: Level of medical care <Danger> 17_446
+	Class name: Level of medical care
+	Display name: Care II/III
+	Type: gefahrPflege
+	order: 0
+	Tags: 
+	Package: 
+	Composite?: F
+	Supertype: 
+Object: DangerB <Danger> 17_607
+	Class name: DangerB
+	Display name: 
+	Type: gefahrB
+	order: 0
+	Tags: 
+	Package: 
+	Composite?: F
+	Supertype: 
+Object: DangerA <Danger> 17_737
+	Class name: DangerA
+	Display name: 
+	Type: gefahrA
+	order: 0
+	Tags: 
+	Package: 
+	Composite?: F
+	Supertype: 
+Object: eg_disability <Danger Composite> 17_645
+	Class name: eg_disability
+	Display name: Danger of disability
+	Type: gefahr_grundfaehigkeiten
+	order: 0
+	Tags: 
+	Package: 
+	Composite?: T
+	Supertype: 
+Object: EPDisability insurance <Elementary product cover> 17_411
+	Class name: EPDisability insurance
+	Display name: 
+	Type: EP_gf
+	order: 0
+	Tags: 
+	Package: Disability
+	Object: Disability <Package> 17_527
+		Package name: Disability
+		Path: 
+		Tags: 
+		Imported packages: 
+		Exceptions: 
+		Root or leaf: 
+		Documentation: 
+	Supertype: 
+Object: vp <Insured object> 17_675
+	Class name: vp
+	Display name: Insured person
+	Type: vp
+	order: 0
+	Tags: 
+	Package: 
+	Composite?: F
+	Supertype: 
+Object: To see the Java code generated for this graph, please follow the instructions in the root ProjectModel, SampleProduct_part. <Note> 17_389
+	Documentation: To see the Java code generated for this graph, please follow the instructions in the root ProjectModel, SampleProduct_part.
+Object: The graphs in this example project demonstrate the modeling of Insurance policies for a J2EE web server, as described in Chapter 6 of the book "Domain-Specific Modeling", http://dsmbook.com. <Note> 17_758
+	Documentation: The graphs in this example project demonstrate the modeling of Insurance policies for a J2EE web server, as described in Chapter 6 of the book "Domain-Specific Modeling", http://dsmbook.com.
+Object: Is disabled <Payment> 17_794
+	Class name: Is disabled
+	Display name: Payment for disability
+	Type: lst_grundfaehigkeiten
+	order: 0
+	Tags: 
+	Package: 
+	Leistungsart: 
+	Supertype: 
+Object: Disability <Product> 17_507
+	Class name: Disability
+	Display name: 
+	Type: produkt
+	order: 0
+	Tags: 
+	Package: Disability
+	Supertype: 
+	Currency: EUR
+Object: rs_disability <Risk> 17_362
+	Class name: rs_disability
+	Display name: Risk of disability
+	Type: risk_grundfaehigkeiten
+	order: 0
+	Tags: 
+	Package: 
+	Supertype: 
+Relationship:  <Association> 17_376
+	Name: 
+  Role:  <Associationend>  Object: <Danger Composite> 17_645
+	Name: 
+	Multiplicity: 
+	Navigability: No navigation
+	Is changeable?: F
+	Is ordered?: F
+	Is reference?: F
+  Role:  <Covering danger>  Object: <Risk> 17_362
+	Name: 
+	Multiplicity: 
+	Navigability: No navigation
+	Is changeable?: F
+	Is ordered?: F
+	Is reference?: T
+Relationship:  <Association> 17_382
+	Name: 
+  Role:  <Associationend>  Object: <Insured object> 17_675
+	Name: 
+	Multiplicity: 
+	Navigability: No navigation
+	Is changeable?: F
+	Is ordered?: F
+	Is reference?: F
+  Role:  <Insuring article>  Object: <Risk> 17_362
+	Name: 
+	Multiplicity: 
+	Navigability: No navigation
+	Is changeable?: F
+	Is ordered?: F
+	Is reference?: T
+Relationship:  <Association> 17_492
+	Name: 
+  Role:  <Agreeing upon achievement>  Object: <Risk> 17_362
+	Name: 
+	Multiplicity: 
+	Navigability: No navigation
+	Is changeable?: F
+	Is ordered?: F
+	Is reference?: T
+  Role:  <Associationend>  Object: <Payment> 17_794
+	Name: 
+	Multiplicity: 
+	Navigability: No navigation
+	Is changeable?: F
+	Is ordered?: F
+	Is reference?: F
+Relationship:  <Association> 17_823
+	Name: 
+  Role:  <Associationend>  Object: <Risk> 17_362
+	Name: 
+	Multiplicity: 
+	Navigability: No navigation
+	Is changeable?: F
+	Is ordered?: F
+	Is reference?: F
+  Role:  <EPend>  Object: <Elementary product cover> 17_411
+	Name: 
+	Multiplicity: 
+	Navigability: No navigation
+	Is changeable?: F
+	Is ordered?: F
+	Is reference?: T
+Relationship:  <Contains> 17_368
+	Name: 
+  Role:  <Part>  Object: <Elementary product cover> 17_411
+	Name: 
+	Multiplicity: 
+	Navigability: No navigation
+	Is changeable?: F
+	Is ordered?: F
+	Is reference?: F
+  Role:  <Whole>  Object: <Product> 17_507
+	Name: 
+	Type: SHARED
+	Multiplicity: 
+	Navigability: No navigation
+	Is changeable?: F
+	Is reference?: T
+Relationship:  <Contains> 17_427
+	Name: 
+  Role:  <Part>  Object: <Danger> 17_737
+	Name: 
+	Multiplicity: 
+	Navigability: No navigation
+	Is changeable?: F
+	Is ordered?: F
+	Is reference?: F
+  Role:  <Whole>  Object: <Danger Composite> 17_645
+	Name: 
+	Type: SHARED
+	Multiplicity: 
+	Navigability: No navigation
+	Is changeable?: F
+	Is reference?: T
+Relationship:  <Contains> 17_438
+	Name: 
+  Role:  <Part>  Object: <Danger> 17_607
+	Name: 
+	Multiplicity: 
+	Navigability: No navigation
+	Is changeable?: F
+	Is ordered?: F
+	Is reference?: F
+  Role:  <Whole>  Object: <Danger Composite> 17_645
+	Name: 
+	Type: SHARED
+	Multiplicity: 
+	Navigability: No navigation
+	Is changeable?: F
+	Is reference?: T
+Relationship:  <Contains> 17_444
+	Name: 
+  Role:  <Part>  Object: <Danger> 17_446
+	Name: 
+	Multiplicity: 
+	Navigability: No navigation
+	Is changeable?: F
+	Is ordered?: F
+	Is reference?: F
+  Role:  <Whole>  Object: <Danger Composite> 17_645
+	Name: 
+	Type: SHARED
+	Multiplicity: 
+	Navigability: No navigation
+	Is changeable?: F
+	Is reference?: T

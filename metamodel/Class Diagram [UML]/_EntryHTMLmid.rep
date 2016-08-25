@@ -1,0 +1,22 @@
+Report '_EntryHTMLmid'
+/* The table of existing entries of this class */
+'<!-- (Start of MetaEdit+ generator _EntryHTMLmid -->
+<table id="listTable"><tbody></tbody></table>
+<p>
+<button type="button" onclick="gotoNew();">New</button>
+<button type="button" onclick="gotoList();">View All</button>
+<button type="button" onclick="dropDBTable();">Delete All</button>
+</p>
+<div><span id="status">&nbsp;</span></div>
+<div><span id="params">&nbsp;</span></div>
+
+<p><a href="' id;1 '.html">Back to top page of ' id;1%xml ' application</a>.</p>
+<p><i>This page uses HTML5 to record your entries. If you navigate away and revisit this page, all your data will still be here. Try it!<br />
+(Requires <a href="http://caniuse.com/sql-storage">HTML5 Web SQL Database</a>, found in Chrome, Safari, and Opera - but not yet Internet Explorer or Firefox.)</i></p>
+
+<!-- ====================================== -->
+<!-- End HTML code.  Begin JavaScript code. -->
+<!-- End of MetaEdit+ generator _EntryHTMLmid) -->
+
+'
+endreport

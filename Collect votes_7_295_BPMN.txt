@@ -1,0 +1,182 @@
+Graph_BPMN_user_3356593652
+Collect votes
+7_295
+BPMN
+Graph: Collect votes <BPMN> 7_295
+	Id: 
+	Model name: Collect votes
+	Version: 
+	Author: 
+	Language: English
+	Documentation: 
+Object: Calendar <Artifact> 7_809
+	Artifact type: Data object
+	Artifact name: Calendar
+Object: Vote Tally <Artifact> 7_813
+	Artifact type: Data object
+	Artifact name: Vote Tally
+Object: Vote <Artifact> 7_920
+	Artifact type: Data object
+	Artifact name: Vote
+Object: End <End> 7_1964
+	Result: 
+	Event name: 
+	Description: 
+Object: Conference Call in Voting Week? <Gateway> 7_1096
+	Gateway type: 
+	Decision: Conference Call in Voting Week?
+Object: Wait untill Thursday, 9am <Intermediate> 7_644
+	Trigger: Timer
+	Object: Timer <Timer> 7_1511
+		TimerDate: 
+		TimerCycle: 
+	Event name: Wait untill Thursday, 9am
+	Target: 
+	Description: 
+Object: Delay 6 days <Intermediate> 7_1256
+	Trigger: Timer
+	Object: Timer <Timer> 7_1718
+		TimerDate: 
+		TimerCycle: 
+	Event name: Delay 6 days
+	Target: 
+	Description: 
+Object: Start <Start> 7_1361
+	Trigger: 
+	Event name: 
+	Description: 
+Object: Moderate E-mail Discussion <Task> 7_385
+	Task name: Moderate E-mail Discussion
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Receive Vote <Task> 7_547
+	Task name: Receive Vote
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: E-Mail Vote Deadline Warning <Task> 7_1523
+	Task name: E-Mail Vote Deadline Warning
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Increment Tally <Task> 7_1703
+	Task name: Increment Tally
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Check Calendar for Conference Call <Task> 7_1792
+	Task name: Check Calendar for Conference Call
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Moderate Conference Call Discussion <Task> 7_1796
+	Task name: Moderate Conference Call Discussion
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Relationship: Association <Association> 7_586
+  Role: Association from <Association from>  Object: <Artifact> 7_920
+  Role: Association to <Association to>  Object: <Task> 7_1703
+Relationship: Association <Association> 7_819
+  Role: Association from <Association from>  Object: <Task> 7_1703
+  Role: Association to <Association to>  Object: <Artifact> 7_813
+Relationship: Association <Association> 7_1049
+  Role: Association from <Association from>  Object: <Artifact> 7_809
+  Role: Text annotation <Text annotation>  Object: <Task> 7_1792
+Relationship: Association <Association> 7_1363
+  Role: Association from <Association from>  Object: <Task> 7_547
+  Role: Association to <Association to>  Object: <Artifact> 7_920
+Relationship: No <Sequence flow> 7_333
+	Name: No
+  Role: T <Gateway from>  Object: <Gateway> 7_1096
+	Is default?: T
+  Role: Gateway to <Gateway to>  Object: <End> 7_1964
+Relationship:  <Sequence flow> 7_529
+	Name: 
+  Role: F <From>  Object: <Task> 7_1796
+	Conditional: F
+  Role: To <To>  Object: <End> 7_1964
+Relationship:  <Sequence flow> 7_549
+	Name: 
+  Role: F <From>  Object: <Start> 7_1361
+	Conditional: F
+  Role: To <To>  Object: <Intermediate> 7_1256
+Relationship:  <Sequence flow> 7_855
+	Name: 
+  Role: F <From>  Object: <Task> 7_1703
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_547
+Relationship:  <Sequence flow> 7_881
+	Name: 
+  Role: F <From>  Object: <Task> 7_1792
+	Conditional: F
+  Role: To <To>  Object: <Gateway> 7_1096
+Relationship:  <Sequence flow> 7_1070
+	Name: 
+  Role: F <From>  Object: <Task> 7_1703
+	Conditional: F
+  Role: To <To>  Object: <End> 7_1964
+Relationship:  <Sequence flow> 7_1309
+	Name: 
+  Role: F <From>  Object: <Start> 7_1361
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_547
+Relationship:  <Sequence flow> 7_1335
+	Name: 
+  Role: F <From>  Object: <Task> 7_385
+	Conditional: F
+  Role: To <To>  Object: <End> 7_1964
+Relationship:  <Sequence flow> 7_1389
+	Name: 
+  Role: F <From>  Object: <Intermediate> 7_1256
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_1523
+Relationship:  <Sequence flow> 7_1412
+	Name: 
+  Role: F <From>  Object: <Task> 7_1523
+	Conditional: F
+  Role: To <To>  Object: <End> 7_1964
+Relationship:  <Sequence flow> 7_1681
+	Name: 
+  Role: F <From>  Object: <Start> 7_1361
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_1792
+Relationship:  <Sequence flow> 7_1859
+	Name: 
+  Role: F <From>  Object: <Start> 7_1361
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_385
+Relationship: Yes <Sequence flow> 7_1880
+	Name: Yes
+  Role: F <From>  Object: <Gateway> 7_1096
+	Conditional: F
+  Role: To <To>  Object: <Intermediate> 7_644
+Relationship:  <Sequence flow> 7_1905
+	Name: 
+  Role: F <From>  Object: <Task> 7_547
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_1703
+Relationship:  <Sequence flow> 7_1930
+	Name: 
+  Role: F <From>  Object: <Intermediate> 7_644
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_1796

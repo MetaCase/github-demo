@@ -1,0 +1,53 @@
+Graph_CPL_method_user_3207293682
+Call redirected when origin host is example.com
+8_327
+Call Processing Language
+Graph: Call redirected when origin host is example.com <Call Processing Language> 8_327
+	Name: Call redirected when origin host is example.com
+	Documentation: The graphs in this example project demonstrate modeling of IP telephony services and generation of XML (Call Processing Language, RFC 3880), as described in Chapter 5 of the book "Domain-Specific Modeling", http://dsmbook.com.
+	Try the generator with the 'CPL' toolbar button, or edit it as !CPL with Graph | Edit Generators.
+Object: origin <address> 8_775
+	Field: origin
+	Subfield: host
+	Address: subdomain-of
+	Address value: example.com
+Object: The graphs in this example project demonstrate modeling of IP telephony services and generation of XML (Call Processing Language, RFC 3880), as described in Chapter 5 of the book "Domain-Specific Modeling", http://dsmbook.com.
+	Try the generator with the 'CPL' toolbar button, or edit it as !CPL with Graph | Edit Generators. <comment> 8_489
+	Description: The graphs in this example project demonstrate modeling of IP telephony services and generation of XML (Call Processing Language, RFC 3880), as described in Chapter 5 of the book "Domain-Specific Modeling", http://dsmbook.com.
+	Try the generator with the 'CPL' toolbar button, or edit it as !CPL with Graph | Edit Generators.
+Object: sip:jones@example.com <location> 8_627
+	Url: sip:jones@example.com
+	Priority (0.0 -> 1.0): 
+	Clear: No
+Object: 10 <proxy> 8_396
+	Timeout: 10
+	Recurse: No
+	Ordering: Parellel
+Object: root node <root node> 8_418
+Object: Call redirected to the voicemail address <subaction> 8_612
+	Decomposed to: Call redirected to the voicemail address <Call Processing Language>
+Relationship: default path <default path> 8_384
+  Role: From <From>  Object: <address> 8_775
+  Role: To <To>  Object: <location> 8_627
+Relationship: default path <default path> 8_765
+  Role: From <From>  Object: <location> 8_627
+  Role: To <To>  Object: <proxy> 8_396
+Relationship: next_element proxy <next_element proxy> 8_703
+	name: noanswer
+  Role: From <From>  Object: <proxy> 8_396
+  Role: To <To>  Object: <subaction> 8_612
+Relationship: next_element proxy <next_element proxy> 8_761
+	name: failure
+  Role: From <From>  Object: <proxy> 8_396
+  Role: To <To>  Object: <subaction> 8_612
+Relationship: next_element proxy <next_element proxy> 8_841
+	name: busy
+  Role: From <From>  Object: <proxy> 8_396
+  Role: To <To>  Object: <subaction> 8_612
+Relationship: otherwise <otherwise> 8_844
+  Role: From otherwise <From otherwise>  Object: <address> 8_775
+  Role: To otherwise <To otherwise>  Object: <subaction> 8_612
+Relationship: incoming <session phase> 8_360
+	Session type: incoming
+  Role: From <From>  Object: <root node> 8_418
+  Role: To <To>  Object: <address> 8_775

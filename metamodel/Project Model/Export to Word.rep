@@ -1,0 +1,30 @@
+Report 'Export to Word'
+/*	Creates Project documentation (Word format) to the default directory according to the following steps:
+*	(Default directory is defined in the subreport named _default directory in the Graph)
+*	Uses metaedit.dot Word template
+*	Calls _RTF documentation cover page-subreport
+*	Calls _RTF table of contents-subreport
+*	Calls _Project model documentation in RTF-subreport
+* 	Closes the created RTF file
+*	Executes the created RTF-file with the Word (template includes the auto open macro, 
+*	which will automatically remove all documents links and saves the RTF file as a DOC form)
+*/
+subreport '_translators' run
+filename subreport '_default directory' run id%file '.rtf' write
+'{\rtf\ansi\deff0'
+'{\stylesheet
+	{\widctlpar\adjustright \fs24\cgrid \snext0 Normal;}
+	{\s1\widctlpar\adjustright \fs24\cgrid \sbasedon0 \snext0 heading 1;}
+	{\s2\widctlpar\adjustright \fs24\cgrid \sbasedon0 \snext0 heading 2;}
+	{\s3\widctlpar\adjustright \fs24\cgrid \sbasedon0 \snext0 heading 3;}
+	{\*\cs10 \additive Default Paragraph Font;}}'
+'{\*\template metaedit.dot}{\*\docvar {Document_Already_Opened}{False}}'
+'\widoctrl\ftnbj\linkstyles \sectd'
+'\linex0\headery567\footery567\colsx709\endnhere\titlepg\sectdefaultcl '
+subreport '_RTF documentation cover page' run
+subreport '_RTF table of contents' run
+subreport '_Project model documentation in RTF' run
+'}'
+close
+external '"' subreport '_default directory' run id%file '.rtf"' execute
+endreport

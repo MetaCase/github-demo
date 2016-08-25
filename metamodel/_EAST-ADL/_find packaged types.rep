@@ -1,0 +1,11 @@
+_find\ packaged\ types()
+foreach .() 
+{	if type = 'Package'; then
+		do decompositions 
+		{	subreport '_find packaged types' run }
+	endif
+	if type = 'EAType' then
+		do decompositions 
+		{	subreport '_find types from EATypes' run }
+	endif
+}

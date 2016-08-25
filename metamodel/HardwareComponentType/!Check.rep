@@ -1,0 +1,4 @@
+Report '!Check'
+/* Checking generator for EAST-ADL HardwareModels */
+Check()
+endreport

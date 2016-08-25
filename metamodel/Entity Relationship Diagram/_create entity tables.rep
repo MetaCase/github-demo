@@ -1,0 +1,38 @@
+Report '_create entity tables'
+
+
+
+foreach .Entity 
+{ 
+	variable 'targetTable' write :Entity name;%var; close
+	'CREATE TABLE ' $targetTable ' (' newline
+	variable 'ownAttributes' write
+		subreport '_create own attributes' run
+	close
+
+	variable 'foreignAttributes' write
+		/* add the foreign keys for 1-n relationships */
+
+		$targetEntity=id
+		do .Relationship>In relationship~Entity part; {
+			if (not .Entity:Entity name; = $targetEntity) and :Cardinality = '1'
+				then
+					subreport '_create related entity FKs' run
+				endif
+		}
+	close /* foreignAttributes */
+
+	if $foreignAttributes then
+		variable 'allForeignDeclarations' append
+			$foreignDeclarations;
+			newline
+		close
+	endif
+
+	$ownAttributes
+	if $ownAttributes and $foreignAttributes 
+		then ',' newline $foreignAttributes endif
+	');' newline newline
+} /* entities */
+
+endreport

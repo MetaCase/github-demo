@@ -1,0 +1,3 @@
+Report '_default directory'
+subreport '_default drive' run '\' foreach .Application { id } '\'
+endreport

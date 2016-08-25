@@ -1,0 +1,3 @@
+_gName()
+/* gives name in proper format, with prefix and puts first letter capital */
+'MDL_' id%firstUpper%var

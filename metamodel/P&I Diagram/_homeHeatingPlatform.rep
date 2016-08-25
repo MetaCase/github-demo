@@ -1,0 +1,2617 @@
+_homeHeatingPlatform()
+/* generated the platform for TwinCAT containing the common primitives */
+
+variable 'files' write subreport '_default directory' run 'homeheatingplatform.exp ' close
+
+filename subreport '_default directory' run 'homeheatingplatform.exp' write
+'
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/_TestSuite\/Simulation\/HomeHeatingSim\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_BoilerSim
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+;
+END_FUNCTION_BLOCK
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/_TestSuite\/Simulation\/HomeHeatingSim\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_BurnerSim
+VAR_INPUT
+	bOperatingOk: BOOL := TRUE;
+END_VAR
+VAR_OUTPUT
+	bHasChanged : BOOL := FALSE;
+	bIsOn: BOOL := FALSE;
+END_VAR
+VAR
+	bInit: BOOL := TRUE;
+	bOldState: BOOL := FALSE;
+	Q_On  AT %I* : BOOL ;
+	I_FlameDetected  AT %Q* : BOOL ;
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+IF bInit THEN
+	bInit := FALSE;
+	(* Do simulation initialization stuff *)
+ELSE
+	bHasChanged := FALSE;
+
+	(*Do simulation running stuff *)
+	IF bOperatingOk THEN
+		bIsOn := Q_On;
+	END_IF
+	I_FlameDetected := bIsOn;
+
+	bHasChanged := bOldState = NOT bIsOn;
+	bOldState := bIsOn;
+	(* If simulation calculations resulted in changes: bHasChanged := TRUE;  *)
+
+	IF bIsOn THEN
+		(*Do additional simulation*)
+		;
+	END_IF
+END_IF
+END_FUNCTION_BLOCK
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/_TestSuite\/Simulation\/HomeHeatingSim\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_FlowSensorSim
+VAR_INPUT
+	bOperatingOk: BOOL := TRUE;
+	lrFlow : LREAL;
+	lrConversionFactor : LREAL := 0.01;
+END_VAR
+VAR_OUTPUT
+	bHasChanged : BOOL := FALSE;
+END_VAR
+VAR
+	bInit: BOOL := TRUE;
+	I_value	AT %Q* : INT ;
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+IF bInit THEN
+	bInit := FALSE;
+	(* Do simulation initialization stuff *)
+ELSE
+	bHasChanged := FALSE;
+
+	(*Do simulation running stuff *)
+	I_value := REAL_TO_INT(  lrFlow / lrConversionFactor );
+
+	(* If simulation calculations resulted in changes: bHasChanged := TRUE;  *)
+	bHasChanged := TRUE;
+
+END_IF
+END_FUNCTION_BLOCK
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/_TestSuite\/Simulation\/HomeHeatingSim\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_HeatingUnitSim
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+;
+END_FUNCTION_BLOCK
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/_TestSuite\/Simulation\/HomeHeatingSim\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_ManuallyValveSim
+VAR_INPUT
+	bOpen : BOOL := FALSE;
+	bOperatingOk: BOOL := TRUE;
+END_VAR
+VAR_OUTPUT
+	bHasChanged : BOOL := FALSE;
+	bIsOpen: BOOL;
+END_VAR
+VAR
+	bInit: BOOL := TRUE;
+	bOldState: BOOL := FALSE;
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+IF bInit THEN
+	bInit := FALSE;
+	(* Do simulation initialization stuff *)
+ELSE
+	bHasChanged := FALSE;
+
+	(*Do simulation running stuff *)
+	bIsOpen := bOpen;
+
+	bHasChanged := bOldState = NOT bIsOpen;
+	bOldState := bIsOpen;
+	(* If simulation calculations resulted in changes: bHasChanged := TRUE;  *)
+
+	IF bIsOpen THEN
+		(*Do additional simulation*)
+		;
+	END_IF
+END_IF
+END_FUNCTION_BLOCK
+ACTION	Close:
+bOpen := FALSE;
+END_ACTION
+
+ACTION	Open:
+bOpen := TRUE;
+END_ACTION
+
+
+
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/_TestSuite\/Simulation\/HomeHeatingSim\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_NormallyClosedValveSim
+VAR_INPUT
+	bOperatingOk: BOOL := TRUE;
+END_VAR
+VAR_OUTPUT
+	bHasChanged : BOOL := FALSE;
+	bIsOpen: BOOL;
+END_VAR
+VAR
+	bInit: BOOL := TRUE;
+	bOldState: BOOL := FALSE;
+	Q_ControlValveSetpoint  AT %I* : BOOL ;
+	I_ControValveFeedback AT %Q* : BOOL;
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+IF bInit THEN
+	bInit := FALSE;
+	(* Do simulation initialization stuff *)
+ELSE
+	bHasChanged := FALSE;
+
+	(*Do simulation running stuff *)
+	IF bOperatingOk THEN
+		bIsOpen := Q_ControlValveSetpoint;
+	END_IF
+
+	bHasChanged := bOldState = NOT bIsOpen;
+	bOldState := bIsOpen;
+	(* If simulation calculations resulted in changes: bHasChanged := TRUE;  *)
+
+	IF bIsOpen THEN
+		(*Do additional simulation*)
+		;
+	END_IF
+
+	I_ControValveFeedback := bIsOpen;
+END_IF
+END_FUNCTION_BLOCK
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/_TestSuite\/Simulation\/HomeHeatingSim\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_PipeSim
+VAR_INPUT
+	bOperatingOk: BOOL := TRUE;
+END_VAR
+VAR_OUTPUT
+	bHasChanged : BOOL := FALSE;
+END_VAR
+VAR
+	bInit : BOOL := TRUE;
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+IF bInit THEN
+	bInit := FALSE;
+	(* Do simulation initialization stuff *)
+ELSE
+	bHasChanged := FALSE;
+
+	(*Do simulation running stuff *)
+	(* If simulation calculations resulted in changes: bHasChanged := TRUE;  *)
+END_IF
+END_FUNCTION_BLOCK
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/_TestSuite\/Simulation\/HomeHeatingSim\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_PumpSim
+VAR_INPUT
+	bOperatingOk: BOOL := TRUE;
+END_VAR
+VAR_OUTPUT
+	bHasChanged : BOOL := FALSE;
+	bIsOn: BOOL := FALSE;
+END_VAR
+VAR
+	bInit: BOOL := TRUE
+;	bOldState: BOOL := FALSE;
+	Q_On  AT %I* : BOOL ;
+	I_OnFeedback  AT %Q* : BOOL ;
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+IF bInit THEN
+	bInit := FALSE;
+	(* Do simulation initialization stuff *)
+ELSE
+	bHasChanged := FALSE;
+
+	(*Do simulation running stuff *)
+	IF bOperatingOk THEN
+		bIsOn := Q_On;
+	END_IF
+
+	bHasChanged := bOldState = NOT bIsOn;
+	bOldState := bIsOn;
+	(* If simulation calculations resulted in changes: bHasChanged := TRUE;  *)
+
+	IF bIsOn THEN
+		(*Do additional simulation*)
+		;
+	END_IF
+
+	I_OnFeedback := bIsOn;
+END_IF
+END_FUNCTION_BLOCK
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/_TestSuite\/Simulation\/HomeHeatingSim\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_RadiatorSim
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+;
+END_FUNCTION_BLOCK
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/_TestSuite\/Simulation\/HomeHeatingSim\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_SpeedSensorSim
+VAR_INPUT
+	bOperatingOk: BOOL := TRUE;
+	lrRPM : LREAL := 0.0;
+	lrConversionFactor : LREAL := 1.0;
+END_VAR
+VAR_OUTPUT
+	bHasChanged : BOOL := FALSE;
+END_VAR
+VAR
+	bInit: BOOL;
+	I_value	AT %Q* : INT ;
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+IF bInit THEN
+	bInit := FALSE;
+	(* Do simulation initialization stuff *)
+ELSE
+	bHasChanged := FALSE;
+
+	(*Do simulation running stuff *)
+	I_value :=REAL_TO_INT(  lrRPM /  lrConversionFactor );
+
+	(* If simulation calculations resulted in changes: bHasChanged := TRUE;  *)
+	bHasChanged := TRUE;
+END_IF
+END_FUNCTION_BLOCK
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/_TestSuite\/Simulation\/HomeHeatingSim\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_TemperatureSensorSim
+VAR_INPUT
+	bOperatingOk: BOOL := TRUE;
+	lrTemperature : LREAL;
+	lrConversionFactor : LREAL := 0.1;
+END_VAR
+VAR_OUTPUT
+	bHasChanged : BOOL := FALSE;
+END_VAR
+VAR
+	bInit: BOOL := TRUE;
+	I_value	AT %Q* : INT ;
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+IF bInit THEN
+	bInit := FALSE;
+	(* Do simulation initialization stuff *)
+ELSE
+	bHasChanged := FALSE;
+
+	(*Do simulation running stuff *)
+	I_value := REAL_TO_INT( lrTemperature / lrConversionFactor );
+
+	(* If simulation calculations resulted in changes: bHasChanged := TRUE;  *)
+	bHasChanged := TRUE;
+END_IF
+END_FUNCTION_BLOCK
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/_TestSuite\/Simulation\/HomeHeatingSim\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_ThermostatSim
+VAR_INPUT
+	bOperatingOk: BOOL := TRUE;
+	lrRoomTemperature : LREAL;
+	lrRequestedTemperature: LREAL;
+	lrConversionFactor : LREAL := 0.1;
+END_VAR
+VAR_OUTPUT
+	bHasChanged : BOOL := FALSE;
+END_VAR
+VAR
+	bInit: BOOL := TRUE;
+	I_requestedTemp	AT %Q* : INT ;
+	I_roomTemp	AT %Q* : INT ;
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+IF bInit THEN
+	bInit := FALSE;
+	(* Do simulation initialization stuff *)
+ELSE
+	bHasChanged := FALSE;
+
+	(*Do simulation running stuff *)
+	I_requestedTemp := REAL_TO_INT( lrRequestedTemperature / lrConversionFactor );
+	I_roomTemp := REAL_TO_INT(  lrRoomTemperature / lrConversionFactor );
+
+	(* If simulation calculations resulted in changes: bHasChanged := TRUE;  *)
+	bHasChanged := TRUE;
+END_IF
+END_FUNCTION_BLOCK
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/_TestSuite\/Simulation\/HomeHeatingSim\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_ThreeValveSim
+VAR_INPUT
+	bOperatingOk: BOOL := TRUE;
+END_VAR
+VAR_OUTPUT
+	bHasChanged : BOOL := FALSE;
+	iPosition : INT :=0; (*0=Mid, 1=Left, 2=Right*)
+	bThreeValveLeft  : BOOL ;
+	bThreeValveRight : BOOL ;
+	bThreeValveOpen: BOOL;
+END_VAR
+VAR
+	bInit: BOOL := TRUE;
+	iOldPosition : INT :=0; (*0=Mid, 1=Left, 2=Right*)
+
+	Q_ThreeValveSetpoint  AT %I* : INT;
+	I_ThreeValveFeedback AT %Q* : INT;
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+IF bInit THEN
+	bInit := FALSE;
+	(* Do simulation initialization stuff *)
+ELSE
+	bHasChanged := FALSE;
+
+	(*Do simulation running stuff *)
+	(* Allow for injecting fault conditions*)
+	IF bOperatingOk THEN
+		iPosition := Q_ThreeValveSetpoint;
+	END_IF
+
+	bHasChanged := iOldPosition <> iPosition;
+	iOldPosition := iPosition;
+	(* If simulation calculations resulted in changes: bHasChanged := TRUE;  *)
+
+	I_ThreeValveFeedback := iPosition;
+	bThreeValveLeft := (iPosition <> 2);
+	bThreeValveRight := (iPosition <> 1);
+	bThreeValveOpen :=  TRUE;
+END_IF
+END_FUNCTION_BLOCK
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/HOMEHEATING\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_Boiler
+VAR_INPUT
+	bWarmUp : BOOL := FALSE;
+END_VAR
+VAR_OUTPUT
+	lrTempSetpointLow : LREAL := 85.0;
+	lrTempSetpointHigh : LREAL := 90.0;
+
+END_VAR
+VAR
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+;
+END_FUNCTION_BLOCK
+ACTION	DontWarmUp:
+bWarmUp := FALSE;
+END_ACTION
+
+ACTION	DoWarmUp:
+bWarmUp := TRUE;
+END_ACTION
+
+
+
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/HOMEHEATING\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_Burner
+VAR_INPUT
+(* Change to setpoint in percentage *)
+	bOn : BOOL := FALSE;
+	bHeatRequested : BOOL := FALSE;
+END_VAR
+VAR_OUTPUT
+	bFlameDetected : BOOL := FALSE;
+END_VAR
+VAR
+	Q_On  AT %Q* : BOOL ;
+	I_FlameDetected  AT %I* : BOOL ;
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+Q_On := bOn;
+bFlameDetected := I_FlameDetected;
+END_FUNCTION_BLOCK
+ACTION	Off:
+bOn := FALSE;
+END_ACTION
+
+ACTION	On:
+bOn := TRUE;
+END_ACTION
+
+
+
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/HOMEHEATING\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_FlowSensor
+VAR_INPUT
+	lrConversionFactor : LREAL := 0.01;
+END_VAR
+VAR_OUTPUT
+	lrFlow : LREAL;
+END_VAR
+VAR
+	I_value	AT %I* : INT ;
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+lrFlow := I_value * lrConversionFactor;
+END_FUNCTION_BLOCK
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/HOMEHEATING\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_ManuallyValve
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+;
+END_FUNCTION_BLOCK
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/HOMEHEATING\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_NormallyClosedValve
+VAR_INPUT
+	bOpen : BOOL := FALSE;
+END_VAR
+VAR_OUTPUT
+	bOpenFeedback : BOOL;
+END_VAR
+VAR
+	Q_ControlValveSetpoint  AT %Q* : BOOL ; (* True = Open*)
+	I_ControValveFeedback AT %I* : BOOL;
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+Q_ControlValveSetpoint := bOpen;
+
+(* Provide some feedback *)
+bOpenFeedback := I_ControValveFeedback;
+
+END_FUNCTION_BLOCK
+ACTION	Close:
+bOpen := FALSE;
+END_ACTION
+
+ACTION	Open:
+bOpen := TRUE;
+END_ACTION
+
+
+
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/HOMEHEATING\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_Pump
+VAR_INPUT
+	bOn : BOOL := FALSE;
+END_VAR
+VAR_OUTPUT
+	bOnFeedback : BOOL := FALSE;
+END_VAR
+VAR
+	Q_On  AT %Q* : BOOL ;
+	I_OnFeedback  AT %I* : BOOL ;
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+Q_On := bOn;
+
+(* Provide some feedback *)
+bOnFeedback := I_OnFeedback;
+
+END_FUNCTION_BLOCK
+ACTION	Off:
+bOn := FALSE;
+END_ACTION
+
+ACTION	On:
+bOn := TRUE;
+END_ACTION
+
+
+
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/HOMEHEATING\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_Radiator
+VAR_INPUT
+	bWarmUp : BOOL := FALSE;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+;
+END_FUNCTION_BLOCK
+ACTION	DontWarmUp:
+bWarmUp := FALSE;
+END_ACTION
+
+ACTION	DoWarmUp:
+bWarmUp := TRUE;
+END_ACTION
+
+
+
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/HOMEHEATING\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_SpeedSensor
+VAR_INPUT
+	lrConversionFactor : LREAL := 1.0;
+END_VAR
+VAR_OUTPUT
+	lrRPM : LREAL := 0.0;
+END_VAR
+VAR
+	I_value	AT %I* : INT ;
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+lrRPM := I_value * lrConversionFactor;
+END_FUNCTION_BLOCK
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/HOMEHEATING\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_TemperatureSensor
+VAR_INPUT
+	lrConversionFactor : LREAL := 0.1;
+END_VAR
+VAR_OUTPUT
+	lrTemperature : LREAL;
+END_VAR
+VAR
+	I_value	AT %I* : INT ;
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+lrTemperature := I_value * lrConversionFactor;
+END_FUNCTION_BLOCK
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/HOMEHEATING\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_Thermostat
+VAR_INPUT
+	lrConversionFactor: LREAL := 0.1;
+END_VAR
+VAR_OUTPUT
+	lrRequestedTemperature: LREAL;
+	lrRoomTemperature: LREAL;
+	lrTempSetpointLow : LREAL;
+	lrTempSetPointHigh : LREAL;
+END_VAR
+VAR
+	lrHysteresis : LREAL := 0.5;
+	I_requestedTemp	AT %I* : INT ;
+	I_roomTemp	AT %I* : INT ;
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+lrRoomTemperature :=I_roomTemp * lrConversionFactor;
+lrRequestedTemperature :=I_requestedTemp * lrConversionFactor;
+lrTempSetpointLow := lrRequestedTemperature - lrHysteresis;
+lrTempSetpointHigh := lrRequestedTemperature + lrHysteresis;
+END_FUNCTION_BLOCK
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/HOMEHEATING\/BASEBLOCKS'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+FUNCTION_BLOCK FB_ThreeValve
+VAR_INPUT
+	iPositionSetpoint : INT :=0; (*0=Mid, 1=Left, 2=Right*)
+END_VAR
+VAR_OUTPUT
+	bThreeValveLeft  : BOOL ;
+	bThreeValveRight : BOOL ;
+	bThreeValveBoth: BOOL;
+END_VAR
+VAR
+	iPositionFeedback : INT := 0;
+	Q_ThreeValveSetpoint  AT %Q* : INT;
+	I_ThreeValveFeedback AT %I* : INT;
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+Q_ThreeValveSetpoint := iPositionSetpoint;
+iPositionFeedback := I_ThreeValveFeedback;
+
+(* Provide some feedback *)
+bThreeValveLeft := (iPositionFeedback = 1);
+bThreeValveRight := (iPositionFeedback = 2);
+bThreeValveBoth :=  (iPositionFeedback = 0);
+
+
+END_FUNCTION_BLOCK
+ACTION	OpenBoth:
+iPositionSetpoint := 0;
+END_ACTION
+
+ACTION	OpenLeft:
+iPositionSetpoint := 1;
+END_ACTION
+
+ACTION	OpenRight:
+iPositionSetpoint := 2;
+END_ACTION
+
+
+
+
+
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := ''\/INFRASTRUCTURE'' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+(*****************************************************************
+ Copyright Sioux Embedded Systems B.V. 
+ All rights reserved.
+******************************************************************)
+FUNCTION F_Assert : BOOL
+VAR_INPUT
+	bCondition : BOOL := FALSE;
+	text : STRING;
+END_VAR
+VAR
+	a : INT := 1;
+	b : INT := 0;
+	c : INT := 0;
+END_VAR
+(* @END_DECLARATION := ''0'' *)
+IF NOT bCondition THEN
+	(*Deliberate Assert, See the Callstack: Online -> Call Stack*)
+	c := a/b;
+END_IF
+F_Assert := FALSE;
+END_FUNCTION
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @PATH := '''' *)
+TYPE E_SimState :
+(
+	SimState_Initializing,
+	SimState_Calculating,
+	SimState_Stable
+);
+END_TYPE
+(* @END_DECLARATION := ''0'' *)
+
+(* @PATH := '''' *)
+
+VISUALISATION HeatingSystem _VISU_TYPES : 1,1
+_BG_BMP : ''''
+_TEXT : 101
+_PAINTZOOM : 100
+
+_SIMPLE : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 340,210,401,271,370,240
+_COLORS : 16777215,0,65280,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''',''TEST_MAIN.simulation.homeHeatingSim.MDL_P1.bIsOn'',''MAIN.homeHeating.MDL_P1.bOn'',''''
+_DSP : '''',''P1'',''''
+_ZOOM : ''''
+_INPUT : 65536
+_TEXT : 5,4294967283,400,0,11,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 1
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 510,130,661,191,585,160
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''','''',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,14,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 7
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 545,160,490,140,520,140,640,150,520,160,640,170,520,180,490,180
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,16,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 3
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 370,243,350,260,370,210,390,260
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,17,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 1
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 220,350,531,471,375,410
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''','''',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,19,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 320,430,381,451,350,440
+_COLORS : 16777215,0,255,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''',''TEST_MAIN.simulation.homeHeatingSim.MDL_HU1_B1.bIsOn'','''',''''
+_DSP : '''',''Burner'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,20,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 7
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 350,365,330,340,330,360,340,400,350,360,360,400,370,360,370,340
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,21,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 3
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 0
+_POS : 370,160,360,170,380,170,370,140
+_COLORS : 16777215,0,255,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''',''TEST_MAIN.simulation.homeHeatingSim.MDL_CV1.bThreeValveOpen'','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,24,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 3
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 0
+_POS : 390,140,400,130,400,150,370,140
+_COLORS : 16777215,0,255,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''',''TEST_MAIN.simulation.homeHeatingSim.MDL_CV1.bThreeValveRight'','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,25,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 3
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 0
+_POS : 350,140,340,130,340,150,370,140
+_COLORS : 16777215,0,255,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''',''TEST_MAIN.simulation.homeHeatingSim.MDL_CV1.bThreeValveLeft'','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,26,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 1
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 180,60,261,201,220,130
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''','''',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,34,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 7
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 244,160,270,140,250,140,210,150,250,160,210,170,250,180,270,180
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,35,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 130,80,171,121,150,100
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : ''TEST_MAIN.simulation.homeHeatingSim.MDL_FS1.lrFlow'',''%s'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967285,400,0,37,0,0,0
+_FONT : ''MS Sans Serif''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 4
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 2
+_POS : 20,140,20,130,40,140,0,140,20,150
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,38,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 4
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 2
+_POS : 20,180,20,170,40,180,0,180,20,190
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,39,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 105,180,30,180,180,180
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,40,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 150,140,120,140,180,140
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,41,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 130,60,171,81,150,70
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''',''FS1'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,36,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 150,130,150,120,150,140
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,42,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 370,190,370,210,370,170
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,43,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 430,220,471,261,450,240
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : ''TEST_MAIN.simulation.homeHeatingSim.MDL_P1_SS3.lrRPM'',''%s'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967285,400,0,44,0,0,0
+_FONT : ''MS Sans Serif''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 420,200,481,221,450,210
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''',''SS3'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,45,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 415,240,400,240,430,240
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,46,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 370,305,370,270,370,340
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,47,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 430,310,471,351,450,330
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : ''TEST_MAIN.simulation.homeHeatingSim.MDL_TS6.lrTemperature'',''%s'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967285,400,0,48,0,0,0
+_FONT : ''MS Sans Serif''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 420,290,481,311,450,300
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''',''TS6'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,49,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 400,330,370,330,430,330
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,51,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 305,140,270,140,340,140
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,52,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_VISUGROUP : 0
+_POS : 360,100,384,141,370,120
+_THRESH : '''','''','''',''''
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_INPUT : 0
+_DSP : '''',''CV1'',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,4294967295,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_FRAME : 0,0,0,1
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+_BG_BMP : ''''
+_TEXT : 0
+_PAINTZOOM : 100
+
+_PIE : 4
+_LINEWIDTH : 0,0
+_NOCOLORS : 1,1
+_PIEANGLE1 : ''''
+_PIEANGLE2 : ''''
+_POS : 12,12,12,12,23,23,0,11,24,11
+_COLORS : 0,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,55,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 10,25,10,40,10,10
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,56,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+_KEYINFOLIST : 0
+_END_VISUGROUP
+
+_POLY : 4
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 335,230,270,180,290,180,290,280,490,280
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,57,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 330,310,330,340,330,280
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,58,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 445,140,400,140,490,140
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,59,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 490,230,490,180,490,280
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,60,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 3
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 0
+_POS : 490,440,500,430,500,450,470,440
+_COLORS : 16777215,0,65535,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''',''TEST_MAIN.simulation.homeHeatingSim.MDL_HU1_CV2.bIsOpen'','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,61,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 3
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 0
+_POS : 450,440,440,430,440,450,470,440
+_COLORS : 16777215,0,65535,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''',''TEST_MAIN.simulation.homeHeatingSim.MDL_HU1_CV2.bIsOpen'','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,62,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_VISUGROUP : 0
+_POS : 460,400,484,441,472,420
+_THRESH : '''','''','''',''''
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_INPUT : 0
+_DSP : '''',''CV2'',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,63,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_FRAME : 0,0,0,1
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+_BG_BMP : ''''
+_TEXT : 0
+_PAINTZOOM : 100
+
+_PIE : 4
+_LINEWIDTH : 0,0
+_NOCOLORS : 1,1
+_PIEANGLE1 : ''''
+_PIEANGLE2 : ''''
+_POS : 12,12,12,12,23,23,0,11,24,11
+_COLORS : 0,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,64,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 10,25,10,40,10,10
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,65,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+_KEYINFOLIST : 0
+_END_VISUGROUP
+
+_POLY : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 410,440,380,440,440,440
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,66,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 4
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 2
+_POS : 590,440,590,430,610,440,570,440,590,450
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,67,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 540,440,580,440,500,440
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,68,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 260,420,301,461,280,440
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : ''TEST_MAIN.simulation.homeHeatingSim.MDL_HU1_TS4.lrTemperature'',''%s'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967285,400,0,69,0,0,0
+_FONT : ''MS Sans Serif''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 210,430,271,451,240,440
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''',''TS4'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,70,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 310,440,300,440,320,440
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,71,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 260,360,301,401,280,380
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : ''TEST_MAIN.simulation.homeHeatingSim.MDL_HU1_TS5.lrTemperature'',''%s'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967285,400,0,72,0,0,0
+_FONT : ''MS Sans Serif''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 210,370,271,391,240,380
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''',''TS5'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,73,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 200,90,241,131,220,110
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : ''TEST_MAIN.simulation.homeHeatingSim.MDL_B1_TS2.lrTemperature'',''%3.1lf'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967285,400,0,75,0,0,0
+_FONT : ''MS Sans Serif''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 190,70,251,91,220,80
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''',''TS2'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,76,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 190,200,251,221,220,210
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''',''B1 (Boiler)'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,78,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 20,150,121,171,70,160
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''',''Hot Water'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,79,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 80,180,181,201,130,190
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''',''Cold Water'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,80,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 3
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 0
+_POS : 36,140,40,130,40,150,30,140
+_COLORS : 0,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,81,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 3
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 0
+_POS : 173,180,170,170,170,190,180,180
+_COLORS : 0,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,82,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 3
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 0
+_POS : 506,440,510,430,510,450,500,440
+_COLORS : 0,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,83,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 520,440,581,461,550,450
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''',''Gas'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,84,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 240,470,391,491,315,480
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''',''HU1 (Heating Unit)'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,85,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 530,110,591,131,560,120
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''',''Radiator'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,86,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 450,30,661,101,555,65
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''','''',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,87,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 460,40,591,61,520,50
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''',''Requested Temp.:'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,88,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 450,70,591,91,520,80
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''',''Room Temperature:'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,89,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 590,40,631,61,610,50
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : ''TEST_MAIN.simulation.homeHeatingSim.MDL_TH1.lrRequestedTemperature'',''%2.1f'',''''
+_ZOOM : ''''
+_INPUT : 1048576
+_TEXT : 5,4294967283,400,0,90,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 590,70,631,91,610,80
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : ''TEST_MAIN.simulation.homeHeatingSim.MDL_TH1.lrRoomTemperature'',''%2.1f'',''''
+_ZOOM : ''''
+_INPUT : 1048576
+_TEXT : 5,4294967283,400,0,91,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 630,40,661,61,645,50
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''',''C'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,92,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 630,70,661,91,645,80
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''',''C'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,93,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 490,10,601,31,545,20
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_THRESH : '''','''','''',''''
+_DSP : '''',''TH1 (Thermostat)'',''''
+_ZOOM : ''''
+_INPUT : 0
+_TEXT : 5,4294967283,400,0,94,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 50,140,40,140,60,140
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,97,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_VISUGROUP : 0
+_POS : 70,110,111,141,90,120
+_THRESH : '''','''',''TEST_MAIN.simulation.homeHeatingSim.MDL_MV3.bOpen'',''''
+_VARIABLES : '''','''','''','''','''','''','''',''''
+_INPUT : 65536
+_DSP : '''',''MV3'',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,4294967295,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_FRAME : 0,0,0,1
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+_BG_BMP : ''''
+_TEXT : 0
+_PAINTZOOM : 100
+
+_POLY : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 10,15,10,30,10,0
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,98,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 2
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 1
+_POS : 10,0,0,0,20,0
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''','''','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,99,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+_KEYINFOLIST : 0
+_END_VISUGROUP
+
+_POLY : 3
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 0
+_POS : 110,140,120,130,120,150,90,140
+_COLORS : 16777215,0,255,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''',''TEST_MAIN.simulation.homeHeatingSim.MDL_MV3.bIsOpen'','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,95,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+
+_POLY : 3
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POLYSORT : 0
+_POS : 70,140,60,130,60,150,90,140
+_COLORS : 16777215,0,255,0,0
+_VARIABLES : '''','''','''',''''
+_THRESH : '''',''TEST_MAIN.simulation.homeHeatingSim.MDL_MV3.bIsOpen'','''',''''
+_INPUT : 0
+_DSP : '''','''',''''
+_ZOOM : ''''
+_TEXT : 5,4294967283,400,0,96,0,0,0
+_FONT : ''''
+_EXEC : ''''
+_TEXTVARIABLES : '''','''','''','''',''''
+_COLORVARIABLES : '''','''','''','''','''',''''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '''','''','''',''''
+_INPUTTYPE : '''','''',''''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := ''_TEXTSCALINGVARS: $''$'',$''$'''' *)
+_KEYINFOLIST : 0
+END_VISUALISATION
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @GLOBAL_VARIABLE_LIST := ''Global_Variables'' *)
+(* @PATH := '''' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+VAR_GLOBAL CONSTANT
+	ERROR_MARGIN : LREAL :=  1E-9;
+END_VAR
+
+
+(* @OBJECT_END := ''Global_Variables'' *)
+(* @CONNECTIONS := Global_Variables
+FILENAME : ''''
+FILETIME : 0
+EXPORT : 0
+NUMOFCONNECTIONS : 0
+*)
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @GLOBAL_VARIABLE_LIST := ''TwinCAT_Configuration'' *)
+(* @PATH := '''' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+(* Generated automatically by TwinCAT - (read only) *)
+VAR_CONFIG
+END_VAR
+(* @OBJECT_END := ''TwinCAT_Configuration'' *)
+(* @CONNECTIONS := TwinCAT_Configuration
+FILENAME : ''''
+FILETIME : 0
+EXPORT : 0
+NUMOFCONNECTIONS : 0
+*)
+
+(* @NESTEDCOMMENTS := ''Yes'' *)
+(* @GLOBAL_VARIABLE_LIST := ''Variable_Configuration'' *)
+(* @PATH := '''' *)
+(* @SYMFILEFLAGS := ''2048'' *)
+VAR_CONFIG
+END_VAR
+
+(* @OBJECT_END := ''Variable_Configuration'' *)
+(* @CONNECTIONS := Variable_Configuration
+FILENAME : ''''
+FILETIME : 0
+EXPORT : 0
+NUMOFCONNECTIONS : 0
+*)
+
+
+_ALARMCONFIG
+_ALARMCONFIGNEXTTEXTID : 10002
+_ALARMCONFIGFORMATS : ''HH$'':$''mm$'':$''ss'',''dd$''-$''MM$''-$''yyyy''
+_ALARMCLASSLIST : 1
+_ALARMCLASSID : 0
+_ALARMCLASSACKTYPE : 0
+_ALARMCLASSNAME : ''DEFAULT''
+_ALARMCLASSDESCRIPTION : ''''
+_ALARMCLASSBGCOLORS : 16777215,16777215,16777215
+_ALARMCLASSTEXTCOLORS : 3394560,255,16711680
+_ALARMCLASSBITMAPS : '''','''',''''
+_ALARMACTIONLIST : 0
+(* @ALARMCLASSRESETCOLORS := ''_ALARMCLASSRESETCOLORS: 33023,16777215'' *)
+(* @ALARMCLASSRESETBITMAP := ''_ALARMCLASSRESETBITMAP: $''$'''' *)
+_ALARMGROUPLISTNAME : ''System''
+_ALARMGROUPPATH : ''System''
+_ALARMGROUPLIST : 0
+_VISUALSETTINGSFLAGS : 0,0,0,0
+_VISUALSETTINGSFLAGS : '''','''',''''
+_VISUALSETTINGSDYNTEXTFILECOUNT : 0
+
+(* @ALARMCONFIGFLAGS := ''_ALARMCONFIGFLAGS: 0'' *)
+(* @ALARMCONFIGGLOBALDB_STR := ''_ALARMCONFIGGLOBALDB_STRINGS: $''$'',$''$'',$''$'',$''$'''' *)
+(* @ALARMCONFIGGLOBALDB_NUM := ''_ALARMCONFIGGLOBALDB_NUMBERS: 0,0'' *)
+_END_ALARMCONFIG
+
+
+LIBRARY
+STANDARD.LIB 5.6.98 11:03:02
+(* @LIBRARYSYMFILEINFO := ''0'' *)
+NumOfPOUs: 20
+CONCAT: 0
+CTD: 0
+CTU: 0
+CTUD: 0
+DELETE: 0
+F_TRIG: 0
+FIND: 0
+INSERT: 0
+LEFT: 0
+LEN: 0
+MID: 0
+R_TRIG: 0
+REPLACE: 0
+RIGHT: 0
+RS: 0
+SEMA: 0
+SR: 0
+TOF: 0
+TON: 0
+TP: 0
+NumOfGVLs: 1
+''Global Variables 0'': 0
+END_LIBRARY
+
+PLC_CONFIGURATION
+_ELEMENT 15700
+_ELEMENT_END
+PLC_END
+
+
+RESOURCE
+
+TASK Standard (PRIORITY := 0, INTERVAL := T#10ms);
+{Additional_info : 1,0,0,0,1,4294967295}
+END_TASK
+
+END_RESOURCE
+'
+close

@@ -1,0 +1,48 @@
+Report '_Reverse engineer Java files'
+/* index for the imported class diagram(s) */
+$graphNum='1'
+do graphs where type = 'Class Diagram [UML]' and id =/ 'Reverse engineered Java .*'
+{	$graphNum++%null
+}
+
+/* create graph name and save it to list of created graphs */
+variable 'graphName' write
+	'Reverse engineered Java ' $graphNum
+close
+variable 'graphs' append 
+	$graphName newline 
+close
+
+/* Create .mxm file to be imported. File contains all the reverse engineered classes and attributes in the syntax of UML Class Diagram */
+filename $dd $graphName '.mxm' encoding 'UTF-8' write
+'<?xml version="1.0" encoding="UTF-8"?>
+<gxl xmlns="http://www.metacase.com/gxlGOPRR">
+<graph type="Class Diagram [UML]">
+	<slot name="Model name">
+		<value>
+			<string>' $graphName%xml '</string>
+		</value>
+	</slot>
+'
+
+$package = $prevPackage = ''
+/* Goes through all the Java files and their contents one-by-one */
+do $files
+where id<>''
+{	$filename = id
+	$package = $filename%package
+	if $package <> '' and $package <> $prevPackage then
+		subreport '_package' run
+		$prevPackage = $package
+	endif
+	subreport '_class' run
+}
+if $prevPackage <> '' then 
+	subreport '_p_end' run
+endif
+
+'</graph>
+</gxl>'
+close
+
+endreport

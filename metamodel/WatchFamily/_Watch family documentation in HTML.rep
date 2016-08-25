@@ -1,0 +1,57 @@
+Report '_Watch family documentation in HTML'
+'<html><head>'
+subreport '__stylesheet in HTML' run
+'</head><body>' newline
+'<h2>' id%xml ': ' type%xml '</h2>' newline
+if :Documentation; <> '' then 
+	dowhile :Documentation; 
+		{id%xml '<br />'} '<br /><br />' newline
+endif
+'<b>Watch family picture:</b> ' id%xml '<br />' newline
+filename subreport '_default directory' run subreport '_id and oid' run '.png' print
+'<img src="' subreport '_id and oid' run '.png" border="0" usemap="#' subreport '_default directory' run subreport '_id and oid' run '.png" /><br /><br />'
+'<b>Watch family includes following models:</b><br />' newline
+subreport '__Table HTML' run '<tr><th>Model name</th><th>Logical watch</th><th>Display</th><th>Documentation</th></tr>' newline
+foreach >Watch
+{	
+	'<tr><td><b><a name="' oid '"></a>' id%xml '</b>&nbsp;</td>' newline
+	'<td><a href="' 
+	do ~().LogicalWatch { do decompositions { subreport '_id and oid' run }}
+	'.html">'	 do ~().LogicalWatch { id%xml } '</td>' newline
+	'<td><a href="#' do ~().Display { id%var } '">' do ~().Display { id%xml } '&nbsp;</a></td>' newline
+	'<td>' dowhile :Documentation; {id%xml '<br />'}	'&nbsp;</td></tr>' newline
+}
+'</table><br />' newline
+'<b>Displays:</b><br />' newline
+subreport '__Table HTML' run '<tr><th>Display name</th><th>Icons</th><th>Zones</th><th>Buttons</th></tr>' newline
+foreach .Display
+{	
+	'<tr><td valign="top"><a name="' id%var	'"></a>' id '</td>' newline
+	'<td valign="top">' 
+	if :Icons; <>'' then
+		dowhile :Icons; { id%xml '<br />' } 
+	endif
+	'&nbsp;</td>' newline
+	'<td valign="top">'
+	if :UnitZones; <>'' then
+		dowhile :UnitZones; { id%xml '<br />' } 
+	endif
+	'&nbsp;</td>' newline
+	'<td valign="top">' 
+	if :Buttons; <>'' then
+		dowhile :Buttons; { id%xml '<br />' } 
+	endif
+	'&nbsp;</td>' newline
+	'</tr>' newline
+}
+'</table><br />' newline
+foreach .LogicalWatch 
+{	
+	if decompositions then 
+		do decompositions 
+			{ subreport '_graphs in HTML' run }
+	endif
+}
+'<i>Generated from MetaEdit+ Watch family documentation report</i><br /><hr />' newline
+'</body></html>'
+endreport

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="EventFunction_symbol">
+		<objectSymbol offset="40,20" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="40,20 66,20 66,46 40,46 40,20" targetPointX="53" targetPointY="33" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="46" version="1.2" width="66" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<radialGradient cx="0.5" cy="0.5" gradientUnits="objectBoundingBox" id="gradient1" r="0.707107" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(170,170,170)"></stop>
+					</radialGradient>
+				</defs>
+				<g fill="none" stroke="none" stroke-width="1" sym:height="26" sym:width="26" sym:x="4.0e1" sym:y="2.0e1">
+					<g fill="none" stroke="rgb(0,0,0)" stroke-width="1" sym:height="26" sym:width="20.3784" sym:x="4.56216e1" sym:y="2.0e1">
+						<polyline fill="none" points="45.6216,20 45.6216,46 66,46 66,25.525 61.205,20.325 61.205,21.95 61.205,25.525 66,25.525" stroke="rgb(0,0,0)" stroke-width="1">
+							<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+						</polyline>
+						<line stroke="rgb(0,0,0)" stroke-width="1" x1="45.6216" x2="61.205" y1="20" y2="20">
+							<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+						</line>
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</g>
+					<g fill="none" stroke="none" stroke-width="1" sym:height="14.7281" sym:width="20.3784" sym:x="4.0e1" sym:y="2.63243e1">
+						<g fill="none" stroke="none" stroke-width="1" sym:height="14.7281" sym:width="18.973" sym:x="4.0e1" sym:y="2.63243e1">
+							<rect fill="url(#gradient1)" height="14.7281" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="10.916" x="48.057" y="26.3243">
+								<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+							</rect>
+							<g fill="none" stroke="rgb(0,0,0)" stroke-width="1" sym:height="10.899" sym:width="10.3962" sym:x="4.0e1" sym:y="2.906348e1">
+								<ellipse cx="45.1981" cy="34.513" fill="rgb(255,255,255)" rx="5.1981" ry="5.44952" stroke="rgb(0,0,0)" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+									<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+								</ellipse>
+								<polyline fill="none" points="45.1981,31.7882 45.1981,34.513 47.7971,37.2377 47.7971,37.2377" stroke="rgb(0,0,0)" stroke-width="1">
+									<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+								</polyline>
+								<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+							</g>
+							<polygon fill="rgb(128,0,0)" points="55.5942,27.7011 49.3565,34.513 52.4754,34.513 49.3565,39.9625 57.1536,33.1506 54.0348,33.1506" stroke="rgb(128,0,0)" stroke-width="1">
+								<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+							</polygon>
+							<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+						</g>
+						<rect fill="rgb(255,255,255)" height="2.81079" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="2.81081" x="57.5676" y="32.62">
+							<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+						</rect>
+						<rect fill="rgb(255,255,255)" height="2.81082" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="2.81081" x="57.5676" y="36.8362">
+							<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+						</rect>
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</g>
+					<rect fill="rgb(255,255,255)" height="2.81085" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="2.81081" x="57.5676" y="28.4038">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

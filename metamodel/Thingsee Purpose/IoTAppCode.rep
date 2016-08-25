@@ -1,0 +1,18 @@
+Report 'IoTAppCode'
+/* produces Thingsee app code as jsn file */
+
+_translators()
+
+$errors = 'F'
+_check()
+
+if $errors = 'T' then
+	'Correct design before generating code.' 
+else
+	_stateIds()
+	filename subreport '_default directory' run id%file'.jsn' write
+		_jsn()
+	close
+endif
+
+endreport

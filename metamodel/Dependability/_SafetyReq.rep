@@ -1,0 +1,26 @@
+_SafetyReq()
+foreach .SafetyGoal 
+{	/* HazardousEvent */
+	if not ~SafetyGoal~DerivedFrom.HazardousEvent; then
+		_reportWarnings()
+		'Warning: ' id ' <' type '> is not derived from any HazardousEvent'
+		if $extendedCheck = 'T' then
+			' in the model ' id;1 ' <' type;1 '>. '
+		else
+			'. Create a relationship between ' type ' and HazardousEvent!'
+		endif
+		newline
+	endif
+
+	/* Requirement */	
+	if not ~SafetyGoal~Requirement.(*Requirement); then
+		_reportWarnings()
+		'Warning: ' id ' <' type '> does not refer to any requirement'
+		if $extendedCheck = 'T' then
+			' in the model ' id;1 ' <' type;1 '>. '
+		else
+			'. Create a relationship between ' type ' and Requirement!'
+		endif
+		newline
+	endif
+}

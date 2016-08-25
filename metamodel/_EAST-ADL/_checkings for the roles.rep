@@ -1,0 +1,14 @@
+Report '_checkings for the roles'
+/***************************/
+/* Checkings for the roles */
+/***************************/
+/* Reporting the ports which have been connected but port information later deleted, ie. binding still exists without the port */
+_bindingsWithDeletedPorts()
+
+/* More extensive check is launched, when Check report is explicitely launched from the toolbar */ 
+if $LiveCheck <> 'T' then
+	/* Reporting the undefined Port Types */
+	$undefinedTypeFound = 'F'
+	_undefinedType()
+endif
+endreport

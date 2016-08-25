@@ -1,0 +1,11 @@
+Report '_next object or otherwise'
+do ~From>()
+{
+	if type ='default path' then
+		subreport '_next object' run
+	endif
+	if type ='otherwise' then
+		subreport '_otherwise' run
+	endif
+}
+endreport

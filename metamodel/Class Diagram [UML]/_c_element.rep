@@ -1,0 +1,40 @@
+Report '_c_element'
+'							<object type="Attribute [UML]">
+								<slot name="Name">
+									<value>
+										<string>' $element%xml '</string>
+									</value>
+								</slot>
+								<slot name="Data type">
+									<value>
+										<string>' $type%xml '</string>
+									</value>
+								</slot>
+'
+if $evisibility then 
+'							<slot name="Visibility">
+								<value>
+									<string>' $evisibility '</string>
+								</value>
+							</slot>
+'
+endif
+if $escope then 
+'							<slot name="Scope">
+								<value>
+									<string>' $escope '</string>
+								</value>
+							</slot>
+'
+endif 
+if $eaccess then
+'							<slot name="Access">
+								<value>
+									<string>' $eaccess '</string>
+								</value>
+							</slot>
+'
+endif
+'							</object>
+'
+endreport

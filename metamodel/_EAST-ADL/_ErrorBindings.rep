@@ -1,0 +1,46 @@
+_ErrorBindings()
+foreach >(Flow | ClientServerInterface) {
+	_FlowDirected()
+	if $directed = 'T' then /* reports only directed flows as error model expects direction */
+'		<binding id="_b' oid '" >
+			<relationship type="Relationship_FaultFailure_sysadmin_3509188221">
+				<slot name="Short name">
+					<value>
+						<string>' :Short name%xml '</string>
+					</value>
+				</slot>
+				<slot name="Name">
+					<value>
+						<string>' :Name%xml '</string>
+					</value>
+				</slot>				
+				<slot name="ImmediatePropagation">
+					<value>
+						<string>True</string> 
+					</value>
+				</slot>
+				<slot name="Description">
+					<property type="Property_2Description_user_3310902697"></property>
+					<value>
+						<text>' :Description%xml '</text>
+					</value>
+				</slot>
+			</relationship>
+			<connection id="1">' newline
+			do ~(ClientPort | Server | InFlow | OutFlowPort ) {
+				'				<role type="Role_FailureOut_sysadmin_3509188624"></role>' newline
+				do .() {'					<object href="#_' oid '"></object>' newline }
+				do #() {'					<port href="#_' oid '"></port>' newline }
+			}
+			'			</connection>
+			<connection id="2">' newline
+			do ~(Client | ServerPort | InFlowPort | OutFlow ) {
+				'				<role type="Role_FaultIn_sysadmin_3509188513"></role>' newline
+				do .() {'				<object href="#_' oid '"></object>' newline }
+				do #() {'				<port href="#_' oid '"></port>' newline }
+			}
+'			</connection>
+		</binding>
+'
+	endif
+}

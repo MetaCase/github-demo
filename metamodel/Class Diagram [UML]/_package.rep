@@ -1,0 +1,8 @@
+Report '_package'
+
+if $prevPackage <> '' then
+	subreport '_p_end' run
+endif
+
+subreport '_p_start' run
+endreport

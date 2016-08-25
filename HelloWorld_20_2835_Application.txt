@@ -1,0 +1,25 @@
+Graph_Amaratto_application_user_3250237231
+HelloWorld
+20_2835
+Application
+Graph: HelloWorld <Application> 20_2835
+	Application name: HelloWorld
+	Documentation: Describes Hello World application
+Object: Hello World! <Note> 20_3791
+	Text or code: Hello World!
+	Treat as code: F
+	Internal name (optional): 
+	Note type: info
+	Function used: 
+Object: Start <Start> 20_3628
+Object: Stop <Stop> 20_3114
+Relationship:  <Flow> 20_3124
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Start> 20_3628
+  Role: To <To>  Object: <Note> 20_3791
+Relationship:  <Flow> 20_3675
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Note> 20_3791
+  Role: To <To>  Object: <Stop> 20_3114

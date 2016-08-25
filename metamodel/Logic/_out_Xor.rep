@@ -1,0 +1,18 @@
+_out_Xor()
+
+@ins='0'
+@in1=@in2='0'
+do .()~() 
+{	if #():Direction = 'in' then
+		local 'in' @++ins write
+			do ~()
+			{	subreport '_out_' do .() { type } run
+			}
+		close
+	endif
+}
+if @in1 = @in2 then
+	'0'
+else
+	'1'
+endif

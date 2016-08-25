@@ -1,0 +1,7 @@
+_Non-allocatedFunctions()
+foreach .DesignFunctionPrototype 
+{	if not ~() then
+		_reportWarnings()
+		'Warning: ' id ' is not allocated to any hardware component' newline
+	endif
+}

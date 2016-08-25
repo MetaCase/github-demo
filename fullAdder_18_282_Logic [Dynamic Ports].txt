@@ -1,0 +1,51 @@
+Graph_Logic__Dynamic_Ports__user_3499454250
+fullAdder
+18_282
+Logic [Dynamic Ports]
+Graph: fullAdder <Logic [Dynamic Ports]> 18_282
+	Logic name: fullAdder
+	Show values on wires?: F
+Object: halfAdder <Circuit [Dynamic Ports]> 18_843
+	Decomposed to: halfAdder <Logic [Dynamic Ports]>
+Object: halfAdder <Circuit [Dynamic Ports]> 18_1300
+	Decomposed to: halfAdder <Logic [Dynamic Ports]>
+Object: B <Dynamic Port> 18_669
+	Port name: B
+	Direction: in
+Object: C <Dynamic Port> 18_784
+	Port name: C
+	Direction: out
+Object: Ci <Dynamic Port> 18_1076
+	Port name: Ci
+	Direction: in
+Object: S <Dynamic Port> 18_1177
+	Port name: S
+	Direction: out
+Object: A <Dynamic Port> 18_1364
+	Port name: A
+	Direction: in
+Object: Or <Or> 18_315
+Relationship: Connection <Connection> 18_765
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_784  Object: <Circuit [Dynamic Ports]> 18_1300
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <Or> 18_315
+Relationship: Connection <Connection> 18_775
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_669  Object: <Circuit [Dynamic Ports]> 18_843
+  Role: Wire <Wire>  Object: <Dynamic Port> 18_669
+Relationship: Connection <Connection> 18_778
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_1364  Object: <Circuit [Dynamic Ports]> 18_843
+  Role: Wire <Wire>  Object: <Dynamic Port> 18_1364
+Relationship: Connection <Connection> 18_802
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Or> 18_315
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_784  Object: <Circuit [Dynamic Ports]> 18_843
+Relationship: Connection <Connection> 18_1337
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_1364  Object: <Circuit [Dynamic Ports]> 18_1300
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_1177  Object: <Circuit [Dynamic Ports]> 18_843
+Relationship: Connection <Connection> 18_1380
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_1177  Object: <Circuit [Dynamic Ports]> 18_1300
+  Role: Wire <Wire>  Object: <Dynamic Port> 18_1177
+Relationship: Connection <Connection> 18_1383
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Or> 18_315
+  Role: Wire <Wire>  Object: <Dynamic Port> 18_784
+Relationship: Connection <Connection> 18_1423
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_669  Object: <Circuit [Dynamic Ports]> 18_1300
+  Role: Wire <Wire>  Object: <Dynamic Port> 18_1076

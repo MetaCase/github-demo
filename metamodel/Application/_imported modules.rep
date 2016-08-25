@@ -1,0 +1,21 @@
+Report '_imported modules'
+'import appuifw' newline
+'import e32' newline
+'import e32db' newline
+'import e32dbm' newline
+
+/* Messaging module is needed only when SendSMS object type is used */
+$sms_used='F'
+foreach .SendSMS {$sms_used='T'}
+if $sms_used ='T' then
+	'import messaging' newline
+endif
+
+'import urllib' newline newline
+'#Globals' newline
+/* Creates global variables  */
+subreport '_global variables' run
+'exit_flag = False' newline
+'call_stack = []' newline
+'lock = e32.Ao_lock()' newline
+endreport

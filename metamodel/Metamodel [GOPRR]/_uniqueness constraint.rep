@@ -1,0 +1,13 @@
+_uniqueness\ constraint(@obj_type_name_oid, @substLocalName)
+/* @substLocalName is used if this has no :Local name; defined */
+if :Uniqueness = 'per graph' then 
+	'<uniqueness>' newline
+	'<object href="#' 
+	@obj_type_name_oid
+	'"></object>' newline
+	'<propertyName>' 
+	@local = __(if :Local name; then :Local name; else @substLocalName endif)
+	@local%xml;
+	'</propertyName>' newline
+	'</uniqueness>' newline
+endif

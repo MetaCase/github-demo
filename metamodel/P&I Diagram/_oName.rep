@@ -1,0 +1,3 @@
+_oName()
+/* gives name in proper format, with prefix and puts name into variable */
+'MDL_' id%var

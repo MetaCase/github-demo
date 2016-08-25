@@ -1,0 +1,241 @@
+Graph_ClockApplication_sysadmin_3150525787
+Timer
+9_395
+WatchApplication
+Graph: Timer <WatchApplication> 9_395
+	Application name: Timer
+	Documentation: Application for countdown or 'egg timer'. Timer allows the user to set the length of the countdown in hours and minutes and then starts counting down from this, ringing the alarm when the time has elapsed.
+Object: Action <Action> 9_942
+Object: Action <Action> 9_1102
+Object: Action <Action> 9_1726
+Object: Action <Action> 9_2018
+Object: Action <Action> 9_2181
+Object: Action <Action> 9_2482
+Object: Action <Action> 9_2661
+Object: Action <Action> 9_2828
+Object: Timer <Alarm> 9_930
+	Name: Timer
+	Senses Local Time: F
+Object: Up <Button> 9_886
+	Button name: Up
+Object: Set <Button> 9_1072
+	Button name: Set
+Object: Down <Button> 9_1963
+	Button name: Down
+Object: Mode <Button> 9_2489
+	Button name: Mode
+Object:  <DisplayFn> 9_1243
+	Name: 
+	Central: MINUTE
+Object: counting <DisplayFn> 9_1588
+	Name: counting
+	Central: MINUTE
+Object: editing <DisplayFn> 9_2653
+	Name: editing
+	Central: MINUTE
+Object: timer <Icon> 9_2959
+	IconID: timer
+Object: Start [Watch] <Start [Watch]> 9_1891
+Object: Counting <State [Watch]> 9_467
+	State name: Counting
+	DisplayFn: counting
+	Object: counting <DisplayFn> 9_1588
+		Name: counting
+		Central: MINUTE
+	Blinking: 
+	Documentation: In this state the countdown is running and the countdown length left is shown on display.
+Object: EditMinutes <State [Watch]> 9_773
+	State name: EditMinutes
+	DisplayFn: editing
+	Object: editing <DisplayFn> 9_2653
+		Name: editing
+		Central: MINUTE
+	Blinking: MINUTE
+	Documentation: 
+Object: Rang <State [Watch]> 9_1420
+	State name: Rang
+	DisplayFn: 
+	Blinking: 
+	Documentation: This state is invoked when the countdown timer has run out, invoking the RingState transition (red bell symbol).
+Object: EditHours <State [Watch]> 9_2348
+	State name: EditHours
+	DisplayFn: editing
+	Blinking: HOUR_OF_DAY
+	Documentation: 
+Object: Stopped <State [Watch]> 9_3215
+	State name: Stopped
+	DisplayFn: 
+	Blinking: 
+	Documentation: In this state the timer is stopped and the original countdown length left is shown on the display.
+Object: Stop [Watch] <Stop [Watch]> 9_3107
+Object: stopTime <Variable> 9_633
+	Name: stopTime
+	Type: METime
+	Documentation: Variable that stores the current stop time: the value of sysTime at which the timer will ring.
+Object: length <Variable> 9_3346
+	Name: length
+	Type: METime
+	Documentation: Variable that stores the original length of the countdown time. We need this so we can remember it after a countdown has been started then finished or aborted.
+Object: lengthLeft <Variable> 9_3502
+	Name: lengthLeft
+	Type: METime
+	Documentation: Variable that stores the information how much time is left until the countdown has run out.
+Object: sysTime <VariableRef> 9_2804
+	Name: sysTime
+	Type: METime
+	Documentation: This is the underlying system's real clock, unaffected by changing clockOffset to set the time the running Watch perceives.
+Relationship: Alarm <Alarm> 9_1151
+  Role:  <ActionBody>  Object: <Action> 9_942
+	Order: 
+  Role: Get <Get>  Object: <Variable> 9_3502
+  Role: Set <Set>  Object: <Alarm> 9_930
+Relationship: Alarm <Alarm> 9_3350
+  Role:  <ActionBody>  Object: <Action> 9_2018
+	Order: 
+  Role: Off <Off>  Object: <Alarm> 9_930
+Relationship: Icon <Icon> 9_644
+  Role:  <ActionBody>  Object: <Action> 9_2018
+	Order: 
+  Role: Off <Boolean>  Object: <Icon> 9_2959
+	Operation: Off
+Relationship: Icon <Icon> 9_1606
+  Role:  <ActionBody>  Object: <Action> 9_1102
+	Order: 
+  Role: Off <Boolean>  Object: <Icon> 9_2959
+	Operation: Off
+Relationship: Icon <Icon> 9_2576
+  Role:  <ActionBody>  Object: <Action> 9_942
+	Order: 
+  Role: On <Boolean>  Object: <Icon> 9_2959
+	Operation: On
+Relationship: RingState <RingState> 9_692
+  Role: From <From>  Object: <Alarm> 9_930
+  Role: To <To>  Object: <State [Watch]> 9_1420
+Relationship: F <Roll> 9_1108
+	Up?: F
+	Time unit: MINUTE
+  Role:  <ActionBody>  Object: <Action> 9_2482
+	Order: 
+  Role: Set <Set>  Object: <Variable> 9_3346
+Relationship: F <Roll> 9_1168
+	Up?: F
+	Time unit: HOUR_OF_DAY
+  Role:  <ActionBody>  Object: <Action> 9_2181
+	Order: 
+  Role: Set <Set>  Object: <Variable> 9_3346
+Relationship: T <Roll> 9_2367
+	Up?: T
+	Time unit: HOUR_OF_DAY
+  Role:  <ActionBody>  Object: <Action> 9_2661
+	Order: 
+  Role: Set <Set>  Object: <Variable> 9_3346
+Relationship: T <Roll> 9_2505
+	Up?: T
+	Time unit: MINUTE
+  Role:  <ActionBody>  Object: <Action> 9_1726
+	Order: 
+  Role: Set <Set>  Object: <Variable> 9_3346
+Relationship: Set <Set> 9_789
+  Role: DisplayFnBody <DisplayFnBody>  Object: <DisplayFn> 9_2653
+  Role: Get <Get>  Object: <Variable> 9_3346
+Relationship: Set <Set> 9_1438
+  Role: DisplayFnBody <DisplayFnBody>  Object: <DisplayFn> 9_1588
+  Role: Get <Get>  Object: <Variable> 9_633
+  Role: Minus <Minus>  Object: <VariableRef> 9_2804
+Relationship: Set <Set> 9_1478
+  Role:  <ActionBody>  Object: <Action> 9_2018
+	Order: 
+  Role: Get <Get>  Object: <Variable> 9_633
+  Role: Minus <Minus>  Object: <VariableRef> 9_2804
+  Role: Set <Set>  Object: <Variable> 9_3502
+Relationship: Set <Set> 9_1666
+  Role:  <ActionBody>  Object: <Action> 9_942
+	Order: 
+  Role: Get <Get>  Object: <VariableRef> 9_2804
+  Role: Plus <Plus>  Object: <Variable> 9_3502
+  Role: Set <Set>  Object: <Variable> 9_633
+Relationship: Set <Set> 9_1820
+  Role: DisplayFnBody <DisplayFnBody>  Object: <DisplayFn> 9_1243
+  Role: Get <Get>  Object: <Variable> 9_3502
+Relationship: Set <Set> 9_3078
+  Role:  <ActionBody>  Object: <Action> 9_1102
+	Order: 
+  Role: Get <Get>  Object: <Variable> 9_3346
+  Role: Set <Set>  Object: <Variable> 9_3502
+Relationship: Set <Set> 9_3179
+  Role:  <ActionBody>  Object: <Action> 9_2828
+	Order: 
+  Role: Get <Get>  Object: <Variable> 9_3346
+  Role: Set <Set>  Object: <Variable> 9_3502
+Relationship: Transition <Transition> 9_732
+  Role: Event <Event>  Object: <Button> 9_2489
+  Role: From <From>  Object: <State [Watch]> 9_3215
+  Role: To <To>  Object: <Stop [Watch]> 9_3107
+Relationship: Transition <Transition> 9_736
+  Role: Event <Event>  Object: <Button> 9_2489
+  Role: From <From>  Object: <State [Watch]> 9_467
+  Role: To <To>  Object: <Stop [Watch]> 9_3107
+Relationship: Transition <Transition> 9_824
+  Role: Action <Action>  Object: <Action> 9_2828
+  Role: Event <Event>  Object: <Button> 9_1963
+  Role: From <From>  Object: <State [Watch]> 9_3215
+  Role: To <To>  Object: <State [Watch]> 9_3215
+Relationship: Transition <Transition> 9_901
+  Role: Action <Action>  Object: <Action> 9_2482
+  Role: Event <Event>  Object: <Button> 9_1963
+  Role: From <From>  Object: <State [Watch]> 9_773
+  Role: To <To>  Object: <State [Watch]> 9_773
+Relationship: Transition <Transition> 9_1300
+  Role: Event <Event>  Object: <Button> 9_1072
+  Role: From <From>  Object: <State [Watch]> 9_3215
+  Role: To <To>  Object: <State [Watch]> 9_2348
+Relationship: Transition <Transition> 9_1331
+  Role: Action <Action>  Object: <Action> 9_2661
+  Role: Event <Event>  Object: <Button> 9_886
+  Role: From <From>  Object: <State [Watch]> 9_2348
+  Role: To <To>  Object: <State [Watch]> 9_2348
+Relationship: Transition <Transition> 9_1378
+  Role: Action <Action>  Object: <Action> 9_1726
+  Role: Event <Event>  Object: <Button> 9_886
+  Role: From <From>  Object: <State [Watch]> 9_773
+  Role: To <To>  Object: <State [Watch]> 9_773
+Relationship: Transition <Transition> 9_1390
+  Role: From <From>  Object: <Start [Watch]> 9_1891
+  Role: To <To>  Object: <State [Watch]> 9_3215
+Relationship: Transition <Transition> 9_1818
+  Role: Action <Action>  Object: <Action> 9_942
+  Role: Event <Event>  Object: <Button> 9_886
+  Role: From <From>  Object: <State [Watch]> 9_3215
+  Role: To <To>  Object: <State [Watch]> 9_467
+Relationship: Transition <Transition> 9_2028
+  Role: Action <Action>  Object: <Action> 9_2181
+  Role: Event <Event>  Object: <Button> 9_1963
+  Role: From <From>  Object: <State [Watch]> 9_2348
+  Role: To <To>  Object: <State [Watch]> 9_2348
+Relationship: Transition <Transition> 9_2239
+  Role: Action <Action>  Object: <Action> 9_2828
+  Role: Event <Event>  Object: <Button> 9_1072
+  Role: From <From>  Object: <State [Watch]> 9_773
+  Role: To <To>  Object: <State [Watch]> 9_3215
+Relationship: Transition <Transition> 9_2487
+  Role: Event <Event>  Object: <Button> 9_2489
+  Role: From <From>  Object: <State [Watch]> 9_2348
+  Role: To <To>  Object: <State [Watch]> 9_773
+Relationship: Transition <Transition> 9_2970
+  Role: Action <Action>  Object: <Action> 9_1102
+  Role: From <From>  Object: <State [Watch]> 9_1420
+  Role: To <To>  Object: <State [Watch]> 9_3215
+Relationship: Transition <Transition> 9_3003
+  Role: Event <Event>  Object: <Button> 9_2489
+  Role: From <From>  Object: <State [Watch]> 9_773
+  Role: To <To>  Object: <State [Watch]> 9_2348
+Relationship: Transition <Transition> 9_3316
+  Role: Action <Action>  Object: <Action> 9_2828
+  Role: Event <Event>  Object: <Button> 9_1072
+  Role: From <From>  Object: <State [Watch]> 9_2348
+  Role: To <To>  Object: <State [Watch]> 9_3215
+Relationship: Transition <Transition> 9_3467
+  Role: Action <Action>  Object: <Action> 9_2018
+  Role: Event <Event>  Object: <Button> 9_886
+  Role: From <From>  Object: <State [Watch]> 9_467
+  Role: To <To>  Object: <State [Watch]> 9_3215

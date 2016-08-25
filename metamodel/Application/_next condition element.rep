@@ -1,0 +1,11 @@
+Report '_next condition element'
+/* Report the next element after the Condition */
+if ~Condition from; then
+	do ~Condition from~Condition to; {
+		'	if ' :Condition variable;1 id ':' newline
+		do .() {
+			'		return (' subreport '_Internal name' run ', ' subreport '_non-stack elements' run ')' newline
+		}
+	}
+endif
+endreport

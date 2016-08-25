@@ -1,0 +1,44 @@
+Report '_create make for Java: API'
+
+if $IDE = 'eclipse' then
+	subreport '_create Eclipse resource files' run
+	subreport '_write main class to INI file' arguments :Name; run
+endif
+
+subreport '_create MainFrame' run
+
+filename $srcPath 'javaFiles' write
+	$sourceFiles
+close
+
+filename $projPath 'makeWatch.bat' write
+	to '%undent' translate
+		'rem @echo off
+		if "%cd%"=="" set cd=..
+		set wsdlFile="%cd%\MetaEditAPI.wsdl"
+		cd /D ' $srcPath '
+		@if exist *.class del *.class
+		@del ..\bin\com\metacase\API\*.class
+ 
+		set classpath=' $Axis '\lib\*;' $Xerces '\*;.
+ 
+		"' $winJDK '\bin\java" org.apache.axis.wsdl.WSDL2Java -p com.metacase.API %wsdlFile%
+		@echo on
+ 
+		"' $winJDK '\bin\javac" -d ..' sep 'bin com\metacase\API\*.java
+		'
+
+		if not $IDE = 'eclipse' then
+			'@cd /D ' $srcPath '
+			@if exist *.class del *.class
+			@echo on
+			"' $winJDK '\bin\javac" -d ..' sep 'bin @javaFiles
+			@cd ..' sep 'bin
+			javaw ' do $generatedpackage { id '.' } '_':Name;'
+			exit'
+		endif
+	endto
+close
+
+
+endreport

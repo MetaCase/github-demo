@@ -1,0 +1,16 @@
+Report '_TransitionData'
+foreach >Transition 
+{	'            '
+	'addTransition ('
+		'"' do ~From.() {id} '", '
+		'"' do ~Event.() {id} '", '
+		if ~Action.() then
+			do ~Action.() {'a' oid} 
+		else
+			'0'
+		endif
+		', '
+		'"' do ~To.() {id} '"'
+	');' newline
+}
+endreport

@@ -1,0 +1,6 @@
+Report '_graphs with icons in HTML'
+'<td><img src="images/tree_with_three_branches.png" width="17" height="16"></td>' newline
+'<td><A HREF="' subreport '_id and oid' run '.html" target="mainframe">' newline
+'<img src="images/folder_last.png" alt="' id ' <' type '>" width="18" height="16" border ="0"></A></td>' newline
+'<td nowrap ><A HREF="' subreport '_id and oid' run '.html" target="mainframe">' id '</A></td>' newline
+endreport

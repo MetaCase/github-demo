@@ -1,0 +1,30 @@
+Graph_Electronics_sysadmin_3223598691
+Battery tester
+19_376
+Electronics
+Graph: Battery tester <Electronics> 19_376
+	Name: Battery tester
+Object: Durapow <Battery> 19_868
+	Name: Durapow
+Object: digi1 <Digital Meter> 19_591
+	Name: digi1
+Object: ana1 <Meter> 19_840
+	Name: ana1
+Object: Static ports with properties and constraints
+Each type's symbol has connectables with ports with different properties, e.g. +5V Analog Out on the battery. The language constraints only allow compatible connections, e.g. +5V at both ends, and from Out to In. <Note> 19_1702
+	Documentation: Static ports with properties and constraints
+Each type's symbol has connectables with ports with different properties, e.g. +5V Analog Out on the battery. The language constraints only allow compatible connections, e.g. +5V at both ends, and from Out to In.
+Object: power <Power> 19_566
+	Name: power
+Relationship: ElecRel <ElecRel> 19_495
+  Role: ElecRole <ElecRole>  Port: Current <ElecPort>  Object: <Battery> 19_868
+  Role: ElecRole <ElecRole>  Port: Meterable <ElecPort>  Object: <Meter> 19_840
+Relationship: ElecRel <ElecRel> 19_654
+  Role: ElecRole <ElecRole>  Port: Quantized <ElecPort>  Object: <Meter> 19_840
+  Role: ElecRole <ElecRole>  Port: DigiMeterable <ElecPort>  Object: <Digital Meter> 19_591
+Relationship: ElecRel <ElecRel> 19_738
+  Role: ElecRole <ElecRole>  Port: Power <ElecPort>  Object: <Digital Meter> 19_591
+  Role: ElecRole <ElecRole>  Port: PowerOut <ElecPort>  Object: <Power> 19_566
+Relationship: ElecRel <ElecRel> 19_813
+  Role: ElecRole <ElecRole>  Port: PowerOut <ElecPort>  Object: <Power> 19_566
+  Role: ElecRole <ElecRole>  Port: Power <ElecPort>  Object: <Meter> 19_840

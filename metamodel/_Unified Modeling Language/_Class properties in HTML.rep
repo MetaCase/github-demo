@@ -1,0 +1,117 @@
+Report '_Class properties in HTML'
+subreport '__Table HTML' run
+'<tr><th align="left">Class name</th><td><a name="' oid '"></a><b>' id%xml '</b></td></tr>' newline
+if ~Specialization; then
+'<tr><th align="left">Supertypes</th><td>' newline
+dowhile ~Specialization>Generalization [UML]~Superclass.();
+{	
+	'<a href="#' oid '">' id%xml
+	if 'Always true' then '</a>' endif
+	'<br />'
+}
+'&nbsp;</td></tr>' newline
+endif
+
+'<tr><th align="left">Attributes</b></th>' newline
+if :Attributes; then
+	'<td><small><b>&lt;&lt;Stereotype&gt;&gt; ' newline
+	'<i>Visibility</i> Name : Data type = Initial value</b></small></td></tr>' newline
+	do :Attributes; 
+	{ 
+		'<tr><th>&nbsp;</th><td>' newline
+		if :Stereotype; then '&lt;&lt;' :Stereotype%xml '&gt;&gt;' endif
+		if :Visibility; then ' <i>' :Visibility%xml '</i>' endif
+		if :Name; then ' ' :Name%xml endif
+		if :Data type; then ' : ' :Data type%xml endif
+		if :Default value; then ' = ' :Default value%xml endif
+		'</td></tr>' newline
+	}
+	else '<td>none</td></tr>' newline
+endif
+
+'<tr><th align="left">Operations</th>' newline
+if :Operations; <> '' then
+	'<td><small><b>&lt;&lt;Stereotype&gt;&gt; ' newline
+	'<i>Visibility</i> Name(Parameter : datatype) : return type</b></small></td></tr>' newline
+	do :Operations; 
+	{	
+		'<tr><th>&nbsp;</th><td>' newline
+		if :Stereotype; then '&lt;&lt;' :Stereotype%xml '&gt&gt ' endif
+		if :Visibility; then '<i>' :Visibility%xml '</i>' endif
+		if :Operation name; then ' ' :Operation name%xml '(' endif
+		dowhile :Parameters; {:Parameter%xml ' : ' :Data type%xml ', '} 
+		')'
+		if :Return type; then ' : ' :Return type%xml endif
+		'</td></tr>' newline
+	}
+	else	'<td>none</td></tr>' newline
+endif
+
+if :Package; then 
+	'<tr><th align="left">Package</th><td>' newline
+	do :Package; {'<a href="#' oid '">' id%xml '</a>'}
+	'</td></tr>' newline
+endif
+
+if :Constraints; then 
+	'<tr><th align="left">Constraints</th>'
+	'<td>{' 
+	dowhile :Constraints { id%xml '<br />' }
+	'}</td></tr>' newline
+endif
+
+'<tr><th align="left">Abstract</th><td>' newline
+if :Abstract?; then 'True'	else 'False' endif
+'</td></tr>' newline
+
+'<tr><th align="left">Persistent</th><td>' newline
+if :Persistent?; then 'True' else 'False'	endif
+'</td></tr>' newline
+
+if :Stereotype; then 
+	'<tr><th align="left">Stereotype</th>'
+	'<td>&lt;&lt;' :Stereotype%xml '&gt;&gt;</td></tr>' newline
+endif
+
+if :Overridability; then 
+	'<tr><th align="left">Overridability</th>'
+	'<td>' :Overridability%xml '</td></tr>' newline
+endif
+
+if :Role; then 
+	'<tr><th align="left">Role</th>'
+	'<td>' :Role%xml '</td></tr>' newline
+endif
+
+if :Parameters; then 
+	'<tr><th align="left">Parameters</th><td>' newline
+	dowhile :Parameters; {:Parameter%xml ' : ' :Data type%xml '<br />'} 
+	'</td></tr>' newline
+endif
+
+if :Derivation rules; then 
+	'<tr><th align="left">Derivation rules</th><td>' newline
+	dowhile :Derivation rules;	
+	{	'{' id%xml 
+		if 'Always true' then '}' endif
+		'<br />'
+	} 
+	'</td></tr>'
+endif
+
+if :Responsibility; then 
+	'<tr><th align="left">Responsibility</th>'
+	'<td>' :Responsibility%xml '</td></tr>' newline
+endif
+
+if :Invariant; then 
+	'<tr><th align="left">Invariant</th>'
+	'<td>' :Invariant%xml '</td></tr>' newline
+endif
+
+if :Documentation; then 
+	'<tr><th align="left">Documentation</th>'
+	'<td>' :Documentation%xml '</td></tr>' newline
+endif
+'</table>' newline
+endreport

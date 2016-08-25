@@ -1,0 +1,34 @@
+_timingTranslators()
+to '%time
+$EventChain $EVENT\-CHAIN
+$EventFunctionClientServerPort $EVENT\-FUNCTION\-CLIENT\-SERVER\-PORT
+$EventFunctionFlowPort $EVENT\-FUNCTION\-FLOW\-PORT
+$EventFunction $EVENT\-FUNCTION
+$ModeEvent $MODE\-EVENT
+$EventFeatureFlaw $EVENT\-FEATURE\-FLAW
+$EventFaultFailure $EVENT\-FAULT\-FAILURE
+$ExternalEvent $EXTERNAL\-EVENT
+$PrecedenceConstraint $PRECEDENCE\-CONSTRAINT
+$ReactionConstraint $REACTION\-CONSTRAINT
+$AgeConstraint $AGE\-CONSTRAINT
+$InputSynchronizationConstraint $INPUT\-SYNCHRONIZATION\-CONSTRAINT
+$OutputSynchronizationConstraint $OUTPUT\-SYNCHRONIZATION\-CONSTRAINT
+$RepetitionConstraint $REPETITION\-CONSTRAINT
+$DelayConstraint $DELAY\-CONSTRAINT
+$SynchronizationConstraint $SYNCHRONIZATION\-CONSTRAINT
+$ExecutionTimeConstraint $EXECUTION\-TIME\-CONSTRAINT
+$SporadicConstraint $SPORADIC\-CONSTRAINT
+$PatternConstraint $PATTERN\-CONSTRAINT
+$PeriodicConstraint $PERIODIC\-CONSTRAINT
+$ArbitraryConstraint $ARBITRARY\-CONSTRAINT
+$BurstConstraint $BURST\-CONSTRAINT
+$OrderConstraint $ORDER\-CONSTRAINT
+$ComparisonConstraint $COMPARISON\-CONSTRAINT
+$DesignFunctionPrototype $DESIGN\-FUNCTION\-PROTOTYPE
+$AnalysisFunctionPrototype $ANALYSIS\-FUNCTION\-PROTOTYPE
+$HardwareComponentPrototype $HARDWARE\-COMPONENT\-PROTOTYPE
+$AnalysisFunctionType $ANALYSIS\-FUNCTION\-TYPE
+$DesignFunctionType $DESIGN\-FUNCTION\-TYPE
+$HardwareComponentType $HARDWARE\-COMPONENT\-TYPE
+'
+endto

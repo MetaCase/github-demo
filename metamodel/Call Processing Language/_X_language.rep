@@ -1,0 +1,11 @@
+Report '_X_language'
+/* Report Language-switch objects */
+'<' type '-switch>' newline
+'<language ' 
+if :Matches; then	
+	'matches="' :Matches; '"'
+endif
+'>' newline
+/* Report the objects after Language-switch */
+subreport '_next node' run
+endreport

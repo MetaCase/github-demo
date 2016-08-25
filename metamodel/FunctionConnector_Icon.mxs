@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="FunctionConnector_Icon">
+		<objectSymbol offset="70,10" scaleFilter="0,0">
+			<defaultConnectable isSticky="true" points="70,10 90,10 90,20 70,20 70,10" targetPointX="80" targetPointY="15" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="20" version="1.2" width="90" xmlns="http://www.w3.org/2000/svg">
+				<g fill="none" stroke="rgb(0,0,0)" sym:height="10" sym:width="16" sym:x="7.4e1" sym:y="1.0e1">
+					<rect fill="rgb(255,255,255)" height="10" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="0" width="4.57143" x="74" y="10">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<rect fill="rgb(255,255,255)" height="10" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="0" width="4.57143" x="85.4286" y="10">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<line stroke="rgb(0,0,0)" stroke-width="3" x1="76.2857" x2="87.7143" y1="15" y2="15">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+				<rect fill="none" height="10" rx="0" ry="0" stroke="none" stroke-width="1" width="4" x="70" y="10">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</rect>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

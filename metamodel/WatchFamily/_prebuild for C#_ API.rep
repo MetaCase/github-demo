@@ -1,0 +1,11 @@
+Report '_prebuild for C#: API'
+
+subreport '_prebuild for C#: Windows' run
+
+internal 'saveWSDL: "' $projPath 'MetaEditAPI.wsdl"' execute
+
+if not $IDE then
+	internal 'stopAPI startAPI' execute
+endif
+
+endreport

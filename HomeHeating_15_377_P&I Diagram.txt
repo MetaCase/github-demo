@@ -1,0 +1,168 @@
+Graph_P_I_Diagram_sysadmin_3498326676
+HomeHeating
+15_377
+P&I Diagram
+Graph: HomeHeating <P&I Diagram> 15_377
+	System name: HomeHeating
+	Description: Sample heating system
+	Use visualization: T
+Object: B1 <Boiler> 15_569
+	Name: B1
+	Explode to: BoilerController <Heating application>
+Object: HU1 B1 <Burner> 15_1114
+	Name: HU1 B1
+	Explode to: HeatController <Heating application>
+Object: The graphs in this example project demonstrate the development of heating systems, as described in the "Heating System Example" PDF file in the main MetaEdit+ help index. <Comment> 15_1041
+	Description: The graphs in this example project demonstrate the development of heating systems, as described in the "Heating System Example" PDF file in the main MetaEdit+ help index.
+Object: P1 <Pump> 15_1256
+	Name: P1
+	Pump type: pump
+	Explode to: PumpController <Heating application>
+Object: R1 <Radiator> 15_1305
+	Name: R1
+	Explode to: RadiatorController <Heating application>
+Object: B1 TS2 <Sensor> 15_544
+	Name: B1 TS2
+	Mounting: near the process
+	Measured variable: Temperature
+	Function: Controller
+Object: P1 SS3 <Sensor> 15_870
+	Name: P1 SS3
+	Mounting: near the process
+	Measured variable: Speed
+	Function: Controller
+Object: HU1 TS4 <Sensor> 15_1135
+	Name: HU1 TS4
+	Mounting: near the process
+	Measured variable: Temperature
+	Function: Controller
+Object: TS6 <Sensor> 15_1324
+	Name: TS6
+	Mounting: in the control room
+	Measured variable: Temperature
+	Function: Indicator
+Object: FS1 <Sensor> 15_1410
+	Name: FS1
+	Mounting: near the process
+	Measured variable: Flow
+	Function: Indicator
+Object: HU1 TS5 <Sensor> 15_1491
+	Name: HU1 TS5
+	Mounting: near the process
+	Measured variable: Temperature
+	Function: Transmitter
+Object: cold water <System end> 15_550
+	Name: cold water
+	Direction: Source
+Object: Gas <System end> 15_655
+	Name: Gas
+	Direction: Source
+Object: hot water <System end> 15_1235
+	Name: hot water
+	Direction: Exhaust
+Object: TH1 <Thermostat> 15_1139
+	Name: TH1
+	Description: Thermostate controlling room temperature
+Object: HU1 CV2 <Valve> 15_400
+	Name: HU1 CV2
+	Number of valve ends: Two
+	Valve type: Normal
+	Closing by: ball
+Object: MV3 <Valve> 15_784
+	Name: MV3
+	Number of valve ends: Two
+	Valve type: Manual
+	Closing by: ball
+Object: CV1 <Valve> 15_946
+	Name: CV1
+	Number of valve ends: Three
+	Valve type: Control
+	Closing by: needle
+	Explode to: ThreeValveController <Heating application>
+Relationship: 10 <Pipe> 15_389
+	Diameter: 10
+	Length: 10
+	Cover: none
+  Role: Pipe <Pipe>  Object: <Boiler> 15_569
+  Role: Pipe <Pipe>  Object: <Sensor> 15_544
+Relationship: 10 <Pipe> 15_419
+	Diameter: 10
+	Length: 120
+	Cover: thermally insulated
+  Role: Pipe <Pipe>  Object: <Sensor> 15_1324
+  Role: Pipe <Pipe>  Port: Heat <Heat>  Object: <Burner> 15_1114
+  Role: PipeIn <PipeIn>  Object: <Pump> 15_1256
+Relationship: 10 <Pipe> 15_627
+	Diameter: 10
+	Length: 50
+	Cover: jacketed
+  Role: Pipe <Pipe>  Object: <System end> 15_655
+  Role: Pipe <Pipe>  Object: <Valve> 15_400
+Relationship: 10 <Pipe> 15_691
+	Diameter: 10
+	Length: 25
+	Cover: none
+  Role: Pipe <Pipe>  Object: <Valve> 15_946
+  Role: Pipe <Pipe>  Port: Heat <Heat>  Object: <Radiator> 15_1305
+Relationship: 10 <Pipe> 15_717
+	Diameter: 10
+	Length: 200
+	Cover: thermally insulated
+  Role: Pipe <Pipe>  Object: <Boiler> 15_569
+  Role: Pipe <Pipe>  Object: <Sensor> 15_1410
+Relationship: 10 <Pipe> 15_756
+	Diameter: 10
+	Length: 50
+	Cover: thermally insulated
+  Role: Pipe <Pipe>  Object: <Sensor> 15_870
+  Role: Pipe <Pipe>  Object: <Valve> 15_946
+  Role: PipeOut <PipeOut>  Object: <Pump> 15_1256
+Relationship: 10 <Pipe> 15_778
+	Diameter: 10
+	Length: 
+	Cover: none
+  Role: Pipe <Pipe>  Object: <Sensor> 15_1491
+  Role: Pipe <Pipe>  Object: <Burner> 15_1114
+Relationship: 10 <Pipe> 15_790
+	Diameter: 10
+	Length: 140
+	Cover: none
+  Role: Pipe <Pipe>  Object: <System end> 15_550
+  Role: Pipe <Pipe>  Object: <Boiler> 15_569
+Relationship: 10 <Pipe> 15_916
+	Diameter: 10
+	Length: 100
+	Cover: none
+  Role: Pipe <Pipe>  Port: Heat <Heat>  Object: <Boiler> 15_569
+  Role: Pipe <Pipe>  Object: <Valve> 15_946
+Relationship: 10 <Pipe> 15_952
+	Diameter: 10
+	Length: 
+	Cover: none
+  Role: Pipe <Pipe>  Object: <Valve> 15_784
+  Role: Pipe <Pipe>  Object: <System end> 15_1235
+Relationship: 10 <Pipe> 15_1164
+	Diameter: 10
+	Length: 100
+	Cover: thermally insulated
+  Role: Pipe <Pipe>  Object: <Sensor> 15_1410
+  Role: Pipe <Pipe>  Object: <Valve> 15_784
+Relationship: 10 <Pipe> 15_1303
+	Diameter: 10
+	Length: 
+	Cover: none
+  Role: Pipe <Pipe>  Object: <Burner> 15_1114
+  Role: Pipe <Pipe>  Object: <Sensor> 15_1135
+Relationship: 10 <Pipe> 15_1307
+	Diameter: 10
+	Length: 150
+	Cover: jacketed
+  Role: Pipe <Pipe>  Object: <Valve> 15_400
+  Role: Pipe <Pipe>  Object: <Burner> 15_1114
+Relationship: 10 <Pipe> 15_1360
+	Diameter: 10
+	Length: 300
+	Cover: none
+  Role: Pipe <Pipe>  Port: Heat <Heat>  Object: <Radiator> 15_1305
+  Role: Pipe <Pipe>  Port: Heat <Heat>  Object: <Burner> 15_1114
+  Role: Pipe <Pipe>  Port: Heat <Heat>  Object: <Boiler> 15_569

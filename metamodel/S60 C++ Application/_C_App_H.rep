@@ -1,0 +1,57 @@
+Report '_C_App_H'
+filename
+	subreport '_default directory' run
+	'inc\'
+	subreport '_app' run
+	'App.h'
+write
+'/*
+* ============================================================================
+*  Name     : C' subreport '_app' run 'App from CAknApplication
+*  Part of  : ' subreport '_app' run '
+*  ' subreport '_copyright' run '
+* ============================================================================
+*/
+
+#ifndef ' to '%upper' translate subreport '_app' run endto 'APP_H
+#define ' to '%upper' translate subreport '_app' run endto 'APP_H
+
+// INCLUDES
+#include <aknapp.h>
+
+// CONSTANTS
+// UID of the application
+const TUid KUid' subreport '_app' run ' = { ' foreach .Application { :Uid } ' };
+
+// CLASS DECLARATION
+
+/**
+* C' subreport '_app' run 'App application class.
+* Provides factory to create concrete document object.
+* 
+*/
+class C' subreport '_app' run 'App : public CAknApplication
+    {
+    
+    private:
+
+        /**
+        * From CApaApplication, creates C' subreport '_app' run 'Document document object.
+        * @return A pointer to the created document object.
+        */
+        CApaDocument* CreateDocumentL();
+        
+        /**
+        * From CApaApplication, returns application''s UID (KUid' subreport '_app' run ').
+        * @return The value of KUid' subreport '_app' run '.
+        */
+        TUid AppDllUid() const;
+    };
+
+#endif    // ' to '%upper' translate subreport '_app' run endto 'APP_H
+
+// End of File
+
+'
+close
+endreport

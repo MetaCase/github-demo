@@ -1,0 +1,26 @@
+Report '_Smalltalk method'
+'!' :Class name;1
+if :Operation type; = 'class' then ' class' endif
+' methodsFor: '''
+if :Stereotype; = '' then
+	'As yet unclassified'
+else :Stereotype;
+endif
+'''!' newline newline
+if :Parameters; then
+	dowhile :Parameters; {:Parameter; ': ' :Parameter; ' '}
+else
+	:Operation name;
+endif
+if :Documentation; <> '' then
+	newline '	"'
+	dowhile :Documentation; {id newline '	'}
+	'"'
+endif
+newline newline
+if :Body; <> '' then
+	do :Body; {'	' id newline }
+endif
+'! !'
+newline newline
+endreport

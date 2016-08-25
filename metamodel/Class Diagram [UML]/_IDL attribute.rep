@@ -1,0 +1,30 @@
+Report '_IDL attribute'
+'	'
+if :Data type; = '' then
+	'// Please specify data type ' endif
+if :Stereotype; ='constant' then 
+	'const '
+else
+	if :Access; = 'readonly' then
+		'readonly '
+	endif
+	if :Data type; <> 'enum' then            
+		'attribute '
+	endif
+endif
+:Data type; ' ' :Name;
+if :Data type; = 'enum' then 
+	' {' :Default value; '}'
+else
+	if :Stereotype; ='constant' then 
+		if :Default value; <> '' then 
+			' = ' :Default value; endif
+	endif
+endif
+';'
+if :Constraints; <> '' then 
+	'	//'
+	dowhile :Constraints; {id ' '}
+endif
+newline
+endreport

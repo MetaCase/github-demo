@@ -1,0 +1,35 @@
+_channelConnections()
+foreach >Channel {
+	do ~Source { 
+		do #() {	local 'PortDir' write :Direction; close }
+		do .() {
+			if type = 'Block' then
+				if @PortDir = 'in' then 
+					'Error: Out gate ' id;1 ' is used as a source for the channel' newline
+					variable 'errors' append '+1' close
+				endif
+			else
+				if :Direction = 'out' then
+					'Error: Out gate ' id ' is used as a source for the channel' newline
+					variable 'errors' append '+1' close
+				endif
+			endif
+		}
+	}
+	do ~Target { 
+		do #() { local 'PortDir' write :Direction; close }
+		do .() {
+			if type = 'Block' then
+				if @PortDir = 'out' then 
+					'Error: In gate ' id;1 ' is used as a target for the channel' newline
+					variable 'errors' append '+1' close
+				endif
+			else
+				if :Direction = 'in' then
+					'Error: In gate ' id ' is used as a source for the channel' newline
+					variable 'errors' append '+1' close
+				endif				
+			endif
+		}
+	}
+}

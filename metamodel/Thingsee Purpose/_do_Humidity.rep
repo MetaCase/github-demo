@@ -1,0 +1,21 @@
+_do_Humidity()
+@sep = ''
+
+'                  "thresholds": {' 
+if :Trigger if over \(\%rh\); = '' and :Trigger if under \(\%rh\); = '' then
+	newline
+	'                    "isAny": true'	newline
+else 
+	if :Trigger if over \(\%rh\); <> '' then
+		newline
+		'                    "isGt": ' :Trigger if over \(\%rh\); 
+		@sep = ','
+	endif
+	if :Trigger if under \(\%rh\); <> '' then
+		@sep newline
+		'                    "isLt": ' :Trigger if under \(\%rh\); 
+	endif
+	newline
+endif
+'                  }
+'

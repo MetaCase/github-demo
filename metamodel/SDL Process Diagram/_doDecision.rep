@@ -1,0 +1,14 @@
+_doDecision()
+
+'	DECISION ' :Decision;%var ';' 
+_conditionTransition()
+
+if ~Source; then
+	'	ELSE:' 
+	to '%indent' translate
+		_nextTransition()
+	endto
+	newline
+endif
+
+'	ENDDECISION; ' 

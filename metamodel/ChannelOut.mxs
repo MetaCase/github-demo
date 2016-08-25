@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="ChannelOut">
+		<objectSymbol offset="55,25" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="45,25 124.415,25 124.415,55 45,55 45,25" targetPointX="45" targetPointY="40" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="55" version="1.2" width="125" xmlns="http://www.w3.org/2000/svg">
+				<textArea display-align="before" fill="rgb(0,0,0)" font-family="#sans serif" font-size="14" font-style="normal" font-weight="normal" height="30" sym:characterBackgroundFill="none" sym:textboxFill="none" sym:textboxStroke="none" sym:textboxStroke-width="1" sym:wordWrap="true" text-anchor="start" width="70" x="55" y="25">
+					ReportTextSource:id
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="~=" matchString="X" xmlns="http://www.w3.org/2000/svg">ReportTextSource:_sym_hide_PortName()</displayCondition>
+					</metaInfo>
+				</textArea>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

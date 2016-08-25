@@ -1,0 +1,40 @@
+Report 'CORBA IDL'
+/*	Creates CORBA IDL declarations from UML class diagrams according to the following rules:
+*	Interface declarations are generated from classes which have stereotype "interface". 
+*	Modules are included through the packages and their "interface" stereotyped classes 
+*	Empty interfaces and modules are permitted. 
+*	Multiple inheritance supported
+*	Documentation of classes are included as comments and marked with "//" 
+*	Constraints of attributes and operations are marked with "//" 
+*	Attribute access "readonly" included according specified access for the attribute 
+*	If data type is not entered comments out the attribute by asking to enter data type 
+*	Operation attribute "oneway" included if stereotype of an operation is named as one way. 
+*	Return type for operation is mandatory: If not entered adds void instead. 
+*	Exceptions inside interface declarations included through operation definition in which stereotype of the operation is marked as "exception". 
+*	Constants for classed may be defined if the stereotype of an attribute is marked as constant, uses initial value as constant value. 
+*	Enumerated types supported through initial values. 
+*/
+foreach .Class [UML]
+	{	if :Stereotype;='interface' then
+			filename subreport '_default directory' run id '.idl' write
+			'// From MetaEdit+, graph: ' id newline
+			'// Class interfaces (.idl file)' newline newline
+			subreport '_IDL class' run
+			close
+		endif }
+foreach .Package
+	{	filename subreport '_default directory' run id '.idl' write
+		'// From MetaEdit+, graph: ' id '' newline
+		'// Class interfaces from a UML package into IDL module (.idl file)' newline newline
+		'module ' :Package name; ' {' newline
+		do decompositions
+			{	foreach .Class [UML] 
+					{	if :Stereotype; ='interface' then
+							subreport '_IDL class' run
+						endif
+					}
+			}
+		'};'
+		close
+	}
+endreport

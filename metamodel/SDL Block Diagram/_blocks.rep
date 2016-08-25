@@ -1,0 +1,6 @@
+_blocks()
+foreach .Block {
+	do decompositions {
+		'	BLOCK ' id%var; ' REFERENCED;' newline
+	}
+}

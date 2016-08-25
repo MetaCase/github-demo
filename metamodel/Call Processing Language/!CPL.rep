@@ -1,0 +1,5 @@
+Report '!CPL'
+/* Generates the CPL script to the file and opens it */
+subreport 'CPL script' run 
+external '"' subreport '_default directory' run id '.xml"' execute
+endreport

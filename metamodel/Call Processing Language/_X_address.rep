@@ -1,0 +1,9 @@
+Report '_X_address'
+/* Report Address-switch objects */
+'<' type '-switch field="' id '"'
+	if :Subfield; then ' subfield="' :Subfield; '"' endif
+'>' newline
+'<' type ' ' if :Address; then :Address; ' = "' :Address value; endif '">' newline
+/* Report the objects after the Address-switch */
+subreport '_next node' run
+endreport

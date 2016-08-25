@@ -1,0 +1,45 @@
+Report '_Package class main'
+/* reports imported packages and package class as product specification */
+		'/* imported packages */' newline
+		'import com.fja.net.finance.*;' newline
+		'import com.fja.productstructure.*;' newline
+		'import com.fja.mof.*;' newline
+		'import com.fja.net.products.datatypes.*;' newline
+		'import com.fja.mof.datatypes.*;' newline
+		'import org.omg.CORBA.*;' newline
+		do ~From~To.Package {					/* package imports drawn as relationships */
+			'import ' :Path;'.*;' newline 
+			if :Documentation; then do :Documentation; { '// ' id newline } endif
+		}
+		do :Imported packages {					/* package imports added to the properties of the generated package */
+			'import ' :Path '.*;'  newline
+			if :Documentation; then do :Documentation; { '// ' id newline; } endif
+		}
+		newline
+		'public class ' id 'ProductRepository extends ProductRepository' newline   
+		'{' newline
+		'	private static ' id 'ProductRepository instance;' newline
+		'	private ' id 'ProductRepository (String name)' newline
+		' 	{' newline
+		'		super(name);' newline
+		'		MofPackage productpackage = createProduct();' newline
+		'		this.addMofPackage(productpackage);' newline
+		'	}' newline newline
+		'	private ' id 'ProductRepository()' newline
+		'	{' newline
+		'		// name of namespace ProductRepository not used' newline
+		'		this("' id '");' newline 
+		'	}' newline newline
+		'	public static ' id 'ProductRepository getInstance()' newline
+		'	{' newline
+		'		if (instance == null)' newline
+		'		{' newline
+		'			instance = new ' id'ProductRepository();' newline
+		'		}'; newline;
+		'		return instance;' newline
+		'	}' newline
+		newline newline
+		'	private MofPackage createProduct()' newline
+		'	{' newline
+		'		productpackage_ = new MofPackage("' id'");' newline
+endreport

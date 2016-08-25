@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="Intermediate event">
+		<objectSymbol offset="55,21" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="90,38.5 89.5612,42.3941 88.267,46.093 86.182,49.4111 83.4111,52.1821 80.093,54.267 76.3941,55.5612 72.5,56 68.6059,55.5612 64.907,54.267 61.5889,52.1821 58.8179,49.4111 56.733,46.093 55.4388,42.3941 55,38.5 55.4388,34.6059 56.733,30.907 58.8179,27.5889 61.5889,24.8179 64.907,22.733 68.6059,21.4388 72.5,21 76.3941,21.4388 80.093,22.733 83.4111,24.818 86.182,27.5889 88.267,30.907 89.5612,34.6059 90,38.5" targetPointX="72.5" targetPointY="38.5" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="56" version="1.2" width="90" xmlns="http://www.w3.org/2000/svg">
+				<ellipse cx="72.5" cy="38.5" fill="rgb(255,255,192)" rx="17.5" ry="17.5" stroke="rgb(0,0,0)" stroke-width="0" sym:startAngle="0.0e0" sym:sweepAngle="3.6e2">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</ellipse>
+				<g fill="none" stroke="rgb(0,0,0)" sym:height="24" sym:width="24" sym:x="6.04e1" sym:y="2.64e1">
+					<ellipse cx="72.5" cy="38.5" fill="rgb(255,255,255)" rx="11.5" ry="11.5" stroke="rgb(0,0,0)" stroke-width="0" sym:startAngle="0.0e0" sym:sweepAngle="3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<line stroke="rgb(0,0,0)" stroke-width="0" x1="80.4" x2="84.4" y1="38.4" y2="38.4">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="0" x1="60.4" x2="64.4" y1="38.4" y2="38.4">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="0" x1="72.4" x2="72.4" y1="26.4" y2="30.4">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="0" x1="72.4" x2="72.4" y1="46.4" y2="50.4">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="1" x1="77.6" x2="72.8" y1="30.4" y2="38.8">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="1" x1="72.8" x2="79.2" y1="38.8" y2="41.2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Timer" xmlns="http://www.w3.org/2000/svg">ReportTextSource:do :Trigger {type}</displayCondition>
+					</metaInfo>
+				</g>
+				<polygon fill="rgb(0,0,0)" points="60.4,38.4 60.4,41.8 74.1143,41.8 74.1143,45.2 84.4,38.4 74.1143,31.6 74.1143,35 60.4,35" stroke="rgb(0,0,0)" stroke-width="0">
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Link" xmlns="http://www.w3.org/2000/svg">ReportTextSource:do :Trigger {type}</displayCondition>
+					</metaInfo>
+				</polygon>
+				<g fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="1" sym:height="22.4" sym:width="21.6" sym:x="6.16e1" sym:y="2.72e1">
+					<polygon fill="rgb(0,0,0)" points="61.6,32.8 72.4,49.6 83.2,32.8" stroke="rgb(0,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polygon>
+					<polygon fill="rgb(0,0,0)" points="72.4,27.2 61.6,44 83.2,44" stroke="rgb(0,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polygon>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Multiple" xmlns="http://www.w3.org/2000/svg">ReportTextSource:do :Trigger {type}</displayCondition>
+					</metaInfo>
+				</g>
+				<g fill="none" stroke="rgb(0,0,0)" stroke-width="1" sym:height="22.4" sym:width="16" sym:x="6.44e1" sym:y="2.72e1">
+					<rect fill="rgb(255,255,255)" height="22.4" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="16" x="64.4" y="27.2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<line stroke="rgb(0,0,0)" stroke-width="1" x1="66" x2="78.8" y1="30.9334" y2="30.9334">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="1" x1="65.36" x2="78.16" y1="35.7866" y2="35.7866">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="1" x1="65.36" x2="78.16" y1="40.2666" y2="40.2666">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="1" x1="65.36" x2="78.16" y1="44.7466" y2="44.7466">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Rule" xmlns="http://www.w3.org/2000/svg">ReportTextSource:do :Trigger {type}</displayCondition>
+					</metaInfo>
+				</g>
+				<polygon fill="rgb(0,0,0)" points="80,28.8 75.2711,40.0246 68.1778,36.48 64.8,48 69.5289,41.2062 76.96,43.8646" stroke="rgb(0,0,0)" stroke-width="1">
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Error" xmlns="http://www.w3.org/2000/svg">ReportTextSource:do :Trigger {type}</displayCondition>
+					</metaInfo>
+				</polygon>
+				<g fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="1" sym:height="18.4" sym:width="20.8" sym:x="6.2e1" sym:y="2.92e1">
+					<polygon fill="rgb(0,0,0)" points="72.4,29.2 62,38.4 72.4,47.6" stroke="rgb(0,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polygon>
+					<polygon fill="rgb(0,0,0)" points="82.8,29.2 72.4,38.4 82.8,47.6" stroke="rgb(0,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polygon>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Compensation" xmlns="http://www.w3.org/2000/svg">ReportTextSource:do :Trigger {type}</displayCondition>
+					</metaInfo>
+				</g>
+				<ellipse cx="72.5" cy="38.5" fill="none" rx="14.5" ry="14.5" stroke="rgb(0,0,0)" stroke-width="0" sym:startAngle="0.0e0" sym:sweepAngle="3.6e2">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</ellipse>
+				<g fill="none" stroke="rgb(0,0,0)" stroke-width="4" sym:height="16" sym:width="16" sym:x="6.44e1" sym:y="3.04e1">
+					<line stroke="rgb(0,0,0)" stroke-width="4" x1="64.4" x2="80.4" y1="30.4" y2="46.4">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="4" x1="80.4" x2="64.4" y1="30.4" y2="46.4">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Cancel" xmlns="http://www.w3.org/2000/svg">ReportTextSource:do :Trigger {type}</displayCondition>
+					</metaInfo>
+				</g>
+				<g fill="none" stroke="rgb(0,0,0)" stroke-width="0" sym:height="12.8" sym:width="20.8" sym:x="6.2e1" sym:y="3.2e1">
+					<rect fill="rgb(255,255,255)" height="12.8" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="0" width="20.8" x="62" y="32">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<polyline fill="none" points="62,32 72.4,38.4 82.8,32" stroke="rgb(0,0,0)" stroke-width="0">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polyline>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Message" xmlns="http://www.w3.org/2000/svg">ReportTextSource:do :Trigger {type}</displayCondition>
+					</metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

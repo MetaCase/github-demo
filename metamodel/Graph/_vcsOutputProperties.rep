@@ -1,0 +1,15 @@
+_vcsOutputProperties(@indent)
+/* Outputs properties of the element */
+local 'indent' append '	' close
+do :()
+{	@indent containers ': ' id
+	newline
+	if not _vcsSkipPropRecursion() then
+		do contents where metatype <> 'Text' and metatype <> 'String'
+		{	if not $reported =~ oid%wildsp then
+				variable 'reported' append oid ' ' close
+				_vcsOutputNonProperty(@indent)
+			endif
+		}
+	endif
+}

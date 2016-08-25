@@ -1,0 +1,15 @@
+Report '_Delphi operation'
+'		'
+if :Operation type; = 'class' then 'class ' endif
+if :Return type; then 'function '
+else 'procedure ' endif
+:Operation name; '('
+dowhile :Parameters; { :Parameter; ': ' :Data type; ', ' } 
+')'
+if :Return type; then 
+	': ' :Return type;
+endif
+if :Overridability; = 'dynamic' then '; dynamic' endif
+if :Overridability; = 'virtual' then '; virtual' endif
+';' newline
+endreport

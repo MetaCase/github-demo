@@ -1,0 +1,114 @@
+Report '!Allocation report'
+foreach .(^DesignFunctionPrototype | ^FunctionConnector*)
+{	
+	if type = 'HardwarePortConnector' then
+		id ' <HardwarePortConnector>'
+	else
+		id 
+	endif
+	newline
+	$found = 'F'
+	do decompositions 
+	{
+		foreach .(*PinIn)  { $found = 'T' }
+	}
+	if $found = 'T' then 
+		'	has following In pins:' newline
+		do decompositions {
+			foreach .(*PinIn) orderby y num { '		' id ' <' type '>' newline	}
+		}
+	endif
+	$found = 'F'
+	do decompositions 
+	{
+		foreach .(*PinOut)  { $found = 'T' }
+	}
+	if $found = 'T' then 
+		'	has following Out pins:'	newline
+		do decompositions 
+		{
+			foreach .(*PinOut) orderby y num { '		' id ' <' type '>' newline }
+		}
+	endif
+	$found = 'F'
+	do decompositions 
+	{
+		foreach .(*PinInOut)  { $found = 'T' }
+	}
+	if $found = 'T' then 
+		'	has following InOut pins:'	newline
+		do decompositions 
+		{
+			foreach .(*PinInOut) orderby y num { '		' id ' <' type '>' newline }
+		}
+	endif
+	if ~() then 
+		do ~Target~InstanceRef.DesignFunctionPrototype	
+		{
+			' --> allocated DesignFunctionPrototype: '
+			id 
+			newline
+
+			$found = 'F'
+			do decompositions { foreach .(InFlowPort | ServerPort ) { $found = 'T' }	}
+			if $found = 'T'; then 
+				'	which has following In ports:'	newline
+				do decompositions 
+				{
+					foreach .(InFlowPort | ServerPort ) orderby y num 
+					{
+						'		' id ' <' type '>' newline	
+					}
+				}
+			endif
+		
+			$found = 'F'
+			do decompositions 
+			{ 
+				foreach .(OutFlowPort | ClientPort ) { $found = 'T' }	
+			}
+			if $found = 'T'; then 
+				'	which has following Out ports:'	newline
+				do decompositions 
+				{
+					foreach .(OutFlowPort | ClientPort ) orderby y num 
+					{
+						'		' id ' <' type '>' newline	
+					}
+				}
+			endif
+		
+			$found = 'F'
+			do decompositions 
+			{
+				foreach .(InOutFlowPort | PowerPort) { $found = 'T' }	
+			}
+			if $found = 'T'; then 
+				'	which has following ports with both directions:'	newline
+				do decompositions 
+				{
+					foreach .(InOutFlowPort | PowerPort) orderby y num {'		' id ' <' type '>' newline	}
+				}
+			endif
+			$found = 'F'
+		}
+		do ~Target~InstanceRef.(FunctionConnector*)	
+		{
+			if type = 'FunctionConnector' then
+				' --> allocated FunctionConnector: '
+				id 
+			else
+				' --> allocated FunctionConnectors via ' id ': '
+				dowhile :FunctionConnectors {
+					id ' <' type '>, '
+				}
+				'>'
+			endif
+			newline
+		}
+	else
+		' --> does not have any allocated DesignFunctionPrototypes or FunctionConnectors' newline
+	endif
+	'=================================' newline
+}
+endreport

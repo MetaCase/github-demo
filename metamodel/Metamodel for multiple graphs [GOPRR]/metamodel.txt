@@ -1,0 +1,137 @@
+==========================
+Graph Type
+==========================
+Metamodel for multiple graphs [GOPRR]
+	Metamodel for multiple graphps allows to integrate different graph types, their decomposition and explosion links.
+	---------------------------------------------
+	Metamodel name: String
+	__UUID: String
+	Description: Text
+
+==========================
+Object Types
+==========================
+Object [GOPRR]
+	Object concept is used to specify main modeling concepts of the language, such as states, entities, classes etc. 
+	---------------------------------------------
+	Object name: String
+		Object must have a unique mandatory name.
+		---------------------------------------------
+	__UUID: String
+	Properties: OrderedCollection (Property [GOPRR])
+	Occurrence: String
+	Description: Text
+Graph [GOPRR]
+	Graph refers to a modeling language which is defined in a separate metamodel. Use Decomposition... from the menu to link the modeling language to its metamodel. You can use the graph concept to specify explosions and decompositions between one or more modeling languages.
+	---------------------------------------------
+Role [GOPRR]
+	Role name: String
+		Role must have a unique mandatory name.
+		---------------------------------------------
+	__UUID: String
+	Properties: OrderedCollection (Property [GOPRR])
+	Description: Text
+Relationship [GOPRR]
+	Relationship name: String
+		Relationship must have a unique mandatory name.
+		---------------------------------------------
+	__UUID: String
+	Properties: OrderedCollection (Property [GOPRR])
+	Description: Text
+
+==========================
+Relationship Types
+==========================
+Decomposition [GOPRR]
+	Decomposition relationship allows to specify object types which can be decomposed to a new graph. Each instance of the object type can have only one decomposition graph, which is the same wherever that instance is used.
+	---------------------------------------------
+Explosion [GOPRR]
+	Explosion relationship allows to specify modeling concepts which can be exploded into a new graph. An instance of the modeling concept can have many explosions in a single graph, and a different set of explosions in each graph where it is used. You can specify explosions from objects, relationships and roles.
+	---------------------------------------------
+
+==========================
+Role Types
+==========================
+From [GOPRR]
+To [GOPRR]
+
+==========================
+Extra Types
+==========================
+Metamodel [GOPRR]
+	This modeling language allows you to design domain-specific languages. The generator called Export to MXT exports the language design into a file using the MetaEdit+ XML Type format. The generated file can be imported into MetaEdit+ to create the metamodel including basic abstract syntax of the language.
+	---------------------------------------------
+	Graph name: String
+	__UUID: String
+	Namespace: String
+	Properties: OrderedCollection (Property [GOPRR])
+	Constraints: OrderedCollection (_Connectivity constraint [GOPRR])
+	Object order: OrderedCollection (Object [GOPRR])
+	Description: Text
+Property [GOPRR]
+	Property name: String
+		Property must have a unique mandatory name.
+		---------------------------------------------
+	__UUID: String
+	Local name: String
+	Datatype: String
+	Object Datatype: Object [GOPRR]
+	Default value(s): Text
+	Uniqueness: String
+	Description: Text
+Relationship connectivity constraint [GOPRR]
+	Object of type: Object [GOPRR]
+	may be in at most: Number
+	relationships of type: Relationship [GOPRR]
+Role connectivity constraint [GOPRR]
+	Object of type: Object [GOPRR]
+	may be in at most: Number
+	roles of type: Role [GOPRR]
+_Connectivity constraint [GOPRR]
+	Abstract type for choosing connectivity constraint
+	---------------------------------------------
+	Object of type: Object [GOPRR]
+	may be in at most: Number
+
+==========================
+Bindings
+==========================
+Decomposition [GOPRR]
+1	From [GOPRR]: Object [GOPRR]
+1	To [GOPRR]: Graph [GOPRR]
+Explosion [GOPRR]
+1	From [GOPRR]: Object [GOPRR], Relationship [GOPRR], Role [GOPRR]
+1	To [GOPRR]: Graph [GOPRR]
+
+==========================
+Constraints
+==========================
+Object [GOPRR] may be in at most 1 Decomposition [GOPRR] relationship
+
+==========================
+Subgraphs
+==========================
+Decompositions:
+	Graph [GOPRR]
+		Metamodel [GOPRR]
+
+==========================
+Generators
+==========================
+!Build
+!MXT
+Export and Build MXT
+Export and Open MXT
+Export to MXT file
+
+==========================
+Sub-Generators
+==========================
+_checkAllGraphs
+_decompSource
+_explosionSource
+_GOPRRtag
+_namespace
+_not part of graph type
+_subgraphs
+

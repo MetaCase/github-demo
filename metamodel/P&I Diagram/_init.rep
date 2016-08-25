@@ -1,0 +1,14 @@
+_init()
+foreach .(Boiler | Radiator  | Burner | Pump | Thermostat | Sensor ){
+	_oName()'();' newline
+}
+foreach .Valve; where :Valve type; <> 'Manual' {
+	_oName()'();' newline
+}
+newline 
+foreach .(Boiler | Radiator | Burner | Pump | Valve ) {
+	do explosions {
+		_gName() '_SM_rg();' newline
+	}
+}
+newline

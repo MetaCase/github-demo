@@ -1,0 +1,49 @@
+Report '_C++ class header'
+	if :Documentation; <> '' then
+		'//' newline
+		do :Documentation; {'// ' id newline}
+		'//' newline 
+	endif
+ 	'class ' :Class name;
+	if ~Specialization; then ' : ' endif
+	dowhile ~Specialization>Generalization [UML];
+		{ 	:Visibility;
+			if :Virtual?; then ' virtual' endif
+			dowhile ~Superclass.() { ' ' :Class name; ', ' }
+			', ' }
+	newline '{' 
+	newline 
+	'	private:' newline
+	do :Attributes; {if :Visibility; = 'private' then subreport '_C++ attribute' run endif} 
+	md5id 'Protected block for private attributes' md5block
+	'		// Enter own private attributes here' newline 
+	md5sum
+ 	do :Operations; { if :Visibility; = 'private' then subreport '_C++ operation (.h)' run endif }
+	md5id 'Protected block for private operations' md5block
+	'		// Enter own private operations here' newline 
+	md5sum
+ 	newline 
+	'	protected:' newline
+	do :Attributes; {if :Visibility; = 'protected' then subreport '_C++ attribute' run endif} 
+	md5id 'Protected block for protected attributes' md5block
+	'		// Enter own protected attributes here' newline 
+	md5sum
+ 	do :Operations; { if :Visibility; = 'protected' then subreport '_C++ operation (.h)' run endif }
+	md5id 'Protected block for protected operations' md5block
+	'		// Enter own protected operations here' newline 
+	md5sum
+	newline	
+	'	public:' newline
+ 	do :Attributes; {if :Visibility; = 'public' then subreport '_C++ attribute' run endif}
+ 	do ~Whole>Aggregation~Part.();
+		{ 	'		// ' :Class name; ' my' :Class name; ';'
+			'		Please add here right access level and variable name!' newline }
+	md5id 'Protected block for public attributes' md5block
+	'		// Enter own public attributes here' newline 
+	md5sum
+	do :Operations; { if :Visibility; = 'public' then subreport '_C++ operation (.h)' run endif }
+	md5id ' Protected block for public operations' md5block
+	'		// Enter own public operations here' newline 
+	md5sum
+	'};' newline newline
+endreport

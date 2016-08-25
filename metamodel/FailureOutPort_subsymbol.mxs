@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="FailureOutPort_subsymbol">
+		<objectSymbol offset="60,40" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="60,40 74,40 74,54 60,54 60,40" targetPointX="67" targetPointY="47" usesGrid="true"></defaultConnectable>
+			<svg baseProfile="tiny" height="54" version="1.2" width="74" xmlns="http://www.w3.org/2000/svg">
+				<g fill="none" stroke="rgb(0,0,0)" stroke-width="1" sym:height="14" sym:width="14" sym:x="6.0e1" sym:y="4.0e1">
+					<rect fill="rgb(255,255,255)" height="14" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="14" x="60" y="40">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<polygon fill="rgb(0,0,0)" points="63.85,42.975 63.85,51.025 71.025,47" stroke="rgb(0,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polygon>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

@@ -1,0 +1,7 @@
+Autobuild()
+
+filename subreport '_default directory' run id '.py' write
+	_Python()
+close
+
+external 'python "' subreport '_default directory' run id '.py"' execute

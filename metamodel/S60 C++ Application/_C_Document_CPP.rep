@@ -1,0 +1,63 @@
+Report '_C_Document_CPP'
+filename
+	subreport '_default directory' run
+	'src\'
+	subreport '_app' run
+	'Document.cpp'
+write
+'/*
+* ============================================================================
+*  Name     : C' subreport '_app' run 'Document from CEikDocument
+*  Part of  : ' subreport '_app' run '
+*  ' subreport '_copyright' run '
+* ============================================================================
+*/
+
+// INCLUDE FILES
+#include "' subreport '_app' run 'Document.h"
+#include "' subreport '_app' run 'AppUi.h"
+
+// ================= MEMBER FUNCTIONS =======================
+
+// C++ default constructor can not contain any code, that 
+// might leave.
+//
+C' subreport '_app' run 'Document::C' subreport '_app' run 'Document(CEikApplication& aApp)
+                       : CEikDocument(aApp)
+    {
+    }
+
+// EPOC default constructor can leave.
+void C' subreport '_app' run 'Document::ConstructL()
+    {
+    }
+
+// Two-phased constructor.
+C' subreport '_app' run 'Document* C' subreport '_app' run 'Document::NewL(CEikApplication& aApp)     // C' subreport '_app' run 'App reference
+    {
+    C' subreport '_app' run 'Document* self = new (ELeave) C' subreport '_app' run 'Document(aApp);
+    CleanupStack::PushL(self);
+    self->ConstructL();
+    CleanupStack::Pop();
+    return self;
+    }
+    
+// destructor
+C' subreport '_app' run 'Document::~C' subreport '_app' run 'Document()
+    {
+    }
+
+// ----------------------------------------------------
+// C' subreport '_app' run 'Document::CreateAppUiL()
+// constructs C' subreport '_app' run 'AppUi
+//
+// ----------------------------------------------------
+CEikAppUi* C' subreport '_app' run 'Document::CreateAppUiL()
+    {
+    return new(ELeave) C' subreport '_app' run 'AppUi;
+    }
+
+// End of File  
+'
+close
+endreport

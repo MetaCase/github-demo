@@ -1,0 +1,22 @@
+Graph_PackageModel_sysadmin_3555309892
+BBWMain
+10_10373
+Package
+Graph: BBWMain <Package> 10_10373
+	__UUID: 4519rXd9QqGPDb+YAxXHrw
+	Short name: BBWMain
+	Name: 
+	Description: Copyright (c) 2014 Volvo Technology AB, KTH Royal Institute of Technology, MetaCase. All rights reserved.
+Redistribution and use of this material (model, software and documentation), with or without modification, are permitted provided that the following conditions are met:
+Redistributions must retain the above copyright notice and this list of conditions. 
+The material is intended for research purposes only. Modifications representing refinement and extension are encouraged. Copyright owners shall have access to such refinements.
+Object: Copyright (c) 2014 Volvo Technology AB, KTH Royal Institute of Technology, MetaCase  <Comment> 10_10392
+	Comment: Copyright (c) 2014 Volvo Technology AB, KTH Royal Institute of Technology, MetaCase 
+	Description: Copyright (c) 2014 Volvo Technology AB, KTH Royal Institute of Technology, MetaCase. All rights reserved.
+Redistribution and use of this material (model, software and documentation), with or without modification, are permitted provided that the following conditions are met:
+Redistributions must retain the above copyright notice and this list of conditions. 
+The material is intended for research purposes only. Modifications representing refinement and extension are encouraged. Copyright owners shall have access to such refinements.
+Object: BBW <Package> 10_10400
+	Decomposed to: BBW <Package>
+Object: BBWDataTypes <Package> 10_14502
+	Decomposed to: BBWDataTypes <Package>

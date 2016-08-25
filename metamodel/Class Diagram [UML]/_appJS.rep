@@ -1,0 +1,25 @@
+Report '_appJS'
+'// Functions for the main app page
+
+function init() {
+  initDB();
+}
+
+
+function initForeign() {
+}
+
+
+function dropAllDBTables() {
+  if (!db) {
+    return;
+  }
+  if (confirm("Are you sure you want to delete all values and table definitions from the whole " + dbName + " application?")) {
+    dropDBTablesThen(tableNames, function () {
+      location.href=location.href;
+    });
+  }
+}
+
+'
+endreport

@@ -1,0 +1,211 @@
+Graph_Amaratto_application_user_3250237231
+Conference registration
+20_2858
+Application
+Graph: Conference registration <Application> 20_2858
+	Application name: Conference registration
+	Documentation: This application provides conference registration by SMS.
+Object: Program <Form> 20_3086
+	Fields: Program Tu 10.45-11:30 Tu 11:35-12:20 Tu 12:25-13:10 Tu 14:30-15:15 Tu 15:20-16:05 Tu 16:10-16:55 We 10:30-11:45 We 11:20-12:05 We 13:15-14:00 We 14:05-14:50
+	Object: Program <Form_field> 20_3422
+		Label: Program
+		Form field type: text
+		Initial value: 995 EUR
+	Object: Tu 10.45-11:30 <Combo_field> 20_3514
+		Label: Tu 10.45-11:30
+		Form field type: text
+		Initial value: 
+		Values: T1: Smith T2: Jackson T3: Holland
+	Object: Tu 11:35-12:20 <Combo_field> 20_3292
+		Label: Tu 11:35-12:20
+		Form field type: text
+		Initial value: 
+		Values: T4: Cohen T5: Bauer T6: Neeb
+	Object: Tu 12:25-13:10 <Combo_field> 20_3098
+		Label: Tu 12:25-13:10
+		Form field type: text
+		Initial value: 
+		Values: T7: Dawson T8: Berg T9: Donovan
+	Object: Tu 14:30-15:15 <Combo_field> 20_2919
+		Label: Tu 14:30-15:15
+		Form field type: text
+		Initial value: 
+		Values: T10: White T11: Hermann T12: Lewis
+	Object: Tu 15:20-16:05 <Combo_field> 20_3895
+		Label: Tu 15:20-16:05
+		Form field type: text
+		Initial value: 
+		Values: T13: Williams T14: Short T15: Peake
+	Object: Tu 16:10-16:55 <Combo_field> 20_3693
+		Label: Tu 16:10-16:55
+		Form field type: text
+		Initial value: 
+		Values: T16: Hedman T17: Lindros T18: Edison
+	Object: We 10:30-11:45 <Combo_field> 20_3485
+		Label: We 10:30-11:45
+		Form field type: text
+		Initial value: 
+		Values: W1: Cook W2: Leitner W3: Olsen
+	Object: We 11:20-12:05 <Combo_field> 20_3298
+		Label: We 11:20-12:05
+		Form field type: text
+		Initial value: 
+		Values: W4: Johnson W5: Kropp W6: Koller
+	Object: We 13:15-14:00 <Combo_field> 20_3106
+		Label: We 13:15-14:00
+		Form field type: text
+		Initial value: 
+		Values: W7: Brusten W8: Nigg W9: Pronebner
+	Object: We 14:05-14:50 <Combo_field> 20_2927
+		Label: We 14:05-14:50
+		Form field type: text
+		Initial value: 
+		Values: W10: Haberbosch W11: Vckovski W12: Studach
+	Internal name (optional): SetForm
+	Form mode: Edit
+	Edit labels?: T
+	Form field double spacing?: F
+	Return variable (optional): Setdata
+	Save validation: 
+Object: Check Credit card Invoice <List> 20_3957
+	List: Check Credit card Invoice
+	Internal name (optional): 
+	Return variable (optional): Payment
+	Search field enabled: T
+Object: Conference registration: Welcome <Note> 20_3377
+	Text or code: Conference registration: Welcome
+	Treat as code: F
+	Internal name (optional): 
+	Note type: info
+	Function used: 
+Object: SMS Cancellation sent <Note> 20_3602
+	Text or code: SMS Cancellation sent
+	Treat as code: F
+	Internal name (optional): 
+	Note type: conf
+	Function used: 
+Object: Registration made <Note> 20_3771
+	Text or code: Registration made
+	Treat as code: F
+	Internal name (optional): 
+	Note type: conf
+	Function used: 
+Object: http://www.metacase.com <Open> 20_3473
+	File name: http://www.metacase.com
+Object: Please choose <Popup_menu> 20_3278
+	Label: Please choose
+	Internal name (optional): Choice_list
+	List: Registration Program Unregister
+	Return variable (optional): 
+Object: Your name? <Query> 20_3189
+	Prompt: Your name?
+	Internal name (optional): 
+	Query type: text
+	Initial value: 
+	Return variable (optional): PersonNamed
+Object: Quit <Query> 20_3508
+	Prompt: Quit
+	Internal name (optional): 
+	Query type: query
+	Initial value: 
+	Return variable (optional): 
+Object: Cancel_registration <SendSMS> 20_3001
+	Message keyword: Cancel_registration
+	Internal name (optional): 
+	Message elements: 
+	Recipient: +358555648606
+Object: Registration <SendSMS> 20_3881
+	Message keyword: Registration
+	Internal name (optional): 
+	Message elements: PersonNamed ,  Payment
+	Object: PersonNamed <Message element> 20_3420
+		Name: PersonNamed
+	Object: ,  <Optional delimiter> 20_3229
+		Name: 
+		Delimiter character: , 
+	Object: Payment <Message element> 20_3003
+		Name: Payment
+	Recipient: +358555648606
+Object: Start <Start> 20_3683
+Object: Stop <Stop> 20_2909
+Relationship:  <Back> 20_3716
+	Code: 
+	Function used: 
+  Role: Back from <Back from>  Object: <Query> 20_3508
+  Role: Back to <Back to>  Object: <Popup_menu> 20_3278
+Relationship:  <Flow> 20_2883
+	Code: 
+	Function used: 
+  Role: Program <Menu>  Port:  <Left softkey>  Object: <Form> 20_3086
+	Menu item: Program
+  Role: Menu to <Menu to>  Object: <Open> 20_3473
+Relationship:  <Flow> 20_2887
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <SendSMS> 20_3001
+  Role: To <To>  Object: <Note> 20_3602
+Relationship:  <Flow> 20_2917
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <SendSMS> 20_3881
+  Role: To <To>  Object: <Note> 20_3771
+Relationship:  <Flow> 20_2999
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Query> 20_3189
+  Role: To <To>  Object: <List> 20_3957
+Relationship:  <Flow> 20_3025
+	Code: 
+	Function used: 
+  Role: Close <Menu>  Port:  <Left softkey>  Object: <Form> 20_3086
+	Menu item: Close
+  Role: Menu to <Menu to>  Object: <Stop> 20_2909
+Relationship:  <Flow> 20_3122
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Start> 20_3683
+  Role: To <To>  Object: <Note> 20_3377
+Relationship:  <Flow> 20_3131
+	Code: 
+	Function used: 
+  Role: Registration <From choice>  Object: <Popup_menu> 20_3278
+	Choice: Registration
+  Role: To <To>  Object: <Query> 20_3189
+Relationship:  <Flow> 20_3158
+	Code: 
+	Function used: 
+  Role:  <From choice>  Object: <Popup_menu> 20_3278
+	Choice: 
+  Role: To <To>  Object: <SendSMS> 20_3001
+Relationship:  <Flow> 20_3436
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Note> 20_3771
+  Role: To <To>  Object: <Query> 20_3508
+Relationship:  <Flow> 20_3477
+	Code: 
+	Function used: 
+  Role: Program <From choice>  Object: <Popup_menu> 20_3278
+	Choice: Program
+  Role: To <To>  Port:  <Right softkey>  Object: <Form> 20_3086
+Relationship:  <Flow> 20_3481
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Note> 20_3377
+  Role: To <To>  Object: <Popup_menu> 20_3278
+Relationship:  <Flow> 20_3600
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Query> 20_3508
+  Role: To <To>  Object: <Stop> 20_2909
+Relationship:  <Flow> 20_3608
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Note> 20_3602
+  Role: To <To>  Object: <Query> 20_3508
+Relationship:  <Flow> 20_3708
+	Code: 
+	Function used: 
+  Role:  <From choice>  Object: <List> 20_3957
+	Choice: 
+  Role: To <To>  Object: <SendSMS> 20_3881

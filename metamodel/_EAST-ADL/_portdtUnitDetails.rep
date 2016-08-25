@@ -1,0 +1,31 @@
+_portdtUnitDetails()
+variable 'reportedDatatypes' append oid ' ' close
+'								<object oid="_'oid'" type="Object_Unit_sysadmin_3536996865">
+									<slot name="Short name">
+										<value>
+											<string>Err':Short name'</string>
+										</value>
+									</slot>
+									<slot name="Name">
+										<value>
+											<string>' :Name%xml '</string>
+										</value>
+									</slot>															
+									<slot name="Factor">
+										<value>
+											<string>':Factor'</string>
+										</value>
+									</slot>										
+									<slot name="Offset">
+										<value>
+											<string>':Offset'</string>
+										</value>
+									</slot>										
+									<slot name="Symbol">
+										<value>
+											<string>':Symbol'</string>
+										</value>
+									</slot>' newline
+									_portdtQuantity()
+									_portdtUnitReference()
+'								</object>' newline

@@ -1,0 +1,109 @@
+Graph_Simple_GOPRR_user_3334325822
+State Transition Diagram
+14_290
+Metamodel [GOPRR]
+Graph: State Transition Diagram <Metamodel [GOPRR]> 14_290
+	Graph name: State Transition Diagram
+	__UUID: 3vfelIuWRGuFp5qSlPgoQQ
+	Namespace: 
+	Properties: Model name Status Description
+	Object: Model name <Property [GOPRR]> 14_460
+		Property name: Model name
+		__UUID: KsfXvlUYTAyg1jJd17Dl7w
+		Local name: Model name
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Object: Status <Property [GOPRR]> 14_2039
+		Property name: Status
+		__UUID: MAjiRf0MSsOvHBHwFFJ+/g
+		Local name: Status
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Object: Description <Property [GOPRR]> 14_464
+		Property name: Description
+		__UUID: yKdefhREQAiuFP9BSD0tkw
+		Local name: Description
+		Datatype: Text
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Constraints: 
+	Object order: 
+	Description: State Transition Diagram can be used to highlight the time-dependent behaviour of a system. Process in Data Flow Diagram can be exploded to State Transition Diagram, or Class in Object Model can be exploded to State Transition Diagram as well.
+
+The major components of the diagram are states and arrows representing state changes.
+
+Object: State <Object [GOPRR]> 14_958
+	Object name: State
+	__UUID: trYvWqlbS+WlSK31zRss8g
+	Properties: State name Description
+	Object: State name <Property [GOPRR]> 14_2460
+		Property name: State name
+		__UUID: n0SoZmM+SCyBg0kwSyX/jg
+		Local name: State name
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: per graph
+		Description: 
+	Occurrence: N
+	Description: 
+Object: Note <Object [GOPRR]> 14_1972
+	Object name: Note
+	__UUID: FzKr4pW5RcqrJ7QRY0eNhg
+	Properties: Description
+	Occurrence: N
+	Description: Note is a special object for adding additional text any where in the graphs. Note belong to every method and has only one property: label.
+Relationship: Transition <Binding [GOPRR]> 14_944
+	Relationship: Transition
+	Object: Transition <Relationship [GOPRR]> 14_487
+		Relationship name: Transition
+		__UUID: WpM9FKBGTKGHvx/HqHcPdQ
+		Properties: Condition name Method name Description
+		Object: Condition name <Property [GOPRR]> 14_2685
+			Property name: Condition name
+			__UUID: JWgaWd5oRiWv7/P1RoEszA
+			Local name: Condition
+			Datatype: String
+			Object Datatype: 
+			Default value(s): 
+			Uniqueness: 
+			Description: 
+		Object: Method name <Property [GOPRR]> 14_2019
+			Property name: Method name
+			__UUID: 5CP2VgUNRD+2pwo//H4O2g
+			Local name: Action
+			Datatype: String
+			Object Datatype: 
+			Default value(s): 
+			Uniqueness: 
+			Description: 
+		Description: Transition describes a change between states. Transition has three properties: condition, action, and documentation. A condition is some event in the external environment that the system is capable detecting. Thus, a condition causes a change from one state to another. It can typically be a signal or a keystroke. An action is a response either back for the external environment or to the system itself. Therefore, as a part of the change an action defined the function to be performed in the transition. Documentation is reserved for entering additional information about the transition.
+  Role: From <First role [GOPRR]>  Object: <Object [GOPRR]> 14_958
+	Role: From
+	Object: From <Role [GOPRR]> 14_529
+		Role name: From
+		__UUID: y7yYN7KAT9miKzIeuk0vhg
+		Properties: 
+		Description: Starts the flow
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Dynamic Ports: 
+  Role: To <Last role [GOPRR]>  Object: <Object [GOPRR]> 14_958
+	Role: To
+	Object: To <Role [GOPRR]> 14_2202
+		Role name: To
+		__UUID: gE56TvXmTRmlq5uvqKgU+A
+		Properties: 
+		Description: 
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Can be drawn in both directions: F
+	Dynamic Ports: 

@@ -1,0 +1,9 @@
+_nextTransition()
+do ~Source>Transition~Target.() orderby x num, y num {
+		newline
+		if type = 'State' then 
+			'	NEXTSTATE ' :State name%SDLvar ';' 
+		else
+			subreport '_do' type run
+		endif
+}

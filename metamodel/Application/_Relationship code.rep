@@ -1,0 +1,11 @@
+Report '_Relationship code'
+/* Generates code with double intent */
+if :Function used; then
+	do :Function used; {'		' :Function name;}
+	'(' :Code; ')' newline
+else
+	if :Code; then
+		do :Code; { '		' id newline }
+	endif
+endif
+endreport

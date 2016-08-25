@@ -1,0 +1,20 @@
+_timestamp(@invert)
+/* Translate a Base64 UUID into all digits, then take the first 10 digits */
+to 
+'%b64d10
+A-E 0
+F-J 1
+K-O 2
+P-T 3
+U-Z 4
+a-e 5
+f-j 6
+k-o 7
+p-t 8
+u-z 9
++ 1
+\/ 2
+/^(\d{,10}).*$/ $$1' 
+translate
+:__UUID;
+endto

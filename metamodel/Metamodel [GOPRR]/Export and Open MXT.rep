@@ -1,0 +1,4 @@
+Report 'Export and Open MXT'
+subreport 'Export graph type to MXT file' run 
+external '"' subreport '_default directory' run id '.mxt"' execute
+endreport

@@ -1,0 +1,7 @@
+Report '_compile and execute for C#: WP 7'
+
+if not $IDE = 'visualstudio' then
+	external '"' $projPath 'vs.bat"' execute
+endif
+
+endreport

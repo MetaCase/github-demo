@@ -1,0 +1,13 @@
+Report '_C_Icon'
+	'icon ('
+	do ~Boolean; 
+	{	if id = 'On' then '1' endif
+		if id = 'Off' then '0' endif 
+		if id = 'Toggle' then '-1' endif
+		', '
+		do .Icon;
+		{	'"' id '"'
+		}		
+	}
+	');' newline
+endreport

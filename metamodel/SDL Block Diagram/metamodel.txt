@@ -1,0 +1,159 @@
+==========================
+Graph Type
+==========================
+SDL Block Diagram
+	Describes the block structure of the system.
+	---------------------------------------------
+	Name: String
+	Description: Text
+		Enter description of the model or element.
+		---------------------------------------------
+	Show in LiveCheck: String
+
+==========================
+Object Types
+==========================
+Block
+	Blocks are containers like systems. They are decomposed into (sub)blocks and channels recursively over as many levels as one desires until the basic components, processes, are reached. 
+	---------------------------------------------
+	Name: String
+	Number of instances: String
+		Mandatory value. A positive number or * for many.
+		---------------------------------------------
+	Description: Text
+		Enter description of the model or element.
+		---------------------------------------------
+Process
+	A process defines a set of process instances of a specific type. The initial, minimun and maximum number of istances of the type is defined by entering the property values. 
+	---------------------------------------------
+	Name: String
+	Initial number of instances: String
+		Mandatory value. A positive number or * for many.
+		---------------------------------------------
+	Min number of instances: String
+		Mandatory value. A positive number or * for many.
+		---------------------------------------------
+	Max number of instances: String
+		Mandatory value. A positive number or * for many.
+		---------------------------------------------
+	Description: Text
+		Enter description of the model or element.
+		---------------------------------------------
+Gate
+	Gate specifies how blocks interface with each other and pass signals.
+	---------------------------------------------
+	Name: String
+	Direction: String
+Variable
+	Variables: Text
+Comment
+	The commenallows to write any type of informal text and connect it to the desired model element.  If needed the comment can be left unconnected. 
+	---------------------------------------------
+	Description: Text
+		Enter description of the model or element.
+		---------------------------------------------
+	Show signals: Boolean
+
+==========================
+Relationship Types
+==========================
+Channel
+	Channel carry parameters to interchange and syncronize between SDL blocks.
+	---------------------------------------------
+	Name: String
+	Delayed: Boolean
+	Signal list: OrderedCollection (Signal)
+Signal
+	Signal carry parameters to interchange and syncronize between SDL processes.
+	---------------------------------------------
+	Name: String
+	Signal list: OrderedCollection (Signal)
+Comment link
+	Comment link can be used to connect a particular comment to another model element.
+	---------------------------------------------
+
+==========================
+Role Types
+==========================
+Source
+Target
+Comment role
+
+==========================
+Extra Types
+==========================
+SDL Process Diagram
+	SDL processes are defined as a state machine.
+	---------------------------------------------
+	Name: String
+	Description: Text
+		Enter description of the model or element.
+		---------------------------------------------
+Signal
+	Signal carry parameters to interchange and syncronize between SDL processes and blocks.
+	---------------------------------------------
+	Signal name: String
+	Type: String
+	Parameters: Text
+
+==========================
+Bindings
+==========================
+Channel
+1	Source #(Gate): Block, Gate
+1	Target #(Gate): Block, Gate
+Channel
+1	Source #(Gate): Block, Gate
+1	Target: Process
+Channel
+1	Source: Process
+1	Target #(Gate): Block, Gate
+Comment link
+1	Comment role: Block, Gate, Process, Variable
+1	Comment role: Comment
+Comment link
+1	Comment role: Comment
+1	Comment role: Block, Comment, Gate, Process, Variable
+Signal
+1	Source: Process
+1	Target: Process
+
+==========================
+Constraints
+==========================
+
+==========================
+Subgraphs
+==========================
+Decompositions:
+	Block
+		SDL Block Diagram
+	Process
+		SDL Process Diagram
+
+==========================
+Generators
+==========================
+!SDL
+SDLPR
+
+==========================
+Sub-Generators
+==========================
+_blocks
+_channelConnections
+_channels
+_CheckChecking
+_CheckSignals
+_mixBlocks
+_processes
+_SDLPRsub
+_signals
+_symBiDirectional
+_symInOutPorts
+_symInPorts
+_symOutPorts
+_sym_hide_PortName
+_variables
+__LiveCheck
+

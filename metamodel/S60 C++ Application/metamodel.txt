@@ -1,0 +1,148 @@
+==========================
+Graph Type
+==========================
+S60 C++ Application
+	Can model an application with views in a Tab Group, and menus in views. Generates .RSS, .LOC, plus .cpp & .h for App, AppUi, Document
+	---------------------------------------------
+	Name: String
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Application
+	App name: String
+	Name in Grid: String
+	Name in List: String
+	Uid: String
+	Resource Identifier: String
+		4 characters
+		---------------------------------------------
+View
+	View name: String
+	View id: String
+	View name var: String
+Menu Pane
+	Menu Pane name: String
+	Menu Items: OrderedCollection (Menu Item)
+PopupMenu
+	State name: String
+	UI Text: String
+	UI Text Var: String
+	Popup Menu Items: OrderedCollection (Popup Menu Item)
+Comment
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Containment
+Menus
+Cascade
+
+==========================
+Role Types
+==========================
+Menu
+	Order: String
+	Menu title txt: String
+	Menu title var: String
+Menu Bar
+	Menu Bar name var: String
+Parent Menu
+Parent View
+Submenu
+	UI Text: String
+Subview
+	Order: String
+	Initially active: Boolean
+
+==========================
+Extra Types
+==========================
+S60 C++ States
+	Graph name: String
+	Documentation: Text
+Dialog
+	State name: String
+	UI Text: String
+	UI Text Var: String
+Menu Item
+	Command: String
+	UI Text Var: String
+	UI Text: String
+	Separator After: Boolean
+Popup Menu Item
+	UI Text: String
+	UI Text Var: String
+
+==========================
+Bindings
+==========================
+Cascade
+	Parent Menu: Menu Pane
+	Submenu: Menu Pane
+Containment
+	Parent View: Application
+1..N	Subview: View
+Menus
+	Menu Bar: View
+1..N	Menu: Menu Pane
+
+==========================
+Constraints
+==========================
+View may be in at most 1 Menu Bar role
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	View
+		S60 C++ States
+
+==========================
+Generators
+==========================
+!Build
+Autobuild
+Files
+
+==========================
+Sub-Generators
+==========================
+_app
+_caption prefix
+_copyright
+_C_AppUi_CPP
+_C_AppUi_H
+_C_App_CPP
+_C_App_H
+_C_Container_CPP
+_C_Container_H
+_C_Document_CPP
+_C_Document_H
+_C_View_CPP
+_C_View_H
+_C_View_Headers
+_default directory
+_default drive
+_HRH
+_INF
+_LOC
+_makedirs
+_MMP
+_PKG
+_qtn
+_r
+_rli
+_RSS
+_RSS_Aif
+_RSS_Application
+_RSS_caption
+_RSS_Menu_Bar
+_RSS_Menu_Item
+_RSS_Menu_Pane
+_RSS_Menu_Title
+_RSS_View
+

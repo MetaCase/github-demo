@@ -1,0 +1,6 @@
+_sym_hide_PortName()
+/* hides port name for library symbol from perimeter when connected to a role */
+@oid = oid
+do ~();1#(PowerPort | InOutFlowPort) where oid = @oid unique '1' 
+{	'T'
+}

@@ -1,0 +1,75 @@
+Report '_model check'
+/* Not used for code generation but for model checking only as a part of Comment element in a model */
+foreach .(* | ^Form | ^List  |^Listbox | ^Popup_menu | ^Comment | ^Function | ^Stop | ^Text_editor | ^Condition) {
+	if not ~Menu to~Menu; then
+		if not ~From; then 
+			'Warning: ' id ' (' type ') has no next flow element to follow. Define a flow relationship' newline
+			variable 'warnings_found' append '+1' close
+		endif
+	endif
+}
+foreach .(* | ^Start | ^Comment) {
+	if not (~To; or ~Menu to; or ~Back to; or ~Condition to;) then
+			'Warning: ' id ' (' type ') is not accessed in the navigation flow. Define a flow relationship' newline
+			variable 'warnings_found' append '+1' close
+	endif
+}
+foreach .Condition {
+	if not ~Condition from; then 
+			'Warning: ' id ' (' type ') has no next flow element to follow. Define a flow relationship' newline
+			variable 'warnings_found' append '+1' close
+	endif
+	do ~Condition from~Condition to {
+		if :Condition rule; ='' then
+			'Warning: ' id;1 ' (' type;1 ') has empty condition value when following to next element ' do .() {id} '! Define value for the condition' newline
+			variable 'warnings_found' append '+1' close
+		endif
+	}
+	do ~Condition from~Condition to; {
+		/* same values checking */
+			do ~Condition from.() {
+				do ~Condition from~Condition to; {
+					if oid <> oid;2 then					
+						if id = id;2 then					
+							'Warning: ' id;1 ' (' type;1 ') has several same condition values ' id ' to element ' do .() {id} '! Define different values for conditions' newline
+						variable 'warnings_found' append '+1' close
+						endif
+					endif
+				}
+			}
+	}
+}
+foreach .(List | Popup_menu) {
+	if not ~From choice; then 
+		'Warning: ' id ' (' type ') has no next flow element to follow. Define a flow relationship' newline
+			variable 'warnings_found' append '+1' close
+	endif
+	do ~From choice; {
+		if :Choice; ='' then
+		/* empty choice value checking */
+			do .() {
+				do ~From choice; {
+					if :Choice; ='' then
+						if oid <> oid;2 then					
+							'Warning: ' id;1 ' (' type;1 ') has several empty choice values! Define values for choices' newline
+						variable 'warnings_found' append '+1' close
+						endif
+					endif
+				}
+			}
+		else
+		/* same values checking */
+			do .() {
+				do ~From choice; {
+					if oid <> oid;2 then					
+						if id = id;2 then					
+							'Warning: ' id;1 ' (' type;1 ') has several same choice values ''' id '''. Define different values for choices' newline
+							variable 'warnings_found' append '+1' close
+						endif
+					endif
+				}
+			}
+		endif
+	}
+}
+endreport

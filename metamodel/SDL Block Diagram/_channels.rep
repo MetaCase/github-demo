@@ -1,0 +1,16 @@
+_channels()
+foreach >(); {
+	'	CHANNEL ' :Name%var; newline
+	' 		from ' 
+	do ~Source.() {:Name}
+	' to '
+	do ~Target.() {:Name}
+	if :Signal list; then 
+		' with '
+		dowhile :Signal list; {
+			id ', '
+		}
+	endif
+	';' newline
+	'	ENDCHANNEL ' :Name%var ';' newline
+}

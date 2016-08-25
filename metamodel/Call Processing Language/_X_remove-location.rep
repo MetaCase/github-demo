@@ -1,0 +1,7 @@
+Report '_X_remove-location'
+/* Report remove-location object */
+'<remove-location location="' :Location; '">' newline
+/* Report objects after remove-location object */
+subreport '_next object or otherwise' run
+'</remove-location>' newline
+endreport

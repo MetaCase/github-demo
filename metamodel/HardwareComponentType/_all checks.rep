@@ -1,0 +1,12 @@
+Report '_all checks'
+subreport '_translators' run
+subreport '_EAST-ADL specific translators' run
+$warnings = '0'
+$LiveCheck = 'T'
+
+subreport '_checkings' run 
+
+if $warnings = '0' then
+	'No warnings' newline
+endif
+endreport

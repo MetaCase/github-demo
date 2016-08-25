@@ -1,0 +1,20 @@
+_componentType()
+/* State component types */
+variable 'files' append subreport '_default directory' run 'E_ComponentType.exp ' close
+filename subreport '_default directory' run 'E_ComponentType.exp' write
+'(* @PATH := ''\/INFRASTRUCTURE\/STATE'' *)' newline
+'TYPE E_ComponentType : 
+(* ' id ' application component types generated from MetaEdit+ *)
+(' newline
+$sep = ''
+foreach .() {
+	do explosions {
+		$sep newline
+		'	CI_Brand_' _gName() 
+		$sep = ', '
+	}
+}
+'
+);
+END_TYPE'
+close

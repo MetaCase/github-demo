@@ -1,0 +1,9 @@
+Report '_return type'
+if decompositions then
+	do decompositions {
+		do :Type { type }
+	}
+else
+	'HardwareComponentType'
+endif
+endreport

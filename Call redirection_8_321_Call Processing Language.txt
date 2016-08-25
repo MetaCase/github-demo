@@ -1,0 +1,67 @@
+Graph_CPL_method_user_3207293682
+Call redirection
+8_321
+Call Processing Language
+Graph: Call redirection <Call Processing Language> 8_321
+	Name: Call redirection
+	Documentation: 
+Object: origin <address> 8_665
+	Field: origin
+	Subfield: 
+	Address: is
+	Address value: sip:boss@example.com
+Object: tel:+19175551212 <location> 8_456
+	Url: tel:+19175551212
+	Priority (0.0 -> 1.0): 
+	Clear: No
+Object: sip:jones@phone.example.com <location> 8_860
+	Url: sip:jones@phone.example.com
+	Priority (0.0 -> 1.0): 
+	Clear: No
+Object: Failed calls <log> 8_425
+	Name: Failed calls
+	Comment: 
+Object: sip:jones@email.example.com <mail> 8_554
+	Url: sip:jones@email.example.com
+Object:  <proxy> 8_690
+	Timeout: 
+	Recurse: Yes
+	Ordering: Parellel
+Object: 8 <proxy> 8_826
+	Timeout: 8
+	Recurse: Yes
+	Ordering: Parellel
+Object: root node <root node> 8_401
+Object: Call redirected to the voicemail address <subaction> 8_612
+	Decomposed to: Call redirected to the voicemail address <Call Processing Language>
+Relationship: default path <default path> 8_374
+  Role: From <From>  Object: <address> 8_665
+  Role: To <To>  Object: <location> 8_456
+Relationship: default path <default path> 8_386
+  Role: From <From>  Object: <location> 8_860
+  Role: To <To>  Object: <proxy> 8_826
+Relationship: default path <default path> 8_839
+  Role: From <From>  Object: <location> 8_456
+  Role: To <To>  Object: <proxy> 8_690
+Relationship: default path <default path> 8_849
+  Role: From <From>  Object: <log> 8_425
+  Role: To <To>  Object: <mail> 8_554
+Relationship: next_element proxy <next_element proxy> 8_366
+	name: busy
+  Role: From <From>  Object: <proxy> 8_826
+  Role: To <To>  Object: <subaction> 8_612
+Relationship: next_element proxy <next_element proxy> 8_763
+	name: failure
+  Role: From <From>  Object: <proxy> 8_826
+  Role: To <To>  Object: <log> 8_425
+Relationship: next_element proxy <next_element proxy> 8_779
+	name: noanswer
+  Role: From <From>  Object: <proxy> 8_826
+  Role: To <To>  Object: <address> 8_665
+Relationship: otherwise <otherwise> 8_770
+  Role: From otherwise <From otherwise>  Object: <address> 8_665
+  Role: To otherwise <To otherwise>  Object: <subaction> 8_612
+Relationship: incoming <session phase> 8_853
+	Session type: incoming
+  Role: From <From>  Object: <root node> 8_401
+  Role: To <To>  Object: <location> 8_860

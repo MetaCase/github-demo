@@ -1,0 +1,101 @@
+Report '_C_AppUi_H'
+filename 
+	subreport '_default directory' run 
+	'inc\' 
+	subreport '_app' run 
+	'AppUi.h' 
+write
+'/*
+* ============================================================================
+*  Name     : C' subreport '_app' run 'AppUi from CAknViewAppUi
+*  Part of  : ' subreport '_app' run '
+*  ' subreport '_copyright' run '
+* ============================================================================
+*/
+
+#ifndef ' to '%upper' translate subreport '_app' run endto 'APPUI_H
+#define ' to '%upper' translate subreport '_app' run endto 'APPUI_H
+
+// INCLUDES
+#include <eikapp.h>
+#include <eikdoc.h>
+#include <e32std.h>
+#include <coeccntx.h>
+#include <aknviewappui.h>
+#include <akntabgrp.h>
+#include <aknnavide.h>
+#include <akntitle.h>
+
+// FORWARD DECLARATIONS
+class C' subreport '_app' run 'Container;
+
+
+
+// CLASS DECLARATION
+
+/**
+* Application UI class.
+* Provides support for the following features:
+* - EIKON control architecture
+* - view architecture
+* - status pane
+* 
+*/
+class C' subreport '_app' run 'AppUi : public CAknViewAppUi
+    {
+    public: // // Constructors and destructor
+
+        /**
+        * EPOC default constructor.
+        */      
+        void ConstructL();
+
+        /**
+        * Destructor.
+        */      
+        virtual ~C' subreport '_app' run 'AppUi();
+        
+    public: // New functions
+
+    public: // Functions from base classes
+
+    private:
+        /** 
+        * From MEikMenuObserver
+        * @param aResourceId menu pane resource ID
+        * @param aMenuPane menu pane pointer
+        */
+        void DynInitMenuPaneL(TInt aResourceId,CEikMenuPane* aMenuPane);
+
+    private:
+        /**
+        * From CEikAppUi, takes care of command handling.
+        * @param aCommand command to be handled
+        */
+        void HandleCommandL(TInt aCommand);
+
+        /**
+        * From CEikAppUi, handles key events.
+        * @param aKeyEvent Event to handled.
+        * @param aType Type of the key event. 
+        * @return Reponse code (EKeyWasConsumed, EKeyWasNotConsumed). 
+        */
+        virtual TKeyResponse HandleKeyEventL(
+            const TKeyEvent& aKeyEvent,TEventCode aType);
+
+    public: //Data
+        CAknNavigationControlContainer* iNaviPane;
+        CAknTabGroup*                   iTabGroup;
+        CAknNavigationDecorator*        iDecoratedTabGroup;
+        CAknTitlePane*                  iTitlePane;
+        // This is NOT iAppView since this is REALLY a container ptr.
+    private:
+        C' subreport '_app' run 'Container* iAppContainer; 
+    };
+
+#endif    // ' to '%upper' translate subreport '_app' run endto 'APPUI_H
+
+// End of File
+'
+close
+endreport

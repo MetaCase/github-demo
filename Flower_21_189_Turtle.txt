@@ -1,0 +1,33 @@
+Graph_Turtle_sysadmin_3526813991
+Flower
+21_189
+Turtle
+Graph: Flower <Turtle> 21_189
+	Name: Flower
+	Format: 
+	Animation: 20
+	Object: 20 <Animation> 21_495
+		Milliseconds Per Frame: 20
+		Display Every Nth Frame: 
+	Documentation: 
+Object: i <For> 21_379
+	Variable: i
+	Start: 1
+	End: 60
+Object: j <For> 21_749
+	Variable: j
+	Start: 1
+	End: 20
+Object: 6 <Forward> 21_557
+	Pen down?: T
+	Distance: 6
+Object: 6 <Right> 21_342
+	Degrees: 6
+Object: 18 <Right> 21_780
+	Degrees: 18
+Relationship: Sequence <Sequence> 21_354
+  Role: From <From>  Object: <For> 21_379
+  Role: To <To>  Object: <Right> 21_780
+Relationship: Sequence <Sequence> 21_431
+  Role: From <From>  Object: <Forward> 21_557
+  Role: To <To>  Object: <Right> 21_342

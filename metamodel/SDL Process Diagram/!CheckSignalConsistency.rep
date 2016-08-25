@@ -1,0 +1,93 @@
+!CheckSignalConsistency()
+_translators()
+
+$inputs = ' '
+$outputs = ' '
+@thisProcess = oid;
+@found = 'F'
+@process = 'process not found'
+
+do graphs {
+	foreach .Process; {
+		do decompositions {
+			if @thisProcess = oid; then
+				local 'process' write type;1 ' ' id;1 close
+				@found = 'T'
+			endif
+		}
+		if @found <> 'F' then
+			do ~Target>Signal {
+				do :Signal list; {
+					variable 'inputs' append id%var ' ' close
+				}
+			}
+			do ~Source>Signal {
+				do :Signal list; {
+					variable 'outputs' append id%var ' ' close
+				}
+			}
+			do ~Target>Channel {
+				do :Signal list; {
+					do :Parameters {
+						variable 'inputs' append id%var ' ' close
+					}
+				}
+			}
+			do ~Source>Channel {
+				do :Signal list; {
+					do :Parameters {
+						variable 'outputs' append id%var ' ' close
+					}
+				}
+			}
+		endif
+		@found = 'F'
+	}
+}
+
+if $inputs = ' ' or $outputs = ' ' then
+	id ' does not have related block diagram and process' 
+else
+	foreach .Input; where id <> '*'; {
+		if not $inputs =~ id%var%wildsp then
+			'Input ' id ' is not defined as input signal for ' @process; newline
+		endif
+	}
+
+	foreach .Output; where id <> '*'; {
+		if not $outputs =~ id%var%wildsp then
+			'Output ' id ' is not defined as output signal for ' @process; newline
+		endif
+	}
+
+	@allInputs = 'F'
+	foreach .Input { if id = '*' then @allInputs = 'T' endif }
+	if @allInputs = 'F' then 
+		@thisProcessInputs = ' '  
+		foreach .Input { 
+			local 'thisProcessInputs' append id%var ' ' close 
+		}
+
+		do $inputs%spaceToNewline {
+			if id <> '' and not @thisProcessInputs =~ id%var%wildsp then
+				'Input ' id ' is not used in this process diagram' newline
+			endif
+		}
+	endif
+
+	@allOutputs = 'F'
+	foreach .Output { if id = '*' then @allOutputs = 'T' endif }
+	if @allOutputs = 'F' then 
+		@thisProcessOutputs = ' ' 
+		foreach .Output { 
+			local 'thisProcessOutputs' append id%var ' ' close 
+		}
+
+		do $outputs%spaceToNewline {
+			if id <> '' and not @thisProcessOutputs =~ id%var%wildsp then
+				'Output ' id ' is not used in this process diagram' newline
+			endif
+		}
+		endif
+
+endif

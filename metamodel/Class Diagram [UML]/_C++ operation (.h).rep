@@ -1,0 +1,13 @@
+Report '_C++ operation (.h)'
+'		'
+if :Return type; = '' then 'void' endif
+if :Return type; <> '' then :Return type; endif
+' ' :Operation name; ' ('
+dowhile :Parameters; { :Data type; ' ' :Parameter; ', ' }
+');'
+if :Documentation; <> '' then 
+	'		// ' 
+	dowhile :Documentation; { id ' '}
+endif
+newline
+endreport

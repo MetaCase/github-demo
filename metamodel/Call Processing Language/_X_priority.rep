@@ -1,0 +1,7 @@
+Report '_X_priority'
+/* Report Priority-switch objects */
+'<' type '-switch>' newline
+'<priority ' :condition; '="' :priorities; '">' newline
+/* Report objects after Priority-switch */
+subreport '_next node' run
+endreport

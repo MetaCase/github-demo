@@ -1,0 +1,66 @@
+Graph_ClockApplication_sysadmin_3150525787
+TASTW
+9_380
+WatchApplication
+Graph: TASTW <WatchApplication> 9_380
+	Application name: TASTW
+	Documentation: 
+Object:  <DisplayFn> 9_475
+	Name: 
+	Central: MINUTE
+Object: Start [Watch] <Start [Watch]> 9_2939
+Object: Time <State [Watch]> 9_1549
+	State name: Time
+	DisplayFn: 
+	Blinking: 
+	Documentation: Application for showing the current time. Allows editing of hours, minutes and seconds. While we're running on a PC, we don't want to set the real time, so these changes apply to the clockOffset and hence to the clockTime perceived by the running watch.
+	Decomposed to: Time <WatchApplication>
+Object: WorldTime <State [Watch]> 9_2157
+	State name: WorldTime
+	DisplayFn: 
+	Blinking: 
+	Documentation: Application for showing the current time in a different time zone from the main Time application. The time zone offset is set by the user in hours and minutes.
+	Decomposed to: WorldTime <WatchApplication>
+Object: Stopwatch <State [Watch]> 9_2773
+	State name: Stopwatch
+	DisplayFn: 
+	Blinking: 
+	Documentation: Application for timing events. Stopwatch allows the user to start, stop and reset the timing device. 
+	Decomposed to: Stopwatch <WatchApplication>
+Object: AlarmClock <State [Watch]> 9_3007
+	State name: AlarmClock
+	DisplayFn: 
+	Blinking: 
+	Documentation: Application for an alarm at a certain time of day. AlarmClock allows the user to set the alarm time by editing hours and minutes and the alarm rings when the alarm time is reached.
+	Decomposed to: AlarmClock <WatchApplication>
+Object: Timer <State [Watch]> 9_3442
+	State name: Timer
+	DisplayFn: 
+	Blinking: 
+	Documentation: Application for countdown or 'egg timer'. Timer allows the user to set the length of the countdown in hours and minutes and then starts counting down from this, ringing the alarm when the time has elapsed.
+	Decomposed to: Timer <WatchApplication>
+Object: clockTime <VariableRef> 9_3229
+	Name: clockTime
+	Type: METime
+	Documentation: This is the time as seen in the running watch. Internally it is generated on request from your real system time plus the clockOffset.
+Relationship: Set <Set> 9_503
+  Role: DisplayFnBody <DisplayFnBody>  Object: <DisplayFn> 9_475
+  Role: Get <Get>  Object: <VariableRef> 9_3229
+Relationship: Transition <Transition> 9_549
+  Role: From <From>  Object: <State [Watch]> 9_1549
+  Role: To <To>  Object: <State [Watch]> 9_3007
+Relationship: Transition <Transition> 9_1444
+  Role: From <From>  Object: <State [Watch]> 9_2157
+  Role: To <To>  Object: <State [Watch]> 9_1549
+Relationship: Transition <Transition> 9_1489
+  Role: From <From>  Object: <Start [Watch]> 9_2939
+  Role: To <To>  Object: <State [Watch]> 9_1549
+Relationship: Transition <Transition> 9_2369
+  Role: From <From>  Object: <State [Watch]> 9_3007
+  Role: To <To>  Object: <State [Watch]> 9_2773
+Relationship: Transition <Transition> 9_2817
+  Role: From <From>  Object: <State [Watch]> 9_2773
+  Role: To <To>  Object: <State [Watch]> 9_3442
+Relationship: Transition <Transition> 9_2857
+  Role: From <From>  Object: <State [Watch]> 9_3442
+  Role: To <To>  Object: <State [Watch]> 9_2157

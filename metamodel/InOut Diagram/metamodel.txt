@@ -1,0 +1,66 @@
+==========================
+Graph Type
+==========================
+InOut Diagram
+	Name: String
+
+==========================
+Object Types
+==========================
+BlackBoxEntity [Port]
+	Name: String
+BigIn [Port]
+	Name: String
+LittleIn [Port]
+	Name: String
+BigOut [Port]
+	Name: String
+LittleOut [Port]
+	Name: String
+Note
+	Note is a special object for adding additional text anywhere in the graphs. Note belongs to many languages and has only one property, Documentation.
+	---------------------------------------------
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+OutInConnection [Port]
+
+==========================
+Role Types
+==========================
+In [Port]
+Out [Port]
+
+==========================
+Extra Types
+==========================
+_AbstractIn [Port]
+	Name: String
+_AbstractInOut [Port]
+	Name: String
+_AbstractOut [Port]
+	Name: String
+
+==========================
+Bindings
+==========================
+OutInConnection [Port]
+	Out [Port] #(BigOut [Port]): BlackBoxEntity [Port]
+	In [Port] #(BigIn [Port]): BlackBoxEntity [Port]
+OutInConnection [Port]
+	Out [Port] #(LittleOut [Port]): BlackBoxEntity [Port]
+	In [Port] #(LittleIn [Port]): BlackBoxEntity [Port]
+
+==========================
+Constraints
+==========================
+
+==========================
+Subgraphs
+==========================
+Decompositions:
+	BlackBoxEntity [Port]
+		InOut Diagram
+

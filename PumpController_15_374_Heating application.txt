@@ -1,0 +1,42 @@
+Graph_Heating_application_user_3504901597
+PumpController
+15_374
+Heating application
+Graph: PumpController <Heating application> 15_374
+	System name: PumpController
+	Description: Pump is put on or off depending on flame detection.
+	Use visualization: T
+Object: HU1 B1 <Burner> 15_1114
+	Name: HU1 B1
+Object: P1 <Pump> 15_1256
+	Name: P1
+	Pump type: pump
+Object: Start <Start> 15_619
+Object: Initializing <State> 15_810
+	State name: Initializing
+	Description: 
+Object: Control_Pump <State> 15_1056
+	State name: Control_Pump
+	Description: 
+Relationship: Transition <Transition> 15_458
+  Role: On <Action>  Object: <Pump> 15_1256
+	Action: On
+  Role: bFlameDetected <Burner condition>  Object: <Burner> 15_1114
+	NOT?: F
+	Condition: bFlameDetected
+  Role: From <From>  Object: <State> 15_1056
+  Role: To <To>  Object: <State> 15_1056
+Relationship: Transition <Transition> 15_469
+  Role: From <From>  Object: <State> 15_810
+  Role: To <To>  Object: <State> 15_1056
+Relationship: Transition <Transition> 15_1035
+  Role: From <From>  Object: <Start> 15_619
+  Role: To <To>  Object: <State> 15_810
+Relationship: Transition <Transition> 15_1436
+  Role: Off <Action>  Object: <Pump> 15_1256
+	Action: Off
+  Role: bFlameDetected <Burner condition>  Object: <Burner> 15_1114
+	NOT?: T
+	Condition: bFlameDetected
+  Role: From <From>  Object: <State> 15_1056
+  Role: To <To>  Object: <State> 15_1056

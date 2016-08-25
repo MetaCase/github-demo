@@ -1,0 +1,174 @@
+Graph_Simple_GOPRR_user_3334325822
+Data Flow Diagram
+14_293
+Metamodel [GOPRR]
+Graph: Data Flow Diagram <Metamodel [GOPRR]> 14_293
+	Graph name: Data Flow Diagram
+	__UUID: blMzh+8cRRmMKePl0svSiw
+	Namespace: 
+	Properties: Process name Status Description
+	Object: Process name <Property [GOPRR]> 14_994
+		Property name: Process name
+		__UUID: u9a7spS3TdKCfZT2bLj2Rw
+		Local name: Model name
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Object: Status <Property [GOPRR]> 14_2039
+		Property name: Status
+		__UUID: MAjiRf0MSsOvHBHwFFJ+/g
+		Local name: Status
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Object: Description <Property [GOPRR]> 14_464
+		Property name: Description
+		__UUID: yKdefhREQAiuFP9BSD0tkw
+		Local name: Description
+		Datatype: Text
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Constraints: 
+	Object order: 
+	Description: This model describes the metamodel of data flow diagram.
+Object: External Store <Object set [GOPRR]> 14_2565
+	Objects: External Store
+	Object: External <Object [GOPRR]> 14_1620
+		Object name: External
+		__UUID: XWyB1ceMSy+nfmLH4QZtaA
+		Properties: 
+		Occurrence: N
+		Description: An external is an object which represents a source or a destination of data flows in the modelled system. Thus, externals which e.g. are 'customers', 'suppliers', 'employees' are considered to be outside the system but still either accepting or providing data to it or both. An external is represented by a solid square with a name of the external inside the symbol. External has two properties: external name and documentation.
+	Object: Store <Object [GOPRR]> 14_1312
+		Object name: Store
+		__UUID: 3FpWv6oORFWFvPISx+yX+g
+		Properties: Store ID
+		Object: Store ID <Property [GOPRR]> 14_1729
+			Property name: Store ID
+			__UUID: 9hOEuNdYS2Cfx3Kgvs+N0w
+			Local name: Store ID
+			Datatype: Number
+			Object Datatype: 
+			Default value(s): 
+			Uniqueness: 
+			Description: 
+		Occurrence: N
+		Description: A store acts as a repository for data. Thus, a store allows you to define parts of the system where you need data stored between processes. A store is symbolized by a rounded rectangle where the name of the store is shown inside the symbol. Store has two properties: store name and documentation.
+Object: Abstract <Object [GOPRR]> 14_677
+	Object name: Abstract
+	__UUID: w8QTXwRgTveRWj+OKybwvw
+	Properties: Name Description
+	Object: Name <Property [GOPRR]> 14_2362
+		Property name: Name
+		__UUID: 3K0eimYRRHuX2sv2vm+2wQ
+		Local name: Name
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: per graph
+		Description: 
+	Occurrence: 0
+	Description: Abstract is a supertype for other elements in data flow diagram.
+Object: Store <Object [GOPRR]> 14_1312
+	Object name: Store
+	__UUID: 3FpWv6oORFWFvPISx+yX+g
+	Properties: Store ID
+	Occurrence: N
+	Description: A store acts as a repository for data. Thus, a store allows you to define parts of the system where you need data stored between processes. A store is symbolized by a rounded rectangle where the name of the store is shown inside the symbol. Store has two properties: store name and documentation.
+Object: External <Object [GOPRR]> 14_1620
+	Object name: External
+	__UUID: XWyB1ceMSy+nfmLH4QZtaA
+	Properties: 
+	Occurrence: N
+	Description: An external is an object which represents a source or a destination of data flows in the modelled system. Thus, externals which e.g. are 'customers', 'suppliers', 'employees' are considered to be outside the system but still either accepting or providing data to it or both. An external is represented by a solid square with a name of the external inside the symbol. External has two properties: external name and documentation.
+Object: Note <Object [GOPRR]> 14_1972
+	Object name: Note
+	__UUID: FzKr4pW5RcqrJ7QRY0eNhg
+	Properties: Description
+	Occurrence: N
+	Description: Note is a special object for adding additional text any where in the graphs. Note belong to every method and has only one property: label.
+Object: Process <Object [GOPRR]> 14_2504
+	Object name: Process
+	__UUID: 9VHzUhLbRZmg/UAXSRANIA
+	Properties: Process ID Method body
+	Object: Process ID <Property [GOPRR]> 14_1228
+		Property name: Process ID
+		__UUID: mk0hdrD6Rlat/SP49DuW0g
+		Local name: ID
+		Datatype: Number
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: globally
+		Description: 
+	Object: Method body <Property [GOPRR]> 14_2194
+		Property name: Method body
+		__UUID: euc7GEelSwasxQljYMklrw
+		Local name: Process specification
+		Datatype: Text
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Occurrence: N
+	Description: A process describes the functions of the system which transform the flows. A process is represented by a solid circle with two properties (i.e. process number and process name) inside it. Process has three properties: process ID, process name and documentation.
+Relationship: Data flow <Binding [GOPRR]> 14_1533
+	Relationship: Data flow
+	Object: Data flow <Relationship [GOPRR]> 14_1554
+		Relationship name: Data flow
+		__UUID: BDpMmgTaRke3GnO9DqzB1g
+		Properties: Label
+		Object: Label <Property [GOPRR]> 14_412
+			Property name: Label
+			__UUID: cyqxTUZoSIWbXcupVrSciw
+			Local name: Label
+			Datatype: String
+			Object Datatype: 
+			Default value(s): 
+			Uniqueness: 
+			Description: 
+		Description: Flow between data flow elements.
+  Role: From <First role [GOPRR]>  Object: <Object set [GOPRR]> 14_2565
+	Role: From
+	Object: From <Role [GOPRR]> 14_529
+		Role name: From
+		__UUID: y7yYN7KAT9miKzIeuk0vhg
+		Properties: 
+		Description: Starts the flow
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Dynamic Ports: 
+  Role: To <Last role [GOPRR]>  Object: <Object [GOPRR]> 14_2504
+	Role: To
+	Object: To <Role [GOPRR]> 14_2202
+		Role name: To
+		__UUID: gE56TvXmTRmlq5uvqKgU+A
+		Properties: 
+		Description: 
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Can be drawn in both directions: F
+	Dynamic Ports: 
+Relationship: Data flow <Binding [GOPRR]> 14_2400
+	Relationship: Data flow
+  Role: From <First role [GOPRR]>  Object: <Object [GOPRR]> 14_2504
+	Role: From
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Dynamic Ports: 
+  Role: To <Last role [GOPRR]>  Object: <Object [GOPRR]> 14_677
+	Role: To
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Can be drawn in both directions: F
+	Dynamic Ports: 
+Relationship: Inheritance [GOPRR] <Inheritance [GOPRR]> 14_1672
+  Role: Subtype [GOPRR] <Subtype [GOPRR]>  Object: <Object [GOPRR]> 14_1312
+  Role: Subtype [GOPRR] <Subtype [GOPRR]>  Object: <Object [GOPRR]> 14_2504
+  Role: Subtype [GOPRR] <Subtype [GOPRR]>  Object: <Object [GOPRR]> 14_1620
+  Role: Supertype [GOPRR] <Supertype [GOPRR]>  Object: <Object [GOPRR]> 14_677

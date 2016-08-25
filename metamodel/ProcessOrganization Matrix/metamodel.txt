@@ -1,0 +1,95 @@
+==========================
+Graph Type
+==========================
+Process/Organization Matrix
+	Once business processes has been identified Process/Organization Matrix is used to relate processes to the organizational structure. Essentially, Process/Organization Matrix illustrates who makes decisions in each of the processes. The matrix consist of two axis, in which first one includes all the relevant business processes and the second one includes various organizational units. These two objects are related to each other through various levels of responsibility (i.e. major responsibility, major involvement and some involvement in the process).
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Business process
+	A business process represents a function which produce some products (material or services) to other parts of the company or the chain. A business process is represented by a rectangle with a horizontal line inside it. Business process has five properties: name, process type, value adding, costs and documentation. Specifically, process type is used to specify the business processes in more detail. The process type can be selected from predefined types, (inbound, operations, outbound, sales, service, delivery, development, administration) or by entering your own process type. A value adding is used to specify results of the process, i.e. how much it has added the value to the chain. A cost is used to enter the expenses of a process.
+	---------------------------------------------
+	Name: String
+	Type: String
+	Value adding: String
+	Costs: String
+	Documentation: Text
+Organization
+	Organization represents one unit of the company (i.e. like marketing, or production).  It is characterized by name of the unit, owner of the unit, and documentation.
+	
+	
+	---------------------------------------------
+	Organization name: String
+	Owner: String
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Responsibility
+	Responsibility identifies involvement between business processes and organizational units. With responsibility we can identify either: 
+	1) major responsibility and decision maker,
+	2) major involvement in the process, or
+	3) some involvement in the process.
+	
+	---------------------------------------------
+	Responsibility type: String
+
+==========================
+Role Types
+==========================
+Organization part
+Process part
+
+==========================
+Extra Types
+==========================
+Data Flow Diagram
+	Data flow diagrams are perhaps the most well known and widely used modelling technique. Their basic idea is to represent the flow of data through a system.
+	
+	The objects in this method are 'process', 'store' and 'external' and a relationship between these objects is 'Flow'.
+	
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+_Business Systems Planning
+_Structured Analysis and Design
+Person
+	Person is used to describe developers involved in a project (i.e. attached to the project model) and authors of developed models. Person can be characterized with a name, e-mail address, and with a contact address. 
+	---------------------------------------------
+	Name: String
+	E-mail: String
+	Contact address: Text
+Data class part
+
+==========================
+Bindings
+==========================
+Responsibility
+	Organization part: Organization
+	Process part: Business process
+Responsibility
+	Process part: Business process
+	Organization part: Organization
+
+==========================
+Constraints
+==========================
+Property "Name" in Business process must have unique values
+Property "Organization name" in Organization must have unique values
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	Business process
+		Data Flow Diagram
+

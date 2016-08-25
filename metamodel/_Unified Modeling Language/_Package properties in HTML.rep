@@ -1,0 +1,21 @@
+Report '_Package properties in HTML'
+subreport '__Table HTML' run
+'<tr><th align="left">Package name</th><td>' newline
+'<a name="' oid '"></a><b>' id%xml '</b></td></tr>' newline
+if :Stereotype; then 
+	'<tr><th align="left">Stereotype</th>'
+	'<td>&lt;&lt;' :Stereotype%xml '&gt;&gt;</td></tr>' newline
+endif
+if :Documentation; then 
+	'<tr><th align="left">Documentation</th>'
+	'<td>' 
+	dowhile :Documentation
+	{	id%xml '<br />' newline
+	}
+	'</td></tr>' newline
+endif
+'<tr><th align="left">Symbol transparent</th><td>' newline
+if :Symbol transparent?; then 'True' else 'False'	endif
+'</td></tr>'
+'</table>' newline
+endreport

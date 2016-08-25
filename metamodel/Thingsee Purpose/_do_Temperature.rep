@@ -1,0 +1,21 @@
+_do_Temperature()
+@sep = ''
+
+'                  "thresholds": {' 
+if :Trigger if over \(celcius\); = '' and :Trigger if under \(celcius\); = '' then
+	newline
+	'                    "isAny": true'	newline
+else 
+	if :Trigger if over \(celcius\); <> '' then
+		newline
+		'                    "isGt": ' :Trigger if over \(celcius\); 
+		@sep = ','
+	endif
+	if :Trigger if under \(celcius\); <> '' then
+		@sep newline
+		'                    "isLt": ' :Trigger if under \(celcius\); 
+	endif
+	newline
+endif
+'                  }
+'

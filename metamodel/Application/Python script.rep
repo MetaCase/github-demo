@@ -1,0 +1,38 @@
+Report 'Python script'
+/* Produce Python script using Amaretto framework */
+subreport '_translators' run
+subreport '_imported modules' run newline
+if :Documentation; <> '' then 
+	do :Documentation; {'# ' id newline} newline
+endif
+subreport '_function library' run newline
+/* Report all function definitions and calls */
+foreach .(* | ^Start | ^Comment ) {subreport '_' type run newline}
+'def main():' newline
+'	old_title = appuifw.app.title' newline
+'	appuifw.app.title = (u"' :Application name; '")' newline
+/* Add application exit to the stack as a first item */
+foreach .Stop {
+	'	call_stack.append(' type oid ')' newline}
+/* Initiate the application */
+foreach .Start {
+	/* '	state=' subreport '_Internal name' run newline */
+	do ~From~To.() {
+		'	state = ' subreport '_Internal name' run newline
+		'	try:' newline
+		'		while not exit_flag:' newline
+		'			new_state, add_to_stack=state()' newline
+		'			if add_to_stack:' newline
+		'				call_stack.append(state)' newline
+		'			state = new_state' newline
+	} 
+}
+'	finally:' newline
+'		lock.signal()' newline
+'		appuifw.app.title=old_title' newline
+'		appuifw.app.exit_key_handler = None' newline newline
+/* if application should stop completely also the Python interpreter, remove comment from the next line */
+/* '		appuifw.app.set_exit()' newline */ 
+'if __name__ == "__main__":' newline
+'	main()'
+endreport

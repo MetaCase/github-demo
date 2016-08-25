@@ -1,0 +1,27 @@
+_functionBlock()
+/* fuction declarations */
+variable 'files' append subreport '_default directory' run 'FB_'id%file '.exp ' close
+filename subreport '_default directory' run 'FB_'id%file '.exp' write
+'(* @PATH := ''\/HomeHeating'' *)' newline
+'FUNCTION_BLOCK FB_' id%firstUpper%var newline newline
+'(* ' id ' function block generated from MetaEdit+ *)' newline
+if :Description; then '(* ' :Description ' *)' newline endif
+newline
+'VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR' newline
+_instrumentTypes()
+foreach .() {
+	do explosions { _basicStates()}
+}
+'END_VAR' newline
+/* function body */
+_init();
+'END_FUNCTION_BLOCK
+'
+foreach .() {
+	do explosions { _detailedStates() }
+}
+close

@@ -1,0 +1,16 @@
+_conditionTransition()
+do ~Condition source>Conditional transition; orderby x num, y num {
+	to '%indent' translate	
+	newline
+	'(' :Condition '):' 
+	do ~Condition target.() {
+			newline
+			if type = 'State' then 
+				'NEXTSTATE ' :State name%var ';' 
+			else
+				subreport '_do' type run
+			endif	
+	}
+	endto
+}
+newline

@@ -1,0 +1,45 @@
+Report '_build and run C#'
+
+'
+@echo off
+:: try the $visualStudio variable from __Paths
+set run=' $visualStudio '
+if exist "%run%" goto launchvs
+
+:: use .NET
+set run=%dotNetDir%\MSBuild.exe
+if exist "%run%" goto launch 
+
+:: no compiler found, fail
+echo No Visual Studio or .NET MSBuild found!
+pause
+goto end
+
+:launchvs
+@echo off
+echo.
+echo MetaEdit+ generated graph ' :Name ' and will now run Visual Studio with generated code as Visual Studio solution.
+echo.
+echo The generated source code and Visual Studio project files were placed under the ' $projPath ' and ' $srcPath ' directories.
+echo.
+echo This window will close when you close Visual Studio.
+echo.
+@echo on
+"%run%" ' :Name '.sln /Run
+@echo off
+goto end
+
+:launch
+if "%dotNetDir:~-4%"=="v3.5" set opts=/p:TargetFrameworkVersion=v3.5
+@echo on
+"%run%" %opts% ' :Name '.sln
+if not errorlevel 1 ' :Name '\bin\Debug\' :Name '.exe
+
+@echo off
+goto end
+
+:end
+if not errorlevel 1 exit
+'
+
+endreport

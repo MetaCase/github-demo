@@ -1,0 +1,46 @@
+Report '_EntryHTMLforeignFields'
+/* The fields in the form that point to a single foreign element */
+
+/* far Whole role that is 1 => pull-down (or read-only text + Edit) */
+do ~()~Whole; 
+where not :Multiplicity=/'.*\*'
+{	to '%undent' translate
+		do .()
+		{	$farEnd=id
+			'    <tr>
+			      <td class="foreignLabel">' $farEnd%xml '</td>
+			      <td>
+			        <select id="fk_' $farEnd%var '" style="width:20em;">
+			        </select>
+'			/* http://thinlight.org/2007/12/12/readonly-text-input-background-color-in-firefox/
+		        <input type="text" id="fk_' $farEnd%var '" style="width:20em; background-color: #e8f2f6;" readonly="readonly"> 
+			*/
+'			      </td>
+			      <td><button type="button" onclick="editForeign(''fk_' $farEnd%var ''');" id="fk_' $farEnd%var 'Button">Edit</button></td>
+			    </tr>' newline
+		}
+	endto
+}
+
+
+/* far Association role that is navigable & 1 => pull-down */
+do ~()~Association Role; 
+where (not :Multiplicity=/'.*\*') and :Navigable?
+{	$farEnd = :Role name; 
+	to '%undent' translate
+		do .()
+		{	if not $farEnd then $farEnd = id endif
+			'    <tr>
+			      <td class="foreignLabel">' $farEnd%xml '</td>
+			      <td>
+			        <select id="fk_' $farEnd%var '" style="width:20em;">
+			        </select>
+			      </td>
+			      <td><button type="button" onclick="editForeign(''fk_' $farEnd%var ''');" id="fk_' $farEnd%var 'Button">Edit</button></td>
+
+			    </tr>' newline
+		}
+	endto
+}
+
+endreport

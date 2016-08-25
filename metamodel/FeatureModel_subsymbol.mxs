@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="FeatureModel_subsymbol">
+		<objectSymbol offset="40,20" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="40,20 160,20 160,40 40,40 40,20" targetPointX="100" targetPointY="30" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="40" version="1.2" width="160" xmlns="http://www.w3.org/2000/svg">
+				<textArea display-align="center" fill="rgb(0,0,0)" font-family="#sans serif" font-size="14" font-style="normal" font-weight="normal" height="20" sym:characterBackgroundFill="none" sym:textboxFill="rgb(239,255,224)" sym:textboxStroke="rgb(0,128,0)" sym:textboxStroke-width="0" sym:wordWrap="false" text-anchor="middle" width="120" x="40" y="20">
+					ReportTextSource:'FM: ' id
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</textArea>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

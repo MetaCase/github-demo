@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="id_middle_HDA_subsymbol">
+		<objectSymbol offset="40,20" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="40,20 100,20 100,60 40,60 40,20" targetPointX="70" targetPointY="40" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="60" version="1.2" width="100" xmlns="http://www.w3.org/2000/svg">
+				<textArea display-align="center" fill="rgb(0,0,0)" font-family="#sans serif" font-size="14" font-style="normal" font-weight="normal" height="40" sym:characterBackgroundFill="none" sym:textboxFill="none" sym:textboxStroke="none" sym:textboxStroke-width="0" sym:wordWrap="true" text-anchor="middle" width="60" x="40" y="20">
+					ReportTextSource:if not _sym_hide_PinName() then id endif
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</textArea>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

@@ -1,0 +1,38 @@
+Report '_RSS_Aif'
+filename
+	subreport '_default directory' run 
+	'aif\' 
+	subreport '_app' run 
+	'Aif.rss'
+write
+'/*
+* ============================================================================
+*  Name     : ' subreport '_app' run 'Aif.rss
+*  Part of  : ' subreport '_app' run '
+*  ' subreport '_copyright' run '
+* ============================================================================
+*/
+
+#include <aiftool.rh>
+
+RESOURCE AIF_DATA
+    {
+    app_uid=' foreach .Application { :Uid } ';
+    caption_list=
+        {       
+        CAPTION
+            {
+            code = ELangEnglish;
+            caption = "' foreach .Application {:Name in List;} '";
+            }
+        };
+    num_icons=2;
+    embeddability=KAppNotEmbeddable;
+    newfile=KAppDoesNotSupportNewFile;
+    }
+
+// End of File
+'
+
+close
+endreport

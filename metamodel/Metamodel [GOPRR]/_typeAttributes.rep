@@ -1,0 +1,7 @@
+_typeAttributes()
+' description="' :Description%xml; '"'
+' id="' _type_name_oid() '"'
+' typeName="' id%xml '"'
+if _namespace() then 
+	' type="' _type_name_oid() '"'
+endif

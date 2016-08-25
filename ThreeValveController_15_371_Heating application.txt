@@ -1,0 +1,90 @@
+Graph_Heating_application_user_3504901597
+ThreeValveController
+15_371
+Heating application
+Graph: ThreeValveController <Heating application> 15_371
+	System name: ThreeValveController
+	Description: 
+	Use visualization: F
+Object: B1 <Boiler> 15_569
+	Name: B1
+Object: AND <Condition> 15_404
+	Condition: AND
+Object: AND <Condition> 15_681
+	Condition: AND
+Object: AND <Condition> 15_886
+	Condition: AND
+Object: R1 <Radiator> 15_1305
+	Name: R1
+Object: Start <Start> 15_1166
+Object: Initializing <State> 15_500
+	State name: Initializing
+	Description: 
+Object: Control threevalve <State> 15_1354
+	State name: Control threevalve
+	Description: 
+Object: CV1 <Valve> 15_946
+	Name: CV1
+	Number of valve ends: Three
+	Valve type: Control
+	Closing by: needle
+Relationship: Condition <Condition> 15_613
+  Role: bWarmUp <Boiler condition>  Object: <Boiler> 15_569
+	NOT?: F
+	Condition: bWarmUp
+  Role: Cond <Cond>  Object: <Condition> 15_886
+Relationship: Condition <Condition> 15_623
+  Role: Cond <Cond>  Object: <Condition> 15_886
+  Role: T <Radiator condition>  Object: <Radiator> 15_1305
+	NOT?: T
+	Condition: bWarmUp
+Relationship: Condition <Condition> 15_1039
+  Role: Cond <Cond>  Object: <Condition> 15_681
+  Role: F <Radiator condition>  Object: <Radiator> 15_1305
+	NOT?: F
+	Condition: bWarmUp
+Relationship: Condition <Condition> 15_1162
+  Role: bWarmUp <Boiler condition>  Object: <Boiler> 15_569
+	NOT?: T
+	Condition: bWarmUp
+  Role: Cond <Cond>  Object: <Condition> 15_681
+Relationship: Condition <Condition> 15_1205
+  Role: bWarmUp <Boiler condition>  Object: <Boiler> 15_569
+	NOT?: F
+	Condition: bWarmUp
+  Role: Cond <Cond>  Object: <Condition> 15_404
+Relationship: Condition <Condition> 15_1213
+  Role: Cond <Cond>  Object: <Condition> 15_404
+  Role: F <Radiator condition>  Object: <Radiator> 15_1305
+	NOT?: F
+	Condition: bWarmUp
+Relationship: Transition <Transition> 15_463
+  Role: F <Condition>  Object: <Condition> 15_404
+	NOT?: F
+  Role: From <From>  Object: <State> 15_1354
+  Role: To <To>  Object: <State> 15_1354
+  Role: Open <Valve action>  Object: <Valve> 15_946
+	Action: Open
+	Valve position: Both
+Relationship: Transition <Transition> 15_581
+  Role: From <From>  Object: <State> 15_500
+  Role: To <To>  Object: <State> 15_1354
+Relationship: Transition <Transition> 15_659
+  Role: From <From>  Object: <Start> 15_1166
+  Role: To <To>  Object: <State> 15_500
+Relationship: Transition <Transition> 15_775
+  Role: F <Condition>  Object: <Condition> 15_681
+	NOT?: F
+  Role: From <From>  Object: <State> 15_1354
+  Role: To <To>  Object: <State> 15_1354
+  Role: Open <Valve action>  Object: <Valve> 15_946
+	Action: Open
+	Valve position: Right
+Relationship: Transition <Transition> 15_1193
+  Role: F <Condition>  Object: <Condition> 15_886
+	NOT?: F
+  Role: From <From>  Object: <State> 15_1354
+  Role: To <To>  Object: <State> 15_1354
+  Role: Open <Valve action>  Object: <Valve> 15_946
+	Action: Open
+	Valve position: Left

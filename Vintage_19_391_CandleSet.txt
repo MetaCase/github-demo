@@ -1,0 +1,8 @@
+Graph_CandleSet_sysadmin_3501269675
+Vintage
+19_391
+CandleSet
+Graph: Vintage <CandleSet> 19_391
+	Name: Vintage
+	Number of Candles: 18
+Object: VintageCandle <VintageCandle> 19_764

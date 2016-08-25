@@ -1,0 +1,28 @@
+_DepGraph()
+'	<graph id="_dep'oid'" type="Graph_Dependability_sysadmin_3509190231">
+		<slot name="Short name">
+			<value>
+				<string>' :FunctionName%xml '</string>
+			</value>
+		</slot>
+		<slot name="Name">
+			<value>
+				<string>' :Name%xml '</string>
+			</value>
+		</slot>		
+		<slot name="Description">
+			<value>
+				<text>This dependability diagram is originally generarated from ' type ' ' :FunctionName%xml '.' 
+				:Description%xml '</text>
+			</value>
+		</slot> 
+		<object id="_pt'oid'" type="Object_EAType_sysadmin_3541158109">
+					'
+			_ErrorGraph()
+'		</object>
+'
+		_FaultFailures()
+		_FailureBindings() 
+		_DepDiagramRepr() 
+'	</graph>
+'

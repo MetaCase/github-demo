@@ -1,0 +1,24 @@
+Report '_RSS_View'
+'//----------------------------------------------------
+//   
+//    ' to '%lower' translate subreport '_r' run :View name var; endto '
+//    ' :View name; ' view
+//
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW ' to '%lower' translate subreport '_r' run :View name var; endto '
+    {
+    hotkeys = ' to '%lower' translate subreport '_r' run endto 'hotkeys;' newline
+do ~Menu Bar; { '    menubar =' to '%lower' translate subreport '_r' run id endto ';' newline }
+'    cba = R_AVKON_SOFTKEYS_SELECTION_LIST;
+    }
+
+'
+do ~Menu Bar;
+{	subreport '_RSS_Menu_Bar' run }
+do explosions
+{	foreach .(PopupMenu | Query)
+	{	subreport '_RSS_' type run
+	}
+}
+endreport

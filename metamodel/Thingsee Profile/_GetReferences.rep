@@ -1,0 +1,17 @@
+_GetReferences()
+/* create references for linking different purposes */
+
+@puid = '1'
+foreach .Purpose {
+	do decompositions {
+		@stid = '0'
+		foreach .State; where :Start state; = 'T' {
+			variable 'purpose_state_' oid write @stid '_' @puid close
+		}
+		foreach .State; where :Start state; = 'F' {
+			@stid++%null
+			variable 'purpose_state_' oid write @stid '_' @puid close
+		}
+	}
+	@puid++%null
+}

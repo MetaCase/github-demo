@@ -1,0 +1,14 @@
+TwinCAT-autobuild()
+_homeHeatingPlatform()
+expFiles() 
+filename subreport '_default directory' run 'import.cmd' write
+'query off ok
+replace yesall
+file new ' subreport '_default directory' run newline
+'project import ' $files newline
+'query on
+file saveas ' subreport '_default directory' run id%file '.pro
+project compile'
+close
+external '"C:\TwinCAT\Plc\TCatPlcCtrl.exe" /cmd ' subreport '_default directory' run 'import.cmd' execute	
+

@@ -1,0 +1,26 @@
+!Check()
+/* Checking report */
+$warnings = '0'
+$reported_objects = ' '
+subreport '_translators' run
+subreport '_EAST-ADL specific translators' run 
+variable 'reported_models' append ' ' oid ' ' close
+variable 'visited' write ' ' oid ' ' close
+$LiveCheck = 'F'
+$extendedCheck = 'T'
+
+_OneOwner()
+
+_LegalTypePath()
+
+_checkingShortNameUniqueness()
+
+_checkingsForDatatypes()
+
+_checkingsForPackageStructure()
+
+if $warnings <> '0' then
+	'Total number of warnings: ' $warnings newline
+else
+	'No warnings found!' newline
+endif

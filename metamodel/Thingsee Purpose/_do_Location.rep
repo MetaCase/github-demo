@@ -1,0 +1,16 @@
+_do_Location()
+@sep = ''
+
+'                  "thresholds": {' 
+if :Trigger if over \(meters\); <> '' then
+	newline
+	'                    "isGt": ' :Trigger if over \(meters\);; 
+endif
+@sep = ','
+if :Trigger if under \(meters\); <> '' then
+	@sep newline
+	'                    "isLt": ' :Trigger if under \(meters\);; 
+endif
+newline	
+'                  }
+'

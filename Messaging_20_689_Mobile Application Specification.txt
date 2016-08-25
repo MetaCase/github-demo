@@ -1,0 +1,193 @@
+Graph_eSWT_model_user_3387784239
+Messaging
+20_689
+Mobile Application Specification
+Graph: Messaging <Mobile Application Specification> 20_689
+	Model name: Messaging
+	Description: Messaging application
+	View: Detail view
+	Display: Primary
+	UI category: U2
+Object: Message <Form> 20_807
+	Form title: Message
+	Form title ID: MSG_DATA
+	Title icon: 
+	Form list: Shows message contents
+Object: SIM messages <List> 20_2704
+	List title: SIM messages
+	List title ID: LIST_SELECT_OPERATION
+	Title icon: 
+	Selection type: Multi
+	Scrolling: Vertical
+	Density level: Medium
+	List items: 
+	Sorting order: Unordered
+	Search enabled: Yes
+Object: CARD_MEMORY_LB <ListBox> 20_1112
+	Listbox title: Card Memory
+	Listbox title ID: CARD_MEMORY_LB
+	Title icon: 
+	ListBox style: 1LINE_ITEM
+	Selection type: Single
+	LB show selection number: T
+	LB show heading icons: F
+	LB show detail icons: T
+	ListBox items: Free memory
+Used memory
+Total memory
+	Sorting order: Unordered
+Object: LISTOBX_MSG_LOG <ListBox> 20_1423
+	Listbox title: Message log
+	Listbox title ID: LISTOBX_MSG_LOG
+	Title icon: 
+	ListBox style: 2LINE_ITEM
+	Selection type: Single
+	LB show selection number: T
+	LB show heading icons: T
+	LB show detail icons: T
+	ListBox items: Sent text messages
+Sent MMS msgs.
+Received MSM msgs.
+Clear all counters
+	Sorting order: Unordered
+Object: MEM_STAT_LB <ListBox> 20_1733
+	Listbox title: Memory status
+	Listbox title ID: MEM_STAT_LB
+	Title icon: 
+	ListBox style: 1LINE_ITEM
+	Selection type: Single
+	LB show selection number: T
+	LB show heading icons: F
+	LB show detail icons: T
+	ListBox items: Phone
+MemoryCard
+	Sorting order: Unordered
+Object: MEMORY_LB <ListBox> 20_2248
+	Listbox title: PhoneMemory
+	Listbox title ID: MEMORY_LB
+	Title icon: 
+	ListBox style: 1LINE_ITEM
+	Selection type: Single
+	LB show selection number: T
+	LB show heading icons: F
+	LB show detail icons: T
+	ListBox items: Free memory
+Gallery
+Messaging
+Applications
+Organizer
+	Sorting order: Unordered
+Object: MESSAGING_MAIN_LISTBOXTITLE <ListBox> 20_2441
+	Listbox title: Messaging
+	Listbox title ID: MESSAGING_MAIN_LISTBOXTITLE
+	Title icon: 
+	ListBox style: 1LINE_ITEM
+	Selection type: Single
+	LB show selection number: T
+	LB show heading icons: T
+	LB show detail icons: T
+	ListBox items: Create message
+Inbox
+E-mail
+Drafts
+Outbox
+Sent items
+Saved items
+Delivery reports
+Chat
+Delete messages
+	Sorting order: 
+Object: New message Message log SIM messages Memory status <Menu> 20_1206
+	Menu items: New message Message log SIM messages Memory status
+	Object: New message <Softkey menu> 20_2369
+		Menu label: New message
+		Localization ID: 
+	Object: Message log <Softkey menu> 20_1334
+		Menu label: Message log
+		Localization ID: 
+	Object: SIM messages <Softkey menu> 20_2652
+		Menu label: SIM messages
+		Localization ID: 
+	Object: Memory status <Softkey menu> 20_1652
+		Menu label: Memory status
+		Localization ID: 
+Object: Move Copy Delete Call sender Message details Mark Mark all <Menu> 20_2548
+	Menu items: Move Copy Delete Call sender Message details Mark Mark all
+	Object: Move <Softkey menu> 20_754
+		Menu label: Move
+		Localization ID: 
+	Object: Copy <Softkey menu> 20_1572
+		Menu label: Copy
+		Localization ID: 
+	Object: Delete <Softkey menu> 20_2392
+		Menu label: Delete
+		Localization ID: 
+	Object: Call sender <Softkey menu> 20_1361
+		Menu label: Call sender
+		Localization ID: 
+	Object: Message details <Softkey menu> 20_2190
+		Menu label: Message details
+		Localization ID: 
+	Object: Mark <Softkey menu> 20_875
+		Menu label: Mark
+		Localization ID: 
+	Object: Mark all <Softkey menu> 20_1689
+		Menu label: Mark all
+		Localization ID: 
+Object: 1 <Reference> 20_1919
+	Reference ID: 1
+	Explode to: Message log <Mobile Application Specification>
+	Explode to: Sent MMS log <Mobile Application Specification>
+	Explode to: Secure code check <Mobile Application Specification>
+	Explode to: Received MMS mgs <Mobile Application Specification>
+Object: Start <Start> 20_1923
+Object: Complete <Stop> 20_916
+	Stop type: Complete
+Relationship: Back <Back> 20_1593
+  Role: Back from <Back from>  Port: RSK <Softkey port>  Object: <ListBox> 20_2441
+  Role: Back to <Back to>  Object: <Stop> 20_916
+Relationship: Flow <Flow> 20_2488
+  Role: From <From>  Object: <Start> 20_1923
+  Role: To <To>  Object: <ListBox> 20_2441
+Relationship: Message log <Menu> 20_977
+	Menu label: Message log
+  Role: From <From>  Object: <Menu> 20_1206
+  Role: To <To>  Object: <ListBox> 20_1423
+Relationship: SIM messages <Menu> 20_1007
+	Menu label: SIM messages
+  Role: From <From>  Object: <Menu> 20_1206
+  Role: To <To>  Object: <List> 20_2704
+Relationship: Memory status <Menu> 20_2185
+	Menu label: Memory status
+  Role: From <From>  Object: <Menu> 20_1206
+  Role: To <To>  Object: <ListBox> 20_1733
+Relationship: Select <Soft key> 20_945
+	Soft key label: Select
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <ListBox> 20_1733
+  Role: To <To>  Object: <ListBox> 20_1112
+Relationship: Message <Soft key> 20_1565
+	Soft key label: Message
+	Softkey label ID: SK_OPEN
+  Role: From <From>  Port: MSK <Softkey port>  Object: <List> 20_2704
+  Role: To <To>  Object: <Form> 20_807
+Relationship: Details <Soft key> 20_1622
+	Soft key label: Details
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <ListBox> 20_1423
+  Role: To <To>  Object: <Reference> 20_1919
+Relationship: Select <Soft key> 20_1929
+	Soft key label: Select
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <ListBox> 20_1733
+  Role: To <To>  Object: <ListBox> 20_2248
+Relationship: Options <Soft key> 20_2213
+	Soft key label: Options
+	Softkey label ID: SK_OPTIONS
+  Role: From <From>  Port: LSK <Softkey port>  Object: <List> 20_2704
+  Role: To <To>  Object: <Menu> 20_2548
+Relationship: Options <Soft key> 20_2527
+	Soft key label: Options
+	Softkey label ID: SK_OPTIONS
+  Role: From <From>  Port: LSK <Softkey port>  Object: <ListBox> 20_2441
+  Role: To <To>  Object: <Menu> 20_1206

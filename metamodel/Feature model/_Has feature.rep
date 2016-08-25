@@ -1,0 +1,33 @@
+Report '_Has feature'
+do ~Mandatory 
+{ 
+	if :Cardinality <> '' then;
+		subreport '_single feature' run
+		do .() {
+			'<input type="radio" name="' 
+			do >() { oid }
+			'" value="' id '" checked="checked" />' newline;
+			id
+			'(s), specify how many (' :Cardinality;1; '): '
+			'<input type="number" name="' id;1 '" size="6" />'
+			newline;
+		}
+		'</td></tr>'
+	endif
+}
+do ~Optional
+{
+	subreport '_single feature' run
+	do .() {
+		'<input type="radio" name="' 
+		do >() { oid }
+		'" value="' id '"/>' newline;
+		id
+		if :Cardinality;1 <> '' then
+			'(s), specify how many (' :Cardinality;1; '): '
+			'<input type="number" name="' id;1 '" size="6" />'
+			newline
+		endif
+	}  	
+}
+endreport

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="Clock">
+		<objectSymbol offset="100,40" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="100,40 111,40 111,51 100,51 100,40" targetPointX="105.5" targetPointY="45.5" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="51" version="1.2" width="111" xmlns="http://www.w3.org/2000/svg">
+				<g fill="none" stroke="rgb(0,0,0)" stroke-width="1" sym:height="11" sym:width="11" sym:x="1.0e2" sym:y="4.0e1">
+					<ellipse cx="105.5" cy="45.5" fill="rgb(255,255,255)" rx="5.5" ry="5.5" stroke="rgb(0,0,0)" stroke-width="1" sym:startAngle="0.0e0" sym:sweepAngle="3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<line stroke="rgb(0,0,0)" stroke-width="1" x1="105" x2="108" y1="46" y2="41">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="1" x1="109" x2="105" y1="48" y2="45">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

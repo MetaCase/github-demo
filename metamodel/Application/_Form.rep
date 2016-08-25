@@ -1,0 +1,22 @@
+Report '_Form'
+/* Produce form code */
+'#  Form and its validation functions ' newline
+'def ' subreport '_Internal name' run '():' newline
+subreport '_Form field validation functions' run
+'	global ' subreport '_Return variable name' run newline
+'	' subreport '_Return variable name' run ' = appuifw.Form([' newline
+subreport '_Form fields' run
+subreport '_Form flags' run
+subreport '_left softkey menus' run
+if :Form mode; = 'Edit' then
+	if :Save validation; <> '' then 
+		'	' subreport '_Return variable name' run '.save_hook = validate' newline
+	endif
+endif
+'	' subreport '_Return variable name' run '.execute()' newline
+if ~From; then
+	subreport '_next element' run
+else
+	'	return ((call_stack.pop()), False)' newline
+endif
+endreport

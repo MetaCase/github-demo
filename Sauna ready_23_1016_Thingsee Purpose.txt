@@ -1,0 +1,76 @@
+Graph_Thingsee_app_sysadmin_3617045505
+Sauna ready
+23_1016
+Thingsee Purpose
+Graph: Sauna ready <Thingsee Purpose> 23_1016
+	Name: Sauna ready
+	Description: Notifies when sauna ready or when sauna is hot enough but has too dry air.
+Object: SMS555-5555(Sauna ready.) <Action> 23_1093
+	Send saved logs to cloud: F
+	Send event to: none
+	Send event to cloud URL: 
+	Send SMS message: 555-5555(Sauna ready.)
+	Object: 555-5555(Sauna ready.) <Send SMS message> 23_1111
+		To (phone number): 555-5555
+		Message: Sauna ready.
+Object: SMS555-5555(Too dry. Water needed.) <Action> 23_1121
+	Send saved logs to cloud: F
+	Send event to: none
+	Send event to cloud URL: 
+	Send SMS message: 555-5555(Too dry. Water needed.)
+	Object: 555-5555(Too dry. Water needed.) <Send SMS message> 23_1139
+		To (phone number): 555-5555
+		Message: Too dry. Water needed.
+Object: Thingsee Purpose is based on the sensors and services of Internet of Things device Thingsee.  The language allows to use various sensors (Accelerator, Timer, Geofence, Location, Speed, Temperature, Humidity, Pressure, Luminance) and interact with the world via services (cloud, mobile, sms). Language provides also capabilities to follow the status of the device like its batter level and charging status.  The language guides creating applications as well as checks if they try to monitor the device in unsafe situations (too warm, too big G forces).
+
+Generator produces the jsn code that can be uploaded to the IoT device and executed there. <Comment> 23_1808
+	Description: Thingsee Purpose is based on the sensors and services of Internet of Things device Thingsee.  The language allows to use various sensors (Accelerator, Timer, Geofence, Location, Speed, Temperature, Humidity, Pressure, Luminance) and interact with the world via services (cloud, mobile, sms). Language provides also capabilities to follow the status of the device like its batter level and charging status.  The language guides creating applications as well as checks if they try to monitor the device in unsafe situations (too warm, too big G forces).
+
+Generator produces the jsn code that can be uploaded to the IoT device and executed there.
+Object: This application monitors when sauna is ready. <Comment> 23_1821
+	Description: This application monitors when sauna is ready.
+Object: <40 %rh <Humidity> 23_1073
+	Trigger if over (%rh): 
+	Trigger if under (%rh): 40
+Object: >40 %rh <Humidity> 23_1083
+	Trigger if over (%rh): 40
+	Trigger if under (%rh): 
+Object: Measure temperature <State> 23_1027
+	Name: Measure temperature
+	Start state: T
+	Always active: F
+	Description: 
+Object: Measure humidity <State> 23_1045
+	Name: Measure humidity
+	Start state: F
+	Always active: F
+	Description: 
+Object: > 60 C <Temperature> 23_1063
+	Trigger if over (celcius): 60
+	Trigger if under (celcius): 
+Relationship:  <Transition> 23_2079
+	Name: 
+  Role: Action <Action>  Object: <Action> 23_1093
+  Role: From <From>  Object: <State> 23_1045
+  Role: F <PollTrigger>  Object: <Humidity> 23_1083
+	Log values to device: F
+	Poll values after every: 5
+	Poll unit: seconds
+  Role: To <To>  Object: <State> 23_1045
+Relationship:  <Transition> 23_2103
+	Name: 
+  Role: Action <Action>  Object: <Action> 23_1121
+  Role: From <From>  Object: <State> 23_1045
+  Role: F <PollTrigger>  Object: <Humidity> 23_1073
+	Log values to device: F
+	Poll values after every: 5
+	Poll unit: seconds
+  Role: To <To>  Object: <State> 23_1045
+Relationship: temperature <Transition> 23_2153
+	Name: temperature
+  Role: From <From>  Object: <State> 23_1027
+  Role: F <PollTrigger>  Object: <Temperature> 23_1063
+	Log values to device: F
+	Poll values after every: 15
+	Poll unit: seconds
+  Role: To <To>  Object: <State> 23_1045

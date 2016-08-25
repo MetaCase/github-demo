@@ -1,0 +1,21 @@
+Graph_HardwareDesignArchitecture_user_3400132575
+LA
+10_12912
+HardwareComponentType
+Graph: LA <HardwareComponentType> 10_12912
+	__UUID: LKO8FrnOTviK4Q7bx/F64w
+	Type: LA <ActuatorType>
+	Object: LA <ActuatorType> <ActuatorType> 10_12929
+		__UUID: ITViGTF2TeKwtCdzBxbtUQ
+		Short name: LA
+		Name: 
+		Description: 
+	Show report: Checking
+	Show allocated prototypes: F
+	Show oid: F
+Object: Lock_command <CommunicationHardwarePinIn> 10_12953
+	__UUID: xApnEFoESliSkWpXYHmbDw
+	Short name: Lock_command
+	Name: 
+	IsGround: F
+	Description: 

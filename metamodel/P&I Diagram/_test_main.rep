@@ -1,0 +1,17 @@
+_test_main()
+/* produces program main */
+variable 'files' append subreport '_default directory' run 'test_main.exp ' close
+filename subreport '_default directory' run 'test_main.exp' write
+'(* @PATH := ''\/_TestSuite'' *)' newline
+'PROGRAM TEST_MAIN
+'
+'(* ' id ' test main application generated from MetaEdit+ *) 
+
+VAR
+	simulation: FB_Simulation;
+END_VAR
+
+simulation();
+
+END_PROGRAM'
+close

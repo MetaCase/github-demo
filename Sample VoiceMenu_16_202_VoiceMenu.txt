@@ -1,0 +1,94 @@
+Graph_VoiceMenu_user_3190448469
+Sample VoiceMenu
+16_202
+VoiceMenu
+Graph: Sample VoiceMenu <VoiceMenu> 16_202
+	Name: Sample VoiceMenu
+	Documentation: The graphs in this example project demonstrate the modeling of voice menus for a Home Automation system, as described in Chapter 7 of the book "Domain-Specific Modeling", http://dsmbook.com.
+Object: CHARACTER <DTMF_Input> 16_512
+	Input type: CHARACTER
+Object: CHARACTER <DTMF_Input> 16_612
+	Input type: CHARACTER
+Object: CHARACTER <DTMF_Input> 16_861
+	Input type: CHARACTER
+Object: The graphs in this example project demonstrate the modeling of voice menus for a Home Automation system, as described in Chapter 7 of the book "Domain-Specific Modeling", http://dsmbook.com. <Note> 16_325
+	Documentation: The graphs in this example project demonstrate the modeling of voice menus for a Home Automation system, as described in Chapter 7 of the book "Domain-Specific Modeling", http://dsmbook.com.
+Object: Start <Start> 16_644
+Object: The current mode is...
+Pick mode <VoiceOutput> 16_292
+	Text: The current mode is...
+Pick mode
+	Explode to: Mode menu <VoiceOutput>
+Object: This is version... <VoiceOutput> 16_696
+	Text: This is version...
+	Explode to: Version info <VoiceOutput>
+Object: Set mode <VoiceOutput> 16_740
+	Text: Set mode
+	Explode to: Set mode <VoiceOutput>
+Object: Welcome to the system! <VoiceOutput> 16_949
+	Text: Welcome to the system!
+	Explode to: Main menu <VoiceOutput>
+Relationship: 1 <ConditionalFlow> 16_264
+	Condition: 1
+  Role: From <From>  Object: <DTMF_Input> 16_861
+  Role: To <To>  Object: <VoiceOutput> 16_292
+Relationship: 2 <ConditionalFlow> 16_772
+	Condition: 2
+  Role: From <From>  Object: <DTMF_Input> 16_861
+  Role: To <To>  Object: <VoiceOutput> 16_696
+Relationship: 1 <ConditionalFlow> 16_865
+	Condition: 1
+  Role: From <From>  Object: <DTMF_Input> 16_612
+  Role: To <To>  Object: <VoiceOutput> 16_949
+Relationship: <= 5   <ConditionalFlow> 16_941
+	Condition: <= 5  
+  Role: From <From>  Object: <DTMF_Input> 16_512
+  Role: To <To>  Object: <VoiceOutput> 16_740
+Relationship: Flow <Flow> 16_676
+  Role: From <From>  Object: <VoiceOutput> 16_292
+  Role: To <To>  Object: <DTMF_Input> 16_512
+Relationship: Flow <Flow> 16_758
+  Role: From <From>  Object: <VoiceOutput> 16_696
+  Role: To <To>  Object: <DTMF_Input> 16_612
+Relationship: Flow <Flow> 16_844
+  Role: From <From>  Object: <VoiceOutput> 16_740
+  Role: To <To>  Object: <VoiceOutput> 16_949
+Relationship: Flow <Flow> 16_951
+  Role: From <From>  Object: <VoiceOutput> 16_949
+  Role: To <To>  Object: <DTMF_Input> 16_861
+Relationship: Flow <Flow> 16_957
+  Role: From <From>  Object: <Start> 16_644
+  Role: To <To>  Object: <VoiceOutput> 16_949
+Relationship: Invalid input <InvalidInput> 16_252
+	Text: Invalid input
+	Explode to: Invalid input <VoiceOutput>
+  Role: From <From>  Object: <DTMF_Input> 16_512
+  Role: To <To>  Object: <VoiceOutput> 16_292
+Relationship: Invalid input <InvalidInput> 16_765
+	Text: Invalid input
+	Explode to: Invalid input <VoiceOutput>
+  Role: From <From>  Object: <DTMF_Input> 16_612
+  Role: To <To>  Object: <VoiceOutput> 16_696
+Relationship: Invalid input <InvalidInput> 16_934
+	Text: Invalid input
+	Explode to: Invalid input <VoiceOutput>
+  Role: From <From>  Object: <DTMF_Input> 16_861
+  Role: To <To>  Object: <VoiceOutput> 16_949
+Relationship: Timeout <Timeout> 16_838
+	Text: Timeout
+	Timeout: 5
+	Explode to: Timeout <VoiceOutput>
+  Role: From <From>  Object: <DTMF_Input> 16_861
+  Role: To <To>  Object: <VoiceOutput> 16_949
+Relationship: Timeout <Timeout> 16_855
+	Text: Timeout
+	Timeout: 5
+	Explode to: Timeout <VoiceOutput>
+  Role: From <From>  Object: <DTMF_Input> 16_512
+  Role: To <To>  Object: <VoiceOutput> 16_292
+Relationship: Timeout <Timeout> 16_873
+	Text: Timeout
+	Timeout: 5
+	Explode to: Timeout <VoiceOutput>
+  Role: From <From>  Object: <DTMF_Input> 16_612
+  Role: To <To>  Object: <VoiceOutput> 16_696

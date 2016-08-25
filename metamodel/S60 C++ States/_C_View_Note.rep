@@ -1,0 +1,14 @@
+Report '_C_View_Note'
+'// ---------------------------------------------------------
+// ' subreport '_C_View_Dialog_Header' run '
+// ---------------------------------------------------------
+
+' subreport '_C_View_Dialog_Header' run '
+    {
+    CAkn' :Note Type; 'Note* aNote;
+    aNote = new (ELeave) CAkn' :Note Type; 'Note(ETrue);
+    aNote->ExecuteLD(_L("' :UI Text; '"));
+    }
+
+'
+endreport

@@ -1,0 +1,661 @@
+==========================
+Graph Type
+==========================
+AnalysisFunctionType
+	EAST-ADL version M2.1.12
+	The AnalysisFunctionType represents a node in a tree structure corresponding to the functional decomposition of a top level AnalysisFunction. The AnalysisFunction represents the analysis function used to describe the functionalities provided by a vehicle on the AnalysisLevel. At the AnalysisLevel, AnalysisFunctions are defined and structured according to the functional requirements, i.e., the functionalities provided to the user. 
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	FunctionName: String
+		FunctionName is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Type: String
+		The FunctionalDevice represents an abstract sensor or actuator that encapsulates sensor/actuator dynamics and the interfacing software.
+		---------------------------------------------
+	IsElementary: Boolean
+		True, when this type must not have any parts.
+		---------------------------------------------
+	Description: Text
+	Show oid: Boolean
+
+==========================
+Object Types
+==========================
+AnalysisFunctionPrototype
+	The AnalysisFunctionPrototype represents an occurrence of the AnalysisFunctionType that types it via the submodel structure.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+InFlowPort
+	The input FunctionFlowPort indicates that the containing Function requires input data. The EADatatype of this data is defined by the associated EADatatype. The data is sampled at the invocation of the containing entity for discrete Functions. For continuous Functions, the input FunctionFlowPort represents a continuous input connection point. The input FunctionFlowPort declares a reception point of data. It represents a single element buffer, which is overridden with the latest data. The type of the data is defined by the associated EADatatype.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+	Type: _EADatatype
+InOutFlowPort
+	The input/Output FunctionFlowPort indicates a port that both provides and requires data. The EADatatype of this data is defined by the associated EADatatype. 
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+	Type: _EADatatype
+OutFlowPort
+	The output FunctionFlowPort indicates that the containing Function provides output data. The EADatatype of this data is defined by the associated EADatatype. The data is sent at the completion of the containing entity for discrete Functions. For continuous Functions, the output FunctionFlowPort represents a (time-)continuous output connection point. The output FunctionFlowPort declares a transmission point of data. The type of the data is defined by the associated EADatatype.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+	Type: _EADatatype
+ServerPort
+	The ServerPort is a FunctionPort for client-server interaction. A number of ClientPorts can be connected to one ServerPort.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Type: FunctionClientServerInterface
+		Type (FunctionClientServerInterface) is a needed property of Client and Server ports: it specifies operations in FunctionClientServerPorts.
+		---------------------------------------------
+	Description: Text
+ClientPort
+	The ClientPort is a FunctionPort for client-server interaction. A number of ClientPorts can be connected to one ServerPort.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Type: FunctionClientServerInterface
+		Type (FunctionClientServerInterface) is a needed property of Client and Server ports: it specifies operations in FunctionClientServerPorts.
+		---------------------------------------------
+	Description: Text
+PowerPort
+	PowerPort denotes the physical interactions between environment and sensing/actuation functions. It conserves physical variables in a dynamic process. 
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+	Type: CompositeDatatype
+		Type value should be given
+		---------------------------------------------
+Requirement
+	The Requirement represents a capability or condition that must (or should) be satisfied.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Formalism: String
+		Specifies the language used for the requirement statement. 
+		---------------------------------------------
+	Url: String
+		Reference to possible external file containing the requirement statement. 
+		---------------------------------------------
+	Modes: OrderedCollection (Mode)
+		The mode(s) where this requirement is valid.
+		---------------------------------------------
+	Description: Text
+QualityRequirement
+	QualityRequirement element represent a requirement which is non-functional. 
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Formalism: String
+		Specifies the language used for the requirement statement. 
+		---------------------------------------------
+	Url: String
+		Reference to possible external file containing the requirement statement. 
+		---------------------------------------------
+	Modes: OrderedCollection (Mode)
+		The mode(s) where this requirement is valid.
+		---------------------------------------------
+	Description: Text
+	Kind: String
+		QualityRequirementKind represents the kind of QualityRequirement given by the definition of the respective Enumeration Literal.
+		---------------------------------------------
+UserAttributedElement
+	UserAttributedElement is used to attach user attribute values to model elements. What user attributes a certain element should be supplied with can be defined beforehand with UserElementTypes.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Values: OrderedCollection (Value)
+	Types: OrderedCollection (UserElementType)
+	Description: Text
+GenericConstraint
+	The GenericConstraint denotes a property, requirement, or a validation result for the identified element of the model.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Value: GenericConstraintValue
+	Kind: String
+	Modes: OrderedCollection (Mode)
+		The mode(s) where this requirement is valid.
+		---------------------------------------------
+	TargetTypes: OrderedCollection (Graph)
+	TargetObjects: OrderedCollection (Object)
+	TargetRelationships: OrderedCollection (Relationship)
+	Description: Text
+Comment
+	Commenting the metamodel or model, can be connected to all objects.
+	---------------------------------------------
+	Comment: String
+	Description: Text
+
+==========================
+Relationship Types
+==========================
+Flow
+	Flow indicates that the connected FlowPorts exchange signals.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+	Name: String
+	Description: Text
+ClientServerInterface
+	The ClientServerInterface is used to specify the operations between client ports and server port. It indicates that the connected prototypes exchange client-server requests/responses via the ports.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+	Name: String
+	Description: Text
+Power
+	Power indicates that the connected prototypes via their PowerPorts have physical interactions.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+	Name: String
+	Description: Text
+Allocation
+	The Allocation element contains functionAllocations, i.e., it can bundle functionAllocations that belong together.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+	Name: String
+	Description: Text
+Realization
+	Realization specifies a mapping between two elements and how the other element is realizing the functionality or feature. For example, how analysis level function is been realized by the design level function.
+	---------------------------------------------
+Satisfy
+	The Satisfy relationship signifies a satisfied requirement/satisfied by relationship between a set of Requirements and a set of satisfying entities.
+	---------------------------------------------
+DeriveRequirement
+	The DeriveRequirement signifies a derived/derived by relationship between Requirements, where the modification of the supplier Requirement may impact the derived client Requirement.
+	---------------------------------------------
+Comment
+	Comment creates a link between comment or constraint and other design element.
+	---------------------------------------------
+
+==========================
+Role Types
+==========================
+AllocatedElement
+Client
+Comment
+DerivedFrom
+	The set of requirements that the client requirement are derived from.
+	---------------------------------------------
+Derived
+	The set of requirements that are derived from the supplier requirement.
+	---------------------------------------------
+InFlow
+InPower
+OutFlow
+OutPower
+Realized
+RealizedBy
+SatisfiedBy
+SatisfiedRequirement
+Server
+TargetLink
+ClientPort
+InFlowPort
+InPowerPort
+OutFlowPort
+OutPowerPort
+ServerPort
+
+==========================
+Extra Types
+==========================
+_EAST-ADL
+	Abstract supertype of all EAST-ADL graph types
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+ArrayDatatype
+	ArrayDatatype is a datatype for an array of datatypes of the same type.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	MinLength: String
+	MaxLength: String
+	Type: _EADatatype
+	Description: Text
+CompositeDatatype
+	A CompositeDatatype represents a non-scalar datatype. The contained datatypePrototypes act as record variables to identify the ordered datatype instances of the tuple (the CompositeDatatype).
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	DatatypePrototypes: OrderedCollection (EADatatypePrototype)
+	Description: Text
+EABoolean
+	EABoolean is the primitive type that holds two literals: true, false.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	Description: Text
+EADatatypePrototype
+	The EADatatypePrototype represents a typed variable. It acts as an appearance of a datatype.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Type: _EADatatype
+EAExpression
+	The mixed string EAExpression allow for modeling of expressions with references to elements in the model. Specializations within the metamodel define their syntax and the referred metaclasses used in the expressions.
+	---------------------------------------------
+	Value: String
+	Type: _EADatatype
+	Description: Text
+EANumerical
+	EANumerical has attributes for modeling of the allowed range.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	Min: String
+		The minimum value of the range. Decimal values should be specified with .
+		---------------------------------------------
+	Max: String
+		The maximal value of the range. Decimal values should be specified with .
+		---------------------------------------------
+	Unit: Unit
+		The unit of data.
+		---------------------------------------------
+	Description: Text
+EAString
+	EAString is the primitive type that defines a sequence of characters in some suitable character set used to display information.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	Description: Text
+Enumeration
+	Enumeration is a kind of datatype, whose instances may be any number > 1 of user-defined enumeration literals. Enumerations contain at least two literals, otherwise it would be a constant. The contained literals need to be ordered.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	IsMultiValued: Boolean
+		This boolean attribute is true, if multiple enumeration values can be selected. It is false, if only one enumeration value is allowed to be selected.
+		---------------------------------------------
+	Literals: OrderedCollection (String)
+		Collection of literals (value) of the enumeration.
+		---------------------------------------------
+	Description: Text
+FunctionClientServerInterface
+	The FunctionClientServerInterface is used to specify the operations in FunctionClientServerPorts.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Operations: OrderedCollection (Operation)
+GenericConstraintValue
+	Store typed values in the model. The semantics of this element is defined by the element typed by the corresponding datatype.
+	---------------------------------------------
+	Value: String
+	Type: _EADatatype
+Mode
+	Modes are a way to introduce various configurations in the system to account for different states of the system, or of a hardware entity, or an application. The use of modes can be used to filter different views of the model. Modes are characterized by a Boolean condition provided as a String, which evaluates to true when the Mode is active. The Mode is active if and only if the condition is true.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Condition: String
+		A Boolean expression that characterizes the Mode, it evaluates to true when the Mode is active. The syntax and grammar of this expression is unspecified.
+		---------------------------------------------
+	Description: Text
+Operation
+	The Operation is the provided/required operation of a FunctionClientServerInterface.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Arguments: OrderedCollection (EADatatypePrototype)
+	Return: EADatatypePrototype
+	Comment: Text
+Quantity
+	The Quantity describes a physical dimension for use in numerical datatypes and expressions to facilitate dimension consistency and control.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	AmountOfSubstanceExp: String
+	ElectricCurrentExp: String
+	LengthExp: String
+	LuminousIntensityExp: String
+	MassExp: String
+	ThermodynamicTemperatureExp: String
+	TimeExp: String
+	Description: Text
+RangeableValueType
+	The RangeableValueType adds the ability to describe the accuracy, resolution, and the significant digits of the baseRangeable datatype.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+	Accuracy: String
+		The accuracy of the data (e.g., the FunctionFlowports input or output).
+		---------------------------------------------
+	Resolution: String
+		The resolution of the data expressed as the size of the minimum difference between data values.
+		---------------------------------------------
+	SignificantDigits: String
+		SignificantDigits must be positive interger number.
+		---------------------------------------------
+	BaseRangeable: EANumerical
+		The datatype with additional attributes specified by this concept.
+		---------------------------------------------
+	Description: Text
+TimingExpression
+	A Timing Expression, denoted by texp, is a term built from an arithmetic expression by applying an optional unit and referencing an optional time base. It stands for a value in the real number system extended with positive and negative infinity.
+	---------------------------------------------
+	Value: String
+	Type: _EADatatype
+	Description: Text
+Unit
+	Unit descibes the unit of typed numerical values.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Factor: String
+	Offset: String
+	Symbol: String
+	Quantity: Quantity
+	UnitReference: Unit
+	Description: Text
+UserAttributeDefinition
+	The name of a UserAttributeDefinition should be used in editing tools as a label for the input field representing the user attribute and its description should be presented to the user to explain the meaning of this user attribute.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Default value: Value
+	Type: _EADatatype
+UserElementType
+	UserElementType defines a certain set of user attributes.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Key: String
+		Key is globally unique identifier.
+		---------------------------------------------
+	Valid for: Text
+	User Attribute Definitions: OrderedCollection (UserAttributeDefinition)
+	Description: Text
+Value
+	Value: String
+	Type: _EADatatype
+	Description: Text
+_EADatatype
+	EADatatype metaclass is a special kind of classifier, similar to a class. It differs from the class in that instances of a data type are identified only by their value.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name for datatype is mandatory and needs to follow the expression give above.
+		---------------------------------------------
+	Name: String
+_FunctionPort
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+_FunctionPrototype
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+__ClientServerPort
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+__FunctionFlowPort
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+_FunctionConnector
+	The FunctionConnector indicates that the connected FunctionPorts exchange signals or client-server requests/responses.
+	---------------------------------------------
+_FunctionPort
+
+==========================
+Bindings
+==========================
+Allocation
+	AllocatedElement: AnalysisFunctionPrototype
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+	TargetLink: AnalysisFunctionPrototype
+ClientServerInterface
+	ClientPort #(ClientPort): AnalysisFunctionPrototype
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+	Client: ClientPort
+ClientServerInterface
+	ClientPort #(ClientPort): AnalysisFunctionPrototype
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+	ServerPort #(ServerPort): AnalysisFunctionPrototype
+ClientServerInterface
+	Server: ServerPort
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+	ServerPort #(ServerPort): AnalysisFunctionPrototype
+Comment
+	Comment: AnalysisFunctionPrototype, QualityRequirement, Requirement, _FunctionPort
+	Comment: Comment, GenericConstraint, UserAttributedElement
+Comment
+	Comment: Comment, GenericConstraint, UserAttributedElement
+	Comment: AnalysisFunctionPrototype, QualityRequirement, Requirement, _FunctionPort
+DeriveRequirement
+	Derived: Requirement
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+	DerivedFrom: Requirement
+Flow
+	InFlow: InFlowPort, InOutFlowPort
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+	InFlowPort #(InFlowPort, InOutFlowPort): AnalysisFunctionPrototype
+Flow
+	OutFlowPort #(InOutFlowPort, OutFlowPort): AnalysisFunctionPrototype
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+	InFlowPort #(InFlowPort, InOutFlowPort): AnalysisFunctionPrototype
+Flow
+	OutFlowPort #(InOutFlowPort, OutFlowPort): AnalysisFunctionPrototype
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+	OutFlow: InOutFlowPort, OutFlowPort
+Power
+	InPower: PowerPort
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+	InPowerPort #(PowerPort): AnalysisFunctionPrototype
+Power
+	OutPowerPort #(PowerPort): AnalysisFunctionPrototype
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+	InPowerPort #(PowerPort): AnalysisFunctionPrototype
+Power
+	OutPowerPort #(PowerPort): AnalysisFunctionPrototype
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+	OutPower: PowerPort
+Realization
+	RealizedBy: AnalysisFunctionPrototype
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+	Realized: AnalysisFunctionPrototype
+Satisfy
+	SatisfiedBy: AnalysisFunctionPrototype
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+	SatisfiedRequirement: Requirement
+Satisfy
+	SatisfiedRequirement: Requirement
+0..N	Comment: Comment, GenericConstraint, UserAttributedElement
+	SatisfiedBy: AnalysisFunctionPrototype
+
+==========================
+Constraints
+==========================
+UserAttributedElement may be in at most 1 Comment relationship
+Property "Short name" in AnalysisFunctionPrototype must have unique values
+Property "Short name" in ClientPort must have unique values
+Property "Short name" in InFlowPort must have unique values
+Property "Short name" in InOutFlowPort must have unique values
+Property "Short name" in OutFlowPort must have unique values
+Property "Short name" in PowerPort must have unique values
+Property "Short name" in ServerPort must have unique values
+Property "Short name" in UserAttributedElement must have unique values
+
+==========================
+Subgraphs
+==========================
+Decompositions:
+	AnalysisFunctionPrototype
+		AnalysisFunctionType
+
+==========================
+Generators
+==========================
+!Check
+!Unconnected ports
+Check
+Produce ErrorModel
+Trace all functions
+TypeDeclaration
+TypeUsers
+
+==========================
+Sub-Generators
+==========================
+_checkings
+_ProduceErrorModel
+__LiveCheck
+

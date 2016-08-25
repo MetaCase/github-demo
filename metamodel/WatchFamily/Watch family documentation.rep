@@ -1,0 +1,11 @@
+Report 'Watch family documentation'
+subreport '_translators' run
+$html_for_watch='true'
+$Graphs=' '
+filename subreport '_default directory' run subreport '_id and oid' run '.html' write
+	subreport '_Watch family documentation in HTML' run
+close
+
+external '"' subreport '_default directory' run subreport '_id and oid' run '.html"' execute
+
+endreport

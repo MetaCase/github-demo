@@ -1,0 +1,268 @@
+==========================
+Graph Type
+==========================
+Activity Diagram
+	Activity diagram is a special kind of state diagram: all or most of the states are action nodes and transitions are triggered by completion of actions in the source states.
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Start
+	A start denotes to the starting point of the state transition diagram. It is represented by a black dot.
+	---------------------------------------------
+Action
+	An action is an executable activity node that is the fundamental unit of executable functionality in an activity, as opposed to control and data flow among actions.
+	---------------------------------------------
+	Action name: String
+	Documentation: Text
+Accept event
+	Accept event action is an action that waits for the occurrance of an event meeting specified conditions.
+	---------------------------------------------
+	Action name: String
+	Documentation: Text
+	Timed?: Boolean
+Send signal
+	Send signal is an action that creates a signal instance, transmits it to the target object, where it may cause the firing of transition or execution of an activity.
+	---------------------------------------------
+	Action name: String
+	Documentation: Text
+Decision
+	Decision is used to extend a simple transition to describe multiple output transitions. A decision may include a condition or each output transition may have own conditions (similar to simple transitions). 
+	---------------------------------------------
+	Condition: Text
+Partition
+	Partition name: String
+Package
+	A package is used for grouping elements and organizing models: a system may be thought of as a single high-level package included other model elements and other packages. Depending on the graph type used a package can contain a set of use cases, classes or other packages. Each package is represented with a folder symbol with name of the package inside the symbol and steretotype of the package above the symbol.
+	---------------------------------------------
+	Package name: String
+	Stereotype: String
+	Documentation: Text
+Object [UML]
+	An object denotes to an instance of a class. An object has six properties: name of instance, name of class of that instance, multiplicity, it's attribute values, stereotype and documentation.
+	---------------------------------------------
+	Object name: String
+	Class: Class [UML]
+	Multiple?: Boolean
+	Variables: OrderedCollection (Variable [UML])
+	Stereotype: String
+	Documentation: Text
+Stop
+	A stop denotes to the end of the state transition diagram. It is represented by two circles.
+	---------------------------------------------
+Flow stop
+	Flow stop ends all flows in an activity.
+	---------------------------------------------
+Note text
+	Note is a special object for adding additional text anywhere in the graphs. It can be linked to another design objects with a note connection relationship.
+	---------------------------------------------
+	Note text: Text
+	Stereotype: String
+
+==========================
+Relationship Types
+==========================
+Control flow
+	Control flow describes the sequencing of behaviours that does not involve the flow of objects.
+	---------------------------------------------
+Object flow
+	Object flow describes which objects are input or output to action nodes.
+	---------------------------------------------
+Dependency [UML]
+	Dependency show client-supplier links dependencies between logical elements. The client, pointed by an arrow, is dependent in some way on the client.
+	---------------------------------------------
+	Stereotype: String
+	Alias name: String
+Note connection
+	Note connection can be used to link a note text to related element in a model. A note connection is represented by a grey line.
+	---------------------------------------------
+
+==========================
+Role Types
+==========================
+Client
+Condition from
+	Condition value: Text
+From
+Note part
+Object flow from
+	Effect: Text
+Object flow to
+	Effect: Text
+Object part
+Supplier
+To
+
+==========================
+Extra Types
+==========================
+State Machine Diagram
+	A state machine diagram is used to show the state space of an instance of a class, the events that cause a transition from one state to another, and the actions that result from a state change.
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+_Unified Modeling Language
+	This UML metamodel is based on the 2.0 Draft Adopted Specification.
+	---------------------------------------------
+Attribute [UML]
+	Name: String
+	Data type: String
+	Default value: String
+	Stereotype: String
+	Visibility: String
+	Scope: String
+	Access: String
+	Derived?: Boolean
+	Persistent?: Boolean
+	Constraints: Text
+	Documentation: Text
+Class [UML]
+	An class describes a group of objects with similar properties (attributes), common behaviour (operations), common relationships to other objects, and common semantics. Class is represented as a box with three parts each including different properties. Class name is in the first part of the class box toghether with a stereotype. List of attributes are in the second part, and list of operations are in the last box. Class can be characterized according to:
+	- package they belong
+	- whether it is abstract
+	- whether it is persistent
+	- how the element may be overridden by the subclass. Values: virtual - fully defined and may be overridden, leaf - fully defined and may not be overridden, deferred - protocol only defined and must be overridden, extensible - may be extended but not overridden
+	- role (model, view, controller)
+	- template parameters
+	- constraints
+	- invariant information
+	- derivation rules
+	- responsibility
+	- documentation, and 
+	- simple symbol? to choose whether the whole class symbol is shown or only class name and possible template parameters.
+	
+	Each attribute in a list field is used for entering in more detail characteristics of an attribute. These include: 
+	- attribute name
+	- data type
+	- initial value
+	- stereotype
+	- visibility (public, private, or protected)
+	- scope (class, instance, or class-instance)
+	- access for the value
+	- derived? to inform that the actual value is derived
+	- persistent?
+	- constraints
+	- documentation
+	
+	A operation is a specific behavior that an object is responsible for exhibiting. Operation list field is used for adding in more detail specifications of an operation. Each operation can be specified by:
+	- name
+	- parameters containing parameter name, type and default value
+	- return type (i.e. possibly object to be returned)
+	- method body or operation specification
+	- whether the operation can be overridden (virtual - fully defined and may be overridden, leaf - fully defined and may not be overridden, deferred - protocol only defined and must be overridden, extensible - may be extended but not overridden)
+	- stereotype (e.g for Smalltalk protocols)
+	- visibility (public, private, or protected)
+	- operation type (class or instance)
+	- preconditions
+	- postconditions
+	- documentation
+	---------------------------------------------
+	Class name: String
+	Attributes: OrderedCollection (Attribute [UML])
+	Operations: OrderedCollection (Operation [UML])
+	Package: Package
+	Abstract?: Boolean
+	Persistent?: Boolean
+	Stereotype: String
+	Overridability: String
+		How the element may be overridden by the subclass. Values:
+		virtual - fully defined and may be overridden
+		leaf - fully defined and may not be overridden
+		deferred - protocol only defined and must be overridden
+		extensible - may be extended but not overridden
+		---------------------------------------------
+	Role: String
+	Parameters: OrderedCollection (Parameter)
+	Constraints: Text
+	Invariant: Text
+	Derivation rules: OrderedCollection (String)
+	Responsibility: Text
+	Documentation: Text
+	Simple symbol?: Boolean
+Operation [UML]
+	Operation name: String
+	Parameters: OrderedCollection (Parameter)
+	Return type: String
+	Overridability: String
+		How the element may be overridden by the subclass. Values:
+		virtual - fully defined and may be overridden
+		leaf - fully defined and may not be overridden
+		deferred - protocol only defined and must be overridden
+		extensible - may be extended but not overridden
+		---------------------------------------------
+	Stereotype: String
+	Visibility: String
+	Operation type: String
+	Preconditions: Text
+	Postconditions: Text
+	Body: Text
+	Documentation: Text
+Parameter
+	Parameter: String
+	Data type: String
+	Direction: String
+	Default value: String
+Person
+	Person is used to describe developers involved in a project (i.e. attached to the project model) and authors of developed models. Person can be characterized with a name, e-mail address, and with a contact address. 
+	---------------------------------------------
+	Name: String
+	E-mail: String
+	Contact address: Text
+Variable [UML]
+	Value: String
+	Attribute: Attribute [UML]
+Use [UML]
+
+==========================
+Bindings
+==========================
+Control flow
+	Condition from: Decision
+0..1	Note part: Note text
+1..N	To: Accept event, Action, Decision, Flow stop, Send signal, Stop
+Control flow
+1..N	From: Accept event, Action, Send signal, Start
+0..1	Note part: Note text
+1..N	To: Accept event, Action, Decision, Flow stop, Send signal, Stop
+Dependency [UML]
+1..N	Client: Object [UML], Package
+1..N	Supplier: Object [UML], Package
+Note connection
+	Note part: Note text
+	Object part: Accept event, Action, Decision, Flow stop, Object [UML], Package, Partition, Send signal, Start, Stop
+Note connection
+	Object part: Accept event, Action, Decision, Flow stop, Object [UML], Package, Partition, Send signal, Start, Stop
+	Note part: Note text
+Object flow
+1..N	Object flow from: Accept event, Action, Send signal, Start
+0..1	Note part: Note text
+1..N	Object flow to: Object [UML]
+Object flow
+	Object flow from: Object [UML]
+0..1	Note part: Note text
+	Object flow to: Accept event, Action, Flow stop, Send signal, Stop
+
+==========================
+Constraints
+==========================
+Property "Package name" in Package must have unique values
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	Action
+		Activity Diagram
+	Object [UML]
+		State Machine Diagram
+Decompositions:
+	Package
+		Activity Diagram
+

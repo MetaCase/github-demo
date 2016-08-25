@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="ChannelPort">
+		<objectSymbol offset="50,30" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="65,42 64.7716,43.148 64.1213,44.1213 63.148,44.7716 62,45 52.75,45 51.602,44.7716 50.6287,44.1213 49.9784,43.148 49.75,42 49.75,32.75 49.9784,31.6019 50.6287,30.6287 51.602,29.9784 52.75,29.75 62,29.75 63.148,29.9784 64.1213,30.6287 64.7716,31.6019 65,32.75 65,42" targetPointX="57.375" targetPointY="37.375" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="45" version="1.2" width="65" xmlns="http://www.w3.org/2000/svg">
+				<rect fill="rgb(255,255,0)" height="15" rx="3" ry="3" stroke="rgb(255,255,0)" stroke-width="1" width="15" x="50" y="30">
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="inout" xmlns="http://www.w3.org/2000/svg">ReportTextSource::Direction</displayCondition>
+					</metaInfo>
+				</rect>
+				<rect fill="rgb(0,128,0)" height="15" rx="3" ry="3" stroke="rgb(0,128,0)" stroke-width="1" width="15" x="50" y="30">
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="in" xmlns="http://www.w3.org/2000/svg">ReportTextSource::Direction</displayCondition>
+					</metaInfo>
+				</rect>
+				<rect fill="rgb(255,0,0)" height="15" rx="3" ry="3" stroke="rgb(255,0,0)" stroke-width="1" width="15" x="50" y="30">
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="out" xmlns="http://www.w3.org/2000/svg">ReportTextSource::Direction</displayCondition>
+					</metaInfo>
+				</rect>
+				<ellipse cx="57.5" cy="37.5" fill="rgb(255,255,255)" rx="6.5" ry="6.5" stroke="rgb(0,0,0)" stroke-width="1" sym:startAngle="0.0e0" sym:sweepAngle="3.6e2">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</ellipse>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

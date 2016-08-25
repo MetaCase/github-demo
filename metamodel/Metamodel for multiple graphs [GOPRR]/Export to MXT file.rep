@@ -1,0 +1,15 @@
+Report 'Export to MXT file'
+subreport '_GOPRRtag' run
+/* Exports MXT file from metamodel including multiple graph types */
+filename subreport '_default directory' run id '.mxt' encoding 'UTF-8' write
+'<?xml version="1.0" encoding="UTF-8"?>
+<gxl xmlns="http://www.metacase.com/gxlGOPRRType" xmlns:sym="http://www.metacase.com/symbol">' newline
+subreport '_export graph type to MXT' run
+foreach .Graph [GOPRR] {	
+	do decompositions {subreport '_export graph type to MXT' run}
+	subreport '_subgraphs' run
+'</graph>' newline
+}
+'</gxl>'
+close
+endreport

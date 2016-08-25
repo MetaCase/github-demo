@@ -1,0 +1,57 @@
+Graph_ClockApplication_sysadmin_3150525787
+TAST
+9_386
+WatchApplication
+Graph: TAST <WatchApplication> 9_386
+	Application name: TAST
+	Documentation: 
+Object:  <DisplayFn> 9_475
+	Name: 
+	Central: MINUTE
+Object: Start [Watch] <Start [Watch]> 9_519
+Object: Time <State [Watch]> 9_1549
+	State name: Time
+	DisplayFn: 
+	Blinking: 
+	Documentation: Application for showing the current time. Allows editing of hours, minutes and seconds. While we're running on a PC, we don't want to set the real time, so these changes apply to the clockOffset and hence to the clockTime perceived by the running watch.
+	Decomposed to: Time <WatchApplication>
+Object: Stopwatch <State [Watch]> 9_2773
+	State name: Stopwatch
+	DisplayFn: 
+	Blinking: 
+	Documentation: Application for timing events. Stopwatch allows the user to start, stop and reset the timing device. 
+	Decomposed to: Stopwatch <WatchApplication>
+Object: AlarmClock <State [Watch]> 9_3007
+	State name: AlarmClock
+	DisplayFn: 
+	Blinking: 
+	Documentation: Application for an alarm at a certain time of day. AlarmClock allows the user to set the alarm time by editing hours and minutes and the alarm rings when the alarm time is reached.
+	Decomposed to: AlarmClock <WatchApplication>
+Object: Timer <State [Watch]> 9_3442
+	State name: Timer
+	DisplayFn: 
+	Blinking: 
+	Documentation: Application for countdown or 'egg timer'. Timer allows the user to set the length of the countdown in hours and minutes and then starts counting down from this, ringing the alarm when the time has elapsed.
+	Decomposed to: Timer <WatchApplication>
+Object: clockTime <VariableRef> 9_3229
+	Name: clockTime
+	Type: METime
+	Documentation: This is the time as seen in the running watch. Internally it is generated on request from your real system time plus the clockOffset.
+Relationship: Set <Set> 9_2868
+  Role: DisplayFnBody <DisplayFnBody>  Object: <DisplayFn> 9_475
+  Role: Get <Get>  Object: <VariableRef> 9_3229
+Relationship: Transition <Transition> 9_1021
+  Role: From <From>  Object: <State [Watch]> 9_3007
+  Role: To <To>  Object: <State [Watch]> 9_2773
+Relationship: Transition <Transition> 9_1971
+  Role: From <From>  Object: <State [Watch]> 9_2773
+  Role: To <To>  Object: <State [Watch]> 9_3442
+Relationship: Transition <Transition> 9_2438
+  Role: From <From>  Object: <State [Watch]> 9_1549
+  Role: To <To>  Object: <State [Watch]> 9_3007
+Relationship: Transition <Transition> 9_3277
+  Role: From <From>  Object: <Start [Watch]> 9_519
+  Role: To <To>  Object: <State [Watch]> 9_1549
+Relationship: Transition <Transition> 9_3310
+  Role: From <From>  Object: <State [Watch]> 9_3442
+  Role: To <To>  Object: <State [Watch]> 9_1549

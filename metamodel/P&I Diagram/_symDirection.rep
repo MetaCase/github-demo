@@ -1,0 +1,40 @@
+_symDirection()
+$obj_X = X
+$obj_Y = Y
+
+do ~PipeOut>() {	
+	$relX = X
+	$relY = Y
+
+	variable; 'vertical_formula'; write; $obj_X '-' $relX; close;
+
+	variable; 'vertical'; write;
+		math $vertical_formula evaluate 
+	close
+
+	variable; 'horizontal_formula'; write; $obj_Y '-' $relY; close;
+	variable; 'horizontal'; write;
+		math $horizontal_formula evaluate 
+	close
+
+	/* Locating the next object */
+	/* SouthEast, South, SouthWest */
+	if ($horizontal <= '-45' num) then
+		if ($vertical >= '-45' num)  And ($vertical <= '45' num) then 'S' endif
+		if ($vertical < '-45' num) then 'SE' endif
+		if ($vertical > '45' num) then 'SW' endif
+	endif
+
+	/* East, West */
+	if ($horizontal > '-45' num) And ($horizontal < '45' num) then
+		if ($vertical < '0' num) then 'E' endif
+		if ($vertical > '0' num) then 'W' endif
+	endif
+
+	/* NorthEast, North, NorthWest */
+	if ($horizontal >= '45' num) then 
+		if ($vertical >= '-45' num)  And ($vertical <= '45' num) then 'N' endif
+		if ($vertical < '-45' num) then 'NE' endif
+		if ($vertical > '45' num) then 'NW' endif
+	endif
+}

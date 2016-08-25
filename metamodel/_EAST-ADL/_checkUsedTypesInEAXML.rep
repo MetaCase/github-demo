@@ -1,0 +1,25 @@
+_checkUsedTypesInEAXML()
+
+_EAXML_CheckIfArrayDataTypeDefined()
+_EAXML_CheckIfEANumericalDataTypeDefined()
+_EAXML_CheckIfCompositeDataTypesTypeDefined()
+_EAXML_CheckIfRangeableValueTypesDataTypeDefined()
+_EAXML_CheckClientServerInterfaceTypesDefined()
+
+foreach .EAType {
+	do decompositions {
+		_checkEATypesInEAXML()
+	}
+}
+
+foreach .SystemModel {
+	do decompositions {
+		_checkPrototypesInEAXML()
+	}
+}
+
+foreach .Package {
+	do decompositions {
+		_checkUsedTypesInEAXML()	
+	}
+}

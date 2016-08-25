@@ -1,0 +1,31 @@
+_ErrorModelPrototypes()
+
+foreach .(*FunctionPrototype) {
+	'		<object id="_'oid'" type="Object_InternalFault_sysadmin_3509186672">
+			<slot name="Short name">
+				<value>
+					<string>' :Short name%xml '</string>
+				</value>
+			</slot>
+			<slot name="Name">
+				<value>
+					<string>' :Name%xml '</string>
+				</value>
+			</slot>			
+			<slot name="Description">
+				<value>
+					<text>' :Description%xml '</text>
+				</value>
+			</slot>
+			'
+		do decompositions { 
+			if not $reportedGraphs =~ oid%wildsp then
+				variable 'reportedGraphs' append oid ' ' close
+				_ErrorGraph() 
+			else
+				'<graph href="#_'oid'"></graph>' newline
+			endif
+		}
+	'		</object>
+	'
+}

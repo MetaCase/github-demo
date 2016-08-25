@@ -1,0 +1,5 @@
+Report '_C_Roll'
+	'roll(' do ~Set.Variable { id } ', ' :Time unit; ', ' 
+	if :Up?; = 'T' then '1' else '-1' endif
+	', displayTime());' newline
+endreport

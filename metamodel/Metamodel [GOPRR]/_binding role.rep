@@ -1,0 +1,15 @@
+Report '_binding role'
+'<connection>' newline
+if :Minimum cardinality; <> '1' or :Maximum cardinality; <> '1' then
+	'<cardinality start="' :Minimum cardinality; '" stop="' :Maximum cardinality; '"></cardinality>' newline
+endif
+'<role href="#'
+do :Role { subreport '_type_name_oid' run } 
+'"></role>' newline
+do .Object [GOPRR] { subreport '_types' run newline}
+do .Object set [GOPRR] {
+	do :Objects; {subreport '_types' run newline}
+}
+do :Dynamic Ports; {subreport '_types' arguments 'port' run newline}
+'</connection>' newline
+endreport

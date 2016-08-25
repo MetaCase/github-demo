@@ -1,0 +1,10 @@
+_basicStates()
+'	' _gName() '_SM_eCurrentState : E_' _gName() '_SM_States := ' _gName() '_SM_Initial;' newline
+'	' _gName() '_SM_eLastState : E_'_gName()'_SM_States := '_gName()'_SM_'
+foreach .Start {
+	do ~From~To.() {id%var%upper}
+}
+';' newline;
+'	'_gName()'_SM_bIsEntry : BOOL ;' newline
+'	'_gName()'_SM_bATransitionWasPerformed : BOOL := FALSE;'
+newline newline

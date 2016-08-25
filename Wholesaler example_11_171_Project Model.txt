@@ -1,0 +1,67 @@
+Graph_Project_Model_sysadmin_3084195615
+Wholesaler example
+11_171
+Project Model
+Graph: Wholesaler example <Project Model> 11_171
+	Project name: Wholesaler example
+	Status: draft
+	Project manager: Joe Smith
+	Object: Joe Smith <Person> 11_974
+		Name: Joe Smith
+		E-mail: mailto:info@metacase.com
+		Contact address: Ylistönmäentie 31
+40500 Jyväskylä
+Finland
+	Authors: Joe Smith David Hill
+	Object: David Hill <Person> 11_3854
+		Name: David Hill
+		E-mail: mailto:info@metacase.com
+		Contact address: Park Court
+Upper Essex Street
+City 5
+B8 6QB
+	Documentation: This project model describes all the models included into the wholesaler example. You can generate documentation of the project in HTML or in Word document by selecting Graph | Generate... and choosing Export to HTML or Word from the list.
+Object: Class Diagram [UML]: Inventory system - Product <Graph> 11_441
+	Decomposed to: Inventory system - Product <Class Diagram [UML]>
+Object: Data Flow Diagram: Sales system <Graph> 11_1212
+	Decomposed to: Sales system <Data Flow Diagram>
+Object: Process/Entity Matrix: Sales and inventory <Graph> 11_1976
+	Decomposed to: Sales and inventory <Process/Entity Matrix>
+Object: Entity Relationship Diagram: Orders and products <Graph> 11_2687
+	Decomposed to: Orders and products <Entity Relationship Diagram>
+Object: State Machine Diagram: States of the product <Graph> 11_2689
+	Decomposed to: States of the product <State Machine Diagram>
+Object: Use Case Diagram: Inventory use cases <Graph> 11_3341
+	Decomposed to: Inventory use cases <Use Case Diagram>
+Object: System/Entity Matrix: Inventory <Graph> 11_4011
+	Decomposed to: Inventory <System/Entity Matrix>
+Object: Roadmap: Logistics Network - Finland <Graph> 11_5063
+	Decomposed to: Logistics Network - Finland <Roadmap>
+Object: Infotainment menu: Delivery truck logistics panel <Graph> 11_5066
+	Decomposed to: Delivery truck logistics panel <Infotainment menu>
+Object: Problem Table: Problems in current inventory system <Graph> 11_5376
+	Decomposed to: Problems in current inventory system <Problem Table>
+Object: You can Ctrl + double click any object to edit its associated subgraph. Alternatively, open its pop-up menu and choose Open Subgraph or Manage Subgraphs.... <Note> 11_515
+	Documentation: You can Ctrl + double click any object to edit its associated subgraph. Alternatively, open its pop-up menu and choose Open Subgraph or Manage Subgraphs....
+Object: This project model describes all the models included into the wholesaler example. You can generate documentation of the project by pressing the Word Doc or HTML button at the end of the toolbar. <Note> 11_3404
+	Documentation: This project model describes all the models included into the wholesaler example. You can generate documentation of the project by pressing the Word Doc or HTML button at the end of the toolbar.
+Relationship:  <Relates> 11_1401
+	Link type: explode
+	Documentation: 
+  Role: From <From>  Object: <Graph> 11_441
+  Role: To <To>  Object: <Graph> 11_2689
+Relationship:  <Relates> 11_2961
+	Link type: explode
+	Documentation: 
+  Role: From <From>  Object: <Graph> 11_1212
+  Role: To <To>  Object: <Graph> 11_2687
+Relationship:  <Relates> 11_4117
+	Link type: explode
+	Documentation: 
+  Role: From <From>  Object: <Graph> 11_3341
+  Role: To <To>  Object: <Graph> 11_441
+Relationship:  <Relates> 11_5379
+	Link type: explode
+	Documentation: 
+  Role: From <From>  Object: <Graph> 11_1976
+  Role: To <To>  Object: <Graph> 11_2687

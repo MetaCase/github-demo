@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="FunctionBehavior">
+		<objectSymbol offset="40,20" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="40,20 60,20 60,40 40,40 40,20" targetPointX="50" targetPointY="30" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="40" version="1.2" width="60" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<radialGradient cx="0.5" cy="0.5" gradientUnits="objectBoundingBox" id="gradient1" r="1.71163" sym:correctGamma="true" sym:fillType="RadialFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="0.118667" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(0,0,0)"></stop>
+					</radialGradient>
+				</defs>
+				<polygon fill="url(#gradient1)" points="50.2563,20 48.8889,20 48.547,21.9754 47.5214,22.3046 46.4957,20.8231 45.2991,21.3169 45.8119,23.1277 44.7863,23.9508 43.0769,22.9631 42.3932,23.7862 43.4188,25.2678 42.906,26.2555 40.8547,26.0908 40.5128,27.2432 42.2222,28.2309 42.0513,29.5478 40,30.2063 40.1709,31.194 42.2222,31.5232 42.5641,32.6756 40.8547,33.9925 41.3675,34.9802 43.4188,34.3217 44.1026,35.3094 43.0769,37.1202 43.9316,37.9433 45.641,36.6264 46.6667,37.4494 46.3248,39.2602 47.3504,39.7541 48.547,37.7787 49.7436,37.9433 50.3323,40 51.4531,39.9187 51.624,37.7787 52.6496,37.4494 54.017,39.2602 55.0427,38.6018 54.5299,36.6264 55.3847,35.9679 57.0941,37.1202 57.9486,36.1325 56.7521,34.3217 57.2649,33.334 59.1454,33.8279 59.4872,32.5109 57.7778,31.3586 57.7778,30.3709 60,29.877 59.8291,28.5601 57.7778,28.5601 57.4358,27.4078 59.1454,26.0908 58.6326,25.1031 56.5812,25.597 56.0684,24.6093 56.923,22.9631 56.0684,22.14 54.5299,23.2923 53.5042,22.6339 53.8462,20.8231 52.6496,20.3292 51.7948,22.14 50.4274,21.9754" stroke="rgb(0,0,0)" stroke-width="0">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</polygon>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

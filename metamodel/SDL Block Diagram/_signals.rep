@@ -1,0 +1,16 @@
+_signals()
+@signalsFound = ' '
+@sep = ''
+foreach >Channel {	
+	do :Signal list {
+		if not @signalsFound =~ id%var%wildsp then
+			local 'signalsFound' append id%var ' ' close
+			local 'signals' append @sep id%var close
+			@sep = ', '
+		endif
+	}
+}
+if @signals <> '' then
+	'	SIGNAL ' 
+	@signals ';' newline
+endif

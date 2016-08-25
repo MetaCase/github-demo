@@ -1,0 +1,317 @@
+==========================
+Graph Type
+==========================
+SystemModel
+	EAST-ADL version M2.1.12
+	The SystemModel represents the electrical/electronic system in a vehicle and concepts related to the various abstraction levels.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+
+==========================
+Object Types
+==========================
+Vehicle Level
+	Vehicle Level represents the vehicle content from an external perspective through an arbitrary set of feature models. These contain VehicleFeatures that are organized to reflect the vehicle configuration and that have associated requirements, use cases, etc. for its definition. Submodels can be defined for FeatureModels.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+AnalysisFunctionPrototype
+	The AnalysisFunctionPrototype represents an occurrence of the AnalysisFunctionType that types it via the submodel structure.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+DesignFunctionPrototype
+	The DesignFunctionPrototype represents an occurrence of the DesignFunctionType that types it via the submodel structure.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+HardwareComponentPrototype
+	HardwareComponentPrototype presents an element of the hardware architecture. Its type is set in the subgraph and can be one of the following:
+	The Actuator prototype is the element that represents electrical actuators, such as valves, motors, lamps, brake units, etc. It refers to the type definition via decomposed submodel.
+	The Node protototype represents an ECU, i.e. an Electronic Control Unit, and an allocation target of FunctionPrototypes. Node represents the computer nodes of the embedded electrical/electronic system. Nodes consist of processor(s) and may be connected to sensors, actuators and other ECUs via a BusConnector. It refers to the type definition via decomposed submodel.
+	ElectricalComponent prototype represents a hardware element that supplies power. It refers to the type definition via decomposed submodel.
+	Sensor prototype represents a hardware entity for digital or analog sensor elements. It refers to the type definition via decomposed submodel.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+Allocations
+	Allocations links to different allocation specifications via submodels.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+Comment
+	Commenting the metamodel or model, can be connected to all objects.
+	---------------------------------------------
+	Comment: String
+	Description: Text
+
+==========================
+Relationship Types
+==========================
+Comment
+	Comment creates a link between comment or constraint and other design element.
+	---------------------------------------------
+
+==========================
+Role Types
+==========================
+Comment
+
+==========================
+Extra Types
+==========================
+AllocationMatrix
+	EAST-ADL version M2.1.12
+	AllocationMatrix specifies how design functions are been allocated to hardware components.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+AnalysisFunctionType
+	EAST-ADL version M2.1.12
+	The AnalysisFunctionType represents a node in a tree structure corresponding to the functional decomposition of a top level AnalysisFunction. The AnalysisFunction represents the analysis function used to describe the functionalities provided by a vehicle on the AnalysisLevel. At the AnalysisLevel, AnalysisFunctions are defined and structured according to the functional requirements, i.e., the functionalities provided to the user. 
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	FunctionName: String
+		FunctionName is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Type: String
+		The FunctionalDevice represents an abstract sensor or actuator that encapsulates sensor/actuator dynamics and the interfacing software.
+		---------------------------------------------
+	IsElementary: Boolean
+		True, when this type must not have any parts.
+		---------------------------------------------
+	Description: Text
+	Show oid: Boolean
+DesignFunctionType
+	EAST-ADL version M2.1.12
+	The DesignFunctionType represents a node in a tree structure corresponding to the functional decomposition of a top level DesignFunction. The DesignFunction represents the design function used to describe the functionalities provided by a vehicle on the DesignLevel. At the DesignLevel, DesignFunctions are defined and structured according to the functional and hardware system design.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	FunctionName: String
+		FunctionName is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Type: String
+	IsElementary: Boolean
+		True, when this type must not have any parts.
+		---------------------------------------------
+	Description: Text
+	Show oid: Boolean
+HardwareComponentType
+	EAST-ADL version M2.1.12
+	HardwareModeling contains the elements to model physical entities of the embedded electrical/electronic system.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Type: HardwareComponentType
+		Type is a mandatory field.
+		---------------------------------------------
+	Show report: String
+		Choosing the LiveCheck output choise (bottom pane of the diagram editor)
+		---------------------------------------------
+	Show allocated prototypes: Boolean
+	Show oid: Boolean
+VehicleFeatureModel
+	EAST-ADL version M2.1.12
+	FeatureModel describes the features and their dependencies.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	FeatureConstraints: OrderedCollection (FeatureConstraint)
+		Captures a constraint on the containing feature model's configuration which is too complex to be 
+		expressed by way of a FeatureLink. 
+		---------------------------------------------
+	Description: Text
+_EAST-ADL
+	Abstract supertype of all EAST-ADL graph types
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+ActuatorType
+	The Actuator is the element that represents electrical actuators, such as valves, motors, lamps, brake units, etc. Non-electrical actuators such as the engine, hydraulics, etc. are considered part of the plant model (environment). Plant models are not part of the Hardware Design Architecture. 
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+ElectricalComponentType
+	ElectricalComponent represents a hardware element as e.g. relays, batteries, capacitors and other non-computational, non-interactional (with plant) elements.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+	IsActive: String
+		Indicates if the PowerSupply is active or passive.
+		---------------------------------------------
+FeatureConstraint
+	Captures a constraint on the containing feature model's configuration which is too complex to be expressed by way of a FeatureLink.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Criterion: String
+		The actual constraint.
+		---------------------------------------------
+HardwareComponentType
+	The HardwareComponentType represents hardware element on an abstract level, allowing preliminary engineering activities related to hardware.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+NodeType
+	NodeType represents the computer nodes of the embedded electrical/electronic system. Nodes consist of processor(s) and may be connected to sensors, actuators and other ECUs via a BusConnector. Node denotes an electronic control unit that acts as a computing element executing Functions. In case a single CPU-single core ECU is represented, it is sufficient to have a single, non-hierarchical Node. 
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+	ExecutionRate: String
+		ExecutionRate is used to compute an approximate execution time. A nominal execution time divided by executionRate provides the actual execution time to be used e.g. for timing analysis in feasibility studies.
+		---------------------------------------------
+SensorType
+	SensorType represents a hardware entity for digital or analog sensor elements. The Sensor is connected electrically to the electrical entities of the Hardware Design Architecture. 
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+_FunctionPrototype
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+_HardwareComponents
+	The HardwareComponentType is a structural entity that defines a part of an electrical architecture.
+	---------------------------------------------
+	__UUID: String
+		Globally unique identifier.
+		---------------------------------------------
+	Short name: String
+		Short name is mandatory and must start with an alphabetical character. It may contain characters, numbers or underscores.
+		---------------------------------------------
+	Name: String
+	Description: Text
+
+==========================
+Bindings
+==========================
+Comment
+	Comment: Allocations, AnalysisFunctionPrototype, DesignFunctionPrototype, HardwareComponentPrototype, Vehicle Level
+	Comment: Comment
+Comment
+	Comment: Comment
+	Comment: Allocations, AnalysisFunctionPrototype, DesignFunctionPrototype, HardwareComponentPrototype, Vehicle Level
+
+==========================
+Constraints
+==========================
+Allocations may occur at most 1 time
+AnalysisFunctionPrototype may occur at most 1 time
+DesignFunctionPrototype may occur at most 1 time
+HardwareComponentPrototype may occur at most 1 time
+Vehicle Level may occur at most 1 time
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	Allocations
+		AllocationMatrix
+	Vehicle Level
+		VehicleFeatureModel
+Decompositions:
+	AnalysisFunctionPrototype
+		AnalysisFunctionType
+	DesignFunctionPrototype
+		DesignFunctionType
+	HardwareComponentPrototype
+		HardwareComponentType
+
+==========================
+Generators
+==========================
+
+==========================
+Sub-Generators
+==========================
+_checkingsForPrototypes
+__LiveCheck
+

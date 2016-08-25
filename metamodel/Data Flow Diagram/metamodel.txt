@@ -1,0 +1,136 @@
+==========================
+Graph Type
+==========================
+Data Flow Diagram
+	Data flow diagrams are perhaps the most well known and widely used modelling technique. Their basic idea is to represent the flow of data through a system.
+	
+	The objects in this method are 'process', 'store' and 'external' and a relationship between these objects is 'Flow'.
+	
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Process
+	A process describes the functions of the system which transform the flows. A process is represented by a solid circle with two properties (i.e. process number and process name) inside it. Process has three properties: process ID, process name and documentation.
+	---------------------------------------------
+	Process ID: String
+	Process name: String
+	Process specification: Text
+	Documentation: Text
+External
+	An external is an object which represents a source or a destination of data flows in the modelled system. Thus, externals which e.g. are 'customers', 'suppliers', 'employees' are considered to be outside the system but still either accepting or providing data to it or both. An external is represented by a solid square with a name of the external inside the symbol. External has two properties: external name and documentation.
+	---------------------------------------------
+	Name: String
+	Documentation: Text
+Store
+	A store acts as a repository for data. Thus, a store allows you to define parts of the system where you need data stored between processes. A store is symbolized by a rounded rectangle where the name of the store is shown inside the symbol. Store has two properties: store name and documentation.
+	---------------------------------------------
+	Name: String
+	Documentation: Text
+Note
+	Note is a special object for adding additional text anywhere in the graphs. Note belongs to many languages and has only one property, Documentation.
+	---------------------------------------------
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Data flow
+	Flow describes the flow of data through the system. A flow is represented by an arrow, with an arrowhead showing the direction of the flow. Flow has two properties: a name and a documentation.
+	---------------------------------------------
+	Flow name: String
+	Documentation: Text
+
+==========================
+Role Types
+==========================
+From
+To
+
+==========================
+Extra Types
+==========================
+Entity Relationship Diagram
+	Entity Relationship Diagrams are used to specify the data structures of the system, e.g. to model the contents of the data stores in more detail. 
+	
+	The objects in this method are 'entity' and 'attribute'. Entities can be related to each other with 'relationship'.
+	
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+State Transition Diagram
+	State Transition Diagram can be used to highlight the time-dependent behaviour of a system. Process in Data Flow Diagram can be exploded to State Transition Diagram, or Class in Object Model can be exploded to State Transition Diagram as well.
+	
+	The major components of the diagram are states and arrows representing state changes.
+	
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+Structure Chart
+	Structure Chart is one of the most common model for organizing the activity within a single and synchronous unit. This unit is a structure chart which shows the hierarchical organization of modules within one task. Each process in Data Flow Diagram can be exploded to Structure Chart.
+	
+	The object in this method is 'module' and relationship is 'call'.
+	
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+_Structured Analysis and Design
+Person
+	Person is used to describe developers involved in a project (i.e. attached to the project model) and authors of developed models. Person can be characterized with a name, e-mail address, and with a contact address. 
+	---------------------------------------------
+	Name: String
+	E-mail: String
+	Contact address: Text
+
+==========================
+Bindings
+==========================
+Data flow
+	From: External, Process, Store
+	To: Process
+Data flow
+	From: Process
+	To: External, Store
+
+==========================
+Constraints
+==========================
+Property "Name" in External must have unique values
+Property "Name" in Store must have unique values
+Property "Process name" in Process must have unique values
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	Process
+		State Transition Diagram
+		Structure Chart
+	Store
+		Entity Relationship Diagram
+	Data flow
+		Entity Relationship Diagram
+Decompositions:
+	Process
+		Data Flow Diagram
+
+==========================
+Generators
+==========================
+Flows of process 
+
+==========================
+Sub-Generators
+==========================
+

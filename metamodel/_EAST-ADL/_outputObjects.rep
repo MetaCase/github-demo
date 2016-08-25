@@ -1,0 +1,16 @@
+_outputObjects(@tab)
+/* Outputs objects in the graph */
+foreach .() orderby type, objectid num
+{
+	'  Object: '
+	_outputProperties(@tab)
+	
+	do decompositions orderby type, objectid {
+		'	Decomposed to: ' id ' <' type '>' newline
+	}
+	
+	do explosions orderby type, objectid {
+		'	Explode to: ' id ' <' type '>' newline
+	}
+	
+}

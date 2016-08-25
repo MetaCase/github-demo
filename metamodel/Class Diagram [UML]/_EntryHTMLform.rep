@@ -1,0 +1,33 @@
+Report '_EntryHTMLform'
+/* The form for entering values for this class */
+'<!-- (Start of MetaEdit+ generator _EntryHTMLform -->
+<form onsubmit="return false;">
+  <b>Enter '
+if id=/'[AEIOUaeiou].*' then 'an ' else 'a ' endif
+id%xml ' to store in the database:</b>&nbsp;<br>
+  <table>
+';
+subreport '_EntryHTMLforeignFields' run
+to '%undent' translate
+	do :Attributes
+	{'    <tr>
+		      <td class="label">' :Name%xml '</td>
+		      <td valign="middle"><input type="text" id="' :Name%var '" style="width:20em;"></td>
+		    </tr>
+	'
+	}
+endto
+'    <tr>
+      <td>&nbsp;</td>
+      <td valign="middle"><input type="submit" onclick="handleSubmit();" value="OK"></td>
+    </tr>
+    <tr class="blankRow"><td></td><td></td></tr>
+'
+subreport '_EntryHTMLforeignTables' run
+'
+  </table>
+</form>
+<!-- End of MetaEdit+ generator _EntryHTMLform) -->
+
+'
+endreport

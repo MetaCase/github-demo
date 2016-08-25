@@ -1,0 +1,21 @@
+_check()
+@stno = '0'
+
+foreach .State; where :Start state; = 'T' {
+	@stno++%null
+}
+
+if @stno <> '1' then
+	'Warning: one state must be set as start state before generating the code.' newline
+	$errors = 'T'
+endif
+
+@stno = '0'
+foreach .Other Purpose; {
+	@stno++%null
+}
+
+if @stno <> '0' then
+	'Warning: Purpose refers to another purpose. Create Profile model including all purposes that refer to each other.' newline
+	$errors = 'T'
+endif

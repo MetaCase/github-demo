@@ -1,0 +1,53 @@
+Graph_Thingsee_app_sysadmin_3617045505
+DeviceWarning
+23_863
+Thingsee Purpose
+Graph: DeviceWarning <Thingsee Purpose> 23_863
+	Name: DeviceWarning
+	Description: Informs if device meets to hard conditions (temp and acceleration)
+Object: Impact >5.6 (g) <Acceleration> 23_910
+	Direction: Any
+	Trigger if over (g): 5.6
+	Trigger if under (g): 0
+Object: SMS555-5555(Device meets hard conditions. Danger!) <Action> 23_934
+	Send saved logs to cloud: F
+	Send event to: none
+	Send event to cloud URL: 
+	Send SMS message: 555-5555(Device meets hard conditions. Danger!)
+	Object: 555-5555(Device meets hard conditions. Danger!) <Send SMS message> 23_952
+		To (phone number): 555-5555
+		Message: Device meets hard conditions. Danger!
+Object: Thingsee Purpose is based on the sensors and services of Internet of Things device Thingsee.  The language allows to use various sensors (Accelerator, Timer, Geofence, Location, Speed, Temperature, Humidity, Pressure, Luminance) and interact with the world via services (cloud, mobile, sms). Language provides also capabilities to follow the status of the device like its batter level and charging status.  The language guides creating applications as well as checks if they try to monitor the device in unsafe situations (too warm, too big G forces).
+
+Generator produces the jsn code that can be uploaded to the IoT device and executed there. <Comment> 23_1808
+	Description: Thingsee Purpose is based on the sensors and services of Internet of Things device Thingsee.  The language allows to use various sensors (Accelerator, Timer, Geofence, Location, Speed, Temperature, Humidity, Pressure, Luminance) and interact with the world via services (cloud, mobile, sms). Language provides also capabilities to follow the status of the device like its batter level and charging status.  The language guides creating applications as well as checks if they try to monitor the device in unsafe situations (too warm, too big G forces).
+
+Generator produces the jsn code that can be uploaded to the IoT device and executed there.
+Object: Monitor <State> 23_874
+	Name: Monitor
+	Start state: F
+	Always active: F
+	Description: 
+Object: Start <State> 23_892
+	Name: Start
+	Start state: T
+	Always active: F
+	Description: 
+Object: > 60 C <Temperature> 23_924
+	Trigger if over (celcius): 60
+	Trigger if under (celcius): 
+Relationship:  <Transition> 23_2182
+	Name: 
+  Role: Action <Action>  Object: <Action> 23_934
+  Role: From <From>  Object: <State> 23_874
+  Role: F <PollTrigger>  Object: <Temperature> 23_924
+	Log values to device: F
+	Poll values after every: 1
+	Poll unit: minutes
+  Role: To <To>  Object: <State> 23_874
+  Role: F <Trigger>  Object: <Acceleration> 23_910
+	Log values to device: F
+Relationship:  <Transition> 23_2190
+	Name: 
+  Role: From <From>  Object: <State> 23_892
+  Role: To <To>  Object: <State> 23_874

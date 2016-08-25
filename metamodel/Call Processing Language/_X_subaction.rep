@@ -1,0 +1,4 @@
+Report '_X_subaction'
+do decompositions
+{	'<sub ref="' id '" /> ' }
+endreport

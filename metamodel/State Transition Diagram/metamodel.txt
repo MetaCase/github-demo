@@ -1,0 +1,86 @@
+==========================
+Graph Type
+==========================
+State Transition Diagram
+	State Transition Diagram can be used to highlight the time-dependent behaviour of a system. Process in Data Flow Diagram can be exploded to State Transition Diagram, or Class in Object Model can be exploded to State Transition Diagram as well.
+	
+	The major components of the diagram are states and arrows representing state changes.
+	
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Note
+	Note is a special object for adding additional text anywhere in the graphs. Note belongs to many languages and has only one property, Documentation.
+	---------------------------------------------
+	Documentation: Text
+State
+	State describes a part of the systems behavior. A state might be any of the following: waiting for user to enter next command, playing messages or waiting for a card. A state is represented by a solid rectangle with the name of it inside the symbol.
+	
+	State has three properties: name, documentation and transparency. A name can be used to enter a describing name for an object. In case of a state a state name can be e.g. waiting for call, transferring founds, or filling tank. 'Symbol transparent?' field allows to draw states which have substates (i.e. with a large state symbol and several states inside the transparent state symbol).
+	
+	---------------------------------------------
+	State name: String
+	Documentation: Text
+	Symbol transparent?: Boolean
+
+==========================
+Relationship Types
+==========================
+Transition
+	Transition describes a change between states. Transition has three properties: condition, action, and documentation. A condition is some event in the external environment that the system is capable detecting. Thus, a condition causes a change from one state to another. It can typically be a signal or a keystroke. An action is a response either back for the external environment or to the system itself. Therefore, as a part of the change an action defined the function to be performed in the transition. Documentation is reserved for entering additional information about the transition.
+	---------------------------------------------
+	Condition: String
+	Action: String
+	Documentation: Text
+
+==========================
+Role Types
+==========================
+From
+To
+
+==========================
+Extra Types
+==========================
+_Structured Analysis and Design
+Person
+	Person is used to describe developers involved in a project (i.e. attached to the project model) and authors of developed models. Person can be characterized with a name, e-mail address, and with a contact address. 
+	---------------------------------------------
+	Name: String
+	E-mail: String
+	Contact address: Text
+
+==========================
+Bindings
+==========================
+Transition
+	From: State
+	To: State
+
+==========================
+Constraints
+==========================
+Property "State name" in State must have unique values
+
+==========================
+Subgraphs
+==========================
+Decompositions:
+	State
+		State Transition Diagram
+
+==========================
+Generators
+==========================
+Transitions between states
+
+==========================
+Sub-Generators
+==========================
+

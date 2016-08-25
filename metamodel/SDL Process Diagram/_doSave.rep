@@ -1,0 +1,6 @@
+_doSave()
+'	SAVE ' :Message name;%var ';' 
+
+to '%indent' translate
+	_nextTransition()
+endto

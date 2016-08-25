@@ -1,0 +1,14 @@
+_OtherPurpose()
+/* refer to a state in another purpose */
+
+do ~To.Other Purpose; {
+	do :State in other purpose; {
+		local 'this' write
+			variable 'purpose_state_' oid read
+		close	
+		'                "engine": {' newline
+		'                  "gotoStId": ' @this%state ',' newline
+		'                  "gotoPuId": ' @this%purpose; newline 
+	}
+	'                },' newline
+}

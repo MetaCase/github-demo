@@ -1,0 +1,12 @@
+Report '_saveScriptFiles'
+/* Save the JavaScript functions that are the same for all Web Applications, including the old Google Gears files, updated for Web SQL Database */
+
+do 'sample globals entry_common entry_form app'%words
+{	filename 
+		subreport '_default directory' run
+		id '.js'
+	write
+		subreport '_' id 'JS' run
+	close
+}
+endreport

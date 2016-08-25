@@ -1,0 +1,30 @@
+_DiagramRepr()
+'		<diagram displayGrid="false" grid="10,10" timeStamp="" useGrid="true" xmlns="http://www.metacase.com/gxlGOPRRRepr">
+			<graph href="#_'oid '" xmlns="http://www.metacase.com/gxlGOPRR"></graph>' newline
+			foreach .(InFlowPort | ServerPort | OutFlowPort | ClientPort | *FunctionPrototype) {
+			'			<objectRepr id="_r' oid '" place="' x ',' y '"'
+				if type =~ '*FunctionPrototype'; then _error_function_scale() endif
+			'>
+				<object href="#_' oid'" xmlns="http://www.metacase.com/gxlGOPRR"></object>
+			</objectRepr>' newline
+			}
+			foreach  >(Flow | ClientServerInterface ) {
+				_FlowDirected()
+				if $directed = 'T' then /* reports only directed flows as error model expects direction */
+					'			<bindingRepr isStraight="true" oid="_br' oid '" place="' x ',' y '">
+					<binding href="#_b' oid '" xmlns="http://www.metacase.com/gxlGOPRR"></binding>
+					<connectionRepr id="1">' newline
+					do ~(ClientPort | Server | InFlow | OutFlowPort ).() {
+							'					<objectRepr href="#_r' oid '"></objectRepr>' newline
+					}
+					'				</connectionRepr>
+					<connectionRepr id="2">' newline
+					do ~(Client | ServerPort | InFlowPort | OutFlow ).() {				
+						'					<objectRepr href="#_r' oid '"></objectRepr>' newline
+					}
+					'				</connectionRepr>
+					</bindingRepr>' newline 
+				endif
+			}
+'		</diagram>
+' 

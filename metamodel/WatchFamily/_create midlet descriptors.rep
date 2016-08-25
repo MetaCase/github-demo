@@ -1,0 +1,52 @@
+Report '_create midlet descriptors'
+
+$midletCounter='1'
+
+/* Generate common file content for the MANIFEST and JAD */
+variable 'midletInfo' write 
+	do _WatchesToGenerate()
+	{	'MIDlet-' $midletCounter++ ': ' id ', , ' do $generatedpackage { id '.' } id newline}
+close  /* variable */
+
+variable 'manifestContent' write
+	to '%undent' translate
+		'Manifest-Version: 1.0
+		MIDlet-Name: ' id if $IDE = 'eclipse' then ' MIDlet Suite' endif '
+		MIDlet-Vendor: MetaCase
+		MIDlet-Version: 1.0
+		MicroEdition-Configuration: CLDC-1.0
+		'
+	endto
+close
+
+if $IDE = 'eclipse' then
+	filename $projPath 'Application Descriptor' write
+		$manifestContent
+		'MicroEdition-Profile: MIDP-1.0' newline
+		$midletInfo
+	close
+endif
+
+if $IDE = '' then
+/* Generate MANIFEST and JAD */
+	filename $projPath 'MANIFEST.MF' write 
+		$manifestContent
+		'MicroEdition-Profile: MIDP-1.0' newline
+		$midletInfo
+		'Name: 'do $frameworkpackage { id '/' } ' ' do $generatedpackage { id '/' } newline
+		'Sealed: true' newline
+	close
+
+	filename $projPath id '.jad' write
+		to '%undent' translate
+			'MIDlet-Name: ' id '
+			MIDlet-Vendor: MetaCase
+			MIDlet-Version: 1.0
+			MIDlet-Jar-URL: ' id '.jar
+			' $midletInfo '
+			MIDlet-Jar-Size: '
+		endto
+	close	
+endif
+
+endreport

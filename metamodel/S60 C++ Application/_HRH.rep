@@ -1,0 +1,48 @@
+Report '_HRH'
+filename
+	subreport '_default directory' run 
+	'inc\' 
+	subreport '_app' run 
+	'.hrh'
+write
+'/*
+* ============================================================================
+*  Name     : ' subreport '_app' run '.hrh
+*  Part of  : ' subreport '_app' run '
+*  ' subreport '_copyright' run '
+* ============================================================================
+*/
+
+#ifndef ' subreport '_app' run'_HRH
+#define ' subreport '_app' run '_HRH
+
+enum T' subreport '_app' run 'MenuCommands
+    {
+    T' subreport '_app' run 'MenuCommandsZero = 0';
+
+	foreach .Menu Pane
+	{	do :Menu Items;
+		{	',
+    ' :Command
+		}
+	}
+
+'
+    };
+
+enum T' subreport '_app' run 'TabViewId
+    {
+    T' subreport '_app' run 'TabViewIdZero = 0'
+
+foreach .Application
+{	do ~Parent View~Subview.View
+	{	',' newline '    E' subreport '_app' run id 'Tab' }
+}
+'
+    };
+ 
+
+#endif      //  ' subreport '_app' run '_HRH'
+	
+close
+endreport

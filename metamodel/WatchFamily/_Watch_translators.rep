@@ -1,0 +1,12 @@
+Report '_Watch_translators'
+subreport '_translators' run 
+
+to '%language
+/([^:]+).*/ $$1'
+endto
+
+to '%platform
+/[^:]+\:\ (.+)/ $$1'
+endto
+
+endreport

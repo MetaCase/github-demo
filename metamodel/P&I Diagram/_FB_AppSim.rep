@@ -1,0 +1,35 @@
+_FB_AppSim()
+variable 'files' append subreport '_default directory' run 'FB_'id%file 'Sim.exp ' close
+filename subreport '_default directory' run 'FB_'id%file'Sim.exp' write
+'(* @PATH := ''\/_TestSuite\/Simulation\/HomeHeatingSim'' *)' newline
+
+'FUNCTION_BLOCK FB_'id%firstUpper%var'Sim
+VAR_INPUT
+	bOperatingOk: BOOL := TRUE;
+END_VAR
+VAR_OUTPUT
+	bHasChanged : BOOL := FALSE;
+END_VAR
+VAR
+'
+	_instrumentTypesSim()
+'
+	eState : 		E_SimState := SimState_Initializing;
+	eLastState : 	E_SimState := SimState_Stable;
+	bIsEntry : 	BOOL := FALSE;
+
+	bIsStabilized : BOOL := TRUE;
+	bTrigger : BOOL := FALSE;
+	bInit : BOOL := TRUE;
+
+	bIsOn: BOOL;
+	Q_On: BOOL;
+END_VAR
+
+'
+foreach .(Boiler | Radiator | Burner | Pump | Thermostat | Sensor | Valve){
+	_oName()'();' newline
+}
+newline 
+'END_FUNCTION_BLOCK'
+close

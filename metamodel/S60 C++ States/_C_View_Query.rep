@@ -1,0 +1,13 @@
+Report '_C_View_Query'
+'// ---------------------------------------------------------
+// ' subreport '_C_View_Dialog_Header' run '
+// ---------------------------------------------------------
+
+' subreport '_C_View_Dialog_Header' run '
+    {
+    CAknQueryDialog* dlg =  CAknQueryDialog::NewL();
+    dlg->ExecuteLD( ' subreport '_rui' run ');	
+    }
+
+'
+endreport

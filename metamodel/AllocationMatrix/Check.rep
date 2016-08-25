@@ -1,0 +1,14 @@
+Check()
+$LiveCheck = 'F' /* Check report run from toolbar/menu, not to run via liveCheck pane */
+$warnings = '0'
+
+/* Checking for legal path hierarchy */
+_LegalTypePath()
+
+_checkings()
+
+if $warnings <> '0' then
+	'Total number of warnings: ' $warnings newline
+else
+	'No any warnings found!' newline
+endif

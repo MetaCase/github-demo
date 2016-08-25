@@ -1,0 +1,44 @@
+Report '_prebuild for Java: Windows'
+
+$projPath=''
+$srcPath=''
+$frameworkpackage = 'com
+metacase
+watch
+framework'
+$generatedpackage = 'com
+metacase
+watch
+generated'
+
+variable 'projPath' write
+	if $IDE = 'eclipse' and	$workspace then
+		$workspace sep 
+	else
+		subreport '_default directory' run 
+	endif
+	:Name; sep
+close
+
+variable 'srcPath' write
+	$projPath 'src' sep
+close
+
+/* Create necessary folder structure */
+filename 'makeDirs.bat' write
+	to '%undent' translate
+		'mkdir "' $projPath '"
+		cd /D "' $projPath '"
+		mkdir src\com\metacase\watch\generated
+		mkdir src\com\metacase\watch\framework
+		mkdir bin\com\metacase\watch\generated
+		mkdir bin\com\metacase\watch\framework
+		mkdir .settings
+		exit'
+	endto
+close
+
+/* Run the batch file */
+external 'makeDirs.bat' executeBlocking
+
+endreport

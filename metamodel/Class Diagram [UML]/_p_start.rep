@@ -1,0 +1,15 @@
+Report '_p_start'
+'	<object type="Package" id="_' $package '">
+		<slot name="Package name">
+			<value>
+				<string>' $package%xml '</string>
+			</value>
+		</slot>
+		<graph type="Class Diagram [UML]">
+			<slot name="Model name">
+				<value>
+					<string>' $package%xml '</string>
+				</value>
+			</slot>
+'
+endreport

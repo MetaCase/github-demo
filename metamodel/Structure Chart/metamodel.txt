@@ -1,0 +1,71 @@
+==========================
+Graph Type
+==========================
+Structure Chart
+	Structure Chart is one of the most common model for organizing the activity within a single and synchronous unit. This unit is a structure chart which shows the hierarchical organization of modules within one task. Each process in Data Flow Diagram can be exploded to Structure Chart.
+	
+	The object in this method is 'module' and relationship is 'call'.
+	
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Module
+	A module describes a task performed in a process. Examples of modules are tasks like 'get record', 'write record' or 'display output'. A module is represented by a rectangle with a name of the module inside the symbol. Module has two properties: module name, and documentation. The documentation field can be used to enter additional information about module or to specify the rules of the module in more detail. For example,to include executable instructions like e.g.:  IF record = EOF THEN CALL module C ELSE ...
+	---------------------------------------------
+	Module name: String
+	Documentation: Text
+Note
+	Note is a special object for adding additional text anywhere in the graphs. Note belongs to many languages and has only one property, Documentation.
+	---------------------------------------------
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Call
+	Call is used to represents communication and a passing of parameters between modules.
+	---------------------------------------------
+	Call name: String
+	Parameters: Text
+
+==========================
+Role Types
+==========================
+Call role
+	Parameters: String
+
+==========================
+Extra Types
+==========================
+_Structured Analysis and Design
+Person
+	Person is used to describe developers involved in a project (i.e. attached to the project model) and authors of developed models. Person can be characterized with a name, e-mail address, and with a contact address. 
+	---------------------------------------------
+	Name: String
+	E-mail: String
+	Contact address: Text
+
+==========================
+Bindings
+==========================
+Call
+2	Call role: Module
+
+==========================
+Constraints
+==========================
+Property "Module name" in Module must have unique values
+
+==========================
+Subgraphs
+==========================
+Decompositions:
+	Module
+		Structure Chart
+

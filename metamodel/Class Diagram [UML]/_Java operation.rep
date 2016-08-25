@@ -1,0 +1,27 @@
+Report '_Java operation'
+if :Documentation; then 
+	do :Documentation; { '	// ' id newline}
+endif
+'	' 
+:Visibility; ' '
+if :Operation type; = 'class'  then 'static ' endif
+if :Overridability; = 'deferred' then 'abstract ' endif
+if :Return type; = '' then if :Stereotype; <> 'constructor' then 'void ' endif
+	else :Return type; ' '
+endif
+:Operation name;
+'(' dowhile :Parameters; { :Data type; ' ' :Parameter; ', ' }  ')'
+if :Overridability; = 'deferred' then ';' else
+	' {'
+	newline
+	'	' md5id oid ' protected block for method body' md5block
+	if :Body; then
+		do :Body; {'		' id newline }
+	else
+		'		// Enter code here' newline
+	endif
+	'	' md5sum
+	'	}'
+endif
+newline newline
+endreport

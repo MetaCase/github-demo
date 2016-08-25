@@ -1,0 +1,17 @@
+Report '_Popup_menu'
+/* Produces popup menu-style dialog code */
+'def ' subreport '_Internal name' run '():' newline
+'# Popup menu ' :Label; newline
+if :Return variable \(optional\); then
+	'	global ' subreport '_Return variable name' run newline
+endif
+'	choices' oid ' = ['
+dowhile :List; { 'u"' id '", ' }
+'"]' newline
+'	index = appuifw.popup_menu(choices' oid ', u"' :Label; '")' newline
+'	if index <> None:' newline
+'		' subreport '_Return variable name' run ' = choices' oid '[index]' newline
+'	if index == None:' newline
+subreport '_Back' run
+subreport '_next choiced element' run
+endreport

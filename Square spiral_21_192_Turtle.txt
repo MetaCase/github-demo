@@ -1,0 +1,27 @@
+Graph_Turtle_sysadmin_3526813991
+Square spiral
+21_192
+Turtle
+Graph: Square spiral <Turtle> 21_192
+	Name: Square spiral
+	Format: "red"
+	Object: "red" <Format> 21_737
+		Color: "red"
+		Width: 1
+	Animation: 20
+	Object: 20 <Animation> 21_279
+		Milliseconds Per Frame: 20
+		Display Every Nth Frame: 
+	Documentation: 
+Object: d <For> 21_561
+	Variable: d
+	Start: 1
+	End: 1000
+Object: d <Forward> 21_350
+	Pen down?: T
+	Distance: d
+Object: 90 <Right> 21_848
+	Degrees: 90
+Relationship: Sequence <Sequence> 21_365
+  Role: From <From>  Object: <Forward> 21_350
+  Role: To <To>  Object: <Right> 21_848

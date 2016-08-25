@@ -1,0 +1,21 @@
+Report 'Autobuild'
+subreport '_makedirs' run
+subreport 'Files' run
+filename subreport '_default directory' run 'build.bat' write
+subreport '_default drive' run newline
+'cd ' subreport '_default directory' run newline
+':bmpcheck
+if exist aif\' subreport '_app' run 'icon.bmp goto bmpok
+@echo *** PLEASE COPY BITMAPS TO ' subreport '_default directory' run 'aif\ DIRECTORY ***
+@pause
+goto bmpcheck
+:bmpok
+set epocroot=\
+cd group
+call bldmake bldfiles
+call abld build wins udeb
+epoc
+'
+close
+external subreport '_default directory' run 'build.bat' execute
+endreport

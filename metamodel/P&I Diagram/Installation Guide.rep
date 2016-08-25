@@ -1,0 +1,11 @@
+Report 'Installation Guide'
+_translators()
+filename subreport '_default directory' run 'InstallationGuide' subreport '_id and oid' run '.html' write
+	'<html><head>'
+	subreport '__stylesheet in HTML' run
+	'</head><body>' newline
+	_elementsInHTML()
+	'</body></html>'
+close
+external '"' subreport; '_default directory' run 'InstallationGuide' subreport '_id and oid' run '.html"' execute
+endreport

@@ -1,0 +1,89 @@
+==========================
+Graph Type
+==========================
+Feature model
+	A feature model represents features in the product line: it allows to describe the common and the variable features and dependencies between them.  A feature diagram is a tree with a concept as root and features in each node.  Each Feature can be described in a separate diagram using Feature model.
+	---------------------------------------------
+	Feature name: String
+	Description: Text
+
+==========================
+Object Types
+==========================
+Feature
+	Name: String
+	Binding time: String
+	Description: Text
+
+==========================
+Relationship Types
+==========================
+Has feature
+Alternative feature
+Or feature
+
+==========================
+Role Types
+==========================
+Has features
+Mandatory
+	Cardinality: String
+Optional
+	Cardinality: String
+
+==========================
+Extra Types
+==========================
+_Is a feature
+	Cardinality: String
+
+==========================
+Bindings
+==========================
+Alternative feature
+1	Has features: Feature
+2..N	Mandatory: Feature
+Alternative feature
+1	Has features: Feature
+2..N	Optional: Feature
+Has feature
+1	Has features: Feature
+1	Mandatory: Feature
+Has feature
+1	Has features: Feature
+1	Optional: Feature
+Or feature
+1	Has features: Feature
+2..N	Mandatory: Feature
+Or feature
+1	Has features: Feature
+2..N	Optional: Feature
+
+==========================
+Constraints
+==========================
+Property "Name" in Feature must have unique values
+
+==========================
+Subgraphs
+==========================
+Decompositions:
+	Feature
+		Feature model
+
+==========================
+Generators
+==========================
+!Variant selection
+Variant selection table
+
+==========================
+Sub-Generators
+==========================
+_Alternatives
+_cardinality
+_features
+_Has feature
+_isAtree
+_single feature
+

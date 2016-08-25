@@ -1,0 +1,23 @@
+_check_bindings()
+foreach >Binding [GOPRR] {
+	do :Relationship {
+		_check_unique_type_name()
+		do :Properties	{	
+			_check_unique_type_name()
+		}
+	}
+	do ~() {
+		do :Role {
+			_check_unique_type_name()
+			do :Properties	{	
+				_check_unique_type_name()
+			}
+		}
+		do :Dynamic Ports; {
+			_check_unique_type_name()
+			do :Properties	{	
+				_check_unique_type_name()
+			}
+		}
+	}	
+}

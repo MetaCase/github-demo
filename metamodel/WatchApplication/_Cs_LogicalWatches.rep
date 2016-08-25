@@ -1,0 +1,39 @@
+Report '_Cs_LogicalWatches'
+'using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Digital_watch
+{
+    /// <summary>
+    /// ' :Documentation '
+    /// </summary>
+    public class ' id ' : AbstractWatchApplication
+    {
+' subreport '_Cs_variables' run 
+'        public ' id '(Master master)
+            : base(master, "' oid '")
+        {
+'
+subreport '_StateData' run newline
+subreport '_TransitionData' run newline
+subreport '_Decompositions' run newline
+subreport '_StateDisplayData' run
+'
+        }
+
+
+	    public override Object perform(int methodId)
+	    {
+		    switch (methodId) {
+'
+subreport '_Cs_Actions' run
+subreport '_Cs_DisplayFns' run
+'		    }
+		    return null;
+	    }
+    }
+}
+'
+endreport

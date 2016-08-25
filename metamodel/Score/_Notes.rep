@@ -1,0 +1,4 @@
+_Notes()
+foreach .Pattern; where not ~To
+{	_PatternNotes()
+}

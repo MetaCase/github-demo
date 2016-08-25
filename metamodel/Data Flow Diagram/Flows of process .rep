@@ -1,0 +1,20 @@
+Report 'Flows of process '
+foreach .Process 
+{ 'PROCESS: '
+ id
+newline
+ 'FLOWS IN: '
+newline
+ do ~To>Data flow
+{ :Flow name;
+newline
+}
+ 'FLOWS OUT: '
+newline
+ do ~From>Data flow
+{ :Flow name;
+newline
+}
+newline
+}
+endreport

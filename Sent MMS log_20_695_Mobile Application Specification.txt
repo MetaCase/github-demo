@@ -1,0 +1,32 @@
+Graph_eSWT_model_user_3387784239
+Sent MMS log
+20_695
+Mobile Application Specification
+Graph: Sent MMS log <Mobile Application Specification> 20_695
+	Model name: Sent MMS log
+	Description: 
+	View: Detail view
+	Display: Primary
+	UI category: U2
+Object: Sent multimedia messages <Form> 20_942
+	Form title: Sent multimedia messages
+	Form title ID: FORM_DETAILS_TEXT
+	Title icon: 
+	Form list: 
+Object: 1 <Reference> 20_1760
+	Reference ID: 1
+	Explode to: Secure code check <Mobile Application Specification>
+Object: Start <Start> 20_2278
+Object: Complete <Stop> 20_1239
+	Stop type: Complete
+Relationship: Back <Back> 20_2187
+  Role: Back from <Back from>  Port: RSK <Softkey port>  Object: <Form> 20_942
+  Role: Back to <Back to>  Object: <Stop> 20_1239
+Relationship: Flow <Flow> 20_981
+  Role: From <From>  Object: <Start> 20_2278
+  Role: To <To>  Object: <Form> 20_942
+Relationship: Clear <Soft key> 20_2750
+	Soft key label: Clear
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <Form> 20_942
+  Role: To <To>  Object: <Reference> 20_1760

@@ -1,0 +1,128 @@
+Graph_Module_view_sysadmin_3422023668
+UserServer
+22_1148
+SDL Process Diagram
+Graph: UserServer <SDL Process Diagram> 22_1148
+	Name: UserServer
+	Description: 
+Object: Initialize <Call> 22_1161
+	Procedure name: Initialize
+	Parameters: 
+Object: error <Call> 22_1339
+	Procedure name: error
+	Parameters: 
+Object: UserCode <Input> 22_1177
+	Name: UserCode
+	Parameters: 
+Object: Accepted <Input> 22_1213
+	Name: Accepted
+	Parameters: 
+Object: Rejected <Input> 22_1223
+	Name: Rejected
+	Parameters: 
+Object: Admitted <Input> 22_1287
+	Name: Admitted
+	Parameters: 
+Object: * <Input> 22_1329
+	Name: *
+	Parameters: 
+Object: Validate <Output> 22_1193
+	Name: Validate
+	To process: 
+	Parameters: CardNo, Pin
+Object: Accept <Output> 22_1239
+	Name: Accept
+	To process: 
+	Parameters: 
+Object: Reject <Output> 22_1253
+	Name: Reject
+	To process: 
+	Parameters: 
+Object: Admit <Output> 22_1267
+	Name: Admit
+	To process: 
+	Parameters: 
+Object: Ready <Output> 22_1297
+	Name: Ready
+	To process: 
+	Parameters: 
+Object: UserCode <Save> 22_1233
+	Message name: UserCode
+Object: UserCode <Save> 22_1317
+	Message name: UserCode
+Object: Start <Start> 22_1159
+Object: idle <State> 22_1171
+	State name: idle
+Object: Validation <State> 22_1207
+	State name: Validation
+Object: UserPassing <State> 22_1281
+	State name: UserPassing
+Object: * <State> 22_1323
+	State name: *
+Object: - <State> 22_1349
+	State name: -
+Object: CurrentPS:=Sender <Task> 22_1187
+	Action code: CurrentPS:=Sender
+Object: DCL Pin Integer ; /* the personal identification*/
+DCL CardNo Integer; /* the card identification*/
+DCL CurrentPS Pid; /* the current panel server instance*/ <Variable> 22_1311
+	Variables: DCL Pin Integer ; /* the personal identification*/
+DCL CardNo Integer; /* the card identification*/
+DCL CurrentPS Pid; /* the current panel server instance*/
+Relationship: Transition <Transition> 22_1355
+  Role: Source <Source>  Object: <Start> 22_1159
+  Role: Target <Target>  Object: <Call> 22_1161
+Relationship: Transition <Transition> 22_1361
+  Role: Source <Source>  Object: <Call> 22_1161
+  Role: Target <Target>  Object: <State> 22_1171
+Relationship: Transition <Transition> 22_1367
+  Role: Source <Source>  Object: <State> 22_1171
+  Role: Target <Target>  Object: <Input> 22_1177
+Relationship: Transition <Transition> 22_1373
+  Role: Source <Source>  Object: <Input> 22_1177
+  Role: Target <Target>  Object: <Task> 22_1187
+Relationship: Transition <Transition> 22_1379
+  Role: Source <Source>  Object: <Task> 22_1187
+  Role: Target <Target>  Object: <Output> 22_1193
+Relationship: Transition <Transition> 22_1385
+  Role: Source <Source>  Object: <Output> 22_1193
+  Role: Target <Target>  Object: <State> 22_1207
+Relationship: Transition <Transition> 22_1391
+  Role: Source <Source>  Object: <State> 22_1207
+  Role: Target <Target>  Object: <Input> 22_1213
+  Role: Target <Target>  Object: <Input> 22_1223
+  Role: Target <Target>  Object: <Save> 22_1233
+Relationship: Transition <Transition> 22_1401
+  Role: Source <Source>  Object: <Input> 22_1223
+  Role: Target <Target>  Object: <Output> 22_1253
+Relationship: Transition <Transition> 22_1407
+  Role: Source <Source>  Object: <Output> 22_1253
+  Role: Target <Target>  Object: <State> 22_1171
+Relationship: Transition <Transition> 22_1413
+  Role: Source <Source>  Object: <Input> 22_1213
+  Role: Target <Target>  Object: <Output> 22_1239
+Relationship: Transition <Transition> 22_1419
+  Role: Source <Source>  Object: <Output> 22_1239
+  Role: Target <Target>  Object: <Output> 22_1267
+Relationship: Transition <Transition> 22_1425
+  Role: Source <Source>  Object: <Output> 22_1267
+  Role: Target <Target>  Object: <State> 22_1281
+Relationship: Transition <Transition> 22_1431
+  Role: Source <Source>  Object: <State> 22_1281
+  Role: Target <Target>  Object: <Input> 22_1287
+  Role: Target <Target>  Object: <Save> 22_1317
+Relationship: Transition <Transition> 22_1439
+  Role: Source <Source>  Object: <Input> 22_1287
+  Role: Target <Target>  Object: <Output> 22_1297
+Relationship: Transition <Transition> 22_1445
+  Role: Source <Source>  Object: <Output> 22_1297
+  Role: Target <Target>  Object: <State> 22_1171
+Relationship: Transition <Transition> 22_1451
+  Role: Source <Source>  Object: <State> 22_1323
+  Role: Target <Target>  Object: <Input> 22_1329
+Relationship: Transition <Transition> 22_1457
+  Role: Source <Source>  Object: <Input> 22_1329
+  Role: Target <Target>  Object: <Call> 22_1339
+Relationship: Transition <Transition> 22_1463
+  Role: Source <Source>  Object: <Call> 22_1339
+  Role: Target <Target>  Object: <State> 22_1349

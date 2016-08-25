@@ -1,0 +1,287 @@
+Graph_Logic_sysadmin_3265024544
+fourBitAdder
+18_288
+Logic
+Graph: fourBitAdder <Logic> 18_288
+	Logic name: fourBitAdder
+	Show values on wires?: F
+Object: And <And> 18_408
+Object: And <And> 18_822
+Object: And <And> 18_920
+Object: And <And> 18_1023
+Object: And <And> 18_1289
+Object: And <And> 18_1397
+Object: And <And> 18_1443
+Object: Circuit <Circuit> 18_528
+Object: Circuit <Circuit> 18_579
+Object: Circuit <Circuit> 18_607
+Object: Circuit <Circuit> 18_617
+Object: Circuit <Circuit> 18_722
+Object: Circuit <Circuit> 18_835
+Object: Circuit <Circuit> 18_1016
+Object: Circuit <Circuit> 18_1100
+Object: Circuit <Circuit> 18_1130
+Object: Circuit <Circuit> 18_1179
+Object: This example corresponds to the Eclipse GEF Logic sample application. 
+MetaEdit+ & Eclipse EMF/GEF were compared in Dr. Dobb's Journal, Sept. 2004. <Label> 18_355
+	Description: This example corresponds to the Eclipse GEF Logic sample application. 
+MetaEdit+ & Eclipse EMF/GEF were compared in Dr. Dobb's Journal, Sept. 2004.
+Object: 03 <LED> 18_334
+	Value: 03
+Object: 04 <LED> 18_1052
+	Value: 04
+Object: 01 <LED> 18_1317
+	Value: 01
+Object: Or <Or> 18_310
+Object: Or <Or> 18_489
+Object: Or <Or> 18_816
+Object: Xor <Xor> 18_345
+Object: Xor <Xor> 18_447
+Object: Xor <Xor> 18_711
+Object: Xor <Xor> 18_930
+Object: Xor <Xor> 18_1173
+Object: Xor <Xor> 18_1283
+Object: Xor <Xor> 18_1330
+Relationship: Connection <Connection> 18_294
+  Role: Wire <Wire>  Port: c0: out <Logic port>  Object: <Circuit> 18_722
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <Xor> 18_930
+Relationship: Connection <Connection> 18_299
+  Role: Wire <Wire>  Port: 0: out <Logic port>  Object: <Circuit> 18_722
+  Role: Wire <Wire>  Port: c0: in <Logic port>  Object: <Circuit> 18_1179
+Relationship: Connection <Connection> 18_301
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Or> 18_310
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Circuit> 18_528
+Relationship: Connection <Connection> 18_304
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Or> 18_489
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Circuit> 18_617
+Relationship: Connection <Connection> 18_306
+  Role: Wire <Wire>  Port: 2: out <Logic port>  Object: <LED> 18_334
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Circuit> 18_1130
+Relationship: Connection <Connection> 18_330
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <Xor> 18_1330
+  Role: Wire <Wire>  Port: c0: out <Logic port>  Object: <Circuit> 18_1100
+Relationship: Connection <Connection> 18_332
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Xor> 18_447
+  Role: Wire <Wire>  Port: c0: in <Logic port>  Object: <Circuit> 18_579
+Relationship: Connection <Connection> 18_365
+  Role: Wire <Wire>  Port: c0: in <Logic port>  Object: <Circuit> 18_1016
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Xor> 18_711
+Relationship: Connection <Connection> 18_370
+  Role: Wire <Wire>  Port: c0: out <Logic port>  Object: <Circuit> 18_1100
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <And> 18_1443
+Relationship: Connection <Connection> 18_372
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Xor> 18_1173
+  Role: Wire <Wire>  Port: c0: in <Logic port>  Object: <Circuit> 18_528
+Relationship: Connection <Connection> 18_398
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Xor> 18_930
+  Role: Wire <Wire>  Port: c0: in <Logic port>  Object: <Circuit> 18_722
+Relationship: Connection <Connection> 18_403
+  Role: Wire <Wire>  Port: 1: out <Logic port>  Object: <LED> 18_1317
+  Role: Wire <Wire>  Port: 1: in <Logic port>  Object: <Circuit> 18_1179
+Relationship: Connection <Connection> 18_428
+  Role: Wire <Wire>  Port: c3: in <Logic port>  Object: <Circuit> 18_607
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <And> 18_1023
+Relationship: Connection <Connection> 18_431
+  Role: Wire <Wire>  Port: c0: in <Logic port>  Object: <Circuit> 18_1100
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Xor> 18_1330
+Relationship: Connection <Connection> 18_510
+  Role: Wire <Wire>  Port: c1: out <Logic port>  Object: <Circuit> 18_1179
+  Role: Wire <Wire>  Port: 0: in <Logic port>  Object: <Circuit> 18_617
+Relationship: Connection <Connection> 18_596
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <And> 18_920
+  Role: Wire <Wire>  Port: c3: in <Logic port>  Object: <Circuit> 18_1016
+Relationship: Connection <Connection> 18_627
+  Role: Wire <Wire>  Port: 0: in <Logic port>  Object: <Circuit> 18_722
+  Role: Wire <Wire>  Port: c0: out <Logic port>  Object: <Circuit> 18_1179
+Relationship: Connection <Connection> 18_630
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Or> 18_310
+  Role: Wire <Wire>  Port: c3: in <Logic port>  Object: <Circuit> 18_1130
+Relationship: Connection <Connection> 18_653
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Circuit> 18_617
+  Role: Wire <Wire>  Port: c3: out <Logic port>  Object: <Circuit> 18_1179
+Relationship: Connection <Connection> 18_659
+  Role: Wire <Wire>  Port: c3: out <Logic port>  Object: <Circuit> 18_579
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Xor> 18_447
+Relationship: Connection <Connection> 18_663
+  Role: Wire <Wire>  Port: c3: out <Logic port>  Object: <Circuit> 18_1016
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Xor> 18_711
+Relationship: Connection <Connection> 18_665
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <LED> 18_1052
+  Role: Wire <Wire>  Port: 0: out <Logic port>  Object: <Circuit> 18_1130
+Relationship: Connection <Connection> 18_673
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <LED> 18_1052
+  Role: Wire <Wire>  Port: 0: out <Logic port>  Object: <Circuit> 18_835
+Relationship: Connection <Connection> 18_682
+  Role: Wire <Wire>  Port: c3: out <Logic port>  Object: <Circuit> 18_835
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Circuit> 18_1100
+Relationship: Connection <Connection> 18_690
+  Role: Wire <Wire>  Port: 1: out <Logic port>  Object: <LED> 18_334
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Circuit> 18_1179
+Relationship: Connection <Connection> 18_697
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <And> 18_822
+  Role: Wire <Wire>  Port: c3: in <Logic port>  Object: <Circuit> 18_579
+Relationship: Connection <Connection> 18_705
+  Role: Wire <Wire>  Port: c0: in <Logic port>  Object: <Circuit> 18_1130
+  Role: Wire <Wire>  Port: 0: out <Logic port>  Object: <Circuit> 18_607
+Relationship: Connection <Connection> 18_713
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Circuit> 18_1016
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <Or> 18_816
+Relationship: Connection <Connection> 18_736
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <Xor> 18_447
+  Role: Wire <Wire>  Port: c0: out <Logic port>  Object: <Circuit> 18_579
+Relationship: Connection <Connection> 18_741
+  Role: Wire <Wire>  Port: 0: in <Logic port>  Object: <Circuit> 18_835
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Circuit> 18_1130
+Relationship: Connection <Connection> 18_746
+  Role: Wire <Wire>  Port: c3: out <Logic port>  Object: <Circuit> 18_607
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <And> 18_1023
+Relationship: Connection <Connection> 18_755
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <Or> 18_310
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Circuit> 18_607
+Relationship: Connection <Connection> 18_780
+  Role: Wire <Wire>  Port: c0: out <Logic port>  Object: <Circuit> 18_835
+  Role: Wire <Wire>  Port: 0: in <Logic port>  Object: <Circuit> 18_1016
+Relationship: Connection <Connection> 18_782
+  Role: Wire <Wire>  Port: 0: in <Logic port>  Object: <Circuit> 18_1100
+  Role: Wire <Wire>  Port: c1: out <Logic port>  Object: <Circuit> 18_835
+Relationship: Connection <Connection> 18_807
+  Role: Wire <Wire>  Port: c0: in <Logic port>  Object: <Circuit> 18_607
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Xor> 18_1283
+Relationship: Connection <Connection> 18_812
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <And> 18_822
+  Role: Wire <Wire>  Port: c0: out <Logic port>  Object: <Circuit> 18_579
+Relationship: Connection <Connection> 18_846
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <And> 18_1397
+  Role: Wire <Wire>  Port: c3: in <Logic port>  Object: <Circuit> 18_528
+Relationship: Connection <Connection> 18_848
+  Role: Wire <Wire>  Port: 1: in <Logic port>  Object: <Circuit> 18_1130
+  Role: Wire <Wire>  Port: 2: out <Logic port>  Object: <LED> 18_1317
+Relationship: Connection <Connection> 18_855
+  Role: Wire <Wire>  Port: 0: out <Logic port>  Object: <Circuit> 18_579
+  Role: Wire <Wire>  Port: 0: in <Logic port>  Object: <LED> 18_1052
+Relationship: Connection <Connection> 18_867
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Or> 18_489
+  Role: Wire <Wire>  Port: c3: in <Logic port>  Object: <Circuit> 18_1179
+Relationship: Connection <Connection> 18_877
+  Role: Wire <Wire>  Port: 1: in <Logic port>  Object: <LED> 18_1052
+  Role: Wire <Wire>  Port: 0: out <Logic port>  Object: <Circuit> 18_1179
+Relationship: Connection <Connection> 18_883
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <Xor> 18_1283
+  Role: Wire <Wire>  Port: c0: out <Logic port>  Object: <Circuit> 18_607
+Relationship: Connection <Connection> 18_887
+  Role: Wire <Wire>  Port: c0: out <Logic port>  Object: <Circuit> 18_1016
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <And> 18_920
+Relationship: Connection <Connection> 18_903
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Circuit> 18_579
+  Role: Wire <Wire>  Port: 0: out <Logic port>  Object: <LED> 18_334
+Relationship: Connection <Connection> 18_905
+  Role: Wire <Wire>  Port: c0: out <Logic port>  Object: <Circuit> 18_617
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <And> 18_408
+Relationship: Connection <Connection> 18_907
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Xor> 18_345
+  Role: Wire <Wire>  Port: c0: in <Logic port>  Object: <Circuit> 18_617
+Relationship: Connection <Connection> 18_913
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <Xor> 18_711
+  Role: Wire <Wire>  Port: c0: out <Logic port>  Object: <Circuit> 18_1016
+Relationship: Connection <Connection> 18_948
+  Role: Wire <Wire>  Port: c0: out <Logic port>  Object: <Circuit> 18_528
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <And> 18_1397
+Relationship: Connection <Connection> 18_952
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Circuit> 18_1100
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Or> 18_816
+Relationship: Connection <Connection> 18_977
+  Role: Wire <Wire>  Port: c3: out <Logic port>  Object: <Circuit> 18_607
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Xor> 18_1283
+Relationship: Connection <Connection> 18_979
+  Role: Wire <Wire>  Port: 0: in <Logic port>  Object: <Circuit> 18_1179
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Circuit> 18_579
+Relationship: Connection <Connection> 18_1004
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <And> 18_1443
+  Role: Wire <Wire>  Port: c3: in <Logic port>  Object: <Circuit> 18_1100
+Relationship: Connection <Connection> 18_1007
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <And> 18_920
+  Role: Wire <Wire>  Port: c3: out <Logic port>  Object: <Circuit> 18_1016
+Relationship: Connection <Connection> 18_1011
+  Role: Wire <Wire>  Port: c0: out <Logic port>  Object: <Circuit> 18_528
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <Xor> 18_1173
+Relationship: Connection <Connection> 18_1170
+  Role: Wire <Wire>  Port: c3: out <Logic port>  Object: <Circuit> 18_528
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Xor> 18_1173
+Relationship: Connection <Connection> 18_1190
+  Role: Wire <Wire>  Port: 1: in <Logic port>  Object: <Circuit> 18_835
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <LED> 18_1317
+Relationship: Connection <Connection> 18_1200
+  Role: Wire <Wire>  Port: c0: out <Logic port>  Object: <Circuit> 18_1130
+  Role: Wire <Wire>  Port: 0: in <Logic port>  Object: <Circuit> 18_607
+Relationship: Connection <Connection> 18_1231
+  Role: Wire <Wire>  Port: c0: out <Logic port>  Object: <Circuit> 18_617
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <Xor> 18_345
+Relationship: Connection <Connection> 18_1241
+  Role: Wire <Wire>  Port: c3: out <Logic port>  Object: <Circuit> 18_722
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <And> 18_1289
+Relationship: Connection <Connection> 18_1248
+  Role: Wire <Wire>  Port: c3: out <Logic port>  Object: <Circuit> 18_1100
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <And> 18_1443
+Relationship: Connection <Connection> 18_1271
+  Role: Wire <Wire>  Port: 0: out <Logic port>  Object: <Circuit> 18_528
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Circuit> 18_607
+Relationship: Connection <Connection> 18_1274
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <Or> 18_489
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Circuit> 18_722
+Relationship: Connection <Connection> 18_1281
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Or> 18_816
+  Role: Wire <Wire>  Port: c3: in <Logic port>  Object: <Circuit> 18_835
+Relationship: Connection <Connection> 18_1291
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Circuit> 18_835
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <LED> 18_334
+Relationship: Connection <Connection> 18_1295
+  Role: Wire <Wire>  Port: c3: out <Logic port>  Object: <Circuit> 18_528
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <And> 18_1397
+Relationship: Connection <Connection> 18_1307
+  Role: Wire <Wire>  Port: 0: in <Logic port>  Object: <Circuit> 18_1130
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Circuit> 18_1179
+Relationship: Connection <Connection> 18_1310
+  Role: Wire <Wire>  Port: c3: out <Logic port>  Object: <Circuit> 18_579
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <And> 18_822
+Relationship: Connection <Connection> 18_1313
+  Role: Wire <Wire>  Port: c3: out <Logic port>  Object: <Circuit> 18_617
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <And> 18_408
+Relationship: Connection <Connection> 18_1319
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <And> 18_1289
+  Role: Wire <Wire>  Port: c0: out <Logic port>  Object: <Circuit> 18_722
+Relationship: Connection <Connection> 18_1328
+  Role: Wire <Wire>  Port: 0: out <Logic port>  Object: <Circuit> 18_1016
+  Role: Wire <Wire>  Port: c0: in <Logic port>  Object: <Circuit> 18_835
+Relationship: Connection <Connection> 18_1346
+  Role: Wire <Wire>  Port: c3: out <Logic port>  Object: <Circuit> 18_1100
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Xor> 18_1330
+Relationship: Connection <Connection> 18_1354
+  Role: Wire <Wire>  Port: c3: in <Logic port>  Object: <Circuit> 18_722
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <And> 18_1289
+Relationship: Connection <Connection> 18_1360
+  Role: Wire <Wire>  Port: c1: out <Logic port>  Object: <Circuit> 18_1130
+  Role: Wire <Wire>  Port: 0: in <Logic port>  Object: <Circuit> 18_528
+Relationship: Connection <Connection> 18_1386
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Xor> 18_930
+  Role: Wire <Wire>  Port: c3: out <Logic port>  Object: <Circuit> 18_722
+Relationship: Connection <Connection> 18_1391
+  Role: Wire <Wire>  Port: 0: out <Logic port>  Object: <Circuit> 18_617
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Circuit> 18_722
+Relationship: Connection <Connection> 18_1399
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <And> 18_408
+  Role: Wire <Wire>  Port: c3: in <Logic port>  Object: <Circuit> 18_617
+Relationship: Connection <Connection> 18_1425
+  Role: Wire <Wire>  Port: c3: out <Logic port>  Object: <Circuit> 18_617
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Xor> 18_345
+Relationship: Connection <Connection> 18_1428
+  Role: Wire <Wire>  Port: c3: out <Logic port>  Object: <Circuit> 18_1130
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Circuit> 18_528
+Relationship: Connection <Connection> 18_1448
+  Role: Wire <Wire>  Port: c0: out <Logic port>  Object: <Circuit> 18_607
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <And> 18_1023
+Relationship: Connection <Connection> 18_1458
+  Role: Wire <Wire>  Port: 0: out <Logic port>  Object: <LED> 18_1317
+  Role: Wire <Wire>  Port: 0: in <Logic port>  Object: <Circuit> 18_579
+Relationship: Connection <Connection> 18_1462
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Circuit> 18_1016
+  Role: Wire <Wire>  Port: 0: out <Logic port>  Object: <Circuit> 18_1100

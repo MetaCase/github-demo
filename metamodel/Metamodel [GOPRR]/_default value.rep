@@ -1,0 +1,9 @@
+Report '_default value'
+$firstValue='DoNotUseThis'
+do :Default value\(s\); {
+	if $firstValue = 'DoNotUseThis' then
+		$firstValue=id
+	endif
+}
+$firstValue%xml;
+endreport

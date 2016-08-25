@@ -1,0 +1,146 @@
+Graph_Module_view_sysadmin_3422023668
+PanelServer
+22_341
+SDL Process Diagram
+Graph: PanelServer <SDL Process Diagram> 22_341
+	Name: PanelServer
+	Description: 
+Object: PInitialize <Call> 22_354
+	Procedure name: PInitialize
+	Parameters: 
+Object: GetPIN <Call> 22_390
+	Procedure name: GetPIN
+	Parameters: 
+Object: from CardReader <Comment> 22_380
+	Description: from CardReader
+	Show signals: F
+Object: TO UserServer <Comment> 22_414
+	Description: TO UserServer
+	Show signals: F
+Object: from User Server <Comment> 22_450
+	Description: from User Server
+	Show signals: F
+Object: VIA p <Comment> 22_488
+	Description: VIA p
+	Show signals: F
+Object: Card <Input> 22_370
+	Name: Card
+	Parameters: CardNo
+Object: Accept <Input> 22_430
+	Name: Accept
+	Parameters: 
+Object: Reject <Input> 22_440
+	Name: Reject
+	Parameters: 
+Object: Ready <Input> 22_504
+	Name: Ready
+	Parameters: 
+Object: DisplayTime <Input> 22_526
+	Name: DisplayTime
+	Parameters: 
+Object: UserCode <Output> 22_400
+	Name: UserCode
+	To process: 
+	Parameters: CardNo, Pin
+Object: Pass <Output> 22_460
+	Name: Pass
+	To process: 
+	Parameters: 
+Object: AccessDenied <Output> 22_474
+	Name: AccessDenied
+	To process: 
+	Parameters: 
+Object: EnterCard <Output> 22_536
+	Name: EnterCard
+	To process: 
+	Parameters: 
+Object: Start <Start> 22_352
+Object: Ready <State> 22_364
+	State name: Ready
+Object: Validate <State> 22_424
+	State name: Validate
+Object: User passing <State> 22_498
+	State name: User passing
+Object: Display Message <State> 22_520
+	State name: Display Message
+Object: SET(NOW+5, DisplayTime) <Task> 22_514
+	Action code: SET(NOW+5, DisplayTime)
+Object: DCL Pin Integer; /* the personal identification*/
+DCL CardNo Integer; /* the card identification */
+TIMER DisplayTime; <Variable> 22_550
+	Variables: DCL Pin Integer; /* the personal identification*/
+DCL CardNo Integer; /* the card identification */
+TIMER DisplayTime;
+Relationship: Comment link <Comment link> 22_568
+  Role: Comment role <Comment role>  Object: <Comment> 22_380
+  Role: Comment role <Comment role>  Object: <Input> 22_370
+Relationship: Comment link <Comment link> 22_586
+  Role: Comment role <Comment role>  Object: <Output> 22_400
+  Role: Comment role <Comment role>  Object: <Comment> 22_414
+Relationship: Comment link <Comment link> 22_604
+  Role: Comment role <Comment role>  Object: <Input> 22_430
+  Role: Comment role <Comment role>  Object: <Comment> 22_450
+Relationship: Comment link <Comment link> 22_610
+  Role: Comment role <Comment role>  Object: <Input> 22_440
+  Role: Comment role <Comment role>  Object: <Comment> 22_450
+Relationship: Comment link <Comment link> 22_624
+  Role: Comment role <Comment role>  Object: <Output> 22_474
+  Role: Comment role <Comment role>  Object: <Comment> 22_488
+Relationship: Comment link <Comment link> 22_654
+  Role: Comment role <Comment role>  Object: <Input> 22_504
+  Role: Comment role <Comment role>  Object: <Comment> 22_450
+Relationship: Comment link <Comment link> 22_684
+  Role: Comment role <Comment role>  Object: <Output> 22_536
+  Role: Comment role <Comment role>  Object: <Comment> 22_488
+Relationship: Transition <Transition> 22_556
+  Role: Source <Source>  Object: <Start> 22_352
+  Role: Target <Target>  Object: <Call> 22_354
+Relationship: Transition <Transition> 22_562
+  Role: Source <Source>  Object: <Call> 22_354
+  Role: Target <Target>  Object: <State> 22_364
+Relationship: Transition <Transition> 22_574
+  Role: Source <Source>  Object: <State> 22_364
+  Role: Target <Target>  Object: <Input> 22_370
+Relationship: Transition <Transition> 22_580
+  Role: Source <Source>  Object: <Input> 22_370
+  Role: Target <Target>  Object: <Call> 22_390
+Relationship: Transition <Transition> 22_592
+  Role: Source <Source>  Object: <Call> 22_390
+  Role: Target <Target>  Object: <Output> 22_400
+Relationship: Transition <Transition> 22_598
+  Role: Source <Source>  Object: <Output> 22_400
+  Role: Target <Target>  Object: <State> 22_424
+Relationship: Transition <Transition> 22_616
+  Role: Source <Source>  Object: <State> 22_424
+  Role: Target <Target>  Object: <Input> 22_430
+  Role: Target <Target>  Object: <Input> 22_440
+Relationship: Transition <Transition> 22_630
+  Role: Source <Source>  Object: <Input> 22_440
+  Role: Target <Target>  Object: <Output> 22_474
+Relationship: Transition <Transition> 22_636
+  Role: Source <Source>  Object: <Input> 22_430
+  Role: Target <Target>  Object: <Output> 22_460
+Relationship: Transition <Transition> 22_642
+  Role: Source <Source>  Object: <Output> 22_460
+  Role: Target <Target>  Object: <State> 22_498
+Relationship: Transition <Transition> 22_648
+  Role: Source <Source>  Object: <State> 22_498
+  Role: Target <Target>  Object: <Input> 22_504
+Relationship: Transition <Transition> 22_660
+  Role: Source <Source>  Object: <Output> 22_474
+  Role: Target <Target>  Object: <Task> 22_514
+Relationship: Transition <Transition> 22_666
+  Role: Source <Source>  Object: <Task> 22_514
+  Role: Target <Target>  Object: <State> 22_520
+Relationship: Transition <Transition> 22_672
+  Role: Source <Source>  Object: <State> 22_520
+  Role: Target <Target>  Object: <Input> 22_526
+Relationship: Transition <Transition> 22_678
+  Role: Source <Source>  Object: <Input> 22_504
+  Role: Target <Target>  Object: <Output> 22_536
+Relationship: Transition <Transition> 22_690
+  Role: Source <Source>  Object: <Output> 22_536
+  Role: Target <Target>  Object: <State> 22_364
+Relationship: Transition <Transition> 22_696
+  Role: Source <Source>  Object: <Input> 22_526
+  Role: Target <Target>  Object: <Output> 22_536

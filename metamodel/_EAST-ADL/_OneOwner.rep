@@ -1,0 +1,87 @@
+_OneOwner()
+
+@systemModels = ' '
+@systemContent = ' '
+@packages = ' '
+@packageContent = ' '
+@types = ' '
+@typeContent = ' '
+@prototypes = ' '
+@datatypes = ' '
+
+$myGraphs = ' ' /* stores all graphs in this hierarchy */
+_collectGraphsInThisHierarchy() /* collects all graphs in this hierarchy */
+
+do graphs where type =  'Package' {
+	if $myGraphs =~ oid%wildsp then /* checks the graph is in the hierarchy */
+		foreach .SystemModel {
+			if not @systemModels =~ oid%wildsp then
+				local 'systemModels' append oid ' ' close
+			else
+				_reportWarnings()
+				'Warning: ' id ' <' type '> exists in several packages. Open Info... for it' newline
+			endif
+			do decompositions {
+				if not @systemContent =~ oid%wildsp then
+					local 'systemContent' append oid ' ' close
+				else
+					_reportWarnings()
+					'Warning: ' id ' <' type '> is linked from several packages. Find all links with ' id ': * filter in Graph Browser' newline
+				endif
+			}		
+		}
+		foreach .Package {
+			if not @packages =~ oid%wildsp then
+				local 'packages' append oid ' ' close
+			else
+				_reportWarnings()
+				'Warning: ' id ' <' type '> exists in several packages. Open Info... for it' newline
+			endif
+			do decompositions {
+				if not @packageContent =~ oid%wildsp then
+					local 'packageContent' append oid ' ' close
+				else
+					_reportWarnings()
+					'Warning: ' id ' <' type '> is linked from several packages. Find all links with ' id ': * filter in Graph Browser' newline
+				endif
+			}
+		}	
+		foreach .EAType {
+			if not @types =~ oid%wildsp then
+				local 'types' append oid ' ' close
+			else
+				_reportWarnings()
+				'Warning: EAType definition ' id ' exists in several packages. Open Info... for it' newline
+			endif
+			do decompositions {
+				if not @typeContent =~ oid%wildsp then
+					local 'typeContent' append oid ' ' close
+				else
+					_reportWarnings()
+					'Warning: Type definition ' id ' <' type '> is linked from several EATypes. Select EAType in Type Browser and use ' id '* filter in Instances list' newline
+				endif
+			}
+		}
+		foreach .(ArrayDatatype | CompositeDatatype | EABoolean | EANumerical | EAString | Enumeration | RangeableValueType | Quantity | Unit | FunctionClientServerInterface | UserAttributedElement | GenericConstraint)  
+		{	if not @datatypes =~ oid%wildsp then
+				local 'datatypes' append oid ' ' close
+			else
+				_reportWarnings()
+				'Warning: Datatype ' id ' <' type '> exists in several packages. Open Info... for it' newline
+			endif
+		}
+	endif
+}
+
+do graphs where type =~  '*Type' or type =  'ErrorModel' 
+{	if $myGraphs =~ oid%wildsp then /* checks the graph is in the hierarchy */
+		foreach .(*Prototype | *Port | *Pin*) 
+		{	if not @prototypes =~ oid%wildsp then
+				local 'prototypes' append oid ' ' close
+			else
+				_reportWarnings()
+				'Warning: ' id ' <' type '> exists in several types. Open Info... for it' newline
+			endif
+		}
+	endif
+}

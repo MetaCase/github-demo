@@ -1,0 +1,8 @@
+TypeUsers()
+/* Reports prototypes using the selected type in type-prototype hierarchy */
+do graphs where type = 'AnalysisFunctionType' or type = 'SystemModel' or type = 'EnvironmentModel' 
+{	foreach .AnalysisFunctionPrototype 
+	{	do decompositions where oid = oid;3 
+		{	id;1 ' <' type;1 '> in ' id;2 ' uses ' id ' <' :Type '>' newline }
+	}
+}

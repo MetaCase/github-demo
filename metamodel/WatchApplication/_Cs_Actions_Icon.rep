@@ -1,0 +1,3 @@
+Report '_Cs_Actions_Icon'
+do ~Boolean; { 'icon' id do .Icon; {'("' id '");'}}
+endreport

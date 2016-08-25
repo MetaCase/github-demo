@@ -1,0 +1,49 @@
+==========================
+Graph Type
+==========================
+MovableDynamicPorts
+	Name: String
+
+==========================
+Object Types
+==========================
+Component [Movable Dynamic Ports]
+	Name: String
+	Ports: OrderedCollection (Port [Movable Dynamic Ports])
+Note
+	Note is a special object for adding additional text anywhere in the graphs. Note belongs to many languages and has only one property, Documentation.
+	---------------------------------------------
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Connection [Movable Dynamic Ports]
+
+==========================
+Role Types
+==========================
+From [Movable Dynamic Ports]
+To [Movable Dynamic Ports]
+
+==========================
+Extra Types
+==========================
+Port [Movable Dynamic Ports]
+	Name: String
+
+==========================
+Bindings
+==========================
+Connection [Movable Dynamic Ports]
+	From [Movable Dynamic Ports] #(Port [Movable Dynamic Ports]): Component [Movable Dynamic Ports]
+	To [Movable Dynamic Ports] #(Port [Movable Dynamic Ports]): Component [Movable Dynamic Ports]
+
+==========================
+Constraints
+==========================
+
+==========================
+Subgraphs
+==========================
+

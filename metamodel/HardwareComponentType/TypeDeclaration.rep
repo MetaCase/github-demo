@@ -1,0 +1,3 @@
+TypeDeclaration()
+/* Reports graphs in which type is declared: EAType referring to this HardwareComponentType */
+_TypeDeclaration()

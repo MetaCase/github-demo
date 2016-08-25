@@ -1,0 +1,31 @@
+Report 'VoiceMenu generator'
+
+foreach .Start
+{
+	do ~From~To.VoiceOutput
+	{
+		'	Jump ' oid newline
+	}
+}
+
+foreach .VoiceOutput
+orderby y num, x num
+{
+	':' oid newline
+	do explosions
+	{
+		subreport 'VoiceOutput generator' run
+	}
+
+	do ~From~To.DTMF_Input
+	{
+		subreport '_DTMF_Input' run
+	}
+
+	do ~From~To.VoiceOutput
+	{
+		'	Jump ' oid newline
+	}
+}
+
+endreport

@@ -1,0 +1,82 @@
+==========================
+Graph Type
+==========================
+Logic [Dynamic Ports]
+	Logic name: String
+	Show values on wires?: Boolean
+
+==========================
+Object Types
+==========================
+And
+Or
+Xor
+V+
+LED
+	Value: String
+Circuit
+Label
+	Description: Text
+Circuit [Dynamic Ports]
+Dynamic Port
+	Port name: String
+	Direction: String
+
+==========================
+Relationship Types
+==========================
+Connection
+
+==========================
+Role Types
+==========================
+Wire
+
+==========================
+Extra Types
+==========================
+Logic
+	Logic name: String
+	Show values on wires?: Boolean
+Logic Element
+Logic port
+	Port name: String
+	Direction: String
+
+==========================
+Bindings
+==========================
+Connection
+1	Wire #(Dynamic Port, Logic port): Circuit [Dynamic Ports], Logic Element
+1	Wire #(Dynamic Port, Logic port): Circuit [Dynamic Ports], Logic Element
+Connection
+1	Wire #(Dynamic Port, Logic port): Circuit [Dynamic Ports], Logic Element
+1	Wire: Dynamic Port
+Connection
+1	Wire: Dynamic Port
+1	Wire #(Dynamic Port, Logic port): Circuit [Dynamic Ports], Logic Element
+
+==========================
+Constraints
+==========================
+All ports in the binding must have a different Direction
+
+==========================
+Subgraphs
+==========================
+Decompositions:
+	Circuit [Dynamic Ports]
+		Logic [Dynamic Ports]
+
+==========================
+Generators
+==========================
+
+==========================
+Sub-Generators
+==========================
+_out_Circuit [Dynamic Ports]
+_out_Dynamic Port
+__sym_Connection
+__sym_ports
+

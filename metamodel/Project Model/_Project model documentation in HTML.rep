@@ -1,0 +1,83 @@
+Report '_Project model documentation in HTML'
+/*	Creates id_oid + project.html file, which includes frameset definitions
+*		Calls _frameset in HTML-subreport
+*	Creates id_oid + left.html file, which includes the left frames information 
+*		Calls _left frame in HTML-subreport
+*	Calls __stylesheet in HTML-subreport
+*		__stylesheet in HTML-subreport has definitions for the Table, Table header and Table cells
+*	Creates Project information (Name, Status, Personnel with the contact information) from model properties
+*	Creates picture file of the project model graph in PNG format to the default directory (defined in the 
+*	subreport named _default directory in the Graph)
+*	Includes the picture file to the document
+*	Lists all the graphs and subprojects of the project model to the table
+*	Creates each graphs information on to the HTML-file
+*		Calls _Dictionary in HTML-subreport
+*		Calls _Object properties in HTML-subreport
+*	Creates information of subprojects to the id_oid + project.html file 
+*		Creates id_oid+right.html file, which includes subprojects information for the right frame
+*		Calls _Project model documentation in HTML-subreport
+*/
+filename subreport '_default directory' run subreport '_id and oid' run 'project.html' write
+	subreport '_frameset in HTML' run
+close
+filename subreport '_default directory' run subreport '_id and oid' run 'left.html' write
+	subreport '_left frame in HTML' run
+close
+'<html><head>'
+subreport '__stylesheet in HTML' run
+'</head><body>' newline
+'<h2>' id%xml ': ' type%xml '</h2>' newline
+do :Documentation; {id%xml '<br />'}
+'<b>Status of project model:</b> ' :Status%xml '<br />' newline
+'<b>Project manager:</b> ' :Project manager%xml '<br />' newline
+'<b>Personnel:</b><br />'
+subreport '__Table HTML' run newline
+'<tr><th>Person name</th><th>Email address</th><th>Contact information</th></tr>' newline
+do :Authors;
+{	'<tr><td>' id '&nbsp;</td>'
+	'<td><a href="' :E-mail%xml '">' :E-mail%xml '</a>&nbsp;</td>'
+	'<td>'
+	dowhile :Contact address; {id%xml '<br />'} 
+	'&nbsp;</td></tr>' newline
+}
+'</table><br />' newline
+'<b>Project model picture:</b> ' id%xml '<br />' newline
+filename subreport '_default directory' run subreport '_id and oid' run '.png' print
+'<img src="' subreport '_id and oid' run '.png" border="0" usemap="#' subreport '_default directory' run subreport '_id and oid' run '.png"><br /><br />' newline
+'<b>Documentation includes the following graphs and subprojects:</b><br />' newline
+subreport '__Table HTML' run newline
+'<tr><th>Graph name</th><th>Documentation</th></tr>' newline
+foreach .Graph 
+{	do decompositions
+	{	'<tr><td><a name="' oid;1 '"></a><a href="' subreport '_id and oid' run '.html">' id%xml 
+		'</a>&nbsp;</td><td>'
+		dowhile :Documentation; {id%xml '<br />'}
+		dowhile :Description; {id%xml '<br />'}
+		'&nbsp;</td></tr>' newline
+		filename subreport '_default directory' run subreport '_id and oid' run '.html' write
+			'<html><head>'
+			subreport '__stylesheet in HTML' run
+			'</head><body>' newline
+			subreport '_Dictionary in HTML' run
+			subreport '_Object properties in HTML' run
+			'</body></html>'
+		close
+	}
+}
+
+foreach .Subproject 
+{	do decompositions
+	{	'<tr><td><a name="' oid;1 '"></a><a href="' subreport '_id and oid' run 'project.html" target="_top"><b>' id%xml '</b></a>&nbsp;</td>'
+		'<td>'
+		dowhile :Documentation; {id%xml '<br />'}
+		dowhile :Description; {id%xml '<br />'}
+		'&nbsp;</td></tr>' newline
+		filename subreport '_default directory' run subreport '_id and oid' run 'right.html' write
+			subreport '_Project model documentation in HTML' run
+		close
+	}
+}
+'</table><br />' newline
+'<i>Generated from MetaEdit+ project documentation report</i><br /><hr />' newline
+'</body></html>'
+endreport

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="suckConnectionPoint">
+		<objectSymbol offset="20,20" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="20,20 30,20 30,36 20,36 20,20" targetPointX="25" targetPointY="23" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="36" version="1.2" width="30" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<radialGradient cx="0.6" cy="0.125" gradientUnits="objectBoundingBox" id="gradient1" r="0.530477" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(0,0,255)"></stop>
+					</radialGradient>
+				</defs>
+				<rect fill="url(#gradient1)" height="16" rx="10" ry="3" stroke="rgb(0,0,0)" stroke-width="1" width="10" x="20" y="20">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</rect>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

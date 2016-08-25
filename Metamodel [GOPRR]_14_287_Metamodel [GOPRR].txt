@@ -1,0 +1,454 @@
+Graph_Simple_GOPRR_user_3334325822
+Metamodel [GOPRR]
+14_287
+Metamodel [GOPRR]
+Graph: Metamodel [GOPRR] <Metamodel [GOPRR]> 14_287
+	Graph name: Metamodel [GOPRR]
+	__UUID: 6SZAnyqmQ+KF03W1LCbbKg
+	Namespace: 
+	Properties: Graph name [GOPRR] Properties [GOPRR] Constraints [GOPRR] Description [GOPRR]
+	Object: Graph name [GOPRR] <Property [GOPRR]> 14_2345
+		Property name: Graph name [GOPRR]
+		__UUID: fssKqpZ9S4KZ4h1Z/VooRg
+		Local name: Graph name
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Object: Properties [GOPRR] <Property [GOPRR]> 14_1976
+		Property name: Properties [GOPRR]
+		__UUID: +kZ92liySXSQyN/BPgkbrQ
+		Local name: Properties
+		Datatype: Collection
+		Object Datatype: Property [GOPRR]
+		Object: Property [GOPRR] <Object [GOPRR]> 14_493
+			Object name: Property [GOPRR]
+			__UUID: tJCpiLzBR+yQMu16q8gzfQ
+			Properties: Property name [GOPRR] Local name [GOPRR] Datatype [GOPRR] Default value(s) [GOPRR] Uniqueness [GOPRR] Description [GOPRR]
+			Object: Property name [GOPRR] <Property [GOPRR]> 14_1866
+				Property name: Property name [GOPRR]
+				__UUID: pHqru1CyQniV+GaJPyI/YQ
+				Local name: Property name
+				Datatype: String
+				Object Datatype: 
+				Default value(s): 
+				Uniqueness: 
+				Description: 
+			Object: Local name [GOPRR] <Property [GOPRR]> 14_330
+				Property name: Local name [GOPRR]
+				__UUID: cY3QYXJoTR+kuGaGIha8nA
+				Local name: Local name
+				Datatype: String
+				Object Datatype: 
+				Default value(s): 
+				Uniqueness: 
+				Description: 
+			Object: Datatype [GOPRR] <Property [GOPRR]> 14_1639
+				Property name: Datatype [GOPRR]
+				__UUID: fBhm5/2LRUepF1pwUVElsQ
+				Local name: Datatype
+				Datatype: Fixed List
+				Object Datatype: 
+				Default value(s): String
+Text
+Number
+Boolean
+Creation Timestamp
+UUID Base64
+Object
+Collection
+Editable List
+Overridable List
+Fixed List
+Radio Button Set
+External Element
+				Uniqueness: 
+				Description: 
+			Object: Default value(s) [GOPRR] <Property [GOPRR]> 14_2586
+				Property name: Default value(s) [GOPRR]
+				__UUID: 130h2WB9Qui0UakvKr1A+g
+				Local name: Default value(s)
+				Datatype: Text
+				Object Datatype: 
+				Default value(s): 
+				Uniqueness: 
+				Description: 
+			Object: Uniqueness [GOPRR] <Property [GOPRR]> 14_1064
+				Property name: Uniqueness [GOPRR]
+				__UUID: pX5hBUv/Q3y9gETlby6K2g
+				Local name: Uniqueness
+				Datatype: Fixed List
+				Object Datatype: 
+				Default value(s): 
+globally
+per graph
+
+				Uniqueness: 
+				Description: 
+			Object: Description [GOPRR] <Property [GOPRR]> 14_1684
+				Property name: Description [GOPRR]
+				__UUID: jNRlptjWRMyqVv4zWuuhBw
+				Local name: Description
+				Datatype: Text
+				Object Datatype: 
+				Default value(s): 
+				Uniqueness: 
+				Description: 
+			Occurrence: 0
+			Description: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Object: Constraints [GOPRR] <Property [GOPRR]> 14_475
+		Property name: Constraints [GOPRR]
+		__UUID: fTEn2uiLT+KwVhx3xd/d/A
+		Local name: Constraints
+		Datatype: Collection
+		Object Datatype: _Connectivity constraint [GOPRR]
+		Object: _Connectivity constraint [GOPRR] <Object [GOPRR]> 14_611
+			Object name: _Connectivity constraint [GOPRR]
+			__UUID: aH7VzrikTsmhpo+NE/w0sA
+			Properties: may be in at most [GOPRR]
+			Object: may be in at most [GOPRR] <Property [GOPRR]> 14_2286
+				Property name: may be in at most [GOPRR]
+				__UUID: hjwBfjkrTAq7mJnkiYU4sA
+				Local name: may be in at most
+				Datatype: Number
+				Object Datatype: 
+				Default value(s): 
+				Uniqueness: 
+				Description: 
+			Occurrence: 0
+			Description: Abstract type for choosing connectivity constraint
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Constraints: 
+	Object order: 
+	Description: This modeling language allows you to design domain-specific languages. The generator called Export to MXT exports the language design into a file using the MetaEdit+ XML Type format. The generated file can be imported into MetaEdit+ to create the metamodel including basic abstract syntax of the language.
+Object: Object [GOPRR] Object set [GOPRR] <Object set [GOPRR]> 14_2406
+	Objects: Object [GOPRR] Object set [GOPRR]
+	Object: Object [GOPRR] <Object [GOPRR]> 14_861
+		Object name: Object [GOPRR]
+		__UUID: hVPf8OHCRNy61CywXn2spA
+		Properties: Object name [GOPRR] Occurrence [GOPRR] Description [GOPRR]
+		Object: Object name [GOPRR] <Property [GOPRR]> 14_986
+			Property name: Object name [GOPRR]
+			__UUID: U7f6z2ofRUOZzUZ7ujuoAA
+			Local name: Object name
+			Datatype: String
+			Object Datatype: 
+			Default value(s): 
+			Uniqueness: 
+			Description: 
+		Object: Occurrence [GOPRR] <Property [GOPRR]> 14_1929
+			Property name: Occurrence [GOPRR]
+			__UUID: BGuGSJpvS92MY3ZHwZHzjQ
+			Local name: Occurrence
+			Datatype: Overridable List
+			Object Datatype: 
+			Default value(s): N
+0
+1
+			Uniqueness: 
+			Description: 
+		Occurrence: N
+		Description: Object concept is used to specify main modeling concepts of the language, such as states, entities, classes etc. 
+	Object: Object set [GOPRR] <Object [GOPRR]> 14_2730
+		Object name: Object set [GOPRR]
+		__UUID: aL+iOHZwRW6uRJDHuTnjzg
+		Properties: 
+		Occurrence: N
+		Description: Object set is used to define a collection of objects. This concept is used for making the metamodel smaller by connecting it to the role of bindings (instead of specifying own binding for each object in the object set). 
+Object: Property [GOPRR] <Object [GOPRR]> 14_493
+	Object name: Property [GOPRR]
+	__UUID: tJCpiLzBR+yQMu16q8gzfQ
+	Properties: Property name [GOPRR] Local name [GOPRR] Datatype [GOPRR] Default value(s) [GOPRR] Uniqueness [GOPRR] Description [GOPRR]
+	Occurrence: 0
+	Description: 
+Object: _Connectivity constraint [GOPRR] <Object [GOPRR]> 14_611
+	Object name: _Connectivity constraint [GOPRR]
+	__UUID: aH7VzrikTsmhpo+NE/w0sA
+	Properties: may be in at most [GOPRR]
+	Occurrence: 0
+	Description: Abstract type for choosing connectivity constraint
+Object: Object [GOPRR] <Object [GOPRR]> 14_861
+	Object name: Object [GOPRR]
+	__UUID: hVPf8OHCRNy61CywXn2spA
+	Properties: Object name [GOPRR] Occurrence [GOPRR] Description [GOPRR]
+	Occurrence: N
+	Description: Object concept is used to specify main modeling concepts of the language, such as states, entities, classes etc. 
+Object: Relationship connectivity constraint [GOPRR] <Object [GOPRR]> 14_1212
+	Object name: Relationship connectivity constraint [GOPRR]
+	__UUID: b7P0/F8RQwCw9c6/0v4OgQ
+	Properties: 
+	Occurrence: 0
+	Description: 
+Object: Role connectivity constraint [GOPRR] <Object [GOPRR]> 14_1428
+	Object name: Role connectivity constraint [GOPRR]
+	__UUID: FHm2qrPXTJeLRAYO2BlrxQ
+	Properties: 
+	Occurrence: 0
+	Description: 
+Object: Role [GOPRR] <Object [GOPRR]> 14_1794
+	Object name: Role [GOPRR]
+	__UUID: MZhO/VXCRcesrdH1FzS99Q
+	Properties: Role name [GOPRR] Description [GOPRR]
+	Object: Role name [GOPRR] <Property [GOPRR]> 14_720
+		Property name: Role name [GOPRR]
+		__UUID: iXvoiFZPTxqWYH51vpJFCw
+		Local name: Role name
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Occurrence: 0
+	Description: 
+Object: Relationship [GOPRR] <Object [GOPRR]> 14_1798
+	Object name: Relationship [GOPRR]
+	__UUID: 9CzHcIsVQoWDaOqsQOiv3g
+	Properties: Relationship name [GOPRR] Description [GOPRR]
+	Object: Relationship name [GOPRR] <Property [GOPRR]> 14_2736
+		Property name: Relationship name [GOPRR]
+		__UUID: 6/uFFFevR9ynBlTqBvBsyw
+		Local name: Relationship name
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Occurrence: 0
+	Description: 
+Object: Object set [GOPRR] <Object [GOPRR]> 14_2730
+	Object name: Object set [GOPRR]
+	__UUID: aL+iOHZwRW6uRJDHuTnjzg
+	Properties: 
+	Occurrence: N
+	Description: Object set is used to define a collection of objects. This concept is used for making the metamodel smaller by connecting it to the role of bindings (instead of specifying own binding for each object in the object set). 
+Relationship: Inheritance [GOPRR] <Binding [GOPRR]> 14_309
+	Relationship: Inheritance [GOPRR]
+	Object: Inheritance [GOPRR] <Relationship [GOPRR]> 14_505
+		Relationship name: Inheritance [GOPRR]
+		__UUID: 8dbd4WAxShqHog+Bcf8bYw
+		Properties: 
+		Description: 
+  Role: Subtype [GOPRR] <First role [GOPRR]>  Object: <Object [GOPRR]> 14_861
+	Role: Subtype [GOPRR]
+	Object: Subtype [GOPRR] <Role [GOPRR]> 14_1767
+		Role name: Subtype [GOPRR]
+		__UUID: xydp98HSSPSp9WEghjS7HA
+		Properties: 
+		Description: 
+	Minimum cardinality: 1
+	Maximum cardinality: N
+	Dynamic Ports: 
+  Role: Supertype [GOPRR] <Last role [GOPRR]>  Object: <Object [GOPRR]> 14_861
+	Role: Supertype [GOPRR]
+	Object: Supertype [GOPRR] <Role [GOPRR]> 14_1442
+		Role name: Supertype [GOPRR]
+		__UUID: HJOEbpidQBCCpf6hNgkCxg
+		Properties: 
+		Description: 
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Can be drawn in both directions: F
+	Dynamic Ports: 
+Relationship: Property [GOPRR] <Binding [GOPRR]> 14_1573
+	Relationship: Property [GOPRR]
+	Object: Property [GOPRR] <Relationship [GOPRR]> 14_1095
+		Relationship name: Property [GOPRR]
+		__UUID: mrJsELvHS0OZ1IWXERI+FQ
+		Properties: Local name [GOPRR] Uniqueness [GOPRR]
+		Description: A property can include an object as a property too. This object has own properties and can again include other objects are properties too. Such structures are defined using the property relationship.
+  Role: Has property [GOPRR] <First role [GOPRR]>  Object: <Object [GOPRR]> 14_861
+	Role: Has property [GOPRR]
+	Object: Has property [GOPRR] <Role [GOPRR]> 14_1190
+		Role name: Has property [GOPRR]
+		__UUID: GbtTv2VbRnGzJ3nAPRXPYg
+		Properties: 
+		Description: 
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Dynamic Ports: 
+  Role: NonProperty of [GOPRR] <Last role [GOPRR]>  Object: <Object [GOPRR]> 14_861
+	Role: NonProperty of [GOPRR]
+	Object: NonProperty of [GOPRR] <Role [GOPRR]> 14_1745
+		Role name: NonProperty of [GOPRR]
+		__UUID: a/d7OyEZSk67+Um6jkbJuQ
+		Properties: Collection [GOPRR]
+		Object: Collection [GOPRR] <Property [GOPRR]> 14_1510
+			Property name: Collection [GOPRR]
+			__UUID: WEQk0oGhRpuUE0m1hYhRZA
+			Local name: Collection
+			Datatype: Boolean
+			Object Datatype: 
+			Default value(s): 
+			Uniqueness: 
+			Description: 
+		Description: 
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Can be drawn in both directions: F
+	Dynamic Ports: 
+Relationship: Binding [GOPRR] <Binding [GOPRR]> 14_2379
+	Relationship: Binding [GOPRR]
+	Object: Binding [GOPRR] <Relationship [GOPRR]> 14_2648
+		Relationship name: Binding [GOPRR]
+		__UUID: aIABzxqmSCiCrezP4BOgPQ
+		Properties: Relationship [GOPRR]
+		Object: Relationship [GOPRR] <Property [GOPRR]> 14_1680
+			Property name: Relationship [GOPRR]
+			__UUID: QHwmoR9qQaiKYdRxwj617w
+			Local name: Relationship
+			Datatype: Object
+			Object Datatype: Relationship [GOPRR]
+			Object: Relationship [GOPRR] <Object [GOPRR]> 14_1798
+				Object name: Relationship [GOPRR]
+				__UUID: 9CzHcIsVQoWDaOqsQOiv3g
+				Properties: Relationship name [GOPRR] Description [GOPRR]
+				Occurrence: 0
+				Description: 
+			Default value(s): 
+			Uniqueness: 
+			Description: 
+		Description: 
+  Role: First role [GOPRR] <First role [GOPRR]>  Object: <Object set [GOPRR]> 14_2406
+	Role: First role [GOPRR]
+	Object: First role [GOPRR] <Role [GOPRR]> 14_431
+		Role name: First role [GOPRR]
+		__UUID: XM/3ie/LSQaKErFUAXc2SA
+		Properties: Role [GOPRR] Minimum cardinality [GOPRR] Maximum cardinality [GOPRR]
+		Object: Role [GOPRR] <Property [GOPRR]> 14_1966
+			Property name: Role [GOPRR]
+			__UUID: H5qR1Z8GSGqA78/7lIyI5g
+			Local name: Role
+			Datatype: Object
+			Object Datatype: Role [GOPRR]
+			Object: Role [GOPRR] <Object [GOPRR]> 14_1794
+				Object name: Role [GOPRR]
+				__UUID: MZhO/VXCRcesrdH1FzS99Q
+				Properties: Role name [GOPRR] Description [GOPRR]
+				Occurrence: 0
+				Description: 
+			Default value(s): 
+			Uniqueness: 
+			Description: 
+		Object: Minimum cardinality [GOPRR] <Property [GOPRR]> 14_690
+			Property name: Minimum cardinality [GOPRR]
+			__UUID: KDABEIqCR/SNP1tSdTyfkQ
+			Local name: Minimum cardinality
+			Datatype: Overridable List
+			Object Datatype: 
+			Default value(s): 1
+N
+0
+			Uniqueness: 
+			Description: 
+		Object: Maximum cardinality [GOPRR] <Property [GOPRR]> 14_890
+			Property name: Maximum cardinality [GOPRR]
+			__UUID: Zq7GHUdFQLqmp1fOf0yeMw
+			Local name: Maximum cardinality
+			Datatype: Overridable List
+			Object Datatype: 
+			Default value(s): 1
+N
+0
+			Uniqueness: 
+			Description: 
+		Description: 
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Dynamic Ports: 
+  Role: Intermediate role [GOPRR] <Intermediate role [GOPRR]>  Object: <Object set [GOPRR]> 14_2406
+	Role: Intermediate role [GOPRR]
+	Object: Intermediate role [GOPRR] <Role [GOPRR]> 14_2385
+		Role name: Intermediate role [GOPRR]
+		__UUID: mgKjbn9NRQOyUgg3NBldUA
+		Properties: Role [GOPRR] Minimum cardinality [GOPRR] Maximum cardinality [GOPRR]
+		Description: 
+	Minimum cardinality: 0
+	Maximum cardinality: N
+	Order: 
+	Dynamic Ports: 
+  Role: Last role [GOPRR] <Last role [GOPRR]>  Object: <Object set [GOPRR]> 14_2406
+	Role: Last role [GOPRR]
+	Object: Last role [GOPRR] <Role [GOPRR]> 14_650
+		Role name: Last role [GOPRR]
+		__UUID: F8x58kHJQq+eHoAIJ7zb/g
+		Properties: Role [GOPRR] Minimum cardinality [GOPRR] Maximum cardinality [GOPRR] Can be drawn in both directions [GOPRR]
+		Object: Can be drawn in both directions [GOPRR] <Property [GOPRR]> 14_867
+			Property name: Can be drawn in both directions [GOPRR]
+			__UUID: diQryVBcTs2kVtmm5i47Iw
+			Local name: Can be drawn in both directions
+			Datatype: Boolean
+			Object Datatype: 
+			Default value(s): 
+			Uniqueness: 
+			Description: 
+		Description: 
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Can be drawn in both directions: F
+	Dynamic Ports: 
+Relationship: Inheritance [GOPRR] <Inheritance [GOPRR]> 14_1542
+  Role: Subtype [GOPRR] <Subtype [GOPRR]>  Object: <Object [GOPRR]> 14_1212
+  Role: Subtype [GOPRR] <Subtype [GOPRR]>  Object: <Object [GOPRR]> 14_1428
+  Role: Supertype [GOPRR] <Supertype [GOPRR]>  Object: <Object [GOPRR]> 14_611
+Relationship: Object of type <Property [GOPRR]> 14_497
+	Local name: Object of type
+	__UUID: zL+j5qUHRdmxzjrAn1WoOw
+	Uniqueness: 
+  Role: Has property [GOPRR] <Has property [GOPRR]>  Object: <Object [GOPRR]> 14_611
+  Role: F <NonProperty of [GOPRR]>  Object: <Object [GOPRR]> 14_861
+	Collection: F
+Relationship: Properties <Property [GOPRR]> 14_646
+	Local name: Properties
+	__UUID: 3mRb1gttS2GEvdMPvx9fUA
+	Uniqueness: 
+  Role: Has property [GOPRR] <Has property [GOPRR]>  Object: <Object [GOPRR]> 14_861
+  Role: T <NonProperty of [GOPRR]>  Object: <Object [GOPRR]> 14_493
+	Collection: T
+Relationship: Properties <Property [GOPRR]> 14_686
+	Local name: Properties
+	__UUID: KSYAqPFdT+2/2awB8lH1OA
+	Uniqueness: 
+  Role: Has property [GOPRR] <Has property [GOPRR]>  Object: <Object [GOPRR]> 14_1794
+  Role: T <NonProperty of [GOPRR]>  Object: <Object [GOPRR]> 14_493
+	Collection: T
+Relationship: roles of type <Property [GOPRR]> 14_865
+	Local name: roles of type
+	__UUID: ZepDA9GET5+GDRx6BXVL4w
+	Uniqueness: 
+  Role: Has property [GOPRR] <Has property [GOPRR]>  Object: <Object [GOPRR]> 14_1428
+  Role: F <NonProperty of [GOPRR]>  Object: <Object [GOPRR]> 14_1794
+	Collection: F
+Relationship: Properties <Property [GOPRR]> 14_1366
+	Local name: Properties
+	__UUID: H6hQzOtgT6qS+SY+SqOQ9w
+	Uniqueness: 
+  Role: Has property [GOPRR] <Has property [GOPRR]>  Object: <Object [GOPRR]> 14_1798
+  Role: T <NonProperty of [GOPRR]>  Object: <Object [GOPRR]> 14_493
+	Collection: T
+Relationship: Object Datatype <Property [GOPRR]> 14_2100
+	Local name: Object Datatype
+	__UUID: tSM6H5wxTTO9ybOiFDlMrA
+	Uniqueness: 
+  Role: Has property [GOPRR] <Has property [GOPRR]>  Object: <Object [GOPRR]> 14_493
+  Role: F <NonProperty of [GOPRR]>  Object: <Object [GOPRR]> 14_861
+	Collection: F
+Relationship: relationships of type <Property [GOPRR]> 14_2276
+	Local name: relationships of type
+	__UUID: vi6aCP03SI6/T7SP+VgoAQ
+	Uniqueness: 
+  Role: Has property [GOPRR] <Has property [GOPRR]>  Object: <Object [GOPRR]> 14_1212
+  Role: F <NonProperty of [GOPRR]>  Object: <Object [GOPRR]> 14_1798
+	Collection: F
+Relationship: Objects <Property [GOPRR]> 14_2758
+	Local name: Objects
+	__UUID: 6+x3xyRPQCu0lVhQMJGKaA
+	Uniqueness: 
+  Role: Has property [GOPRR] <Has property [GOPRR]>  Object: <Object [GOPRR]> 14_2730
+  Role: T <NonProperty of [GOPRR]>  Object: <Object [GOPRR]> 14_861
+	Collection: T

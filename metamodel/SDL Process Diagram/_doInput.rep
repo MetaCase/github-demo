@@ -1,0 +1,11 @@
+_doInput()
+
+if :Name <> '*' then
+	'	INPUT ' :Name%var '(' :Parameters ');' 
+else
+	'	INPUT *;'  
+endif
+
+to '%indent' translate
+	_nextTransition()
+endto

@@ -1,0 +1,9 @@
+Report '_X_time'
+/* Report Time-switch objects */
+'<' type '-switch tzid="' id '"'
+	if :tzurl; then ' tzurl="' :tzurl; '"' endif
+'>' newline
+subreport '_time details' run
+/* Report relationships after Time-switch */
+subreport '_next node' run
+endreport

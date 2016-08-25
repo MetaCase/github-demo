@@ -1,0 +1,6 @@
+Report '_prebuild for Java: Mac OS X'
+
+$linuxJDK = $macJDK
+subreport '_prebuild for Java: Linux' run
+
+endreport

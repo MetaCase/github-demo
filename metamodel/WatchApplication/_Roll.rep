@@ -1,0 +1,6 @@
+Report '_Roll'
+'get' do ~Set.() {id} '().'
+'roll(METime.' :Time unit; ', '
+if :Up?; = 'T' then 'true' else 'false' endif
+', displayTime());'
+endreport

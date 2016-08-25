@@ -1,0 +1,49 @@
+_vcsPaths()
+
+/* Choose git or svn (lower-case) */
+$vcs = 'git'
+
+/* $dbName is the name of the repository, used to form VCS paths. It need not match the name or directory name of the current repository.
+	$dbBaseDir is the MetaEdit+ repository root directory, of which each repository is a subdirectory
+	- In single user MetaEdit+, this is normally a dot, making paths relative to your MetaEdit+ directory, by default %USERPROFILE%\Documents\MetaEdit+ 5.5
+	- In multi-user MetaEdit+, this is almost always an absolute UNC path \\MESERVER\meshare 
+	$dbBackupName is the directory name of the temporary repository created when versioning and the name of the zipped repository. This normally need not be changed.
+	$dbBackupDir is formed automatically by combining $dbBaseDir and $dbBackupName
+*/
+$dbName = 'github-demo'
+$dbBaseDir = '.'
+$dbBackupName = 'versionedDB'
+$dbBackupDir = __($dbBaseDir sep $dbBackupName)
+
+/* The repository zip and snapshots will be made in the VCS working directory, $vcsWorkingDir, where vcs is git, svn etc. depending on $vcs above
+	$svn/gitBaseDir is the base directory for all such copies, 
+	and each MetaEdit+ repository is a subdirectory automatically called $dbName.
+*/
+$svnBaseDir = 'X:\svn\svn_working'
+$svnWorkingDir = __($svnBaseDir sep $dbName)
+$gitBaseDir = 'X:\git'
+$gitWorkingDir = __($gitBaseDir sep $dbName)
+
+/* $svnProjectURL is the SVN repository to use (it must already exist).
+	We assume an SVN repository is for a single project, corresponding to one MetaEdit+ repository.
+	$gitProjectURL is a remote git repository to sync your changes to
+	As above, edit the $svn/gitBaseURL, and the $svn/gitProjectURL will be based on that and $dbName
+*/
+$svnBaseURL = 'file:///X:/svn/svn_repos'
+$svnProjectURL = __(if $svnBaseURL then $svnBaseURL '/' $dbName endif)
+$gitBaseURL = 'https://github.com/MetaCase' /* E.g. 'https://USERNAME@bitbucket.org/USERNAME' or 'https://github.com/USER_OR_ORGANIZATION_NAME' */
+$gitProjectURL = __(if $gitBaseURL then $gitBaseURL '/' $dbName '.git' endif)
+
+/* Locations of executables, edit to match your setup */
+$gitExeDir = 'C:\Program Files\Git\cmd'
+$svnExeDir = '' /* SVN installation adds itself to the path */
+$7zipExe = 'C:\Program Files\7-Zip\7z.exe'
+$use7zip = '' /* Non-empty = zip, Empty = don't zip (generally results in smaller VCS) */
+$metaeditExe = 'C:\Program Files (x86)\MetaEdit+ 5.5\mep55.exe'
+
+$initScript			= __($vcs 'Init.bat')
+$checkInScript		= __($vcs 'CheckIn.bat')
+$checkOutScript	= __($vcs 'CheckOut.bat')
+
+$vcsWorkingDir = __(variable $vcs 'WorkingDir' read)
+$vcsExeDir = __(variable $vcs 'ExeDir' read)

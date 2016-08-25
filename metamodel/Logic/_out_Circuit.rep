@@ -1,0 +1,32 @@
+_out_Circuit()
+/* we are on a role connecting to an out port, but this can either be on the inside of the top edge, or the outside of the bottom edge. Follow through to the other port on the edge, and its far role. Ports are numbered right to left, on the outside 0-3 and on the inside c0-c3. */
+
+/* %noC translator to remove initial 'c' */
+to '%noC
+$c $'
+endto
+
+do #() 
+{	local 'inPortToFind' write
+		if :Port name; =~ 'c#' then 
+			:Port name%noC
+		else
+			'c' :Port name;
+		endif
+	close
+}
+@anyFound=''
+do .() 
+{	do ~() 
+	{	@found=''
+		do #() where :Direction = 'in' and :Port name; = @inPortToFind
+		{	@found=@anyFound='T'
+		}
+		if @found then
+			do ~()
+			{	subreport '_out_' do .() { type } run
+			}
+		endif
+	}
+}
+if not @anyFound then '0' endif

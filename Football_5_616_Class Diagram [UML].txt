@@ -1,0 +1,310 @@
+Graph_Class_diagram__UML__sysadmin_3019387957
+Football
+5_616
+Class Diagram [UML]
+Graph: Football <Class Diagram [UML]> 5_616
+	Model name: Football
+	Status: 
+	Authors: 
+	Documentation: Although UML is not a good example of a domain-specific modeling language, it can still be made more effective with a domain-specific generator. 
+
+Running the "Web Application" generator will produce an HTML5 Web SQL Database application running on your local disk, with an HTML user interface, behavior in JavaScript, and back end in an SQLite database running in your browser (currently Chrome, Safari or Opera). 
+
+A short introduction is provided as a PDF file in the main MetaEdit+ help index.
+Object: Player <Class [UML]> 5_1791
+	Class name: Player
+	Attributes: +firstName +lastName +goals:integer
+	Object: +firstName <Attribute [UML]> 5_845
+		Name: firstName
+		Data type: 
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +lastName <Attribute [UML]> 5_3525
+		Name: lastName
+		Data type: 
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +goals:integer <Attribute [UML]> 5_9192
+		Name: goals
+		Data type: integer
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: League <Class [UML]> 5_1821
+	Class name: League
+	Attributes: +name
+	Object: +name <Attribute [UML]> 5_6497
+		Name: name
+		Data type: 
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Match <Class [UML]> 5_7887
+	Class name: Match
+	Attributes: +date +homeGoals:integer +awayGoals:integer
+	Object: +date <Attribute [UML]> 5_5106
+		Name: date
+		Data type: 
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +homeGoals:integer <Attribute [UML]> 5_7223
+		Name: homeGoals
+		Data type: integer
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +awayGoals:integer <Attribute [UML]> 5_12629
+		Name: awayGoals
+		Data type: integer
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Team <Class [UML]> 5_11184
+	Class name: Team
+	Attributes: +name +nickname +shirtColor
+	Object: +name <Attribute [UML]> 5_9839
+		Name: name
+		Data type: 
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +nickname <Attribute [UML]> 5_11954
+		Name: nickname
+		Data type: 
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +shirtColor <Attribute [UML]> 5_2647
+		Name: shirtColor
+		Data type: 
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Although UML is not a good example of a domain-specific modeling language, it can still be made more effective with a domain-specific generator. 
+
+Running the "Web Application" generator will produce an HTML5 Web SQL Database application running on your local disk, with an HTML user interface, behavior in JavaScript, and back end in an SQLite database running in your browser (currently Chrome, Safari or Opera). 
+
+A short introduction is provided as a PDF file in the main MetaEdit+ help index. <Note text> 5_7086
+	Note text: Although UML is not a good example of a domain-specific modeling language, it can still be made more effective with a domain-specific generator. 
+
+Running the "Web Application" generator will produce an HTML5 Web SQL Database application running on your local disk, with an HTML user interface, behavior in JavaScript, and back end in an SQLite database running in your browser (currently Chrome, Safari or Opera). 
+
+A short introduction is provided as a PDF file in the main MetaEdit+ help index.
+	Stereotype: 
+Relationship:  <Aggregation> 5_4282
+	Association name: 
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_7887
+	Role name: 
+	Multiplicity: 0..*
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: 
+  Role: 1 <Whole>  Object: <Class [UML]> 5_1821
+	Multiplicity: 1
+	Composition?: T
+Relationship:  <Association [UML]> 5_8479
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 5_11184
+	Role name: homeTeam
+	Multiplicity: 1
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 5_7887
+	Role name: 
+	Multiplicity: 0..*
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 5_11868
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 5_1791
+	Role name: 
+	Multiplicity: 0..*
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: +firstName +lastName
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 5_11184
+	Role name: 
+	Multiplicity: 1
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 5_11933
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 5_11184
+	Role name: awayTeam
+	Multiplicity: 1
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 5_7887
+	Role name: 
+	Multiplicity: 0..*
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 5_15317
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 5_1821
+	Role name: 
+	Multiplicity: 1
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 5_11184
+	Role name: 
+	Multiplicity: 0..*
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: 
+	Association name: 

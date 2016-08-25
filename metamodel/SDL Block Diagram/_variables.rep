@@ -1,0 +1,15 @@
+_variables()
+/* variables */
+@variableFound = 'F'
+foreach .Variable {
+	@variableFound = 'T'
+}
+if @variableFound = 'T' then 
+	'DLC' newline 
+	foreach .Variable {
+		do :Variables { 
+			'	' id newline
+		}
+	}
+	newline
+endif

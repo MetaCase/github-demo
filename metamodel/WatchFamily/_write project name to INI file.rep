@@ -1,0 +1,9 @@
+_write\ project\ name\ to\ INI\ file(@name)
+
+filename 'plugin.ini' append
+	'projectName='
+	if @name then	
+		:Name '_' @name 
+	endif	
+	newline
+close

@@ -1,0 +1,17 @@
+Report '_create Android resource files'
+
+subreport '_create drawable xml files' run
+subreport '_create AndroidManifest.xml' run
+subreport '_create R.java' run 
+subreport '_create MainActivity' run
+subreport '_create .classpath' run
+subreport '_create .project' run
+subreport '_create strings.xml' run
+subreport '_create layout.xml' run
+subreport '_create project.properties' run
+
+if $IDE='eclipse' then
+	subreport '_create org.eclipse.jdt.core.prefs' run
+endif
+
+endreport

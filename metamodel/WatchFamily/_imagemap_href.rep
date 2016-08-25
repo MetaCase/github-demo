@@ -1,0 +1,37 @@
+Report '_imagemap_href'
+if type = 'Note [Watch]' then 
+	'nohref'
+else
+	if metatype = 'Object' then
+		if type = 'Watch' then 
+			'href="#' oid '" '
+			'alt="' id 
+			if id <> type then ': ' type endif
+			'"'
+		else
+			if type = 'Display' then 
+				/* html_for_watch is set as true when the generator is launched from Watch project */
+				'href="#'
+				if $html_for_watch = 'true' then id else oid endif
+				'" '
+				'alt="' id 
+				if id <> type then ': ' type endif
+				'"'
+			else
+				if type = 'LogicalWatch' then 
+					if $html_for_watch = 'true' then
+						do decompositions
+						{	'href="' subreport '_id and oid' run '.html'	}
+					else
+						'href="#' 	oid
+					endif
+					'" '
+					'alt="' id 
+					if id <> type then ': ' type endif
+					'"'
+				endif
+			endif
+		endif
+	endif
+endif
+endreport

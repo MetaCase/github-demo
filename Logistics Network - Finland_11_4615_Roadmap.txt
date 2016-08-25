@@ -1,0 +1,173 @@
+Graph_Roadmap_sysadmin_3496048057
+Logistics Network - Finland
+11_4615
+Roadmap
+Graph: Logistics Network - Finland <Roadmap> 11_4615
+	Name: Logistics Network - Finland
+Object: HÄMEENLINNA <City> 11_4626
+	Name: HÄMEENLINNA
+	Population: 68000
+Object: TAMPERE <City> 11_4657
+	Name: TAMPERE
+	Population: 214000
+Object: JYVÄSKYLÄ <City> 11_4678
+	Name: JYVÄSKYLÄ
+	Population: 131000
+Object: ROVANIEMI <City> 11_4712
+	Name: ROVANIEMI
+	Population: 60000
+Object: LAHTI <City> 11_4733
+	Name: LAHTI
+	Population: 102000
+Object: KUOPIO <City> 11_4749
+	Name: KUOPIO
+	Population: 97000
+Object: SEINÄJOKI <City> 11_4776
+	Name: SEINÄJOKI
+	Population: 59000
+Object: KAJAANI <City> 11_4807
+	Name: KAJAANI
+	Population: 38000
+Object: JOENSUU <City> 11_4833
+	Name: JOENSUU
+	Population: 75000
+Object: VAASA <City> 11_4860
+	Name: VAASA
+	Population: 60000
+Object: HELSINKI <City> 11_4904
+	Name: HELSINKI
+	Population: 600000
+Object: TURKU <City> 11_4946
+	Name: TURKU
+	Population: 178000
+Object: KOUVOLA <City> 11_4962
+	Name: KOUVOLA
+	Population: 90000
+Object: MIKKELI <City> 11_4991
+	Name: MIKKELI
+	Population: 49000
+Object: LAPPEENRANTA <City> 11_5018
+	Name: LAPPEENRANTA
+	Population: 72000
+Object: OULU <City> 11_5034
+	Name: OULU
+	Population: 150000
+Object: PORI <City> 11_5048
+	Name: PORI
+	Population: 90000
+Relationship: 13 <Connection> 11_4767
+	Road Number: 13
+  Role: Road <Road>  Object: <City> 11_4678
+  Role: Road <Road>  Object: <City> 11_4991
+Relationship: 11 <Connection> 11_4772
+	Road Number: 11
+  Role: Road <Road>  Object: <City> 11_5048
+  Role: Road <Road>  Object: <City> 11_4657
+Relationship: 18 <Connection> 11_4805
+	Road Number: 18
+  Role: Road <Road>  Object: <City> 11_4860
+  Role: Road <Road>  Object: <City> 11_4776
+Relationship: 4 <Connection> 11_4811
+	Road Number: 4
+  Role: Road <Road>  Object: <City> 11_4733
+  Role: Road <Road>  Object: <City> 11_4904
+Relationship: 22 <Connection> 11_4820
+	Road Number: 22
+  Role: Road <Road>  Object: <City> 11_4807
+  Role: Road <Road>  Object: <City> 11_5034
+Relationship: 3 <Connection> 11_4827
+	Road Number: 3
+  Role: Road <Road>  Object: <City> 11_4904
+  Role: Road <Road>  Object: <City> 11_4626
+Relationship: 6 <Connection> 11_4829
+	Road Number: 6
+  Role: Road <Road>  Object: <City> 11_4833
+  Role: Road <Road>  Object: <City> 11_5018
+Relationship: 4 <Connection> 11_4848
+	Road Number: 4
+  Role: Road <Road>  Object: <City> 11_4733
+  Role: Road <Road>  Object: <City> 11_4678
+Relationship: 5 <Connection> 11_4853
+	Road Number: 5
+  Role: Road <Road>  Object: <City> 11_4991
+  Role: Road <Road>  Object: <City> 11_4733
+Relationship: 9 <Connection> 11_4856
+	Road Number: 9
+  Role: Road <Road>  Object: <City> 11_4657
+  Role: Road <Road>  Object: <City> 11_4678
+Relationship: 5 <Connection> 11_4864
+	Road Number: 5
+  Role: Road <Road>  Object: <City> 11_4749
+  Role: Road <Road>  Object: <City> 11_4807
+Relationship: 78 <Connection> 11_4873
+	Road Number: 78
+  Role: Road <Road>  Object: <City> 11_4712
+  Role: Road <Road>  Object: <City> 11_4807
+Relationship: 4 <Connection> 11_4882
+	Road Number: 4
+  Role: Road <Road>  Object: <City> 11_4712
+  Role: Road <Road>  Object: <City> 11_5034
+Relationship: 18 <Connection> 11_4886
+	Road Number: 18
+  Role: Road <Road>  Object: <City> 11_4776
+  Role: Road <Road>  Object: <City> 11_4678
+Relationship: 12 <Connection> 11_4896
+	Road Number: 12
+  Role: Road <Road>  Object: <City> 11_4733
+  Role: Road <Road>  Object: <City> 11_4962
+Relationship: 6 <Connection> 11_4900
+	Road Number: 6
+  Role: Road <Road>  Object: <City> 11_4904
+  Role: Road <Road>  Object: <City> 11_4962
+Relationship: 6 <Connection> 11_4909
+	Road Number: 6
+  Role: Road <Road>  Object: <City> 11_4962
+  Role: Road <Road>  Object: <City> 11_5018
+Relationship: 9 <Connection> 11_4918
+	Road Number: 9
+  Role: Road <Road>  Object: <City> 11_4657
+  Role: Road <Road>  Object: <City> 11_4946
+Relationship: 3 <Connection> 11_4925
+	Road Number: 3
+  Role: Road <Road>  Object: <City> 11_4657
+  Role: Road <Road>  Object: <City> 11_4860
+Relationship: 8 <Connection> 11_4931
+	Road Number: 8
+  Role: Road <Road>  Object: <City> 11_4946
+  Role: Road <Road>  Object: <City> 11_5048
+Relationship: 9 <Connection> 11_4937
+	Road Number: 9
+  Role: Road <Road>  Object: <City> 11_4678
+  Role: Road <Road>  Object: <City> 11_4749
+Relationship: 4 <Connection> 11_4956
+	Road Number: 4
+  Role: Road <Road>  Object: <City> 11_4678
+  Role: Road <Road>  Object: <City> 11_5034
+Relationship: 5 <Connection> 11_4958
+	Road Number: 5
+  Role: Road <Road>  Object: <City> 11_4749
+  Role: Road <Road>  Object: <City> 11_4991
+Relationship: 8 <Connection> 11_4966
+	Road Number: 8
+  Role: Road <Road>  Object: <City> 11_4860
+  Role: Road <Road>  Object: <City> 11_5048
+Relationship: 17 <Connection> 11_4977
+	Road Number: 17
+  Role: Road <Road>  Object: <City> 11_4833
+  Role: Road <Road>  Object: <City> 11_4749
+Relationship: 13 <Connection> 11_4985
+	Road Number: 13
+  Role: Road <Road>  Object: <City> 11_4991
+  Role: Road <Road>  Object: <City> 11_5018
+Relationship: 1 <Connection> 11_5011
+	Road Number: 1
+  Role: Road <Road>  Object: <City> 11_4946
+  Role: Road <Road>  Object: <City> 11_4904
+Relationship: 8 <Connection> 11_5014
+	Road Number: 8
+  Role: Road <Road>  Object: <City> 11_5034
+  Role: Road <Road>  Object: <City> 11_4860
+Relationship: 3 <Connection> 11_5022
+	Road Number: 3
+  Role: Road <Road>  Object: <City> 11_4626
+  Role: Road <Road>  Object: <City> 11_4657

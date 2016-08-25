@@ -1,0 +1,28 @@
+Report '_create AndroidManifest.xml'
+
+filename $projPath 'AndroidManifest.xml' encoding 'UTF-8' write
+'<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="' dowhile $generatedpackage {id '.' }  '" android:versionCode="1" android:installLocation="preferExternal"
+      android:versionName="1.0">
+	 <uses-sdk android:minSdkVersion="8" />
+
+    <application android:label="@string/app_name">
+        <activity android:name="._' :Name 'Activity"
+                  android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+'
+do _WatchesToGenerate()
+{ 
+'        <activity android:name=".' :Model name; '"></activity>
+'
+}
+'    </application>
+</manifest>'
+close
+
+endreport

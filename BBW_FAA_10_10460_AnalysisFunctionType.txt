@@ -1,0 +1,116 @@
+Graph_FunctionalAnalysisArchitecture_user_3483271256
+BBW_FAA
+10_10460
+AnalysisFunctionType
+Graph: BBW_FAA <AnalysisFunctionType> 10_10460
+	__UUID: rfMki5c+RFOVDRIUM+jfnQ
+	FunctionName: BBW_FAA
+	Name: 
+	Type: AnalysisFunctionType
+	IsElementary: F
+	Description: 
+	Show oid: F
+Object: FAA_T: FAA_T_FT <AnalysisFunction> <AnalysisFunctionPrototype> 10_10491
+	__UUID: WVI0zQWXSg6HMlM605Q1Jw
+	Short name: FAA_T
+	Name: 
+	Description: 
+	Decomposed to: FAA_T_FT <AnalysisFunctionType>
+Object: pAA_ABS_FL: AA_ABS_T <AnalysisFunction> <AnalysisFunctionPrototype> 10_10906
+	__UUID: dL3bxRvySzeiKcHYohL7yA
+	Short name: pAA_ABS_FL
+	Name: 
+	Description: 
+	Decomposed to: AA_ABS_T <AnalysisFunctionType>
+Object: pAA_BrakeController: AA_BrakeController_T <AnalysisFunction> <AnalysisFunctionPrototype> 10_11048
+	__UUID: Gp/qwwC1QayTqi9S6CR07g
+	Short name: pAA_BrakeController
+	Name: 
+	Description: 
+	Decomposed to: AA_BrakeController_T <AnalysisFunctionType>
+Object: pBrakeActuator_FL: BrakeActuator_FL_FDT <FunctionalDevice> <AnalysisFunctionPrototype> 10_11144
+	__UUID: U3qkWlddS0+uTPewZ8sUTw
+	Short name: pBrakeActuator_FL
+	Name: 
+	Description: 
+	Decomposed to: BrakeActuator_FL_FDT <AnalysisFunctionType>
+Object: pBrakePedal: BrakePedal_FDT <FunctionalDevice> <AnalysisFunctionPrototype> 10_11240
+	__UUID: rO85ElzwSk6IKZWtb++3OQ
+	Short name: pBrakePedal
+	Name: 
+	Description: 
+	Decomposed to: BrakePedal_FDT <AnalysisFunctionType>
+Object: pElectricMotorActuator: ElectricMotorActuator_FDT <FunctionalDevice> <AnalysisFunctionPrototype> 10_11336
+	__UUID: ubd3sl1AQkeXpPOpzPfYxQ
+	Short name: pElectricMotorActuator
+	Name: 
+	Description: 
+	Decomposed to: ElectricMotorActuator_FDT <AnalysisFunctionType>
+Object: pVehicleSpeedSensor: VehicleSpeedSensor_FDT <AnalysisFunction> <AnalysisFunctionPrototype> 10_11432
+	__UUID: WRF/8PqnRIWwHYqNOT4bSw
+	Short name: pVehicleSpeedSensor
+	Name: 
+	Description: 
+	Decomposed to: VehicleSpeedSensor_FDT <AnalysisFunctionType>
+Object: pWheelSpeedSensor: WheelSpeedSensor_FL_FDT <FunctionalDevice> <AnalysisFunctionPrototype> 10_11528
+	__UUID: 2LKn0FTXTxO4U9FFOW5snA
+	Short name: pWheelSpeedSensor
+	Name: 
+	Description: 
+	Decomposed to: WheelSpeedSensor_FL_FDT <AnalysisFunctionType>
+Relationship: BCBrkRefFL_2_ABSBrkRe <Flow> 10_11624
+	__UUID: vZsxuw4bRg6K3L8I67Z/vQ
+	Short name: BCBrkRefFL_2_ABSBrkRe
+	Name: 
+	Description: 
+  Role:  <InFlowPort>  Port: <InFlowPort> 10_10955  Object: <AnalysisFunctionPrototype> 10_10906
+  Role:  <OutFlowPort>  Port: <OutFlowPort> 10_11119  Object: <AnalysisFunctionPrototype> 10_11048
+Relationship: FAABrFrcFL_2_BABrTrqOUT <Flow> 10_11646
+	__UUID: zSZEpsKiQV+p8okIKp8Bew
+	Short name: FAABrFrcFL_2_BABrTrqOUT
+	Name: 
+	Description: 
+  Role:  <InFlowPort>  Port: <InFlowPort> 10_10540  Object: <AnalysisFunctionPrototype> 10_10491
+  Role:  <OutFlowPort>  Port: <OutFlowPort> 10_11215  Object: <AnalysisFunctionPrototype> 10_11144
+Relationship: FAABrPedPos_2_BPBrPedPosIN <Flow> 10_11668
+	__UUID: qThCRHDbTpi4WvINUV/pRA
+	Short name: FAABrPedPos_2_BPBrPedPosIN
+	Name: 
+	Description: 
+  Role:  <InFlowPort>  Port: <InFlowPort> 10_11289  Object: <AnalysisFunctionPrototype> 10_11240
+  Role:  <OutFlowPort>  Port: <OutFlowPort> 10_10732  Object: <AnalysisFunctionPrototype> 10_10491
+Relationship: FAAVehSp_2_VSSVehSp <Flow> 10_11690
+	__UUID: RGEYM+mmRveNPJne9MGiag
+	Short name: FAAVehSp_2_VSSVehSp
+	Name: 
+	Description: 
+  Role:  <InFlowPort>  Port: <InFlowPort> 10_11481  Object: <AnalysisFunctionPrototype> 10_11432
+  Role:  <OutFlowPort>  Port: <OutFlowPort> 10_10788  Object: <AnalysisFunctionPrototype> 10_10491
+Relationship: FAAWhSp_2_WSSWhSpIN <Flow> 10_11712
+	__UUID: kF2o5n2dSrCxBmHK9OTDNA
+	Short name: FAAWhSp_2_WSSWhSpIN
+	Name: 
+	Description: 
+  Role:  <InFlowPort>  Port: <InFlowPort> 10_11577  Object: <AnalysisFunctionPrototype> 10_11528
+  Role:  <OutFlowPort>  Port: <OutFlowPort> 10_10844  Object: <AnalysisFunctionPrototype> 10_10491
+Relationship: MotorToFAA <Flow> 10_11734
+	__UUID: enLVq048RkaHW89P3thFjQ
+	Short name: MotorToFAA
+	Name: 
+	Description: 
+  Role:  <InFlowPort>  Port: <InFlowPort> 10_10710  Object: <AnalysisFunctionPrototype> 10_10491
+  Role:  <OutFlowPort>  Port: <OutFlowPort> 10_11407  Object: <AnalysisFunctionPrototype> 10_11336
+Relationship: VSSVehSp_2_ABSVehSp <Flow> 10_11756
+	__UUID: ENwzb9YIRWajEapc4yatCQ
+	Short name: VSSVehSp_2_ABSVehSp
+	Name: 
+	Description: 
+  Role:  <InFlowPort>  Port: <InFlowPort> 10_10977  Object: <AnalysisFunctionPrototype> 10_10906
+  Role:  <OutFlowPort>  Port: <OutFlowPort> 10_11503  Object: <AnalysisFunctionPrototype> 10_11432
+Relationship: WSSWheSp_2_ABSWheSp <Flow> 10_11778
+	__UUID: OWzWGTjKSLqTdt78v3QrzQ
+	Short name: WSSWheSp_2_ABSWheSp
+	Name: 
+	Description: 
+  Role:  <InFlowPort>  Port: <InFlowPort> 10_10999  Object: <AnalysisFunctionPrototype> 10_10906
+  Role:  <OutFlowPort>  Port: <OutFlowPort> 10_11599  Object: <AnalysisFunctionPrototype> 10_11528

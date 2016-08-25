@@ -1,0 +1,16 @@
+_symHDAOutPorts()
+do ~(*Pin_From)
+{  variable 
+      do #() { 'y' oid } 
+   write 
+      do >() { y }
+   close
+}
+do decompositions
+{  foreach .(*PinOut)
+   orderby 
+		local 'relY' write variable 'y' oid read close
+			if @relY then @relY else '9999999' endif NUM ,
+		y NUM 
+   {  :Short name; newline  }
+}

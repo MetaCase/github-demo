@@ -1,0 +1,16 @@
+Report '__LiveCheck'
+foreach .Class [Port]
+{	do :Attributes
+	{	$attrOid = oid 
+		$found=''
+		do ~AssociationEnd [Port];1
+		{	do #() where oid = $attrOid 
+			{	$found = 'T'
+			}
+		}
+		if not $found then 
+			id ' in ' id;1  ' is not connected.' newline
+		endif
+	}
+}
+endreport

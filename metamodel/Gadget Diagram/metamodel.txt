@@ -1,0 +1,43 @@
+==========================
+Graph Type
+==========================
+Gadget Diagram
+	Name: String
+
+==========================
+Object Types
+==========================
+Gadget [Port]
+	Name: String
+	Buttons: OrderedCollection (Button [Port])
+Note
+	Note is a special object for adding additional text anywhere in the graphs. Note belongs to many languages and has only one property, Documentation.
+	---------------------------------------------
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+
+==========================
+Role Types
+==========================
+
+==========================
+Extra Types
+==========================
+Button [Port]
+	Name: String
+
+==========================
+Bindings
+==========================
+
+==========================
+Constraints
+==========================
+
+==========================
+Subgraphs
+==========================
+

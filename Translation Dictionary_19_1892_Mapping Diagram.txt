@@ -1,0 +1,86 @@
+Graph_Mapping_Diagram_user_3588417960
+Translation Dictionary
+19_1892
+Mapping Diagram
+Graph: Translation Dictionary <Mapping Diagram> 19_1892
+	Name: Translation Dictionary
+Object: Movable dynamic ports from collection
+A template retrieves the words from the object's collection property. It displays them, offering each as a port that can be connected and moved. <Note> 19_2075
+	Documentation: Movable dynamic ports from collection
+A template retrieves the words from the object's collection property. It displays them, offering each as a port that can be connected and moved.
+Object: List reordering
+The words in the tables are represented by movable dynamic ports. In the top example they are in alphabetical order in each table. In the bottom example they have been reordered by selecting the role connected to a word and dragging its handle at the word end. The port will follow, allowing you to relocate the word in the symbol. <Note> 19_2080
+	Documentation: List reordering
+The words in the tables are represented by movable dynamic ports. In the top example they are in alphabetical order in each table. In the bottom example they have been reordered by selecting the role connected to a word and dragging its handle at the word end. The port will follow, allowing you to relocate the word in the symbol.
+Object: English <Table> 19_1912
+	Name: English
+	Elements: Cab Car Cat
+	Object: Cab <MappableElement> 19_1908
+		Name: Cab
+	Object: Car <MappableElement> 19_1900
+		Name: Car
+	Object: Cat <MappableElement> 19_1904
+		Name: Cat
+Object: Italiano <Table> 19_1919
+	Name: Italiano
+	Elements: Carrozza Gatto Macchina
+	Object: Carrozza <MappableElement> 19_1934
+		Name: Carrozza
+	Object: Gatto <MappableElement> 19_1926
+		Name: Gatto
+	Object: Macchina <MappableElement> 19_1930
+		Name: Macchina
+Object: Deutsch <Table> 19_1977
+	Name: Deutsch
+	Elements: Auto Drotschke Katze
+	Object: Auto <MappableElement> 19_1965
+		Name: Auto
+	Object: Drotschke <MappableElement> 19_1973
+		Name: Drotschke
+	Object: Katze <MappableElement> 19_1969
+		Name: Katze
+Object: English <Table> 19_2194
+	Name: English
+	Elements: Cab Car Cat
+Object: Italiano <Table> 19_2206
+	Name: Italiano
+	Elements: Carrozza Gatto Macchina
+Object: Deutsch <Table> 19_2222
+	Name: Deutsch
+	Elements: Auto Drotschke Katze
+Relationship: Mapping <Mapping> 19_2021
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1908  Object: <Table> 19_1912
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1934  Object: <Table> 19_1919
+Relationship: Mapping <Mapping> 19_2030
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1900  Object: <Table> 19_1912
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1930  Object: <Table> 19_1919
+Relationship: Mapping <Mapping> 19_2039
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1904  Object: <Table> 19_1912
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1926  Object: <Table> 19_1919
+Relationship: Mapping <Mapping> 19_2048
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1908  Object: <Table> 19_1912
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1973  Object: <Table> 19_1977
+Relationship: Mapping <Mapping> 19_2057
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1900  Object: <Table> 19_1912
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1965  Object: <Table> 19_1977
+Relationship: Mapping <Mapping> 19_2066
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1904  Object: <Table> 19_1912
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1969  Object: <Table> 19_1977
+Relationship: Mapping <Mapping> 19_2186
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1908  Object: <Table> 19_2194
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1934  Object: <Table> 19_2206
+Relationship: Mapping <Mapping> 19_2192
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1900  Object: <Table> 19_2194
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1930  Object: <Table> 19_2206
+Relationship: Mapping <Mapping> 19_2218
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1908  Object: <Table> 19_2194
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1973  Object: <Table> 19_2222
+Relationship: Mapping <Mapping> 19_2232
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1926  Object: <Table> 19_2206
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1904  Object: <Table> 19_2194
+Relationship: Mapping <Mapping> 19_2238
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1900  Object: <Table> 19_2194
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1965  Object: <Table> 19_2222
+Relationship: Mapping <Mapping> 19_2254
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1904  Object: <Table> 19_2194
+  Role: MapRole <MapRole>  Port: <MappableElement> 19_1969  Object: <Table> 19_2222

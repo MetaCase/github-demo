@@ -1,0 +1,36 @@
+_validateTypePathsForEAXML()
+/* Checks that each type in the selected EAXML is referred by EATYPE from some package, including also a package that is not part of EAXML */
+
+$TypesInEAXML = ' '
+$dataTypesDefined = ' ' /* all datatypes defined in open projects */
+$typesChecked = ' ' /* all function types are checked only once */
+$functionPrototypesDefinedInThisHierarchy = ' '
+
+/* collect all type definitions */
+do graphs where type = 'Package' 
+{
+	foreach .EAType 
+	{
+		do decompositions 
+		{
+			if not $TypesInEAXML =~ oid%wildsp then
+				variable 'TypesInEAXML' append oid ' ' close
+			endif
+		}
+	}
+	foreach .(ArrayDatatype | CompositeDatatype  | EABoolean | EANumerical | EAString | Enumeration | RangeableValueType | Quantity | Unit | FunctionClientServerInterface) {
+		if not $dataTypesDefined =~ oid%wildsp then
+			variable 'dataTypesDefined' append oid ' ' close
+		endif
+	}
+}
+
+/* checks if all types are defined */
+$ReportedTypeDefsErrors = ' ' 
+foreach .Package 
+{
+	do decompositions 
+	{
+		_checkUsedTypesInEAXML()
+	}
+}

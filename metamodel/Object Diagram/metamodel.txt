@@ -1,0 +1,322 @@
+==========================
+Graph Type
+==========================
+Object Diagram
+	Object diagram shows specific instances of classes and specific links between instances at some moment of time.
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Object [UML]
+	An object denotes to an instance of a class. An object has six properties: name of instance, name of class of that instance, multiplicity, it's attribute values, stereotype and documentation.
+	---------------------------------------------
+	Object name: String
+	Class: Class [UML]
+	Multiple?: Boolean
+	Variables: OrderedCollection (Variable [UML])
+	Stereotype: String
+	Documentation: Text
+Package
+	A package is used for grouping elements and organizing models: a system may be thought of as a single high-level package included other model elements and other packages. Depending on the graph type used a package can contain a set of use cases, classes or other packages. Each package is represented with a folder symbol with name of the package inside the symbol and steretotype of the package above the symbol.
+	---------------------------------------------
+	Package name: String
+	Stereotype: String
+	Documentation: Text
+OR construct
+	OR construct is used to restrict the combinations of valid associations. OR constuct can be attached to association by selecting the association, choosing add new role from the pop-up menu and attaching it to the OR construct.
+	---------------------------------------------
+Note text
+	Note is a special object for adding additional text anywhere in the graphs. It can be linked to another design objects with a note connection relationship.
+	---------------------------------------------
+	Note text: Text
+	Stereotype: String
+
+==========================
+Relationship Types
+==========================
+Association [UML]
+	An association describes a semantic connection between two classes. Each association relationship is characterized derivation rules and documentation. The roles of the association are further characterized to define associations in more detaile with the following properties:
+	- association name according to the direction of the associaton 
+	- role name to characterize the class/objects role in the relationship
+	- multiplicity constraint 
+	- ordered? to define whether links between objects have order
+	- navigable? to indicate that navigation is supported along the association relationship towards the class/object attached to the arrow, and 
+	- qualifiers to define values which serve to partition the set of objects associated with an object across an association.
+	Binary associations are most common, but n-ary connection can be specified with an ternary association. Also association class, OR association, and note connection can be attached to aggregations by selecting the relationship and then adding a new role to the relationship through a selection from a pop-up menu.
+	---------------------------------------------
+	Association name: String
+	Derived?: Boolean
+	Derivation rules: OrderedCollection (String)
+	Documentation: Text
+Aggregation
+	Aggregation is a mechanism for structuring the class/object model. It permits the construction of aggregate class/object from other component classes/object. Each aggregation relationship is characterized with name, derivation rules, and documentation attached to the relationship and with the role related properties. The whole role has multiplicity constraint and composition? to define whether the composite owns its parts (i.e. parts live inside the whole and they will be destroyed together with the whole). The part role is characterized by the role name, multiplicity, whether links between objects have order, indicate that navigation is supported along the aggregation towards the class attached to the arrow, and to define values which serve to partition the set of objects associated with an object across an association (Qualifiers).
+	Also association class, OR associations, and note connections can be attached to aggregations by selecting the relationship and then adding a new role to the relationship through a selection from a pop-up menu.
+	---------------------------------------------
+	Association name: String
+	Derivation rules: OrderedCollection (String)
+	Documentation: Text
+Generalization [UML]
+	Generalization is used to identify inheritance hierarchies between classes. With inheritance we can identify specialized classes (ie. subclasses) and generalized classes (ie. superclasses). It has following properties: 
+	- discriminator to define the partition of the subtypes of the superclass.
+	- constraints to specify whether the descendant can be descended from more than one of the subclasses (value = overlapping) (i.e. can use multiple inheritance), or not (constraint value = disjoint). 
+	- visibility to define in more detail (e.g. public) what is the scope of the of inheritance
+	- complete? to specify that all subclasses are specified and thus no additional subclasses are not expected.
+	- derivation rules to define rules for applying the inheritance.
+	---------------------------------------------
+	Discriminator: String
+	Constraint: String
+	Visibility: String
+	Virtual?: Boolean
+	Completeness: String
+	Derivation rules: OrderedCollection (String)
+Dependency [UML]
+	Dependency show client-supplier links dependencies between logical elements. The client, pointed by an arrow, is dependent in some way on the client.
+	---------------------------------------------
+	Stereotype: String
+	Alias name: String
+Ternary association
+	N-ary connections can be specified with an ternary association showing a semantic connection between more than two classes. Each ternary association may have derivation rules and documentation as well as ternary role related properties:
+	An association describes a semantic connection between two classes. Each association relationship is characterized derivation rules and documentation. The roles of the association are further characterized to define associations in more detaile with the following properties:
+	- association name according to the direction of the associaton 
+	- role name to characterize the class/objects role in the relationship
+	- multiplicity constraint 
+	- ordered? to define whether links between objects have order
+	- navigable? to indicate that navigation is supported along the association relationship towards the class/object attached to the arrow, and 
+	- qualifiers to define values which serve to partition the set of objects associated with an object across an association.
+	
+	Also link attributes and note connections can be attached to associations by selecting the relationship and then adding a new role to the relationship through a selection from a pop-up menu.
+	---------------------------------------------
+	Association name: String
+	Derived?: Boolean
+	Derivation rules: OrderedCollection (String)
+	Documentation: Text
+Note connection
+	Note connection can be used to link a note text to related element in a model. A note connection is represented by a grey line.
+	---------------------------------------------
+
+==========================
+Role Types
+==========================
+Association class
+Association role
+	Role name: String
+	Multiplicity: String
+	Ordered?: Boolean
+	Navigable?: Boolean
+	Properties: String
+	Qualifiers: OrderedCollection (Attribute [UML])
+	Association name: String
+Client
+Note part
+Object part
+Or association
+Part
+	Role name: String
+	Multiplicity: String
+	Ordered?: Boolean
+	Navigable?: Boolean
+	Properties: String
+	Qualifiers: OrderedCollection (Attribute [UML])
+Specialization
+Superclass
+Supplier
+Ternary role
+	Role name: String
+	Multiplicity: String
+	Ordered?: Boolean
+	Navigable?: Boolean
+	Properties: String
+	Qualifiers: OrderedCollection (Attribute [UML])
+	Association name: String
+Whole
+	Multiplicity: String
+	Composition?: Boolean
+
+==========================
+Extra Types
+==========================
+State Machine Diagram
+	A state machine diagram is used to show the state space of an instance of a class, the events that cause a transition from one state to another, and the actions that result from a state change.
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+_Unified Modeling Language
+	This UML metamodel is based on the 2.0 Draft Adopted Specification.
+	---------------------------------------------
+Attribute [UML]
+	Name: String
+	Data type: String
+	Default value: String
+	Stereotype: String
+	Visibility: String
+	Scope: String
+	Access: String
+	Derived?: Boolean
+	Persistent?: Boolean
+	Constraints: Text
+	Documentation: Text
+Class [UML]
+	An class describes a group of objects with similar properties (attributes), common behaviour (operations), common relationships to other objects, and common semantics. Class is represented as a box with three parts each including different properties. Class name is in the first part of the class box toghether with a stereotype. List of attributes are in the second part, and list of operations are in the last box. Class can be characterized according to:
+	- package they belong
+	- whether it is abstract
+	- whether it is persistent
+	- how the element may be overridden by the subclass. Values: virtual - fully defined and may be overridden, leaf - fully defined and may not be overridden, deferred - protocol only defined and must be overridden, extensible - may be extended but not overridden
+	- role (model, view, controller)
+	- template parameters
+	- constraints
+	- invariant information
+	- derivation rules
+	- responsibility
+	- documentation, and 
+	- simple symbol? to choose whether the whole class symbol is shown or only class name and possible template parameters.
+	
+	Each attribute in a list field is used for entering in more detail characteristics of an attribute. These include: 
+	- attribute name
+	- data type
+	- initial value
+	- stereotype
+	- visibility (public, private, or protected)
+	- scope (class, instance, or class-instance)
+	- access for the value
+	- derived? to inform that the actual value is derived
+	- persistent?
+	- constraints
+	- documentation
+	
+	A operation is a specific behavior that an object is responsible for exhibiting. Operation list field is used for adding in more detail specifications of an operation. Each operation can be specified by:
+	- name
+	- parameters containing parameter name, type and default value
+	- return type (i.e. possibly object to be returned)
+	- method body or operation specification
+	- whether the operation can be overridden (virtual - fully defined and may be overridden, leaf - fully defined and may not be overridden, deferred - protocol only defined and must be overridden, extensible - may be extended but not overridden)
+	- stereotype (e.g for Smalltalk protocols)
+	- visibility (public, private, or protected)
+	- operation type (class or instance)
+	- preconditions
+	- postconditions
+	- documentation
+	---------------------------------------------
+	Class name: String
+	Attributes: OrderedCollection (Attribute [UML])
+	Operations: OrderedCollection (Operation [UML])
+	Package: Package
+	Abstract?: Boolean
+	Persistent?: Boolean
+	Stereotype: String
+	Overridability: String
+		How the element may be overridden by the subclass. Values:
+		virtual - fully defined and may be overridden
+		leaf - fully defined and may not be overridden
+		deferred - protocol only defined and must be overridden
+		extensible - may be extended but not overridden
+		---------------------------------------------
+	Role: String
+	Parameters: OrderedCollection (Parameter)
+	Constraints: Text
+	Invariant: Text
+	Derivation rules: OrderedCollection (String)
+	Responsibility: Text
+	Documentation: Text
+	Simple symbol?: Boolean
+Operation [UML]
+	Operation name: String
+	Parameters: OrderedCollection (Parameter)
+	Return type: String
+	Overridability: String
+		How the element may be overridden by the subclass. Values:
+		virtual - fully defined and may be overridden
+		leaf - fully defined and may not be overridden
+		deferred - protocol only defined and must be overridden
+		extensible - may be extended but not overridden
+		---------------------------------------------
+	Stereotype: String
+	Visibility: String
+	Operation type: String
+	Preconditions: Text
+	Postconditions: Text
+	Body: Text
+	Documentation: Text
+Parameter
+	Parameter: String
+	Data type: String
+	Direction: String
+	Default value: String
+Person
+	Person is used to describe developers involved in a project (i.e. attached to the project model) and authors of developed models. Person can be characterized with a name, e-mail address, and with a contact address. 
+	---------------------------------------------
+	Name: String
+	E-mail: String
+	Contact address: Text
+Variable [UML]
+	Value: String
+	Attribute: Attribute [UML]
+From
+General association role
+	Role name: String
+	Multiplicity: String
+	Ordered?: Boolean
+	Navigable?: Boolean
+	Properties: String
+Generalization
+
+==========================
+Bindings
+==========================
+Aggregation
+	Whole: Object [UML]
+1..N	Part: Object [UML]
+0..1	Note part: Note text
+0..1	Association class: Object [UML]
+0..1	Or association: OR construct
+Association [UML]
+2..N	Association role: Object [UML]
+0..1	Association class: Object [UML]
+0..1	Note part: Note text
+0..1	Or association: OR construct
+Dependency [UML]
+	Client: Object [UML], Package
+	Supplier: Object [UML], Package
+0..1	Note part: Note text
+Generalization [UML]
+1..N	Specialization: Object [UML]
+	Superclass: Object [UML]
+0..1	Note part: Note text
+Generalization [UML]
+1..N	Specialization: Package
+	Superclass: Package
+0..1	Note part: Note text
+Note connection
+	Note part: Note text
+	Object part: Object [UML], OR construct, Package
+Note connection
+	Object part: Object [UML], OR construct, Package
+	Note part: Note text
+Ternary association
+3..N	Ternary role: Object [UML]
+0..1	Association class: Object [UML]
+0..1	Note part: Note text
+0..1	Or association: OR construct
+
+==========================
+Constraints
+==========================
+Property "Object name" in Object [UML] must have unique values
+Property "Package name" in Package must have unique values
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	Object [UML]
+		State Machine Diagram
+Decompositions:
+	Package
+		Object Diagram
+

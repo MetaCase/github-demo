@@ -1,0 +1,17 @@
+_FB_Simulation()
+variable 'files' append subreport '_default directory' run 'FB_Simulation.exp ' close
+filename subreport '_default directory' run 'FB_Simulation.exp' write
+'(* @PATH := ''\/_TestSuite\/Simulation'' *)
+FUNCTION_BLOCK FB_Simulation
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	'id%firstLower%var'Sim: FB_'id%firstUpper%var'Sim;
+END_VAR
+'
+id%firstLower%var 'Sim();
+
+END_FUNCTION_BLOCK'
+close

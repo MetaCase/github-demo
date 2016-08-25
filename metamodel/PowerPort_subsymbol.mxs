@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol">
+	<librarySymbol name="PowerPort_subsymbol">
+		<objectSymbol offset="40,30" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="40,30 54,30 54,44 40,44 40,30" targetPointX="47" targetPointY="37" usesGrid="true"></defaultConnectable>
+			<svg baseProfile="tiny" height="44" version="1.2" width="54" xmlns="http://www.w3.org/2000/svg">
+				<rect fill="rgb(224,255,224)" height="14" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="14" x="40" y="30">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</rect>
+				<polygon fill="rgb(255,255,0)" points="50.9667,32.8 47.7933,32.8 43.0333,37.6 46.2067,37.6 43.0333,41.2 50.9667,36.4 47.7933,36.4" stroke="rgb(255,0,0)" stroke-width="0">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</polygon>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

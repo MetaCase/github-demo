@@ -1,0 +1,7 @@
+Report 'Transitions between states'
+/*Lists all states and transitions between states  */ 
+foreach .State 
+	{ '	State: ' id ' is entered from following other states: '
+	dowhile  ~To~From.State {id ', '} newline
+	}
+endreport

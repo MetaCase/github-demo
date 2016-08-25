@@ -1,0 +1,55 @@
+Report '_checkings for the graph'
+/*******************/
+/* Model checkings */
+/*******************/
+if not id then
+	_reportWarnings()
+	'Warning: There is no identifier for model: (' type ')' newline
+endif
+if type <> 'HardwareComponentType' then
+	if not id =/ '[a-zA-Z]([a-zA-Z0-9]|_[a-zA-Z0-9])*_?' then
+		_reportWarnings()
+		'Warning: There are illegal character(s) in the graph''s FunctionName/Short name property ' id; newline
+	endif
+else
+	do :Type 
+	{	if not :Short name; =/ '[a-zA-Z]([a-zA-Z0-9]|_[a-zA-Z0-9])*_?' then
+			_reportWarnings()
+			'Warning: There are illegal character(s) in graph''s name ' :Short name; ' <' type '>' newline
+		endif
+	}
+endif
+
+/* Checking for IsElementary property */
+if :IsElementary; then
+	@hasElements = 'F'
+	foreach .(*Prototype) {	@hasElements = 'T' }
+	if @hasElements; = 'T' then
+		_reportWarnings()
+		'Warning: ' type ' is marked elementary but it has prototypes defined as parts' newline
+	endif
+endif
+
+/* Checking for the DesignFunctionType which Type is defined as HardwarefunctionType */
+@HardwareFunctionTypeFound = ''
+$prototype_list = ''
+@delimeter = ''
+if type = 'DesignFunctionType' And :Type = 'HardwareFunctionType' then
+	foreach .DesignFunctionPrototype 
+	{ 	do decompositions 
+		{	if :Type <> 'HardwareFunctionType' then
+				@HardwareFunctionTypeFound = 'F'
+				variable 'prototype_list' append @delimeter id ' <' :Type '>' close
+				@delimeter = ', '
+			endif
+		}
+	}
+endif
+@delimeter = ''
+
+if @HardwareFunctionTypeFound; <> '' then
+	_reportWarnings()
+	'Warning: Model ' id ' <' :Type '> should contain only prototypes typed as HardwareFunctionType, now it contains following prototypes: ' $prototype_list newline
+endif
+
+endreport

@@ -1,0 +1,18 @@
+Graph_XmasTree_Decoration_sysadmin_3500723973
+2011
+19_394
+XmasTree Decoration
+Graph: 2011 <XmasTree Decoration> 19_394
+	Name: 2011
+Object: Christmas tree decoration with MetaEdit+ http://youtu.be/GR4r0u1m2Ds
+The decorations are based on the properties and subgraphs of the tree, strung along the template paths defined in the symbol. <Note> 19_1697
+	Documentation: Christmas tree decoration with MetaEdit+ http://youtu.be/GR4r0u1m2Ds
+The decorations are based on the properties and subgraphs of the tree, strung along the template paths defined in the symbol.
+Object: Angel <XmasTree> 19_633
+	Top decoration: Angel
+	Decomposed to: Vintage <CandleSet>
+	Explode to: Vintage <DecoBox>
+Object: Star <XmasTree> 19_825
+	Top decoration: Star
+	Decomposed to: Modern <CandleSet>
+	Explode to: Modern <DecoBox>

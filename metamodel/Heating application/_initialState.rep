@@ -1,0 +1,12 @@
+_initialState()
+/* produces the initial state for the case statement */
+'	'_gName()'_SM_Initial:
+		
+		IF NOT '_gName()'_SM_bATransitionWasPerformed THEN
+				'_gName()'_SM_eCurrentState := '_gName()'_SM_'
+		foreach .Start {
+			do ~From~To.() {id%var%upper}
+		}
+		';
+				'_gName()'_SM_bATransitionWasPerformed := TRUE;' newline
+'		END_IF' newline newline

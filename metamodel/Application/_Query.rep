@@ -1,0 +1,21 @@
+Report '_Query'
+/* Produce single field query code */
+'def ' subreport '_Internal name' run '():' newline
+'# Query: ' :Prompt; newline
+if :Return variable \(optional\); then
+	'	global ' subreport '_Return variable name' run newline
+endif
+'	' subreport '_Return variable name' run ' = appuifw.query(u"' :Prompt '", ''' :Query type; ''''
+if :Initial value; then 
+	if :Query type; ='number' then 
+		', ' :Initial value;
+	else
+		', u"' :Initial value; '"'
+	endif
+endif
+')' newline
+'	if ' subreport '_Return variable name' run ':' newline
+subreport '_next query element' run
+'	else: # Cancel selected' newline
+subreport '_Back' run
+endreport

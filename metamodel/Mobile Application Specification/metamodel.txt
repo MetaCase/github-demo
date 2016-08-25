@@ -1,0 +1,154 @@
+==========================
+Graph Type
+==========================
+Mobile Application Specification
+	This is a modeling language for demonstrating the UI interaction design.
+	---------------------------------------------
+	Model name: String
+	Description: Text
+	View: String
+	Display: String
+	UI category: String
+
+==========================
+Object Types
+==========================
+Start
+Stop
+	Stop type: String
+Form
+	Form title: String
+	Form title ID: String
+	Title icon: String
+	Form list: Text
+List
+	List title: String
+	List title ID: String
+	Title icon: String
+	Selection type: String
+	Scrolling: String
+	Density level: String
+	List items: Text
+	Sorting order: String
+	Search enabled: String
+ListBox
+	Listbox title: String
+	Listbox title ID: String
+	Title icon: String
+	ListBox style: String
+	Selection type: String
+	LB show selection number: Boolean
+	LB show heading icons: Boolean
+	LB show detail icons: Boolean
+	ListBox items: Text
+	Sorting order: String
+Query
+	Query title: String
+	Title ID: String
+	Title icon: String
+	Prompt: String
+	Prompt ID: String
+	Query type: String
+	Style: String
+TimedMessageBox
+	Message text: Text
+	Message text ID: String
+	Style: String
+	Timeout: Number
+Condition
+	Condition: Text
+	Comparison: String
+	Condition value: String
+Reference
+	Reference ID: String
+Menu
+	Menu items: OrderedCollection (Softkey menu)
+Sound
+	Sound: String
+	Sound ID: String
+	Sound ID format: *.mp3: String
+Note
+	Note text: Text
+
+==========================
+Relationship Types
+==========================
+Flow
+Soft key
+	Soft key label: String
+	Softkey label ID: String
+Condition
+	Result: String
+Menu
+	Menu label: String
+Back
+Note
+
+==========================
+Role Types
+==========================
+From
+To
+Back from
+Back to
+Condition from
+Condition to
+Note from
+Note to
+
+==========================
+Extra Types
+==========================
+Softkey menu
+	Menu label: String
+	Localization ID: String
+Softkey port
+	Port name: String
+
+==========================
+Bindings
+==========================
+Back
+1	Back from #(Softkey port): Form, List, ListBox, Query
+1	Back to: Condition, Form, List, ListBox, Menu, Note, Query, Reference, Sound, Stop, TimedMessageBox
+Condition
+1	Condition from: Condition
+1	Condition to: Condition, Form, List, ListBox, Menu, Note, Query, Reference, Sound, Stop, TimedMessageBox
+Flow
+1	From: Form, List, ListBox, Query, Reference, Sound, Start, TimedMessageBox
+1	To: Condition, Form, List, ListBox, Menu, Note, Query, Reference, Sound, Stop, TimedMessageBox
+Menu
+1	From: Menu
+1	To: Condition, Form, List, ListBox, Menu, Note, Query, Reference, Sound, Stop, TimedMessageBox
+Note
+1	Note from: Note
+1	Note to: Condition, Form, List, ListBox, Menu, Query, Reference, Sound, Start, Stop, TimedMessageBox
+Soft key
+1	From #(Softkey port): Form, List, ListBox, Query
+1	To: Condition, Form, List, ListBox, Menu, Note, Query, Reference, Sound, Stop, TimedMessageBox
+
+==========================
+Constraints
+==========================
+Note may be in at most 1 Note from role
+Sound may be in at most 1 From role
+Start may be in at most 1 From role
+Start may occur at most 1 time
+Property "Reference ID" in Reference must have unique values
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	Reference
+		Mobile Application Specification
+
+==========================
+Generators
+==========================
+Localization used
+
+==========================
+Sub-Generators
+==========================
+

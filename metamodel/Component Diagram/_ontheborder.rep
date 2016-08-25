@@ -1,0 +1,33 @@
+Report '_ontheborder'
+/* Checks whether any other object cuts the border line (rectangle). Returns the cutting edge letter:
+(T(op), R(ight), B(ottom) and L(eft) */
+
+$left=left
+$right=right
+$top=top
+$bottom=bottom
+
+foreach .() {
+	if oid; <> oid;1 then
+		$comparison_object_left=left
+		$comparison_object_right=right
+		$comparison_object_top=top
+		$comparison_object_bottom=bottom
+
+/* On the Left border*/
+		if ($left < $comparison_object_left num) And ($right > $comparison_object_left num) And ($right < $comparison_object_right num) And ($top > $comparison_object_top num) And ($bottom < $comparison_object_bottom num) then 'L'
+		endif
+
+/* On the Right border*/
+		if ($right > $comparison_object_right num) And ($left < $comparison_object_right num) And ($left > $comparison_object_left num) And ($top > $comparison_object_top num) And ($bottom < $comparison_object_bottom num) then 'R'
+		endif
+
+/* On the Top border*/
+		if ($top < $comparison_object_top num) And ($bottom > $comparison_object_top num) And ($bottom < $comparison_object_bottom num) And ($left > $comparison_object_left num) And ($right < $comparison_object_right num) then 'T'
+		endif
+
+/* On the Bottom border*/
+		if ($bottom > $comparison_object_bottom num) And ($top < $comparison_object_bottom num) And ($top > $comparison_object_top num) And ($left > $comparison_object_left num) And ($right < $comparison_object_right num) then 'B' endif
+		endif
+}
+endreport

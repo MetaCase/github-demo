@@ -1,0 +1,29 @@
+Report '_Cs_Watch'
+variable 'XAMLFile' write id close
+if not $XAMLFiles =~ $XAMLFile%wildsp then		
+	variable 'XAMLFiles' append 
+		$cr $XAMLFile
+	close
+	$cr = newline
+
+   filename $srcPath id '.xaml' encoding 'UTF-8' write
+	   subreport '_Cs_Watch_Xaml_for_' :Generation target platform;1%platform run 
+	close 
+
+	filename $srcPath id '.xaml.cs' encoding 'UTF-8' write
+		subreport '_Cs_Watch_Xaml_cs' run 
+	close 
+
+	do .Display
+	{ subreport '_Cs_Display' run }
+
+	do .LogicalWatch
+	{
+		do decompositions
+		{
+			subreport '_Cs_csfile' run
+		}
+	}
+endif
+
+endreport

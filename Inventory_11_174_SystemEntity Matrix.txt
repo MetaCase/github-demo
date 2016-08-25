@@ -1,0 +1,81 @@
+Graph_System_Entity_Matrix_user_3013235766
+Inventory
+11_174
+System/Entity Matrix
+Graph: Inventory <System/Entity Matrix> 11_174
+	Model name: Inventory
+	Status: draft
+	Authors: David Hill
+	Object: David Hill <Person> 11_3854
+		Name: David Hill
+		E-mail: mailto:info@metacase.com
+		Contact address: Park Court
+Upper Essex Street
+City 5
+B8 6QB
+	Documentation: 
+Object: Buy-order <Entity> 11_313
+	Entity name: Buy-order
+	Documentation: Sale department can do a new buy-order, when the "do buy order"-level of has been achieved.
+Object: Delivery info <Entity> 11_394
+	Entity name: Delivery info
+	Documentation: 
+Object: Inventory info <Entity> 11_1170
+	Entity name: Inventory info
+	Documentation: Inventory info contains details of all products stored in the inventory
+Object: Supplier <Entity> 11_1865
+	Entity name: Supplier
+	Documentation: Supplier delivers the products and part to the company.
+Object: Product <Entity> 11_3234
+	Entity name: Product
+	Documentation: Product is stored in the central warehouse
+Object: Reminder order <Entity> 11_3835
+	Entity name: Reminder order
+	Documentation: 
+Object: SupplierDB <System> 11_1090
+	Name: SupplierDB
+	Documentation: 
+Object: CustomerDB <System> 11_1785
+	Name: CustomerDB
+	Documentation: 
+Object: Speditors <System> 11_2568
+	Name: Speditors
+	Documentation: 
+Object: ProductDB <System> 11_2573
+	Name: ProductDB
+	Documentation: Database containing information about the products
+Object: Order <System> 11_3910
+	Name: Order
+	Documentation: 
+Relationship:  <Usage> 11_1118
+	Relationship name: 
+  Role: Data class part <Data class part>  Object: <Entity> 11_3835
+  Role: System part <System part>  Object: <System> 11_1090
+Relationship:  <Usage> 11_1305
+	Relationship name: 
+  Role: Data class part <Data class part>  Object: <Entity> 11_1865
+  Role: System part <System part>  Object: <System> 11_2573
+Relationship:  <Usage> 11_2664
+	Relationship name: 
+  Role: Data class part <Data class part>  Object: <Entity> 11_3835
+  Role: System part <System part>  Object: <System> 11_3910
+Relationship:  <Usage> 11_2672
+	Relationship name: 
+  Role: Data class part <Data class part>  Object: <Entity> 11_3234
+  Role: System part <System part>  Object: <System> 11_2573
+Relationship:  <Usage> 11_2879
+	Relationship name: 
+  Role: Data class part <Data class part>  Object: <Entity> 11_394
+  Role: System part <System part>  Object: <System> 11_2568
+Relationship:  <Usage> 11_3864
+	Relationship name: 
+  Role: Data class part <Data class part>  Object: <Entity> 11_1170
+  Role: System part <System part>  Object: <System> 11_2573
+Relationship:  <Usage> 11_3870
+	Relationship name: 
+  Role: Data class part <Data class part>  Object: <Entity> 11_313
+  Role: System part <System part>  Object: <System> 11_3910
+Relationship:  <Usage> 11_4042
+	Relationship name: 
+  Role: Data class part <Data class part>  Object: <Entity> 11_313
+  Role: System part <System part>  Object: <System> 11_1785

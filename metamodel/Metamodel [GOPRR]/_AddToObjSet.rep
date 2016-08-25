@@ -1,0 +1,5 @@
+_AddToObjSet(@ns, @gOid)
+/* Avoid adding the same object multiple times to this Graph's objectSet */
+if :Occurrence; <> '0' then
+	__Unique('objSet' @gOid, id if @ns then '_' :__UUID; endif)
+endif

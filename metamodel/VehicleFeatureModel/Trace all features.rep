@@ -1,0 +1,31 @@
+Report 'Trace all features'
+/* reports all features of EAST-ADL and their links to other elements */
+_translators()
+$reported = ' '
+'FEATURES AND THEIR RELATIONSHIPS:' newline newline
+do graphs {
+	foreach .(*Feature*) {
+		if not $reported =~ oid%wildsp then
+			variable 'reported' append oid ' ' close
+			$objectType = type
+			id ' <' $objectType '>' newline
+			do :Description {id newline}
+			do graphs {
+				foreach .(*Feature*) where oid = oid;2 {
+					$graphType = type;1
+					'- in ' id;1 ' <' $graphType '>' newline
+					do >() {
+						dowhile ~(^Comment).() {
+							if oid <> oid;2 then
+								$objectType = type
+								'	- <' type;1 '> relationship with ' id ' <' $objectType '>' newline
+							endif
+						}
+					}
+				}
+			}
+			newline
+		endif
+	}
+}
+endreport

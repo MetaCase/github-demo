@@ -1,0 +1,27 @@
+__LiveCheck()
+_translators()
+$errors = '0'
+$elems = '0'
+foreach .Start {
+   $elems++%null
+}
+if $elems <> '1' then
+	'One Start object is needed.' newline 
+	$errors++%null
+endif
+
+_hasRelationships()
+_legalSensorCondition()
+
+foreach .Valve; where :Valve type; = 'Manual'
+{
+ 	if ~Valve action; then
+		'Valve ' :Name ' is not a controlled valve. Its position can not be controlled by the heating application. Change the valve type.' 
+	newline $errors++%null
+	endif
+}
+foreach .Sensor; where :Function = 'Indicator'
+{
+ 'Sensor ' :Name ' provides indicator only. It can not be used to send events to control the system. Choose other kind of sensor.' newline $errors++%null
+}
+'Number of errors/warnings: ' $errors

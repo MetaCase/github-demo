@@ -1,0 +1,88 @@
+==========================
+Graph Type
+==========================
+Process/System Matrix
+	Process/System Matrix identifies processes that receive or do not receive system support. It allows also to specify what system support is currently available or what is planned. The matrix consist of two axis, in which first one includes all the relevant business processes, and second one available systems.
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Business process
+	A business process represents a function which produce some products (material or services) to other parts of the company or the chain. A business process is represented by a rectangle with a horizontal line inside it. Business process has five properties: name, process type, value adding, costs and documentation. Specifically, process type is used to specify the business processes in more detail. The process type can be selected from predefined types, (inbound, operations, outbound, sales, service, delivery, development, administration) or by entering your own process type. A value adding is used to specify results of the process, i.e. how much it has added the value to the chain. A cost is used to enter the expenses of a process.
+	---------------------------------------------
+	Name: String
+	Type: String
+	Value adding: String
+	Costs: String
+	Documentation: Text
+System
+	System specify either manual or computer based systems that are available in the company or that are planned. Examples of systems are invoicing system or customer order entry.
+	---------------------------------------------
+	Name: String
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+System support
+	Support can be either current, planned, or current and planned.
+	---------------------------------------------
+	Support status: String
+
+==========================
+Role Types
+==========================
+Process part
+System part
+
+==========================
+Extra Types
+==========================
+Data Flow Diagram
+	Data flow diagrams are perhaps the most well known and widely used modelling technique. Their basic idea is to represent the flow of data through a system.
+	
+	The objects in this method are 'process', 'store' and 'external' and a relationship between these objects is 'Flow'.
+	
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+_Business Systems Planning
+_Structured Analysis and Design
+Person
+	Person is used to describe developers involved in a project (i.e. attached to the project model) and authors of developed models. Person can be characterized with a name, e-mail address, and with a contact address. 
+	---------------------------------------------
+	Name: String
+	E-mail: String
+	Contact address: Text
+Data class part
+
+==========================
+Bindings
+==========================
+System support
+	Process part: Business process
+	System part: System
+System support
+	System part: System
+	Process part: Business process
+
+==========================
+Constraints
+==========================
+Property "Name" in Business process must have unique values
+Property "Name" in System must have unique values
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	Business process
+		Data Flow Diagram
+

@@ -1,0 +1,227 @@
+Graph_BPMN_user_3356593652
+Pools and lanes
+7_286
+BPMN
+Graph: Pools and lanes <BPMN> 7_286
+	Id: 
+	Model name: Pools and lanes
+	Version: 
+	Author: 
+	Language: English
+	Documentation: 
+Object: Handle medicine <Artifact> 7_1538
+	Artifact type: Group
+	Artifact name: Handle medicine
+Object: End <End> 7_828
+	Result: None
+	Object: None <None> 7_1987
+	Event name: 
+	Description: 
+Object: End <End> 7_1809
+	Result: 
+	Event name: 
+	Description: 
+Object: Patient <Lane> 7_555
+	Lane name: Patient
+Object: Receptionist / Doctor <Lane> 7_652
+	Lane name: Receptionist / Doctor
+Object: Ilness occurs <Start> 7_926
+	Trigger: None
+	Object: None <None> 7_1145
+	Event name: Ilness occurs
+	Description: 
+Object: Start <Start> 7_1970
+	Trigger: None
+	Object: None <None> 7_1946
+	Event name: 
+	Description: 
+Object: Receive medicine request <Task> 7_393
+	Task name: Receive medicine request
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Send doctor request <Task> 7_566
+	Task name: Send doctor request
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Receive doctor request <Task> 7_1008
+	Task name: Receive doctor request
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Receive Appt. <Task> 7_1108
+	Task name: Receive Appt.
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Receive symptoms <Task> 7_1262
+	Task name: Receive symptoms
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Send Appt. <Task> 7_1369
+	Task name: Send Appt.
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Receive medicine <Task> 7_1449
+	Task name: Receive medicine
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Send medicine <Task> 7_1531
+	Task name: Send medicine
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Send medicine request <Task> 7_1635
+	Task name: Send medicine request
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Send symptoms <Task> 7_1714
+	Task name: Send symptoms
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Send prescription pickup <Task> 7_2050
+	Task name: Send prescription pickup
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Receive prescription pickup <Task> 7_2099
+	Task name: Receive prescription pickup
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Relationship: Pickup your medicine <Message flow> 7_315
+	Flow name: Pickup your medicine
+  Role: Message from <Message from>  Object: <Task> 7_2050
+  Role: Message to <Message to>  Object: <Task> 7_2099
+Relationship: Want to see doctor <Message flow> 7_866
+	Flow name: Want to see doctor
+  Role: Message from <Message from>  Object: <Task> 7_566
+  Role: Message to <Message to>  Object: <Task> 7_1008
+Relationship: Feeling sick <Message flow> 7_889
+	Flow name: Feeling sick
+  Role: Message from <Message from>  Object: <Task> 7_1714
+  Role: Message to <Message to>  Object: <Task> 7_1262
+Relationship: Go to see doctor <Message flow> 7_1317
+	Flow name: Go to see doctor
+  Role: Message from <Message from>  Object: <Task> 7_1369
+  Role: Message to <Message to>  Object: <Task> 7_1108
+Relationship: Need the medicine <Message flow> 7_1347
+	Flow name: Need the medicine
+  Role: Message from <Message from>  Object: <Task> 7_1635
+  Role: Message to <Message to>  Object: <Task> 7_393
+Relationship: Here is the medicine <Message flow> 7_1865
+	Flow name: Here is the medicine
+  Role: Message from <Message from>  Object: <Task> 7_1531
+  Role: Message to <Message to>  Object: <Task> 7_1449
+Relationship:  <Sequence flow> 7_341
+	Name: 
+  Role: F <From>  Object: <Task> 7_1531
+	Conditional: F
+  Role: To <To>  Object: <End> 7_828
+Relationship:  <Sequence flow> 7_373
+	Name: 
+  Role: F <From>  Object: <Start> 7_926
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_566
+Relationship:  <Sequence flow> 7_535
+	Name: 
+  Role: F <From>  Object: <Task> 7_1108
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_1714
+Relationship:  <Sequence flow> 7_562
+	Name: 
+  Role: F <From>  Object: <Task> 7_1008
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_1369
+Relationship:  <Sequence flow> 7_797
+	Name: 
+  Role: F <From>  Object: <Task> 7_566
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_1108
+Relationship:  <Sequence flow> 7_834
+	Name: 
+  Role: F <From>  Object: <Task> 7_1262
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_2050
+Relationship:  <Sequence flow> 7_910
+	Name: 
+  Role: F <From>  Object: <Task> 7_2050
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_393
+Relationship:  <Sequence flow> 7_1374
+	Name: 
+  Role: F <From>  Object: <Task> 7_393
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_1531
+Relationship:  <Sequence flow> 7_1401
+	Name: 
+  Role: F <From>  Object: <Task> 7_1449
+	Conditional: F
+  Role: To <To>  Object: <End> 7_1809
+Relationship:  <Sequence flow> 7_1420
+	Name: 
+  Role: F <From>  Object: <Task> 7_1714
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_2099
+Relationship:  <Sequence flow> 7_1664
+	Name: 
+  Role: F <From>  Object: <Task> 7_2099
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_1635
+Relationship:  <Sequence flow> 7_1689
+	Name: 
+  Role: F <From>  Object: <Task> 7_1635
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_1449
+Relationship:  <Sequence flow> 7_1891
+	Name: 
+  Role: F <From>  Object: <Task> 7_1369
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_1262
+Relationship:  <Sequence flow> 7_1916
+	Name: 
+  Role: F <From>  Object: <Start> 7_1970
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_1008

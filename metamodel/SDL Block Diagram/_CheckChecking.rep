@@ -1,0 +1,8 @@
+_CheckChecking()
+_translators()
+$errors = '0'
+_mixBlocks()
+_channelConnections()
+if $errors = '0' then
+	'No warnings'
+endif

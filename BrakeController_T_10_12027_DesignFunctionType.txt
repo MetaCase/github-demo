@@ -1,0 +1,90 @@
+Graph_FunctionalAnalysisArchitecture_user_3399893275
+BrakeController_T
+10_12027
+DesignFunctionType
+Graph: BrakeController_T <DesignFunctionType> 10_12027
+	__UUID: r0EiebxCRFmO4TIYY9szgg
+	FunctionName: BrakeController_T
+	Name: BrakeControllerType
+	Type: DesignFunctionType
+	IsElementary: T
+	Description: 
+	Show oid: F
+Object: BrakeRequestPort <InFlowPort> 10_12058
+	__UUID: EBzYlmafQ76pYPYx7ZVPWw
+	Short name: BrakeRequest
+	Name: BrakeRequestPort
+	Description: Brake In port
+	Type: AA_PercentType
+	Object: AA_PercentType <RangeableValueType> 10_10754
+		__UUID: uotvCne1TqebD/jaYChk/w
+		Short name: AA_PercentType
+		Name: 
+		Accuracy: 1
+		Resolution: 1.0
+		SignificantDigits: 3
+		BaseRangeable: MyFloat
+		Object: MyFloat <EANumerical> 10_10594
+			__UUID: 27l5WWjuQwK0Pa07lKMlgA
+			Short name: MyFloat
+			Name: 
+			Min: 1
+			Max: 4
+			Unit: MyTimeUnit
+			Object: MyTimeUnit <Unit> 10_10622
+				__UUID: BVNCN7MGSLmdAwSa5IEARQ
+				Short name: MyTimeUnit
+				Name: 
+				Factor: 1
+				Offset: 0
+				Symbol: ms
+				Quantity: MyTimeQuantity
+				Object: MyTimeQuantity <Quantity> 10_10656
+					__UUID: r/P2/T70SbmRNPg07rPakA
+					Short name: MyTimeQuantity
+					Name: 
+					AmountOfSubstanceExp: 0
+					ElectricCurrentExp: 0
+					LengthExp: 0
+					LuminousIntensityExp: 0
+					MassExp: 0
+					ThermodynamicTemperatureExp: 0
+					TimeExp: 1
+					Description: 
+				UnitReference: 
+				Description: 
+			Description: 
+		Description: 
+Object: BrakeTorqueFL <OutFlowPort> 10_12080
+	__UUID: 4b3Wv7BiQ0qdc8COQJ4WwQ
+	Short name: BrakeTorqueFL
+	Name: 
+	Description: 
+	Type: AA_TorqueType
+	Object: AA_TorqueType <RangeableValueType> 10_10562
+		__UUID: s8iMOlwdQ+WZAAlOkpuddQ
+		Short name: AA_TorqueType
+		Name: 
+		Accuracy: 1
+		Resolution: 1
+		SignificantDigits: 3
+		BaseRangeable: MyFloat
+		Description: 
+Object: BrakeTorqueFR <OutFlowPort> 10_12102
+	__UUID: olmDWC75Tu+uV0tENUQGEw
+	Short name: BrakeTorqueFR
+	Name: 
+	Description: 
+	Type: AA_TorqueType
+Object: BrakeTorqueRL <OutFlowPort> 10_12124
+	__UUID: oqhgjptuQm+hlKMnwVoIQQ
+	Short name: BrakeTorqueRL
+	Name: 
+	Description: 
+	Type: AA_TorqueType
+Object: BrakeTorqueRR <OutFlowPort> 10_12146
+	__UUID: y5UZaaFiSGSXVYsoWqot5A
+	Short name: BrakeTorqueRR
+	Name: 
+	Description: 
+	Type: AA_TorqueType

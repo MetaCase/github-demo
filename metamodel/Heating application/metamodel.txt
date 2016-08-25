@@ -1,0 +1,271 @@
+==========================
+Graph Type
+==========================
+Heating application
+	Heating application describes the behavior of the P&I application.
+	---------------------------------------------
+	System name: String
+		Mandatory name of the system.
+		---------------------------------------------
+	Description: Text
+	Use visualization: Boolean
+		Shows the model with enhanced readability.
+		---------------------------------------------
+
+==========================
+Object Types
+==========================
+Start
+	Start of the heating application.
+	---------------------------------------------
+State
+	State of the heating application.
+	---------------------------------------------
+	State name: String
+	Description: Text
+Stop
+	Stop of the heating application.
+	---------------------------------------------
+Condition
+	Condition: String
+Comparison
+	Comparison: String
+Burner
+	Burner is used to heat the water.
+	---------------------------------------------
+	Name: String
+		Mandatory name of the instrument.
+		---------------------------------------------
+Boiler
+	Boiler is a piece of equipment built for efficient heat transfer from one medium to another.
+	---------------------------------------------
+	Name: String
+		Mandatory name of the instrument.
+		---------------------------------------------
+Radiator
+	Radiator is a piece of equipment built for heat transfer from one medium (usually water) to to another (usually air).
+	---------------------------------------------
+	Name: String
+		Mandatory name of the instrument.
+		---------------------------------------------
+Pump
+	A pump is a device used to move fluids, such as liquids, gases or slurries. A pump displaces a volume by physical or mechanical action. A vacuum pump removes gas molecules from a sealed volume in order to leave behind a partial vacuum. A ompressor increases the pressure on a fluid to transport the fluid through a pipe.
+	---------------------------------------------
+	Name: String
+		Mandatory name of the pump.
+		---------------------------------------------
+	Pump type: String
+		Pump can be either:
+		- Regular pump: transports substance from input to output connection point
+		- Vacuum pump: with a suck and a blow connection point
+		- Venturi pump: with a suck, input and output connection point
+		---------------------------------------------
+Sensor
+	Measure physical characteristics of the gas or fluid stream (e.g. pressure, temperature, flow). Sensor unit can connected to the pipe with one or more connection points. Flow sensors need two connection points, others need one.
+	---------------------------------------------
+	Name: String
+		Mandatory name of the sensor.
+		---------------------------------------------
+	Mounting: String
+		Location of the measurement unit can be near the process, in the control room or out of sight.
+		---------------------------------------------
+	Measured variable: String
+		Measured unit can be pressure, level, flow or temperature.
+		---------------------------------------------
+	Function: String
+		Function of the measurement unit can be either indicator, recorder, controller or transmitter.
+		
+		---------------------------------------------
+Thermostat
+	Thermostat specifies the values controlled by the heating application.
+	---------------------------------------------
+	Name: String
+		Mandatory name of the thermostat.
+		---------------------------------------------
+	Description: Text
+Valve
+	Valve blocks and enables the flow of gas or fluid streams. Valves can be controlled manually or eletronically.
+	---------------------------------------------
+	Name: String
+		Mandatory name of the valve.
+		---------------------------------------------
+	Number of valve ends: String
+	Valve type: String
+		Valve can be normal, manual or control valve.
+		---------------------------------------------
+	Closing by: String
+Comment
+	Comment is used to show additional information wihtin the diagram.
+	---------------------------------------------
+	Description: Text
+
+==========================
+Relationship Types
+==========================
+Transition
+	Transition describes a change of the state. Usually a state causes some actions to happen (like opening valves, starting pumps etc).
+	---------------------------------------------
+Condition
+	Condition describes the complex conditional rule for the transition. I may connect elements giving the condition (e.g. sensor) and condition itself.
+	---------------------------------------------
+Action
+
+==========================
+Role Types
+==========================
+From
+To
+Valve action
+	Valve can be opened or closed. Valve may have more than two positions.
+	---------------------------------------------
+	Action: String
+		Valve can be either opened or closed.
+		---------------------------------------------
+	Valve position: String
+Action
+	Pump or burner can be set on or off.
+	---------------------------------------------
+	Action: String
+Cond
+Heat exchanger action
+	Heat exchanger can be asked to be warmed or not warmed.
+	---------------------------------------------
+	Action: String
+State entry exit
+Left
+Right
+Condition
+	NOT?: Boolean
+Boiler condition
+	NOT?: Boolean
+	Condition: String
+Burner condition
+	NOT?: Boolean
+	Condition: String
+Pump condition
+	NOT?: Boolean
+	Condition: String
+Sensor condition
+	NOT?: Boolean
+	Condition: String
+Thermostat condition
+	NOT?: Boolean
+	Condition: String
+Valve condition
+	NOT?: Boolean
+	Condition: String
+Radiator condition
+	NOT?: Boolean
+	Condition: String
+
+==========================
+Extra Types
+==========================
+Heat
+Entry action
+Exit action
+
+==========================
+Bindings
+==========================
+Condition
+	Cond: Condition
+0..1	Boiler condition: Boiler
+0..1	Radiator condition: Radiator
+0..1	Burner condition: Burner
+0..1	Pump condition: Pump
+0..1	Sensor condition: Sensor
+0..1	Thermostat condition: Thermostat
+0..1	Valve condition: Valve
+Condition
+	Left: Comparison
+0..1	Boiler condition: Boiler
+0..1	Burner condition: Burner
+0..1	Radiator condition: Radiator
+0..1	Pump condition: Pump
+0..1	Sensor condition: Sensor
+0..1	Thermostat condition: Thermostat
+0..1	Valve condition: Valve
+Condition
+	Right: Comparison
+0..1	Boiler condition: Boiler
+0..1	Burner condition: Burner
+0..1	Radiator condition: Radiator
+0..1	Pump condition: Pump
+0..1	Sensor condition: Sensor
+0..1	Thermostat condition: Thermostat
+0..1	Valve condition: Valve
+Entry action
+	State entry exit: State
+0..N	Action: Burner, Pump
+0..N	Heat exchanger action: Boiler, Radiator
+0..N	Valve action: Valve
+Exit action
+	State entry exit: State
+0..N	Action: Burner, Pump
+0..N	Heat exchanger action: Boiler, Radiator
+0..N	Valve action: Valve
+Transition
+	From: Start
+	To: State
+Transition
+	From: State
+0..1	Condition: Comparison, Condition
+0..1	Boiler condition: Boiler
+0..1	Burner condition: Burner
+0..1	Radiator condition: Radiator
+0..1	Pump condition: Pump
+0..1	Sensor condition: Sensor
+0..1	Thermostat condition: Thermostat
+0..1	Valve condition: Valve
+0..N	Action: Burner, Pump
+0..N	Valve action: Valve
+0..N	Heat exchanger action: Boiler, Radiator
+	To: State, Stop
+
+==========================
+Constraints
+==========================
+Comparison may be in at most 1 Left role
+Comparison may be in at most 1 Right role
+Start may be in at most 1 From role
+State may be in at most 1 Entry action relationship
+State may be in at most 1 Exit action relationship
+Start may occur at most 1 time
+Property "Name" in Boiler must have unique values
+Property "Name" in Burner must have unique values
+Property "Name" in Pump must have unique values
+Property "Name" in Radiator must have unique values
+Property "Name" in Sensor must have unique values
+Property "Name" in Thermostat must have unique values
+Property "Name" in Valve must have unique values
+Property "State name" in State must have unique values
+
+==========================
+Subgraphs
+==========================
+Decompositions:
+	State
+		Heating application
+
+==========================
+Generators
+==========================
+
+==========================
+Sub-Generators
+==========================
+_basicStates
+_condition
+_detailedStates
+_gName
+_hasRelationships
+_initialState
+_legalSensorCondition
+_oName
+_reportIllegalElements
+_setSMvariables
+_stateAction
+_transition
+__LiveCheck
+

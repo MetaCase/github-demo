@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol">
+	<librarySymbol name="Empty">
+		<objectSymbol offset="30,20" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="30,20 40,20 40,50 30,50 30,20" targetPointX="35" targetPointY="35" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="50" version="1.2" width="40" xmlns="http://www.w3.org/2000/svg">
+				<rect fill="none" height="30" rx="0" ry="0" stroke="none" stroke-width="1" width="10" x="30" y="20">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</rect>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

@@ -1,0 +1,22 @@
+Graph_HardwareDesignArchitecture_user_3400132575
+aBA
+10_12574
+HardwareComponentType
+Graph: aBA <HardwareComponentType> 10_12574
+	__UUID: 9eCxZfKfQ5WyTzt1apfErA
+	Type: aBA <ActuatorType>
+	Object: aBA <ActuatorType> <ActuatorType> 10_12591
+		__UUID: elrBmIdmSZOSM7f6Os3scw
+		Short name: aBA
+		Name: BBW aBA
+		Description: 
+	Show report: Checking
+	Show allocated prototypes: F
+	Show oid: F
+Object: BrakeStrength <IOHardwarePinIn> 10_12615
+	__UUID: yRbohy4FQoObP4MTXBOg/w
+	Short name: BrakeStrength
+	Name: 
+	IsGround: F
+	Type: digital
+	Description: 

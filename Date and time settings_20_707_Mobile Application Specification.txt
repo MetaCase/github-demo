@@ -1,0 +1,301 @@
+Graph_eSWT_model_user_3387784239
+Date and time settings
+20_707
+Mobile Application Specification
+Graph: Date and time settings <Mobile Application Specification> 20_707
+	Model name: Date and time settings
+	Description: 
+	View: User view
+	Display: Primary
+	UI category: U2
+Object: Date and time settings <Form> 20_2538
+	Form title: Date and time settings
+	Form title ID: DATE_TIME_FORM_TEXT
+	Title icon: 
+	Form list: Date:
+Time:
+Time zone:
+Daylight saving:
+Object: Date separator <List> 20_1091
+	List title: Date separator
+	List title ID: 
+	Title icon: 
+	Selection type: Single
+	Scrolling: Vertical
+	Density level: Medium
+	List items: dd.mm.yyyy
+dd/mm/yyyy
+dd-mm-yyyy
+dd mm yyyy
+	Sorting order: Unordered
+	Search enabled: Yes
+Object: Date format <List> 20_1413
+	List title: Date format
+	List title ID: LIST_DATE_FORMAT
+	Title icon: 
+	Selection type: Single
+	Scrolling: Vertical
+	Density level: Medium
+	List items: dd-mm-yyyy
+dd-mm-yy
+yyyy-mm-dd
+mm-dd-yyyy
+	Sorting order: Unordered
+	Search enabled: Yes
+Object: Standby screen <List> 20_1517
+	List title: Standby screen
+	List title ID: 
+	Title icon: 
+	Selection type: Single
+	Scrolling: Vertical
+	Density level: Medium
+	List items: Show date
+Hide date
+	Sorting order: Unordered
+	Search enabled: Yes
+Object: Time format <List> 20_1719
+	List title: Time format
+	List title ID: 
+	Title icon: 
+	Selection type: Single
+	Scrolling: Vertical
+	Density level: Medium
+	List items: 24-hour
+12-hour
+	Sorting order: Unordered
+	Search enabled: Yes
+Object: Auto-update <List> 20_1833
+	List title: Auto-update
+	List title ID: 
+	Title icon: 
+	Selection type: Single
+	Scrolling: Vertical
+	Density level: Medium
+	List items: On
+Confirm first
+Off
+	Sorting order: Unordered
+	Search enabled: Yes
+Object: Clock <List> 20_2020
+	List title: Clock
+	List title ID: LIST_CLOCK_SELECTION
+	Title icon: 
+	Selection type: Single
+	Scrolling: Vertical
+	Density level: Medium
+	List items: Digital
+Analog
+Hide clock
+	Sorting order: Unordered
+	Search enabled: Yes
+Object: Date and time <List> 20_2231
+	List title: Date and time
+	List title ID: LIST_DATE_AND_TIME
+	Title icon: 
+	Selection type: Single
+	Scrolling: Vertical
+	Density level: Medium
+	List items: Date & time settings
+Date and time format
+Auto-update of time
+	Sorting order: Unordered
+	Search enabled: Yes
+Object: CHANGE_DATE_AND_TIME_FORMAT <ListBox> 20_1310
+	Listbox title: Change format
+	Listbox title ID: CHANGE_DATE_AND_TIME_FORMAT
+	Title icon: 
+	ListBox style: NO_HEADING_TEXT
+	Selection type: Single
+	LB show selection number: F
+	LB show heading icons: F
+	LB show detail icons: F
+	ListBox items: Date: dd-mm-yyyy
+Time: hh:mm
+	Sorting order: Unordered
+Object:  <ListBox> 20_1633
+	Listbox title: Date
+	Listbox title ID: 
+	Title icon: 
+	ListBox style: NO_HEADING_TEXT
+	Selection type: Single
+	LB show selection number: F
+	LB show heading icons: F
+	LB show detail icons: F
+	ListBox items: Date on standby scr.
+Date format
+Date separator
+	Sorting order: Unordered
+Object:  <ListBox> 20_2625
+	Listbox title: Time
+	Listbox title ID: 
+	Title icon: 
+	ListBox style: NO_HEADING_TEXT
+	Selection type: Single
+	LB show selection number: F
+	LB show heading icons: F
+	LB show detail icons: F
+	ListBox items: Clock
+Time-format
+	Sorting order: Unordered
+Object: 1 <Reference> 20_902
+	Reference ID: 1
+Object: 3 <Reference> 20_2142
+	Reference ID: 3
+Object: 2 <Reference> 20_2694
+	Reference ID: 2
+Object: Start <Start> 20_820
+Object: Date and time saved <TimedMessageBox> 20_772
+	Message text: Date and time saved
+	Message text ID: MB_SAVING_DATE_AND_TIME
+	Style: Working
+	Timeout: 3
+Object: Updated the auto-update <TimedMessageBox> 20_813
+	Message text: Updated the auto-update
+	Message text ID: 
+	Style: Working
+	Timeout: 3
+Object: Date separator selected <TimedMessageBox> 20_1017
+	Message text: Date separator selected
+	Message text ID: 
+	Style: Working
+	Timeout: 2
+Object: Date format selected <TimedMessageBox> 20_1190
+	Message text: Date format selected
+	Message text ID: 
+	Style: Working
+	Timeout: 3
+Object: Time format selected <TimedMessageBox> 20_1524
+	Message text: Time format selected
+	Message text ID: 
+	Style: Working
+	Timeout: 2
+Object: Digital/Analog clock selected <TimedMessageBox> 20_2227
+	Message text: Digital/Analog clock selected
+	Message text ID: MB_CLOCK_SELECTION
+	Style: Working
+	Timeout: 2
+Object: Date shown / hidden <TimedMessageBox> 20_2334
+	Message text: Date shown / hidden
+	Message text ID: 
+	Style: Working
+	Timeout: 3
+Relationship: Flow <Flow> 20_715
+  Role: From <From>  Object: <TimedMessageBox> 20_772
+  Role: To <To>  Object: <List> 20_2231
+Relationship: Flow <Flow> 20_824
+  Role: From <From>  Object: <Reference> 20_2694
+  Role: To <To>  Object: <ListBox> 20_2625
+Relationship: Flow <Flow> 20_1098
+  Role: From <From>  Object: <TimedMessageBox> 20_1524
+  Role: To <To>  Object: <List> 20_1719
+Relationship: Flow <Flow> 20_1255
+  Role: From <From>  Object: <TimedMessageBox> 20_813
+  Role: To <To>  Object: <List> 20_2231
+Relationship: Flow <Flow> 20_1345
+  Role: From <From>  Object: <TimedMessageBox> 20_2227
+  Role: To <To>  Object: <Reference> 20_2694
+Relationship: Flow <Flow> 20_1669
+  Role: From <From>  Object: <Reference> 20_2142
+  Role: To <To>  Object: <ListBox> 20_1633
+Relationship: Flow <Flow> 20_1942
+  Role: From <From>  Object: <TimedMessageBox> 20_1190
+  Role: To <To>  Object: <Reference> 20_2142
+Relationship: Flow <Flow> 20_2233
+  Role: From <From>  Object: <TimedMessageBox> 20_2334
+  Role: To <To>  Object: <Reference> 20_2142
+Relationship: Flow <Flow> 20_2265
+  Role: From <From>  Object: <TimedMessageBox> 20_1017
+  Role: To <To>  Object: <Reference> 20_2142
+Relationship: Flow <Flow> 20_2659
+  Role: From <From>  Object: <Start> 20_820
+  Role: To <To>  Object: <List> 20_2231
+Relationship: Select <Soft key> 20_741
+	Soft key label: Select
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <List> 20_1833
+  Role: To <To>  Object: <TimedMessageBox> 20_813
+Relationship: Select <Soft key> 20_763
+	Soft key label: Select
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <List> 20_1517
+  Role: To <To>  Object: <TimedMessageBox> 20_2334
+Relationship: Select <Soft key> 20_795
+	Soft key label: Select
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <ListBox> 20_2625
+  Role: To <To>  Object: <List> 20_2020
+Relationship: Select <Soft key> 20_1124
+	Soft key label: Select
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <List> 20_1091
+  Role: To <To>  Object: <TimedMessageBox> 20_1017
+Relationship: Select <Soft key> 20_1285
+	Soft key label: Select
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <ListBox> 20_1310
+  Role: To <To>  Object: <ListBox> 20_1633
+Relationship: Select <Soft key> 20_1314
+	Soft key label: Select
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <ListBox> 20_1310
+  Role: To <To>  Object: <ListBox> 20_2625
+Relationship: Select <Soft key> 20_1378
+	Soft key label: Select
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <ListBox> 20_1633
+  Role: To <To>  Object: <List> 20_1091
+Relationship: Select <Soft key> 20_1699
+	Soft key label: Select
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <List> 20_2231
+  Role: To <To>  Object: <ListBox> 20_1310
+Relationship: Select <Soft key> 20_1725
+	Soft key label: Select
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <List> 20_2020
+  Role: To <To>  Object: <TimedMessageBox> 20_2227
+Relationship: Save <Soft key> 20_1748
+	Soft key label: Save
+	Softkey label ID: SK_SAVE
+  Role: From <From>  Port: MSK <Softkey port>  Object: <Form> 20_2538
+  Role: To <To>  Object: <TimedMessageBox> 20_772
+Relationship: Select <Soft key> 20_1877
+	Soft key label: Select
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <List> 20_2231
+  Role: To <To>  Object: <Form> 20_2538
+Relationship: Select <Soft key> 20_1907
+	Soft key label: Select
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <List> 20_2231
+  Role: To <To>  Object: <List> 20_1833
+Relationship: Select <Soft key> 20_2289
+	Soft key label: Select
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <List> 20_1413
+  Role: To <To>  Object: <TimedMessageBox> 20_1190
+Relationship: Select <Soft key> 20_2313
+	Soft key label: Select
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <ListBox> 20_1633
+  Role: To <To>  Object: <List> 20_1413
+Relationship: Options <Soft key> 20_2344
+	Soft key label: Options
+	Softkey label ID: SK_OPTIONS
+  Role: From <From>  Port: LSK <Softkey port>  Object: <Form> 20_2538
+  Role: To <To>  Object: <Reference> 20_902
+Relationship: Select <Soft key> 20_2375
+	Soft key label: Select
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <ListBox> 20_1633
+  Role: To <To>  Object: <List> 20_1517
+Relationship: Select <Soft key> 20_2498
+	Soft key label: Select
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <List> 20_1719
+  Role: To <To>  Object: <TimedMessageBox> 20_1524
+Relationship: Select <Soft key> 20_2764
+	Soft key label: Select
+	Softkey label ID: SK_SELECT
+  Role: From <From>  Port: MSK <Softkey port>  Object: <ListBox> 20_2625
+  Role: To <To>  Object: <List> 20_1719

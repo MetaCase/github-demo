@@ -1,0 +1,10 @@
+Report '_isRoot'
+if :Root or leaf = 'root' 
+	then '.setIsRoot(true);'
+else if :Root or leaf; = 'root and leaf' 
+	then '.setIsRoot(true);'
+	else '.setIsRoot(false);' 
+	endif
+endif
+newline
+endreport

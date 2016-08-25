@@ -1,0 +1,19 @@
+Report '_constraints'
+'<constraints>' newline
+do :Constraints {
+	'<connectivity>' newline
+			do :Object of type {subreport '_types' run}
+	if type = 'Relationship connectivity constraint [GOPRR]' then
+		do :relationships of type {subreport '_types' run }
+	else
+		do :roles of type {subreport '_types' run}
+	endif;
+	'<max>' :may be in at most; '</max>'
+	'</connectivity>' newline
+}
+foreach .Object set [GOPRR] {do :Objects ; where :Occurrence; <> '0' {subreport '_occurrence constraint' run}}
+foreach .Object [GOPRR] {subreport '_occurrence constraint' run}
+foreach .Object set [GOPRR] {do :Objects{ subreport '_uniqueness constraints' run }}
+foreach .Object [GOPRR] {subreport '_uniqueness constraints' run}
+'</constraints>' newline
+endreport

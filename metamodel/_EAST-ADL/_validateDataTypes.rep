@@ -1,0 +1,47 @@
+_validateDataTypes()
+/* Validating all the datatypes */
+
+/* EANumerical datatype */
+if type = 'EANumerical' then 
+	_validateEANumericals()
+endif
+
+/* EAString datatype */
+if type = 'EAString' then 
+	_validateEAStrings()
+endif	
+
+/* EABoolean datatype */
+if type = 'EABoolean' then 
+	_validateEABooleans()
+endif	
+
+/* RangeableValueType datatype */
+if type = 'RangeableValueType' then 
+	_validateRangeableValueType()
+endif
+	
+/* Enumeration datatype */
+if type = 'Enumeration' then 
+	_validateLiterals()
+endif
+
+/* Array datatype */
+if type = 'ArrayDatatype' then 
+	_validateArrayDatatype()
+endif
+
+/* Composite datatype */
+if type = 'CompositeDatatype' then
+	_validateCompositeDatatype()	
+endif
+
+/* Quantity */
+if type = 'Quantity' then
+	_validateQuantity()
+endif
+
+/* Unit */
+if type = 'Unit' then
+	_validateUnit()
+endif

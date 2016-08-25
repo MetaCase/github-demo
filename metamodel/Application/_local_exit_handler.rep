@@ -1,0 +1,14 @@
+Report '_local_exit_handler'
+'	# Local exit key handler for ' type newline
+'	def local_exit_handler():' newline
+if ~From; then
+	do ~From~To.() {
+		'		global next_state' newline
+		'		lock.signal()' newline
+		'		next_state = ' subreport '_Internal name' run newline
+	}
+else
+	'		lock.signal()' newline
+	'		exit_handler()' newline
+endif
+endreport

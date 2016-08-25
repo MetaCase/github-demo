@@ -1,0 +1,1933 @@
+Graph_Class_diagram__UML__sysadmin_3019387957
+Reverse engineered Java (ex 1)
+5_610
+Class Diagram [UML]
+Graph: Reverse engineered Java (ex 1) <Class Diagram [UML]> 5_610
+	Model name: Reverse engineered Java (ex 1)
+	Status: 
+	Authors: 
+	Documentation: 
+Object: AbstractDisplay <Class [UML]> 5_1833
+	Class name: AbstractDisplay
+	Attributes: +icons:Vector +times:Vector +buttons:Vector
+	Object: +icons:Vector <Attribute [UML]> 5_11334
+		Name: icons
+		Data type: Vector
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +times:Vector <Attribute [UML]> 5_1907
+		Name: times
+		Data type: Vector
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +buttons:Vector <Attribute [UML]> 5_4511
+		Name: buttons
+		Data type: Vector
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: T
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: AbstractWatchApplication <Class [UML]> 5_1891
+	Class name: AbstractWatchApplication
+	Attributes: -START:String -STOP:String +master:Master +graphOop:com.metacase.MEOop +decompositions:Hashtable +stateTransitions:Hashtable +stateDisplays:Hashtable +stateOops:Hashtable +currentState:String
+	Object: -START:String <Attribute [UML]> 5_6574
+		Name: START
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: private
+		Scope: class
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: -STOP:String <Attribute [UML]> 5_11980
+		Name: STOP
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: private
+		Scope: class
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +master:Master <Attribute [UML]> 5_2682
+		Name: master
+		Data type: Master
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +graphOop:com.metacase.MEOop <Attribute [UML]> 5_5225
+		Name: graphOop
+		Data type: com.metacase.MEOop
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +decompositions:Hashtable <Attribute [UML]> 5_10616
+		Name: decompositions
+		Data type: Hashtable
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +stateTransitions:Hashtable <Attribute [UML]> 5_952
+		Name: stateTransitions
+		Data type: Hashtable
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +stateDisplays:Hashtable <Attribute [UML]> 5_3645
+		Name: stateDisplays
+		Data type: Hashtable
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +stateOops:Hashtable <Attribute [UML]> 5_9283
+		Name: stateOops
+		Data type: Hashtable
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +currentState:String <Attribute [UML]> 5_14703
+		Name: currentState
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: T
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Zone <Class [UML]> 5_1926
+	Class name: Zone
+	Attributes: +zoneName:String +zoneValue:String +blinking:boolean +unit:int
+	Object: +zoneName:String <Attribute [UML]> 5_14212
+		Name: zoneName
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +zoneValue:String <Attribute [UML]> 5_5348
+		Name: zoneValue
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +blinking:boolean <Attribute [UML]> 5_7467
+		Name: blinking
+		Data type: boolean
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +unit:int <Attribute [UML]> 5_12871
+		Name: unit
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Sporty <Class [UML]> 5_1956
+	Class name: Sporty
+	Attributes: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Timer <Class [UML]> 5_4356
+	Class name: Timer
+	Attributes: +a22_3703:int +a22_3844:int +a22_3910:int +a22_5015:int +a22_5514:int +a22_6076:int +a22_6245:int +a22_6304:int +d22_6023:int +d22_6179:int +d22_4577:int +length:METime +lengthLeft:METime +stopTime:METime
+	Object: +a22_3703:int <Attribute [UML]> 5_3784
+		Name: a22_3703
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_3844:int <Attribute [UML]> 5_9396
+		Name: a22_3844
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_3910:int <Attribute [UML]> 5_14827
+		Name: a22_3910
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_5015:int <Attribute [UML]> 5_2110
+		Name: a22_5015
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_5514:int <Attribute [UML]> 5_8057
+		Name: a22_5514
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_6076:int <Attribute [UML]> 5_13442
+		Name: a22_6076
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_6245:int <Attribute [UML]> 5_4489
+		Name: a22_6245
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_6304:int <Attribute [UML]> 5_6696
+		Name: a22_6304
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +d22_6023:int <Attribute [UML]> 5_12093
+		Name: d22_6023
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +d22_6179:int <Attribute [UML]> 5_2811
+		Name: d22_6179
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +d22_4577:int <Attribute [UML]> 5_5334
+		Name: d22_4577
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +length:METime <Attribute [UML]> 5_10730
+		Name: length
+		Data type: METime
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +lengthLeft:METime <Attribute [UML]> 5_1092
+		Name: lengthLeft
+		Data type: METime
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +stopTime:METime <Attribute [UML]> 5_3776
+		Name: stopTime
+		Data type: METime
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: DisplayX022 <Class [UML]> 5_4378
+	Class name: DisplayX022
+	Attributes: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: DisplayX032 <Class [UML]> 5_4406
+	Class name: DisplayX032
+	Attributes: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Stopwatch <Class [UML]> 5_4437
+	Class name: Stopwatch
+	Attributes: +a22_3324:int +a22_3621:int +a22_4857:int +d22_4302:int +d22_5403:int +startTime:METime +stopTime:METime
+	Object: +a22_3324:int <Attribute [UML]> 5_7491
+		Name: a22_3324
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_3621:int <Attribute [UML]> 5_12885
+		Name: a22_3621
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_4857:int <Attribute [UML]> 5_3810
+		Name: a22_4857
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +d22_4302:int <Attribute [UML]> 5_6142
+		Name: d22_4302
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +d22_5403:int <Attribute [UML]> 5_11534
+		Name: d22_5403
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +startTime:METime <Attribute [UML]> 5_2142
+		Name: startTime
+		Data type: METime
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +stopTime:METime <Attribute [UML]> 5_4736
+		Name: stopTime
+		Data type: METime
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: AlarmClock <Class [UML]> 5_4465
+	Class name: AlarmClock
+	Attributes: +a22_4160:int +a22_4217:int +a22_4272:int +a22_4405:int +a22_4978:int +a22_5693:int +a22_5913:int +d22_3772:int +alarmTime:METime
+	Object: +a22_4160:int <Attribute [UML]> 5_3696
+		Name: a22_4160
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_4217:int <Attribute [UML]> 5_9321
+		Name: a22_4217
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_4272:int <Attribute [UML]> 5_14740
+		Name: a22_4272
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_4405:int <Attribute [UML]> 5_2026
+		Name: a22_4405
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_4978:int <Attribute [UML]> 5_7973
+		Name: a22_4978
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_5693:int <Attribute [UML]> 5_13366
+		Name: a22_5693
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_5913:int <Attribute [UML]> 5_15506
+		Name: a22_5913
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +d22_3772:int <Attribute [UML]> 5_6615
+		Name: d22_3772
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +alarmTime:METime <Attribute [UML]> 5_12015
+		Name: alarmTime
+		Data type: METime
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Celestra <Class [UML]> 5_5873
+	Class name: Celestra
+	Attributes: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Celestron <Class [UML]> 5_5898
+	Class name: Celestron
+	Attributes: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: WorldTime <Class [UML]> 5_7891
+	Class name: WorldTime
+	Attributes: +a22_4358:int +a22_5277:int +a22_5899:int +a22_6011:int +d22_5410:int +offset:METime
+	Object: +a22_4358:int <Attribute [UML]> 5_9492
+		Name: a22_4358
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_5277:int <Attribute [UML]> 5_11600
+		Name: a22_5277
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_5899:int <Attribute [UML]> 5_2215
+		Name: a22_5899
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_6011:int <Attribute [UML]> 5_8129
+		Name: a22_6011
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +d22_5410:int <Attribute [UML]> 5_10225
+		Name: d22_5410
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +offset:METime <Attribute [UML]> 5_15657
+		Name: offset
+		Data type: METime
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Simple <Class [UML]> 5_7911
+	Class name: Simple
+	Attributes: +a22_1890:int +a22_3342:int +a22_4155:int +a22_6318:int +d22_5285:int +d22_4643:int +tempOffset:METime
+	Object: +a22_1890:int <Attribute [UML]> 5_2068
+		Name: a22_1890
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_3342:int <Attribute [UML]> 5_8015
+		Name: a22_3342
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_4155:int <Attribute [UML]> 5_10109
+		Name: a22_4155
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_6318:int <Attribute [UML]> 5_15542
+		Name: a22_6318
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +d22_5285:int <Attribute [UML]> 5_6652
+		Name: d22_5285
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +d22_4643:int <Attribute [UML]> 5_8767
+		Name: d22_4643
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +tempOffset:METime <Attribute [UML]> 5_14184
+		Name: tempOffset
+		Data type: METime
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Time <Class [UML]> 5_7933
+	Class name: Time
+	Attributes: +a22_3774:int +a22_3898:int +a22_4309:int +a22_4360:int +a22_4408:int +a22_4461:int +a22_5465:int +a22_6013:int +d22_6066:int +d22_3832:int +tempOffset:METime
+	Object: +a22_3774:int <Attribute [UML]> 5_3050
+		Name: a22_3774
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_3898:int <Attribute [UML]> 5_8804
+		Name: a22_3898
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_4309:int <Attribute [UML]> 5_14204
+		Name: a22_4309
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_4360:int <Attribute [UML]> 5_1330
+		Name: a22_4360
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_4408:int <Attribute [UML]> 5_7457
+		Name: a22_4408
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_4461:int <Attribute [UML]> 5_12861
+		Name: a22_4461
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_5465:int <Attribute [UML]> 5_14999
+		Name: a22_5465
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +a22_6013:int <Attribute [UML]> 5_6112
+		Name: a22_6013
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +d22_6066:int <Attribute [UML]> 5_11504
+		Name: d22_6066
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +d22_3832:int <Attribute [UML]> 5_13623
+		Name: d22_3832
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +tempOffset:METime <Attribute [UML]> 5_4700
+		Name: tempOffset
+		Data type: METime
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Result <Class [UML]> 5_7951
+	Class name: Result
+	Attributes: +action:int +targetState:String
+	Object: +action:int <Attribute [UML]> 5_7361
+		Name: action
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +targetState:String <Attribute [UML]> 5_12759
+		Name: targetState
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: DecompPair <Class [UML]> 5_9889
+	Class name: DecompPair
+	Attributes: +name:String +application:AbstractWatchApplication
+	Object: +name:String <Attribute [UML]> 5_12621
+		Name: name
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +application:AbstractWatchApplication <Attribute [UML]> 5_14760
+		Name: application
+		Data type: AbstractWatchApplication
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: DisplayInfo <Class [UML]> 5_9909
+	Class name: DisplayInfo
+	Attributes: +blinking:int +keyUnit:int +displayMethod:int
+	Object: +blinking:int <Attribute [UML]> 5_6763
+		Name: blinking
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +keyUnit:int <Attribute [UML]> 5_12168
+		Name: keyUnit
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +displayMethod:int <Attribute [UML]> 5_2902
+		Name: displayMethod
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: TASTW <Class [UML]> 5_9931
+	Class name: TASTW
+	Attributes: +d22_6015:int
+	Object: +d22_6015:int <Attribute [UML]> 5_12013
+		Name: d22_6015
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Ace <Class [UML]> 5_9953
+	Class name: Ace
+	Attributes: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: METime <Class [UML]> 5_11256
+	Class name: METime
+	Attributes: +HOUR_OF_DAY:int +MINUTE:int +SECOND:int +HUNDREDTH:int +sizes:int[] +unit:int[]
+	Object: +HOUR_OF_DAY:int <Attribute [UML]> 5_14262
+		Name: HOUR_OF_DAY
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +MINUTE:int <Attribute [UML]> 5_1421
+		Name: MINUTE
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +SECOND:int <Attribute [UML]> 5_7533
+		Name: SECOND
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +HUNDREDTH:int <Attribute [UML]> 5_12933
+		Name: HUNDREDTH
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +sizes:int[] <Attribute [UML]> 5_3852
+		Name: sizes
+		Data type: int[]
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +unit:int[] <Attribute [UML]> 5_6178
+		Name: unit
+		Data type: int[]
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Icon <Class [UML]> 5_11277
+	Class name: Icon
+	Attributes: +iconName:String +on:boolean
+	Object: +iconName:String <Attribute [UML]> 5_12807
+		Name: iconName
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +on:boolean <Attribute [UML]> 5_3700
+		Name: on
+		Data type: boolean
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: TAST <Class [UML]> 5_11302
+	Class name: TAST
+	Attributes: +d22_6015:int
+	Object: +d22_6015:int <Attribute [UML]> 5_10846
+		Name: d22_6015
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: AbstractWatchApplet <Class [UML]> 5_11326
+	Class name: AbstractWatchApplet
+	Attributes: +watchCanvas:WatchCanvas +master:Master +buttonPanel:Panel +debugPanel:Panel +tf:TextField
+	Object: +watchCanvas:WatchCanvas <Attribute [UML]> 5_4529
+		Name: watchCanvas
+		Data type: WatchCanvas
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +master:Master <Attribute [UML]> 5_9977
+		Name: master
+		Data type: Master
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +buttonPanel:Panel <Attribute [UML]> 5_12130
+		Name: buttonPanel
+		Data type: Panel
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +debugPanel:Panel <Attribute [UML]> 5_2853
+		Name: debugPanel
+		Data type: Panel
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +tf:TextField <Attribute [UML]> 5_8632
+		Name: tf
+		Data type: TextField
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: T
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Alarm <Class [UML]> 5_13302
+	Class name: Alarm
+	Attributes: +name:String +localTimeAwareness:boolean +alarmState:String +sleeptime:int +dayMs:int +master:Master +alarmApplication:AbstractWatchApplication +isLive:boolean
+	Object: +name:String <Attribute [UML]> 5_9997
+		Name: name
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +localTimeAwareness:boolean <Attribute [UML]> 5_15425
+		Name: localTimeAwareness
+		Data type: boolean
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +alarmState:String <Attribute [UML]> 5_6543
+		Name: alarmState
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +sleeptime:int <Attribute [UML]> 5_8652
+		Name: sleeptime
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +dayMs:int <Attribute [UML]> 5_14074
+		Name: dayMs
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +master:Master <Attribute [UML]> 5_5196
+		Name: master
+		Data type: Master
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +alarmApplication:AbstractWatchApplication <Attribute [UML]> 5_7316
+		Name: alarmApplication
+		Data type: AbstractWatchApplication
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +isLive:boolean <Attribute [UML]> 5_12705
+		Name: isLive
+		Data type: boolean
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: DisplayX234 <Class [UML]> 5_13320
+	Class name: DisplayX234
+	Attributes: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: DisplayX334 <Class [UML]> 5_13342
+	Class name: DisplayX334
+	Attributes: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Master <Class [UML]> 5_13362
+	Class name: Master
+	Attributes: +applet:AbstractWatchApplet +display:AbstractDisplay +alarms:Vector +applications:Hashtable +appStack:Stack +clockOffset:METime +blinkingUnit:int +port:com.metacase.MetaEditAPIPortType
+	Object: +applet:AbstractWatchApplet <Attribute [UML]> 5_1146
+		Name: applet
+		Data type: AbstractWatchApplet
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +display:AbstractDisplay <Attribute [UML]> 5_3824
+		Name: display
+		Data type: AbstractDisplay
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +alarms:Vector <Attribute [UML]> 5_9436
+		Name: alarms
+		Data type: Vector
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +applications:Hashtable <Attribute [UML]> 5_14865
+		Name: applications
+		Data type: Hashtable
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +appStack:Stack <Attribute [UML]> 5_3651
+		Name: appStack
+		Data type: Stack
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +clockOffset:METime <Attribute [UML]> 5_8085
+		Name: clockOffset
+		Data type: METime
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +blinkingUnit:int <Attribute [UML]> 5_13480
+		Name: blinkingUnit
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +port:com.metacase.MetaEditAPIPortType <Attribute [UML]> 5_15601
+		Name: port
+		Data type: com.metacase.MetaEditAPIPortType
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: WatchCanvas <Class [UML]> 5_14662
+	Class name: WatchCanvas
+	Attributes: -MILLIS_PER_TICK:int -bgRGB:int -textRGB:int -master:Master -animationThread:Thread +appField:String +stateField:String +offscreen:Image
+	Object: -MILLIS_PER_TICK:int <Attribute [UML]> 5_4745
+		Name: MILLIS_PER_TICK
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: private
+		Scope: class
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: -bgRGB:int <Attribute [UML]> 5_10173
+		Name: bgRGB
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: private
+		Scope: class
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: -textRGB:int <Attribute [UML]> 5_12307
+		Name: textRGB
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: private
+		Scope: class
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: -master:Master <Attribute [UML]> 5_3094
+		Name: master
+		Data type: Master
+		Default value: 
+		Stereotype: 
+		Visibility: private
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: -animationThread:Thread <Attribute [UML]> 5_8835
+		Name: animationThread
+		Data type: Thread
+		Default value: 
+		Stereotype: 
+		Visibility: private
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +appField:String <Attribute [UML]> 5_10916
+		Name: appField
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +stateField:String <Attribute [UML]> 5_1377
+		Name: stateField
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +offscreen:Image <Attribute [UML]> 5_7497
+		Name: offscreen
+		Data type: Image
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Delicia <Class [UML]> 5_15389
+	Class name: Delicia
+	Attributes: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: TST <Class [UML]> 5_15410
+	Class name: TST
+	Attributes: +d22_4673:int
+	Object: +d22_4673:int <Attribute [UML]> 5_12158
+		Name: d22_4673
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: readonly
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: You may inspect and modify the reverse engineering functionality by opening the generator browser (Graph | Edit Generators...) and editing the generator 'Reverse engineer Java' and its sub-generators. You can select a specific directory by setting $dir. <Note text> 5_1859
+	Note text: You may inspect and modify the reverse engineering functionality by opening the generator browser (Graph | Edit Generators...) and editing the generator 'Reverse engineer Java' and its sub-generators. You can select a specific directory by setting $dir.
+	Stereotype: 
+Object: This graph presents an example of how to reverse engineer with MERL: The Java classes of the Digital Watch example are reverse engineered into this Class Diagram. 
+
+If you want to try it yourself, just place / generate the Java files into the MetaEdit+ 'reports' directory. Then run the generator named 'Reverse engineer Java' for any existing Class Diagram [UML]. This will go through the Java files found in the reports directory and its subdirectories, and create a new UML Class Diagram (named as 'Reverse engineered Java' + index) with Classes and Packages for subdirectories. Only class and attribute details are included; relationships and operations are left as an exercise for the reader. <Note text> 5_5848
+	Note text: This graph presents an example of how to reverse engineer with MERL: The Java classes of the Digital Watch example are reverse engineered into this Class Diagram. 
+
+If you want to try it yourself, just place / generate the Java files into the MetaEdit+ 'reports' directory. Then run the generator named 'Reverse engineer Java' for any existing Class Diagram [UML]. This will go through the Java files found in the reports directory and its subdirectories, and create a new UML Class Diagram (named as 'Reverse engineered Java' + index) with Classes and Packages for subdirectories. Only class and attribute details are included; relationships and operations are left as an exercise for the reader.
+	Stereotype: 

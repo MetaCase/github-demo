@@ -1,0 +1,93 @@
+Report '_Project model documentation in RTF'
+/*	Creates Project Models information according to the following rules:
+*	Creates Project information (Name, Status, Personnel with the contact information) from model properties
+*	Creates picture file of the project model graph in the pict-format to default directory
+*	(Default directory is defined in the subreport named _default directory in the Graph)
+*	Includes the picture file to the document
+*	Lists all the graphs and subprojects of the project model to the table
+*	Creates information on each project models graph
+*		Calls _Dictionary in RTF-subreport
+*		Calls _Object properties in RTF-subreport
+*	Creates information about subprojects by calling itself (_Project model documentation in RTF-subreport)
+*	Other:
+*	Calls _RTF table cell definitions-subreport to define RTF table and cell borders for it
+*
+*/
+'\page '
+'\s1{{\*\bkmkstart g' oid '}{\*\bkmkend g' oid '}' id ': ' type '{\par}}\pard\plain' newline
+if :Documentation; then 
+	'{' dowhile :Documentation; {id '\par '} '\par}' endif
+'{\b Status of project model: \b0 ' :Status; '\par}' newline
+'{\b Project manager: \b0 ' :Project manager; '\par}' newline
+'{\b Personnel: \b0 \par}' newline
+	'\trowd \trgaph110' 
+	subreport '_RTF table cell definitions' run	'\cellx2900'
+	subreport '_RTF table cell definitions' run	'\cellx6000'
+	subreport '_RTF table cell definitions' run	'\cellx9700\pard\plain' newline
+	'\intbl \b{Person name\cell Email address\cell Contact information\cell}\b0 \pard \intbl\ {\row }' newline
+do :Authors;
+	{
+		'\trowd \trgaph108 '
+		subreport '_RTF table cell definitions' run	'\cellx2900'
+		subreport '_RTF table cell definitions' run	'\cellx6000'
+		subreport '_RTF table cell definitions' run	'\cellx9700\pard\plain \intbl ' newline
+		'{' id '\cell ' :E-mail; '\cell ' 
+		dowhile :Contact address; {id '\par '} 
+		'\cell }\pard \intbl {\row}' newline
+	}
+	'\pard {\par}' newline
+'{\b Project model picture: \b0 ' id '\par}' newline
+filename subreport '_default directory' run oid '.png' print
+'{\field{\*\fldinst { INCLUDEPICTURE "' oid '.png" \\* MERGEFORMAT }}{\fldrslt}}{\par}\pard\plain'
+'{\b Documentation includes following graphs and subprojects:\b0 \par}' newline
+	'\trowd \trgaph111' 
+	subreport '_RTF table cell definitions' run	'\cellx3000'
+	subreport '_RTF table cell definitions' run	'\cellx9700\pard\plain' newline
+	'\intbl \b{Graph name\cell Documentation\cell}\b0 \pard \intbl\ {\row}'
+foreach .Graph 
+	{	
+	if decompositions then
+		do decompositions
+		{'\trowd \trgaph111'
+			subreport '_RTF table cell definitions' run	'\cellx3000'
+			subreport '_RTF table cell definitions' run	'\cellx9700\pard\plain \intbl' newline
+			'{{\field{\*\fldinst {HYPERLINK \\l "g' oid '"}}{\fldrslt \ul{' id '}}}' '\cell ' newline
+			dowhile :Documentation; {id '\par'}
+			dowhile :Description; {id '\par'}  
+			'\cell }\pard \intbl {\row}' newline
+		}
+	endif
+	}
+foreach .Subproject 
+	{	
+		if decompositions then
+		do decompositions
+		{	'\trowd \trgaph111'
+			subreport '_RTF table cell definitions' run	'\cellx3000'
+			subreport '_RTF table cell definitions' run	'\cellx9700\pard\plain \intbl' newline
+			'{{\field{\*\fldinst {HYPERLINK \\l "g' oid '"}}{\fldrslt \ul{' id '\b0}}}\cell ' newline
+			dowhile :Documentation; {id '\par'}
+			dowhile :Description; {id '\par'}  
+			'\cell }\pard \intbl {\row}' newline
+		}
+		endif
+	}
+'\pard {\par}' newline
+'{\i Generated from MetaEdit+ project documentation report\i0 \par \par}' newline
+foreach .Graph 
+	{	
+		if decompositions then
+			do decompositions
+			{	'\page'
+				subreport '_Dictionary in RTF' run
+				subreport '_Object properties in RTF' run
+			}
+		endif
+	}
+foreach .Subproject
+	{	
+		if decompositions then
+			do decompositions	{	subreport '_Project model documentation in RTF' run}
+		endif
+	}
+endreport

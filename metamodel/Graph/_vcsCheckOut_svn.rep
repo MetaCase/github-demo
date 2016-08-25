@@ -1,0 +1,7 @@
+_vcsCheckOut_svn(@unzip)
+/* Check out the old version, unzip the repository using @unzip, then revert to the HEAD */
+'
+TortoiseProc.exe /command:update /rev /path:"' $vcsWorkingDir '" /closeonend:3
+' @unzip '
+svn update
+'

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="ErrorModel_symbol">
+		<objectSymbol offset="120,24" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="139.5,33.5 138.739,37.3268 136.571,40.5711 133.327,42.7388 129.5,43.5 125.673,42.7388 122.429,40.5711 120.261,37.3268 119.5,33.5 120.261,29.6732 122.429,26.4289 125.673,24.2612 129.5,23.5 133.327,24.2612 136.571,26.4289 138.739,29.6732 139.5,33.5" targetPointX="129.5" targetPointY="33.5" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="43" version="1.2" width="139" xmlns="http://www.w3.org/2000/svg">
+				<ellipse cx="129.5" cy="33.5" fill="rgb(255,0,0)" rx="9.5" ry="9.5" stroke="rgb(160,0,0)" stroke-width="1" sym:startAngle="0.0e0" sym:sweepAngle="3.6e2">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</ellipse>
+				<g fill="none" stroke="rgb(255,255,255)" stroke-width="4" sym:height="11" sym:width="9" sym:x="1.25e2" sym:y="2.8e1">
+					<line stroke="rgb(255,255,255)" stroke-width="4" x1="125" x2="134" y1="28" y2="39">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(255,255,255)" stroke-width="4" x1="134" x2="125" y1="28" y2="39">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="Goal">
+		<objectSymbol offset="81,31" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="102,41 101.163,45.2095 98.7782,48.7782 95.2095,51.1627 91,52 86.7905,51.1627 83.2218,48.7782 80.8373,45.2095 80,41 80.8373,36.7905 83.2218,33.2218 86.7905,30.8373 91,30 95.2095,30.8373 98.7782,33.2218 101.163,36.7905 102,41" targetPointX="91" targetPointY="41" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="50" version="1.2" width="100" xmlns="http://www.w3.org/2000/svg">
+				<ellipse cx="90.5" cy="40.5" fill="none" rx="9.5" ry="9.5" stroke="rgb(0,0,0)" stroke-width="2" sym:startAngle="0.0e0" sym:sweepAngle="3.6e2">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</ellipse>
+				<ellipse cx="90.5" cy="40.5" fill="none" rx="4.5" ry="4.5" stroke="rgb(0,0,0)" stroke-width="2" sym:startAngle="0.0e0" sym:sweepAngle="3.6e2">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</ellipse>
+				<ellipse cx="90.5" cy="40.5" fill="rgb(255,255,255)" rx="0.5" ry="0.5" stroke="rgb(255,0,0)" stroke-width="2" sym:startAngle="0.0e0" sym:sweepAngle="3.6e2">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</ellipse>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

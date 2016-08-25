@@ -1,0 +1,13 @@
+Report '_frameset in HTML'
+'<html><head><title>' id%xml ' report</title></head>' newline
+'<frameset cols="220,*">' newline
+'<frame src="' subreport '_id and oid' run 'left.html" name="leftframe" marginwidth="7" marginheight="7">' newline
+'<frame src="' subreport '_id and oid' run 'right.html" name="mainframe" marginwidth="7" marginheight="7">' newline
+'</frameset>' newline
+'<body><noframes>'
+'<h1>MetaCase</h1>' newline
+'These pages work best when viewed with a frames and table capable browser.' newline
+'All information is however visible with your current browser. Click below to continue.' newline
+'<p><a href="' subreport '_id and oid' run 'right.html" target="_top"></a><br />' newline
+'</noframes></body></html>' newline
+endreport

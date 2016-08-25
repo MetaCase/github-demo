@@ -1,0 +1,10 @@
+Graph_CandleSet_sysadmin_3501269675
+Modern
+19_414
+CandleSet
+Graph: Modern <CandleSet> 19_414
+	Name: Modern
+	Number of Candles: 18
+Object: BlueElectricLight <BlueElectricLight> 19_755
+Object: RedElectricLight <RedElectricLight> 19_938
+Object: YellowElectricLight <YellowElectricLight> 19_784

@@ -1,0 +1,18 @@
+Report '_Global instances'
+newline; /* jpt */
+'		// Global Instances, will be re-used by each section' newline
+'		Typeattribut attribute;' newline
+'		MofAssociation mofAssociation;' newline
+'		Constant constant;' newline
+'		AssociationEnd end1;' newline
+'		AssociationEnd end2;' newline
+'		Reference reference;' newline
+'		Danger iDanger;' newline
+'		Damage iDamage;' newline
+'		Risk iRisk;' newline
+'		ProductCover iProductCover;' newline
+'		Payment iPayment;' newline
+'		Fachklasse iFachklasse;' newline
+'		Constraint iConstraint;' newline
+newline newline
+endreport

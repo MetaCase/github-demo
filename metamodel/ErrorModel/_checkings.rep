@@ -1,0 +1,26 @@
+_checkings()
+/* Checking generator for EAST-ADL error models */
+
+foreach .ErrorBehavior 
+{	if explosions and :FailureLogic <> '' then
+		_reportWarnings()
+		'Warning: Failure logic for error behavior ' id ' is described in a property field and in a subgraph. Remove the other.' newline
+	endif
+	
+	if not ~referred_from~refer_to.FailureOutPort; then
+		_reportWarnings()
+		'Warning: ' id ' does not refer to one or more FailureOutPorts. Create a relationship between ' type ' and FailureOutPort!' newline
+	endif
+}
+
+/* Checkings for Objects */
+subreport '_checkings for the objects' run
+
+/* Checkings for Roles */
+subreport '_checkings for the roles' run
+
+/* Checkings for relationships */
+subreport '_checkings for the relationships' run
+
+/* Checkings for the Model */
+subreport '_checkings for the graph' run

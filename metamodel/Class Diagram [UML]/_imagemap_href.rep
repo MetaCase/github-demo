@@ -1,0 +1,9 @@
+Report '_imagemap_href'
+if $imagemapFilePerClass then
+	if metatype='Object' and type <> 'Note text' then
+		'href="' id '.html"'
+	endif	
+else
+	subreport '_imagemap_href' runSuper
+endif
+endreport

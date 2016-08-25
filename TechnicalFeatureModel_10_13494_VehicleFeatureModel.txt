@@ -1,0 +1,76 @@
+Graph_FeatureModel_user_3399887714
+TechnicalFeatureModel
+10_13494
+VehicleFeatureModel
+Graph: TechnicalFeatureModel <VehicleFeatureModel> 10_13494
+	__UUID: K7MehhJ6S7GVRtS0S4BRzg
+	Short name: TechnicalFeatureModel
+	Name: 
+	FeatureConstraints: myConstraint
+	Object: myConstraint <FeatureConstraint> 10_13515
+		__UUID: Q9Oeay1sSpC8z/tuA1CwnA
+		Short name: myConstraint
+		Name: 
+		Criterion: >100
+	Description: 
+Object: BaseBrake <VehicleFeature> 10_13535
+	__UUID: I9iL3hoJRYenfoGwkphACw
+	Short name: BaseBrake
+	Name: 
+	Cardinality: 1
+	ActualBindingTime: LinkTime
+	RequiredBindingTime: 
+	FeatureParameter: 
+	Description: 
+	IsCustomerVisible: T
+	IsDesignVariabilityRationale: F
+	IsRemoved: F
+	DeviationAttributeSet: 
+Object: BBWVehicle <VehicleFeature> 10_13585
+	__UUID: p3MAc95YSI+Dvzhd8S8Uxg
+	Short name: BBWVehicle
+	Name: 
+	Cardinality: 1
+	ActualBindingTime: LinkTime
+	RequiredBindingTime: 
+	FeatureParameter: 
+	Description: 
+	IsCustomerVisible: T
+	IsDesignVariabilityRationale: F
+	IsRemoved: F
+	DeviationAttributeSet: 
+	Decomposed to: RegenerativeBrakingSystem <VehicleFeatureModel>
+Object: BrakeLights <VehicleFeature> 10_14364
+	__UUID: o02KOs74RjmT00GdScPQvA
+	Short name: BrakeLights
+	Name: 
+	Cardinality: 1
+	ActualBindingTime: LinkTime
+	RequiredBindingTime: 
+	FeatureParameter: 
+	Description: 
+	IsCustomerVisible: T
+	IsDesignVariabilityRationale: F
+	IsRemoved: F
+	DeviationAttributeSet: test
+	Object: test <DeviationAttributeSet> 10_14414
+		__UUID: MjBc3usCQw2qd2TZCwy2AA
+		Short name: test
+		Name: 
+		AllowChangeAttribute: yes
+		AllowChangeCardinality: yes
+		AllowChangeDescription: yes
+		AllowChangeName: yes
+		AllowMove: yes
+		AllowReduction: yes
+		AllowRefinement: yes
+		AllowRegrouping: yes
+		AllowRemoval: yes
+Relationship: 1 <FeatureComposition> 10_14464
+	Feature composition cardinality: 1
+  Role: Child <Child>  Object: <VehicleFeature> 10_13535
+  Role: Parent <Parent>  Object: <VehicleFeature> 10_13585
+Relationship: 1 <FeatureComposition> 10_14474
+	Feature composition cardinality: 1
+  Role: Child <Child>  Object: <VehicleFeature> 10_14364
+  Role: Parent <Parent>  Object: <VehicleFeature> 10_13585

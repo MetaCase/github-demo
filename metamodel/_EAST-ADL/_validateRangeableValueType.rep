@@ -1,0 +1,54 @@
+_validateRangeableValueType()
+subreport '_name checks' run
+/* Validation checks for RangeableValalueTypes */
+
+/* Accuracy is undefined */
+if :Accuracy = '' then
+	_reportWarnings()
+	@errorType = 'Accuracy'
+	'Warning: '
+	if type;1 <> 'Package' then
+		/* When the Type is used in some FAA/FDA model */	
+		_reportError_level1(@errorType)
+		_extendedCheckOutput_level2()
+	else
+		/* When the Type is defined in Package model */	
+		_reportError_level0(@errorType)
+		_extendedCheckOutput_level1()
+	endif
+	newline
+endif
+
+/* Resolution is undefined */
+if :Resolution = '' then
+	_reportWarnings()
+	@errorType = 'Resolution'
+	'Warning: '
+	if type;1 <> 'Package' then
+		/* When the Type is used in some FAA/FDA model */	
+		_reportError_level1(@errorType)
+		_extendedCheckOutput_level2()
+	else
+		/* When the Type is defined in Package model */	
+		_reportError_level0(@errorType)
+		_extendedCheckOutput_level1()
+	endif
+	newline
+endif
+
+/* BaseRangeable is undefined */
+if :BaseRangeable = '' then
+	_reportWarnings()
+	@errorType = 'BaseRangeable'
+	'Warning: '
+	if type;1 <> 'Package' then
+		/* When the Type is used in some FAA/FDA model */	
+		_reportError_level1(@errorType)
+		_extendedCheckOutput_level2()
+	else
+		/* When the Type is defined in Package model */	
+		_reportError_level0(@errorType)
+		_extendedCheckOutput_level1()
+	endif
+	newline
+endif

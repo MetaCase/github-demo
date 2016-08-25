@@ -1,0 +1,18 @@
+Report '_main'
+/* produces program main */
+variable 'files' append subreport '_default directory' run 'main.exp ' close
+filename subreport '_default directory' run 'main.exp' write
+'PROGRAM MAIN
+'
+'(* ' id ' main application generated from MetaEdit+ *)' newline 
+if :Description; then '(* ' :Description ' *)' newline endif
+newline
+'VAR
+	' id%firstLower%var': FB_'id%firstUpper%var';
+END_VAR
+'
+id%firstLower%var '();
+
+END_PROGRAM'
+close
+endreport

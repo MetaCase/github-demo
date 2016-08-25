@@ -1,0 +1,107 @@
+Report '_checkings for the objects'
+/*****************************/
+/* Checkings for the objects */
+/*****************************/
+$emptyIdFound = 'F'
+
+foreach .(^Comment | ^Operator) 
+{	/* Identifier checks */
+	subreport '_name checks' run
+
+	/* Finding the objects where Type undefined */
+	if (type =~ '*Prototype') and not (type =~ '*FaultPrototype') then
+		if not decompositions then
+			_reportWarnings()
+			'Warning: Type undefined for ' 
+			if type <> 'HardwareComponentType' then
+				:Short name; ' <' type '> '
+			else
+				id ' <' type '> ' 
+			endif
+			_extendedCheckOutput_level1()
+			if $LiveCheck = 'T' then
+				'Define a suitable subgraph for it (Ctrl + double click the object).' 
+			endif
+			newline
+		endif
+	endif
+
+	/* HardwareComponentPrototypes */
+	if type = 'HardwareComponentPrototype' then
+		/* Finding the sensors and actuators connected in series */
+		_sensorsAndActuatorsInSeries()
+	endif
+	
+	/* HardwarePortConnectors */
+	if type = 'HardwarePortConnector' then
+		/* HardwarePortConnector checkings */
+		_hardwarePortConnectorCheck()
+	endif
+	
+	/* Finding QualityRequirement Kind undefined */
+	if type =~ 'QualityRequirement' And :Kind = '' then
+		_reportWarnings()
+		'Warning: Undefined Kind property for ' id 
+		_extendedCheckOutput_level1()
+		newline
+	endif
+}
+
+/* Finding the duplicate object short names */
+@duplicateObjects = _duplicatedObjects()
+if @duplicateObjects; then
+	_reportWarnings()
+	'Warning: Same short name identifier ' 
+	dowhile @duplicateObjects; where id orderby id unique id
+	{	@temp = id
+		'"' @temp '" used for:'
+		@prefix = ' '
+		foreach .(^Comment) where :Short name; = :Short name;1 orderby x NUM, y NUM
+		{	@prefix
+			@prefix = ', '
+			'<' type '>'
+		}
+		', '
+	}
+	if $extendedCheck = 'T' then
+		' in the model ' id ' <' type '>. '
+	else
+		'. Give a unique short name identifier for every object.'
+	endif
+	newline
+endif
+
+
+/* Reporting the Port Type checks */
+@undefinedTypeFound = 'F'
+foreach .(*Port) 
+{	/* Undefined type values */
+	if :Type = '' then
+		@undefinedTypeFound = 'T'
+	endif
+	/* Reporting the undefined values */
+	do :Type {	_validateDataTypes() }
+}
+
+/* Reporting the undefined Port datatypes */
+if @undefinedTypeFound = 'T' then
+	@delimeter = ''
+	_reportWarnings()
+	'Warning: Undefined Type(s) for Ports: '
+	foreach .(*Port) 
+	{	if :Type = '' then
+			@delimeter id ' <' type '>'
+			@delimeter = ', '
+		endif
+	}
+	if $extendedCheck = 'T' then
+		' in the model ' id ' <' type '>'
+	endif
+	@delimeter = ''
+	if $LiveCheck = 'T' then
+		'. Run ''Check'' report to see detailed analysis for the whole architecture.'
+	endif
+	newline
+endif
+
+endreport

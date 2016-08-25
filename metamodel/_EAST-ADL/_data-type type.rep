@@ -1,0 +1,13 @@
+Report '_data-type type'
+if :Type <> '' then
+	do :Type {
+		if not $typesAccessedFromLevels =~ oid%wildsp then
+			variable 'typesAccessedFromLevels' append oid ' ' close
+			subreport '_data-type type' run	
+			if type = 'CompositeDatatype' then
+				do :DatatypePrototypes { subreport '_data-type type' run	}
+			endif
+		endif
+	}
+endif
+endreport

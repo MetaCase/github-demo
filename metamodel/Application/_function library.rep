@@ -1,0 +1,25 @@
+Report '_function library'
+/* Define all used library functions */
+$functionsUsed=' '
+/* compares if the function is already included and adds it to the variable of reported functions */
+foreach .Note {
+	if :Function used; then
+		do :Function used; { 
+			if not $functionsUsed =~ oid%wildsp then
+				variable 'functionsUsed' append oid ' ' close
+				subreport '_Function' run
+			endif
+		}
+	endif
+}
+foreach >(Back | Flow ){
+	if :Function used; then
+		do :Function used; { 
+			if not $functionsUsed =~ oid%wildsp then
+				variable 'functionsUsed' append oid ' ' close
+				subreport '_Function' run
+			endif
+		}
+	endif
+}
+endreport

@@ -1,0 +1,19 @@
+Report '_RSS'
+filename
+	subreport '_default directory' run
+	'group\'
+	subreport '_app' run 
+	'.rss'
+write 
+subreport '_RSS_Application' run
+foreach .View
+{	subreport '_RSS_View' run }
+foreach .Menu Pane
+{	if ~SubMenu; then
+		if not ~Menu; then
+			subreport '_RSS_Menu_Pane' run
+		endif
+	endif
+}
+close
+endreport

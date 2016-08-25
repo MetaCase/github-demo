@@ -1,0 +1,7 @@
+_ItemChecks()
+foreach .Item 
+{	if :Vehicle features; = '' then
+		_reportWarnings()
+		'Warning: ' id ' <' type '> does not include any features. Create or reuse at least one VehicleFeature in the VehicleFeatures property!' newline
+	endif
+}

@@ -1,0 +1,14 @@
+_checkingsForDatatypes()
+/* Objects will be reported only in case they have not been reported earlier (if they are they are included in the reported_objects variable */
+foreach .() 
+{	if not $reported_objects =~ oid%wildsp; then
+		variable 'reported_objects' append oid ' ' close 
+
+		/* Checking for the data-types */
+		_validateDataTypes()
+		/* extended check is T when Check button is pressed from the toolbar */
+		if $extendedCheck = 'T' And type = 'Package'; then
+			do decompositions { _checkingsForDatatypes()	}
+		endif
+	endif
+}

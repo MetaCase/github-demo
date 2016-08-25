@@ -1,0 +1,7 @@
+Report '_X_location'
+/* Report Location object */
+'<location url="' id '">' newline
+/* Report objects after location object */
+subreport '_next object or otherwise' run
+'</location>' newline
+endreport

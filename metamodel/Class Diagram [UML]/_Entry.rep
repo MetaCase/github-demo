@@ -1,0 +1,28 @@
+Report '_Entry'
+/* The main page for a class, with a form and list of recent entries */
+$pageSize='4'
+'<!DOCTYPE html>
+<!-- (Start of MetaEdit+ generator _Entry -->
+'
+subreport '_EntryHTMLstart' run
+subreport '_EntryHTMLform' run
+'<hr>
+<p><b>' $pageSize ' most recently edited ' id%xml ' entries:</b></p>
+
+'
+subreport '_EntryHTMLmid' run
+do 'sample globals entry_common entry_form'%words
+{	subreport '_includeScript' run
+}
+'<script type="text/javascript">
+
+'
+subreport '_EntryJSparams' run
+subreport '_EntryJSvariable' run
+
+'</script>
+</body>
+</html>
+<!-- End of MetaEdit+ generator _Entry) -->
+'
+endreport

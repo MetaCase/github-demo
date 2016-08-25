@@ -1,0 +1,38 @@
+Graph_MovableDynamicPorts_user_3588416014
+Movable dynamic ports
+19_1804
+MovableDynamicPorts
+Graph: Movable dynamic ports <MovableDynamicPorts> 19_1804
+	Name: Movable dynamic ports
+Object: Letter component <Component [Movable Dynamic Ports]> 19_1821
+	Name: Letter component
+	Ports: A B
+	Object: A <Port [Movable Dynamic Ports]> 19_1813
+		Name: A
+	Object: B <Port [Movable Dynamic Ports]> 19_1817
+		Name: B
+Object: Number component <Component [Movable Dynamic Ports]> 19_1837
+	Name: Number component
+	Ports: 1 2
+	Object: 1 <Port [Movable Dynamic Ports]> 19_1829
+		Name: 1
+	Object: 2 <Port [Movable Dynamic Ports]> 19_1833
+		Name: 2
+Object: Dynamic ports from collection property
+A template around the edge of the object retrieves its ports from the object's collection property.
+
+ <Note> 19_1872
+	Documentation: Dynamic ports from collection property
+A template around the edge of the object retrieves its ports from the object's collection property.
+
+
+Object: Movable dynamic ports
+The dynamic ports are defined to be movable. Select the role connecting to a port. Then click on the handle shown at the port end and start dragging - the port will now follow and move along the template perimeter. <Note> 19_1877
+	Documentation: Movable dynamic ports
+The dynamic ports are defined to be movable. Select the role connecting to a port. Then click on the handle shown at the port end and start dragging - the port will now follow and move along the template perimeter.
+Relationship: Connection [Movable Dynamic Ports] <Connection [Movable Dynamic Ports]> 19_1844
+  Role: From [Movable Dynamic Ports] <From [Movable Dynamic Ports]>  Port: <Port [Movable Dynamic Ports]> 19_1817  Object: <Component [Movable Dynamic Ports]> 19_1821
+  Role: To [Movable Dynamic Ports] <To [Movable Dynamic Ports]>  Port: <Port [Movable Dynamic Ports]> 19_1833  Object: <Component [Movable Dynamic Ports]> 19_1837
+Relationship: Connection [Movable Dynamic Ports] <Connection [Movable Dynamic Ports]> 19_1861
+  Role: From [Movable Dynamic Ports] <From [Movable Dynamic Ports]>  Port: <Port [Movable Dynamic Ports]> 19_1813  Object: <Component [Movable Dynamic Ports]> 19_1821
+  Role: To [Movable Dynamic Ports] <To [Movable Dynamic Ports]>  Port: <Port [Movable Dynamic Ports]> 19_1829  Object: <Component [Movable Dynamic Ports]> 19_1837

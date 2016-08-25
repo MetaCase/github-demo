@@ -1,0 +1,26 @@
+Report '_subgraphs'
+do contents {
+	if type = 'Object [GOPRR]' or type = 'Role [GOPRR]' or type = 'Relationship [GOPRR]' then
+		if ~From [GOPRR]>Explosion [GOPRR]; then
+			'<explosion>' newline
+			_explosionSource()
+			do ~From [GOPRR]>Explosion [GOPRR]~To [GOPRR].Graph [GOPRR] {
+				do decompositions {'<graph href="#' _type_name_oid() '" />' newline }
+			}
+			'</explosion>' newline
+		endif
+	endif
+}
+do contents {
+	if type = 'Object [GOPRR]' then
+		if ~From [GOPRR]>Decomposition [GOPRR]; then
+			'<decomposition>' newline
+			_decompSource()
+			do ~From [GOPRR]>Decomposition [GOPRR]~To [GOPRR].Graph [GOPRR] {
+				do decompositions {'<graph href="#' _type_name_oid() '" />' newline }
+			}
+			'</decomposition>' newline
+		endif
+	endif
+}
+endreport

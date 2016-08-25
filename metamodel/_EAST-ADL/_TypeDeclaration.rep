@@ -1,0 +1,12 @@
+_TypeDeclaration()
+/* Reports graphs in which type is declared: EAType referring to this graph type */
+do graphs where type = 'Package' 
+{	foreach .EAType 
+	{	@found = ''
+		do decompositions where oid = oid;3 
+		{	id ' is declared in ' id;2 
+			@found = 'T'
+		}
+		if @found then ' as EAType ' id newline endif
+	}
+}

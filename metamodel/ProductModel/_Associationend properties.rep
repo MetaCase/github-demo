@@ -1,0 +1,12 @@
+Report '_Associationend properties'
+/* Reports the associationEnd properties for each role (and related object) */
+		do .() {
+			'		i' if :Composite?; then 'composite' endif type ' = (' 
+			if :Composite?; then 'Composite' endif type ') productpackage_.lookupElementExtended("' id '");' newline
+			'		AssociationEnd end' oid;1; ' = new AssociationEnd("end' oid;1; '", i' if :Composite?; then 'composite' endif type ');' newline 
+			'		end' oid;1; '.setMultiplicity(new MultiplicityType(' if :Multiplicity;1; then :Multiplicity;1; else '1,1' endif 
+			if :Is ordered?;1; then ', true' else ', false' endif
+			',true));' newline	/* implicitly unique always true in MOF */
+			'		end';oid;1; '.setAggregation(AggregationType.SHARED);' newline /* associations, not whole role always shared */
+		}
+endreport

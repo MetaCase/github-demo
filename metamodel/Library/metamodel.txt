@@ -1,0 +1,39 @@
+==========================
+Graph Type
+==========================
+Library
+	Name: String
+
+==========================
+Object Types
+==========================
+TextFragment
+	Label: String
+	Start address: String
+	Length: String
+
+==========================
+Relationship Types
+==========================
+
+==========================
+Role Types
+==========================
+
+==========================
+Extra Types
+==========================
+
+==========================
+Bindings
+==========================
+
+==========================
+Constraints
+==========================
+Property "Start address" in TextFragment must have unique values
+
+==========================
+Subgraphs
+==========================
+

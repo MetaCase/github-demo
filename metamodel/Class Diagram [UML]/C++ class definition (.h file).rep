@@ -1,0 +1,19 @@
+Report 'C++ class definition (.h file)'
+/*	Creates C++ header files from UML class diagrams according to the following rules:
+*	Multiple inheritance supported, uses visibility and virtually defined inheritance
+*	Documentation of classes are included into comments and marked with "//" 
+*	Attributes and operations are listed according their access level: public, private, protected
+*	If data type is not entered comments out the attribute by asking to enter data type  
+*	Return type for operation is mandatory: If not entered uses void instead. 
+*	Constraints of attributes and operations are marked with "//" 
+*	Aggregation structures between classes are generated into comments 
+*/
+foreach .Class [UML];
+{	filename subreport '_default directory' run id '.h' 
+	md5start '		// MEPMD5 ' md5stop '		' newline merge
+	'// From MetaEdit+, graph: ' id;1 newline
+	'// Class definition (.h file) for class ' id newline newline
+	subreport '_C++ class header' run
+	close
+ }
+endreport

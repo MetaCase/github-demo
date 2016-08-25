@@ -1,0 +1,30 @@
+_ErrorFailureOutPorts()
+foreach .(OutFlowPort | ClientPort) {
+'		<object id="_' oid '" type="Object_FailureOutPort_sysadmin_3509188783">
+			<slot name="Short name">
+				<value>
+					<string>' :Short name%xml '</string>
+				</value>
+			</slot>
+			<slot name="Name">
+				<value>
+					<string>' :Name%xml '</string>
+				</value>
+			</slot>			
+			<slot name="Type">
+				<value>' 
+				if not type = 'ClientPort' then
+					do :Type {
+						if not $reportedDatatypes  =~ oid%wildsp then
+							variable 'reportedDatatypes' append oid ' ' close
+							subreport '_portdt' type run 
+						else
+							'<object href="#_' oid '"></object>' 
+						endif
+					}
+				endif
+'				</value>
+			</slot>
+		</object>
+'
+}

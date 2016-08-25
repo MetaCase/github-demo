@@ -1,0 +1,35 @@
+Report '_Back code'
+/* Generates code for back flow */
+do ~Back from>Back { 
+	subreport '_Relationship code' run
+	do ~Back to.() {
+		if type; = 'Stop' then /* next element is stop */
+			'		return (' type oid ', False)' newline
+		else
+			if ~From choice; then 		/* when element is List or Popup */
+				'		return (' subreport '_Internal name' run ', True)' newline
+			else
+				if ~From; then
+					do ~From~To.() { /* get the element this element refers */
+						if oid;1 <> oid then  /* do not report cancels when drawn case is default */
+							'		return ('
+							if :Internal name \(optional\);1 then 
+								:Internal name \(optional\);1
+							else
+								type;1 oid;1
+							endif
+							', True)'
+							newline
+						endif
+					}
+				else
+					if ~Menu; then
+						/* When no From choice or From roles (like in Listbox) */
+						'		return (' subreport '_Internal name' run newline	' True)'
+					endif
+				endif
+			endif
+		endif
+	}
+}
+endreport

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol">
+	<librarySymbol name="Class [UML] Empty Slot">
+		<objectSymbol offset="0,0" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="0,0 105,0 105,15 0,15 0,0" targetPointX="52.5" targetPointY="7.5" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="0" version="1.2" width="0" xmlns="http://www.w3.org/2000/svg"></svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

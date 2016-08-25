@@ -1,0 +1,7 @@
+Report '_Form flags'
+'		# Flags' newline
+'		appuifw.FForm' :Form mode; 'ModeOnly'
+if :Edit labels?; then ' | appuifw.FFormAutoLabelEdit' endif
+if :Form field double spacing?; then ' | appuifw.FFormDoubleSpaced' endif
+')' newline
+endreport

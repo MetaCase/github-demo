@@ -1,0 +1,22 @@
+_PItranslators()
+
+_translators()
+
+to '%chars
+/(.)/ $$1\
+' endto
+
+$alphabet = 'abcdefghijklmnopqrstuvwxyz'%chars
+
+to '%firstUpper'
+   do $alphabet { newline
+      '/^' id '(.*)$/'   /* LHS->RHS */   ' $' id%upper '$1'
+   }
+endto
+
+to '%firstLower'
+   do $alphabet%upper { newline
+      '/^' id '(.*)$/'   /* LHS->RHS */   ' $' id%lower '$1'
+   }
+endto
+

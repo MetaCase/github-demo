@@ -1,0 +1,254 @@
+==========================
+Graph Type
+==========================
+Sequence Diagram
+	A sequence diagram describes an interaction by focusing on the sequence of messages that are exchanged, along with their corresponding occurrences on the lifelines. 
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Lifeline object
+	A lifeline object represents an individual participant in the interaction.
+	---------------------------------------------
+	Object name: String
+	Class: Class [UML]
+	Stop?: Boolean
+	Documentation: Text
+Outside actor
+	Outside actor describes the unknown element of the interaction. It allows to describe lost and found messages, i.e. a message where the sending object is known, but receiver not (lost), or vice versa (found).
+	---------------------------------------------
+Frame
+	Frame describes an interaction unit of behavior that focuses on the observable exchange of information between connected elements.
+	---------------------------------------------
+	Name: String
+	Interaction occurance?: Boolean
+Continuation
+	A Continuation is a syntactic way to define continuations of different branches of an alternative interaction fragment. Continuations is intuitively similar to labels representing intermediate points in a flow of control.
+	---------------------------------------------
+	Setting: String
+Note text
+	Note is a special object for adding additional text anywhere in the graphs. It can be linked to another design objects with a note connection relationship.
+	---------------------------------------------
+	Note text: Text
+	Stereotype: String
+
+==========================
+Relationship Types
+==========================
+Call
+	A call defines one specific kind of communication in an Interaction. A call is often synchronous.
+	---------------------------------------------
+	Message name: String
+	Parameters: OrderedCollection (Argument)
+	Return value: String
+	Duration: String
+Asynchronous message
+	A message defines one specific kind of communication in an Interaction. The message specifies not only the message name and parameters, but also the sender and the receiver.
+	---------------------------------------------
+	Message name: String
+	Parameters: OrderedCollection (Argument)
+	Return value: String
+	Duration: String
+Create
+	Create message is a special kind of message that creates an lifeline object.
+	---------------------------------------------
+Return
+	The reply message from shows return from a method call. 
+	---------------------------------------------
+	Return value: String
+
+==========================
+Role Types
+==========================
+Async message to
+	Time constraint: String
+Message from
+	Time observation action: String
+	Interaction constraint: String
+Message to
+	Time constraint: String
+Return from
+Return to
+
+==========================
+Extra Types
+==========================
+State Machine Diagram
+	A state machine diagram is used to show the state space of an instance of a class, the events that cause a transition from one state to another, and the actions that result from a state change.
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+_Unified Modeling Language
+	This UML metamodel is based on the 2.0 Draft Adopted Specification.
+	---------------------------------------------
+Argument
+	Argument: String
+	Parameter: Parameter
+Attribute [UML]
+	Name: String
+	Data type: String
+	Default value: String
+	Stereotype: String
+	Visibility: String
+	Scope: String
+	Access: String
+	Derived?: Boolean
+	Persistent?: Boolean
+	Constraints: Text
+	Documentation: Text
+Class [UML]
+	An class describes a group of objects with similar properties (attributes), common behaviour (operations), common relationships to other objects, and common semantics. Class is represented as a box with three parts each including different properties. Class name is in the first part of the class box toghether with a stereotype. List of attributes are in the second part, and list of operations are in the last box. Class can be characterized according to:
+	- package they belong
+	- whether it is abstract
+	- whether it is persistent
+	- how the element may be overridden by the subclass. Values: virtual - fully defined and may be overridden, leaf - fully defined and may not be overridden, deferred - protocol only defined and must be overridden, extensible - may be extended but not overridden
+	- role (model, view, controller)
+	- template parameters
+	- constraints
+	- invariant information
+	- derivation rules
+	- responsibility
+	- documentation, and 
+	- simple symbol? to choose whether the whole class symbol is shown or only class name and possible template parameters.
+	
+	Each attribute in a list field is used for entering in more detail characteristics of an attribute. These include: 
+	- attribute name
+	- data type
+	- initial value
+	- stereotype
+	- visibility (public, private, or protected)
+	- scope (class, instance, or class-instance)
+	- access for the value
+	- derived? to inform that the actual value is derived
+	- persistent?
+	- constraints
+	- documentation
+	
+	A operation is a specific behavior that an object is responsible for exhibiting. Operation list field is used for adding in more detail specifications of an operation. Each operation can be specified by:
+	- name
+	- parameters containing parameter name, type and default value
+	- return type (i.e. possibly object to be returned)
+	- method body or operation specification
+	- whether the operation can be overridden (virtual - fully defined and may be overridden, leaf - fully defined and may not be overridden, deferred - protocol only defined and must be overridden, extensible - may be extended but not overridden)
+	- stereotype (e.g for Smalltalk protocols)
+	- visibility (public, private, or protected)
+	- operation type (class or instance)
+	- preconditions
+	- postconditions
+	- documentation
+	---------------------------------------------
+	Class name: String
+	Attributes: OrderedCollection (Attribute [UML])
+	Operations: OrderedCollection (Operation [UML])
+	Package: Package
+	Abstract?: Boolean
+	Persistent?: Boolean
+	Stereotype: String
+	Overridability: String
+		How the element may be overridden by the subclass. Values:
+		virtual - fully defined and may be overridden
+		leaf - fully defined and may not be overridden
+		deferred - protocol only defined and must be overridden
+		extensible - may be extended but not overridden
+		---------------------------------------------
+	Role: String
+	Parameters: OrderedCollection (Parameter)
+	Constraints: Text
+	Invariant: Text
+	Derivation rules: OrderedCollection (String)
+	Responsibility: Text
+	Documentation: Text
+	Simple symbol?: Boolean
+Operation [UML]
+	Operation name: String
+	Parameters: OrderedCollection (Parameter)
+	Return type: String
+	Overridability: String
+		How the element may be overridden by the subclass. Values:
+		virtual - fully defined and may be overridden
+		leaf - fully defined and may not be overridden
+		deferred - protocol only defined and must be overridden
+		extensible - may be extended but not overridden
+		---------------------------------------------
+	Stereotype: String
+	Visibility: String
+	Operation type: String
+	Preconditions: Text
+	Postconditions: Text
+	Body: Text
+	Documentation: Text
+Package
+	A package is used for grouping elements and organizing models: a system may be thought of as a single high-level package included other model elements and other packages. Depending on the graph type used a package can contain a set of use cases, classes or other packages. Each package is represented with a folder symbol with name of the package inside the symbol and steretotype of the package above the symbol.
+	---------------------------------------------
+	Package name: String
+	Stereotype: String
+	Documentation: Text
+Parameter
+	Parameter: String
+	Data type: String
+	Direction: String
+	Default value: String
+Person
+	Person is used to describe developers involved in a project (i.e. attached to the project model) and authors of developed models. Person can be characterized with a name, e-mail address, and with a contact address. 
+	---------------------------------------------
+	Name: String
+	E-mail: String
+	Contact address: Text
+Object port
+	Port name: String
+Message
+
+==========================
+Bindings
+==========================
+Asynchronous message
+	Message from: Frame, Lifeline object
+	Async message to: Frame, Lifeline object
+Asynchronous message
+	Message from: Frame, Lifeline object
+	Async message to: Outside actor
+Asynchronous message
+	Message from: Outside actor
+	Async message to: Frame, Lifeline object
+Call
+	Message from: Frame, Lifeline object
+	Message to: Frame, Lifeline object
+Call
+	Message from: Frame, Lifeline object
+	Message to: Outside actor
+Call
+	Message from: Outside actor
+	Message to: Frame, Lifeline object
+Create
+	Message from: Frame, Lifeline object
+	Message to #(Creation port): Lifeline object
+Create
+	Message from: Outside actor
+	Message to #(Creation port): Lifeline object
+Return
+	Return from: Frame, Lifeline object
+	Return to: Frame, Lifeline object
+Return
+	Return from: Frame, Lifeline object
+	Return to: Outside actor
+
+==========================
+Constraints
+==========================
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	Frame
+		Sequence Diagram
+	Lifeline object
+		State Machine Diagram
+

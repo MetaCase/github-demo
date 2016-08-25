@@ -1,0 +1,54 @@
+==========================
+Graph Type
+==========================
+Roadmap
+	Name: String
+
+==========================
+Object Types
+==========================
+City
+	Name: String
+	Population: String
+
+==========================
+Relationship Types
+==========================
+Connection
+	Road Number: String
+
+==========================
+Role Types
+==========================
+Road
+
+==========================
+Extra Types
+==========================
+
+==========================
+Bindings
+==========================
+Connection
+1	Road: City
+1	Road: City
+
+==========================
+Constraints
+==========================
+
+==========================
+Subgraphs
+==========================
+
+==========================
+Generators
+==========================
+
+==========================
+Sub-Generators
+==========================
+_jointPopulation
+_jointPopulationCategory
+_speedLimit
+

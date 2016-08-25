@@ -1,0 +1,12 @@
+Report '_Cs_calcValue'
+do ~Get.() 
+{  id
+}
+
+do ~(Minus|Plus) 
+{  '.me' type
+   do .()
+   {  '(' id ')'
+   }
+}
+endreport

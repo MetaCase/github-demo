@@ -1,0 +1,9 @@
+Report '_compile and execute for Java: Linux'
+
+if $IDE = '' then
+	external 
+		'chmod +x ' subreport '_default directory' run 'makeWatch; ' 		subreport '_default directory' run 'makeWatch' 
+	execute
+endif
+
+endreport

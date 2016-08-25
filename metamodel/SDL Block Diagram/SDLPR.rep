@@ -1,0 +1,21 @@
+SDLPR()
+_translators()
+'SYSTEM ' :Name%var ';' newline
+_variables()
+_signals()
+_channels()
+_blocks()
+_processes()
+'ENDSYSTEM ' :Name%var ';' newline newline
+foreach .Block {
+	do decompositions {
+		_SDLPRsub()
+		newline
+	}
+}
+foreach .Process {
+	do decompositions {
+		_SDLPRprocess()
+		newline
+	}
+}

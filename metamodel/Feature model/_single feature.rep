@@ -1,0 +1,5 @@
+Report '_single feature'
+'<tr><td><b>'
+do >()~Has features.() {id} 
+'</b></td><td>' newline
+endreport

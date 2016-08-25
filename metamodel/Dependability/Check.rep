@@ -1,0 +1,16 @@
+Check()
+subreport '_translators' run 
+$LiveCheck = 'F' /* Check report run from toolbar/menu, not to run via liveCheck pane */
+$warnings = '0'
+'Warnings:' newline
+
+/* Checking for legal path hierarchy */
+_LegalTypePath()
+
+_checkings()
+
+if $warnings <> '0' then
+	'Total number of warnings: ' $warnings newline
+else
+	'No warnings found!' newline
+endif

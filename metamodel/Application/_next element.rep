@@ -1,0 +1,16 @@
+Report '_next element'
+/* reports next flow element for other than single or double queries or lists or popups */
+do ~From>Flow { 
+	if :Function used; then
+		do :Function used; {'	' :Function name;}
+		'(' :Code; ')' newline
+	else
+		if :Code; then
+			do :Code; { '	' id newline }
+		endif
+	endif
+	do ~To.() {
+		'	return (' subreport '_Internal name' run ', ' subreport '_non-stack elements' run ')' newline
+	}
+}
+endreport

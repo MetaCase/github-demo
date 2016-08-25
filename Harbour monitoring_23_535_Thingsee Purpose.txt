@@ -1,0 +1,116 @@
+Graph_Thingsee_app_sysadmin_3617045505
+Harbour monitoring
+23_535
+Thingsee Purpose
+Graph: Harbour monitoring <Thingsee Purpose> 23_535
+	Name: Harbour monitoring
+	Description: This application monitors boat in harbor. It checks the humidity level every hour and sends warning to the phone if humidity is above 55%rh. The application also checks the temparature every second hour and warns if temperature closes to the freezing. The application also monitors and warms the user on batter level.
+Object: Impact >1.5 (g) <Acceleration> 23_414
+	Direction: Any
+	Trigger if over (g): 1.5
+	Trigger if under (g): 0
+Object: SMS555-5555(Battery level is below 10%) <Action> 23_570
+	Send saved logs to cloud: F
+	Send event to: none
+	Send event to cloud URL: 
+	Send SMS message: 555-5555(Battery level is below 10%)
+	Object: 555-5555(Battery level is below 10%) <Send SMS message> 23_588
+		To (phone number): 555-5555
+		Message: Battery level is below 10%
+Object: SMS555-5555(Update salt for dryer) <Action> 23_628
+	Send saved logs to cloud: F
+	Send event to: none
+	Send event to cloud URL: 
+	Send SMS message: 555-5555(Update salt for dryer)
+	Object: 555-5555(Update salt for dryer) <Send SMS message> 23_646
+		To (phone number): 555-5555
+		Message: Update salt for dryer
+Object: SMS555-5555(Warning: water freezing.) <Action> 23_656
+	Send saved logs to cloud: F
+	Send event to: none
+	Send event to cloud URL: 
+	Send SMS message: 555-5555(Warning: water freezing.)
+	Object: 555-5555(Warning: water freezing.) <Send SMS message> 23_674
+		To (phone number): 555-5555
+		Message: Warning: water freezing.
+Object: <10%  <Battery> 23_598
+	Trigger if battery over (%): 
+	Trigger if battery under (%): 10
+Object: This application monitors boat in harbor. It checks the humidity level every hour and sends warning to the phone if humidity is above 55%rh. The application also checks the temparature every second hour and warns if temperature closes to the freezing. The application also monitors and warms the user on batter level. <Comment> 23_700
+	Description: This application monitors boat in harbor. It checks the humidity level every hour and sends warning to the phone if humidity is above 55%rh. The application also checks the temparature every second hour and warns if temperature closes to the freezing. The application also monitors and warms the user on batter level.
+Object: Thingsee Purpose is based on the sensors and services of Internet of Things device Thingsee.  The language allows to use various sensors (Accelerator, Timer, Geofence, Location, Speed, Temperature, Humidity, Pressure, Luminance) and interact with the world via services (cloud, mobile, sms). Language provides also capabilities to follow the status of the device like its batter level and charging status.  The language guides creating applications as well as checks if they try to monitor the device in unsafe situations (too warm, too big G forces).
+
+Generator produces the jsn code that can be uploaded to the IoT device and executed there. <Comment> 23_1808
+	Description: Thingsee Purpose is based on the sensors and services of Internet of Things device Thingsee.  The language allows to use various sensors (Accelerator, Timer, Geofence, Location, Speed, Temperature, Humidity, Pressure, Luminance) and interact with the world via services (cloud, mobile, sms). Language provides also capabilities to follow the status of the device like its batter level and charging status.  The language guides creating applications as well as checks if they try to monitor the device in unsafe situations (too warm, too big G forces).
+
+Generator produces the jsn code that can be uploaded to the IoT device and executed there.
+Object: Monitor boat in harbour. <Display> 23_546
+	Text shown: Monitor boat in harbour.
+Object: >55 %rh <Humidity> 23_608
+	Trigger if over (%rh): 55
+	Trigger if under (%rh): 
+Object: 2 lux <Luminance> 23_690
+	Trigger if over (lux): 
+	Trigger if under (lux): 2
+Object: InitializeSailing <Other Purpose> 23_684
+	State in other purpose: InitializeSailing
+	Object: InitializeSailing <State> 23_390
+		Name: InitializeSailing
+		Start state: T
+		Always active: F
+		Description: 
+Object: InHarbour <State> 23_354
+	Name: InHarbour
+	Start state: T
+	Always active: F
+	Description: 
+Object: Monitoring <State> 23_552
+	Name: Monitoring
+	Start state: F
+	Always active: F
+	Description: 
+Object: < 2 C <Temperature> 23_618
+	Trigger if over (celcius): 
+	Trigger if under (celcius): 2
+Relationship:  <Transition> 23_704
+	Name: 
+  Role: Action <Action>  Object: <Display> 23_546
+  Role: From <From>  Object: <State> 23_354
+  Role: To <To>  Object: <State> 23_552
+Relationship: Battery warning <Transition> 23_716
+	Name: Battery warning
+  Role: Action <Action>  Object: <Action> 23_570
+  Role: From <From>  Object: <State> 23_552
+  Role: F <PollTrigger>  Object: <Battery> 23_598
+	Log values to device: F
+	Poll values after every: 12
+	Poll unit: hours
+  Role: To <To>  Object: <State> 23_552
+Relationship:  <Transition> 23_742
+	Name: 
+  Role: Action <Action>  Object: <Action> 23_656
+  Role: From <From>  Object: <State> 23_552
+  Role: F <PollTrigger>  Object: <Temperature> 23_618
+	Log values to device: F
+	Poll values after every: 15
+	Poll unit: minutes
+  Role: To <To>  Object: <State> 23_552
+Relationship:  <Transition> 23_768
+	Name: 
+  Role: Action <Action>  Object: <Action> 23_628
+  Role: From <From>  Object: <State> 23_552
+  Role: F <PollTrigger>  Object: <Humidity> 23_608
+	Log values to device: F
+	Poll values after every: 1
+	Poll unit: hours
+  Role: To <To>  Object: <State> 23_552
+Relationship:  <Transition> 23_794
+	Name: 
+  Role: From <From>  Object: <State> 23_552
+  Role: F <PollTrigger>  Object: <Luminance> 23_690
+	Log values to device: F
+	Poll values after every: 5
+	Poll unit: seconds
+  Role: To <To>  Object: <Other Purpose> 23_684
+  Role: F <Trigger>  Object: <Acceleration> 23_414
+	Log values to device: F

@@ -1,0 +1,9 @@
+_vcsCheckIn_git()
+'
+git add -A || pause
+git commit -F "%mepath%\versionComment.txt" || pause
+'
+if $gitProjectURL then 
+	'git pull --rebase --strategy=ours origin master || pause' newline
+	'git push -u --force-with-lease origin master || pause' newline
+endif

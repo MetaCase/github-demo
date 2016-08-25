@@ -1,0 +1,11 @@
+Report '_speedLimit'
+
+$category = _jointPopulationCategory()
+
+if $category = '1' then '120'
+	else if $category = '2' then '100'
+		else '80'
+	endif
+endif
+
+endreport

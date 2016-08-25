@@ -1,0 +1,66 @@
+Graph_Heating_application_user_3504901597
+BoilerController
+15_386
+Heating application
+Graph: BoilerController <Heating application> 15_386
+	System name: BoilerController
+	Description: Boiler warming based on requested temperature from TS2
+	Use visualization: T
+Object: B1 <Boiler> 15_569
+	Name: B1
+Object: >= <Comparison> 15_436
+	Comparison: >=
+Object: <= <Comparison> 15_1090
+	Comparison: <=
+Object: B1 TS2 <Sensor> 15_544
+	Name: B1 TS2
+	Mounting: near the process
+	Measured variable: Temperature
+	Function: Controller
+Object: Start <Start> 15_876
+Object: Monitor boiler temp <State> 15_603
+	State name: Monitor boiler temp
+	Description: 
+Object: Initializing <State> 15_1288
+	State name: Initializing
+	Description: 
+Relationship: Condition <Condition> 15_398
+  Role: Left <Left>  Object: <Comparison> 15_1090
+  Role: lrTemperature <Sensor condition>  Object: <Sensor> 15_544
+	NOT?: F
+	Condition: lrTemperature
+Relationship: Condition <Condition> 15_586
+  Role: Left <Left>  Object: <Comparison> 15_436
+  Role: lrTemperature <Sensor condition>  Object: <Sensor> 15_544
+	NOT?: F
+	Condition: lrTemperature
+Relationship: Condition <Condition> 15_1123
+  Role: lrTempSetpointLow <Boiler condition>  Object: <Boiler> 15_569
+	NOT?: F
+	Condition: lrTempSetpointLow
+  Role: Right <Right>  Object: <Comparison> 15_1090
+Relationship: Condition <Condition> 15_1319
+  Role: lrTempSetpointHigh <Boiler condition>  Object: <Boiler> 15_569
+	NOT?: F
+	Condition: lrTempSetpointHigh
+  Role: Right <Right>  Object: <Comparison> 15_436
+Relationship: Transition <Transition> 15_577
+  Role: F <Condition>  Object: <Comparison> 15_436
+	NOT?: F
+  Role: From <From>  Object: <State> 15_603
+  Role: DontWarmUp <Heat exchanger action>  Object: <Boiler> 15_569
+	Action: DontWarmUp
+  Role: To <To>  Object: <State> 15_603
+Relationship: Transition <Transition> 15_732
+  Role: F <Condition>  Object: <Comparison> 15_1090
+	NOT?: F
+  Role: From <From>  Object: <State> 15_603
+  Role: DoWarmUp <Heat exchanger action>  Object: <Boiler> 15_569
+	Action: DoWarmUp
+  Role: To <To>  Object: <State> 15_603
+Relationship: Transition <Transition> 15_740
+  Role: From <From>  Object: <State> 15_1288
+  Role: To <To>  Object: <State> 15_603
+Relationship: Transition <Transition> 15_962
+  Role: From <From>  Object: <Start> 15_876
+  Role: To <To>  Object: <State> 15_1288

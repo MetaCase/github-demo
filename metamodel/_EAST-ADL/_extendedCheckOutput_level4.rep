@@ -1,0 +1,9 @@
+_extendedCheckOutput_level4()
+/* Report generating the graph name and type to the checking output */
+if $extendedCheck = 'T' then
+	if type;1 <> 'Package' then
+		'in the model ' id;4 ' <' type;4 '>'
+	else
+		'in the model ' id;1 ' <' type;1 '>'
+	endif
+endif

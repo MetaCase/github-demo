@@ -1,0 +1,54 @@
+Report 'C state machine'
+	subreport '_CEnums' run
+	'int state = Start;' newline
+	'int button = None; /* pseudo-button for following buttonless transitions */' newline newline
+	subreport '_CRunWatch' run
+	'void handleEvent()' newline
+	'{' newline
+	'	int oldState = state;' newline
+	'	switch (state)' newline '	{' newline
+	foreach .(State [Watch] | Start [Watch]);
+	{	'		case '
+		if type = 'Start [Watch]' then 'Start' else id endif
+		':' newline
+		'			switch (button)' newline 
+		'			{' newline
+		do ~From>Transition;
+		{	'				case '
+			if ~Event; then
+				do ~Event.Button; { id }
+			else
+				'None'
+			endif
+			':' newline
+			do ~Action.Action;
+			{	do ~ActionBody>();
+				{	'					' subreport '_C_' type run
+				}
+			}
+			do ~To.(State [Watch] | Stop [Watch]);
+			{	if not oid; = oid;2 then
+					'					state = '
+					if type = 'Stop [Watch]' then
+						'Stop'
+					else
+						id
+					endif
+					';' newline
+				endif
+				'					break;' newline
+			}
+		}
+		'				default:' newline
+		'					break;' newline
+		'			}' newline
+	}
+	'		default:' newline
+	'			break;' newline
+	'	}' newline
+	'	button = None; /* follow transitions that do not require buttons */' newline
+   	'	if (oldState != state) handleEvent();' newline 
+'}'
+newline newline
+subreport '_CDisplayFns' run
+endreport

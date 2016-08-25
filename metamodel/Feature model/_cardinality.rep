@@ -1,0 +1,9 @@
+Report '_cardinality'
+if :Cardinality <> '' then;
+	'(specify how many ' :Cardinality; '): '
+	'<input type="number" name="' 
+	do .() {id} 
+	'" size="6" />'
+	newline;
+endif
+endreport

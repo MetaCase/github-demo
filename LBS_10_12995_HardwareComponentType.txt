@@ -1,0 +1,22 @@
+Graph_HardwareDesignArchitecture_user_3400132575
+LBS
+10_12995
+HardwareComponentType
+Graph: LBS <HardwareComponentType> 10_12995
+	__UUID: sY41vTqnR7ekGEACzyAm7A
+	Type: LBS <SensorType>
+	Object: LBS <SensorType> <SensorType> 10_13012
+		__UUID: hc650ZWIQASubfkTlflZ8g
+		Short name: LBS
+		Name: 
+		Description: 
+	Show report: Checking
+	Show allocated prototypes: F
+	Show oid: F
+Object: LockButtonStatus <IOHardwarePinOut> 10_13036
+	__UUID: tc2g/qCTSUaot5IFILhPdQ
+	Short name: LockButtonStatus
+	Name: 
+	IsGround: F
+	Type: digital
+	Description: 

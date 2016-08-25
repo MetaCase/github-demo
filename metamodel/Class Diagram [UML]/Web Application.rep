@@ -1,0 +1,32 @@
+Report 'Web Application'
+/* Create a local web application with HTML UI, JavaScript behavior and SQLite back end, all based on the classes in this graph. Database and main page are named after graph; SQL table, X.html and XList.html are named after each Class */
+
+/* Set whether JavaScript is inline ('yes') or separate files (empty, '') */
+$inline=''
+
+/* Set image maps to link to separate HTML file per class */
+$imagemapFilePerClass='yes'
+
+subreport '_webAppTranslators' run
+
+if not $inline then
+	subreport '_saveScriptFiles' run
+endif
+
+filename subreport '_default directory' run 'sample.css' write
+	subreport '_sampleCSS' run
+close
+
+foreach .Class [UML]
+{	filename subreport '_default directory' run id '.html' write
+		subreport '_Entry' run
+	close
+	filename subreport '_default directory' run id 'List.html' write
+		subreport '_EntryList' run
+	close
+}
+filename subreport '_default directory' run id '.html' write
+	subreport '_App' run
+close
+external '"' subreport '_default directory' run id '.html"' execute
+endreport

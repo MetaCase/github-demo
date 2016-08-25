@@ -1,0 +1,25 @@
+Report '_legalSensorCondition'
+/* checking report */
+foreach .Sensor
+{	do ~Sensor condition {
+	if :Condition = 'lrTemperature' then
+		if :Measured variable;1 <> 'Temperature' then
+			id;1 ' is measuring ' :Measured variable;1 '. A temperature condition can not be used.'  newline
+		$errors++%null
+		endif
+	endif
+	if :Condition = 'lrRPM' then
+		if :Measured variable;1 <> 'Speed' then
+			id;1 ' is measuring ' :Measured variable;1 '. A speed condition can not be used.'  newline
+		$errors++%null
+		endif
+	endif
+	if :Condition = 'lrFlow' then
+		if :Measured variable;1 <> 'Flow' then
+			id;1 ' is measuring ' :Measured variable;1 '. A flow condition can not be used.'  newline
+		$errors++%null
+		endif
+	endif
+	}
+}
+endreport

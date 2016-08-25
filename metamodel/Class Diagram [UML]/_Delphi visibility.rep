@@ -1,0 +1,27 @@
+Report '_Delphi visibility'
+'	' id newline	
+
+do :Attributes;1; where :Visibility; = id  
+{	subreport '_Delphi attribute' run
+}
+
+if	id = 'public' then
+	do ~Whole;1>Aggregation~Part.()
+	{	'		T' :Class name; ' : ' :Class name; ';'
+		'	{aggregation based data}' newline
+	}
+endif
+		
+md5id 'Protected block for ' id ' attributes' md5block
+'		{ Enter own ' id ' attributes here }' newline
+md5sum
+
+do :Operations;1; where :Visibility; = id 
+{	subreport '_Delphi operation' run
+}
+
+md5id 'Protected block for ' id ' operations' md5block
+'		{ Enter own ' id ' operations here }' newline
+md5sum
+
+endreport

@@ -1,0 +1,25 @@
+Report '_create related entity FKs'
+/* USED FOR: ~Entity part or .Relationship */
+/* INPUT: $targetTable : the for which the FK's are being created */
+/* OUTPUT: foreignDeclarations (the foreign key sql declarations) */
+
+$foreignDeclarations=''
+dowhile .Entity {
+	dowhile .ERAttribute; where :Constraints =~ '*PRIMARY*'{
+		:Attribute name;%var; ' '
+		:Type of data; ' '
+		/* Assumption: FK's are never null */
+		'NOT NULL /* Foreign Key */'
+
+		variable 'foreignDeclarations' append
+			'ALTER TABLE ' $targetTable; newline
+			'ADD FOREIGN KEY (' :Attribute name;%var; ') ' 
+			'REFERENCES ' :Entity name;1;%var; 
+							'(' :Attribute name;%var; ');' 
+			newline
+		close
+		',' newline
+	}
+	', ' newline
+}
+endreport

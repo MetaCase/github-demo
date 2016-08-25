@@ -1,0 +1,28 @@
+Report '_RSS_caption'
+filename
+	subreport '_default directory' run 
+	'group\' 
+	subreport '_app' run 
+	'_caption.rss'
+write
+'/*
+* ============================================================================
+*  Name     : ' subreport '_app' run '_caption.rss
+*  Part of  : ' subreport '_app' run '
+*  ' subreport '_copyright' run '
+* ============================================================================
+*/
+
+#include "' subreport '_app' run '.loc"
+#include <apcaptionfile.rh>
+
+RESOURCE CAPTION_DATA
+    {
+    caption = ' subreport '_caption prefix' run 'list;
+    shortcaption = ' subreport '_caption prefix' run 'grid;
+    }
+
+// End of File
+'
+close
+endreport

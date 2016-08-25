@@ -1,0 +1,7 @@
+_vcsInit_svn()
+'
+rem make sure project exists in SVN
+svn import ' $vcsWorkingDir ' ' $svnProjectURL ' --message "Imported new empty directory as basis for new project for MetaEdit+ repository ' $dbName '"
+rem check out (empty) project over new dir to make this our working copy
+svn checkout ' $svnProjectURL ' ' $vcsWorkingDir '
+'

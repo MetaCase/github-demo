@@ -1,0 +1,14 @@
+_DoActionFor()
+$indent 'for ' :Variable ' in range(' :Start ', ' :End; '+1):' newline
+_indent()
+@numContainers=''
+do containers where @++numContainers {}
+do contents where metatype = 'Object' and not ~To
+{	/* Only do immediately contained objects */
+	@subsContainers = ''
+	do containers where @++subsContainers {}
+	if @--subsContainers = @numContainers NUM then
+		_DoAndMove()
+	endif
+}
+_outdent()

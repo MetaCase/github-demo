@@ -1,0 +1,10 @@
+Report '_Java autobuild with JDK: Unix'
+/* might be Unix, Linux or Mac OS X. The JDK programs must be in the path */
+
+external 
+	'cd ' subreport '_default directory' run '; '
+	'javac ' $appletClass '.java; '
+	'appletviewer ' $appletClass '.html'
+execute
+
+endreport

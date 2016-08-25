@@ -1,0 +1,4 @@
+_symUserDefinedAttributeValues()
+
+dowhile :UserAttributeValues 
+{	:Short name; '=' :Value; newline }

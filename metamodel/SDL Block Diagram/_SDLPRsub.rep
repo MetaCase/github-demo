@@ -1,0 +1,19 @@
+_SDLPRsub()
+'BLOCK ' :Name%var ';' newline
+_variables()
+_channels()
+_blocks()
+_processes()
+'ENDBLOCK ' :Name%var ';' newline newline
+foreach .Block {
+	do decompositions {
+		_SDLPRsub()
+		newline
+	}
+}
+foreach .Process {
+	do decompositions {
+		_SDLPRprocess()
+		newline
+	}
+}

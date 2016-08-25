@@ -1,0 +1,32 @@
+_ProduceErrorModel()
+/* Creates error model from FAA and FDA hierarchy reusing types in type prototype pattern */
+subreport '_translators' run
+
+$error = 'F'
+variable 'visitedGraphs' write ' ' oid ' ' close
+$prototypes = ' '
+_CheckIfDuplicatesInFunctionTypeDefinition()
+
+/* if types are not reused then produce error model */
+if $error = 'F' then
+
+$reportedGraphs = ' ' 
+$reportedDatatypes = ' ' 
+$modes = 'Omission'
+/* other possible modes 
+Commission
+Value
+Timing */
+
+_timeStamp()
+
+filename subreport '_default directory' run id%file '_to_ErrorModel.mxm' encoding 'UTF-8' write
+	'<?xml version="1.0" encoding="UTF-8"?>' newline
+	'<gxl xmlns="http://www.metacase.com/gxlGOPRR">' newline
+	variable 'reportedGraphs' append oid ' ' close
+	_DepGraph()
+	'</gxl>'
+close
+internal 'fileInPatch: "' subreport '_default directory' run id%file '_to_ErrorModel.mxm' '"' execute
+
+endif

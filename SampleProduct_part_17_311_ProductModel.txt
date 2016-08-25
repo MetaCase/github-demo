@@ -1,0 +1,21 @@
+Graph_Productmodell_user_3143453874
+SampleProduct_part
+17_311
+ProductModel
+Graph: SampleProduct_part <ProductModel> 17_311
+	Name: SampleProduct_part
+	Authors: 
+	Documentation: The graphs in this example project demonstrate the modeling of Insurance policies for a J2EE web server, as described in Chapter 6 of the book "Domain-Specific Modeling", http://dsmbook.com.
+Object: Java code can be generated for all subgraphs of this root ProductModel by pressing the Java button on the toolbar. Alternatively, choose Graph | Generate... and select Java export. <Note> 17_380
+	Documentation: Java code can be generated for all subgraphs of this root ProductModel by pressing the Java button on the toolbar. Alternatively, choose Graph | Generate... and select Java export.
+Object: The graphs in this example project demonstrate the modeling of Insurance policies for a J2EE web server, as described in Chapter 6 of the book "Domain-Specific Modeling", http://dsmbook.com. <Note> 17_758
+	Documentation: The graphs in this example project demonstrate the modeling of Insurance policies for a J2EE web server, as described in Chapter 6 of the book "Domain-Specific Modeling", http://dsmbook.com.
+Object: MyProduct <Package> 17_537
+	Package name: MyProduct
+	Path: ExampleProduct
+	Tags: 
+	Imported packages: 
+	Exceptions: 
+	Root or leaf: 
+	Documentation: 
+	Decomposed to: DisabilityInsurance_1 <ProductModel>

@@ -1,0 +1,88 @@
+Graph_Application_system_user_3353139831
+Delivery truck logistics panel
+11_4437
+Infotainment menu
+Graph: Delivery truck logistics panel <Infotainment menu> 11_4437
+	Model name: Delivery truck logistics panel
+	Documentation: This example illustrates the ability to create dynamic, interactive models which automatically update based on changes to the existing design. 
+Object: Reschedule <Display> 11_4469
+	Name: Reschedule
+	Items list: New date and time New address
+	UI style: Schedule
+Object: Start <Display> 11_4477
+	Name: Start
+	Items list: 
+	UI style: Standard
+Object: Sign and check <Display> 11_4523
+	Name: Sign and check
+	Items list: Signature Date and time
+	UI style: Signature
+Object: City and Street address <Display> 11_4537
+	Name: City and Street address
+	Items list: Find an address Recent searches
+	UI style: Navigation
+Object: Schedule <Display> 11_4541
+	Name: Schedule
+	Items list: Next destination Previous destination
+	UI style: Schedule
+Object: Log delivery <Display> 11_4570
+	Name: Log delivery
+	Items list: Sign and check Reschedule
+	UI style: Standard
+Object: Settings <Display> 11_4584
+	Name: Settings
+	Items list: Set time&date Language Reset
+	UI style: Standard
+Object: Navigation system <Display> 11_4592
+	Name: Navigation system
+	Items list: Start navigation
+	UI style: Standard
+Object: Symbol shows information from connected objects
+This example illustrates the ability to create dynamic, interactive models which automatically update based on changes to the existing design.  
+
+As new relationships are drawn between screens (objects) the model automatically adds the necessary buttons to the configuration. Also, when the layout is modified, the order of the buttons also updates (in this example, based on the vertical order). 
+
+Select the Settings object and move it to the bottom. The buttons in the Start object (on the left) will update.
+
+This ability to automatically update and respond to changes makes it fast and easy to add new features, or modify exisiting ones, with MetaEdit+.
+ <Note> 11_4517
+	Note: Symbol shows information from connected objects
+This example illustrates the ability to create dynamic, interactive models which automatically update based on changes to the existing design.  
+
+As new relationships are drawn between screens (objects) the model automatically adds the necessary buttons to the configuration. Also, when the layout is modified, the order of the buttons also updates (in this example, based on the vertical order). 
+
+Select the Settings object and move it to the bottom. The buttons in the Start object (on the left) will update.
+
+This ability to automatically update and respond to changes makes it fast and easy to add new features, or modify exisiting ones, with MetaEdit+.
+
+Relationship: Connects <Connects> 11_4479
+  Role: From <From>  Object: <Display> 11_4477
+  Role: To <To>  Object: <Display> 11_4570
+Relationship: Connects <Connects> 11_4488
+  Role: From <From>  Object: <Display> 11_4477
+  Role: To <To>  Object: <Display> 11_4584
+Relationship: Connects <Connects> 11_4503
+  Role: From <From>  Object: <Display> 11_4477
+  Role: To <To>  Object: <Display> 11_4592
+Relationship: Connects <Connects> 11_4552
+  Role: From <From>  Object: <Display> 11_4477
+  Role: To <To>  Object: <Display> 11_4541
+Relationship: Roll <Roll> 11_4442
+  Role: Select <Roll from>  Port: Roll <Roll>  Object: <Display> 11_4592
+	Action: Select
+  Role: Start navigation <Roll to>  Object: <Display> 11_4537
+	Choice: Start navigation
+Relationship: Roll <Roll> 11_4505
+  Role: Select <Roll from>  Port: Roll <Roll>  Object: <Display> 11_4570
+	Action: Select
+  Role: Reschedule <Roll to>  Object: <Display> 11_4469
+	Choice: Reschedule
+  Role: Sign and Check <Roll to>  Object: <Display> 11_4523
+	Choice: Sign and Check
+Relationship: Roll <Roll> 11_5091
+  Role: Select <Roll from>  Port: Roll <Roll>  Object: <Display> 11_4541
+	Action: Select
+  Role: Next <Roll to>  Object: <Display> 11_4541
+	Choice: Next
+  Role: Previous <Roll to>  Object: <Display> 11_4541
+	Choice: Previous

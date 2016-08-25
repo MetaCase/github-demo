@@ -1,0 +1,16 @@
+Report 'Reverse engineer Java'
+/* Reverse engineer Java classes into UML Class Diagram model(s) */
+
+variable 'dd' write
+	subreport '_default directory' run
+close
+
+/* By default, reverse engineer the default reports directory */
+$dir = $dd /* can change to a string, e.g. $dir = 'c:\jdk6\src' */
+
+subreport '_Reverse engineer Java dir' run
+subreport '_Reverse engineer Java translators' run
+subreport '_Reverse engineer Java files' run
+subreport '_Reverse engineer Java import' run
+
+endreport

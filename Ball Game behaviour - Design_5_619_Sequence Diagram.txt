@@ -1,0 +1,500 @@
+Graph_Sequence_Diagram_sysadmin_3222914617
+Ball Game behaviour - Design
+5_619
+Sequence Diagram
+Graph: Ball Game behaviour - Design <Sequence Diagram> 5_619
+	Model name: Ball Game behaviour - Design
+	Status: draft
+	Authors: David Hill
+	Object: David Hill <Person> 5_6156
+		Name: David Hill
+		E-mail: mailto:info@metacase.com
+		Contact address: Park Court
+Upper Essex Street
+City 5
+B8 6QB
+	Documentation: This model describes interactions among the Ball game objects during the game.
+Object: :BallGame <Lifeline object> 5_5694
+	Object name: 
+	Class: BallGame
+	Object: BallGame <Class [UML]> 5_10964
+		Class name: BallGame
+		Attributes: 
+		Operations: 
+		Package: 
+		Abstract?: T
+		Persistent?: F
+		Stereotype: 
+		Overridability: 
+		Role: 
+		Parameters: 
+		Constraints: 
+		Invariant: 
+		Derivation rules: 
+		Responsibility: 
+		Documentation: 
+		Simple symbol?: T
+	Stop?: T
+	Documentation: 
+Object: :Ball <Lifeline object> 5_9038
+	Object name: 
+	Class: Ball
+	Object: Ball <Class [UML]> 5_6412
+		Class name: Ball
+		Attributes: 
+		Operations: +void display() +void calculateNewDirection(MovingObject hitObject) +void check position()
+		Object: +void display() <Operation [UML]> 5_14002
+			Operation name: display
+			Parameters: 
+			Return type: 
+			Overridability: 
+			Stereotype: 
+			Visibility: public
+			Operation type: instance
+			Preconditions: 
+			Postconditions: 
+			Body: 
+			Documentation: Overriden from superclass to display a round ball rather than a square
+		Object: +void calculateNewDirection(MovingObject hitObject) <Operation [UML]> 5_5110
+			Operation name: calculateNewDirection
+			Parameters: in MovingObject hitObject
+			Object: in MovingObject hitObject <Parameter> 5_945
+				Parameter: hitObject
+				Data type: MovingObject
+				Direction: in
+				Default value: 
+			Return type: 
+			Overridability: 
+			Stereotype: 
+			Visibility: public
+			Operation type: instance
+			Preconditions: 
+			Postconditions: 
+			Body: 
+			Documentation: 
+		Object: +void check position() <Operation [UML]> 5_7202
+			Operation name: check position
+			Parameters: 
+			Return type: 
+			Overridability: 
+			Stereotype: 
+			Visibility: public
+			Operation type: instance
+			Preconditions: 
+			Postconditions: 
+			Body: 
+			Documentation: Returns the location of the ball.
+		Package: Game
+		Object: Game <Package> 5_6484
+			Package name: Game
+			Stereotype: modelLibrary
+			Documentation: Ball game packace include all the components of the ball game application. Because the application is small not other packages are used for categorization.
+		Abstract?: F
+		Persistent?: F
+		Stereotype: 
+		Overridability: 
+		Role: 
+		Parameters: 
+		Constraints: 
+		Invariant: 
+		Derivation rules: 
+		Responsibility: 
+		Documentation: Ball is the basic element of the game. Player tries to remove bricks by hitting them with the ball.
+		Simple symbol?: F
+	Stop?: F
+	Documentation: 
+Object: :Brick <Lifeline object> 5_14456
+	Object name: 
+	Class: Brick
+	Object: Brick <Class [UML]> 5_13852
+		Class name: Brick
+		Attributes: +value:int = 1
+		Object: +value:int = 1 <Attribute [UML]> 5_15315
+			Name: value
+			Data type: int
+			Default value: 1
+			Stereotype: 
+			Visibility: public
+			Scope: instance
+			Access: 
+			Derived?: F
+			Persistent?: F
+			Constraints: 
+			Documentation: Value of the brick. When ball hits the brick, value will be added to player's currentScore.
+		Operations: +void playHitSound() +void increaseScore()
+		Object: +void playHitSound() <Operation [UML]> 5_4260
+			Operation name: playHitSound
+			Parameters: 
+			Return type: 
+			Overridability: 
+			Stereotype: 
+			Visibility: public
+			Operation type: instance
+			Preconditions: 
+			Postconditions: 
+			Body: 
+			Documentation: When the ball hits a brick or a paddle, it makes a sound.
+		Object: +void increaseScore() <Operation [UML]> 5_2680
+			Operation name: increaseScore
+			Parameters: 
+			Return type: 
+			Overridability: 
+			Stereotype: 
+			Visibility: public
+			Operation type: instance
+			Preconditions: 
+			Postconditions: 
+			Body: 
+			Documentation: When then ball hits a brick it will disappear and the value of the brick will be added to player's currentScores.
+		Package: Game
+		Abstract?: F
+		Persistent?: F
+		Stereotype: 
+		Overridability: 
+		Role: 
+		Parameters: 
+		Constraints: 
+		Invariant: 
+		Derivation rules: 
+		Responsibility: 
+		Documentation: Single element of the wall. These will disappear, when the ball hits them.
+		Simple symbol?: F
+	Stop?: F
+	Documentation: 
+Object: :MovingObject <Lifeline object> 5_14510
+	Object name: 
+	Class: MovingObject
+	Object: MovingObject <Class [UML]> 5_5752
+		Class name: MovingObject
+		Attributes: +position:Point = 100.0@100.0 -velocity:Point = 0.0@2.0 +extent:Point -colour:ColorValue
+		Object: +position:Point = 100.0@100.0 <Attribute [UML]> 5_10539
+			Name: position
+			Data type: Point
+			Default value: 100.0@100.0
+			Stereotype: 
+			Visibility: public
+			Scope: class
+			Access: 
+			Derived?: F
+			Persistent?: F
+			Constraints: 
+			Documentation: Position stores the current location of the top left corner of the moving object in the game.
+		Object: -velocity:Point = 0.0@2.0 <Attribute [UML]> 5_868
+			Name: velocity
+			Data type: Point
+			Default value: 0.0@2.0
+			Stereotype: 
+			Visibility: private
+			Scope: instance
+			Access: 
+			Derived?: F
+			Persistent?: F
+			Constraints: 
+			Documentation: Stores the direction and speed of the movement. Positive x values are to the right, positive y values up
+		Object: +extent:Point <Attribute [UML]> 5_3552
+			Name: extent
+			Data type: Point
+			Default value: 
+			Stereotype: 
+			Visibility: public
+			Scope: instance
+			Access: 
+			Derived?: F
+			Persistent?: F
+			Constraints: 
+			Documentation: Moving objects have width and height
+		Object: -colour:ColorValue <Attribute [UML]> 5_9213
+			Name: colour
+			Data type: ColorValue
+			Default value: 
+			Stereotype: 
+			Visibility: private
+			Scope: instance
+			Access: 
+			Derived?: F
+			Persistent?: F
+			Constraints: 
+			Documentation: Colour of the moving object. 
+		Operations: +void display() +void move(Point position, int direction) +void checkHits()
+		Object: +void display() <Operation [UML]> 5_5837
+			Operation name: display
+			Parameters: 
+			Return type: 
+			Overridability: 
+			Stereotype: 
+			Visibility: public
+			Operation type: instance
+			Preconditions: 
+			Postconditions: 
+			Body: 
+			Documentation: Displays the object at its current position. The default is to fill its extent with its colour; subclasses can override for more interesting shapes and effects.
+		Object: +void move(Point position, int direction) <Operation [UML]> 5_11222
+			Operation name: move
+			Parameters: in Point position in int direction
+			Object: in Point position <Parameter> 5_13330
+				Parameter: position
+				Data type: Point
+				Direction: in
+				Default value: 
+			Object: in int direction <Parameter> 5_4421
+				Parameter: direction
+				Data type: int
+				Direction: in
+				Default value: 
+			Return type: 
+			Overridability: 
+			Stereotype: action
+			Visibility: public
+			Operation type: instance
+			Preconditions: Is not outside the game field, ie. player has not missed the ball.
+			Postconditions: 
+			Body: 
+			Documentation: Move changes the location and direction of the moving object in the game field according to the given position and direction. 
+		Object: +void checkHits() <Operation [UML]> 5_13272
+			Operation name: checkHits
+			Parameters: 
+			Return type: 
+			Overridability: 
+			Stereotype: 
+			Visibility: public
+			Operation type: instance
+			Preconditions: 
+			Postconditions: 
+			Body: 
+			Documentation: Check whether moving object has hit some other object.
+		Package: Game
+		Abstract?: T
+		Persistent?: F
+		Stereotype: 
+		Overridability: 
+		Role: model
+		Parameters: 
+		Constraints: 
+		Invariant: 
+		Derivation rules: 
+		Responsibility: 
+		Documentation: MovingObject is an abstract class for all moving components of the ball game.
+		Simple symbol?: F
+	Stop?: F
+	Documentation: 
+Object: :Paddle <Lifeline object> 5_14530
+	Object name: 
+	Class: Paddle
+	Object: Paddle <Class [UML]> 5_870
+		Class name: Paddle
+		Attributes: +maxSpeed
+		Object: +maxSpeed <Attribute [UML]> 5_4376
+			Name: maxSpeed
+			Data type: 
+			Default value: 
+			Stereotype: 
+			Visibility: public
+			Scope: instance
+			Access: 
+			Derived?: F
+			Persistent?: F
+			Constraints: 
+			Documentation: Maximum speed of the paddle can change during the game
+		Operations: +void playHitSound()
+		Package: Game
+		Abstract?: F
+		Persistent?: F
+		Stereotype: 
+		Overridability: 
+		Role: 
+		Parameters: 
+		Constraints: 
+		Invariant: 
+		Derivation rules: 
+		Responsibility: 
+		Documentation: Player tries to keep the ball in play by hitting 
+it with the paddle.
+		Simple symbol?: F
+	Stop?: F
+	Documentation: 
+Object: Using Sequence Diagram
+
+Adding a relationship: 
+Select the relationship type from the toolbar. Click and drag from one object to another.
+
+Moving relationships: 
+Holding CTRL+SHIFT down, drag the relationship text or red dot up and down. If the relationship is straight, this will move the whole relationship.
+
+Moving role end-points:
+Click on the role end-point or line to select it. Click and drag the end-point handle
+
+Hints:
+- It is recommended to keep the grid active all the time while working with Sequence Diagram - it helps a lot when positioning objects and relationships.
+- Make the objects tall enough to start with: scaling them individually later will affect role end-point positions. <Note text> 5_5718
+	Note text: Using Sequence Diagram
+
+Adding a relationship: 
+Select the relationship type from the toolbar. Click and drag from one object to another.
+
+Moving relationships: 
+Holding CTRL+SHIFT down, drag the relationship text or red dot up and down. If the relationship is straight, this will move the whole relationship.
+
+Moving role end-points:
+Click on the role end-point or line to select it. Click and drag the end-point handle
+
+Hints:
+- It is recommended to keep the grid active all the time while working with Sequence Diagram - it helps a lot when positioning objects and relationships.
+- Make the objects tall enough to start with: scaling them individually later will affect role end-point positions.
+	Stereotype: 
+Object: Outside actor <Outside actor> 5_14486
+Relationship: displayPlayersScore <Call> 5_752
+	Message name: displayPlayersScore
+	Parameters: 
+	Return value: 
+	Duration: 
+  Role:  <Message from>  Object: <Lifeline object> 5_5694
+	Time observation action: 
+	Interaction constraint: 
+  Role:  <Message to>  Object: <Lifeline object> 5_5694
+	Time constraint: 
+Relationship: move <Call> 5_1619
+	Message name: move
+	Parameters: 
+	Return value: 
+	Duration: 
+  Role:  <Message from>  Object: <Lifeline object> 5_5694
+	Time observation action: 
+	Interaction constraint: 
+  Role:  <Message to>  Object: <Lifeline object> 5_14510
+	Time constraint: 
+Relationship: checkHits <Call> 5_1715
+	Message name: checkHits
+	Parameters: 
+	Return value: 
+	Duration: 
+  Role:  <Message from>  Object: <Lifeline object> 5_5694
+	Time observation action: 
+	Interaction constraint: 
+  Role:  <Message to>  Object: <Lifeline object> 5_14510
+	Time constraint: 
+Relationship:  <Call> 5_2456
+	Message name: 
+	Parameters: 
+	Return value: 
+	Duration: 
+  Role:  <Message from>  Object: <Outside actor> 5_14486
+	Time observation action: 
+	Interaction constraint: 
+  Role:  <Message to>  Object: <Lifeline object> 5_5694
+	Time constraint: 
+Relationship: increaseScore <Call> 5_5714
+	Message name: increaseScore
+	Parameters: 
+	Return value: 
+	Duration: 
+  Role:  <Message from>  Object: <Lifeline object> 5_14510
+	Time observation action: 
+	Interaction constraint: Hits brick
+  Role:  <Message to>  Object: <Lifeline object> 5_14456
+	Time constraint: 
+Relationship: playHitSound <Call> 5_6360
+	Message name: playHitSound
+	Parameters: 
+	Return value: 
+	Duration: 
+  Role:  <Message from>  Object: <Lifeline object> 5_14510
+	Time observation action: 
+	Interaction constraint: 
+  Role:  <Message to>  Object: <Lifeline object> 5_14456
+	Time constraint: 
+Relationship: displayGameOverText <Call> 5_8382
+	Message name: displayGameOverText
+	Parameters: score=Player name
+	Object: score=Player name <Argument> 5_3439
+		Argument: Player name
+		Parameter: score
+		Object: score <Parameter> 5_3364
+			Parameter: score
+			Data type: 
+			Direction: 
+			Default value: 
+	Return value: int
+	Duration: 2 secs
+  Role:  <Message from>  Object: <Lifeline object> 5_5694
+	Time observation action: 
+	Interaction constraint: no more balls left
+  Role:  <Message to>  Object: <Lifeline object> 5_5694
+	Time constraint: 
+Relationship: calculateNewDirection <Call> 5_9076
+	Message name: calculateNewDirection
+	Parameters: 
+	Return value: 
+	Duration: 
+  Role:  <Message from>  Object: <Lifeline object> 5_14510
+	Time observation action: 
+	Interaction constraint: 
+  Role:  <Message to>  Object: <Lifeline object> 5_9038
+	Time constraint: 
+Relationship: playHitSound <Call> 5_9784
+	Message name: playHitSound
+	Parameters: 
+	Return value: 
+	Duration: 
+  Role:  <Message from>  Object: <Lifeline object> 5_14510
+	Time observation action: 
+	Interaction constraint: Hits paddle
+  Role:  <Message to>  Object: <Lifeline object> 5_14530
+	Time constraint: 
+Relationship: decrementBalls <Call> 5_11770
+	Message name: decrementBalls
+	Parameters: 
+	Return value: 
+	Duration: 
+  Role:  <Message from>  Object: <Lifeline object> 5_14510
+	Time observation action: 
+	Interaction constraint: Ball position < paddle
+  Role:  <Message to>  Object: <Lifeline object> 5_5694
+	Time constraint: 
+Relationship: calculateNewDirection <Call> 5_12445
+	Message name: calculateNewDirection
+	Parameters: 
+	Return value: 
+	Duration: 
+  Role:  <Message from>  Object: <Lifeline object> 5_14530
+	Time observation action: 
+	Interaction constraint: 
+  Role:  <Message to>  Object: <Lifeline object> 5_9038
+	Time constraint: 
+Relationship: check position <Call> 5_12505
+	Message name: check position
+	Parameters: 
+	Return value: 
+	Duration: 
+  Role:  <Message from>  Object: <Lifeline object> 5_14510
+	Time observation action: 
+	Interaction constraint: 
+  Role:  <Message to>  Object: <Lifeline object> 5_9038
+	Time constraint: 
+Relationship:  <Return> 5_2524
+	Return value: 
+  Role: Return from <Return from>  Object: <Lifeline object> 5_14510
+  Role: Return to <Return to>  Object: <Lifeline object> 5_5694
+Relationship:  <Return> 5_4943
+	Return value: 
+  Role: Return from <Return from>  Object: <Lifeline object> 5_9038
+  Role: Return to <Return to>  Object: <Lifeline object> 5_14510
+Relationship: position <Return> 5_5018
+	Return value: position
+  Role: Return from <Return from>  Object: <Lifeline object> 5_9038
+  Role: Return to <Return to>  Object: <Lifeline object> 5_14510
+Relationship:  <Return> 5_9732
+	Return value: 
+  Role: Return from <Return from>  Object: <Lifeline object> 5_14456
+  Role: Return to <Return to>  Object: <Lifeline object> 5_14510
+Relationship:  <Return> 5_13192
+	Return value: 
+  Role: Return from <Return from>  Object: <Lifeline object> 5_14456
+  Role: Return to <Return to>  Object: <Lifeline object> 5_14510
+Relationship:  <Return> 5_13839
+	Return value: 
+  Role: Return from <Return from>  Object: <Lifeline object> 5_5694
+  Role: Return to <Return to>  Object: <Outside actor> 5_14486
+Relationship:  <Return> 5_15177
+	Return value: 
+  Role: Return from <Return from>  Object: <Lifeline object> 5_9038
+  Role: Return to <Return to>  Object: <Lifeline object> 5_14510

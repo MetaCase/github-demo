@@ -1,0 +1,74 @@
+==========================
+Graph Type
+==========================
+System/Organization Matrix
+	System/Organization Matrix identifies connections between organizational units and systems. Moreover, it can be used to specify what system support is currently available or what is planned. The matrix consist of two axis, in which first one includes all the units of an organization, and second one available systems. These two objects are related through one relationship called 'support'.
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+System
+	System specify either manual or computer based systems that are available in the company or that are planned. Examples of systems are invoicing system or customer order entry.
+	---------------------------------------------
+	Name: String
+	Documentation: Text
+Organization
+	Organization represents one unit of the company (i.e. like marketing, or production).  It is characterized by name of the unit, owner of the unit, and documentation.
+	
+	
+	---------------------------------------------
+	Organization name: String
+	Owner: String
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+System support
+	Support can be either current, planned, or current and planned.
+	---------------------------------------------
+	Support status: String
+
+==========================
+Role Types
+==========================
+Organization part
+System part
+
+==========================
+Extra Types
+==========================
+_Business Systems Planning
+Person
+	Person is used to describe developers involved in a project (i.e. attached to the project model) and authors of developed models. Person can be characterized with a name, e-mail address, and with a contact address. 
+	---------------------------------------------
+	Name: String
+	E-mail: String
+	Contact address: Text
+Data class part
+
+==========================
+Bindings
+==========================
+System support
+	Organization part: Organization
+	System part: System
+System support
+	System part: System
+	Organization part: Organization
+
+==========================
+Constraints
+==========================
+Property "Name" in System must have unique values
+Property "Organization name" in Organization must have unique values
+
+==========================
+Subgraphs
+==========================
+

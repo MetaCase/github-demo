@@ -1,0 +1,494 @@
+Graph_Class_diagram__UML__sysadmin_3019387957
+Ball Game structure - design
+5_601
+Class Diagram [UML]
+Graph: Ball Game structure - design <Class Diagram [UML]> 5_601
+	Model name: Ball Game structure - design
+	Status: draft
+	Authors: David Hill
+	Object: David Hill <Person> 5_6156
+		Name: David Hill
+		E-mail: mailto:info@metacase.com
+		Contact address: Park Court
+Upper Essex Street
+City 5
+B8 6QB
+	Documentation: Ball game structure class diagram displays basic structure of the ball game. Game's idea is to remove all the bricks from the wall by striking them with the ball.
+Object: Paddle <Class [UML]> 5_870
+	Class name: Paddle
+	Attributes: +maxSpeed
+	Object: +maxSpeed <Attribute [UML]> 5_4376
+		Name: maxSpeed
+		Data type: 
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: Maximum speed of the paddle can change during the game
+	Operations: +void playHitSound()
+	Object: +void playHitSound() <Operation [UML]> 5_4260
+		Operation name: playHitSound
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: When the ball hits a brick or a paddle, it makes a sound.
+	Package: Game
+	Object: Game <Package> 5_6484
+		Package name: Game
+		Stereotype: modelLibrary
+		Documentation: Ball game packace include all the components of the ball game application. Because the application is small not other packages are used for categorization.
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: Player tries to keep the ball in play by hitting 
+it with the paddle.
+	Simple symbol?: F
+Object: Wall <Class [UML]> 5_5085
+	Class name: Wall
+	Attributes: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: Walls are generally immobile; the ball bounces back off them giving no points.
+	Simple symbol?: T
+Object: MovingObject <Class [UML]> 5_5752
+	Class name: MovingObject
+	Attributes: +position:Point = 100.0@100.0 -velocity:Point = 0.0@2.0 +extent:Point -colour:ColorValue
+	Object: +position:Point = 100.0@100.0 <Attribute [UML]> 5_10539
+		Name: position
+		Data type: Point
+		Default value: 100.0@100.0
+		Stereotype: 
+		Visibility: public
+		Scope: class
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: Position stores the current location of the top left corner of the moving object in the game.
+	Object: -velocity:Point = 0.0@2.0 <Attribute [UML]> 5_868
+		Name: velocity
+		Data type: Point
+		Default value: 0.0@2.0
+		Stereotype: 
+		Visibility: private
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: Stores the direction and speed of the movement. Positive x values are to the right, positive y values up
+	Object: +extent:Point <Attribute [UML]> 5_3552
+		Name: extent
+		Data type: Point
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: Moving objects have width and height
+	Object: -colour:ColorValue <Attribute [UML]> 5_9213
+		Name: colour
+		Data type: ColorValue
+		Default value: 
+		Stereotype: 
+		Visibility: private
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: Colour of the moving object. 
+	Operations: +void display() +void move(Point position, int direction) +void checkHits()
+	Object: +void display() <Operation [UML]> 5_5837
+		Operation name: display
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: Displays the object at its current position. The default is to fill its extent with its colour; subclasses can override for more interesting shapes and effects.
+	Object: +void move(Point position, int direction) <Operation [UML]> 5_11222
+		Operation name: move
+		Parameters: in Point position in int direction
+		Object: in Point position <Parameter> 5_13330
+			Parameter: position
+			Data type: Point
+			Direction: in
+			Default value: 
+		Object: in int direction <Parameter> 5_4421
+			Parameter: direction
+			Data type: int
+			Direction: in
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: action
+		Visibility: public
+		Operation type: instance
+		Preconditions: Is not outside the game field, ie. player has not missed the ball.
+		Postconditions: 
+		Body: 
+		Documentation: Move changes the location and direction of the moving object in the game field according to the given position and direction. 
+	Object: +void checkHits() <Operation [UML]> 5_13272
+		Operation name: checkHits
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: Check whether moving object has hit some other object.
+	Package: Game
+	Abstract?: T
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: model
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: MovingObject is an abstract class for all moving components of the ball game.
+	Simple symbol?: F
+Object: Ball <Class [UML]> 5_6412
+	Class name: Ball
+	Attributes: 
+	Operations: +void display() +void calculateNewDirection(MovingObject hitObject) +void check position()
+	Object: +void display() <Operation [UML]> 5_14002
+		Operation name: display
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: Overriden from superclass to display a round ball rather than a square
+	Object: +void calculateNewDirection(MovingObject hitObject) <Operation [UML]> 5_5110
+		Operation name: calculateNewDirection
+		Parameters: in MovingObject hitObject
+		Object: in MovingObject hitObject <Parameter> 5_945
+			Parameter: hitObject
+			Data type: MovingObject
+			Direction: in
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: 
+	Object: +void check position() <Operation [UML]> 5_7202
+		Operation name: check position
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: Returns the location of the ball.
+	Package: Game
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: Ball is the basic element of the game. Player tries to remove bricks by hitting them with the ball.
+	Simple symbol?: F
+	Explode to: States of the Ball <State Machine Diagram>
+Object: TopScore <Class [UML]> 5_10548
+	Class name: TopScore
+	Attributes: +playerName:String +score:int = 0
+	Object: +playerName:String <Attribute [UML]> 5_7143
+		Name: playerName
+		Data type: String
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: Name of the player.
+	Object: +score:int = 0 <Attribute [UML]> 5_9937
+		Name: score
+		Data type: int
+		Default value: 0
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: Game
+	Abstract?: F
+	Persistent?: T
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: Stores one of the top scores and the player who achieved it.
+	Simple symbol?: F
+Object: Brick <Class [UML]> 5_13852
+	Class name: Brick
+	Attributes: +value:int = 1
+	Object: +value:int = 1 <Attribute [UML]> 5_15315
+		Name: value
+		Data type: int
+		Default value: 1
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: Value of the brick. When ball hits the brick, value will be added to player's currentScore.
+	Operations: +void playHitSound() +void increaseScore()
+	Object: +void increaseScore() <Operation [UML]> 5_2680
+		Operation name: increaseScore
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: When then ball hits a brick it will disappear and the value of the brick will be added to player's currentScores.
+	Package: Game
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: Single element of the wall. These will disappear, when the ball hits them.
+	Simple symbol?: F
+Object: BallGame <Class [UML]> 5_13898
+	Class name: BallGame
+	Attributes: #currentScore:int = 0 -ballsLeft:integer = 3 +playerName:String
+	Object: #currentScore:int = 0 <Attribute [UML]> 5_13912
+		Name: currentScore
+		Data type: int
+		Default value: 0
+		Stereotype: 
+		Visibility: protected
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: Stores the player's score in the current game.
+	Object: -ballsLeft:integer = 3 <Attribute [UML]> 5_926
+		Name: ballsLeft
+		Data type: integer
+		Default value: 3
+		Stereotype: 
+		Visibility: private
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: How many balls player has left.
+	Operations: +void displayGameOverText() +void displayPlayersScore() +void playTune() +void decrementBalls() +void initialize()
+	Object: +void displayGameOverText() <Operation [UML]> 5_3498
+		Operation name: displayGameOverText
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: This displays the Game Over text, when game ends. Game can end either when all bricks have disappeared or when player has missed all of his/hers balls.
+	Object: +void displayPlayersScore() <Operation [UML]> 5_14681
+		Operation name: displayPlayersScore
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: This displays player's current score after the Game over text.
+
+	Object: +void playTune() <Operation [UML]> 5_14604
+		Operation name: playTune
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: Plays a tune, when player misses the ball.
+	Object: +void decrementBalls() <Operation [UML]> 5_11226
+		Operation name: decrementBalls
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: When player misses the ball, decrement balls left
+	Object: +void initialize() <Operation [UML]> 5_7885
+		Operation name: initialize
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: When the game is started
+	Package: Game
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: This is the main application class.
+	Simple symbol?: F
+Relationship:  <Aggregation> 5_7122
+	Association name: 
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_10548
+	Role name: 
+	Multiplicity: 0..10
+	Ordered?: T
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 5_13898
+	Multiplicity: 
+	Composition?: F
+Relationship:  <Aggregation> 5_11232
+	Association name: 
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_870
+	Role name: 
+	Multiplicity: 1
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Part>  Object: <Class [UML]> 5_13852
+	Role name: 
+	Multiplicity: *
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Part>  Object: <Class [UML]> 5_6412
+	Role name: 
+	Multiplicity: 1
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Part>  Object: <Class [UML]> 5_5085
+	Role name: 
+	Multiplicity: 3
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 5_13898
+	Multiplicity: 
+	Composition?: T
+Relationship:  <Generalization [UML]> 5_3413
+	Discriminator: 
+	Constraint: 
+	Visibility: public
+	Virtual?: F
+	Completeness: 
+	Derivation rules: 
+  Role: Specialization <Specialization>  Object: <Class [UML]> 5_5085
+  Role: Specialization <Specialization>  Object: <Class [UML]> 5_870
+  Role: Specialization <Specialization>  Object: <Class [UML]> 5_13852
+  Role: Specialization <Specialization>  Object: <Class [UML]> 5_6412
+  Role: Superclass <Superclass>  Object: <Class [UML]> 5_5752

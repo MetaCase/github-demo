@@ -1,0 +1,3 @@
+Report '_app'
+'Akn' foreach .Application { id }
+endreport

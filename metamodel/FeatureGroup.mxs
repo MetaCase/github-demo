@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="FeatureGroup">
+		<objectSymbol offset="90,50" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="90,50 111,50 111,63 90,63 90,50" targetPointX="100.5" targetPointY="56.5" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="63" version="1.2" width="111" xmlns="http://www.w3.org/2000/svg">
+				<g fill="rgb(240,240,240)" stroke="rgb(0,0,0)" stroke-width="0" sym:height="13" sym:width="21" sym:x="9.0e1" sym:y="5.0e1">
+					<rect fill="rgb(240,240,240)" height="7" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="0" width="13" x="90" y="50">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<rect fill="rgb(240,240,240)" height="7" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="0" width="13" x="98" y="52">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<rect fill="rgb(240,240,240)" height="7" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="0" width="13" x="94" y="56">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

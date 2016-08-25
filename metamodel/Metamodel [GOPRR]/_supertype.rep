@@ -1,0 +1,9 @@
+Report '_supertype'
+if metatype <> 'Graph' then
+	do ~Subtype [GOPRR]~Supertype [GOPRR].() {
+		'<superType>' newline
+		subreport '_types' run
+		'</superType>' newline
+	}
+endif
+endreport

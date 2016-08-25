@@ -1,0 +1,78 @@
+Graph_Heating_application_user_3504901597
+HeatController
+15_380
+Heating application
+Graph: HeatController <Heating application> 15_380
+	System name: HeatController
+	Description: 
+	Use visualization: T
+Object: B1 <Boiler> 15_569
+	Name: B1
+Object: HU1 B1 <Burner> 15_1114
+	Name: HU1 B1
+Object: OR <Condition> 15_450
+	Condition: OR
+Object: R1 <Radiator> 15_1305
+	Name: R1
+Object: Start <Start> 15_929
+Object: control burner <State> 15_677
+	State name: control burner
+	Description: 
+Object: Initializing <State> 15_847
+	State name: Initializing
+	Description: 
+Object: Wait for heat request <State> 15_1015
+	State name: Wait for heat request
+	Description: 
+Object: HU1 CV2 <Valve> 15_400
+	Name: HU1 CV2
+	Number of valve ends: Two
+	Valve type: Normal
+	Closing by: ball
+Relationship: Condition <Condition> 15_575
+  Role: Cond <Cond>  Object: <Condition> 15_450
+  Role: F <Radiator condition>  Object: <Radiator> 15_1305
+	NOT?: F
+	Condition: bWarmUp
+Relationship: Condition <Condition> 15_1158
+  Role: bWarmUp <Boiler condition>  Object: <Boiler> 15_569
+	NOT?: F
+	Condition: bWarmUp
+  Role: Cond <Cond>  Object: <Condition> 15_450
+Relationship: Entry action <Entry action> 15_936
+  Role: Off <Action>  Object: <Burner> 15_1114
+	Action: Off
+  Role: State entry exit <State entry exit>  Object: <State> 15_847
+  Role: Close <Valve action>  Object: <Valve> 15_400
+	Action: Close
+	Valve position: 
+Relationship: Entry action <Entry action> 15_1150
+  Role: On <Action>  Object: <Burner> 15_1114
+	Action: On
+  Role: State entry exit <State entry exit>  Object: <State> 15_677
+  Role: Open <Valve action>  Object: <Valve> 15_400
+	Action: Open
+	Valve position: 
+Relationship: Exit action <Exit action> 15_802
+  Role: Off <Action>  Object: <Burner> 15_1114
+	Action: Off
+  Role: State entry exit <State entry exit>  Object: <State> 15_677
+  Role: Close <Valve action>  Object: <Valve> 15_400
+	Action: Close
+	Valve position: 
+Relationship: Transition <Transition> 15_434
+  Role: T <Condition>  Object: <Condition> 15_450
+	NOT?: T
+  Role: From <From>  Object: <State> 15_677
+  Role: To <To>  Object: <State> 15_1015
+Relationship: Transition <Transition> 15_565
+  Role: From <From>  Object: <State> 15_847
+  Role: To <To>  Object: <State> 15_1015
+Relationship: Transition <Transition> 15_1189
+  Role: From <From>  Object: <Start> 15_929
+  Role: To <To>  Object: <State> 15_847
+Relationship: Transition <Transition> 15_1316
+  Role: F <Condition>  Object: <Condition> 15_450
+	NOT?: F
+  Role: From <From>  Object: <State> 15_1015
+  Role: To <To>  Object: <State> 15_677

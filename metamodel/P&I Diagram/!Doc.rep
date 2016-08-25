@@ -1,0 +1,3 @@
+Report '!Doc'
+subreport 'Export graph hierarchy to Word' run
+endreport

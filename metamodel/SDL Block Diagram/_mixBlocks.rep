@@ -1,0 +1,12 @@
+_mixBlocks()
+$type = ''
+foreach .Block {
+	$type = 'Block'
+}
+foreach .Process {
+	if $type = 'Block' then
+		'Error: block diagram contains both processes and blocks' newline
+		variable 'errors' append '+1' close
+		$type = ''
+	endif
+}

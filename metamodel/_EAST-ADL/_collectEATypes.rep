@@ -1,0 +1,31 @@
+_collectEATypes()
+if not $packages_in_cycle =~ oid%wildsp then
+	variable 'packages_in_cycle' append oid ' ' close
+	/* Collecting all the types accessed via the EAType objects */
+	foreach .() 
+	{	if type ='EAType' then
+			do decompositions 
+			{	if not $EATypeGraphs =~ oid%wildsp then
+					variable 'EATypeGraphs' append oid ' ' close
+				endif
+			}
+		endif
+	
+		if type ='Package' then
+			do decompositions { _collectEATypes() }
+		endif
+	
+		if type = 'CompositeDatatype' then
+			@duplicateEADataTypePrototypes = ' '
+			do :DatatypePrototypes; 
+			{	@short = :Short name;
+				if not @duplicateEADataTypePrototypes =~ @short%wildsp; then
+					local 'duplicateEADataTypePrototypes' append :Short name; ' ' close
+				else
+					_reportWarnings()
+					'Warning: ' id; ' <' type '> in ' id;1 ' defined several times in DatatypePrototypes with the same Short name ' newline
+				endif
+			}
+		endif
+	}
+endif

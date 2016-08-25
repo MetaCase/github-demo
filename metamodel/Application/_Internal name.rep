@@ -1,0 +1,8 @@
+Report '_Internal name'
+/* Gives internal name for the element - either given in the model or generated */
+if :Internal name \(optional\); then 
+	:Internal name \(optional\);
+else
+	type oid
+endif
+endreport

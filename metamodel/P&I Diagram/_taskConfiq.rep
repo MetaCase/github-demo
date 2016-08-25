@@ -1,0 +1,13 @@
+_taskConfiq()
+variable 'files' append subreport '_default directory' run 'task_config.exp ' close
+filename subreport '_default directory' run 'task_config.exp' write
+'RESOURCE
+
+TASK Standard (PRIORITY := 0, INTERVAL := T#10ms);
+ MAIN
+ TEST_MAIN();
+{Additional_info : 1,0,0,0,1,4294967295}
+END_TASK
+
+END_RESOURCE'
+close

@@ -1,0 +1,23 @@
+Report '_Delphi implementation'
+if :Operation type; = 'class' then 'class ' endif
+if :Return type; then 'function '
+else 'procedure ' endif
+:Operation name; '('
+dowhile :Parameters; {:Parameter; ': ' :Data type; ', '} 
+')'
+if :Return type; then 
+	' : ' :Return type;
+endif
+if :Overridability; = 'dynamic' then '; dynamic' endif
+if :Overridability; = 'virtual' then '; virtual' endif
+';' newline
+if :Documentation; then '{' :Documentation; '}' newline endif
+newline
+md5id oid ' protected block for method body' md5block
+if :Body; then 
+	do :Body; { '		' id newline }
+else '		{ Enter method body here }' newline
+endif
+md5sum
+newline
+endreport

@@ -1,0 +1,15 @@
+Report 'States of a class'
+/* Lists all class names and retrieves objects states and transitions between states from explosion related to a class  */ 
+'States of a class and transitions between the states'
+newline
+foreach .Class [UML]
+{	newline
+ 	'Class: ' id newline
+	do explosions
+  		{ if type = 'State Machine Diagram' then
+			subreport 'Transitions between states' run
+		  endif
+		}
+}
+newline
+endreport

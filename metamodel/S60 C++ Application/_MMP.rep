@@ -1,0 +1,50 @@
+Report '_MMP'
+filename
+	subreport '_default directory' run 
+	'group\'
+	subreport '_app' run
+	'.mmp'
+write
+'/*
+* ============================================================================
+*  Name     : ' subreport '_app' run '.mmp
+*  Part of  : ' subreport '_app' run '
+*  ' subreport '_copyright' run '
+* ============================================================================
+*/
+
+TARGET  ' subreport '_app' run '.app
+TARGETTYPE  app
+UID  0x100039CE 0x10005C30
+TARGETPATH \system\apps\' subreport '_app' run '
+
+SOURCEPATH  ..\src  
+SOURCE      ' subreport '_app' run 'App.cpp 
+SOURCE      ' subreport '_app' run 'AppUi.cpp
+SOURCE      ' subreport '_app' run 'Document.cpp
+'
+foreach .View {
+'SOURCE      ' subreport '_app' run id 'Container.cpp' newline
+'SOURCE      ' subreport '_app' run id 'View.cpp' newline
+}
+'
+SOURCEPATH  ..\group
+RESOURCE    ' subreport '_app' run '.rss
+RESOURCE    ' subreport '_app' run '_caption.rss
+LANG     SC
+
+
+USERINCLUDE . ..\inc
+
+SYSTEMINCLUDE   . \epoc32\include
+
+LIBRARY euser.lib apparc.lib cone.lib eikcore.lib
+LIBRARY eikcoctl.lib avkon.lib
+LIBRARY bafl.lib
+
+AIF ' subreport '_app' run '.aif ..\Aif ' subreport '_app' run 'Aif.rss \
+    c12 ' subreport '_app' run 'Icon.bmp ' subreport '_app' run 'Icon_mask.bmp ' subreport '_app' run 'Icon_42x29.bmp ' subreport '_app' run 'Icon_42x29_mask.bmp'
+
+close
+
+endreport

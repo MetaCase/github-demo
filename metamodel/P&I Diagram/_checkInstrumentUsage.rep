@@ -1,0 +1,11 @@
+_checkInstrumentUsage()
+$elems = ' '
+foreach .(^System end | ^Comment)
+{	
+	variable 'elems' append oid ' ' close
+}
+foreach .(^System end | ^Comment)
+{	do explosions {
+		_reportIllegalElements()
+	}
+}

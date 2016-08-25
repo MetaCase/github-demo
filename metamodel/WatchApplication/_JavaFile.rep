@@ -1,0 +1,19 @@
+Report '_JavaFile'
+
+variable 'sourceFile' write do $generatedpackage { id sep } id '.java' close
+if not $sourceFiles =~ $sourceFile%wildsp then
+	variable 'sourceFiles' append $sourceFile ' ' close
+
+	filename $srcPath $sourceFile write
+		subreport '_Java' run
+	close
+
+	foreach .State [Watch];
+	{	do decompositions;
+		{ subreport '_JavaFile' run
+		}
+	}
+
+endif
+
+endreport

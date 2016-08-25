@@ -1,0 +1,167 @@
+Report '_C_AppUi_CPP'
+filename 
+	subreport '_default directory' run 
+	'src\' 
+	subreport '_app' run
+	'AppUi.cpp'
+write
+'/*
+* ============================================================================
+*  Name     : C' subreport '_app' run 'AppUi from CAknViewAppUi
+*  Part of  : ' subreport '_app' run '
+*  ' subreport '_copyright' run '
+* ============================================================================
+*/
+
+#include <avkon.hrh>
+#include <barsread.h>
+#include <akntitle.h>
+#include <aknnavi.h>
+#include <akncontext.h>
+#include <eikmenub.h>
+
+#include <AknListQueryDialog.h>
+#include <aknnotewrappers.h>
+
+#include <' subreport '_app' run '.rsg>
+#include "' subreport '_app' run '.hrh"
+#include "' subreport '_app' run 'AppUi.h"
+#include "' subreport '_app' run 'View.h"
+#include "' subreport '_app' run 'Container.h" 
+#include "' subreport '_app' run 'SubView.h"
+#include "' subreport '_app' run 'SubContainer.h" 
+#include "' subreport '_app' run 'OkView.h"
+
+// ================= MEMBER FUNCTIONS =======================
+
+// EPOC default constructor can leave.
+void C' subreport '_app' run 'AppUi::ConstructL()
+    {
+    BaseConstructL();
+
+    // Start first state after Start state
+
+    // Show tabs for main views from resources
+    CEikStatusPane *sp = StatusPane();
+
+    iTitlePane = STATIC_CAST(CAknTitlePane*, sp->ControlL(TUid::Uid(EEikStatusPaneUidTitle)));
+
+    // Fetch pointer to the default navi pane control
+    iNaviPane = (CAknNavigationControlContainer*)sp->ControlL(
+        TUid::Uid(EEikStatusPaneUidNavi));
+
+    iDecoratedTabGroup = iNaviPane->ResourceDecorator();
+    if (iDecoratedTabGroup)
+        {
+        iTabGroup = (CAknTabGroup*) iDecoratedTabGroup->DecoratedControl();
+        }
+
+';
+foreach .Application
+	{	do ~Parent View~Subview 
+		{	do .View
+			{	'    C' subreport '_app' run id 'View* view' id;1; ' = new(ELeave) C' subreport '_app' run id 'View;
+
+';				'    CleanupStack::PushL(view' id;1; ');
+';				'    view' id;1; '->ConstructL(' to '%upper' translate subreport '_r' run :View name var; endto ');
+';				'    CleanupStack::Pop();    // view' id;1; '
+';				'    AddViewL(view' id;1; ');        // transfer ownership to CAknViewAppUi
+
+';			}
+		}
+
+		do ~Parent View~Subview
+		{	if :Initially active; = 'T' then
+				'    ActivateLocalViewL(view' id '->Id());' newline
+			endif
+		}
+	}
+'    }
+
+// Destructor
+C' subreport '_app' run 'AppUi::~C' subreport '_app' run 'AppUi()
+    {
+    delete iDecoratedTabGroup;
+    delete iAppContainer;
+    }
+
+// ------------------------------------------------------------------------------
+// C' subreport '_app' run 'AppUi::::DynInitMenuPaneL(TInt aResourceId,CEikMenuPane* aMenuPane)
+//  This function is called by the EIKON framework just before it displays
+//  a menu pane. Its default implementation is empty, and by overriding it,
+//  the application can set the state of menu items dynamically according
+//  to the state of application data.
+//
+// ------------------------------------------------------------------------------
+void C' subreport '_app' run 'AppUi::DynInitMenuPaneL(
+    TInt /*aResourceId*/,CEikMenuPane* /*aMenuPane*/)
+    {
+    }
+
+// ----------------------------------------------------
+// C' subreport '_app' run 'AppUi::HandleCommandL(TInt aCommand)
+// takes care of command handling.
+// ----------------------------------------------------
+void C' subreport '_app' run 'AppUi::HandleCommandL(TInt aCommand)
+    {
+    switch (aCommand)
+        {
+        case EEikCmdExit:
+        case EAknCmdExit:
+            Exit();
+            break;
+
+        // TODO: Add Your command handling code here
+
+        default:
+            break;      
+        }
+    }
+
+// ----------------------------------------------------
+// C' subreport '_app' run 'AppUi::HandleKeyEventL(
+//     const TKeyEvent& aKeyEvent,TEventCode /*aType*/)
+// handles key events.
+// ----------------------------------------------------
+TKeyResponse C' subreport '_app' run 'AppUi::HandleKeyEventL(
+    const TKeyEvent& aKeyEvent,TEventCode /*aType*/)
+    {
+    iTabGroup = (CAknTabGroup*)iDecoratedTabGroup->DecoratedControl();
+    if (iTabGroup == NULL)
+        {
+        return EKeyWasNotConsumed;
+        }
+
+    TInt active = iTabGroup->ActiveTabIndex();
+    TInt count = iTabGroup->TabCount();
+
+    switch (aKeyEvent.iCode)
+        {
+        case EKeyLeftArrow:
+            if (active > 0)
+                {
+                active--;
+                iTabGroup->SetActiveTabByIndex(active);
+                ActivateLocalViewL(TUid::Uid(iTabGroup->TabIdFromIndex(active)));
+                }
+            break;
+        case EKeyRightArrow:
+            if((active + 1) < count)
+                {
+                active++;
+                iTabGroup->SetActiveTabByIndex(active);
+                ActivateLocalViewL(TUid::Uid(iTabGroup->TabIdFromIndex(active)));
+                }
+            break;
+        default:
+            return EKeyWasNotConsumed;
+            break;
+        }
+
+    return EKeyWasConsumed;
+    }
+
+// End of File  
+'
+close
+endreport

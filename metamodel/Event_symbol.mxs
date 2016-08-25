@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="Event_symbol">
+		<objectSymbol offset="50,30" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="50,30 77,30 77,60 50,60 50,30" targetPointX="63.5" targetPointY="45" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="60" version="1.2" width="77" xmlns="http://www.w3.org/2000/svg">
+				<polygon fill="rgb(249,249,249)" points="50,30 50,60 77,60 77,36.375 70.6466,30.375 70.6466,32.25 70.6466,36.375 77,36.375 70.0002,30" stroke="rgb(0,0,0)" stroke-width="1">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</polygon>
+				<g fill="none" stroke="rgb(0,0,0)" stroke-width="1" sym:height="15.5102" sym:width="14.7945" sym:x="5.610265e1" sym:y="4.02449e1">
+					<ellipse cx="63.4999" cy="48" fill="rgb(255,255,255)" rx="7.39725" ry="7.7551" stroke="rgb(0,0,0)" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<polyline fill="none" points="63.4999,44.1224 63.4999,48 67.1989,51.8775 67.1989,51.8775" stroke="rgb(0,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polyline>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

@@ -1,0 +1,7 @@
+_FaultFailure()
+foreach .FaultFailure 
+{	if not :FaultFailureValue; then
+		_reportWarnings()
+		'Warning: ' id ' does not refer to any fault failure value.' newline
+	endif
+}

@@ -1,0 +1,22 @@
+Report '_uniqueness constraints'
+@obj_type_name_oid = _type_name_oid()
+
+do :Properties
+{	_uniqueness\ constraint(
+		@obj_type_name_oid,
+		:Property name;
+	)
+}
+
+do ~Has property [GOPRR]>Property [GOPRR]
+{	_uniqueness\ constraint(
+		@obj_type_name_oid,
+		do ~NonProperty of [GOPRR]
+		{	do .Object [GOPRR] {id;}
+			if :Collection; then 
+				's' 
+			endif
+		}
+	)
+}
+endreport

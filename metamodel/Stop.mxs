@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="Stop">
+		<objectSymbol offset="82.5,41" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="82.5,41 107.5,41 107.5,56 82.5,56 82.5,41" targetPointX="95" targetPointY="48.5" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="56" version="1.2" width="107.5" xmlns="http://www.w3.org/2000/svg">
+				<polygon fill="rgb(255,0,0)" points="90.7143,41 85,45.3299 85,51.9794 90.5102,56 99.2857,56 105,51.8247 105,45.4845 99.4898,41" stroke="rgb(255,0,0)" stroke-width="1">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</polygon>
+				<textArea display-align="center" fill="rgb(255,255,255)" font-family="#sans serif" font-size="9" font-style="normal" font-weight="bold" height="8" sym:characterBackgroundFill="none" sym:textboxFill="none" sym:textboxStroke="none" sym:textboxStroke-width="1" sym:wordWrap="true" text-anchor="middle" width="25" x="82.5" y="44">
+					STOP
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</textArea>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

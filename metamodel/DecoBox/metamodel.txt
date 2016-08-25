@@ -1,0 +1,45 @@
+==========================
+Graph Type
+==========================
+DecoBox
+	Name: String
+
+==========================
+Object Types
+==========================
+BlueBauble
+RedBauble
+GoldBauble
+SilverBauble
+MetaEditBauble
+GoldBell
+SilverBell
+GingerbreadGentleman
+GingerbreadLady
+Heart
+
+==========================
+Relationship Types
+==========================
+
+==========================
+Role Types
+==========================
+
+==========================
+Extra Types
+==========================
+_XmasTreeBauble
+
+==========================
+Bindings
+==========================
+
+==========================
+Constraints
+==========================
+
+==========================
+Subgraphs
+==========================
+

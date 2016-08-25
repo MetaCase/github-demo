@@ -1,0 +1,18 @@
+Report '_EntryJSparams'
+'// (Start of MetaEdit+ generator _EntryJSparams
+// get URL query parameters
+var qKeys = {};
+var re = /[?&]([^=]+)(?:=([^&]*))?/g;
+var matchInfo;
+while((matchInfo = re.exec(location.search)) !== null){
+  qKeys[matchInfo[1]] = unescape(matchInfo[2]);
+}
+
+rowID=parseInt(qKeys.rowID, 10);
+if (!rowID) {
+  rowID = null;
+}
+// End of MetaEdit+ generator _EntryJSparams)
+
+'
+endreport

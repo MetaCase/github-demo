@@ -1,0 +1,6 @@
+Report 'Transitions between states'
+foreach .State [UML] 
+	{ '	State: ' id ' is entered from following other states: '
+	dowhile  ~To~From.State [UML] {id ', '} newline
+	}
+endreport

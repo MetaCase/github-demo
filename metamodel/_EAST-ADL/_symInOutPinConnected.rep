@@ -1,0 +1,5 @@
+_symInOutPinConnected()
+@oid = oid
+do ~();1#(*PinInOut) where oid = @oid unique '1' 
+{	'T'
+}

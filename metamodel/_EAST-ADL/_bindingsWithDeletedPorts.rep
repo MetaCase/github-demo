@@ -1,0 +1,21 @@
+_bindingsWithDeletedPorts()
+/* Reports all bindings with ports in which target port object is deleted */
+$ports = ' '
+foreach .(*Prototype) 
+{	do decompositions 
+	{	foreach .(*Port | *Pin* ) { variable 'ports' append oid ' ' close	}}
+	do ~(*Port* | *Pin* | FailureOut | FaultIn); 
+	{	do #() 
+		{	if not $ports =~ oid%wildsp then
+				_reportWarnings()
+				'Warning: ' id;2 ' in role ' type;1 ' does not have target port defined'
+				if $extendedCheck = 'T' then
+					' in the model ' id;3 ' <' type;3 '>'
+				else
+					'. Reconnect or remove the role ' if id;1 then id;1 ' ' else '<' type;1 '>.' endif
+				endif
+				newline
+			endif
+		}
+	}
+}

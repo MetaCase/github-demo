@@ -1,0 +1,25 @@
+Report '_SendSMS'
+/* Produce SMS sending code */
+'def ' subreport '_Internal name' run '():' newline
+'# Sending SMS ' :Message keyword; newline
+'# Use of global variables' newline
+do :Message elements; {
+	if type ='Message element' then
+		'	global ' id newline
+	endif
+}
+'	string = u"' :Message keyword; ' "'
+dowhile :Message elements; {
+	if type ='Optional delimiter' then
+		'+"' id ' "'
+	endif
+	if type ='Message element' then
+ 		'\' newline '			+unicode(str(' id '))'
+	endif
+}
+newline
+/* Shows the message in the note */
+'	appuifw.note(string, ''info'')' newline
+'	# messaging.sms_send("' :Recipient; '", string)' newline
+subreport '_next element' run
+endreport

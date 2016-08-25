@@ -1,0 +1,10 @@
+Report '_Actions'
+foreach .Action
+{'			case a' oid ':' newline
+	do ~ActionBody
+	{	do >() { '				' subreport '_' type run }
+		newline
+	}
+'				return null;' newline
+} 
+endreport

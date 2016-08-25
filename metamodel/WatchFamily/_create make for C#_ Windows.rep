@@ -1,0 +1,21 @@
+Report '_create make for C#: Windows'
+
+filename $projPath 'vs.bat' write
+	'cd /D ' $projPath
+	if not $IDE = 'visualstudio' then
+		subreport '_set .NET dir' run
+		subreport '_build and run C#' run
+	endif
+close
+
+subreport '_create MainWindow' run
+
+filename $projPath :Name '.sln' encoding 'UTF-8' write
+	subreport '_create Visual Studio sln file' run 
+close
+
+filename $srcPath :Name '.csproj' encoding 'UTF-8' write
+	subreport '_create Visual studio csproj file' run
+close
+ 
+endreport

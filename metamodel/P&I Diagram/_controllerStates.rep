@@ -1,0 +1,25 @@
+_controllerStates()
+/* data types for states */
+foreach .() {
+	do explosions {
+		$sep = ''
+		variable 'files' append subreport '_default directory' run 'E_' _gName(); '_SM_States.exp ' close
+		filename subreport '_default directory' run 'E_' _gName(); '_SM_States.exp' write
+		'(* @PATH := ''\/MDL_HOMEHEATING'' *)' newline
+		'TYPE ' 'E_' _gName(); '_SM_States :' newline; 
+		'(* ' id ' states generated from MetaEdit+ *)' newline 
+		'(' newline
+		'	(**** Initial States ****)' newline
+		'	'_gName(); '_SM_Initial,' newline
+		'	(**** Normal States ****)'
+		foreach .State {
+			$sep newline
+			'	MDL_' id;1%firstUpper%var '_SM_' id%var%upper
+			$sep = ','
+		}
+		newline
+		');' newline
+		'END_TYPE' newline
+		close
+	}
+}

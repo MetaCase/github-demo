@@ -1,0 +1,10 @@
+Realization\ relationships()
+/* reports all realizations links among the elements */
+$project = project
+'Realization relationships in ' $project ' project:' newline;
+do graphs where projectid = projectid;1 {
+	foreach >Realization {
+		do ~Realized.() { id ' <' Type '> is realized by ' }
+		do ~RealizedBy.() {id ' <' Type '>' newline}
+	}
+}

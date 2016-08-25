@@ -1,0 +1,35 @@
+Report '_global variables'
+/* Produces global variable definitions */
+foreach .(Form | List | Listbox | Popup_menu | Query | Text_editor | Start_exe) {
+	if :Return variable \(optional\); then
+		subreport '_Return variable name' run '=""' newline
+	endif
+	if type; = 'Listbox' then
+		if ~Menu; then
+			'next_state= ""' newline
+		endif
+	endif
+	if type; = 'Text_editor' then
+		if ~Menu; then
+			'next_function_' oid '= ""' newline
+		endif
+	endif
+	if type; = 'Start_exe' then
+		'next_function_' oid '= ""' newline
+	endif
+}
+foreach .Multi_query {
+	if :Return variable1; then 
+		:Return variable1;
+	else
+		'var1' type oid
+	endif
+	'= ""' newline
+	if :Return variable2; then 
+		:Return variable2;
+	else
+		'var2' type oid
+	endif
+	'= ""' newline
+}
+endreport

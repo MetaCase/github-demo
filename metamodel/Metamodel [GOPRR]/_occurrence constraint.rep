@@ -1,0 +1,8 @@
+Report '_occurrence constraint'
+if :Occurrence <> 'N' and :Occurrence <> '0' then
+	'<occurrence>' newline
+	'<object href="#' subreport '_type_name_oid' run '"></object>' newline
+	'<max>' :Occurrence '</max>' newline
+	'</occurrence>' newline
+endif
+endreport

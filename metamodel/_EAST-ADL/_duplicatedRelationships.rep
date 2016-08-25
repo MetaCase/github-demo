@@ -1,0 +1,10 @@
+_duplicatedRelationships()
+/* Finding the duplicated relationships, where the short names are identical */
+@prev = ' '
+foreach >(^Comment) where :Short name; <> '' orderby :Short name;
+{	if :Short name; = @prev then 
+		:Short name; newline
+	else
+		@prev = :Short name;
+	endif
+}

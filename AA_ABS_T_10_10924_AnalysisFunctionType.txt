@@ -1,0 +1,93 @@
+Graph_FunctionalAnalysisArchitecture_user_3483271256
+AA_ABS_T
+10_10924
+AnalysisFunctionType
+Graph: AA_ABS_T <AnalysisFunctionType> 10_10924
+	__UUID: dThw79l0RvOdt+23UvV4lA
+	FunctionName: AA_ABS_T
+	Name: 
+	Type: AnalysisFunctionType
+	IsElementary: F
+	Description: 
+	Show oid: F
+Object: BrakeReference <InFlowPort> 10_10955
+	__UUID: Ei+iAVHjRWyCBn2fIEVCKg
+	Short name: BrakeReference
+	Name: 
+	Description: 
+	Type: AA_TorqueType
+	Object: AA_TorqueType <RangeableValueType> 10_10562
+		__UUID: s8iMOlwdQ+WZAAlOkpuddQ
+		Short name: AA_TorqueType
+		Name: 
+		Accuracy: 1
+		Resolution: 1
+		SignificantDigits: 3
+		BaseRangeable: MyFloat
+		Object: MyFloat <EANumerical> 10_10594
+			__UUID: 27l5WWjuQwK0Pa07lKMlgA
+			Short name: MyFloat
+			Name: 
+			Min: 1
+			Max: 4
+			Unit: MyTimeUnit
+			Object: MyTimeUnit <Unit> 10_10622
+				__UUID: BVNCN7MGSLmdAwSa5IEARQ
+				Short name: MyTimeUnit
+				Name: 
+				Factor: 1
+				Offset: 0
+				Symbol: ms
+				Quantity: MyTimeQuantity
+				Object: MyTimeQuantity <Quantity> 10_10656
+					__UUID: r/P2/T70SbmRNPg07rPakA
+					Short name: MyTimeQuantity
+					Name: 
+					AmountOfSubstanceExp: 0
+					ElectricCurrentExp: 0
+					LengthExp: 0
+					LuminousIntensityExp: 0
+					MassExp: 0
+					ThermodynamicTemperatureExp: 0
+					TimeExp: 1
+					Description: 
+				UnitReference: 
+				Description: 
+			Description: 
+		Description: 
+Object: VehicleSpeed <InFlowPort> 10_10977
+	__UUID: NM/KBa0lTm6Dj3N9ZxT9cQ
+	Short name: VehicleSpeed
+	Name: 
+	Description: 
+	Type: AA_VehicleSpeedType
+	Object: AA_VehicleSpeedType <RangeableValueType> 10_10810
+		__UUID: r7q2xXO6SF2tG5/xjq6VpQ
+		Short name: AA_VehicleSpeedType
+		Name: 
+		Accuracy: 1
+		Resolution: 1
+		SignificantDigits: 3
+		BaseRangeable: MyFloat
+		Description: 
+Object: WheelSpeed <InFlowPort> 10_10999
+	__UUID: dIK3P0/UQe6RFF+SCYj66g
+	Short name: WheelSpeed
+	Name: 
+	Description: 
+	Type: AA_WheelSpeedType
+	Object: AA_WheelSpeedType <RangeableValueType> 10_10866
+		__UUID: W7eM8eClSXmqqfms6f+imw
+		Short name: AA_WheelSpeedType
+		Name: 
+		Accuracy: 1
+		Resolution: 1
+		SignificantDigits: 3
+		BaseRangeable: MyFloat
+		Description: 
+Object: BrakeTorque <OutFlowPort> 10_11021
+	__UUID: czojat9hTbSqx6qzCTEDkQ
+	Short name: BrakeTorque
+	Name: 
+	Description: 
+	Type: AA_TorqueType

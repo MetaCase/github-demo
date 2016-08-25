@@ -1,0 +1,18 @@
+Report 'Item''s feature satisfaction'
+/* reports feature satisfaction per item */
+_translators()
+foreach .Item {
+	id%upper ' <' type%upper '> RELATED FEATURES AND THEIR SATISFACTION' newline 
+	do :Features {
+		'- ' id ' <' type '>' newline 
+		do graphs; {
+			foreach .(*Feature) where oid = oid;2 {
+				do >Satisfy.(^*Feature) {
+				'	- is satisfied by ' id ' <' type '> in ' id;2 ' <' type;2 '>' newline
+				}
+			}
+		}
+	}
+	newline
+}
+endreport

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="private">
+		<objectSymbol offset="60,20" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="75,30 73.5355,26.4645 70,25 66.4645,26.4645 65,30 66.4645,33.5355 70,35 73.5355,33.5355 75,30" targetPointX="70" targetPointY="30" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="40" version="1.2" width="80" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<radialGradient cx="0.4" cy="0.4" gradientUnits="objectBoundingBox" id="gradient1" r="0.848528" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(255,0,0)"></stop>
+					</radialGradient>
+				</defs>
+				<ellipse cx="70" cy="30" fill="url(#gradient1)" rx="5" ry="5" stroke="none" stroke-width="0" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</ellipse>
+				<rect fill="none" height="20" rx="0" ry="0" stroke="none" stroke-width="0" width="20" x="60" y="20">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</rect>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

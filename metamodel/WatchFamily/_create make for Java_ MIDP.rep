@@ -1,0 +1,69 @@
+Report '_create make for Java: MIDP'
+	
+if $IDE = 'eclipse' then
+	subreport '_create eclipse resource files for JavaME' run
+	subreport '_write main class to INI file' arguments '' run
+	subreport '_write project name to INI file' arguments 'MIDlet' run
+endif
+
+subreport '_create midlet descriptors' run
+
+if $IDE = '' then
+	filename $srcPath 'javaFiles' write $sourceFiles close
+
+	filename $projPath 'makeWatch.bat' write
+		to '%undent' translate
+			/* Note: path names having spaces must be quoted e.g. "C:\Program Files\Java\jdk1.5.0_04" */
+			'@echo off
+			set nokiadrive=c:
+			set toolkitDir=' if :MIDP Emulator; = 'Sun' then $MIDP else $S40SDK endif '
+			set execString="%toolkitDir%\bin\emulator.exe" -Xdescriptor:"' id '.jad"
+			cd /D ' $projPath '
+			if not exist unverified mkdir unverified
+			if not exist preverified mkdir preverified
+			del unverified\com\metacase\watch\generated\*.class
+			del unverified\com\metacase\watch\framework\*.class
+			del preverified\com\metacase\watch\generated\*.class
+			del preverified\com\metacase\watch\framework\*.class
+			rem COMPILE CLASSES
+			set sunjars=' $MIDP '\lib\cldc_1.0.jar;' $MIDP '\lib\midp_2.0.jar;' newline
+			'@echo on
+			cd src 
+			:: Java error redirection is appalling. Put your own solution here :-)
+			if "%OS%"=="Windows_NT" "' $winJDK '\bin\javac" -target 1.4 -source 1.4 -g:none -d ..' sep 'unverified -classpath %sunjars% @javaFiles 2>errors.txt
+			if NOT "%OS%"=="Windows_NT" "' $winJDK '\bin\javac" -target 1.4 -source 1.4 -g:none -J-Djavac.pipe.output=true -d ..' sep 'unverified -classpath %sunjars% @javaFiles >errors.txt
+			cd..
+			@echo off
+
+			if not errorlevel 1 goto compiled
+			start errors.txt
+			pause
+			:compiled
+			@echo on
+			rem VERIFY CLASSES
+			"%toolkitDir%\bin\preverify" -classpath unverified;%sunjars% -d preverified unverified
+			@echo off
+
+			rem CREATE THE JAR
+			cd preverified
+			@echo on
+			"' $ winJDK '\bin\jar.exe" cfm "..\' id '.jar" ..\MANIFEST.MF ' do $generatedpackage { id '/' } '*.class ' do $frameworkpackage { id '/' } '*.class
+	
+			@echo off
+			cd ..
+			rem ADD JAR FILE SIZE TO THE JAD
+			dir /-C ' id '.jar | find "         1 "|find "(">jarsize.bat
+			for /F "tokens=3" %%i in (jarsize.bat) do @echo %%i >>' id '.jad
+			del jarsize.bat
+
+			rem START EMULATOR
+			@echo on
+			%execString%
+			@echo off
+			exit
+			'
+		endto
+	close /* makeWatch.bat */
+endif
+
+endreport

@@ -1,0 +1,126 @@
+Graph_VoiceOutput_user_3190467743
+Mode menu
+16_208
+VoiceOutput
+Graph: Mode menu <VoiceOutput> 16_208
+	Name: Mode menu
+	Documentation: 
+Object: GotoPoint <GotoPoint> 16_892
+Object: A < <If> 16_668
+	Test: A <
+	Parameter: 05
+	Not: F
+Object: Start <Start> 16_458
+Object: Stop <Stop> 16_401
+Object: Add A 01 <SystemCall> 16_274
+	Commands: Add A 01
+	Object: Add A 01 <Command> 16_779
+		Command: Add A
+		Parameter: 01
+Object: SayNumber A <SystemCall> 16_323
+	Commands: SayNumber A
+	Object: SayNumber A <Command> 16_607
+		Command: SayNumber A
+		Parameter: 
+Object: Load A 00 <SystemCall> 16_629
+	Commands: Load A 00
+	Object: Load A 00 <Command> 16_915
+		Command: Load A
+		Parameter: 00
+Object: SayMode <SystemCall> 16_798
+	Commands: SayMode
+	Object: SayMode <Command> 16_383
+		Command: SayMode
+		Parameter: 
+Object: SayMode A <SystemCall> 16_840
+	Commands: SayMode A
+	Object: SayMode A <Command> 16_738
+		Command: SayMode A
+		Parameter: 
+Object: Pause 0.3 sec select... ...another... ...mode... <Text> 16_354
+	Text fragments: Pause 0.3 sec select... ...another... ...mode...
+	Object: Pause 0.3 sec <TextFragment> 16_579
+		Label: Pause 0.3 sec
+		Start address: 0x06
+		Length: 3
+	Object: select... <TextFragment> 16_895
+		Label: select...
+		Start address: 0x07
+		Length: 2
+	Object: ...another... <TextFragment> 16_674
+		Label: ...another...
+		Start address: 0x08
+		Length: 3
+	Object: ...mode... <TextFragment> 16_441
+		Label: ...mode...
+		Start address: 0x04
+		Length: 1
+Object: ...press... <Text> 16_488
+	Text fragments: ...press...
+	Object: ...press... <TextFragment> 16_530
+		Label: ...press...
+		Start address: 0x00
+		Length: 1
+Object: Pause 0.5 sec the... ...current... ...mode... ...is... <Text> 16_597
+	Text fragments: Pause 0.5 sec the... ...current... ...mode... ...is...
+	Object: Pause 0.5 sec <TextFragment> 16_272
+		Label: Pause 0.5 sec
+		Start address: 0x01
+		Length: 5
+	Object: the... <TextFragment> 16_836
+		Label: the...
+		Start address: 0x02
+		Length: 1
+	Object: ...current... <TextFragment> 16_627
+		Label: ...current...
+		Start address: 0x03
+		Length: 2
+	Object: ...is... <TextFragment> 16_724
+		Label: ...is...
+		Start address: 0x05
+		Length: 1
+Object: for... <Text> 16_930
+	Text fragments: for...
+	Object: for... <TextFragment> 16_277
+		Label: for...
+		Start address: 0x09
+		Length: 1
+Relationship: False <False> 16_967
+  Role: From <From>  Object: <If> 16_668
+  Role: To <To>  Object: <Stop> 16_401
+Relationship: Flow <Flow> 16_223
+  Role: From <From>  Object: <Text> 16_930
+  Role: To <To>  Object: <SystemCall> 16_840
+Relationship: Flow <Flow> 16_298
+  Role: From <From>  Object: <SystemCall> 16_840
+  Role: To <To>  Object: <Text> 16_488
+Relationship: Flow <Flow> 16_307
+  Role: From <From>  Object: <SystemCall> 16_798
+  Role: To <To>  Object: <Text> 16_354
+Relationship: Flow <Flow> 16_403
+  Role: From <From>  Object: <Text> 16_488
+  Role: To <To>  Object: <SystemCall> 16_323
+Relationship: Flow <Flow> 16_749
+  Role: From <From>  Object: <Text> 16_597
+  Role: To <To>  Object: <SystemCall> 16_798
+Relationship: Flow <Flow> 16_806
+  Role: From <From>  Object: <SystemCall> 16_629
+  Role: To <To>  Object: <GotoPoint> 16_892
+Relationship: Flow <Flow> 16_818
+  Role: From <From>  Object: <Start> 16_458
+  Role: To <To>  Object: <Text> 16_597
+Relationship: Flow <Flow> 16_881
+  Role: From <From>  Object: <Text> 16_354
+  Role: To <To>  Object: <SystemCall> 16_629
+Relationship: Flow <Flow> 16_889
+  Role: From <From>  Object: <SystemCall> 16_274
+  Role: To <To>  Object: <Text> 16_930
+Relationship: Flow <Flow> 16_897
+  Role: From <From>  Object: <SystemCall> 16_323
+  Role: To <To>  Object: <If> 16_668
+Relationship: Flow <Flow> 16_906
+  Role: From <From>  Object: <GotoPoint> 16_892
+  Role: To <To>  Object: <SystemCall> 16_274
+Relationship: True <True> 16_286
+  Role: From <From>  Object: <If> 16_668
+  Role: To <To>  Object: <GotoPoint> 16_892

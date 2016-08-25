@@ -1,0 +1,17 @@
+__LiveCheck()
+$warnings = '0'
+$reported_models = ' '
+$reported_objects = ' '
+
+$LiveCheck = 'T'
+
+subreport '_translators' run 
+variable 'reported_models' append oid ' ' close
+
+_checkingShortNameUniqueness()
+
+_checkingsForDatatypes()
+
+if $warnings = '0' then
+	'No warnings' newline
+endif

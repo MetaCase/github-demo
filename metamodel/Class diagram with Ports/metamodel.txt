@@ -1,0 +1,59 @@
+==========================
+Graph Type
+==========================
+Class diagram with Ports
+	Name: String
+
+==========================
+Object Types
+==========================
+Class [Port]
+	Name: String
+	Attributes: OrderedCollection (Attribute [Port])
+Note
+	Note is a special object for adding additional text anywhere in the graphs. Note belongs to many languages and has only one property, Documentation.
+	---------------------------------------------
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Association [Port]
+
+==========================
+Role Types
+==========================
+AssociationEnd [Port]
+
+==========================
+Extra Types
+==========================
+Attribute [Port]
+	Name: String
+	Data type: String
+	Access level: String
+
+==========================
+Bindings
+==========================
+Association [Port]
+1	AssociationEnd [Port]: Class [Port]
+1	AssociationEnd [Port] #(Attribute [Port]): Class [Port]
+
+==========================
+Constraints
+==========================
+
+==========================
+Subgraphs
+==========================
+
+==========================
+Generators
+==========================
+
+==========================
+Sub-Generators
+==========================
+__LiveCheck
+

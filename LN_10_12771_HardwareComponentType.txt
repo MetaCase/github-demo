@@ -1,0 +1,36 @@
+Graph_HardwareDesignArchitecture_user_3400132575
+LN
+10_12771
+HardwareComponentType
+Graph: LN <HardwareComponentType> 10_12771
+	__UUID: U+y+j4hlSeCVfankWiHB4A
+	Type: LN <NodeType>
+	Object: LN <NodeType> <NodeType> 10_12788
+		__UUID: 0d3o05ftQjyIGly+h2N4KQ
+		Short name: LN
+		Name: 
+		Description: 
+		ExecutionRate: 1.0
+	Show report: Checking
+	Show allocated prototypes: F
+	Show oid: F
+Object: Lock_command <CommunicationHardwarePinOut> 10_12816
+	__UUID: imY4ZM4XSIGU0fO6c7g1kw
+	Short name: Lock_command
+	Name: 
+	IsGround: F
+	Description: 
+Object: LockButtonStatus <IOHardwarePinIn> 10_12838
+	__UUID: cBSz/uVcSrezazZR/k6WHg
+	Short name: LockButtonStatus
+	Name: 
+	IsGround: T
+	Type: digital
+	Description: 
+Object: LockingStatus <IOHardwarePinOut> 10_12864
+	__UUID: VYi4JLgZRl+otDqSHIdxSQ
+	Short name: LockingStatus
+	Name: 
+	IsGround: F
+	Type: digital
+	Description: 

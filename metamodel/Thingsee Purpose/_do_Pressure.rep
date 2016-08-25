@@ -1,0 +1,21 @@
+_do_Pressure()
+@sep = ''
+
+'                  "thresholds": {' 
+if :Trigger if over \(hPa\); = '' and :Trigger if under \(hPa\); = '' then
+	newline
+	'                    "isAny": true'	newline
+else 
+	if :Trigger if over \(hPa\); <> '' then
+		newline
+		'                    "isGt": ' :Trigger if over \(hPa\);
+		@sep = ','
+	endif
+	if :Trigger if under \(hPa\); <> '' then
+		@sep newline
+		'                    "isLt": ' :Trigger if under \(hPa\); 
+	endif
+	newline
+endif
+'                  }
+'

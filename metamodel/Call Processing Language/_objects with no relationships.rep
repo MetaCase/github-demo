@@ -1,0 +1,18 @@
+Report '_objects with no relationships'
+/* List the objects with no connections */
+foreach .(*|^subaction|^comment|^redirect|^reject|^mail|^proxy)
+{	
+	if not ~(From) then
+		'Warning: ' id ' (' type ') has no next flow element to follow. Define a flow relationship' newline
+		variable 'warnings_found' append '+1' close
+	endif
+}
+
+foreach .(*|^root node|^comment)
+{	
+	if not ~(To) then
+		'Warning: ' id ' (' type ') is not accessed in the navigation flow. Define a flow relationship' newline
+		variable 'warnings_found' append '+1' close
+	endif
+}
+endreport

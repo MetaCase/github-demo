@@ -1,0 +1,21 @@
+Graph_Thingsee_applications_user_3619123129
+Boat
+23_296
+Thingsee Profile
+Graph: Boat <Thingsee Profile> 23_296
+	Name: Boat
+	Description: This profile includes two applications/purposes: one used during sailing to monitor speed and the other to monitor the boat in harbour.
+
+Each application is specified in a subgraph.
+Object: This profile includes two applications/purposes: one used during sailing to monitor speed and the other to monitor the boat in harbour.
+
+Each application is specified in a subgraph. <Comment> 23_853
+	Description: This profile includes two applications/purposes: one used during sailing to monitor speed and the other to monitor the boat in harbour.
+
+Each application is specified in a subgraph.
+Object: Thingsee Profle Language defines one or more applications (called profiles) that can call each other. From the model .jsn generator produces state machine code that can be uploaded to Internet of Things device Thingsee.  <Comment> 23_1803
+	Description: Thingsee Profle Language defines one or more applications (called profiles) that can call each other. From the model .jsn generator produces state machine code that can be uploaded to Internet of Things device Thingsee. 
+Object: Sailing <Purpose> 23_307
+	Decomposed to: Sailing <Thingsee Purpose>
+Object: Harbour monitoring <Purpose> 23_533
+	Decomposed to: Harbour monitoring <Thingsee Purpose>

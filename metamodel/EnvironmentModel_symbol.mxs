@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="EnvironmentModel_symbol">
+		<objectSymbol offset="60,20" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="60,20 79,20 79,39 60,39 60,20" targetPointX="69.5" targetPointY="29.5" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="39" version="1.2" width="79" xmlns="http://www.w3.org/2000/svg">
+				<g fill="none" stroke="rgb(0,0,0)" stroke-width="1" sym:height="19" sym:width="19" sym:x="6.0e1" sym:y="2.0e1">
+					<polygon fill="rgb(0,0,0)" points="79,26.3333 74.25,29.5 74.25,23.1667" stroke="rgb(0,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polygon>
+					<polyline fill="none" points="60,29.5 64.75,20 69.5,39 71.875,26.3333 74.25,26.3333" stroke="rgb(0,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polyline>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

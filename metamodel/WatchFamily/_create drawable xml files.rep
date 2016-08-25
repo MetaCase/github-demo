@@ -1,0 +1,43 @@
+Report '_create drawable xml files'
+
+filename $projPath 'res' sep 'drawable' sep 'borderbackground.xml' encoding 'UTF-8' write
+'<?xml version="1.0" encoding="UTF-8"?>
+<!-- this is used for drawing the borders for icon in digital watch -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <solid android:color="#FF93EF93" />
+    <stroke android:width="1dip" android:color="#000000" />
+    <padding android:left="4dip" android:right="4dip" />
+</shape>'
+close
+
+filename $projPath 'res' sep 'drawable' sep 'roundedbackground.xml' encoding 'UTF-8' write
+'<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+   <!-- For the watch models that do not have icons. -->
+    <solid android:color="#FF93EF93"/>
+    <corners android:radius="7px" />   
+    <padding android:left="0dp" android:top="0dp" android:right="0dp" android:bottom="0dp" /> 
+</shape>'
+close
+
+filename $projPath 'res' sep 'drawable' sep 'roundedbottombackground.xml' encoding 'UTF-8' write
+'<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- for the watch models that have icons. This is used with the timezone layout. -->
+    <solid android:color="#FF93EF93"/>
+    <corners android:bottomLeftRadius="7px" android:bottomRightRadius="7px"/>   
+    <padding android:left="0dp" android:top="0dp" android:right="0dp" android:bottom="0dp" /> 
+</shape>'
+close
+
+filename $projPath 'res' sep 'drawable' sep 'roundedtopbackground.xml' encoding 'UTF-8' write
+'<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- For the watch models that have icons. This is used in the iconzone layout. -->
+    <solid android:color="#FF93EF93"/>
+    <corners android:topLeftRadius="7px" android:topRightRadius="7px"/>   
+    <padding android:left="0dp" android:top="4dp" android:right="0dp" android:bottom="0dp" /> 
+</shape>'
+close
+
+endreport

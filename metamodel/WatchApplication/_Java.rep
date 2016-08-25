@@ -1,0 +1,32 @@
+Report '_Java'
+
+'package ' dowhile $generatedpackage { id '.' } ';
+
+import 'do $frameworkpackage { id '.' } '*;
+
+public class ' id ' extends AbstractWatchApplication {
+'
+subreport '_Variables' run
+'	public ' id '(Master master) {
+		super(master, "' oid '");' newline
+subreport '_StateData' run newline
+subreport '_TransitionData' run newline
+subreport '_Decompositions' run newline
+subreport '_StateDisplayData' run
+'	};' newline
+
+newline newline
+
+'	public Object perform(int methodId)
+	{
+		switch (methodId) {
+'
+subreport '_Actions' run
+subreport '_DisplayFns' run
+'		}
+		return null;
+	}' newline
+
+'}'
+
+endreport

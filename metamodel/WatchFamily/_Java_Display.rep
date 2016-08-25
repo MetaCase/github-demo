@@ -1,0 +1,31 @@
+Report '_Java_Display'
+
+'package ' dowhile $generatedpackage { id '.' } ';
+
+import 'do $frameworkpackage { id '.' } '*;
+
+public class Display' id ' extends AbstractDisplay
+{
+	public Display' id '()
+	{
+'
+
+do :Icons; 
+{	'		icons.addElement(new Icon("' id '"));'
+	newline
+} newline
+
+do :UnitZones; 
+{	'		times.addElement(new Zone("' id '"));'
+	newline
+} newline
+
+do :Buttons;
+{	'		buttons.addElement("' id '");'
+	newline
+} newline
+
+'	}
+}'
+
+endreport

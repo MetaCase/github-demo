@@ -1,0 +1,32 @@
+Graph_System_modeling_user_3461239306
+BBW_SM
+10_10423
+SystemModel
+Graph: BBW_SM <SystemModel> 10_10423
+	__UUID: XzkxdMjNSHa468Bb6j3pvQ
+	Short name: BBW_SM
+	Name: 
+	Description: 
+Object: BBWAL: BBW_FAA <AnalysisFunction> <AnalysisFunctionPrototype> 10_10442
+	__UUID: EPlavo4iTVygVHqCcdkeIg
+	Short name: BBWAL
+	Name: 
+	Description: 
+	Decomposed to: BBW_FAA <AnalysisFunctionType>
+Object: BBWDL: BBW_FDA <DesignFunction> <DesignFunctionPrototype> 10_11833
+	__UUID: b0vlaA06S2WVW+0JE9dnsw
+	Short name: BBWDL
+	Name: 
+	Description: 
+	Decomposed to: BBW_FDA <DesignFunctionType>
+Object: HW_BBW: HDA <HardwareComponent> <HardwareComponentPrototype> 10_12379
+	__UUID: d3FuTFhDT9a4Ejx4V1FNfA
+	Short name: HW_BBW
+	Name: 
+	Description: 
+	Decomposed to: HDA <HardwareComponentType>
+Object: BBW <Vehicle Level> 10_13480
+	__UUID: pNx9V7YORROymaBZc/vksQ
+	Short name: BBW
+	Name: 
+	Explode to: TechnicalFeatureModel <VehicleFeatureModel>

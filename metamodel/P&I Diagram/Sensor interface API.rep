@@ -1,0 +1,22 @@
+Report 'Sensor interface API'
+/* produces interface description for the sensors used */
+_translators()
+$reportedSensorTypes = ' '
+'Sensors of ' id ' can be accessed with the following API:
+' newline
+foreach .Sensor; where :Function; <> 'Transmitter';  {
+	$kind = :Measured variable;
+	if not $reportedSensorTypes; =~ $kind%wildsp then
+		_APIGetSensorData()
+		variable 'reportedSensorTypes' append :Measured variable; ' ' close
+	endif	
+}
+$reportedSensorTypes = ' '
+foreach .Sensor; where :Function; = 'Transmitter';  {
+	$kind = :Measured variable;
+	if not $reportedSensorTypes; =~ $kind%wildsp then
+		_APISensorTransmission()
+		variable 'reportedSensorTypes' append :Measured variable; ' ' close
+	endif	
+}
+endreport

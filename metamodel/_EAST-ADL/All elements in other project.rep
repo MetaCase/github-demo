@@ -1,0 +1,10 @@
+Report 'All elements in other project'
+$proj = projectid
+'The following objects belong to another project than this graph type:' newline
+do graphs where projectid = $proj {
+	foreach .() where projectid <> $proj {
+		id ' in ' id;1 ' exists in project ' project
+		newline;
+	}	
+}
+endreport

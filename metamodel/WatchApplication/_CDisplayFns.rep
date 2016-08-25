@@ -1,0 +1,12 @@
+Report '_CDisplayFns'
+foreach .DisplayFn
+{	'me_time display_' id '()' newline
+	'{' newline
+	'	return '
+	do ~DisplayFnBody>()
+	{	subreport '_CCalcValue' run
+	}
+	';' newline
+	'}' newline newline
+}
+endreport

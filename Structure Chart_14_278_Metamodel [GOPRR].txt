@@ -1,0 +1,113 @@
+Graph_Simple_GOPRR_user_3334325822
+Structure Chart
+14_278
+Metamodel [GOPRR]
+Graph: Structure Chart <Metamodel [GOPRR]> 14_278
+	Graph name: Structure Chart
+	__UUID: OuthUwkkSp6inThfOP6sJA
+	Namespace: 
+	Properties: Model name Status Description
+	Object: Model name <Property [GOPRR]> 14_460
+		Property name: Model name
+		__UUID: KsfXvlUYTAyg1jJd17Dl7w
+		Local name: Model name
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Object: Status <Property [GOPRR]> 14_2039
+		Property name: Status
+		__UUID: MAjiRf0MSsOvHBHwFFJ+/g
+		Local name: Status
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Object: Description <Property [GOPRR]> 14_464
+		Property name: Description
+		__UUID: yKdefhREQAiuFP9BSD0tkw
+		Local name: Description
+		Datatype: Text
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Constraints: 
+	Object order: 
+	Description: Structure Chart is one of the most common model for organizing the activity within a single and synchronous unit. This unit is a structure chart which shows the hierarchical organization of modules within one task. Each process in Data Flow Diagram can be exploded to Structure Chart.
+
+The object in this method is 'module' and relationship is 'call'.
+
+Object: Note <Object [GOPRR]> 14_1972
+	Object name: Note
+	__UUID: FzKr4pW5RcqrJ7QRY0eNhg
+	Properties: Description
+	Occurrence: N
+	Description: Note is a special object for adding additional text any where in the graphs. Note belong to every method and has only one property: label.
+Object: Module <Object [GOPRR]> 14_2288
+	Object name: Module
+	__UUID: 527cw76iQmmTf9w/+8Iqog
+	Properties: Name Description
+	Object: Name <Property [GOPRR]> 14_2362
+		Property name: Name
+		__UUID: 3K0eimYRRHuX2sv2vm+2wQ
+		Local name: Name
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: per graph
+		Description: 
+	Occurrence: N
+	Description: A module describes a task performed in a process. Examples of modules are tasks like 'get record', 'write record' or 'display output'. A module is represented by a rectangle with a name of the module inside the symbol. Module has two properties: module name, and documentation. The documentation field can be used to enter additional information about module or to specify the rules of the module in more detail. For example,to include executable instructions like e.g.:  IF record = EOF THEN CALL module C ELSE ...
+Relationship: Call <Binding [GOPRR]> 14_915
+	Relationship: Call
+	Object: Call <Relationship [GOPRR]> 14_1056
+		Relationship name: Call
+		__UUID: bfNWK1wuROusMa4zFPZH7Q
+		Properties: Call name Parameters
+		Object: Call name <Property [GOPRR]> 14_967
+			Property name: Call name
+			__UUID: /C1CszDoRf+18+Bm3lL9eQ
+			Local name: Call name
+			Datatype: String
+			Object Datatype: 
+			Default value(s): 
+			Uniqueness: 
+			Description: 
+		Object: Parameters <Property [GOPRR]> 14_2750
+			Property name: Parameters
+			__UUID: 9xsSs4w6S/WTc7lTfb+2Zg
+			Local name: 
+			Datatype: Text
+			Object Datatype: 
+			Default value(s): 
+			Uniqueness: 
+			Description: 
+		Description: Call is used to represents communication and a passing of parameters between modules.
+  Role: Call role <First role [GOPRR]>  Object: <Object [GOPRR]> 14_2288
+	Role: Call role
+	Object: Call role <Role [GOPRR]> 14_311
+		Role name: Call role
+		__UUID: VdymdvbWSRiwyfRgacqlNg
+		Properties: Parameter
+		Object: Parameter <Property [GOPRR]> 14_544
+			Property name: Parameter
+			__UUID: tN6YCB10Q7aKKIovND7M9w
+			Local name: 
+			Datatype: String
+			Object Datatype: 
+			Default value(s): 
+			Uniqueness: 
+			Description: 
+		Description: 
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Dynamic Ports: 
+  Role: Call role <Last role [GOPRR]>  Object: <Object [GOPRR]> 14_2288
+	Role: Call role
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Can be drawn in both directions: F
+	Dynamic Ports: 

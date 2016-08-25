@@ -1,0 +1,5 @@
+_find\ types\ from\ levels()
+/* Collects variable typesAccessedFromLevels containing all accessed type, prototypes via the Levels */
+if (type = 'SystemModel') or (type='Package') or (type = 'AnalysisFunctionType') or (type = 'DesignFunctionType') or (type = 'HardwareComponentType') or (type = 'AllocationMatrix') or (type = 'VehicleFeatureModel') then
+	foreach .() { _build_typesAccessedFromLevels() }
+endif

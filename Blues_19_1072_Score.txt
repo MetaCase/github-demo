@@ -1,0 +1,136 @@
+Graph_Score_sysadmin_3544301008
+Blues
+19_1072
+Score
+Graph: Blues <Score> 19_1072
+	Title: Blues
+Object: Dynamic symbol templates
+Each Pattern object at the top contain a bar's worth of notes, and the Staff object at the bottom follows them all to build up the tune. Each note in the tune is one Note subsymbol along the template path from left to right, and cloned onto each separate staff. Each Note subsymbol draws its part of the 5 staff lines, and uses a generator in a template to give an object for each position from the bottom to the top, and a library symbol to display there; one for the real Note that is actually displayed, and the rest dummy objects with an Empty symbol. <Note> 19_1707
+	Documentation: Dynamic symbol templates
+Each Pattern object at the top contain a bar's worth of notes, and the Staff object at the bottom follows them all to build up the tune. Each note in the tune is one Note subsymbol along the template path from left to right, and cloned onto each separate staff. Each Note subsymbol draws its part of the 5 staff lines, and uses a generator in a template to give an object for each position from the bottom to the top, and a library symbol to display there; one for the real Note that is actually displayed, and the rest dummy objects with an Empty symbol.
+Object: C <Pattern> 19_1114
+	Name: C
+	Notes: C4 E4 G4 A4
+	Object: C4 <Note> 19_1261
+		Note Name: C
+		Octave: 4
+		Accidental: 
+	Object: E4 <Note> 19_1165
+		Note Name: E
+		Octave: 4
+		Accidental: 
+	Object: G4 <Note> 19_1304
+		Note Name: G
+		Octave: 4
+		Accidental: 
+	Object: A4 <Note> 19_1133
+		Note Name: A
+		Octave: 4
+		Accidental: 
+Object: G7 <Pattern> 19_1143
+	Name: G7
+	Notes: G4 F4 E4 D4
+	Object: F4 <Note> 19_1236
+		Note Name: F
+		Octave: 4
+		Accidental: 
+	Object: D4 <Note> 19_1093
+		Note Name: D
+		Octave: 4
+		Accidental: 
+Object: F <Pattern> 19_1153
+	Name: F
+	Notes: F4 A4 C5 A4
+	Object: F4 <Note> 19_1339
+		Note Name: F
+		Octave: 4
+		Accidental: 
+	Object: A4 <Note> 19_1173
+		Note Name: A
+		Octave: 4
+		Accidental: 
+	Object: C5 <Note> 19_1149
+		Note Name: C
+		Octave: 5
+		Accidental: 
+	Object: A4 <Note> 19_1288
+		Note Name: A
+		Octave: 4
+		Accidental: 
+Object: G <Pattern> 19_1188
+	Name: G
+	Notes: D5 B4 G4 D4
+	Object: D5 <Note> 19_1364
+		Note Name: D
+		Octave: 5
+		Accidental: 
+	Object: B4 <Note> 19_1200
+		Note Name: B
+		Octave: 4
+		Accidental: 
+	Object: G4 <Note> 19_1341
+		Note Name: G
+		Octave: 4
+		Accidental: 
+	Object: D4 <Note> 19_1175
+		Note Name: D
+		Octave: 4
+		Accidental: 
+Object: C <Pattern> 19_1210
+	Name: C
+	Notes: C4 E4 G4 A4
+Object: C <Pattern> 19_1251
+	Name: C
+	Notes: C4 E4 G4 A4
+Object: C <Pattern> 19_1282
+	Name: C
+	Notes: C4 E4 G4 A4
+Object: F <Pattern> 19_1319
+	Name: F
+	Notes: F4 A4 C5 A4
+Object: C <Pattern> 19_1327
+	Name: C
+	Notes: C4 E4 G4 A4
+Object: C <Pattern> 19_1350
+	Name: C
+	Notes: C4 E4 G4 A4
+Object: F <Pattern> 19_1356
+	Name: F
+	Notes: F4 A4 C5 A4
+Object: C <Pattern> 19_1374
+	Name: C
+	Notes: C4 E4 G4 A4
+Object: Staffs <Staffs> 19_1085
+Relationship: Flow <Flow> 19_1079
+  Role: From <From>  Object: <Pattern> 19_1356
+  Role: To <To>  Object: <Pattern> 19_1251
+Relationship: Flow <Flow> 19_1110
+  Role: From <From>  Object: <Pattern> 19_1350
+  Role: To <To>  Object: <Pattern> 19_1188
+Relationship: Flow <Flow> 19_1125
+  Role: From <From>  Object: <Pattern> 19_1153
+  Role: To <To>  Object: <Pattern> 19_1282
+Relationship: Flow <Flow> 19_1147
+  Role: From <From>  Object: <Pattern> 19_1251
+  Role: To <To>  Object: <Pattern> 19_1143
+Relationship: Flow <Flow> 19_1179
+  Role: From <From>  Object: <Pattern> 19_1282
+  Role: To <To>  Object: <Pattern> 19_1350
+Relationship: Flow <Flow> 19_1192
+  Role: From <From>  Object: <Pattern> 19_1114
+  Role: To <To>  Object: <Pattern> 19_1319
+Relationship: Flow <Flow> 19_1216
+  Role: From <From>  Object: <Pattern> 19_1374
+  Role: To <To>  Object: <Pattern> 19_1114
+Relationship: Flow <Flow> 19_1228
+  Role: From <From>  Object: <Pattern> 19_1319
+  Role: To <To>  Object: <Pattern> 19_1153
+Relationship: Flow <Flow> 19_1245
+  Role: From <From>  Object: <Pattern> 19_1210
+  Role: To <To>  Object: <Pattern> 19_1374
+Relationship: Flow <Flow> 19_1290
+  Role: From <From>  Object: <Pattern> 19_1188
+  Role: To <To>  Object: <Pattern> 19_1356
+Relationship: Flow <Flow> 19_1358
+  Role: From <From>  Object: <Pattern> 19_1327
+  Role: To <To>  Object: <Pattern> 19_1210

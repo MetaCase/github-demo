@@ -1,0 +1,8 @@
+_vcsInit_git()
+'
+git init || pause
+'
+if $gitProjectURL then
+	'git remote add origin ' $gitProjectURL ' || pause' newline
+	'git config credential.helper wincred || pause' newline
+endif

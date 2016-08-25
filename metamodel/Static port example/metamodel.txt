@@ -1,0 +1,48 @@
+==========================
+Graph Type
+==========================
+Static port example
+	Name: String
+
+==========================
+Object Types
+==========================
+Entity [Port]
+	Name: String
+Note
+	Note is a special object for adding additional text anywhere in the graphs. Note belongs to many languages and has only one property, Documentation.
+	---------------------------------------------
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Transition [Port]
+
+==========================
+Role Types
+==========================
+From [Port]
+To [Port]
+
+==========================
+Extra Types
+==========================
+EntityPort
+	Port type: String
+
+==========================
+Bindings
+==========================
+Transition [Port]
+	From [Port] #(OUT): Entity [Port]
+	To [Port] #(IN): Entity [Port]
+
+==========================
+Constraints
+==========================
+
+==========================
+Subgraphs
+==========================
+

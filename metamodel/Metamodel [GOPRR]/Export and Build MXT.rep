@@ -1,0 +1,5 @@
+Report 'Export and Build MXT'
+subreport 'Export graph type to MXT file' run 
+/* Reads metamodel in using command line */
+internal 'fileInPatch: "' subreport '_default directory' run id '.mxt' '"' execute
+endreport

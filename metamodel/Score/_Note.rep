@@ -1,0 +1,19 @@
+_Note()
+do 'C4
+D4
+E4
+F4
+G4
+A4
+B4
+C5
+D5
+E5
+F5'
+{	if id = id;1 then 
+		id;1 
+	else 
+		foreach .Pattern; unique '1' {id} 
+	endif
+	newline
+}

@@ -1,0 +1,3 @@
+_reportError_level1(@errorType)
+/* Reporting the undefined value and hierarchy for it */
+'Undefined ' @errorType' value for ' id ' <' type '> ' 

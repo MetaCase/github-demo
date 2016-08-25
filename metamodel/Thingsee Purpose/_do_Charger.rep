@@ -1,0 +1,22 @@
+_do_Charger()
+
+@sep = ''
+'                  "thresholds": {' 
+if :Trigger when; = 'charger has any value' then
+	newline
+	'                    "isAny": true'	
+	else
+	newline
+	'                    "isOneOf": [' newline
+	'                      '
+	if :Trigger when; = 'connected to charger' then 
+		'1' 
+	else
+		'0'
+	endif
+	'
+                    ]' 			
+endif
+newline	
+'                  }
+'

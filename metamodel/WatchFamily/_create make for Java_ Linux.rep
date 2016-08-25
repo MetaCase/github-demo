@@ -1,0 +1,31 @@
+Report '_create make for Java: Linux'
+
+if $IDE = 'eclipse' then
+	subreport '_create Eclipse resource files' run
+	subreport '_write main class to INI file' arguments :Name; run
+endif
+
+subreport '_create MainFrame' run
+
+if not $IDE = 'eclipse' then
+	filename subreport '_default directory' run 'makeWatch' write
+		to '%undent' translate
+			'#!/bin/bash
+			cd ' $srcPath '
+			' $linuxJDK '/bin/javac -d ../bin -Xstdout errors.txt @javaFiles
+			if [ $? -gt 0 ]; then
+				metahelp errors.txt
+			else
+				cd ../bin
+				' $linuxJDK '/bin/java ' do $generatedpackage { id '.' } '_' :Name '
+			fi
+			'
+		endto
+	close
+
+	filename $srcPath 'javaFiles' write
+		$sourceFiles
+	close
+endif
+
+endreport

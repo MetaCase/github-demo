@@ -1,0 +1,39 @@
+Graph_Logic__Dynamic_Ports__user_3499454250
+halfAdder
+18_279
+Logic [Dynamic Ports]
+Graph: halfAdder <Logic [Dynamic Ports]> 18_279
+	Logic name: halfAdder
+	Show values on wires?: F
+Object: And <And> 18_1443
+Object: B <Dynamic Port> 18_669
+	Port name: B
+	Direction: in
+Object: C <Dynamic Port> 18_784
+	Port name: C
+	Direction: out
+Object: S <Dynamic Port> 18_1177
+	Port name: S
+	Direction: out
+Object: A <Dynamic Port> 18_1364
+	Port name: A
+	Direction: in
+Object: Xor <Xor> 18_1330
+Relationship: Connection <Connection> 18_647
+  Role: Wire <Wire>  Object: <Dynamic Port> 18_784
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <And> 18_1443
+Relationship: Connection <Connection> 18_657
+  Role: Wire <Wire>  Object: <Dynamic Port> 18_669
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <And> 18_1443
+Relationship: Connection <Connection> 18_695
+  Role: Wire <Wire>  Object: <Dynamic Port> 18_1364
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <And> 18_1443
+Relationship: Connection <Connection> 18_1217
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <Xor> 18_1330
+  Role: Wire <Wire>  Object: <Dynamic Port> 18_1364
+Relationship: Connection <Connection> 18_1229
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <Xor> 18_1330
+  Role: Wire <Wire>  Object: <Dynamic Port> 18_1177
+Relationship: Connection <Connection> 18_1269
+  Role: Wire <Wire>  Object: <Dynamic Port> 18_669
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <Xor> 18_1330

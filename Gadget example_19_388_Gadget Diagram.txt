@@ -1,0 +1,35 @@
+Graph_Gadget_Diagram_sysadmin_3496482073
+Gadget example
+19_388
+Gadget Diagram
+Graph: Gadget example <Gadget Diagram> 19_388
+	Name: Gadget example
+Object: mPhone <Gadget [Port]> 19_603
+	Name: mPhone
+	Buttons: 1 2 3 4 5 6 7 8 9
+	Object: 1 <Button [Port]> 19_949
+		Name: 1
+	Object: 2 <Button [Port]> 19_574
+		Name: 2
+	Object: 3 <Button [Port]> 19_451
+		Name: 3
+	Object: 4 <Button [Port]> 19_880
+		Name: 4
+	Object: 5 <Button [Port]> 19_723
+		Name: 5
+	Object: 6 <Button [Port]> 19_969
+		Name: 6
+	Object: 7 <Button [Port]> 19_815
+		Name: 7
+	Object: 8 <Button [Port]> 19_665
+		Name: 8
+	Object: 9 <Button [Port]> 19_487
+		Name: 9
+Object: Grid layout with cloning template
+The template lays the buttons out left to right, cloning another row if necessary. Resize the object to see the layout change.
+
+Edit the symbol from the top row on the left, select the Template and choose Edit layout, then move the yellow diamonds and save to change the grid intervals. <Note> 19_1724
+	Documentation: Grid layout with cloning template
+The template lays the buttons out left to right, cloning another row if necessary. Resize the object to see the layout change.
+
+Edit the symbol from the top row on the left, select the Template and choose Edit layout, then move the yellow diamonds and save to change the grid intervals.

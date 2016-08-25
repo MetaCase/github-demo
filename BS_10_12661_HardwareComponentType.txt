@@ -1,0 +1,28 @@
+Graph_HardwareDesignArchitecture_user_3400132575
+BS
+10_12661
+HardwareComponentType
+Graph: BS <HardwareComponentType> 10_12661
+	__UUID: PJmPDwsdSviiCvzGzH9g9g
+	Type: BS <SensorType>
+	Object: BS <SensorType> <SensorType> 10_12678
+		__UUID: zHE8CpDNTRWyCTIdOBi28g
+		Short name: BS
+		Name: 
+		Description: 
+	Show report: Checking
+	Show allocated prototypes: F
+	Show oid: F
+Object: Com1 <CommunicationHardwarePinIn> 10_12702
+	__UUID: IDdMOBviQAefbuIOH/5zsQ
+	Short name: Com1
+	Name: 
+	IsGround: F
+	Description: 
+Object: Brake <IOHardwarePinOut> 10_12724
+	__UUID: u4EyuCrFRG6HhoX7uNaZQQ
+	Short name: Brake
+	Name: 
+	IsGround: F
+	Type: digital
+	Description: 

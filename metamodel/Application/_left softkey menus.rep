@@ -1,0 +1,13 @@
+Report '_left softkey menus'
+if ~Menu; then
+	if type; = 'Form' then
+		'	' subreport '_Return variable name' run '.menu = ['
+		dowhile ~Menu {	'(u"' :Menu item; '", ' do ~Menu to.() { subreport '_Internal name' run }	'),'	}
+		')]' newline
+	else
+	'	appuifw.app.menu = ['
+		dowhile ~Menu {	'(u"' :Menu item; '", ' do ~Menu to.() { 'handle_' subreport '_Internal name' run } '),'}
+		')]' newline
+	endif
+endif
+endreport

@@ -1,0 +1,54 @@
+Graph_Class_diagram_with_Ports_sysadmin_3496393088
+Class Diagram example
+19_379
+Class diagram with Ports
+Graph: Class Diagram example <Class diagram with Ports> 19_379
+	Name: Class Diagram example
+Object: Class_1 <Class [Port]> 19_800
+	Name: Class_1
+	Attributes: 
+Object: Class_3 <Class [Port]> 19_951
+	Name: Class_3
+	Attributes: 
+Object: Class_2 <Class [Port]> 19_983
+	Name: Class_2
+	Attributes: Attribute_1 Attribute_2 Attribute_3 Attribute_4 Attribute_5
+	Object: Attribute_1 <Attribute [Port]> 19_687
+		Name: Attribute_1
+		Data type: int
+		Access level: public
+	Object: Attribute_2 <Attribute [Port]> 19_817
+		Name: Attribute_2
+		Data type: float
+		Access level: public
+	Object: Attribute_3 <Attribute [Port]> 19_1006
+		Name: Attribute_3
+		Data type: char
+		Access level: protected
+	Object: Attribute_4 <Attribute [Port]> 19_646
+		Name: Attribute_4
+		Data type: int
+		Access level: private
+	Object: Attribute_5 <Attribute [Port]> 19_897
+		Name: Attribute_5
+		Data type: char
+		Access level: private
+Object: Dynamic ports
+A template uses the attributes in the class as dynamic ports: colored balls on the edge of the symbol, which can be connected to. A second template displays the attribute texts in the same order. <Note> 19_1714
+	Documentation: Dynamic ports
+A template uses the attributes in the class as dynamic ports: colored balls on the edge of the symbol, which can be connected to. A second template displays the attribute texts in the same order.
+Object: Movable dynamic ports
+Turn on 'Allow moving of ports' in both templates in the symbol and save it, then you can reorder an attribute by selecting its role and dragging it.
+    See Movable Dynamic Ports graph or EAST-ADL and SDL projects for more examples of movable dynamic ports. <Note> 19_1719
+	Documentation: Movable dynamic ports
+Turn on 'Allow moving of ports' in both templates in the symbol and save it, then you can reorder an attribute by selecting its role and dragging it.
+    See Movable Dynamic Ports graph or EAST-ADL and SDL projects for more examples of movable dynamic ports.
+Relationship: Association [Port] <Association [Port]> 19_872
+  Role: AssociationEnd [Port] <AssociationEnd [Port]>  Port: <Attribute [Port]> 19_1006  Object: <Class [Port]> 19_983
+  Role: AssociationEnd [Port] <AssociationEnd [Port]>  Object: <Class [Port]> 19_951
+Relationship: Association [Port] <Association [Port]> 19_907
+  Role: AssociationEnd [Port] <AssociationEnd [Port]>  Port: <Attribute [Port]> 19_646  Object: <Class [Port]> 19_983
+  Role: AssociationEnd [Port] <AssociationEnd [Port]>  Object: <Class [Port]> 19_951
+Relationship: Association [Port] <Association [Port]> 19_958
+  Role: AssociationEnd [Port] <AssociationEnd [Port]>  Port: <Attribute [Port]> 19_687  Object: <Class [Port]> 19_983
+  Role: AssociationEnd [Port] <AssociationEnd [Port]>  Object: <Class [Port]> 19_800

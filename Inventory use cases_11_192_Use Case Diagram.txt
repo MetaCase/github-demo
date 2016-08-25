@@ -1,0 +1,405 @@
+Graph_Use_case_diagram_sysadmin_3019387999
+Inventory use cases
+11_192
+Use Case Diagram
+Graph: Inventory use cases <Use Case Diagram> 11_192
+	Model name: Inventory use cases
+	Status: draft
+	Authors: David Hill Joe Smith
+	Object: David Hill <Person> 11_3226
+		Name: David Hill
+		E-mail: 
+		Contact address: Inventory use cases model was made by DH&JS 5.5.1998
+	Object: Joe Smith <Person> 11_1070
+		Name: Joe Smith
+		E-mail: mailto:info@metacase.com
+		Contact address: www.metacase.com
+	Documentation: Inventory use cases model was made by DH&JS 5.5.2006
+Object: Foreman <Actor [UML]> 11_1114
+	Actor name: Foreman
+	Documentation: Each inventory has named foreman.
+Object: Truck driver <Actor [UML]> 11_1813
+	Actor name: Truck driver
+	Documentation: Company's own truck drivers have possibility to view product's location information.
+Object: Forklift driver <Actor [UML]> 11_1883
+	Actor name: Forklift driver
+	Documentation: Forklift drivers do take care of transferring the goods or parts inside the inventory.
+Object: Warehouse worker <Actor [UML]> 11_2668
+	Actor name: Warehouse worker
+	Documentation: Each inventory has one or many warehouse workers working in the different inventories in the country. Company has currently 58 employees, who have the title "Warehouse worker".
+Object: Customer <Actor [UML]> 11_3926
+	Actor name: Customer
+	Documentation: Customer can be either house economic or some big customer.
+Object: Sales person <Actor [UML]> 11_3932
+	Actor name: Sales person
+	Documentation: Sales persons are usually working in the marketing or sales departments, but they have on-line connection to the inventory system.
+Object: Inventory system - Product <System [UML]> 11_344
+	System name: Inventory system - Product
+	Documentation: 
+	Explode to: Inventory system - Product <Class Diagram [UML]>
+Object: Update product quantity information <Use case [UML]> 11_418
+	Use case name: Update product quantity information
+	Attributes: 
+	Operations: 
+	Documentation file: 
+	Extension points: 
+	Documentation: When product(s)/parts arrive to the inventory, product quantity information will be updated immediately.
+Object: Order products <Use case [UML]> 11_1033
+	Use case name: Order products
+	Attributes: 
+	Operations: 
+	Documentation file: 
+	Extension points: 
+	Documentation: Customer and sales person have same kind of requirement: both of them can make orders. Sales person can do the order on the behalf of customer or by him/herself.
+Object: Delivery control <Use case [UML]> 11_1807
+	Use case name: Delivery control
+	Attributes: 
+	Operations: 
+	Documentation file: 
+	Extension points: 
+	Documentation: Foreman checks quality of shipped components, and that they match the bill of lading. 
+Any problems are reported on form PR3 back to sender and in duplicate to shipping agent.
+
+Object: Change product's location <Use case [UML]> 11_2599
+	Use case name: Change product's location
+	Attributes: 
+	Operations: 
+	Documentation file: 
+	Extension points: 
+	Documentation: After changing the product's location, it had to be updated also to Inventory system.
+Object: View availability <Use case [UML]> 11_3250
+	Use case name: View availability
+	Attributes: 
+	Operations: 
+	Documentation file: 
+	Extension points: 
+	Documentation: Both sales and selected customers have possibility to view inventory information outside the warehouse.
+Object: View location information <Use case [UML]> 11_3314
+	Use case name: View location information
+	Attributes: 
+	Operations: 
+	Documentation file: 
+	Extension points: 
+	Documentation: Warehouse worker and the truck driver have possibility to view product's exact location information.
+Object: Make an invoice <Use case [UML]> 11_3860
+	Use case name: Make an invoice
+	Attributes: 
+	Operations: 
+	Documentation file: 
+	Extension points: 
+	Documentation: After getting an order, goods will be gathered and the send to the customer and an invoice will be made.
+Relationship:  <Association [UML]> 11_265
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Use case [UML]> 11_2599
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Actor [UML]> 11_2668
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 11_483
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Use case [UML]> 11_1807
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Actor [UML]> 11_3932
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 11_490
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Use case [UML]> 11_1807
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Actor [UML]> 11_1114
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 11_1375
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Use case [UML]> 11_3314
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Actor [UML]> 11_1883
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 11_1583
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Use case [UML]> 11_3314
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Actor [UML]> 11_1813
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 11_1588
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Use case [UML]> 11_2599
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Actor [UML]> 11_1883
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 11_1817
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Actor [UML]> 11_3926
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Use case [UML]> 11_1033
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 11_1828
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Use case [UML]> 11_1033
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Actor [UML]> 11_3932
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 11_2012
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Use case [UML]> 11_3250
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Actor [UML]> 11_1114
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 11_2926
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Use case [UML]> 11_3250
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Actor [UML]> 11_3926
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 11_2935
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Use case [UML]> 11_3314
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Actor [UML]> 11_2668
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 11_3135
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Use case [UML]> 11_418
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Actor [UML]> 11_1114
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 11_3322
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Use case [UML]> 11_3860
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Actor [UML]> 11_3932
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 11_3495
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Actor [UML]> 11_2668
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Use case [UML]> 11_418
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 11_4270
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Use case [UML]> 11_1033
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Actor [UML]> 11_1114
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 

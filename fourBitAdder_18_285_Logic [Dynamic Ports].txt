@@ -1,0 +1,68 @@
+Graph_Logic__Dynamic_Ports__user_3499454250
+fourBitAdder
+18_285
+Logic [Dynamic Ports]
+Graph: fourBitAdder <Logic [Dynamic Ports]> 18_285
+	Logic name: fourBitAdder
+	Show values on wires?: F
+Object: halfAdder <Circuit [Dynamic Ports]> 18_512
+	Decomposed to: halfAdder <Logic [Dynamic Ports]>
+Object: fullAdder <Circuit [Dynamic Ports]> 18_601
+	Decomposed to: fullAdder <Logic [Dynamic Ports]>
+Object: fullAdder <Circuit [Dynamic Ports]> 18_700
+	Decomposed to: fullAdder <Logic [Dynamic Ports]>
+Object: fullAdder <Circuit [Dynamic Ports]> 18_804
+	Decomposed to: fullAdder <Logic [Dynamic Ports]>
+Object: This is a subtype of the Logic example, using dynamic ports. It only uses 1 And, 1 Or and 1 Xor, because they are reused many times via the subgraphs. <Label> 18_1204
+	Description: This is a subtype of the Logic example, using dynamic ports. It only uses 1 And, 1 Or and 1 Xor, because they are reused many times via the subgraphs.
+Object: 03 <LED> 18_334
+	Value: 03
+Object: 04 <LED> 18_1052
+	Value: 04
+Object: 01 <LED> 18_1317
+	Value: 01
+Relationship: Connection <Connection> 18_336
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_669  Object: <Circuit [Dynamic Ports]> 18_700
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <LED> 18_1317
+Relationship: Connection <Connection> 18_472
+  Role: Wire <Wire>  Port: 3: out <Logic port>  Object: <LED> 18_334
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_1364  Object: <Circuit [Dynamic Ports]> 18_700
+Relationship: Connection <Connection> 18_575
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_1177  Object: <Circuit [Dynamic Ports]> 18_700
+  Role: Wire <Wire>  Port: 3: in <Logic port>  Object: <LED> 18_1052
+Relationship: Connection <Connection> 18_581
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_1177  Object: <Circuit [Dynamic Ports]> 18_512
+  Role: Wire <Wire>  Port: 0: in <Logic port>  Object: <LED> 18_1052
+Relationship: Connection <Connection> 18_667
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_1177  Object: <Circuit [Dynamic Ports]> 18_601
+  Role: Wire <Wire>  Port: 1: in <Logic port>  Object: <LED> 18_1052
+Relationship: Connection <Connection> 18_814
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_1364  Object: <Circuit [Dynamic Ports]> 18_804
+  Role: Wire <Wire>  Port: 2: out <Logic port>  Object: <LED> 18_334
+Relationship: Connection <Connection> 18_824
+  Role: Wire <Wire>  Port: 0: out <Logic port>  Object: <LED> 18_334
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_1364  Object: <Circuit [Dynamic Ports]> 18_512
+Relationship: Connection <Connection> 18_911
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_669  Object: <Circuit [Dynamic Ports]> 18_601
+  Role: Wire <Wire>  Port: 1: out <Logic port>  Object: <LED> 18_1317
+Relationship: Connection <Connection> 18_962
+  Role: Wire <Wire>  Port: 1: out <Logic port>  Object: <LED> 18_334
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_1364  Object: <Circuit [Dynamic Ports]> 18_601
+Relationship: Connection <Connection> 18_981
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_669  Object: <Circuit [Dynamic Ports]> 18_512
+  Role: Wire <Wire>  Port: 0: out <Logic port>  Object: <LED> 18_1317
+Relationship: Connection <Connection> 18_1046
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_784  Object: <Circuit [Dynamic Ports]> 18_601
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_1076  Object: <Circuit [Dynamic Ports]> 18_804
+Relationship: Connection <Connection> 18_1142
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_1076  Object: <Circuit [Dynamic Ports]> 18_700
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_784  Object: <Circuit [Dynamic Ports]> 18_804
+Relationship: Connection <Connection> 18_1252
+  Role: Wire <Wire>  Port: 2: in <Logic port>  Object: <LED> 18_1052
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_1177  Object: <Circuit [Dynamic Ports]> 18_804
+Relationship: Connection <Connection> 18_1356
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_1076  Object: <Circuit [Dynamic Ports]> 18_601
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_784  Object: <Circuit [Dynamic Ports]> 18_512
+Relationship: Connection <Connection> 18_1393
+  Role: Wire <Wire>  Port: 2: out <Logic port>  Object: <LED> 18_1317
+  Role: Wire <Wire>  Port: <Dynamic Port> 18_669  Object: <Circuit [Dynamic Ports]> 18_804

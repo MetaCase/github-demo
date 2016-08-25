@@ -1,0 +1,83 @@
+Graph_FunctionalAnalysisArchitecture_user_3399893275
+BBW_FDA
+10_11851
+DesignFunctionType
+Graph: BBW_FDA <DesignFunctionType> 10_11851
+	__UUID: Orxkk3xEQqeqUrZUW7gWfg
+	FunctionName: BBW_FDA
+	Name: BrakeByWireFunctionArchitecture
+	Type: DesignFunctionType
+	IsElementary: F
+	Description: This model shows BrakeByWire DesignFunctionArchitecture
+	Show oid: F
+Object: ABS_FL_Pt: ABS_LDM_T <LocalDeviceManager> <DesignFunctionPrototype> 10_11882
+	__UUID: f0PI1nE+TiGSz/qB/O1Yiw
+	Short name: ABS_FL_Pt
+	Name: 
+	Description: 
+	Decomposed to: ABS_LDM_T <DesignFunctionType>
+Object: ABS_FR_Pt: ABS_LDM_T <LocalDeviceManager> <DesignFunctionPrototype> 10_11955
+	__UUID: yCm5P0YDSZaNKD8wUyX6hQ
+	Short name: ABS_FR_Pt
+	Name: 
+	Description: 
+	Decomposed to: ABS_LDM_T <DesignFunctionType>
+Object: ABS_RL_Pt: ABS_LDM_T <LocalDeviceManager> <DesignFunctionPrototype> 10_11973
+	__UUID: W8SkugckRAyp7ukqYDQQBw
+	Short name: ABS_RL_Pt
+	Name: 
+	Description: 
+	Decomposed to: ABS_LDM_T <DesignFunctionType>
+Object: ABS_RR_Pt: ABS_LDM_T <LocalDeviceManager> <DesignFunctionPrototype> 10_11991
+	__UUID: UHe3WcyESKSpjEGgxrcC0w
+	Short name: ABS_RR_Pt
+	Name: 
+	Description: 
+	Decomposed to: ABS_LDM_T <DesignFunctionType>
+Object: BrakeControllerPrototype: BrakeController_T <DesignFunction> <DesignFunctionPrototype> 10_12009
+	__UUID: WZAnk3UuRgmaRyabbDaKYA
+	Short name: BrakeCtrl_Pt
+	Name: BrakeControllerPrototype
+	Description: This function acts as brake controller
+	Decomposed to: BrakeController_T <DesignFunctionType>
+Object: PedalLDM_Pt: PedalLDM_T <LocalDeviceManager> <DesignFunctionPrototype> 10_12174
+	__UUID: ZbCPf1umQa+92SB/NI6yyg
+	Short name: PedalLDM_Pt
+	Name: 
+	Description: 
+	Decomposed to: PedalLDM_T <DesignFunctionType>
+Relationship: BrakeRequest from pedal <Flow> 10_12247
+	__UUID: 7WA7MuFRRhiJ0CT26rfK1Q
+	Short name: BR
+	Name: BrakeRequest from pedal
+	Description: Signal sent as request from pedal.
+  Role:  <InFlowPort>  Port: <InFlowPort> 10_12058  Object: <DesignFunctionPrototype> 10_12009
+  Role:  <OutFlowPort>  Port: <OutFlowPort> 10_12223  Object: <DesignFunctionPrototype> 10_12174
+Relationship: fl <Flow> 10_12269
+	__UUID: azAy0YrdRPyysrzHKWtwPw
+	Short name: fl
+	Name: 
+	Description: 
+  Role:  <InFlowPort>  Port: <InFlowPort> 10_11931  Object: <DesignFunctionPrototype> 10_11882
+  Role:  <OutFlowPort>  Port: <OutFlowPort> 10_12080  Object: <DesignFunctionPrototype> 10_12009
+Relationship: fr <Flow> 10_12291
+	__UUID: DtRPdB5vTpepz+/7sbtfaw
+	Short name: fr
+	Name: 
+	Description: 
+  Role:  <InFlowPort>  Port: <InFlowPort> 10_11931  Object: <DesignFunctionPrototype> 10_11955
+  Role:  <OutFlowPort>  Port: <OutFlowPort> 10_12102  Object: <DesignFunctionPrototype> 10_12009
+Relationship: rl <Flow> 10_12313
+	__UUID: Fj/aGjkcSfuwRyvZRLEuZg
+	Short name: rl
+	Name: 
+	Description: 
+  Role:  <InFlowPort>  Port: <InFlowPort> 10_11931  Object: <DesignFunctionPrototype> 10_11973
+  Role:  <OutFlowPort>  Port: <OutFlowPort> 10_12124  Object: <DesignFunctionPrototype> 10_12009
+Relationship: rr <Flow> 10_12335
+	__UUID: LAY7U8fCRPSUyxdLPnkbuA
+	Short name: rr
+	Name: 
+	Description: 
+  Role:  <InFlowPort>  Port: <InFlowPort> 10_11931  Object: <DesignFunctionPrototype> 10_11991
+  Role:  <OutFlowPort>  Port: <OutFlowPort> 10_12146  Object: <DesignFunctionPrototype> 10_12009

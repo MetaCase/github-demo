@@ -1,0 +1,95 @@
+Graph_Module_view_sysadmin_3422023668
+DoorServer
+22_823
+SDL Process Diagram
+Graph: DoorServer <SDL Process Diagram> 22_823
+	Name: DoorServer
+	Description: 
+Object: Initialize <Call> 22_836
+	Procedure name: Initialize
+	Parameters: 
+Object: from UserServer <Comment> 22_856
+	Description: from UserServer
+	Show signals: F
+Object: from door <Comment> 22_924
+	Description: from door
+	Show signals: F
+Object: VIA a <Comment> 22_962
+	Description: VIA a
+	Show signals: F
+Object: Admit <Input> 22_846
+	Name: Admit
+	Parameters: 
+Object: DoorPassed <Input> 22_898
+	Name: DoorPassed
+	Parameters: 
+Object: DoorTimeout <Input> 22_908
+	Name: DoorTimeout
+	Parameters: 
+Object: Open <Output> 22_872
+	Name: Open
+	To process: 
+	Parameters: 
+Object: Close <Output> 22_934
+	Name: Close
+	To process: 
+	Parameters: 
+Object: Admitted <Output> 22_948
+	Name: Admitted
+	To process: 
+	Parameters: 
+Object: Start <Start> 22_834
+Object: Closed <State> 22_866
+	State name: Closed
+Object: Open <State> 22_892
+	State name: Open
+Object: SET(NOW+5, DoorTimeout) <Task> 22_886
+	Action code: SET(NOW+5, DoorTimeout)
+Object: RESET (DoorTimeout) <Task> 22_918
+	Action code: RESET (DoorTimeout)
+Object: TIMER DoorTimeout; <Variable> 22_972
+	Variables: TIMER DoorTimeout;
+Relationship: Comment link <Comment link> 22_978
+  Role: Comment role <Comment role>  Object: <Comment> 22_856
+  Role: Comment role <Comment role>  Object: <Input> 22_846
+Relationship: Comment link <Comment link> 22_1036
+  Role: Comment role <Comment role>  Object: <Comment> 22_924
+  Role: Comment role <Comment role>  Object: <Input> 22_898
+Relationship: Comment link <Comment link> 22_1048
+  Role: Comment role <Comment role>  Object: <Output> 22_948
+  Role: Comment role <Comment role>  Object: <Comment> 22_962
+Relationship: Transition <Transition> 22_984
+  Role: Source <Source>  Object: <Start> 22_834
+  Role: Target <Target>  Object: <Call> 22_836
+Relationship: Transition <Transition> 22_990
+  Role: Source <Source>  Object: <Call> 22_836
+  Role: Target <Target>  Object: <State> 22_866
+Relationship: Transition <Transition> 22_996
+  Role: Source <Source>  Object: <State> 22_866
+  Role: Target <Target>  Object: <Input> 22_846
+Relationship: Transition <Transition> 22_1002
+  Role: Source <Source>  Object: <Input> 22_846
+  Role: Target <Target>  Object: <Output> 22_872
+Relationship: Transition <Transition> 22_1008
+  Role: Source <Source>  Object: <Output> 22_872
+  Role: Target <Target>  Object: <Task> 22_886
+Relationship: Transition <Transition> 22_1014
+  Role: Source <Source>  Object: <Task> 22_886
+  Role: Target <Target>  Object: <State> 22_892
+Relationship: Transition <Transition> 22_1020
+  Role: Source <Source>  Object: <State> 22_892
+  Role: Target <Target>  Object: <Input> 22_898
+  Role: Target <Target>  Object: <Input> 22_908
+Relationship: Transition <Transition> 22_1028
+  Role: Source <Source>  Object: <Input> 22_898
+  Role: Source <Source>  Object: <Input> 22_908
+  Role: Target <Target>  Object: <Task> 22_918
+Relationship: Transition <Transition> 22_1042
+  Role: Source <Source>  Object: <Task> 22_918
+  Role: Target <Target>  Object: <Output> 22_934
+Relationship: Transition <Transition> 22_1054
+  Role: Source <Source>  Object: <Output> 22_934
+  Role: Target <Target>  Object: <Output> 22_948
+Relationship: Transition <Transition> 22_1060
+  Role: Source <Source>  Object: <Output> 22_948
+  Role: Target <Target>  Object: <State> 22_866

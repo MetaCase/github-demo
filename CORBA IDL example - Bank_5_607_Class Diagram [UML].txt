@@ -1,0 +1,341 @@
+Graph_Class_diagram__UML__sysadmin_3019387957
+CORBA IDL example - Bank
+5_607
+Class Diagram [UML]
+Graph: CORBA IDL example - Bank <Class Diagram [UML]> 5_607
+	Model name: CORBA IDL example - Bank
+	Status: frozen
+	Authors: 
+	Documentation: This model describes interface definitions of bank classes into CORBA IDL. All classes which have stereotype <interface> are used to generate code. Choose Graph | Generate... and select IDL from the list.
+Object: Bank <Class [UML]> 5_1575
+	Class name: Bank
+	Attributes: +newAccount:Account +newPremiumAccount:premiumAccount +newDepositAccount:depositAccount +newCurrentAccount:currentAccount
+	Object: +newAccount:Account <Attribute [UML]> 5_11708
+		Name: newAccount
+		Data type: Account
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: Refers to an account that is opened or created
+		Documentation: 
+	Object: +newPremiumAccount:premiumAccount <Attribute [UML]> 5_2345
+		Name: newPremiumAccount
+		Data type: premiumAccount
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +newDepositAccount:depositAccount <Attribute [UML]> 5_4917
+		Name: newDepositAccount
+		Data type: depositAccount
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +newCurrentAccount:currentAccount <Attribute [UML]> 5_10341
+		Name: newCurrentAccount
+		Data type: currentAccount
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: +void reject(string reason) +void deleteAccount(Account a)
+	Object: +void reject(string reason) <Operation [UML]> 5_6957
+		Operation name: reject
+		Parameters: in string reason
+		Object: in string reason <Parameter> 5_3272
+			Parameter: reason
+			Data type: string
+			Direction: in
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: exception
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: 
+	Object: +void deleteAccount(Account a) <Operation [UML]> 5_9028
+		Operation name: deleteAccount
+		Parameters: in Account a
+		Object: in Account a <Parameter> 5_14420
+			Parameter: a
+			Data type: Account
+			Direction: in
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: This operation deletes the current account
+	Package: 
+	Abstract?: F
+	Persistent?: T
+	Stereotype: interface
+	Overridability: 
+	Role: model
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: A bank simply manufactures accounts.
+	Simple symbol?: F
+Object: Account <Class [UML]> 5_5540
+	Class name: Account
+	Attributes: +/ balance:long
+	Object: +/ balance:long <Attribute [UML]> 5_7014
+		Name: balance
+		Data type: long
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: readonly
+		Derived?: T
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: +void makeLodgement(long f) +void makeWithdrawal(long f)
+	Object: +void makeLodgement(long f) <Operation [UML]> 5_3340
+		Operation name: makeLodgement
+		Parameters: in long f
+		Object: in long f <Parameter> 5_9046
+			Parameter: f
+			Data type: long
+			Direction: in
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: 
+	Object: +void makeWithdrawal(long f) <Operation [UML]> 5_14498
+		Operation name: makeWithdrawal
+		Parameters: in long f
+		Object: in long f <Parameter> 5_5630
+			Parameter: f
+			Data type: long
+			Direction: in
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: 
+		Documentation: 
+	Package: 
+	Abstract?: F
+	Persistent?: T
+	Stereotype: interface
+	Overridability: 
+	Role: model
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: currentAccount <Class [UML]> 5_10956
+	Class name: currentAccount
+	Attributes: +overdraftLimit:short
+	Object: +overdraftLimit:short <Attribute [UML]> 5_11704
+		Name: overdraftLimit
+		Data type: short
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: interface
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: premiumAccount <Class [UML]> 5_10982
+	Class name: premiumAccount
+	Attributes: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: interface
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: A simple description of a bank premium account.
+	Simple symbol?: T
+Object: depositAccount <Class [UML]> 5_11004
+	Class name: depositAccount
+	Attributes: +interestRate:long
+	Object: +interestRate:long <Attribute [UML]> 5_13110
+		Name: interestRate
+		Data type: long
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: interface
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: A simple description of a bank deposit account
+	Simple symbol?: F
+Object: This model describes interface definitions of bank classes into CORBA IDL. All classes which have stereotype <interface> are used to generate code. Choose Graph | Generate... and select CORBA IDL from the list. <Note text> 5_1541
+	Note text: This model describes interface definitions of bank classes into CORBA IDL. All classes which have stereotype <interface> are used to generate code. Choose Graph | Generate... and select CORBA IDL from the list.
+	Stereotype: 
+Relationship:  <Aggregation> 5_2379
+	Association name: 
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_11004
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 5_1575
+	Multiplicity: 
+	Composition?: F
+Relationship:  <Aggregation> 5_6311
+	Association name: 
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_10956
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 5_1575
+	Multiplicity: 
+	Composition?: F
+Relationship:  <Aggregation> 5_10323
+	Association name: 
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_5540
+	Role name: 
+	Multiplicity: 0..*
+	Ordered?: T
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 5_1575
+	Multiplicity: 
+	Composition?: F
+Relationship:  <Aggregation> 5_13769
+	Association name: 
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_10982
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 5_1575
+	Multiplicity: 
+	Composition?: F
+Relationship:  <Generalization [UML]> 5_6252
+	Discriminator: 
+	Constraint: 
+	Visibility: public
+	Virtual?: F
+	Completeness: 
+	Derivation rules: 
+  Role: Specialization <Specialization>  Object: <Class [UML]> 5_10982
+  Role: Superclass <Superclass>  Object: <Class [UML]> 5_11004
+Relationship:  <Generalization [UML]> 5_6963
+	Discriminator: 
+	Constraint: 
+	Visibility: public
+	Virtual?: F
+	Completeness: 
+	Derivation rules: 
+  Role: Specialization <Specialization>  Object: <Class [UML]> 5_10956
+  Role: Superclass <Superclass>  Object: <Class [UML]> 5_5540
+Relationship:  <Generalization [UML]> 5_9666
+	Discriminator: 
+	Constraint: 
+	Visibility: public
+	Virtual?: F
+	Completeness: 
+	Derivation rules: 
+  Role: Specialization <Specialization>  Object: <Class [UML]> 5_11004
+  Role: Superclass <Superclass>  Object: <Class [UML]> 5_5540
+Relationship:  <Generalization [UML]> 5_13705
+	Discriminator: 
+	Constraint: 
+	Visibility: public
+	Virtual?: F
+	Completeness: 
+	Derivation rules: 
+  Role: Specialization <Specialization>  Object: <Class [UML]> 5_10982
+  Role: Superclass <Superclass>  Object: <Class [UML]> 5_10956

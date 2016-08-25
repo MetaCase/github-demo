@@ -1,0 +1,76 @@
+Graph_Amaratto_application_user_3250237231
+Calculate
+20_2855
+Application
+Graph: Calculate <Application> 20_2855
+	Application name: Calculate
+	Documentation: This simple example calculates the sum of two integers.
+Object: This simple example calculates the sum of two integers. <Comment> 20_3731
+	Documentation: This simple example calculates the sum of two integers.
+Object: The Graphs in this Project Model demonstrate the modeling of applications for mobile phones, as described in Chapter 8 of the book "Domain-Specific Modeling", http://dsmbook.com. A short introduction is provided as a PDF file in the main MetaEdit+ help index. <Comment> 20_5039
+	Documentation: The Graphs in this Project Model demonstrate the modeling of applications for mobile phones, as described in Chapter 8 of the book "Domain-Specific Modeling", http://dsmbook.com. A short introduction is provided as a PDF file in the main MetaEdit+ help index.
+Object: Avalue, Bvalue <Note> 20_3923
+	Text or code: Avalue, Bvalue
+	Treat as code: T
+	Internal name (optional): 
+	Note type: info
+	Function used: calculate(a,b)
+	Object: calculate(a,b) <Function> 20_3553
+		Function name: calculate
+		Parameters: a,b
+		Function body: first=u"First input: " + str(a)
+second=u"Second input: "+ str(b)
+sum= "sum = "+str(a+b)
+string= first+' '+second+' '+sum
+return string
+		Documentation: This function calculates sum of two parameters and returns sum value as string.
+Object: Give B <Query> 20_2990
+	Prompt: Give B
+	Internal name (optional): 
+	Query type: number
+	Initial value: 2
+	Return variable (optional): Bvalue
+Object: Give A <Query> 20_3274
+	Prompt: Give A
+	Internal name (optional): 
+	Query type: number
+	Initial value: 1
+	Return variable (optional): Avalue
+Object: Quit <Query> 20_3462
+	Prompt: Quit
+	Internal name (optional): 
+	Query type: query
+	Initial value: 
+	Return variable (optional): 
+Object: Start <Start> 20_3082
+Object: Stop <Stop> 20_3557
+Relationship:  <Back> 20_3781
+	Code: 
+	Function used: 
+  Role: Back from <Back from>  Object: <Query> 20_3462
+  Role: Back to <Back to>  Object: <Query> 20_3274
+Relationship:  <Flow> 20_3208
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Query> 20_3274
+  Role: To <To>  Object: <Query> 20_2990
+Relationship:  <Flow> 20_3237
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Note> 20_3923
+  Role: To <To>  Object: <Query> 20_3462
+Relationship:  <Flow> 20_3243
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Start> 20_3082
+  Role: To <To>  Object: <Query> 20_3274
+Relationship:  <Flow> 20_3787
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Query> 20_2990
+  Role: To <To>  Object: <Note> 20_3923
+Relationship:  <Flow> 20_3825
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Query> 20_3462
+  Role: To <To>  Object: <Stop> 20_3557

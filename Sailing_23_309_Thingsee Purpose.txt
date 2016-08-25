@@ -1,0 +1,76 @@
+Graph_Thingsee_app_sysadmin_3617045505
+Sailing
+23_309
+Thingsee Purpose
+Graph: Sailing <Thingsee Purpose> 23_309
+	Name: Sailing
+	Description: This  application monitors speed of the boat using speed sensor and saves the log information to the cloud.
+Object: Impact >1.5 (g) <Acceleration> 23_414
+	Direction: Any
+	Trigger if over (g): 1.5
+	Trigger if under (g): 0
+Object: Save logs, push notification <Action> 23_372
+	Send saved logs to cloud: T
+	Send event to: push notification
+	Send event to cloud URL: 
+	Send SMS message: 
+Object: Thingsee Purpose is based on the sensors and services of Internet of Things device Thingsee.  The language allows to use various sensors (Accelerator, Timer, Geofence, Location, Speed, Temperature, Humidity, Pressure, Luminance) and interact with the world via services (cloud, mobile, sms). Language provides also capabilities to follow the status of the device like its batter level and charging status.  The language guides creating applications as well as checks if they try to monitor the device in unsafe situations (too warm, too big G forces).
+
+Generator produces the jsn code that can be uploaded to the IoT device and executed there. <Comment> 23_1808
+	Description: Thingsee Purpose is based on the sensors and services of Internet of Things device Thingsee.  The language allows to use various sensors (Accelerator, Timer, Geofence, Location, Speed, Temperature, Humidity, Pressure, Luminance) and interact with the world via services (cloud, mobile, sms). Language provides also capabilities to follow the status of the device like its batter level and charging status.  The language guides creating applications as well as checks if they try to monitor the device in unsafe situations (too warm, too big G forces).
+
+Generator produces the jsn code that can be uploaded to the IoT device and executed there.
+Object: This  application monitors speed of the boat using speed sensor and saves the log information to the cloud. <Comment> 23_1813
+	Description: This  application monitors speed of the boat using speed sensor and saves the log information to the cloud.
+Object: Enjoy sailing! <Display> 23_408
+	Text shown: Enjoy sailing!
+Object: Starting harbour monitoring! <Display> 23_438
+	Text shown: Starting harbour monitoring!
+Object: 2 lux <Luminance> 23_428
+	Trigger if over (lux): 
+	Trigger if under (lux): 2
+Object: InHarbour <Other Purpose> 23_348
+	State in other purpose: InHarbour
+	Object: InHarbour <State> 23_354
+		Name: InHarbour
+		Start state: T
+		Always active: F
+		Description: 
+Object: >1  km/h <Speed> 23_338
+	Trigger if over (km/h): 1
+	Trigger if under (km/h): 
+Object: Sailing <State> 23_320
+	Name: Sailing
+	Start state: F
+	Always active: F
+	Description: 
+Object: InitializeSailing <State> 23_390
+	Name: InitializeSailing
+	Start state: T
+	Always active: F
+	Description: 
+Relationship:  <Transition> 23_444
+	Name: 
+  Role: Action <Action>  Object: <Action> 23_372
+  Role: From <From>  Object: <State> 23_320
+  Role: F <PollTrigger>  Object: <Speed> 23_338
+	Log values to device: F
+	Poll values after every: 10
+	Poll unit: seconds
+  Role: To <To>  Object: <State> 23_320
+Relationship:  <Transition> 23_470
+	Name: 
+  Role: Action <Action>  Object: <Display> 23_438
+  Role: From <From>  Object: <State> 23_320
+  Role: F <PollTrigger>  Object: <Luminance> 23_428
+	Log values to device: F
+	Poll values after every: 5
+	Poll unit: seconds
+  Role: To <To>  Object: <Other Purpose> 23_348
+  Role: F <Trigger>  Object: <Acceleration> 23_414
+	Log values to device: F
+Relationship:  <Transition> 23_502
+	Name: 
+  Role: Action <Action>  Object: <Display> 23_408
+  Role: From <From>  Object: <State> 23_390
+  Role: To <To>  Object: <State> 23_320

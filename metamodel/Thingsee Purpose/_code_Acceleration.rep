@@ -1,0 +1,14 @@
+_code_Acceleration()
+if :Direction = 'Any' then
+	'0x00050400'
+else
+	if :Direction = 'Longitudial' then
+		'0x00050100'
+	else
+		if :Direction = 'Lateral' then
+			'0x00050200'
+		else
+			'0x00050300'
+		endif
+	endif
+endif

@@ -1,0 +1,12 @@
+Report '_features'
+Foreach >() orderby y num, x num {
+	if type = 'Has feature' then 
+		subreport '_Has feature' run 
+	else
+		subreport '_Alternatives' run
+	endif
+}
+foreach .Feature {
+	do decompositions {subreport '_features' run}	
+}
+endreport

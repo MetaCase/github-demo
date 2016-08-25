@@ -1,0 +1,25 @@
+_instrumentTypes()
+foreach .(Pump | Boiler | Radiator | Burner | Thermostat ){
+	'	' _oName() ' : FB_'type';' 
+	if :Description; then ' (* ' :Description ' *)'	endif
+	newline
+}
+foreach .Valve; {
+	'	' _oName() ' : FB_' 
+	if :Valve type; <> 'Control' then
+		:Valve type; 'ly'
+		if :Valve type; = 'Normal' then 'Closed' endif
+	endif
+	if :Number of valve ends; <> 'Two' then 
+		:Number of valve ends;
+	endif 
+	'Valve;'
+	if :Valve type; = 'Manual' then 
+		' (* Note: ' :Name ' is not controlled because it is a manually used valve *)'
+	endif
+	newline
+}
+foreach .Sensor	{
+	'	' _oName() ' : FB_':Measured variable; 'Sensor;' newline
+}
+newline

@@ -1,0 +1,11 @@
+Report '_prebuild for Java: API'
+
+subreport '_prebuild for Java: Windows' run
+
+internal 'saveWSDL: MetaEditAPI.wsdl' execute
+
+if not $IDE then
+	internal 'stopAPI startAPI' execute
+endif
+
+endreport

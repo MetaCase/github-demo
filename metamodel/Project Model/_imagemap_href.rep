@@ -1,0 +1,19 @@
+Report '_imagemap_href'
+
+variable 'href' write '#' oid close
+$alt = id
+if id <> type then
+  variable 'alt' append ': ' type close
+endif
+if type = 'Graph' or type = 'Subproject' then
+  do decompositions {
+    variable 'href' write subreport '_id and oid' run
+		if type = 'Project Model' then 'right' endif
+      '.html' close
+    variable 'alt' write type ': ' id close
+  }
+endif
+'href="' $href '" '
+'alt="' $alt '"'
+
+endreport

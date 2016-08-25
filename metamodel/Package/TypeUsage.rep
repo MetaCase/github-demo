@@ -1,0 +1,22 @@
+TypeUsage()
+_translators()
+@reported = ' '
+do graphs where type = 'AnalysisFunctionType' or type = 'DesignFunctionType' or type = 'HardwareComponentType' 
+{	id ' based prototypes: '
+	@sep = ''
+	do graphs 
+	{	foreach .(*Prototype) 
+		{	do decompositions 
+			{	if oid = oid;3 then
+					if not $reported =~ oid;1%wildsp then
+						variable 'reported' append oid;1 ' ' close
+						@sep id;1 
+						if :Type;1 then ' <' :Type;1 '>' endif
+						@sep = ', '
+					endif
+				endif
+			}
+		}
+	}
+	newline		
+}

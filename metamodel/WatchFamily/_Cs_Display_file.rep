@@ -1,0 +1,29 @@
+Report '_Cs_Display_file'
+'using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Digital_watch
+{
+    public class Display' id ' : AbstractDisplay
+    {
+        public Display' id '()
+        {
+'
+do :Icons
+{	'            icons.Add(new Icon("' id '"));' newline
+}
+
+do :UnitZones 
+{	'            times.Add(new Zone("' id '"));' newline
+}
+do :Buttons 
+{	'            buttons.Add("' id '");' newline
+}
+
+'        }
+    }
+}
+'
+endreport

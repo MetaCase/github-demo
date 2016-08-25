@@ -1,0 +1,6 @@
+_symCheckFeatureCardinality()
+do ~Child.() {
+	if not :Cardinality =~ '0*' then
+		'Error: mandatory child'
+	endif
+}

@@ -1,0 +1,4 @@
+_vcsCheckIn_svn()
+'
+TortoiseProc.exe /command:commit /path:"' $vcsWorkingDir '" /logmsgfile:"%mepath%\versionComment.txt" /closeonend:3 || pause
+'

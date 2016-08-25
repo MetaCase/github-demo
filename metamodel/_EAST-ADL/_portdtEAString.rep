@@ -1,0 +1,14 @@
+_portdtEAString()
+'					<object id="_'oid'" type="Object_EAString_sysadmin_3536996221">
+						<slot name="Short name">
+							<value>
+								<string>Err' :Short name%xml '</string>
+							</value>
+						</slot>
+						<slot name="Name">
+							<value>
+								<string>' :Name%xml '</string>
+							</value>
+						</slot>												
+					</object>
+'

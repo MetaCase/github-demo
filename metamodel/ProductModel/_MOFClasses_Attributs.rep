@@ -1,0 +1,12 @@
+Report '_MOFClasses_Attributs'
+foreach .( * | ^Product ) { 				/* all other elements than product  */
+  if :Package = :Package name;2; then 	/* Package name with 2 means package from the package diagram */ 
+	/* product must belong to the same package than the package the code is geneated */
+	newline
+	'		// Attributes for Object :' :Display name newline
+	'		i' type ' = (' type ') productpackage_.lookupElementExtended("';id;'");' newline
+  	subreport '_Attributes' run
+  	 newline newline
+ endif
+}
+endreport

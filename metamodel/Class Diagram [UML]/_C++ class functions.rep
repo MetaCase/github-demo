@@ -1,0 +1,28 @@
+Report '_C++ class functions'
+	do :Operations; {	
+		if :Return type; = '' then 'void'
+            	else; :Return type; endif
+		' ' id;1 '::' :Operation name;
+		' (' dowhile :Parameters; { :Data type; ' ' :Parameter; ', ' } ')'
+		newline
+		if :Documentation; <> '' then
+			do :Documentation; {'// ' id newline}
+		endif
+		'{' newline
+		md5id oid ' protected block for method body' md5block
+		if :Body; then
+			do :Body; {'	' id newline }
+		else
+			'	// Enter code here' newline
+		endif
+		md5sum
+		'}'
+	newline
+	}
+newline
+'// Protected block for manually added operations' newline
+md5id oid ' manually added operations' md5block 
+'	// Enter code here' newline
+md5sum
+newline
+endreport

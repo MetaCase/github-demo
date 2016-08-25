@@ -1,0 +1,14 @@
+_FlowDirected()
+$directed = 'T' 
+do ~() {
+	do #() { /* port in prototype undirected */
+		if type = 'InOutFlowPort' then 
+			$directed = 'F' 
+		endif 
+	}
+	do .() { /* Port type undirected */
+		if type = 'InOutFlowPort' then 
+			$directed = 'F' 
+		endif 
+	}
+}

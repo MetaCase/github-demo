@@ -1,0 +1,63 @@
+Graph_FunctionalAnalysisArchitecture_user_3483271256
+VehicleSpeedSensor_FDT
+10_11450
+AnalysisFunctionType
+Graph: VehicleSpeedSensor_FDT <AnalysisFunctionType> 10_11450
+	__UUID: kbU0vng9RVCld0K+bqCpaA
+	FunctionName: VehicleSpeedSensor_FDT
+	Name: 
+	Type: AnalysisFunctionType
+	IsElementary: F
+	Description: 
+	Show oid: F
+Object: VehicleSpeedIn <InFlowPort> 10_11481
+	__UUID: DPsgJt4OSE+XOp2SL2Ra+A
+	Short name: VehicleSpeedIn
+	Name: 
+	Description: 
+	Type: AA_VehicleSpeedType
+	Object: AA_VehicleSpeedType <RangeableValueType> 10_10810
+		__UUID: r7q2xXO6SF2tG5/xjq6VpQ
+		Short name: AA_VehicleSpeedType
+		Name: 
+		Accuracy: 1
+		Resolution: 1
+		SignificantDigits: 3
+		BaseRangeable: MyFloat
+		Object: MyFloat <EANumerical> 10_10594
+			__UUID: 27l5WWjuQwK0Pa07lKMlgA
+			Short name: MyFloat
+			Name: 
+			Min: 1
+			Max: 4
+			Unit: MyTimeUnit
+			Object: MyTimeUnit <Unit> 10_10622
+				__UUID: BVNCN7MGSLmdAwSa5IEARQ
+				Short name: MyTimeUnit
+				Name: 
+				Factor: 1
+				Offset: 0
+				Symbol: ms
+				Quantity: MyTimeQuantity
+				Object: MyTimeQuantity <Quantity> 10_10656
+					__UUID: r/P2/T70SbmRNPg07rPakA
+					Short name: MyTimeQuantity
+					Name: 
+					AmountOfSubstanceExp: 0
+					ElectricCurrentExp: 0
+					LengthExp: 0
+					LuminousIntensityExp: 0
+					MassExp: 0
+					ThermodynamicTemperatureExp: 0
+					TimeExp: 1
+					Description: 
+				UnitReference: 
+				Description: 
+			Description: 
+		Description: 
+Object: VehicleSpeedOut <OutFlowPort> 10_11503
+	__UUID: zIfx0N2/QAKglSkIcFXrvg
+	Short name: VehicleSpeedOut
+	Name: 
+	Description: 
+	Type: AA_VehicleSpeedType

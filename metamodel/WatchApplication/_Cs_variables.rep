@@ -1,0 +1,20 @@
+Report '_Cs_variables'
+
+$varIx='0'
+foreach .(DisplayFn | Action)
+{	'	const int '
+	if type = 'Action' then 'a' else 'd' endif
+	oid '	= ' $++varIx ';' newline
+}
+
+foreach .Variable
+{	'	private ' :Type; ' _' id ' = new ' :Type; '();' newline
+}
+newline
+
+foreach .Variable
+{	subreport '_Cs_getSet' run
+}
+newline
+
+endreport

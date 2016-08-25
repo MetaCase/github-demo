@@ -1,0 +1,17 @@
+_checkingsForTimingModels()
+
+if type = 'TimingModel' then
+	/* Checking for the events */
+	_EventChecks()
+	/* Checking for the constraints */
+	_ConstraintChecks()
+else 
+	foreach .() 
+	{
+		if $LiveCheck <> 'T' then
+			if type = 'Package'; then
+				do decompositions { _checkingsForTimingModels()	}
+			endif
+		endif
+	}
+endif 

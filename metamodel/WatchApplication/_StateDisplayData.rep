@@ -1,0 +1,16 @@
+Report '_StateDisplayData'
+foreach .State [Watch];
+{	'            addStateDisplay("' id '", '
+	if :Blinking; then 'METime.' :Blinking; else '-1' endif
+	if :DisplayFn; = '' then
+		foreach .DisplayFn
+		{	if id = '' then subreport '_StateDisplayDataContent' run endif
+		}
+	else
+		do :DisplayFn;
+		{	 subreport '_StateDisplayDataContent' run
+		}
+	endif
+	');' newline
+}
+endreport

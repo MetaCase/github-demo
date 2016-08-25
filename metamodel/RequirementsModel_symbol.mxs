@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="RequirementsModel_symbol">
+		<objectSymbol offset="40,20" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="40,20 59,20 59,39 40,39 40,20" targetPointX="49.5" targetPointY="29.5" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="39" version="1.2" width="59" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<radialGradient cx="0.37" cy="0.642857" gradientUnits="objectBoundingBox" id="gradient1" r="0.715508" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="0.649419" stop-color="rgb(192,0,0)"></stop>
+						<stop offset="1" stop-color="rgb(192,0,0)"></stop>
+					</radialGradient>
+				</defs>
+				<polygon fill="url(#gradient1)" points="41.9,25.4286 40,28.1428 40,30.8572 45.7,39 47.6,39 59,25.4286 59,22.7143 57.1,20 55.2,20 47.22,32.4857 43.8,25.4286" stroke="rgb(0,0,0)" stroke-width="1">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</polygon>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

@@ -1,0 +1,14 @@
+Report '_non-stack elements'
+/* Goes through elements, which are not needed to the stack and sets the element_to_stack = False */
+if type;2 ='Note' 
+	or type;2 ='Condition'
+	or type;2 ='SendSMS'
+	or type;2 ='Start_exe'
+	or type;2 ='Open_as_standalone'
+	or type;2 ='Stop'
+then
+	'False'
+else
+	'True'
+endif
+endreport

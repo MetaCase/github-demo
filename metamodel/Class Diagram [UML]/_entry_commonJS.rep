@@ -1,0 +1,166 @@
+Report '_entry_commonJS'
+'// Functions to initialize the database for this application and create HTML tables
+
+function addCellHTML(_listRow, _html) {
+  var _listCell = document.createElement("td");
+  _listCell.innerHTML=_html;
+  _listRow.appendChild(_listCell);
+}
+
+
+function displayRecentRows() {
+  var recentRows = [];
+
+  // Get the N=pageSize most recent entries. 
+  var joinString = "";
+  var selectColsString = "h.rowID";
+  var htmlCols = [];
+  for (var i=0; i<allForeign.length; i++){
+    var fcol=allForeign[i];
+    var foreignAlias="f"+i;
+    selectColsString += ", " + foreignAlias + ".rowID" 
+      + " AS " + foreignAlias + "_rowID";
+    htmlCols.push({name:"rowID",pageName:fcol.pageName,hide:"yes"});
+    for (var j=0; j<fcol.foreignCols.length; j++){
+      selectColsString += ", " + foreignAlias + "." + fcol.foreignCols[j] 
+        + " AS " + foreignAlias + "_" + fcol.foreignCols[j];
+      htmlCols.push({name:fcol.name.substr("fk_".length) + " " + fcol.foreignCols[j], pageName:fcol.pageName});
+    }
+    joinString += " LEFT OUTER JOIN " + fcol.tableName + " AS " + foreignAlias + " ON h." + fcol.name + "=" + foreignAlias + ".rowID";
+  }
+  for (i=0; i<cols.length; i++){
+    var col=cols[i];
+    selectColsString += ", h." + col.name;
+    htmlCols.push({name:col.name});
+  }
+  db.executeThen("SELECT " + selectColsString + " FROM " + tableName + " AS h" + joinString + " order by h.Timestamp desc", [], function (tx, rs){
+    for(var rowIndex = 0; rowIndex < rs.rows.length; rowIndex++) {
+      if (rowIndex < pageSize) {
+        var row=rs.rows.item(rowIndex);
+        recentRows[rowIndex]=[];
+        i = 0;
+        for (var key in row) {
+          if (row.hasOwnProperty(key)) {
+            recentRows[rowIndex][i] = row[key];
+            i++;
+          }
+        }
+      }
+    }
+
+    var listTable = getElementById("listTable");
+    var oldRows = listTable.rows.length;
+    for (var rowI = 0; rowI < oldRows; rowI++) {
+      listTable.deleteRow(0);
+    }
+
+    var listBody = listTable.getElementsByTagName("tbody")[0];
+    var listRow = document.createElement("tr");
+    listRow.className="tableheader";
+    addCellHTML(listRow, "&nbsp;");
+    for (i=0; i<htmlCols.length; i++){
+      if (htmlCols[i].hide!="yes"){
+        addCellHTML(listRow, htmlCols[i].name);
+      }
+    }
+    addCellHTML(listRow, "&nbsp;");
+     listBody.appendChild(listRow);
+
+    for (rowI = 0; rowI < rowIndex && rowI < pageSize; ++rowI) {
+      var rowEditLink = pageName+".html?rowID="+recentRows[rowI][0];
+      var rowEditButton = "<button type=\"button\" onclick=\"location.href=''" + rowEditLink + "'';\">Edit<\/button>";
+      var rowDeleteButton = "<button type=\"button\" onclick=\"deleteDBRow(" + recentRows[rowI][0] + ");\">Delete<\/button>";
+      listRow = document.createElement("tr");
+      addCellHTML(listRow, rowEditButton);
+      for (i=0; i<htmlCols.length; i++){
+        var htmlCol = htmlCols[i];
+        var cellHTML = ""+recentRows[rowI][i+1];
+        if (htmlCol.hide=="yes"){
+          var lastRowID=cellHTML;
+        } else {
+          if (htmlCol.pageName){
+            cellHTML = cellHTML.link(htmlCol.pageName + ".html?rowID=" + lastRowID);
+          }
+          addCellHTML(listRow, cellHTML);
+        }
+      }
+      addCellHTML(listRow, rowDeleteButton);
+      listBody.appendChild(listRow);
+    }
+  });
+}
+
+
+function init() {
+  var success = initDB();
+
+  // Enable or disable UI elements
+  if (document.forms.length > 0) {
+    var inputs = document.forms[0].elements;
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].disabled = !success;
+    }
+  }
+
+  if (success) {
+    // Initialize the UI at startup.
+    displayRecentRows();
+
+    // If we have ?rowID=, load the non-foreign values into the input fields
+    if (rowID) {
+      db.executeThen("select * from " + tableName + " where rowID=" + rowID, [], function (tx, rs) {
+        if (rs.rows.length>0) {
+          var row=rs.rows.item(0);
+          i = -1; // skip rowID
+          for (var key in row) {
+            if (row.hasOwnProperty(key)) {
+              if (i>=0 && i<midCols.length) {
+                var col=midCols[i];
+                if (!col.pageName){
+                  col.elt.value = row[key];
+                } else {
+                  col.initialValue = row[key];
+                }
+              }
+              i++;
+            }
+          }
+        }
+      });
+    }
+  }
+}
+
+
+function gotoNew() {
+  location.href=pageName + ".html";
+}
+
+
+function gotoList() {
+  location.href=pageName + "List.html";
+}
+
+
+function deleteDBRow(_rowID) {
+  if (!db) {
+    return;
+  }
+  db.executeThen("delete from " + tableName + " where rowID=?", [_rowID], function (tx, rs) {
+    displayRecentRows()
+  });
+}
+
+
+function dropDBTable() {
+  if (!db) {
+    return;
+  }
+
+  if (confirm("Are you sure you want to delete all " + pageName + " values?")) {
+    dropDBTablesThen([tableName], gotoNew);
+  }
+}
+
+'
+endreport

@@ -1,0 +1,11 @@
+Report '_name checks'
+/* Checking the name value */
+if :Short name; = '' then
+	$emptyIdFound = 'T'
+else 
+	if not :Short name; =/ '[a-zA-Z]([a-zA-Z0-9]|_[a-zA-Z0-9])*_?' then
+		_reportWarnings()
+		'Warning: There are illegal character(s) in the ' type '''s identifier property ' :Short name; newline
+	endif
+endif
+endreport

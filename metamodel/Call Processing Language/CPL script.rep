@@ -1,0 +1,23 @@
+Report 'CPL script'
+/* Generates the CPL script to the file */
+filename subreport '_default directory' run id '.xml' encoding 'UTF-8' write
+subreport '_CPL document settings' run
+'<cpl>' newline
+subreport '_subactions' run
+
+foreach .root node 
+{
+	do ~From>() 
+	{
+		'<' id '>' newline
+		do ~To.()
+		{
+			subreport '_check object type' run
+		}
+		'</' id '>' newline
+	}
+}
+'</cpl>' newline
+close
+
+endreport

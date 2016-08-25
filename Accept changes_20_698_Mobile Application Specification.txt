@@ -1,0 +1,50 @@
+Graph_eSWT_model_user_3387784239
+Accept changes
+20_698
+Mobile Application Specification
+Graph: Accept changes <Mobile Application Specification> 20_698
+	Model name: Accept changes
+	Description: 
+	View: Detail view
+	Display: Primary
+	UI category: U2
+Object: Accept changes <Query> 20_758
+	Query title: Accept changes
+	Title ID: QUERY_ACCEPT_TEXT
+	Title icon: Query.ico
+	Prompt: Accept changes
+	Prompt ID: PROMPT_SURE_TEXT
+	Query type: Query
+	Style: Application modal
+Object: Start <Start> 20_2581
+Object: Complete <Stop> 20_2078
+	Stop type: Complete
+Object: Item saved <TimedMessageBox> 20_1253
+	Message text: Item saved
+	Message text ID: MB_SAVING_TEXT
+	Style: Information
+	Timeout: 2
+Object: Changes not saved <TimedMessageBox> 20_1403
+	Message text: Changes not saved
+	Message text ID: MB_NO_SAVING_TEXT
+	Style: Information
+	Timeout: 2
+Relationship: Flow <Flow> 20_858
+  Role: From <From>  Object: <Start> 20_2581
+  Role: To <To>  Object: <Query> 20_758
+Relationship: Flow <Flow> 20_990
+  Role: From <From>  Object: <TimedMessageBox> 20_1253
+  Role: To <To>  Object: <Stop> 20_2078
+Relationship: Flow <Flow> 20_1605
+  Role: From <From>  Object: <TimedMessageBox> 20_1403
+  Role: To <To>  Object: <Stop> 20_2078
+Relationship: Yes <Soft key> 20_2229
+	Soft key label: Yes
+	Softkey label ID: SK_YES
+  Role: From <From>  Port: LSK <Softkey port>  Object: <Query> 20_758
+  Role: To <To>  Object: <TimedMessageBox> 20_1253
+Relationship: No <Soft key> 20_2759
+	Soft key label: No
+	Softkey label ID: SK_NO
+  Role: From <From>  Port: RSK <Softkey port>  Object: <Query> 20_758
+  Role: To <To>  Object: <TimedMessageBox> 20_1403

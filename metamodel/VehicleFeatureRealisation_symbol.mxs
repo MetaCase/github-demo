@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="VehicleFeatureRealisation_symbol">
+		<objectSymbol offset="40,30" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="40,30 59,30 59,49 40,49 40,30" targetPointX="49.5" targetPointY="39.5" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="49" version="1.2" width="59" xmlns="http://www.w3.org/2000/svg">
+				<g fill="none" stroke="none" stroke-width="1" sym:height="19" sym:width="19" sym:x="4.0e1" sym:y="3.0e1">
+					<ellipse cx="49.5" cy="39.5" fill="rgb(0,128,128)" rx="9.5" ry="9.5" stroke="rgb(0,128,128)" stroke-width="1" sym:startAngle="0.0e0" sym:sweepAngle="3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<textArea display-align="center" fill="rgb(255,255,255)" font-family="cooper black" font-size="12" font-style="normal" font-weight="normal" height="15.381" sym:characterBackgroundFill="none" sym:textboxFill="none" sym:textboxStroke="none" sym:textboxStroke-width="1" sym:wordWrap="true" text-anchor="middle" width="17.7333" x="40.6333" y="32.7143">
+						VF
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</textArea>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

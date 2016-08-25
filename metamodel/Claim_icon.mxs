@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="Claim_icon">
+		<objectSymbol offset="90,42" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="90,42 110,42 110,60 90,60 90,42" targetPointX="100" targetPointY="51" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="60" version="1.2" width="110" xmlns="http://www.w3.org/2000/svg">
+				<g fill="none" stroke="none" stroke-width="1" sym:height="15" sym:width="20" sym:x="9.0e1" sym:y="4.5e1">
+					<rect fill="rgb(0,0,0)" height="12.8571" rx="6" ry="10" stroke="rgb(0,0,0)" stroke-width="1" width="20" x="90" y="47.1429">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<line stroke="rgb(255,255,255)" stroke-width="1" x1="95" x2="95" y1="47.1429" y2="60">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(255,255,255)" stroke-width="1" x1="105" x2="105" y1="47.1429" y2="60">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<rect fill="rgb(255,255,255)" height="4.28571" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="5" x="97.5" y="45">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+				<line stroke="none" stroke-width="1" x1="90" x2="110" y1="42" y2="42">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</line>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

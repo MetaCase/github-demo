@@ -1,0 +1,14 @@
+Report '_C++ header for component'
+foreach .Class [UML]; {
+	if type;2 = 'Component' then
+		if :Package;2 = :Package; then subreport '_C++ class header' run endif
+			else if type;4 = 'Component' then
+				if :Package;4 = :Package; then subreport '_C++ class header' run endif
+				else if type;6 = 'Component' then
+					if :Package;6 = :Package; then subreport '_C++ class header' run endif
+					else if type;8 = 'Component' then
+						if :Package;8 = :Package; then subreport '_C++ class header' run endif
+	endif endif endif endif
+}
+foreach .Package {do decompositions; {subreport '_C++ header for component' run}} 
+endreport

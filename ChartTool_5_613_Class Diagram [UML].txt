@@ -1,0 +1,736 @@
+Graph_Class_diagram__UML__sysadmin_3019387957
+ChartTool
+5_613
+Class Diagram [UML]
+Graph: ChartTool <Class Diagram [UML]> 5_613
+	Model name: ChartTool
+	Status: frozen
+	Authors: 
+	Documentation: This model specifies a ChartTool application. The specifications are complete and you may test them by generating java classes by choosing Graph | Generate... and selecting Java code report.
+
+Object: Applet <Class [UML]> 5_912
+	Class name: Applet
+	Attributes: 
+	Operations: 
+	Package: java.applet
+	Object: java.applet <Package> 5_14076
+		Package name: java.applet
+		Stereotype: 
+		Documentation: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: T
+Object: ChartTool <Class [UML]> 5_3600
+	Class name: ChartTool
+	Attributes: +_set:NumericSet +_barChart:BarChart +_textField:TextField +_button:GraphItButton +_width:int = 200 +_height:int = 225
+	Object: +_set:NumericSet <Attribute [UML]> 5_2799
+		Name: _set
+		Data type: NumericSet
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +_barChart:BarChart <Attribute [UML]> 5_12680
+		Name: _barChart
+		Data type: BarChart
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +_textField:TextField <Attribute [UML]> 5_3582
+		Name: _textField
+		Data type: TextField
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +_button:GraphItButton <Attribute [UML]> 5_5956
+		Name: _button
+		Data type: GraphItButton
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +_width:int = 200 <Attribute [UML]> 5_11336
+		Name: _width
+		Data type: int
+		Default value: 200
+		Stereotype: constant
+		Visibility: public
+		Scope: class
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: only works in appletviewer
+	Object: +_height:int = 225 <Attribute [UML]> 5_1914
+		Name: _height
+		Data type: int
+		Default value: 225
+		Stereotype: constant
+		Visibility: public
+		Scope: class
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: only works in appletviewer
+	Operations: +void init() +void graphIt()
+	Object: +void init() <Operation [UML]> 5_13350
+		Operation name: init
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: _set=new NumericSet();			// initialize member data
+resize(_width, _height);		// size the app window
+setLayout(new BorderLayout());		// create a layout mgr
+
+_textField=new TextField();		// input fld
+_textField.setText("12 24 15 76 54 15");// sample data for starters
+add("North", _textField);
+
+_barChart=new BarChart(_set, _width, 150);
+add("Center", _barChart);
+
+_button=new GraphItButton(this, "Graph It");
+add("South", _button);
+
+graphIt();				// show sample data
+		Documentation: 
+	Object: +void graphIt() <Operation [UML]> 5_15494
+		Operation name: graphIt
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: String s=_textField.getText();		// get user input
+_set.setFromString(s);			// reinitialize NumericSet obj
+_barChart.numericSet(_set);		// update the BarChart's NumericSet
+		Documentation: called to update graph
+	Package: ChartTool
+	Object: ChartTool <Package> 5_6630
+		Package name: ChartTool
+		Stereotype: 
+		Documentation: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: widget
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: the ruling class
+	Simple symbol?: F
+Object: INumericSet <Class [UML]> 5_3629
+	Class name: INumericSet
+	Attributes: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: interface
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: T
+Object: NumericSet <Class [UML]> 5_7174
+	Class name: NumericSet
+	Attributes: -_set[]:int -_length:int = 0 -_maxLength:int = 25 -_debug:boolean = false
+	Object: -_set[]:int <Attribute [UML]> 5_1232
+		Name: _set[]
+		Data type: int
+		Default value: 
+		Stereotype: 
+		Visibility: private
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: internal storage array
+	Object: -_length:int = 0 <Attribute [UML]> 5_3704
+		Name: _length
+		Data type: int
+		Default value: 0
+		Stereotype: 
+		Visibility: private
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: actual no of elemts in set
+	Object: -_maxLength:int = 25 <Attribute [UML]> 5_9327
+		Name: _maxLength
+		Data type: int
+		Default value: 25
+		Stereotype: 
+		Visibility: private
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: capacity of set
+	Object: -_debug:boolean = false <Attribute [UML]> 5_14750
+		Name: _debug
+		Data type: boolean
+		Default value: false
+		Stereotype: 
+		Visibility: private
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: off by default
+	Operations: +void setFromString(String s_) +void debugPrintln(String s_) +void dump() +int max() +int length() +int value(int idx_) +NumericSet()
+	Object: +void setFromString(String s_) <Operation [UML]> 5_11332
+		Operation name: setFromString
+		Parameters: in String s_
+		Object: in String s_ <Parameter> 5_13472
+			Parameter: s_
+			Data type: String
+			Direction: in
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: int idx=0, idxSpace=0;
+for(_length=0; _length<_maxLength && idx < s_.length(); _length++){
+	// find end of first token
+	idxSpace=s_.indexOf(" ", idx);
+	if(idxSpace == -1) idxSpace=s_.length();	// end of string
+
+	_set[_length]=Integer.parseInt(s_.substring(idx, idxSpace));
+
+	// eat white space
+	while(s_.length() > ++idxSpace && 
+	      !Character.isDigit(s_.charAt(idxSpace)))
+	  ;
+	idx=idxSpace;
+}
+		Documentation: parses a string with integers seperated by spaces in it
+	Object: +void debugPrintln(String s_) <Operation [UML]> 5_4583
+		Operation name: debugPrintln
+		Parameters: in String s_
+		Object: in String s_ <Parameter> 5_10019
+			Parameter: s_
+			Data type: String
+			Direction: in
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: if(_debug) System.out.println(s_);
+		Documentation: 
+	Object: +void dump() <Operation [UML]> 5_15512
+		Operation name: dump
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: System.out.println(getClass().getName() + ": " );
+for(int i=0; i<_length; i++)
+	System.out.println("   Elemt #" + i + "=" + _set[i]);
+		Documentation: 
+	Object: +int max() <Operation [UML]> 5_6619
+		Operation name: max
+		Parameters: 
+		Return type: int
+		Overridability: virtual
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: int maxValue=0;
+for(int i=0;i<_length; i++)
+	if(maxValue<_set[i]) maxValue=_set[i];
+return(maxValue);
+		Documentation: returns the maximum value in the set
+	Object: +int length() <Operation [UML]> 5_12017
+		Operation name: length
+		Parameters: 
+		Return type: int
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: return _length;
+		Documentation: 
+	Object: +int value(int idx_) <Operation [UML]> 5_14154
+		Operation name: value
+		Parameters: in int idx_
+		Object: in int idx_ <Parameter> 5_5268
+			Parameter: idx_
+			Data type: int
+			Direction: in
+			Default value: 
+		Return type: int
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: if(idx_ >= _length) 	return 0;
+else			return _set[idx_];
+		Documentation: returns the value of a member of the set
+	Object: +NumericSet() <Operation [UML]> 5_10716
+		Operation name: NumericSet
+		Parameters: 
+		Return type: 
+		Overridability: 
+		Stereotype: constructor
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: _set=new int[_maxLength];
+		Documentation: 
+	Package: ChartTool
+	Abstract?: F
+	Persistent?: F
+	Stereotype: component
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Canvas <Class [UML]> 5_9298
+	Class name: Canvas
+	Attributes: 
+	Operations: 
+	Package: java.awt
+	Object: java.awt <Package> 5_7909
+		Package name: java.awt
+		Stereotype: 
+		Documentation: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: T
+Object: GraphItButton <Class [UML]> 5_12610
+	Class name: GraphItButton
+	Attributes: +_app:ChartTool
+	Object: +_app:ChartTool <Attribute [UML]> 5_13424
+		Name: _app
+		Data type: ChartTool
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: +GraphItButton(ChartTool app_, String label_) +boolean action(Event e_, Object arg_)
+	Object: +GraphItButton(ChartTool app_, String label_) <Operation [UML]> 5_10017
+		Operation name: GraphItButton
+		Parameters: in ChartTool app_ in String label_
+		Object: in ChartTool app_ <Parameter> 5_6680
+			Parameter: app_
+			Data type: ChartTool
+			Direction: in
+			Default value: 
+		Object: in String label_ <Parameter> 5_12136
+			Parameter: label_
+			Data type: String
+			Direction: in
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: constructor
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: setLabel(label_);
+_app=app_;
+		Documentation: 
+	Object: +boolean action(Event e_, Object arg_) <Operation [UML]> 5_2932
+		Operation name: action
+		Parameters: in Event e_ in Object arg_
+		Object: in Event e_ <Parameter> 5_8699
+			Parameter: e_
+			Data type: Event
+			Direction: in
+			Default value: 
+		Object: in Object arg_ <Parameter> 5_14174
+			Parameter: arg_
+			Data type: Object
+			Direction: in
+			Default value: 
+		Return type: boolean
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: _app.graphIt();
+return true;
+		Documentation: this member function is called when the button is pressed
+	Package: ChartTool
+	Abstract?: F
+	Persistent?: F
+	Stereotype: widget
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: button to perform graphing
+	Simple symbol?: F
+Object: IBarChart <Class [UML]> 5_12627
+	Class name: IBarChart
+	Attributes: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: interface
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: T
+Object: Button <Class [UML]> 5_12647
+	Class name: Button
+	Attributes: 
+	Operations: 
+	Package: java.awt
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: T
+Object: BarChart <Class [UML]> 5_12672
+	Class name: BarChart
+	Attributes: +_set:NumericSet +_rect:Rectangle +_margin:int = 5
+	Object: +_rect:Rectangle <Attribute [UML]> 5_8580
+		Name: _rect
+		Data type: Rectangle
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: our bounds (bounding rectangle)
+	Object: +_margin:int = 5 <Attribute [UML]> 5_14010
+		Name: _margin
+		Data type: int
+		Default value: 5
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: for t, b, l and r margins
+	Operations: +void paintBackground(Graphics g_, Color c_) +void paintBars ( Graphics g_) +BarChart(NumericSet set_, int width_, int height_) +void paint(Graphics g_) +void numericSet(NumericSet set_)
+	Object: +void paintBackground(Graphics g_, Color c_) <Operation [UML]> 5_10592
+		Operation name: paintBackground
+		Parameters: in Graphics g_ in Color c_
+		Object: in Graphics g_ <Parameter> 5_12727
+			Parameter: g_
+			Data type: Graphics
+			Direction: in
+			Default value: 
+		Object: in Color c_ <Parameter> 5_3692
+			Parameter: c_
+			Data type: Color
+			Direction: in
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: Color c=g_.getColor();
+g_.setColor(c_);
+g_.fillRect(0, 0, _rect.width, _rect.height);
+g_.setColor(c);
+		Documentation: 
+	Object: +void paintBars ( Graphics g_) <Operation [UML]> 5_12642
+		Operation name: paintBars 
+		Parameters: in Graphics g_
+		Object: in Graphics g_ <Parameter> 5_14794
+			Parameter: Graphics g_
+			Data type: 
+			Direction: in
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: int sep=2;		// interbar spacing
+Color c=g_.getColor();	// remember color for later
+
+// area within which the bars will be rendered
+int renderWidth=_rect.width-_margin*2-(_set.length()-1)*sep;
+int renderHeight=_rect.height-_margin*2;
+
+int barWidth=renderWidth/_set.length();
+
+// scaling factor so values fit in given height
+float scaleFactor=(float)renderHeight/_set.max();
+
+Point barOrg=new Point(_margin, _margin);
+for(int i=0; i<_set.length(); i++, barOrg.y=_margin){
+	int barHeight=(int)(_set.value(i)*scaleFactor);
+
+	// adjust bar rect so it grows from bottom
+	barOrg.y=_margin+renderHeight-barHeight;
+
+	g_.setColor(Color.black);		// outline bar
+	g_.drawRect(barOrg.x, 
+		    barOrg.y, 
+		    barWidth-sep, 
+		    barHeight);
+
+	g_.setColor(Color.red);			// fill bar
+	g_.fillRect(barOrg.x+1,
+		    barOrg.y+1, 
+		    barWidth-sep-1, 
+		    barHeight-1);
+
+	barOrg.x += barWidth + sep;		// space between
+}
+g_.setColor(c);	//reset color
+		Documentation: 
+	Object: +BarChart(NumericSet set_, int width_, int height_) <Operation [UML]> 5_5968
+		Operation name: BarChart
+		Parameters: in NumericSet set_ in int width_ in int height_
+		Object: in NumericSet set_ <Parameter> 5_11340
+			Parameter: set_
+			Data type: NumericSet
+			Direction: in
+			Default value: 
+		Object: in int width_ <Parameter> 5_1978
+			Parameter: width_
+			Data type: int
+			Direction: in
+			Default value: 
+		Object: in int height_ <Parameter> 5_8001
+			Parameter: height_
+			Data type: int
+			Direction: in
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: constructor
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: numericSet(set_);
+reshape(0, 0, width_, height_);
+		Documentation: 
+	Object: +void paint(Graphics g_) <Operation [UML]> 5_1887
+		Operation name: paint
+		Parameters: in Graphics g_
+		Object: in Graphics g_ <Parameter> 5_4507
+			Parameter: g_
+			Data type: Graphics
+			Direction: in
+			Default value: 
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: _rect=bounds();
+paintBackground(g_, Color.white);
+if(_set.length()>0)
+	paintBars(g_);
+		Documentation: 
+	Object: +void numericSet(NumericSet set_) <Operation [UML]> 5_10003
+		Operation name: numericSet
+		Parameters: in NumericSet set_
+		Return type: 
+		Overridability: 
+		Stereotype: 
+		Visibility: public
+		Operation type: instance
+		Preconditions: 
+		Postconditions: 
+		Body: _set=set_;
+repaint();
+		Documentation: 
+	Package: ChartTool
+	Abstract?: F
+	Persistent?: F
+	Stereotype: widget
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: This model specifies a ChartTool application. The specifications are complete and you may test them by generating java classes by choosing Graph | Generate... and selecting Java.
+ <Note text> 5_3574
+	Note text: This model specifies a ChartTool application. The specifications are complete and you may test them by generating java classes by choosing Graph | Generate... and selecting Java.
+
+	Stereotype: 
+Object: It is also possible for a generator to compile and run the code it generates. For this example you should have a JDK installed in the normal Program Files location (or on the path). The generator named "Java autobuild with JDK" contains the definition for this (select Graph | Generate... and select generator "Java autobuild with JDK" from the generator list). <Note text> 5_7200
+	Note text: It is also possible for a generator to compile and run the code it generates. For this example you should have a JDK installed in the normal Program Files location (or on the path). The generator named "Java autobuild with JDK" contains the definition for this (select Graph | Generate... and select generator "Java autobuild with JDK" from the generator list).
+	Stereotype: 
+Relationship: use <Dependency [UML]> 5_1847
+	Stereotype: use
+	Alias name: 
+  Role: Client <Client>  Object: <Class [UML]> 5_3600
+  Role: Supplier <Supplier>  Object: <Class [UML]> 5_3629
+Relationship: use <Dependency [UML]> 5_1964
+	Stereotype: use
+	Alias name: 
+  Role: Client <Client>  Object: <Class [UML]> 5_12672
+  Role: Supplier <Supplier>  Object: <Class [UML]> 5_3629
+Relationship: realize <Dependency [UML]> 5_6509
+	Stereotype: realize
+	Alias name: 
+  Role: Client <Client>  Object: <Class [UML]> 5_7174
+  Role: Supplier <Supplier>  Object: <Class [UML]> 5_3629
+Relationship:  <Dependency [UML]> 5_6590
+	Stereotype: 
+	Alias name: 
+  Role: Client <Client>  Object: <Class [UML]> 5_3600
+  Role: Supplier <Supplier>  Object: <Class [UML]> 5_12610
+Relationship: realize <Dependency [UML]> 5_9935
+	Stereotype: realize
+	Alias name: 
+  Role: Client <Client>  Object: <Class [UML]> 5_12672
+  Role: Supplier <Supplier>  Object: <Class [UML]> 5_12627
+Relationship: use <Dependency [UML]> 5_13322
+	Stereotype: use
+	Alias name: 
+  Role: Client <Client>  Object: <Class [UML]> 5_3600
+  Role: Supplier <Supplier>  Object: <Class [UML]> 5_12627
+Relationship:  <Generalization [UML]> 5_2723
+	Discriminator: 
+	Constraint: 
+	Visibility: public
+	Virtual?: F
+	Completeness: 
+	Derivation rules: 
+  Role: Specialization <Specialization>  Object: <Class [UML]> 5_12672
+  Role: Superclass <Superclass>  Object: <Class [UML]> 5_9298
+Relationship:  <Generalization [UML]> 5_13994
+	Discriminator: 
+	Constraint: 
+	Visibility: public
+	Virtual?: T
+	Completeness: 
+	Derivation rules: 
+  Role: Specialization <Specialization>  Object: <Class [UML]> 5_12610
+  Role: Superclass <Superclass>  Object: <Class [UML]> 5_12647
+Relationship:  <Generalization [UML]> 5_14062
+	Discriminator: 
+	Constraint: 
+	Visibility: public
+	Virtual?: F
+	Completeness: 
+	Derivation rules: 
+  Role: Specialization <Specialization>  Object: <Class [UML]> 5_3600
+  Role: Superclass <Superclass>  Object: <Class [UML]> 5_912

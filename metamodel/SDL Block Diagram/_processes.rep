@@ -1,0 +1,14 @@
+_processes()
+foreach .Process {
+	do decompositions {
+		'	PROCESS ' id%var; ' REFERENCED;' newline
+	}
+}
+foreach .Gate; {
+	do ~()>() {
+		do ~().Process {
+			'	CONNECT ' id;2%var; 
+			' and ' id;1%var ';' newline
+		}
+	}
+}

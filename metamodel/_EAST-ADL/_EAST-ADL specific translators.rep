@@ -1,0 +1,115 @@
+Report '_EAST-ADL specific translators'
+/* EAST-ADL specific translators */
+to '%port_to_role
+$_To $In
+$_From $Out
+'
+endto 
+
+/* Removing the extra underscores (used to create the valid shortnames) */
+to '%toShortName
+/__+/ $_'
+endto
+
+/* $HardwareArchitecture $Hardware\-Design\-Architecture is not needed anymore since name has changed*/
+to '%minus
+$ActuatorType $Actuator
+$AllocationMatrix $Allocation
+$AnalysisFunctionPrototype $Analysis\-Function\-Prototype
+$AnalysisFunctionType $Analysis\-Function\-Type
+$ArrayDatatype $Array\-Datatype
+$BasicSoftwareFunctionType $Basic\-Software\-Function\-Type
+$BehaviorConstraintType $Behavior\-Constraint\-Type
+$ClientPort $Function\-Client\-Server\-Port
+$ServerPort $Function\-Client\-Server\-Port
+$CommunicationHardwarePin_From $Communication\-Hardware\-Pin
+$CommunicationHardwarePin_To $Communication\-Hardware\-Pin
+$CommunicationHardwarePinInOut $Communication\-Hardware\-Pin
+$CommunicationHardwarePinIn $Communication\-Hardware\-Pin
+$CommunicationHardwarePinOut $Communication\-Hardware\-Pin
+$CompositeDatatype $Composite\-Datatype
+$DerivedFrom $Derived\-From
+$DeriveRequirement $Derive\-Requirement
+$DesignFunctionPrototype $Design\-Function\-Prototype
+$DesignFunctionType $Design\-Function\-Type
+$EABoolean $EA\-Boolean
+$EADatatypePrototype $EA\-Datatype\-Prototype
+$EANumerical $EA\-Numerical
+$EAString $EA\-String
+$ElectricalComponentType $Electrical\-Component
+$ErrorModel $Error\-Model\-Type
+$FaultFailure $Fault\-Failure
+$FeatureFlaw $Feature\-Flaw
+$FunctionalAnalysisArchitecture $Functional\-Analysis\-Architecture
+$FunctionBehavior $Function\-Behavior
+$FunctionTrigger $Function\-Trigger
+$FunctionConnector $Function\-Connector
+$FunctionalDesignArchitecture $Functional\-Design\-Architecture
+$FunctionalDevice $Functional\-Device
+$FunctionClientServerInterface $Function\-Client\-Server\-Interface
+$HardwareComponentPrototype $Hardware\-Component\-Prototype
+$HardwareComponentType $Hardware\-Component\-Type
+$HardwareConnector $Hardware\-Connector
+$HardwareFunctionType $Hardware\-Function\-Type
+$HardwarePortConnector $Hardware\-Port\-Connector
+$HazardousEvent $Hazardous\-Event
+$InFlowPort $Function\-Flow\-Port
+$InOutFlowPort $Function\-Flow\-Port
+$IOHardwarePinInOut $IO\-Hardware\-Pin
+$IOHardwarePinIn $IO\-Hardware\-Pin
+$IOHardwarePinOut $IO\-Hardware\-Pin
+$IOHardwarePin_From $IO\-Hardware\-Pin
+$IOHardwarePin_To $IO\-Hardware\-Pin
+$LocalDeviceManager $Local\-Device\-Manager
+$ModeGroup $Mode\-Group
+$NodeType $Node
+$OutFlowPort $Function\-Flow\-Port
+$OperationalSituation $Operational\-Situation
+$PowerHardwarePinInOut $Power\-Hardware\-Pin
+$PowerHardwarePinIn $Power\-Hardware\-Pin
+$PowerHardwarePinOut $Power\-Hardware\-Pin
+$PowerHardwarePin_From $Power\-Hardware\-Pin
+$PowerHardwarePin_To $Power\-Hardware\-Pin
+$PowerPort $Function\-Power\-Port
+$QualityRequirement $Quality\-Requirement
+$RangeableValueType $Rangeable\-Value\-Type
+$RealizedBy $Realized\-By
+$RefinedBy $Refined\-By
+$RefinedRequirement $Refined\-Requirement
+$RequirementsLink $Requirements\-Link
+$SafetyGoal $Safety\-Goal
+$SatisfiedBy $Satisfied\-By
+$SatisfiedRequirement $Satisfied\-Requirement
+$SensorType $Sensor
+$UseCase $Use\-Case
+$VehicleFeatureModel $Feature\-Model
+$VehicleFeature $Vehicle\-Feature
+
+'
+endto
+
+to '%legal
+$ActuatorType $Actuator
+$Boolean $EA\-BOOLEAN
+$CommunicationHardwarePinIn $CommunicationHWPinIn
+$CommunicationHardwarePinOut $CommunicationHWPinOut
+$EAString $EA\-STRING
+$ElectricalComponentType $ElectricalComponent
+$Float $EA\-FLOAT
+$Flow $FUNCTION\-CONNECTOR
+$Integer $EA\-INTEGER
+$RangeableValueType $RANGEABLE\-VALUE\-TYPE
+$NodeType $Node
+$SensorType $Sensor
+'
+endto
+
+to '%relationships
+$Flow $Function\-Connector
+$Power $Function\-Connector
+$ClientServerInterface $Function\-Connector
+$HardwareConnector $Hardware\-Connector
+'
+endto
+
+endreport

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="Sensor_Icon">
+		<objectSymbol offset="25,30" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="25,30 45,30 45,50 25,50 25,30" targetPointX="35" targetPointY="40" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="50" version="1.2" width="45" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<linearGradient gradientUnits="objectBoundingBox" id="gradient2" sym:correctGamma="true" x1="0.555556" x2="0.555555" y1="0.0666667" y2="1">
+						<stop offset="0" stop-color="rgb(224,154,97)"></stop>
+						<stop offset="0.428571" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(224,154,97)"></stop>
+					</linearGradient>
+					<radialGradient cx="0.5" cy="0.5" gradientUnits="objectBoundingBox" id="gradient5" r="0.70711" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="0.489443" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(170,170,170)"></stop>
+					</radialGradient>
+					<radialGradient cx="0.35" cy="0.4" gradientUnits="objectBoundingBox" id="gradient1" r="0.88459" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(0,80,160)"></stop>
+					</radialGradient>
+					<radialGradient cx="0.5" cy="0.5" gradientUnits="objectBoundingBox" id="gradient6" r="0.70711" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="0.489443" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(170,170,170)"></stop>
+					</radialGradient>
+					<radialGradient cx="0.5" cy="0.5" gradientUnits="objectBoundingBox" id="gradient7" r="0.70711" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="0.489443" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(170,170,170)"></stop>
+					</radialGradient>
+					<radialGradient cx="0.5" cy="0.5" gradientUnits="objectBoundingBox" id="gradient3" r="0.707107" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,64)"></stop>
+						<stop offset="1" stop-color="rgb(255,255,224)"></stop>
+					</radialGradient>
+					<radialGradient cx="0.8875" cy="0.516667" gradientUnits="objectBoundingBox" id="gradient8" r="1.01264" sym:correctGamma="true" sym:fillType="SquareFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(0,0,0)"></stop>
+					</radialGradient>
+					<radialGradient cx="0.5" cy="0.5" gradientUnits="objectBoundingBox" id="gradient4" r="0.70711" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="0.489443" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(170,170,170)"></stop>
+					</radialGradient>
+				</defs>
+				<g fill="none" stroke="none" stroke-width="0" sym:height="19" sym:width="9" sym:x="3.0e1" sym:y="3.0e1">
+					<ellipse cx="34.5" cy="44.7778" fill="rgb(255,255,255)" rx="4.5" ry="4.22222" stroke="rgb(0,0,0)" stroke-width="0" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<rect fill="rgb(255,255,255)" height="14.7778" rx="10" ry="10" stroke="rgb(0,0,0)" stroke-width="0" width="4.5" x="32.25" y="30">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<ellipse cx="34.5" cy="44.7778" fill="rgb(255,0,0)" rx="2.25" ry="2.11111" stroke="rgb(255,0,0)" stroke-width="0" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<line stroke="rgb(255,0,0)" stroke-width="0" x1="34.5" x2="34.5" y1="34.2222" y2="44.7778">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="0" x1="34.5" x2="39" y1="32.1111" y2="32.1111">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="0" x1="34.5" x2="39" y1="34.2222" y2="34.2222">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="0" x1="34.5" x2="39" y1="36.3333" y2="36.3333">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Temperature" xmlns="http://www.w3.org/2000/svg">ReportTextSource:type</displayCondition>
+					</metaInfo>
+				</g>
+				<g fill="none" stroke="rgb(0,0,0)" sym:height="17" sym:width="9" sym:x="3.0e1" sym:y="3.0e1">
+					<polygon fill="rgb(170,170,170)" points="34.5,30 30,33.4 30,43.6 39,43.6 39,33.4" stroke="rgb(0,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polygon>
+					<line stroke="rgb(0,0,0)" stroke-width="3" x1="32.25" x2="32.25" y1="40.2" y2="47">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="3" x1="36.75" x2="36.75" y1="40.2" y2="47">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Charger" xmlns="http://www.w3.org/2000/svg">ReportTextSource:type</displayCondition>
+					</metaInfo>
+				</g>
+				<g fill="none" stroke="rgb(0,0,0)" sym:height="15" sym:width="20" sym:x="2.5e1" sym:y="3.5e1">
+					<path d="M38.9742,35 C42.9501,38.75 42.9501,46.25 38.9742,50" fill="none" stroke="rgb(0,0,0)" stroke-width="0">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</path>
+					<rect fill="rgb(170,170,170)" height="7.5" rx="3" ry="3" stroke="rgb(0,0,0)" stroke-width="1" width="8.07437" x="30.8875" y="38.75">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<path d="M41.6323,35 C46.0059,38.75 46.0059,46.25 41.6323,50" fill="none" stroke="rgb(0,0,0)" stroke-width="0">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</path>
+					<path d="M28.1961,35 C24.0842,38.75 24.0842,46.25 28.1961,50" fill="none" stroke="rgb(0,0,0)" stroke-width="0">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</path>
+					<path d="M31.1567,35 C27.0448,38.75 27.0448,46.25 31.1567,50" fill="none" stroke="rgb(0,0,0)" stroke-width="0">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</path>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Acceleration" xmlns="http://www.w3.org/2000/svg">ReportTextSource:type</displayCondition>
+					</metaInfo>
+				</g>
+				<g fill="none" stroke="rgb(0,0,0)" sym:height="20" sym:width="20" sym:x="2.5e1" sym:y="3.0e1">
+					<ellipse cx="35" cy="40" fill="rgb(255,255,255)" rx="10" ry="10" stroke="rgb(0,0,0)" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<line stroke="rgb(0,0,0)" stroke-width="2" x1="35" x2="35" y1="31" y2="40.5">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="2" x1="35" x2="40" y1="40" y2="40">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Timer" xmlns="http://www.w3.org/2000/svg">ReportTextSource:type</displayCondition>
+					</metaInfo>
+				</g>
+				<g fill="none" stroke="none" stroke-width="1" sym:height="20" sym:width="20" sym:x="2.5e1" sym:y="3.0e1">
+					<rect fill="rgb(255,255,255)" height="5" rx="3" ry="3" stroke="rgb(0,0,0)" stroke-width="1" width="20" x="25" y="32.5">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<rect fill="rgb(255,255,255)" height="5" rx="3" ry="3" stroke="rgb(0,0,0)" stroke-width="1" width="2.22223" x="29.4444" y="30">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<rect fill="rgb(255,255,255)" height="5" rx="3" ry="3" stroke="rgb(0,0,0)" stroke-width="1" width="2.22223" x="38.3333" y="30">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<rect fill="rgb(255,255,255)" height="13.5" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="20" x="25" y="36.5">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<textArea display-align="center" fill="rgb(0,0,0)" font-family="#sans serif" font-size="10" font-style="normal" font-weight="bold" height="13.5" sym:characterBackgroundFill="none" sym:textboxFill="none" sym:textboxStroke="none" sym:textboxStroke-width="1" sym:wordWrap="true" text-anchor="middle" width="20" x="25" y="36.5">
+						30
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</textArea>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Calendar" xmlns="http://www.w3.org/2000/svg">ReportTextSource:type</displayCondition>
+					</metaInfo>
+				</g>
+				<g fill="none" stroke="none" sym:height="20" sym:width="10" sym:x="3.0e1" sym:y="3.0e1">
+					<ellipse cx="35" cy="35" fill="rgb(96,96,255)" rx="5" ry="5" stroke="rgb(96,96,255)" stroke-width="0" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<ellipse cx="35" cy="35" fill="rgb(255,255,255)" rx="2.5" ry="2.5" stroke="rgb(0,0,0)" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<polygon fill="rgb(96,96,255)" points="30,35 35,50 40,35 35,40" stroke="rgb(96,96,255)" stroke-width="0">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polygon>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Location" xmlns="http://www.w3.org/2000/svg">ReportTextSource:type</displayCondition>
+					</metaInfo>
+				</g>
+				<g fill="none" stroke="none" sym:height="20" sym:width="20" sym:x="2.5e1" sym:y="3.0e1">
+					<g fill="none" stroke="rgb(0,0,0)" stroke-width="1" sym:height="8" sym:width="20" sym:x="2.5e1" sym:y="4.2e1">
+						<polyline fill="none" points="32.5,42 27.5,42 25,50 45,50 42.5,42 37.5,42" stroke="rgb(0,0,0)" stroke-width="1">
+							<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+						</polyline>
+						<polygon fill="rgb(160,207,255)" points="27.3529,42 25,50 34.4118,50 33.2353,49.2 33.2353,47.6 30.8824,46.8 30.8824,44.4" stroke="rgb(0,0,0)" stroke-width="1">
+							<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+						</polygon>
+						<polygon fill="rgb(0,192,0)" points="27.3529,42 42.6471,42 45,50 34.4118,50 33.2353,49.2 33.2353,47.6 30.8824,46.8 30.8824,44.4" stroke="rgb(0,0,0)" stroke-width="1">
+							<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+						</polygon>
+						<rect fill="rgb(0,0,0)" height="3.2" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="5.88235" x="33.2353" y="44.4">
+							<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+						</rect>
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</g>
+					<ellipse cx="35" cy="34" fill="rgb(96,96,255)" rx="5" ry="4" stroke="rgb(96,96,255)" stroke-width="0" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<ellipse cx="35" cy="34" fill="rgb(255,255,255)" rx="2.5" ry="2" stroke="rgb(0,0,0)" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<polygon fill="rgb(96,96,255)" points="30,34 35,46 40,34 35,38" stroke="rgb(96,96,255)" stroke-width="0">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polygon>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Geofence" xmlns="http://www.w3.org/2000/svg">ReportTextSource:type</displayCondition>
+					</metaInfo>
+				</g>
+				<g fill="none" stroke="none" sym:height="20" sym:width="20" sym:x="2.5e1" sym:y="3.0e1">
+					<ellipse cx="35" cy="40" fill="rgb(255,255,255)" rx="10" ry="10" stroke="rgb(0,0,0)" stroke-width="2" sym:startAngle="1.50391e2" sym:sweepAngle="2.411e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<line stroke="rgb(0,0,0)" stroke-width="4" x1="34.6552" x2="34.6552" y1="30.241" y2="32.6506">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="4" x1="26.1494" x2="27.9885" y1="35.5422" y2="36.988">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="4" x1="44.3103" x2="42.4713" y1="35.5422" y2="36.988">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<g fill="rgb(255,0,0)" stroke="rgb(255,0,0)" stroke-width="1" sym:height="7.95179" sym:width="2.29886" sym:x="3.396547e1" sym:y="3.40964e1">
+						<ellipse cx="35.1149" cy="41.148" fill="rgb(255,0,0)" rx="1.14943" ry="0.900192" stroke="rgb(255,0,0)" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+							<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+						</ellipse>
+						<polygon fill="rgb(255,0,0)" points="34.2308,41.298 34.5255,34.6965 34.8203,34.0964 35.115,34.0964 35.4097,34.6965 35.9991,41.298" stroke="rgb(255,0,0)" stroke-width="1">
+							<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+						</polygon>
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</g>
+					<line stroke="rgb(0,0,0)" stroke-width="4" x1="27.9885" x2="26.1494" y1="43.9759" y2="45.4217">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="4" x1="42.0115" x2="43.8506" y1="44.2169" y2="45.6626">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Speed" xmlns="http://www.w3.org/2000/svg">ReportTextSource:type</displayCondition>
+					</metaInfo>
+				</g>
+				<path d="M35,30 L33.9359,30.3618 L32.9155,31.4449 L31.9825,33.087 L31.1808,35.1259 L30.5539,37.3992 L30.1458,39.7447 L30,42 L30.4297,45.3724 L31.5625,47.8866 L33.1641,49.4575 L35,50 L36.8359,49.4575 L38.4375,47.8866 L39.5703,45.3724 L40,42 L39.8542,39.7447 L39.4461,37.3992 L38.8192,35.1259 L38.0175,33.087 L37.0845,31.4449 L36.0641,30.3618 Z" fill="url(#gradient1)" stroke="none" stroke-width="0" sym:controlPoints="35,30 30,42 35,50 40,42">
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Humidity" xmlns="http://www.w3.org/2000/svg">ReportTextSource:type</displayCondition>
+					</metaInfo>
+				</path>
+				<g fill="none" stroke="none" sym:height="20" sym:width="20" sym:x="2.5e1" sym:y="3.0e1">
+					<ellipse cx="35" cy="36" fill="rgb(255,255,255)" rx="6" ry="6" stroke="rgb(0,0,0)" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<line stroke="rgb(0,0,0)" stroke-width="2" x1="39" x2="35" y1="32" y2="36.2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="2" x1="25" x2="45" y1="46" y2="46">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(0,0,0)" stroke-width="2" x1="25" x2="45" y1="50" y2="50">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<rect fill="rgb(0,0,0)" height="4" rx="5" ry="0" stroke="none" stroke-width="1" width="3.60001" x="33.4" y="42">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Pressure" xmlns="http://www.w3.org/2000/svg">ReportTextSource:type</displayCondition>
+					</metaInfo>
+				</g>
+				<g fill="none" stroke="none" stroke-width="1" sym:height="20" sym:width="19" sym:x="2.5e1" sym:y="3.0e1">
+					<ellipse cx="34.5" cy="40" fill="rgb(224,224,0)" rx="4.07141" ry="4.28571" stroke="rgb(255,0,0)" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<ellipse cx="34.5" cy="40" fill="none" rx="6.78571" ry="7.14285" stroke="rgb(224,224,0)" stroke-dasharray="1,1" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<ellipse cx="34.5" cy="40" fill="none" rx="9.5" ry="10" stroke="rgb(224,224,0)" stroke-dasharray="1,1" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Luminance" xmlns="http://www.w3.org/2000/svg">ReportTextSource:type</displayCondition>
+					</metaInfo>
+				</g>
+				<g fill="none" stroke="rgb(128,0,0)" stroke-width="1" sym:height="10" sym:width="20" sym:x="2.5e1" sym:y="3.5e1">
+					<textArea display-align="center" fill="rgb(255,255,255)" font-family="#sans serif" font-size="14" font-style="normal" font-weight="bold" height="10" sym:characterBackgroundFill="none" sym:textboxFill="rgb(0,0,0)" sym:textboxStroke="rgb(128,0,0)" sym:textboxStroke-width="1" sym:wordWrap="true" text-anchor="start" width="15.1351" x="25" y="35">
+						
+
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</textArea>
+					<rect fill="url(#gradient2)" height="10" rx="0" ry="0" stroke="rgb(128,0,0)" stroke-width="1" width="4.86487" x="40.1351" y="35">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Battery" xmlns="http://www.w3.org/2000/svg">ReportTextSource:type</displayCondition>
+					</metaInfo>
+				</g>
+				<g fill="none" stroke="none" stroke-width="1" sym:height="15" sym:width="20" sym:x="2.5e1" sym:y="3.5e1">
+					<rect fill="rgb(213,213,213)" height="14.4578" rx="6" ry="4" stroke="rgb(213,213,213)" stroke-width="1" width="19.5489" x="25.4511" y="35.5422">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<rect fill="url(#gradient3)" height="14.4578" rx="6" ry="4" stroke="rgb(64,64,64)" stroke-width="1" width="19.5489" x="25" y="35">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<path d="M26.5038,36.8072 L34.7745,42.2289 L43.0451,36.8072" fill="none" stroke="rgb(128,128,128)" stroke-width="1" sym:controlPoints="26.5038,36.8072 34.7745,42.2289 43.0451,36.8072">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</path>
+					<line stroke="rgb(128,128,128)" stroke-width="1" x1="28.0075" x2="32.8195" y1="45.8433" y2="41.8674">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(128,128,128)" stroke-width="1" x1="41.5413" x2="36.2782" y1="45.8433" y2="41.8674">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="SMS" xmlns="http://www.w3.org/2000/svg">ReportTextSource:if type = 'Action' then
+	if :Send SMS message &lt;&gt; '' then
+		'SMS'
+	endif
+endif
+</displayCondition>
+					</metaInfo>
+				</g>
+				<g fill="none" stroke="none" sym:height="20" sym:width="20" sym:x="2.5e1" sym:y="3.0e1">
+					<ellipse cx="29.5963" cy="42.5" fill="url(#gradient4)" rx="4.59628" ry="6.59092" stroke="rgb(170,170,170)" stroke-width="0" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<ellipse cx="34.6894" cy="36.5909" fill="url(#gradient5)" rx="4.59627" ry="6.5909" stroke="rgb(170,170,170)" stroke-width="0" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<ellipse cx="34.6894" cy="42.9546" fill="url(#gradient6)" rx="4.59627" ry="6.59089" stroke="rgb(170,170,170)" stroke-width="0" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<ellipse cx="40.4037" cy="43.4091" fill="url(#gradient7)" rx="4.59628" ry="6.5909" stroke="rgb(170,170,170)" stroke-width="0" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<ellipse cx="35.1863" cy="42.2727" fill="rgb(255,255,255)" rx="8.81986" ry="5.22728" stroke="rgb(255,255,255)" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<ellipse cx="34.6894" cy="39.5455" fill="rgb(255,255,255)" rx="3.6025" ry="7.04546" stroke="rgb(255,255,255)" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</ellipse>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="cloud" xmlns="http://www.w3.org/2000/svg">ReportTextSource:if type = 'Action' then
+	if :Send saved logs to cloud; or :Send event to; &lt;&gt; 'none' then
+		'cloud'
+	endif
+endif</displayCondition>
+					</metaInfo>
+				</g>
+				<g fill="none" stroke="none" stroke-width="1" sym:height="10" sym:width="10" sym:x="3.0e1" sym:y="3.0e1">
+					<rect fill="rgb(255,255,255)" height="10" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="10" x="30" y="30">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<polyline fill="none" points="31.3333,36.6 32.3333,34.2 33.6667,37.6 35.3333,32.4 35.8333,34.8 37,31.4 38,36.2 38.8333,34" stroke="rgb(255,0,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polyline>
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="savetocloud" xmlns="http://www.w3.org/2000/svg">ReportTextSource:if type = 'Action' then
+	if :Send saved logs to cloud &lt;&gt; '' then
+		'savetocloud'
+	endif
+endif
+</displayCondition>
+					</metaInfo>
+				</g>
+				<polygon fill="url(#gradient8)" points="44,42.6667 38.375,42.6667 38.375,40 35,44 38.375,48 38.375,45.3333 44,45.3333" stroke="rgb(0,0,0)" stroke-width="1">
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="push notification" xmlns="http://www.w3.org/2000/svg">ReportTextSource:if type = 'Action' then
+	if :Send event to; = 'push notification' then
+		'push notification'
+	endif
+endif</displayCondition>
+					</metaInfo>
+				</polygon>
+				<path d="M30,35.2673 L25,37.637 L25,42.3766 L30,44.7464 L35.0003,45 L40,44.7464 L45,42.3766 L45,37.637 L40,35.2673 L35.0141,35 Z" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="1" sym:controlPoints="30,35.2673 25,37.637 25,42.3766 30,44.7464 40,44.7464 45,42.3766 45,37.637 40,35.2673">
+					<metaInfo xmlns="http://www.metacase.com/symbol">
+						<displayCondition conditionOperator="=" matchString="Display" xmlns="http://www.w3.org/2000/svg">ReportTextSource:type</displayCondition>
+					</metaInfo>
+				</path>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

@@ -1,0 +1,7 @@
+Report 'Documentation in HTML'
+_translators()
+$Graphs=' '
+variable 'starting_graph' write subreport '_id and oid' run close
+subreport '_EAST-ADL graphs in HTML' run 
+external '"' subreport '_default directory' run $starting_graph '.html"' execute 
+endreport

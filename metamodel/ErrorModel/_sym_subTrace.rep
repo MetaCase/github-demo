@@ -1,0 +1,53 @@
+_sym_subTrace(@thisGraphOid, @prevGraphOid, @prevDFp)
+do #() {
+	$outport = oid
+}
+do .() {
+	oid '_' @thisGraphOid ' '
+	variable 'inports' oid write ' ' close 
+	do decompositions {
+		foreach .FailureOutPort; where oid = $outport {
+			if ~FaultIn; then
+				do ~FaultIn~FailureOut {
+					variable oid;2 '_reportedRoles' write ' ' close
+					_sym_subTrace(oid;2, @thisGraphOid, oid;3)
+				}
+			else
+				$plainType = 'T'
+				foreach .ErrorModelPrototype {$plainType = 'F'}
+				if $plainType = 'T' then
+					foreach .FaultInPort {variable 'inports' oid;3 append oid ' ' close}
+				else
+					oid /* unconnected port */
+				endif
+			endif
+		}
+	}
+	local 'reportedRoles' write variable @thisGraphOid '_reportedRoles' read close
+	variable 'inports' write variable 'inports' oid read close
+	if $inports <> ' ' then
+		dowhile ~FaultIn {
+			if not @reportedRoles =~ oid%wildsp then /* is this role already visited to avoid looping */		
+				do #() {
+					@legalPort = 'F'
+					variable 'currentRoles' write variable 'inports' oid;2 read close 
+					if $currentRoles =~ oid%wildsp then 
+						variable @thisGraphOid '_reportedRoles' append oid;1 ' ' close
+						@legalPort = 'T'
+					endif
+				}
+				if @legalPort = 'T' then
+					do ~FailureOut {
+						_sym_subTrace(@thisGraphOid, @prevGraphOid, @prevDFp)
+					}
+					do ~FailureOut {
+						do.() {
+							oid ' '
+							variable 'inports' @prevDFp append oid ' ' close
+						}
+					}
+				endif
+			endif
+		}
+	endif
+}

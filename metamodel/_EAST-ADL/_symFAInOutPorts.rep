@@ -1,0 +1,7 @@
+_symFAInOutPorts()
+do decompositions
+{  foreach .(InOutFlowPort | PowerPort)
+   orderby 
+		x NUM 
+   {  :Short name; newline  }
+}

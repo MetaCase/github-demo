@@ -1,0 +1,70 @@
+Report '_C_App_CPP'
+filename
+	subreport '_default directory' run
+	'src\'
+	subreport '_app' run 
+	'App.cpp'
+write
+'/*
+* ============================================================================
+*  Name     : C' subreport '_app' run 'App from CEikApplication
+*  Part of  : ' subreport '_app' run '
+*  ' subreport '_copyright' run '
+* ============================================================================
+*/
+
+// INCLUDE FILES
+#include    "' subreport '_app' run 'App.h"
+#include    "' subreport '_app' run 'Document.h"
+
+// ================= MEMBER FUNCTIONS =======================
+
+// ---------------------------------------------------------
+// C' subreport '_app' run 'App::CreateDocumentL()
+// Creates C' subreport '_app' run 'Document object
+// ---------------------------------------------------------
+//
+CApaDocument* C' subreport '_app' run 'App::CreateDocumentL()
+    {
+    return C' subreport '_app' run 'Document::NewL(*this);
+    }
+
+// ---------------------------------------------------------
+// C' subreport '_app' run 'App::AppDllUid()
+// Returns application UID
+// ---------------------------------------------------------
+//
+TUid C' subreport '_app' run 'App::AppDllUid() const
+    {
+    return KUid' subreport '_app' run ';
+    }
+
+// ================= OTHER EXPORTED FUNCTIONS ==============
+//
+// ---------------------------------------------------------
+// NewApplication() 
+// Constructs C' subreport '_app' run 'App
+// Returns: CApaDocument*: created application object
+// ---------------------------------------------------------
+//
+EXPORT_C CApaApplication* NewApplication()
+    {
+    return new C' subreport '_app' run 'App;
+    }
+
+// ---------------------------------------------------------
+// E32Dll(TDllReason) 
+// Entry point function for EPOC Apps
+// Returns: KErrNone: No error
+// ---------------------------------------------------------
+//
+GLDEF_C TInt E32Dll(TDllReason)
+    {
+    return KErrNone;
+    }
+
+// End of File  
+
+'
+close
+endreport

@@ -1,0 +1,29 @@
+Graph_InOut_Diagram_sysadmin_3496403299
+InOut example
+19_385
+InOut Diagram
+Graph: InOut example <InOut Diagram> 19_385
+	Name: InOut example
+Object: BlackBox #1 <BlackBoxEntity [Port]> 19_568
+	Name: BlackBox #1
+	Decomposed to: BlackBox <InOut Diagram>
+Object: BlackBox #2 <BlackBoxEntity [Port]> 19_601
+	Name: BlackBox #2
+	Decomposed to: BlackBox <InOut Diagram>
+Object: Default connectable for undisplayed ports
+The subgraphs provide more ports than can fit. Scale an object and more ports become visible; connect one. Scale down again and the role points to the default connectable. <Note> 19_1735
+	Documentation: Default connectable for undisplayed ports
+The subgraphs provide more ports than can fit. Scale an object and more ports become visible; connect one. Scale down again and the role points to the default connectable.
+Object: Dynamic ports from subgraphs
+A template on each edge of the object retrieves the In or Out ports from the object's subgraph. Ports may be of different types. <Note> 19_1741
+	Documentation: Dynamic ports from subgraphs
+A template on each edge of the object retrieves the In or Out ports from the object's subgraph. Ports may be of different types.
+Relationship: OutInConnection [Port] <OutInConnection [Port]> 19_660
+  Role: In [Port] <In [Port]>  Port: <LittleIn [Port]> 19_993  Object: <BlackBoxEntity [Port]> 19_601
+  Role: Out [Port] <Out [Port]>  Port: <LittleOut [Port]> 19_715  Object: <BlackBoxEntity [Port]> 19_568
+Relationship: OutInConnection [Port] <OutInConnection [Port]> 19_874
+  Role: In [Port] <In [Port]>  Port: <BigIn [Port]> 19_648  Object: <BlackBoxEntity [Port]> 19_601
+  Role: Out [Port] <Out [Port]>  Port: <BigOut [Port]> 19_762  Object: <BlackBoxEntity [Port]> 19_568
+Relationship: OutInConnection [Port] <OutInConnection [Port]> 19_909
+  Role: In [Port] <In [Port]>  Port: <BigIn [Port]> 19_648  Object: <BlackBoxEntity [Port]> 19_568
+  Role: Out [Port] <Out [Port]>  Port: <BigOut [Port]> 19_991  Object: <BlackBoxEntity [Port]> 19_601

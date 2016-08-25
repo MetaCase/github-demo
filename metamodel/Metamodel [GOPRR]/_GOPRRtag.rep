@@ -1,0 +1,20 @@
+Report '_GOPRRtag'
+/* Translate graphical GOPRR type name to MXT tag name */
+to
+'%tag
+A-Z a-z
+$metamodel $graph
+$\ for\ multiple\ graphs $
+$\ [goprr] $'
+endto
+
+/* Translate graphical GOPRR type name to MXT metatype name*/
+to
+'%tagUpper
+$Metamodel $Graph
+$\ for\ multiple\ graphs $
+$\ [GOPRR] $'
+endto
+
+subreport '_translators' run
+endreport

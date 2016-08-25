@@ -1,0 +1,15 @@
+_FaultFailures()
+do $modes {
+'		<object id="_' id%xml '" type="Object_FaultFailure_sysadmin_3509192808">
+			<slot name="Short name">
+				<value>
+					<string>' id%xml 'Mode</string>
+				</value>
+			</slot>
+			<slot name="Description">
+				<value>
+					<text>FaultFailure originally generated from ' type;1%xml ' ' :FunctionName;1%xml '.</text>
+				</value>
+			</slot>
+		</object>' newline
+}

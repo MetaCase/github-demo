@@ -1,0 +1,32 @@
+Report '!Unconnected ports'
+subreport '_translators' run
+id ' <' type '> has following unconnected ports:' newline
+foreach .ErrorModelPrototype
+{
+	$ports = ' '
+	$found = 'F'
+	$unused_ports = ''
+	do #() { 
+		variable 'ports' append oid ' ' close
+	}
+	do decompositions {
+		foreach .(*Port) {
+			if not $ports =~ oid%wildsp then
+				variable 'unused_ports' append '- ' id ' <' type '>' newline close
+				$found = 'T'
+			endif
+		}
+	}
+	if $found = 'T' then
+		id ' <' type '>' newline
+		$unused_ports newline
+	endif
+}
+foreach .(*Port) {
+	if not >() then
+		'- ' id ' <' type '>' newline
+	endif
+}
+
+if $found <> 'T' then 'none' endif
+endreport

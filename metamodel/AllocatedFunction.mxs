@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="AllocatedFunction">
+		<objectSymbol offset="70,60" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="70,60 220,60 220,80 70,80 70,60" targetPointX="145" targetPointY="70" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="80" version="1.2" width="220" xmlns="http://www.w3.org/2000/svg">
+				<rect fill="rgb(255,255,255)" height="20" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="150" x="70" y="60">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</rect>
+				<textArea display-align="center" fill="rgb(0,0,0)" font-family="#sans serif" font-size="14" font-style="normal" font-weight="normal" height="16" sym:characterBackgroundFill="none" sym:textboxFill="none" sym:textboxStroke="none" sym:textboxStroke-width="0" sym:wordWrap="false" text-anchor="start" width="150" x="70" y="62">
+					ReportTextSource:'         ' id
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</textArea>
+				<template aligmentPointX="0.5" aligmentPointY="0.5" isMovable="false" revealConnectables="false" rotation="false" scaleFilter="0,0" subsymbolExtentX="20" subsymbolExtentY="20" useTargetpoint="false" width="1" xmlns="http://www.metacase.com/symbol">
+					<pathLayout allocation="start" layoutDistance="40" lineSegmentTable="" points="70,70" startDistance="0">
+						<layoutPath allocation="start" layoutDistance="9999" lineSegmentTable="true" points="0,0 20,0" startDistance="10"></layoutPath>
+					</pathLayout>
+					<generatorNPSource>id</generatorNPSource>
+					<librarySubsymbolSource>ReportTextSource:if decompositions; then 
+	do decompositions {
+		:Type '_Icon'
+	}
+else
+	'FunctionConnector_Icon'
+endif</librarySubsymbolSource>
+					<metaInfo></metaInfo>
+				</template>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

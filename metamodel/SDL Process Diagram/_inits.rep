@@ -1,0 +1,35 @@
+_inits()
+
+/* timer init */
+@sep = ''
+local 'timers' write
+	foreach .(Set | Reset); {
+		@sep
+		@sep = '
+'
+		'TIMER ' :Timer name; ';' 
+	}
+close
+
+@reportedTimers = ' '
+do @timers; {
+	if not @reportedTimers =~ id%var%wildsp then
+		local 'reportedTimers' append id%var ' ' close
+		id newline
+	endif
+}
+
+/* variables */
+@variableFound = 'F'
+foreach .Variable {
+	@variableFound = 'T'
+}
+if @variableFound = 'T' then 
+	'DLC' newline 
+	foreach .Variable {
+		do :Variables { 
+			'	' id newline
+		}
+	}
+	newline
+endif

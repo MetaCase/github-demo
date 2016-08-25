@@ -1,0 +1,151 @@
+Report '_EntryJSvariable'
+'// (Start of MetaEdit+ generator _EntryJSvariable
+// Table schema definition
+dbName = "' id;1%var '";
+pageName = "' id%var '";
+tableName = "tbl_" + pageName;
+pageSize = ' $pageSize ';
+
+// Links from this table to another table by a foreign key
+wholeForeign = ['
+$comma=''
+do ~()~Whole; 
+where not :Multiplicity=/'.*\*'
+{  do .() 
+	{	$farEnd=id 
+		$comma newline $comma=','
+	   '  {name:"fk_' $farEnd%var '",pageName:"' $farEnd%var '",foreignCols:['
+		dowhile :Attributes; unique '1'
+		{	if 'true' then '"' :Name '"' endif
+			', '
+		}
+		']}'
+	}
+}
+if $comma=',' then newline endif
+'];
+assocForeign = ['
+$comma=''
+do ~()~Association Role; 
+where (not :Multiplicity=/'.*\*') and :Navigable?
+{  $farEnd = :Role name;
+	do .() 
+	{	if not $farEnd then $farEnd=id endif
+		$comma newline $comma=','
+	   '  {name:"fk_' $farEnd%var '",pageName:"' id%var '",foreignCols:['
+		if :Qualifiers;1 then
+			dowhile :Qualifiers;1
+			{	if 'true' then '"' :Name '"' endif
+				', '
+			}
+		else
+			do :Attributes; unique '1'
+			{	'"' :Name '"'
+			}
+		endif
+		']}'
+	}
+}
+if $comma=',' then newline endif
+'];
+
+// Simple local columns in this table
+cols = ['
+$comma=''
+do :Attributes
+{	$comma newline $comma=','
+	'  {name:"' :Name%var '",datatype:"'
+	if :Data type; =~ 'int*' then 'integer' else 
+		if :Data type; =~ 'string' then 'varchar(255)' else
+			'varchar(255)' /* the default if we don't recognise it */
+	endif endif
+	
+	'",defaultValue:"' 
+	if :Default value; = '' and :Data type; =~ 'int*' then 
+		'0'
+	else
+		:Default value%js 
+	endif
+	'"}'
+}
+if $comma=',' then newline endif
+'];
+
+// Links to this table from another table as a foreign key
+referredAsForeign = ['
+$comma=''
+do ~Whole; 
+where not :Multiplicity=/'.*\*'
+{	do ~Part;
+	where :Multiplicity=/'.*\*' and :Navigable?
+	{	do .()
+		{	$comma newline $comma=','
+			'  {name:"fk_' id;3%var '",pageName:"' id%var  '",tableName:"tbl_' id%var '",foreignCols:['
+			if :Qualifiers;1 then
+				dowhile :Qualifiers;1
+				{	if 'true' then '"' :Name '"' endif
+					', '
+				}
+			else
+				do :Attributes; unique '1'
+				{	'"' :Name '"'
+				}
+			endif
+			']}'
+		}
+	}
+}
+
+do ~Association Role; 
+where (not :Multiplicity=/'.*\*') and :Navigable?
+{  If :Role name; then
+		$nearEnd = :Role name;
+	else
+		$nearEnd = id;1
+	endif
+	do ~Association Role;
+	where :Multiplicity=/'.*\*' and :Navigable?
+	{	do .()
+		{	$comma newline $comma=','
+			'  {name:"fk_' $nearEnd%var '",pageName:"' id%var  '",tableName:"tbl_' id%var '",foreignCols:['
+			if :Qualifiers;1 then
+				dowhile :Qualifiers;1
+				{	if 'true' then '"' :Name '"' endif
+					', '
+				}
+			else
+				do :Attributes; unique '1'
+				{	'"' :Name '"'
+				}
+			endif
+			']}'
+		}
+	}
+}
+if $comma=',' then newline endif
+'];
+
+allForeign = wholeForeign.concat(assocForeign);
+for (i=0; i<allForeign.length; i++){
+  fcol=allForeign[i];
+  fcol.datatype="integer";
+  fcol.tableName="tbl_" + fcol.pageName;
+}
+midCols = allForeign.concat(cols);
+insertCols = "";
+updateCols = "";
+paramCols = "";
+for (i=0; i<midCols.length; i++){
+  mcol=midCols[i];
+  mcol.elt = getElementById(mcol.name);
+  insertCols += mcol.name + ", ";
+  updateCols += mcol.name + "=?, ";
+  paramCols += "?, ";
+}
+
+init();
+initForeign();
+// End of MetaEdit+ generator _EntryJSvariable)
+
+'
+endreport

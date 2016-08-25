@@ -1,0 +1,27 @@
+Report '_INF'
+filename 
+	subreport '_default directory' run
+	'group\bld.inf'
+write
+'/*
+* ============================================================================
+*  Name     : Bld.inf
+*  Part of  : ' subreport '_app' run '
+*  ' subreport '_copyright' run '
+* ============================================================================
+*/
+
+
+PRJ_PLATFORMS
+WINS THUMB ARMI
+
+PRJ_EXPORTS
+//\AknSample\' subreport '_app' run '\rom\' subreport '_app' run '.iby \epoc32\rom\include\' subreport '_app' run '.iby
+
+PRJ_MMPFILES
+' subreport '_app' run '.mmp
+
+PRJ_TESTMMPFILES'
+close
+
+endreport

@@ -1,0 +1,16 @@
+_symInOutPorts()
+do ~()
+{  variable 
+      do #() { 'x' oid } 
+   write 
+      do >() { x }
+   close
+}
+do decompositions
+{  foreach .Gate; where :Direction = 'inout'
+   orderby 
+		local 'relX' write variable 'x' oid read close
+			if @relX then @relX else '9999999' endif NUM ,
+		x NUM 
+   {  id newline  }
+}

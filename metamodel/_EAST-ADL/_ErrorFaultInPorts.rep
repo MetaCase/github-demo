@@ -1,0 +1,30 @@
+_ErrorFaultInPorts()
+foreach .(InFlowPort | ServerPort) {
+'		<object id="_' oid '" type="Object_FaultInPort_sysadmin_3509188722">
+			<slot name="Short name">
+				<value>
+					<string>' :Short name%xml '</string>
+				</value>
+			</slot>
+			<slot name="Name">
+				<value>
+					<string>' :Name%xml '</string>
+				</value>
+			</slot>
+			<slot name="Type">
+				<value>' newline
+				if not type = 'ServerPort' then				
+					do :Type {
+						if not $reportedDatatypes  =~ oid%wildsp then
+							variable 'reportedDatatypes' append oid ' ' close
+							subreport '_portdt' type run 
+						else
+							'<object href="#_' oid '"></object>' newline
+						endif
+					}
+				endif
+'				</value>
+			</slot>
+		</object>
+'
+}

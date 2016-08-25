@@ -1,0 +1,46 @@
+==========================
+Graph Type
+==========================
+MovableStaticPorts
+	Model name: String
+
+==========================
+Object Types
+==========================
+Component
+	Name: String
+Note
+	Note is a special object for adding additional text anywhere in the graphs. Note belongs to many languages and has only one property, Documentation.
+	---------------------------------------------
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Connection
+
+==========================
+Role Types
+==========================
+PortRole
+
+==========================
+Extra Types
+==========================
+MovablePort
+	Name: String
+
+==========================
+Bindings
+==========================
+Connection
+2..N	PortRole #(MovablePort): Component
+
+==========================
+Constraints
+==========================
+
+==========================
+Subgraphs
+==========================
+

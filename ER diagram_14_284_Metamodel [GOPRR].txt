@@ -1,0 +1,203 @@
+Graph_Simple_GOPRR_user_3334325822
+ER diagram
+14_284
+Metamodel [GOPRR]
+Graph: ER diagram <Metamodel [GOPRR]> 14_284
+	Graph name: ER diagram
+	__UUID: 0dhe7g3GSKOcCqiTTrZpnQ
+	Namespace: 
+	Properties: Name Status Description
+	Object: Name <Property [GOPRR]> 14_2362
+		Property name: Name
+		__UUID: 3K0eimYRRHuX2sv2vm+2wQ
+		Local name: Name
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: per graph
+		Description: 
+	Object: Status <Property [GOPRR]> 14_2039
+		Property name: Status
+		__UUID: MAjiRf0MSsOvHBHwFFJ+/g
+		Local name: Status
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Object: Description <Property [GOPRR]> 14_464
+		Property name: Description
+		__UUID: yKdefhREQAiuFP9BSD0tkw
+		Local name: Description
+		Datatype: Text
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Constraints: Entity<object> in max 1 Specialization<role>
+	Object: Entity<object> in max 1 Specialization<role> <Role connectivity constraint [GOPRR]> 14_1594
+		Object of type: Entity
+		Object: Entity <Object [GOPRR]> 14_785
+			Object name: Entity
+			__UUID: Q1p3D1+PTqGbpr7AVk5HHg
+			Properties: 
+			Occurrence: N
+			Description: Entities are objects about which the system stores information. Examples of entities are 'order', 'customer' and 'worker'. An entity is represented by a solid rectangle with a name inside it. Entity has two properties: name and documentation. An entity name is reserved for entering the identifying name of the entity and documentation for entering additional information about entity.
+		may be in at most: 1
+		roles of type: Specialization
+		Object: Specialization <Role [GOPRR]> 14_2339
+			Role name: Specialization
+			__UUID: TXrPNwNWTriY09xZeWXGmA
+			Properties: 
+			Description: 
+	Object order: 
+	Description: 
+Object: Entity <Object [GOPRR]> 14_785
+	Object name: Entity
+	__UUID: Q1p3D1+PTqGbpr7AVk5HHg
+	Properties: 
+	Occurrence: N
+	Description: Entities are objects about which the system stores information. Examples of entities are 'order', 'customer' and 'worker'. An entity is represented by a solid rectangle with a name inside it. Entity has two properties: name and documentation. An entity name is reserved for entering the identifying name of the entity and documentation for entering additional information about entity.
+Object: Relationship <Object [GOPRR]> 14_1372
+	Object name: Relationship
+	__UUID: JIMUV7mKSxGP2vIL622CNw
+	Properties: 
+	Occurrence: N
+	Description: A relationship describes the connections between at least two entities. An example of a relationship is 'belong' which connects entity 'workers' to entity 'departments'. A relationship is represented by a solid diamond with a name inside the symbol. Relationship has name and documentation as properties, as well as cardinality, that specifies the connections between entities and relationships. The cardinality can be selected either from one of defaults (0,1,M) or by entering some other values.
+Object: AbstractER <Object [GOPRR]> 14_1741
+	Object name: AbstractER
+	__UUID: sezJRXXAQXGq0Jcb08Hyuw
+	Properties: Description Name
+	Occurrence: 0
+	Description: 
+Object: Note <Object [GOPRR]> 14_1972
+	Object name: Note
+	__UUID: FzKr4pW5RcqrJ7QRY0eNhg
+	Properties: Description
+	Occurrence: N
+	Description: Note is a special object for adding additional text any where in the graphs. Note belong to every method and has only one property: label.
+Object: Attribute <Object [GOPRR]> 14_2357
+	Object name: Attribute
+	__UUID: ZpIlhR0nQgeHsCc16JfoFA
+	Properties: Attribute name Data type Constraint Description
+	Object: Attribute name <Property [GOPRR]> 14_1870
+		Property name: Attribute name
+		__UUID: bpRWL0wcSlC9eoY6gJsQTw
+		Local name: Name
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Object: Data type <Property [GOPRR]> 14_698
+		Property name: Data type
+		__UUID: 7gV3vTAWQyKEED0i869Y0A
+		Local name: Data type
+		Datatype: Collection
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Object: Constraint <Property [GOPRR]> 14_1648
+		Property name: Constraint
+		__UUID: OzrQQ/2+QS29NN0MmFe4JA
+		Local name: Constraint
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Occurrence: N
+	Description: 
+Relationship: Supertype- subtype <Binding [GOPRR]> 14_364
+	Relationship: Supertype- subtype
+	Object: Supertype- subtype <Relationship [GOPRR]> 14_373
+		Relationship name: Supertype- subtype
+		__UUID: I/l53xDuRYSi3T///Q6jVA
+		Properties: 
+		Description: Supertype/subtype relationship describes subcategories (entities) of one entity. Supertype/subtype relationship is represented with a diamond and cross line at the supertype part of the relationship line.
+  Role: Specialization <First role [GOPRR]>  Object: <Object [GOPRR]> 14_785
+	Role: Specialization
+	Minimum cardinality: 1
+	Maximum cardinality: N
+	Dynamic Ports: 
+  Role: Generalization <Last role [GOPRR]>  Object: <Object [GOPRR]> 14_785
+	Role: Generalization
+	Object: Generalization <Role [GOPRR]> 14_1097
+		Role name: Generalization
+		__UUID: wwhgGLKgTtSIIL0jZMgCVg
+		Properties: 
+		Description: 
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Can be drawn in both directions: F
+	Dynamic Ports: 
+Relationship: In relationship <Binding [GOPRR]> 14_2139
+	Relationship: In relationship
+	Object: In relationship <Relationship [GOPRR]> 14_1170
+		Relationship name: In relationship
+		__UUID: hWI5IA7gTEach99qfuGisg
+		Properties: 
+		Description: 
+  Role: Entity part <First role [GOPRR]>  Object: <Object [GOPRR]> 14_785
+	Role: Entity part
+	Object: Entity part <Role [GOPRR]> 14_1839
+		Role name: Entity part
+		__UUID: 2ER1/fE+SgSKuI7F6kJCNQ
+		Properties: Cardinality
+		Object: Cardinality <Property [GOPRR]> 14_1676
+			Property name: Cardinality
+			__UUID: Ws25TxDJT9u0XggdvJzRwQ
+			Local name: Cardinality
+			Datatype: String
+			Object Datatype: 
+			Default value(s): 
+			Uniqueness: 
+			Description: 
+		Description: 
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Dynamic Ports: 
+  Role: Relationship part <Last role [GOPRR]>  Object: <Object [GOPRR]> 14_1372
+	Role: Relationship part
+	Object: Relationship part <Role [GOPRR]> 14_2555
+		Role name: Relationship part
+		__UUID: I6cMeqZIR4q7+uuFxk02XA
+		Properties: 
+		Description: 
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Can be drawn in both directions: T
+	Dynamic Ports: 
+Relationship: Attribute of <Binding [GOPRR]> 14_2582
+	Relationship: Attribute of
+	Object: Attribute of <Relationship [GOPRR]> 14_2670
+		Relationship name: Attribute of
+		__UUID: IjgJ17+tR/qdnRIWpin/fg
+		Properties: 
+		Description: Attribute of is used to model connections between defined attributes and other objects, i.e. entities and relationships.
+  Role: Owner part <First role [GOPRR]>  Object: <Object [GOPRR]> 14_1741
+	Role: Owner part
+	Object: Owner part <Role [GOPRR]> 14_1137
+		Role name: Owner part
+		__UUID: /xwS/Z/GSfWi2i9tDLGZQw
+		Properties: 
+		Description: 
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Dynamic Ports: 
+  Role: Attribute part <Last role [GOPRR]>  Object: <Object [GOPRR]> 14_2357
+	Role: Attribute part
+	Object: Attribute part <Role [GOPRR]> 14_1812
+		Role name: Attribute part
+		__UUID: ooXfP0RzS9CYQwov1nOeLw
+		Properties: 
+		Description: 
+	Minimum cardinality: 1
+	Maximum cardinality: 1
+	Can be drawn in both directions: T
+	Dynamic Ports: 
+Relationship: Inheritance [GOPRR] <Inheritance [GOPRR]> 14_1769
+  Role: Subtype [GOPRR] <Subtype [GOPRR]>  Object: <Object [GOPRR]> 14_785
+  Role: Subtype [GOPRR] <Subtype [GOPRR]>  Object: <Object [GOPRR]> 14_1372
+  Role: Supertype [GOPRR] <Supertype [GOPRR]>  Object: <Object [GOPRR]> 14_1741

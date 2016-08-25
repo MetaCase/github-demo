@@ -1,0 +1,47 @@
+_DiagramBehaviorRepr()
+'		<diagram displayGrid="false" grid="10,10" timeStamp="" useGrid="true" xmlns="http://www.metacase.com/gxlGOPRRRepr">
+			<graph href="#_'oid '" xmlns="http://www.metacase.com/gxlGOPRR"></graph>' newline
+			foreach .(InFlowPort | ServerPort | OutFlowPort | ClientPort ) {
+			'			<objectRepr id="_r' oid '" place="' x ',' y '">
+				<object href="#_' oid'" xmlns="http://www.metacase.com/gxlGOPRR"></object>
+			</objectRepr>' newline
+			}
+			/* add operators */
+			foreach .(OutFlowPort | ClientPort ) {
+				if x < '170' num then 
+					@place = '200' /* to keep added operator in diagram */
+				else
+					local 'place' write x '-150' close /* left from outport */
+				endif	
+				'			<objectRepr id="_rOper' oid '" place="' math @place evaluate ',' y '">
+					<object href="#_Oper_' oid'" xmlns="http://www.metacase.com/gxlGOPRR"></object>
+				</objectRepr>' newline
+			}
+
+/* operators to outports */
+foreach .(OutFlowPort | ClientPort) {
+	'			<bindingRepr isStraight="true" oid="_br' oid '" place="300,200">
+			<binding href="#_b' oid '" xmlns="http://www.metacase.com/gxlGOPRR"></binding>
+				<connectionRepr id="1">
+					<objectRepr href="#_rOper' oid '"></objectRepr></connectionRepr>
+				<connectionRepr id="2">
+					<objectRepr href="#_r' oid '"></objectRepr>
+				</connectionRepr>
+			</bindingRepr>' newline 
+}
+
+/* inport to operators */
+foreach .(OutFlowPort | ClientPort) {
+	foreach .(InFlowPort | ServerPort) {
+		'			<bindingRepr isStraight="true" oid="_br' oid '_' oid;1 '" place="300,200">
+				<binding href="#_ob' oid '_' oid;1 '" xmlns="http://www.metacase.com/gxlGOPRR"></binding>
+				<connectionRepr id="1">
+					<objectRepr href="#_r' oid '"></objectRepr></connectionRepr>
+				<connectionRepr id="2">
+					<objectRepr href="#_rOper' oid;1 '"></objectRepr>
+				</connectionRepr>
+			</bindingRepr>' newline 
+	}
+}
+'		</diagram>
+' 

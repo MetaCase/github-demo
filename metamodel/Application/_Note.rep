@@ -1,0 +1,19 @@
+Report '_Note'
+/* Produces Note code */
+'def ' subreport '_Internal name' run '():' newline
+if :Treat as code; then
+	'	appuifw.note('
+	if :Function used; then
+		do :Function used; { :Function name;}
+		'(' :Text or code; ')' 
+	else
+		'\' newline
+		 dowhile :Text or code; {'		' id '\' newline}
+	endif
+	', ''' :Note type; ''')' newline
+else
+	'	appuifw.note(u"' :Text or code; 
+	'", ''' :Note type; ''')' newline
+endif
+subreport '_next element' run
+endreport

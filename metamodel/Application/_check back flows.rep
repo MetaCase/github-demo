@@ -1,0 +1,13 @@
+Report '_check back flows'
+/* uses for model checking only */
+foreach .Form {
+	do ~Menu~Menu to.() {
+		if ~From; then
+			do ~From~To.() {
+			'Warning: ' id;1 ' (' type;1 ') has connection to ' id ' (' type '). This path wont be accessed because Form gets the control after the (' type;1 ')' newline
+			variable 'warnings_found' append '+1' close
+			}
+		endif
+	}
+}
+endreport

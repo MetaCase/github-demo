@@ -1,0 +1,147 @@
+Graph_Metamodel_user_3334926741
+Structure Analysis and Design
+14_281
+Metamodel for multiple graphs [GOPRR]
+Graph: Structure Analysis and Design <Metamodel for multiple graphs [GOPRR]> 14_281
+	Metamodel name: Structure Analysis and Design
+	__UUID: 7mDGIw8YQ2CFhuiePzJV2Q
+	Description: This metamodel specifies Yourdon's SA/SD
+Object: Data Flow Diagram <Graph [GOPRR]> 14_377
+	Decomposed to: Data Flow Diagram <Metamodel [GOPRR]>
+Object: State Transition Diagram <Graph [GOPRR]> 14_728
+	Decomposed to: State Transition Diagram <Metamodel [GOPRR]>
+Object: Structure Chart <Graph [GOPRR]> 14_965
+	Decomposed to: Structure Chart <Metamodel [GOPRR]>
+Object: ER diagram <Graph [GOPRR]> 14_1904
+	Decomposed to: ER diagram <Metamodel [GOPRR]>
+Object: Entity <Object [GOPRR]> 14_785
+	Object name: Entity
+	__UUID: Q1p3D1+PTqGbpr7AVk5HHg
+	Properties: 
+	Occurrence: N
+	Description: Entities are objects about which the system stores information. Examples of entities are 'order', 'customer' and 'worker'. An entity is represented by a solid rectangle with a name inside it. Entity has two properties: name and documentation. An entity name is reserved for entering the identifying name of the entity and documentation for entering additional information about entity.
+Object: State <Object [GOPRR]> 14_958
+	Object name: State
+	__UUID: trYvWqlbS+WlSK31zRss8g
+	Properties: State name Description
+	Object: State name <Property [GOPRR]> 14_2460
+		Property name: State name
+		__UUID: n0SoZmM+SCyBg0kwSyX/jg
+		Local name: State name
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: per graph
+		Description: 
+	Object: Description <Property [GOPRR]> 14_464
+		Property name: Description
+		__UUID: yKdefhREQAiuFP9BSD0tkw
+		Local name: Description
+		Datatype: Text
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Occurrence: N
+	Description: 
+Object: Store <Object [GOPRR]> 14_1312
+	Object name: Store
+	__UUID: 3FpWv6oORFWFvPISx+yX+g
+	Properties: Store ID
+	Object: Store ID <Property [GOPRR]> 14_1729
+		Property name: Store ID
+		__UUID: 9hOEuNdYS2Cfx3Kgvs+N0w
+		Local name: Store ID
+		Datatype: Number
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Occurrence: N
+	Description: A store acts as a repository for data. Thus, a store allows you to define parts of the system where you need data stored between processes. A store is symbolized by a rounded rectangle where the name of the store is shown inside the symbol. Store has two properties: store name and documentation.
+Object: Relationship <Object [GOPRR]> 14_1372
+	Object name: Relationship
+	__UUID: JIMUV7mKSxGP2vIL622CNw
+	Properties: 
+	Occurrence: N
+	Description: A relationship describes the connections between at least two entities. An example of a relationship is 'belong' which connects entity 'workers' to entity 'departments'. A relationship is represented by a solid diamond with a name inside the symbol. Relationship has name and documentation as properties, as well as cardinality, that specifies the connections between entities and relationships. The cardinality can be selected either from one of defaults (0,1,M) or by entering some other values.
+Object: Module <Object [GOPRR]> 14_2288
+	Object name: Module
+	__UUID: 527cw76iQmmTf9w/+8Iqog
+	Properties: Name Description
+	Object: Name <Property [GOPRR]> 14_2362
+		Property name: Name
+		__UUID: 3K0eimYRRHuX2sv2vm+2wQ
+		Local name: Name
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: per graph
+		Description: 
+	Occurrence: N
+	Description: A module describes a task performed in a process. Examples of modules are tasks like 'get record', 'write record' or 'display output'. A module is represented by a rectangle with a name of the module inside the symbol. Module has two properties: module name, and documentation. The documentation field can be used to enter additional information about module or to specify the rules of the module in more detail. For example,to include executable instructions like e.g.:  IF record = EOF THEN CALL module C ELSE ...
+Object: Process <Object [GOPRR]> 14_2504
+	Object name: Process
+	__UUID: 9VHzUhLbRZmg/UAXSRANIA
+	Properties: Process ID Method body
+	Object: Process ID <Property [GOPRR]> 14_1228
+		Property name: Process ID
+		__UUID: mk0hdrD6Rlat/SP49DuW0g
+		Local name: ID
+		Datatype: Number
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: globally
+		Description: 
+	Object: Method body <Property [GOPRR]> 14_2194
+		Property name: Method body
+		__UUID: euc7GEelSwasxQljYMklrw
+		Local name: Process specification
+		Datatype: Text
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Occurrence: N
+	Description: A process describes the functions of the system which transform the flows. A process is represented by a solid circle with two properties (i.e. process number and process name) inside it. Process has three properties: process ID, process name and documentation.
+Object: Data flow <Relationship [GOPRR]> 14_1554
+	Relationship name: Data flow
+	__UUID: BDpMmgTaRke3GnO9DqzB1g
+	Properties: Label
+	Object: Label <Property [GOPRR]> 14_412
+		Property name: Label
+		__UUID: cyqxTUZoSIWbXcupVrSciw
+		Local name: Label
+		Datatype: String
+		Object Datatype: 
+		Default value(s): 
+		Uniqueness: 
+		Description: 
+	Description: Flow between data flow elements.
+Relationship: Decomposition [GOPRR] <Decomposition [GOPRR]> 14_822
+  Role: From [GOPRR] <From [GOPRR]>  Object: <Object [GOPRR]> 14_2504
+  Role: To [GOPRR] <To [GOPRR]>  Object: <Graph [GOPRR]> 14_377
+Relationship: Decomposition [GOPRR] <Decomposition [GOPRR]> 14_1497
+  Role: From [GOPRR] <From [GOPRR]>  Object: <Object [GOPRR]> 14_2288
+  Role: To [GOPRR] <To [GOPRR]>  Object: <Graph [GOPRR]> 14_965
+Relationship: Decomposition [GOPRR] <Decomposition [GOPRR]> 14_2225
+  Role: From [GOPRR] <From [GOPRR]>  Object: <Object [GOPRR]> 14_958
+  Role: To [GOPRR] <To [GOPRR]>  Object: <Graph [GOPRR]> 14_728
+Relationship: Explosion [GOPRR] <Explosion [GOPRR]> 14_408
+  Role: From [GOPRR] <From [GOPRR]>  Object: <Object [GOPRR]> 14_785
+  Role: To [GOPRR] <To [GOPRR]>  Object: <Graph [GOPRR]> 14_728
+Relationship: Explosion [GOPRR] <Explosion [GOPRR]> 14_439
+  Role: From [GOPRR] <From [GOPRR]>  Object: <Object [GOPRR]> 14_2504
+  Role: To [GOPRR] <To [GOPRR]>  Object: <Graph [GOPRR]> 14_965
+Relationship: Explosion [GOPRR] <Explosion [GOPRR]> 14_473
+  Role: From [GOPRR] <From [GOPRR]>  Object: <Object [GOPRR]> 14_1372
+  Role: To [GOPRR] <To [GOPRR]>  Object: <Graph [GOPRR]> 14_728
+Relationship: Explosion [GOPRR] <Explosion [GOPRR]> 14_1135
+  Role: From [GOPRR] <From [GOPRR]>  Object: <Object [GOPRR]> 14_2504
+  Role: To [GOPRR] <To [GOPRR]>  Object: <Graph [GOPRR]> 14_728
+Relationship: Explosion [GOPRR] <Explosion [GOPRR]> 14_1527
+  Role: From [GOPRR] <From [GOPRR]>  Object: <Object [GOPRR]> 14_1312
+  Role: To [GOPRR] <To [GOPRR]>  Object: <Graph [GOPRR]> 14_1904
+Relationship: Explosion [GOPRR] <Explosion [GOPRR]> 14_2262
+  Role: From [GOPRR] <From [GOPRR]>  Object: <Relationship [GOPRR]> 14_1554
+  Role: To [GOPRR] <To [GOPRR]>  Object: <Graph [GOPRR]> 14_1904

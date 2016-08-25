@@ -1,0 +1,20 @@
+_measurement()
+'                  "measurement": {
+                    "log": '
+							if :Log values to device;1 then 
+								'true' 
+							else
+								'false' 
+							endif
+							if type;1 = 'PollTrigger' then
+								',' newline
+								'                    "interval": '
+		                  if :Poll values after every;1 then
+									_calculateInterval()
+								else
+									'10000'
+								endif
+							endif
+							newline
+'                  },
+'

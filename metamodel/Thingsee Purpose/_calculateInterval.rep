@@ -1,0 +1,15 @@
+_calculateInterval()
+if :Poll unit;1 = 'seconds' 
+	then math :Poll values after every;1'*1000' evaluate
+else
+	if :Poll unit;1 = 'minutes' then
+		math :Poll values after every;1'*60000' evaluate
+	else
+		if :Poll unit;1 = 'hours' then
+			math :Poll values after every;1'*3600000' evaluate
+		else
+			math :Poll values after every;1'*86400000' evaluate 
+		endif
+	endif
+endif
+

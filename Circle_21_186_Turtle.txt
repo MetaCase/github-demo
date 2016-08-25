@@ -1,0 +1,30 @@
+Graph_Turtle_sysadmin_3526813991
+Circle
+21_186
+Turtle
+Graph: Circle <Turtle> 21_186
+	Name: Circle
+	Format: "dodgerblue4"
+	Object: "dodgerblue4" <Format> 21_574
+		Color: "dodgerblue4"
+		Width: 2
+	Animation: 
+	Documentation: This example draws a circle by drawing a line forward 2 units, turning 1 degree right, and repeating this 360 times.
+Object: d <For> 21_493
+	Variable: d
+	Start: 1
+	End: 360
+Object: 2 <Forward> 21_704
+	Pen down?: T
+	Distance: 2
+Object: The Turtle language is based on the concepts of Logo Turtle graphics, and generates code to run on Python. The language gives commands to a turtle with a pen, which draws lines along its path as it moves Forward and Backward, and turns Left and Right. The commands can be repeated by enclosing them in a For loop, whose variable can be used as a parameter in those commands. <Note [Turtle]> 21_999
+	Documentation: The Turtle language is based on the concepts of Logo Turtle graphics, and generates code to run on Python. The language gives commands to a turtle with a pen, which draws lines along its path as it moves Forward and Backward, and turns Left and Right. The commands can be repeated by enclosing them in a For loop, whose variable can be used as a parameter in those commands.
+Object: Code is generated and run by pressing the Build button on the toolbar. Running requires an installation of Python (tested with 2.7.8 and 3.4.1), with the python command on the path. <Note [Turtle]> 21_1005
+	Documentation: Code is generated and run by pressing the Build button on the toolbar. Running requires an installation of Python (tested with 2.7.8 and 3.4.1), with the python command on the path.
+Object: This example draws a circle by drawing a line forward 2 units, turning 1 degree right, and repeating this 360 times. <Note [Turtle]> 21_1010
+	Documentation: This example draws a circle by drawing a line forward 2 units, turning 1 degree right, and repeating this 360 times.
+Object: 1 <Right> 21_277
+	Degrees: 1
+Relationship: Sequence <Sequence> 21_545
+  Role: From <From>  Object: <Forward> 21_704
+  Role: To <To>  Object: <Right> 21_277

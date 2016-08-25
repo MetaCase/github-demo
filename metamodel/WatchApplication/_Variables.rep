@@ -1,0 +1,17 @@
+Report '_Variables'
+$varIx='0'
+foreach .(DisplayFn | Action)
+{	'	static final int '
+	if type = 'Action' then 'a' else 'd' endif
+	oid '	= ' $++varIx ';' newline
+}
+
+foreach .Variable
+{	'	public ' :Type; ' ' id ' = new ' :Type; '();' newline
+}
+newline
+foreach .Variable
+{	subreport '_getSet' run
+}
+newline
+endreport

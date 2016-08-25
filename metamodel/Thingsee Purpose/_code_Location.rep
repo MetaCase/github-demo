@@ -1,0 +1,8 @@
+_code_Location()
+if :Trigger = 'accuracy' then
+	'0x00010400'
+else
+	if :Trigger = 'altitude' then
+		'0x00010300'
+	endif
+endif

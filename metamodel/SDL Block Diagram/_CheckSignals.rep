@@ -1,0 +1,33 @@
+_CheckSignals()
+_mixBlocks()
+if $type = 'Block' then
+	'SIGNAL '
+	foreach >Channel {
+		do :Signal list; {
+			do :Parameters {id ', '}
+		}
+	}
+	newline
+	foreach >Channel {
+		do :Signal list; {
+			'SIGNALLIST ' :Signal name; ' = ' 
+			if :Parameters; then 
+				dowhile :Parameters {id ', '}
+				';' 
+			endif
+			newline
+		}
+	}
+else
+	'SIGNAL ' 
+	foreach >Signal {
+		do :Signal list; {
+			:Signal name; 
+			if :Type; then 
+				'(' :Type '); ' 
+			else
+				', '
+			endif
+		}
+	}
+endif

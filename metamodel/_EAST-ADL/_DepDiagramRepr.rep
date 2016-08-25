@@ -1,0 +1,27 @@
+_DepDiagramRepr()
+'		<diagram displayGrid="false" grid="10,10" timeStamp="" useGrid="true" xmlns="http://www.metacase.com/gxlGOPRRRepr">
+			<graph href="#_dep' oid '" xmlns="http://www.metacase.com/gxlGOPRR"></graph>
+			<objectRepr id="_r_pt' oid '" place="100,200">
+				<object href="#_pt' oid '" xmlns="http://www.metacase.com/gxlGOPRR"></object>
+			</objectRepr>' newline
+@y='1'
+do $modes {
+'			<objectRepr id="_r' id%xml '" place="500,' @y++ '00">
+				<object href="#_' id%xml '" xmlns="http://www.metacase.com/gxlGOPRR"></object>
+			</objectRepr>' newline
+}
+do $modes {
+	foreach .(Out* | ClientPort) {
+		'			<bindingRepr isStraight="true" oid="_br' id;1 oid '" place="300,200">
+				<binding href="#_b'id;1 oid'" xmlns="http://www.metacase.com/gxlGOPRR"></binding>
+				<connectionRepr id="1">
+					<objectRepr href="#_r' id;1 '"></objectRepr>
+				</connectionRepr>
+				<connectionRepr id="2">
+					<objectRepr href="#_r_pt' oid;2 '"></objectRepr>
+				</connectionRepr>
+			</bindingRepr>' newline 
+	}
+}
+'		</diagram>
+' 

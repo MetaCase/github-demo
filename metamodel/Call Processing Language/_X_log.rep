@@ -1,0 +1,9 @@
+Report '_X_log'
+/* Report Log object */
+'<log name="' :Name; '"'
+	if :Comment; then	' comment="' :Comment; '"' endif
+'>' newline
+/* Report objects after Log object */
+subreport '_next object or otherwise' run
+'</log>' newline
+endreport

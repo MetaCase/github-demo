@@ -1,0 +1,47 @@
+_vcsCheckOut()
+/* Makes a new repository as a copy of an older version and starts a new MetaEdit+ to log into it, without affecting the VCS, this MetaEdit+ or this repository */
+
+/* Set paths for executables and versioning target */
+_vcsPaths()
+
+$newDBName = __(prompt 'New MetaEdit+ repository name (not ' $dbName ' or ' $dbBackupName ')' ask)
+$newDBDir = __($dbBaseDir sep $newDBName)
+
+/* Open the check-out script file for writing... */
+filename $checkOutScript write
+'if not exist "' $newDBDir '" goto newDBOK
+pause Danger: ' $newDBDir ' already exists, about to delete - press Ctrl+C to abort
+rd /s /q "' $newDBDir '"
+:newDBOK
+SET PATH=%PATH%;' $vcsExeDir '
+pushd "' $vcsWorkingDir '"
+del *.txt
+rd /s /q metamodel
+'
+if $use7zip then
+	'del "' $dbBackupName '.7z"' newline
+else
+	'rd /s /q "' $dbBackupName '"' newline
+endif
+
+subreport 
+	'_vcsCheckOut_' $vcs 
+arguments 
+	/* Have to run these whilst temporarily in MetaEdit+ working directory, between checking out old version and checking back out HEAD */
+	'popd' newline
+	if $use7zip then
+		'"' $7zipExe '" x "' $vcsWorkingDir sep $dbBackupName '.7z" -o"' $newDBDir '"' newline
+	else
+		'xcopy /e /i /f /z "' $vcsWorkingDir sep $dbBackupName '" "' $newDBDir '"' newline
+	endif
+	'pushd "' $vcsWorkingDir '"' newline
+run
+'
+popd
+"' $metaeditExe '" fileInPatches'
+
+/* ...and close the script file */
+close
+
+/* Execute the generated script file */
+external $checkOutScript execute

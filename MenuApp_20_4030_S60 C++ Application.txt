@@ -1,0 +1,257 @@
+Graph_App_sysadmin_3211108458
+MenuApp
+20_4030
+S60 C++ Application
+Graph: MenuApp <S60 C++ Application> 20_4030
+	Name: MenuApp
+	Documentation: This simple example shows the menu and view structure of the S60 SDK example of menu controls, and its subgraph shows a simple example application.
+Object: ExMenu <Application> 20_4036
+	App name: ExMenu
+	Name in Grid: Cave
+	Name in List: Cave Adventure
+	Uid: 0x10005C30
+	Resource Identifier: EXMN
+Object: This simple example shows the menu and view structure of the S60 SDK example of menu controls, and its subgraph shows a simple example application. <Comment> 20_4316
+	Documentation: This simple example shows the menu and view structure of the S60 SDK example of menu controls, and its subgraph shows a simple example application.
+Object: The Graphs in this Project Model demonstrate the modeling of applications for mobile phones, for generation of S60 native C++ as described in Section 8.8 of the book "Domain-Specific Modeling", http://dsmbook.com.  <Comment> 20_4854
+	Documentation: The Graphs in this Project Model demonstrate the modeling of applications for mobile phones, for generation of S60 native C++ as described in Section 8.8 of the book "Domain-Specific Modeling", http://dsmbook.com. 
+Object: no_sub_app_menu <Menu Pane> 20_4070
+	Menu Pane name: no_sub_app_menu
+	Menu Items: AppCmd1-901234567890 AppCmd2
+	Object: AppCmd1-901234567890 <Menu Item> 20_4640
+		Command: EAknExMenuAppCmd1
+		UI Text Var: menu_app_cmd1
+		UI Text: AppCmd1-901234567890
+		Separator After: F
+	Object: AppCmd2 <Menu Item> 20_4455
+		Command: EAknExMenuAppCmd2
+		UI Text Var: menu_app_cmd2
+		UI Text: AppCmd2
+		Separator After: T
+Object: no_sub_state_menu <Menu Pane> 20_4116
+	Menu Pane name: no_sub_state_menu
+	Menu Items: StateCmd1 StateCmd2
+	Object: StateCmd1 <Menu Item> 20_4178
+		Command: EAknExMenuStateCmd1
+		UI Text Var: menu_state_cmd1
+		UI Text: StateCmd1
+		Separator After: F
+	Object: StateCmd2 <Menu Item> 20_4707
+		Command: EAknExMenuStateCmd2
+		UI Text Var: menu_state_cmd2
+		UI Text: StateCmd2
+		Separator After: T
+Object: sub_context_menu <Menu Pane> 20_4168
+	Menu Pane name: sub_context_menu
+	Menu Items: SubCtxCmd1 SubCtxCmd2
+	Object: SubCtxCmd1 <Menu Item> 20_4230
+		Command: EAknExMenuSubCtxCmd1
+		UI Text Var: sub_menu_ctx_cmd1
+		UI Text: SubCtxCmd1
+		Separator After: F
+	Object: SubCtxCmd2 <Menu Item> 20_4509
+		Command: EAknExMenuSubCtxCmd2
+		UI Text Var: sub_menu_ctx_cmd2
+		UI Text: SubCtxCmd2
+		Separator After: T
+Object: test_sub_menu1 <Menu Pane> 20_4193
+	Menu Pane name: test_sub_menu1
+	Menu Items: Down to the end Long Menu Short Menu Item5 Item6 Item7 Item8 Item9-78901234567890 Press Left ! Press Enter !
+	Object: Down to the end <Menu Item> 20_4205
+		Command: EAknExMenuCmdSub1
+		UI Text Var: menu_sub1
+		UI Text: Down to the end
+		Separator After: F
+	Object: Long Menu <Menu Item> 20_4735
+		Command: EAknExMenuCmdSubMoreItems
+		UI Text Var: menu_sub2
+		UI Text: Long Menu
+		Separator After: F
+	Object: Short Menu <Menu Item> 20_4299
+		Command: EAknExMenuCmdSubLessItems
+		UI Text Var: menu_sub3
+		UI Text: Short Menu
+		Separator After: F
+	Object: Item5 <Menu Item> 20_4124
+		Command: EAknExMenuCmdSub5
+		UI Text Var: menu_sub5
+		UI Text: Item5
+		Separator After: F
+	Object: Item6 <Menu Item> 20_4654
+		Command: EAknExMenuCmdSub6
+		UI Text Var: menu_sub6
+		UI Text: Item6
+		Separator After: F
+	Object: Item7 <Menu Item> 20_4469
+		Command: EAknExMenuCmdSub7
+		UI Text Var: menu_sub7
+		UI Text: Item7
+		Separator After: F
+	Object: Item8 <Menu Item> 20_4048
+		Command: EAknExMenuCmdSub8
+		UI Text Var: menu_sub8
+		UI Text: Item8
+		Separator After: F
+	Object: Item9-78901234567890 <Menu Item> 20_4573
+		Command: EAknExMenuCmdSub9
+		UI Text Var: menu_sub9
+		UI Text: Item9-78901234567890
+		Separator After: F
+	Object: Press Left ! <Menu Item> 20_4381
+		Command: EAknExMenuCmdSub10
+		UI Text Var: menu_sub10
+		UI Text: Press Left !
+		Separator After: F
+	Object: Press Enter ! <Menu Item> 20_4219
+		Command: EAknExMenuCmdSub11
+		UI Text Var: menu_sub11
+		UI Text: Press Enter !
+		Separator After: F
+Object: ok_system_menu <Menu Pane> 20_4242
+	Menu Pane name: ok_system_menu
+	Menu Items: 
+Object: sub_app_menu <Menu Pane> 20_4293
+	Menu Pane name: sub_app_menu
+	Menu Items: Press Enter ! Press Right ! Long name
+	Object: Press Enter ! <Menu Item> 20_4062
+		Command: EAknExMenuSubAppCmd1
+		UI Text Var: sub_menu_app_cmd1
+		UI Text: Press Enter !
+		Separator After: F
+	Object: Press Right ! <Menu Item> 20_4093
+		Command: EAknExMenuSubAppCmd2
+		UI Text Var: sub_menu_app_cmd2
+		UI Text: Press Right !
+		Separator After: F
+	Object: Long name <Menu Item> 20_4580
+		Command: EAknExMenuSubAppCmdLongName
+		UI Text Var: sub_menu_cmd_longname
+		UI Text: Long name
+		Separator After: T
+Object: sub_system_menu <Menu Pane> 20_4416
+	Menu Pane name: sub_system_menu
+	Menu Items: System Options
+	Object: System Options <Menu Item> 20_4675
+		Command: EAknExMenuSystemOptions
+		UI Text Var: menu_sys_option
+		UI Text: System Options
+		Separator After: F
+Object: no_sub_context_menu <Menu Pane> 20_4453
+	Menu Pane name: no_sub_context_menu
+	Menu Items: Dim AppCmd in oder Delete StateCmd Add StateCmd
+	Object: Dim AppCmd in oder <Menu Item> 20_4118
+		Command: EAknExMenuCtxCmd1
+		UI Text Var: menu_ctx_cmd1
+		UI Text: Dim AppCmd in oder
+		Separator After: F
+	Object: Delete StateCmd <Menu Item> 20_4644
+		Command: EAknExMenuCtxCmd2
+		UI Text Var: menu_ctx_cmd2
+		UI Text: Delete StateCmd
+		Separator After: T
+	Object: Add StateCmd <Menu Item> 20_4459
+		Command: EAknExMenuCtxCmd3
+		UI Text Var: menu_ctx_cmd3
+		UI Text: Add StateCmd
+		Separator After: T
+Object: no_sub_system_menu <Menu Pane> 20_4505
+	Menu Pane name: no_sub_system_menu
+	Menu Items: 
+Object: sub_state_menu <Menu Pane> 20_4561
+	Menu Pane name: sub_state_menu
+	Menu Items: SubStateCmd1 SubStateCmd2
+	Object: SubStateCmd1 <Menu Item> 20_4488
+		Command: EAknExMenuSubStateCmd1
+		UI Text Var: sub_menu_state_cmd1
+		UI Text: SubStateCmd1
+		Separator After: F
+	Object: SubStateCmd2 <Menu Item> 20_4309
+		Command: EAknExMenuSubStateCmd2
+		UI Text Var: sub_menu_state_cmd2
+		UI Text: SubStateCmd2
+		Separator After: F
+Object: test_sub_menu2 <Menu Pane> 20_4687
+	Menu Pane name: test_sub_menu2
+	Menu Items: Press Left !
+	Object: Press Left ! <Menu Item> 20_4338
+		Command: EAknExMenuCmdSub2
+		UI Text Var: menu_sub10
+		UI Text: Press Left !
+		Separator After: F
+Object:  <View> 20_4615
+	View name: 
+	View id: 1
+	View name var: nosub
+	Explode to: View <S60 C++ States>
+Object: Sub <View> 20_4638
+	View name: Sub
+	View id: 2
+	View name var: sub
+Object: Ok <View> 20_4715
+	View name: Ok
+	View id: 3
+	View name var: ok
+Relationship: Cascade <Cascade> 20_4102
+  Role: Parent Menu <Parent Menu>  Object: <Menu Pane> 20_4293
+  Role: Press Right ! <Submenu>  Object: <Menu Pane> 20_4687
+	UI Text: Press Right !
+Relationship: Cascade <Cascade> 20_4361
+  Role: Parent Menu <Parent Menu>  Object: <Menu Pane> 20_4293
+  Role: Press Enter ! <Submenu>  Object: <Menu Pane> 20_4193
+	UI Text: Press Enter !
+Relationship: Containment <Containment> 20_4444
+  Role: Parent View <Parent View>  Object: <Application> 20_4036
+  Role: 1 <Subview>  Object: <View> 20_4615
+	Order: 1
+	Initially active: T
+  Role: 2 <Subview>  Object: <View> 20_4638
+	Order: 2
+	Initially active: F
+  Role: 3 <Subview>  Object: <View> 20_4715
+	Order: 3
+	Initially active: F
+Relationship: Menus <Menus> 20_4184
+  Role: 1 <Menu>  Object: <Menu Pane> 20_4505
+	Order: 1
+	Menu title txt: System
+	Menu title var: menu_system
+  Role: 2 <Menu>  Object: <Menu Pane> 20_4070
+	Order: 2
+	Menu title txt: App
+	Menu title var: menu_app
+  Role: 3 <Menu>  Object: <Menu Pane> 20_4116
+	Order: 3
+	Menu title txt: View
+	Menu title var: menu_state
+  Role: 4 <Menu>  Object: <Menu Pane> 20_4453
+	Order: 4
+	Menu title txt: Context
+	Menu title var: menu_context
+  Role: menubar_no_sub_menu <Menu Bar>  Object: <View> 20_4615
+	Menu Bar name var: menubar_no_sub_menu
+Relationship: Menus <Menus> 20_4290
+  Role: 1 <Menu>  Object: <Menu Pane> 20_4416
+	Order: 1
+	Menu title txt: System
+	Menu title var: menu_system
+  Role: 2 <Menu>  Object: <Menu Pane> 20_4293
+	Order: 2
+	Menu title txt: App
+	Menu title var: menu_app
+  Role: 3 <Menu>  Object: <Menu Pane> 20_4561
+	Order: 3
+	Menu title txt: View
+	Menu title var: menu_state
+  Role: 4 <Menu>  Object: <Menu Pane> 20_4168
+	Order: 4
+	Menu title txt: Context
+	Menu title var: menu_context
+  Role: menubar_sub_menu <Menu Bar>  Object: <View> 20_4638
+	Menu Bar name var: menubar_sub_menu
+Relationship: Menus <Menus> 20_4451
+  Role: 1 <Menu>  Object: <Menu Pane> 20_4242
+	Order: 1
+	Menu title txt: System
+	Menu title var: menu_system
+  Role: menubar_ok_menu <Menu Bar>  Object: <View> 20_4715
+	Menu Bar name var: menubar_ok_menu

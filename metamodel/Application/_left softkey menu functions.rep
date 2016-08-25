@@ -1,0 +1,16 @@
+Report '_left softkey menu functions'
+/* Produces the indented functions to be accessed form left softkey menus; this is used in Listbox, Text_editor */
+if ~Menu; then
+	'	# Functions accessed through left softkey menus' newline
+	do ~Menu {
+		do ~Menu to.() {
+			'	# Menuitem: ' :Menu item;1 newline
+			'	def handle_' subreport '_Internal name' run '():' newline
+			'		global next_state' newline
+			'		lock.signal()' newline
+			'		next_state = ' subreport '_Internal name' run newline
+		}	
+	newline
+	}
+endif
+endreport

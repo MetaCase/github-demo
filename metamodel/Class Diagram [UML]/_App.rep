@@ -1,0 +1,38 @@
+Report '_App'
+/* The main page for the whole application, with a clickable class diagram */
+'<!DOCTYPE html>
+<!-- (Start of MetaEdit+ generator _App -->
+'
+subreport '_EntryHTMLstart' run
+filename subreport '_default directory' run id '.png' print
+'<p><b>Click one of the yellow boxes below to create or edit entries of that type</b><br />
+<img src="' id '.png" border=0 usemap="#' subreport '_default directory' run id '.png" /></p>
+<p><button type="button" onclick="dropAllDBTables();">Delete All</button></p>
+<div><span id="status">&nbsp;</span></div>
+
+'
+do 'sample globals app'%words
+{	subreport '_includeScript' run
+}
+'<script type="text/javascript">
+dbName = "' id%var '";
+var tableNames = [];' newline
+foreach .Class [UML];
+{	'tableNames.push("tbl_' id%var '");' newline
+}
+'
+// ********** Begin table definitions and initialization **********
+// Note the section for each table is duplicated here from the individual page: ugly but convenient
+
+'
+foreach .Class [UML];
+{	subreport '_EntryJSvariable' run
+}
+'// ********** End table definitions and initialization **********
+</script>
+</body>
+</html>
+<!-- End of MetaEdit+ generator _App) -->
+
+'
+endreport

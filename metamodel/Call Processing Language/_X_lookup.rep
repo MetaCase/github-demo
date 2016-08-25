@@ -1,0 +1,14 @@
+Report '_X_lookup'
+/* Report Lookup object */
+'<lookup source="' :Source; '"'
+if :Timeout; <>'' then
+	' timeout = "' :Timeout; '"'
+endif
+if :Clear; then
+	' clear = "' :Clear; '"'
+endif
+'>' newline
+/* Report objects after location object */
+subreport '_outputs' run
+'</lookup>' newline
+endreport

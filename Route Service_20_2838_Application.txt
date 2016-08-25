@@ -1,0 +1,73 @@
+Graph_Amaratto_application_user_3250237231
+Route Service
+20_2838
+Application
+Graph: Route Service <Application> 20_2838
+	Application name: Route Service
+	Documentation: This application uses SMS utilities to implement a Route service. 
+SMS message can be stored in device draft folder.
+Object: This application uses SMS utilities to implement a Route service. 
+SMS message can be stored in device draft folder. <Comment> 20_5054
+	Documentation: This application uses SMS utilities to implement a Route service. 
+SMS message can be stored in device draft folder.
+Object: Insert departure address <Multi_query> 20_3637
+	Prompt1: Insert departure address
+	Prompt2: h/e/v (Helsinki, Espoo, Vantaa)
+	Internal name (optional): 
+	Return variable1: Departure1
+	Return variable2: Departure2
+Object: Insert destination address <Multi_query> 20_3917
+	Prompt1: Insert destination address
+	Prompt2: h/e/v (Helsinki, Espoo, Vantaa)
+	Internal name (optional): 
+	Return variable1: Destination1
+	Return variable2: Destination2
+Object: SMS message sent <Note> 20_3173
+	Text or code: SMS message sent
+	Treat as code: F
+	Internal name (optional): 
+	Note type: conf
+	Function used: 
+Object: route <SendSMS> 20_3453
+	Message keyword: route
+	Internal name (optional): 
+	Message elements: Departure1 Departure2 ;  Destination1 Destination2
+	Object: Departure1 <Message element> 20_3588
+		Name: Departure1
+	Object: Departure2 <Message element> 20_2895
+		Name: Departure2
+	Object: ;  <Optional delimiter> 20_3406
+		Name: 
+		Delimiter character: ; 
+	Object: Destination1 <Message element> 20_3171
+		Name: Destination1
+	Object: Destination2 <Message element> 20_2983
+		Name: Destination2
+	Recipient: 
+Object: Start <Start> 20_2985
+Object: Stop <Stop> 20_3267
+Relationship:  <Flow> 20_3294
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Start> 20_2985
+  Role: To <To>  Object: <Multi_query> 20_3637
+Relationship:  <Flow> 20_3331
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Multi_query> 20_3917
+  Role: To <To>  Object: <SendSMS> 20_3453
+Relationship:  <Flow> 20_3333
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <SendSMS> 20_3453
+  Role: To <To>  Object: <Note> 20_3173
+Relationship:  <Flow> 20_3891
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Note> 20_3173
+  Role: To <To>  Object: <Stop> 20_3267
+Relationship:  <Flow> 20_3926
+	Code: 
+	Function used: 
+  Role: From <From>  Object: <Multi_query> 20_3637
+  Role: To <To>  Object: <Multi_query> 20_3917

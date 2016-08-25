@@ -1,0 +1,185 @@
+==========================
+Graph Type
+==========================
+Call Processing Language
+	Name: String
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+root node
+address
+	Field: String
+	Subfield: String
+	Address: String
+	Address value: String
+language
+	Matches: String
+priority
+	condition: String
+	priorities: String
+string
+	Field: String
+	String: String
+	String value: String
+time
+	tzid: String
+	tzurl: String
+	Time parameters: OrderedCollection (Time parameter)
+location
+	Url: String
+		The mandatory "url" parameter's value is the URL of the address to add to the location set.  Only one address may be specified per location node; multiple locations may be specified by cascading these nodes.
+		---------------------------------------------
+	Priority (0.0 -> 1.0): String
+		The optional "priority" parameter specifies a priority for the location.  Its value is a floating-point number between 0.0 and 1.0. If it is not specified, the server SHOULD assume a default priority of 1.0.
+		
+		---------------------------------------------
+	Clear: String
+		The optional "clear" parameter specifies whether the location set should be cleared before adding the new location to it. Its value can be "yes" or "no", with "no" as the default.
+		---------------------------------------------
+lookup
+	Source: String
+	Timeout: String
+	Clear: String
+		The optional "clear" parameter specifies whether the location set should be cleared before adding the new location to it. Its value can be "yes" or "no", with "no" as the default.
+		---------------------------------------------
+remove-location
+	Location: String
+proxy
+	Timeout: String
+	Recurse: String
+	Ordering: String
+redirect
+	Permanent: String
+reject
+	Status: String
+	Reason: String
+subaction
+log
+	Name: String
+	Comment: String
+mail
+	Url: String
+		The mandatory "url" parameter's value is the URL of the address to add to the location set.  Only one address may be specified per location node; multiple locations may be specified by cascading these nodes.
+		---------------------------------------------
+comment
+	Description: Text
+
+==========================
+Relationship Types
+==========================
+session phase
+	Session type: String
+default path
+otherwise
+next_element lookup
+	name: String
+next_element proxy
+	name: String
+
+==========================
+Role Types
+==========================
+From
+From otherwise
+To
+To otherwise
+
+==========================
+Extra Types
+==========================
+Node
+Time parameter
+	Parameter type: String
+	Value: String
+
+==========================
+Bindings
+==========================
+default path
+	From: address, language, location, log, mail, priority, remove-location, string, time
+	To: address, language, location, log, lookup, mail, priority, proxy, redirect, reject, remove-location, string, subaction, time
+next_element lookup
+	From: lookup
+	To: address, language, location, log, mail, priority, proxy, redirect, reject, remove-location, string, subaction, time
+next_element proxy
+	From: proxy
+	To: address, language, location, log, lookup, mail, priority, redirect, reject, remove-location, string, subaction, time
+otherwise
+	From otherwise: address, language, priority, string, time
+	To otherwise: address, language, location, log, lookup, mail, priority, proxy, redirect, reject, remove-location, string, subaction, time
+session phase
+	From: root node
+	To: address, language, location, lookup, priority, redirect, reject, string, time
+
+==========================
+Constraints
+==========================
+address may be in at most 1 From otherwise role
+address may be in at most 1 From role
+language may be in at most 1 From otherwise role
+language may be in at most 1 From role
+location may be in at most 1 From otherwise role
+location may be in at most 1 From role
+log may be in at most 1 From role
+mail may be in at most 1 From role
+priority may be in at most 1 From otherwise role
+priority may be in at most 1 From role
+remove-location may be in at most 1 From role
+root node may be in at most 1 session phase relationship
+string may be in at most 1 From otherwise role
+string may be in at most 1 From role
+time may be in at most 1 From otherwise role
+time may be in at most 1 From role
+root node may occur at most 1 time
+
+==========================
+Subgraphs
+==========================
+Decompositions:
+	subaction
+		Call Processing Language
+
+==========================
+Generators
+==========================
+!Check
+!CPL
+Check
+CPL script
+
+==========================
+Sub-Generators
+==========================
+_check for cycles
+_check object type
+_CPL document settings
+_followAndCheck
+_next node
+_next object
+_next object in otherwise
+_next object or otherwise
+_objects with no relationships
+_otherwise
+_outputs
+_proxy and lookup relationships
+_subaction nodes
+_subactions
+_time details
+_X_address
+_X_language
+_X_location
+_X_log
+_X_lookup
+_X_mail
+_X_priority
+_X_proxy
+_X_redirect
+_X_reject
+_X_remove-location
+_X_string
+_X_subaction
+_X_time
+__LiveCheck
+

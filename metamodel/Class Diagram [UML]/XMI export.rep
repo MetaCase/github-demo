@@ -1,0 +1,43 @@
+Report 'XMI export'
+/*	Creates XMI file declarations from UML class diagrams according to the following rules: 
+*	Uses:
+*		XMI version 1.0
+*		UML 1.1 version
+*	Report requires UML.DTD file (version 1.1) to the same directory where the XMI file has been generated
+*	Please note that XMI export does not work properly if your designs include special characters (e.g. < and >) used in specifications of XMI.
+*	Graph get its xmi id from graphs oid
+*	Graphs visibility value is set to "public"
+*	Graphs isRoot value is set to "false"
+*	Graphs isLeaf value is set to "false"
+*	Graphs isAbstract value is set to "false"
+*	Calls _XMI generalizations subreport
+*	Calls _XMI data types subreport
+*	Calls _XMI packages subreport
+*	Calls _XMI classes subreport
+*	Calls _XMI associations subreport
+*	Calls _XMI aggregations subreport
+*/
+subreport '_translators' run
+filename subreport '_default directory' run id%file '.xmi' encoding 'UTF-8' write
+'<?xml version = "1.0" encoding = "UTF-8" ?>' newline
+'<!DOCTYPE XMI SYSTEM "uml.dtd" >' newline
+'<XMI xmi.version ="1.0">' newline
+'<XMI.header><XMI.metamodel xmi.name="UML" xmi.version="1.1"/></XMI.header>' newline
+'<XMI.content>' newline
+	'<Model_Management.Model xmi.id = "G.' oid '">' newline
+	'<Foundation.Core.ModelElement.name>' id%xml '</Foundation.Core.ModelElement.name>' newline
+	'<Foundation.Core.ModelElement.visibility xmi.value = "public"/>' newline
+	'<Foundation.Core.GeneralizableElement.isRoot xmi.value = "false"/>' newline
+	'<Foundation.Core.GeneralizableElement.isLeaf xmi.value = "false"/>' newline
+	'<Foundation.Core.GeneralizableElement.isAbstract xmi.value = "false"/>' newline
+subreport '_XMI generalizations' run newline
+subreport '_XMI data types' run newline
+subreport '_XMI packages' run newline
+subreport '_XMI classes' run newline
+subreport '_XMI associations' run newline
+subreport '_XMI aggregations' run
+'</Model_Management.Model>' newline
+'</XMI.content>' newline
+'</XMI>' newline
+close
+endreport

@@ -1,0 +1,22 @@
+_causeEvent()
+'                  "sId": "' 
+						subreport '_code_' type run
+						'",
+                  "threshold": {
+                    "count": 1' 
+						if type = 'Timer'; then /* Timer is relative */
+							',' newline
+							'                    "relative": true' 
+						endif
+						if type = 'Geofence' then
+							',' newline
+							'                    "negate": ' 
+							if :Trigger if; = 'inside geofence' then
+								'false'
+							else
+								'true'
+							endif
+						endif
+						newline
+'                  },' newline
+_measurement()

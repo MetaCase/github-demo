@@ -1,0 +1,10 @@
+_reportWarnings()
+/* Reporting the index and sets the legal variable as F (=is not going to be EAXML exportable) */
+/* warnings counter is added */
+$warnings++%null
+
+if $LiveCheck = 'F' then /* Index is generated only for full check not for LiveCheck pane */
+	'(' $warnings ') '
+endif
+
+$legal = 'F'

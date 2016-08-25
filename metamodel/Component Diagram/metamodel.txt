@@ -1,0 +1,306 @@
+==========================
+Graph Type
+==========================
+Component Diagram
+	A component diagram is used to show the allocation of classes and objects into the physical design of a system. A single model typically denotes to a view of a module architecture of a system.
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Component
+	A component describes an executable software module with identity and well-defined interface. Components are characterized with instance and type names, package which it belongs, stereotype, and documentation.
+	---------------------------------------------
+	Type name: String
+	Instance name: String
+	Package: Package
+	Stereotype: String
+	Documentation: Text
+Class [UML]
+	An class describes a group of objects with similar properties (attributes), common behaviour (operations), common relationships to other objects, and common semantics. Class is represented as a box with three parts each including different properties. Class name is in the first part of the class box toghether with a stereotype. List of attributes are in the second part, and list of operations are in the last box. Class can be characterized according to:
+	- package they belong
+	- whether it is abstract
+	- whether it is persistent
+	- how the element may be overridden by the subclass. Values: virtual - fully defined and may be overridden, leaf - fully defined and may not be overridden, deferred - protocol only defined and must be overridden, extensible - may be extended but not overridden
+	- role (model, view, controller)
+	- template parameters
+	- constraints
+	- invariant information
+	- derivation rules
+	- responsibility
+	- documentation, and 
+	- simple symbol? to choose whether the whole class symbol is shown or only class name and possible template parameters.
+	
+	Each attribute in a list field is used for entering in more detail characteristics of an attribute. These include: 
+	- attribute name
+	- data type
+	- initial value
+	- stereotype
+	- visibility (public, private, or protected)
+	- scope (class, instance, or class-instance)
+	- access for the value
+	- derived? to inform that the actual value is derived
+	- persistent?
+	- constraints
+	- documentation
+	
+	A operation is a specific behavior that an object is responsible for exhibiting. Operation list field is used for adding in more detail specifications of an operation. Each operation can be specified by:
+	- name
+	- parameters containing parameter name, type and default value
+	- return type (i.e. possibly object to be returned)
+	- method body or operation specification
+	- whether the operation can be overridden (virtual - fully defined and may be overridden, leaf - fully defined and may not be overridden, deferred - protocol only defined and must be overridden, extensible - may be extended but not overridden)
+	- stereotype (e.g for Smalltalk protocols)
+	- visibility (public, private, or protected)
+	- operation type (class or instance)
+	- preconditions
+	- postconditions
+	- documentation
+	---------------------------------------------
+	Class name: String
+	Attributes: OrderedCollection (Attribute [UML])
+	Operations: OrderedCollection (Operation [UML])
+	Package: Package
+	Abstract?: Boolean
+	Persistent?: Boolean
+	Stereotype: String
+	Overridability: String
+		How the element may be overridden by the subclass. Values:
+		virtual - fully defined and may be overridden
+		leaf - fully defined and may not be overridden
+		deferred - protocol only defined and must be overridden
+		extensible - may be extended but not overridden
+		---------------------------------------------
+	Role: String
+	Parameters: OrderedCollection (Parameter)
+	Constraints: Text
+	Invariant: Text
+	Derivation rules: OrderedCollection (String)
+	Responsibility: Text
+	Documentation: Text
+	Simple symbol?: Boolean
+Package
+	A package is used for grouping elements and organizing models: a system may be thought of as a single high-level package included other model elements and other packages. Depending on the graph type used a package can contain a set of use cases, classes or other packages. Each package is represented with a folder symbol with name of the package inside the symbol and steretotype of the package above the symbol.
+	---------------------------------------------
+	Package name: String
+	Stereotype: String
+	Documentation: Text
+Interface connector
+	An assembly connector is a connector between two components that defines that one component provides the services that
+	another component requires. An assembly connector is a connector that is defined from a required interface or port to a
+	provided interface or port.
+	---------------------------------------------
+	Class: Class [UML]
+Note text
+	Note is a special object for adding additional text anywhere in the graphs. It can be linked to another design objects with a note connection relationship.
+	---------------------------------------------
+	Note text: Text
+	Stereotype: String
+
+==========================
+Relationship Types
+==========================
+Association [UML]
+	An association describes a semantic connection between two classes. Each association relationship is characterized derivation rules and documentation. The roles of the association are further characterized to define associations in more detaile with the following properties:
+	- association name according to the direction of the associaton 
+	- role name to characterize the class/objects role in the relationship
+	- multiplicity constraint 
+	- ordered? to define whether links between objects have order
+	- navigable? to indicate that navigation is supported along the association relationship towards the class/object attached to the arrow, and 
+	- qualifiers to define values which serve to partition the set of objects associated with an object across an association.
+	Binary associations are most common, but n-ary connection can be specified with an ternary association. Also association class, OR association, and note connection can be attached to aggregations by selecting the relationship and then adding a new role to the relationship through a selection from a pop-up menu.
+	---------------------------------------------
+	Association name: String
+	Derived?: Boolean
+	Derivation rules: OrderedCollection (String)
+	Documentation: Text
+Aggregation
+	Aggregation is a mechanism for structuring the class/object model. It permits the construction of aggregate class/object from other component classes/object. Each aggregation relationship is characterized with name, derivation rules, and documentation attached to the relationship and with the role related properties. The whole role has multiplicity constraint and composition? to define whether the composite owns its parts (i.e. parts live inside the whole and they will be destroyed together with the whole). The part role is characterized by the role name, multiplicity, whether links between objects have order, indicate that navigation is supported along the aggregation towards the class attached to the arrow, and to define values which serve to partition the set of objects associated with an object across an association (Qualifiers).
+	Also association class, OR associations, and note connections can be attached to aggregations by selecting the relationship and then adding a new role to the relationship through a selection from a pop-up menu.
+	---------------------------------------------
+	Association name: String
+	Derivation rules: OrderedCollection (String)
+	Documentation: Text
+Interface
+	Interface relationship; between Component and Required or Provided roles to Assembly connector
+	---------------------------------------------
+Connector
+	Connector kind: String
+		Indicates that the connector is a delegation connector.
+		---------------------------------------------
+Dependency [UML]
+	Dependency show client-supplier links dependencies between logical elements. The client, pointed by an arrow, is dependent in some way on the client.
+	---------------------------------------------
+	Stereotype: String
+	Alias name: String
+Note connection
+	Note connection can be used to link a note text to related element in a model. A note connection is represented by a grey line.
+	---------------------------------------------
+
+==========================
+Role Types
+==========================
+Association role
+	Role name: String
+	Multiplicity: String
+	Ordered?: Boolean
+	Navigable?: Boolean
+	Properties: String
+	Qualifiers: OrderedCollection (Attribute [UML])
+	Association name: String
+Client
+Note part
+Object part
+Supplier
+Component
+External contract
+Internal realization
+Part
+	Role name: String
+	Multiplicity: String
+	Ordered?: Boolean
+	Navigable?: Boolean
+	Properties: String
+	Qualifiers: OrderedCollection (Attribute [UML])
+Provided interface
+	Interface name: String
+Required interface
+	Interface name: String
+Whole
+	Multiplicity: String
+	Composition?: Boolean
+
+==========================
+Extra Types
+==========================
+Class Diagram [UML]
+	Class diagrams show the static structure with classes and their definitions and relationships.
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+_Unified Modeling Language
+	This UML metamodel is based on the 2.0 Draft Adopted Specification.
+	---------------------------------------------
+Attribute [UML]
+	Name: String
+	Data type: String
+	Default value: String
+	Stereotype: String
+	Visibility: String
+	Scope: String
+	Access: String
+	Derived?: Boolean
+	Persistent?: Boolean
+	Constraints: Text
+	Documentation: Text
+Operation [UML]
+	Operation name: String
+	Parameters: OrderedCollection (Parameter)
+	Return type: String
+	Overridability: String
+		How the element may be overridden by the subclass. Values:
+		virtual - fully defined and may be overridden
+		leaf - fully defined and may not be overridden
+		deferred - protocol only defined and must be overridden
+		extensible - may be extended but not overridden
+		---------------------------------------------
+	Stereotype: String
+	Visibility: String
+	Operation type: String
+	Preconditions: Text
+	Postconditions: Text
+	Body: Text
+	Documentation: Text
+Parameter
+	Parameter: String
+	Data type: String
+	Direction: String
+	Default value: String
+Person
+	Person is used to describe developers involved in a project (i.e. attached to the project model) and authors of developed models. Person can be characterized with a name, e-mail address, and with a contact address. 
+	---------------------------------------------
+	Name: String
+	E-mail: String
+	Contact address: Text
+Port
+	Ports represent interaction points between a classifier and its environment.
+	
+	When the Port is not drawn on the border of the component, it's symbol will change!
+	---------------------------------------------
+	Port name: String
+	Multiplicity: String
+	isBehavior: String
+	isService: String
+General association role
+	Role name: String
+	Multiplicity: String
+	Ordered?: Boolean
+	Navigable?: Boolean
+	Properties: String
+
+==========================
+Bindings
+==========================
+Aggregation
+	Whole: Class [UML]
+1..N	Part: Class [UML]
+0..1	Note part: Note text
+Association [UML]
+2	Association role: Class [UML], Component, Package
+0..1	Note part: Note text
+Connector
+	External contract: Interface connector, Port
+	Internal realization: Component, Interface connector, Port
+Dependency [UML]
+	Client: Class [UML], Component, Interface connector, Package
+	Supplier: Class [UML], Component, Interface connector, Package
+0..1	Note part: Note text
+Interface
+1..N	Component: Component
+	Provided interface: Interface connector
+Interface
+1..N	Component: Component
+	Required interface: Interface connector
+Interface
+	Provided interface: Interface connector
+1..N	Component: Component
+Interface
+	Required interface: Interface connector
+1..N	Component: Component
+Note connection
+	Note part: Note text
+	Object part: Class [UML], Component, Package
+Note connection
+	Object part: Class [UML], Component, Package
+	Note part: Note text
+
+==========================
+Constraints
+==========================
+Property "Package name" in Package must have unique values
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	Component
+		Class Diagram [UML]
+Decompositions:
+	Package
+		Component Diagram
+
+==========================
+Generators
+==========================
+
+==========================
+Sub-Generators
+==========================
+_ontheborder
+

@@ -1,0 +1,12 @@
+Report '!Build'
+$warnings = ''
+_check()
+
+if $warnings = '' then
+	subreport 'Export and Build MXT' run
+else
+ 	'Number of warnings: ' $warnings; newline
+	'Update metamodel by giving a namespace (via Graph | Properties) or by using unique name for each type' newline
+endif
+
+endreport

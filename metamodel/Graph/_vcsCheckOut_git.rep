@@ -1,0 +1,9 @@
+_vcsCheckOut_git(@unzip)
+/* Check out the old version, unzip the repository using @unzip, then revert to the HEAD */
+'
+git log -20 --pretty=format:"%%C(auto)%%h  %%<(70,trunc)%%s"
+set /P githash=Enter hash to check out: 
+git checkout -f %githash%
+' @unzip '
+git checkout -f master
+'

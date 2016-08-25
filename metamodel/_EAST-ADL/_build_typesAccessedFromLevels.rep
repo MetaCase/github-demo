@@ -1,0 +1,64 @@
+_build_typesAccessedFromLevels()
+if type =~ '*Prototype' then
+	do decompositions {
+		if not $typesAccessedFromLevels =~ oid%wildsp then
+			variable 'typesAccessedFromLevels' append oid ' ' close
+			foreach .(*Prototype) {
+				if not $typesAccessedFromLevels =~ oid%wildsp then
+					/* Add oid to typesAccessedFromLevels variable */
+					variable 'typesAccessedFromLevels' append oid ' ' close
+					/* Goes through the submodels */
+					do decompositions {
+						foreach .(*) {	_build_typesAccessedFromLevels() }
+					}
+				endif
+			}
+			endif
+
+		/* Ports and Pins */
+		foreach .(*Port | *Pin*) {
+			if not $typesAccessedFromLevels =~ oid%wildsp then
+				/* Add oid to typesAccessedFromLevels variable */
+				variable 'typesAccessedFromLevels' append oid ' ' close
+				subreport '_data-type type' run
+				if (type =~ 'Client*') OR (type =~ 'Server*') then
+					do :Type {			
+						if not $typesAccessedFromLevels =~ oid%wildsp then
+							variable 'typesAccessedFromLevels' append oid ' ' close
+							subreport '_data-type type' run
+						endif
+					}
+				endif
+			endif
+		}
+	}
+endif
+	
+/* Add oid to typesAccessedFromLevels variable */
+if (type =~'*Port') OR (type =~ '*Pin*') then 
+	if not $typesAccessedFromLevels =~ oid%wildsp then
+		variable 'typesAccessedFromLevels' append oid ' ' close
+		subreport '_data-type type' run
+		if (type =~ 'Client*') OR (type =~ 'Server*') then
+			do :Type {
+				if not $typesAccessedFromLevels =~ oid%wildsp then
+					variable 'typesAccessedFromLevels' append oid ' ' close
+					subreport '_data-type type' run
+				endif
+			}
+		endif
+	endif
+endif
+
+if type = 'SystemModel' then
+	do decompositions { 
+		foreach .(*Prototype | Allocations) {
+			subreport '_build_typesAccessedFromLevels' run
+		}
+	}
+endif
+
+/* Package */
+if type = 'Package'; then
+	do decompositions { subreport '_find packaged types' run }
+endif

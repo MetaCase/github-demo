@@ -1,0 +1,128 @@
+Graph_Data_Flow_Diagram_user_3012740772
+Sales system
+11_180
+Data Flow Diagram
+Graph: Sales system <Data Flow Diagram> 11_180
+	Model name: Sales system
+	Status: draft
+	Authors: Joe Smith
+	Object: Joe Smith <Person> 11_1447
+		Name: Joe Smith
+		E-mail: mailto:info@metacase.com
+		Contact address: www.metacase.com
+	Documentation: This model was made 28.8.2006 in the meeting with customers.
+Object: Customer <External> 11_2928
+	Name: Customer
+	Documentation: Customer can be either house economic or some big customer.
+Object: Process invoice payments <Process> 11_2224
+	Process ID: 4
+	Process name: Process invoice payments
+	Process specification: 
+	Documentation: Each order gets it's own invoice number from process invoice payments.
+Object: Check credit <Process> 11_2314
+	Process ID: 3
+	Process name: Check credit
+	Process specification: 
+	Documentation: 
+Object: Maintain customer records <Process> 11_3006
+	Process ID: 1
+	Process name: Maintain customer records
+	Process specification: 
+	Documentation: Changes in the customer's information will be updated to the company's database.
+Object: Verify orders <Process> 11_4272
+	Process ID: 2
+	Process name: Verify orders
+	Process specification: 
+	Documentation: Each order must be verified by checking the payment history.
+Object: Customer <Store> 11_1515
+	Name: Customer
+	Documentation: Customer database includes information about all customers.
+	Explode to: Orders and products <Entity Relationship Diagram>
+Object: Accounts receivable <Store> 11_3624
+	Name: Accounts receivable
+	Documentation: Customer's credit information.
+Object: Product file <Store> 11_3675
+	Name: Product file
+	Documentation: Product file includes information about all ordered products and their parts.
+	Explode to: Orders and products <Entity Relationship Diagram>
+Relationship: Invoice <Data flow> 11_492
+	Flow name: Invoice
+	Documentation: Invoice of ordered product(s)
+  Role: From <From>  Object: <Process> 11_2224
+  Role: To <To>  Object: <External> 11_2928
+Relationship: Payment history <Data flow> 11_697
+	Flow name: Payment history
+	Documentation: Payment history includes information about:
+current ordered products and the customer contact information and his/hers payment history.
+
+  Role: From <From>  Object: <Process> 11_2224
+  Role: To <To>  Object: <Store> 11_3624
+Relationship: Customer details <Data flow> 11_703
+	Flow name: Customer details
+	Documentation: Customer details includes following information:
+Customer name, address, VAT number, phone and the fax number, email address, list of ordered products.
+  Role: From <From>  Object: <Process> 11_3006
+  Role: To <To>  Object: <Store> 11_1515
+Relationship: Payment <Data flow> 11_915
+	Flow name: Payment
+	Documentation: Customer's payment to the company.
+  Role: From <From>  Object: <External> 11_2928
+  Role: To <To>  Object: <Process> 11_2224
+Relationship: Customer details <Data flow> 11_919
+	Flow name: Customer details
+	Documentation: Customer details includes following information:
+Customer name, address, VAT number, phone and the fax number, email address, list of ordered products.
+  Role: From <From>  Object: <Store> 11_1515
+  Role: To <To>  Object: <Process> 11_2224
+Relationship: Re-payment request <Data flow> 11_1819
+	Flow name: Re-payment request
+	Documentation: 
+  Role: From <From>  Object: <Process> 11_2224
+  Role: To <To>  Object: <Process> 11_4272
+Relationship: Request for check <Data flow> 11_1826
+	Flow name: Request for check
+	Documentation: Check customer's credit information
+  Role: From <From>  Object: <Process> 11_4272
+  Role: To <To>  Object: <Process> 11_2314
+Relationship: Status responses <Data flow> 11_2010
+	Flow name: Status responses
+	Documentation: 
+  Role: From <From>  Object: <Process> 11_3006
+  Role: To <To>  Object: <External> 11_2928
+Relationship: Payment history <Data flow> 11_2014
+	Flow name: Payment history
+	Documentation: Each customer has iit's own payment history.
+  Role: From <From>  Object: <Store> 11_3624
+  Role: To <To>  Object: <Process> 11_2314
+Relationship: Orders <Data flow> 11_2232
+	Flow name: Orders
+	Documentation: Order can be either a verbal agreement, fax or in emailed form.
+	Explode to: Orders and products <Entity Relationship Diagram>
+  Role: From <From>  Object: <Process> 11_4272
+  Role: To <To>  Object: <Process> 11_2224
+Relationship: Ask customers information <Data flow> 11_2449
+	Flow name: Ask customers information
+	Documentation: Customer's detailed information will be asked
+  Role: From <From>  Object: <Process> 11_4272
+  Role: To <To>  Object: <Process> 11_3006
+Relationship: Request <Data flow> 11_3324
+	Flow name: Request
+	Documentation: 
+  Role: From <From>  Object: <External> 11_2928
+  Role: To <To>  Object: <Process> 11_3006
+Relationship: Orders <Data flow> 11_3497
+	Flow name: Orders
+	Documentation: Order can be either a verbal agreement, fax or in emailed form.
+	Explode to: Orders and products <Entity Relationship Diagram>
+  Role: From <From>  Object: <External> 11_2928
+  Role: To <To>  Object: <Process> 11_4272
+Relationship: Part number <Data flow> 11_3679
+	Flow name: Part number
+	Documentation: Part number is based on productID.
+  Role: From <From>  Object: <Process> 11_4272
+  Role: To <To>  Object: <Store> 11_3675
+Relationship: Credit info <Data flow> 11_3887
+	Flow name: Credit info
+	Documentation: Customer's credit information
+  Role: From <From>  Object: <Process> 11_2314
+  Role: To <To>  Object: <Process> 11_4272

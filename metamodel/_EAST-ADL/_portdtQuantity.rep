@@ -1,0 +1,57 @@
+_portdtQuantity()
+/* Quantities are currently not reused */
+'						<slot name="Quantity">
+							<value>' newline
+do :Quantity { 
+		'								<object oid="_'oid'" type="Object_Quantity_sysadmin_3536997304">
+										<slot name="Short name">
+											<value>
+												<string>Err':Short name'</string>
+											</value>
+										</slot>
+										<slot name="Name">
+											<value>
+												<string>' :Name%xml '</string>
+											</value>
+										</slot>																
+										<slot name="AmountOfSubstanceExp">
+											<value>
+												<string>':AmountOfSubstanceExp'</string>
+											</value>
+										</slot>										
+										<slot name="ElectricCurrentExp">
+											<value>
+												<string>':ElectricCurrentExp'</string>
+											</value>
+										</slot>				
+										<slot name="LengthExp">
+											<value>
+												<string>':LengthExp'</string>
+											</value>
+										</slot>	
+										<slot name="LuminousIntensityExp">
+											<value>
+												<string>':LuminousIntensityExp'</string>
+											</value>
+										</slot>																											
+										<slot name="MassExp">
+											<value>
+												<string>':MassExp'</string>
+											</value>
+										</slot>											
+										<slot name="ThermodynamicTemperatureExp">
+											<value>
+												<string>':ThermodynamicTemperatureExp'</string>
+											</value>
+										</slot>	
+										<slot name="TimeExp">
+											<value>
+												<string>':TimeExp'</string>
+											</value>
+										</slot>
+									</object>' newline
+}								
+'							</value>
+						</slot> ' 
+						newline
+						

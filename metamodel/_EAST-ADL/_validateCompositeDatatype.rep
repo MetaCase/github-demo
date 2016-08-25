@@ -1,0 +1,78 @@
+_validateCompositeDatatype()
+/* Validation checks for CompositeDatatypes */
+subreport '_name checks' run
+if not :DatatypePrototypes; then
+	_reportWarnings()
+	'Warning: ' 
+	if type;1 <> 'Package' then
+		/* When the Type is used in some FAA/FDA model */	
+		 id ' <' type '> used in ' id;1 ' <' type;1 '> does not have any DatatypePrototypes defined '
+		_extendedCheckOutput_level2()
+	else
+		/* When the Type is defined in Package model */	
+		 id ' <' type '> does not have any DatatypePrototypes defined '
+		_extendedCheckOutput_level1()
+	endif
+	newline
+endif
+
+@duplicateEADataTypePrototypes = ' '
+do :DatatypePrototypes; 
+{	
+	@short = :Short name;
+	if not @duplicateEADataTypePrototypes =~ @short%wildsp; then
+		local 'duplicateEADataTypePrototypes' append :Short name; ' ' close
+	else
+		_reportWarnings()
+		'Warning: '
+		if type;2 <> 'Package' then
+			/* When the Type is used in some FAA/FDA model */	
+			 id ' <' type '> defined several times among DatatypePrototypes in ' id;1 ' <' type;1 '> | ' id;2 ' <' type;2 '> '
+			_extendedCheckOutput_level3()
+		else
+			/* When the Type is defined in Package model */	
+			 id ' <' type '> defined several times among DatatypePrototypes in ' id;1 ' <' type;1 '> ' 
+			_extendedCheckOutput_level2()
+		endif
+		newline 
+	endif
+
+	subreport '_name checks' run
+
+	if :Type = '' then
+		_reportWarnings()
+		'Warning: ' 
+		if type;2 <> 'Package' then
+			/* When the Type is used in some FAA/FDA model */	
+			'Undefined Type value for ' id ' <' type '> in ' id;1 ' <' type;1 '> | ' id;2 ' <' type;2 '> '
+			_extendedCheckOutput_level3()
+		else
+			/* When the Type is defined in Package model */	
+			 'Undefined Type value for ' id ' <' type '> ' 
+			_extendedCheckOutput_level2()
+		endif
+		newline
+	endif
+
+	foreach .CompositeDatatype; where oid <> oid;2 
+	{	do :DatatypePrototypes 
+		{	if oid = oid;2 then 
+				if not $reported_objects =~ oid%wildsp; then
+					_reportWarnings()
+					'Warning: '
+					if type;4 <> 'Package' then
+						/* When the Type is used in some FAA/FDA model */	
+						'DatatypePrototype ' id ' <' type '> is used among several composite datatypes, e.g. ' id;1 ' <' type;1 '> '
+						_extendedCheckOutput_level3()
+					else
+						/* When the Type is defined in Package model */	
+						'DatatypePrototype ' id ' <' type '> is used among several composite datatypes, e.g. ' id;1 ' <' type;1 '> '
+						_extendedCheckOutput_level4()
+					endif
+					newline
+					variable 'reported_objects' append oid ' ' close
+				endif
+			endif
+		}
+	}
+}

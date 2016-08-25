@@ -1,0 +1,10 @@
+Satisfy\ relationships()
+/* reports all satisfy links among the elements */
+$project = project
+'Satisfy relationships in ' $project ' project:' newline;
+do graphs where projectid = projectid;1 {
+	foreach >(Satisfy*) {
+		do ~SatisfiedBy.() { id ' <' Type '> satisfies ' }
+		do ~(^SatisfiedBy).() {id ' <' Type '>' newline}
+	}
+}

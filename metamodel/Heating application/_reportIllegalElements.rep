@@ -1,0 +1,7 @@
+_reportIllegalElements()
+foreach .(Burner | Boiler | Radiator | Pump | Sensor | Thermostat | Valve) {
+	if not $elems =~ oid%wildsp then
+		id; ' <' type '> is not defined in the P&I diagram.' newline
+		$errors++%null
+	endif
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="InternalFault">
+		<objectSymbol offset="70,40" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="90.5,50 89.791,46.207 87.7596,42.9262 84.6802,40.6008 80.9688,39.5448 77.1265,39.9008 73.6723,41.6208 71.0727,44.4725 69.6788,48.0706 69.6788,51.9294 71.0727,55.5275 73.6723,58.3792 77.1265,60.0992 80.9688,60.4552 84.6802,59.3992 87.7596,57.0738 89.791,53.793 90.5,50" targetPointX="80.0894" targetPointY="50" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="60" version="1.2" width="90" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<radialGradient cx="0.35" cy="0.2" gradientUnits="objectBoundingBox" id="gradient1" r="1.03078" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="1" stop-color="rgb(255,0,0)"></stop>
+					</radialGradient>
+				</defs>
+				<ellipse cx="80" cy="50" fill="url(#gradient1)" rx="10" ry="10" stroke="none" stroke-width="1" sym:startAngle="3.6e2" sym:sweepAngle="-3.6e2">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</ellipse>
+				<textArea display-align="center" fill="rgb(0,0,0)" font-family="#sans serif" font-size="18" font-style="normal" font-weight="bold" height="20" sym:characterBackgroundFill="none" sym:textboxFill="none" sym:textboxStroke="none" sym:textboxStroke-width="1" sym:wordWrap="true" text-anchor="middle" width="20" x="70" y="40">
+					!
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</textArea>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

@@ -1,0 +1,91 @@
+==========================
+Graph Type
+==========================
+VoiceMenu
+	Name: String
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Start
+VoiceOutput
+	Text: Text
+DTMF_Input
+	Input type: String
+Note
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Flow
+ConditionalFlow
+	Condition: String
+InvalidInput
+	Text: Text
+Timeout
+	Text: Text
+	Timeout: String
+
+==========================
+Role Types
+==========================
+From
+To
+
+==========================
+Extra Types
+==========================
+VoiceOutput
+	Name: String
+	Documentation: Text
+
+==========================
+Bindings
+==========================
+ConditionalFlow
+	From: DTMF_Input
+	To: VoiceOutput
+Flow
+	From: Start
+	To: VoiceOutput
+Flow
+	From: VoiceOutput
+	To: DTMF_Input, VoiceOutput
+InvalidInput
+	From: DTMF_Input
+	To: VoiceOutput
+Timeout
+	From: DTMF_Input
+	To: VoiceOutput
+
+==========================
+Constraints
+==========================
+DTMF_Input may be in at most 1 InvalidInput relationship
+DTMF_Input may be in at most 1 Timeout relationship
+Start may be in at most 1 From role
+Start may occur at most 1 time
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	VoiceOutput
+		VoiceOutput
+	InvalidInput
+		VoiceOutput
+	Timeout
+		VoiceOutput
+
+==========================
+Generators
+==========================
+VoiceMenu generator
+
+==========================
+Sub-Generators
+==========================
+_DTMF_Input
+

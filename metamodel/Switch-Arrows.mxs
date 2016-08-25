@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol">
+	<librarySymbol name="Switch-Arrows">
+		<objectSymbol offset="95,45" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="95,45 111,45 111,61 95,61 95,45" targetPointX="103" targetPointY="53" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="61" version="1.2" width="111" xmlns="http://www.w3.org/2000/svg">
+				<polygon fill="rgb(0,128,128)" points="100.333,45 95,48.3333 98.556,48.3333 98.556,56.6667 102.111,53.3333 102.111,48.3333 105.667,48.3333 100.333,45 100.333,45" stroke="rgb(0,0,0)" stroke-width="1">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</polygon>
+				<polygon fill="rgb(255,255,255)" points="98.556,57.6667 107.444,57.6667 107.444,61 111,56 107.444,51 107.444,54.3333 102.111,54.3333 98.556,57.6667 98.556,57.6667" stroke="rgb(0,0,0)" stroke-width="1">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</polygon>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

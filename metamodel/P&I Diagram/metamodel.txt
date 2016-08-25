@@ -1,0 +1,220 @@
+==========================
+Graph Type
+==========================
+P&I Diagram
+	A Piping and Instrumentation Diagram (P&I Diagram) describes the piping of the process flow together with the installed equipment and instrumentation.
+	---------------------------------------------
+	System name: String
+		Mandatory name of the system.
+		---------------------------------------------
+	Description: Text
+	Use visualization: Boolean
+		Shows the model with enhanced readability.
+		---------------------------------------------
+
+==========================
+Object Types
+==========================
+Boiler
+	Boiler is a piece of equipment built for efficient heat transfer from one medium to another.
+	---------------------------------------------
+	Name: String
+		Mandatory name of the instrument.
+		---------------------------------------------
+Burner
+	Burner is used to heat the water.
+	---------------------------------------------
+	Name: String
+		Mandatory name of the instrument.
+		---------------------------------------------
+Pump
+	A pump is a device used to move fluids, such as liquids, gases or slurries. A pump displaces a volume by physical or mechanical action. A vacuum pump removes gas molecules from a sealed volume in order to leave behind a partial vacuum. A ompressor increases the pressure on a fluid to transport the fluid through a pipe.
+	---------------------------------------------
+	Name: String
+		Mandatory name of the pump.
+		---------------------------------------------
+	Pump type: String
+		Pump can be either:
+		- Regular pump: transports substance from input to output connection point
+		- Vacuum pump: with a suck and a blow connection point
+		- Venturi pump: with a suck, input and output connection point
+		---------------------------------------------
+Radiator
+	Radiator is a piece of equipment built for heat transfer from one medium (usually water) to to another (usually air).
+	---------------------------------------------
+	Name: String
+		Mandatory name of the instrument.
+		---------------------------------------------
+Sensor
+	Measure physical characteristics of the gas or fluid stream (e.g. pressure, temperature, flow). Sensor unit can connected to the pipe with one or more connection points. Flow sensors need two connection points, others need one.
+	---------------------------------------------
+	Name: String
+		Mandatory name of the sensor.
+		---------------------------------------------
+	Mounting: String
+		Location of the measurement unit can be near the process, in the control room or out of sight.
+		---------------------------------------------
+	Measured variable: String
+		Measured unit can be pressure, level, flow or temperature.
+		---------------------------------------------
+	Function: String
+		Function of the measurement unit can be either indicator, recorder, controller or transmitter.
+		
+		---------------------------------------------
+System end
+	Provides the connection with the ‘outside’ world either as source (bringing gas/fluid into the system) or as exhaust (moving gas/fluid out of the system).
+	---------------------------------------------
+	Name: String
+	Direction: String
+Thermostat
+	Thermostat specifies the values controlled by the heating application.
+	---------------------------------------------
+	Name: String
+		Mandatory name of the thermostat.
+		---------------------------------------------
+	Description: Text
+Valve
+	Valve blocks and enables the flow of gas or fluid streams. Valves can be controlled manually or eletronically.
+	---------------------------------------------
+	Name: String
+		Mandatory name of the valve.
+		---------------------------------------------
+	Number of valve ends: String
+	Valve type: String
+		Valve can be normal, manual or control valve.
+		---------------------------------------------
+	Closing by: String
+Vessel
+	Vessel can be used for a variety of functions, such as store gas or fluid temporaroly, mix of substances or exchange of physical characteristics (e.g. heat exchanger). Vessel has capacity in liter as the key attribute.
+	---------------------------------------------
+	Name: String
+		Mandatory name of the vessel.
+		---------------------------------------------
+	Capacity [Litres]: String
+		Measured in litres.
+		---------------------------------------------
+Joint
+Comment
+	Comment is used to show additional information wihtin the diagram.
+	---------------------------------------------
+	Description: Text
+
+==========================
+Relationship Types
+==========================
+Pipe
+	Pipe transports gas or fluid from one connection point to the other connection point. The transportation can be based on gravity or to difference in pressure. Pipe has diameter and lenght attributes as well as may have different covers.
+	---------------------------------------------
+	Diameter: String
+		Diameter of the pipe. Default is 10 millimeters.
+		---------------------------------------------
+	Length: String
+		Length of the pipe in millimeters.
+		---------------------------------------------
+	Cover: String
+		Specifies how the pipe is covered, being thermally insulated, jacketed, cooled or heated or without any cover.
+		---------------------------------------------
+
+==========================
+Role Types
+==========================
+Pipe
+PipeIn
+PipeOut
+
+==========================
+Extra Types
+==========================
+Heating application
+	Heating application describes the behavior of the P&I application.
+	---------------------------------------------
+	System name: String
+		Mandatory name of the system.
+		---------------------------------------------
+	Description: Text
+	Use visualization: Boolean
+		Shows the model with enhanced readability.
+		---------------------------------------------
+Heat
+
+==========================
+Bindings
+==========================
+Pipe
+0..N	PipeOut: Pump
+0..N	Pipe: Boiler, Burner, Joint, Sensor, System end, Valve, Vessel
+0..N	Pipe #(Heat): Boiler, Burner, Radiator
+0..N	PipeIn: Pump
+0..N	PipeIn #(Pump): Pump
+
+==========================
+Constraints
+==========================
+Pump may be in at most 1 PipeOut role
+Sensor may be in at most 2 Pipe roles
+System end may be in at most 1 Pipe relationship
+Property "Name" in Boiler must have unique values
+Property "Name" in Burner must have unique values
+Property "Name" in Pump must have unique values
+Property "Name" in Radiator must have unique values
+Property "Name" in Sensor must have unique values
+Property "Name" in Thermostat must have unique values
+Property "Name" in Valve must have unique values
+Property "Name" in Vessel must have unique values
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	Boiler
+		Heating application
+	Burner
+		Heating application
+	Pump
+		Heating application
+	Radiator
+		Heating application
+	Valve
+		Heating application
+
+==========================
+Generators
+==========================
+!.EXP files export
+!Doc
+!Installation
+!TwinCAT
+expFiles
+Installation Guide
+Sensor interface API
+TextualPipingDescription
+TwinCAT-autobuild
+
+==========================
+Sub-Generators
+==========================
+_APIGetSensorData
+_APISensorTransmission
+_checkEmptyNames
+_checkInstrumentUsage
+_checkRelationships
+_componentType
+_controllerStates
+_elementsInHTML
+_FB_AppSim
+_FB_Simulation
+_functionBlock
+_gName
+_homeHeatingPlatform
+_init
+_instrumentTypes
+_instrumentTypesSim
+_main
+_oName
+_PItranslators
+_simulationCalculations
+_symDirection
+_taskConfiq
+_test_main
+__LiveCheck
+

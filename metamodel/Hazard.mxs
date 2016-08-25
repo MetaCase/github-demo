@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol">
+	<librarySymbol name="Hazard">
+		<objectSymbol offset="31,11" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="31,11 51,11 51,31 31,31 31,11" targetPointX="41" targetPointY="21" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="31" version="1.2" width="51" xmlns="http://www.w3.org/2000/svg">
+				<polygon fill="none" points="41,11 31,31 51,31" stroke="rgb(0,0,0)" stroke-width="2">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</polygon>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

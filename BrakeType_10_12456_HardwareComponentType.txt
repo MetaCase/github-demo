@@ -1,0 +1,30 @@
+Graph_HardwareDesignArchitecture_user_3400132575
+BrakeType
+10_12456
+HardwareComponentType
+Graph: BrakeType <HardwareComponentType> 10_12456
+	__UUID: 2UwIhhcHQja/EeK8bHzxug
+	Type: BrakeType <NodeType>
+	Object: BrakeType <NodeType> <NodeType> 10_12473
+		__UUID: xEfsLwgATNqrvqF3kbLemA
+		Short name: BrakeType
+		Name: 
+		Description: 
+		ExecutionRate: 1.0
+	Show report: Checking
+	Show allocated prototypes: F
+	Show oid: F
+Object: Brake <IOHardwarePinIn> 10_12501
+	__UUID: 7cv4aauiTf+tqXuZS+ldyA
+	Short name: Brake
+	Name: 
+	IsGround: F
+	Type: digital
+	Description: 
+Object: LockingStatus <IOHardwarePinIn> 10_12527
+	__UUID: bWU91XuQT4qZ4zVUxrRlFg
+	Short name: LockingStatus
+	Name: 
+	IsGround: F
+	Type: digital
+	Description: Gets lock status

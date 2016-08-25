@@ -1,0 +1,13 @@
+_SafetyConstraint()
+foreach .(*SafetyConstraint) 
+{	if not ~SafetyConstraint~Failure.FaultFailure; then
+		_reportWarnings()
+		'Warning: ' id ' <' type '> does not constraint any faultfailures'
+		if $extendedCheck = 'T' then
+			' in the model ' id;1 ' <' type;1 '>. '
+		else
+			'. Create a relationship between ' type ' and FaultFailure!'
+		endif
+		newline
+	endif
+}

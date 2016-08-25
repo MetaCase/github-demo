@@ -1,0 +1,106 @@
+Report '_RSS_Application'
+'/*
+* ============================================================================
+*  Name     : ' subreport '_app' run '.rss
+*  Part of  : ' subreport '_app' run '
+*  ' subreport '_copyright' run '
+* ============================================================================
+*/
+
+//  RESOURCE IDENTIFIER
+NAME    ' foreach .Application {:Resource Identifier;} '
+
+//  INCLUDES
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.loc>
+#include <avkon.rsg>
+#include <avkon.rh>
+#include <avkon.mbg>
+
+#include "' subreport '_app' run '.hrh"
+#include "' subreport '_app' run '.loc"
+
+//  RESOURCE DEFINITIONS 
+
+RESOURCE RSS_SIGNATURE { }
+
+
+RESOURCE TBUF32 { buf=' subreport '_qtn' run 'title; }
+
+RESOURCE EIK_APP_INFO
+    {
+    status_pane = ' to '%lower' translate subreport '_r' run endto 'status_pane;
+    }
+
+//----------------------------------------------------
+//   
+//    ' to '%lower' translate subreport '_r' run endto 'status_pane
+//    status_pane_app_model
+//
+//----------------------------------------------------
+//
+RESOURCE STATUS_PANE_APP_MODEL ' to '%lower' translate subreport '_r' run endto 'status_pane
+    {
+    panes =
+        {
+        SPANE_PANE
+            {
+            id = EEikStatusPaneUidNavi;
+            type = EAknCtNaviPane;
+            resource = ' to '%lower' translate subreport '_r' run endto 'navi_decorator;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    ' to '%lower' translate subreport '_r' run endto 'navi_decorator
+//    navi_decorator
+//
+//----------------------------------------------------
+//
+RESOURCE NAVI_DECORATOR ' to '%lower' translate subreport '_r' run endto 'navi_decorator
+    {
+    type = ENaviDecoratorControlTabGroup;
+    control = TAB_GROUP
+        {
+        tab_width = EAknTabWidthWithTwoLongTabs;
+        active =0;
+        tabs = 
+            {'
+foreach .Application
+{	dowhile ~Parent View~Subview.View
+	{	newline '          TAB
+                {
+                id = E' subreport '_app' run :View name; 'Tab;
+                txt = ' subreport '_qtn' run to '%lower' translate :View name var; endto
+		if 'true' then 
+			'_tab;
+                }'
+		endif
+	','
+	}
+	newline
+	'           };' newline
+}
+'        };
+    }
+
+//----------------------------------------------------
+//   
+//    ' to '%lower' translate subreport '_r' run endto 'hotkeys
+//    Hotkeys
+//
+//----------------------------------------------------
+//
+RESOURCE HOTKEYS ' to '%lower' translate subreport '_r' run endto 'hotkeys
+    {
+    control=
+        {
+        HOTKEY { command = EAknCmdExit; key=''e''; }
+        };
+    }
+'
+endreport

@@ -1,0 +1,77 @@
+Report '_XMI classes'
+/*	Goes through Class
+*	Class get its xmi id from own oid 
+*	Classes visibility value is set to "public"
+*	Classes isRoot value is set to "false"
+*	Classes isLeaf value is set to "false"
+*	Classes isAbstract value comes from Abstract? field, if empty its set to "false"
+*	Classes as superclass role will get its id from generalization relationships oid + specialization roles oid 
+*	Classes as subclass role will get its id from generalization relationships oid + specialization roles oid 
+*	Classes as association role will get its id from association roles oid 
+*	Classes as association role (part) will get its id from part roles oid 
+*	Classes as association role will (whole) get its id from whole roles oid 
+*	Calls _XMI attributes subreport
+*	Calls _XMI operations subreport
+*/
+foreach .Class [UML]
+	{
+	'<Foundation.Core.Namespace.ownedElement>' newline
+	'<Foundation.Core.Class xmi.id = "S.' oid '">' newline
+	'<Foundation.Core.ModelElement.name>' id%xml '</Foundation.Core.ModelElement.name>' newline
+	'<Foundation.Core.ModelElement.visibility xmi.value = "public"/>' newline
+	'<Foundation.Core.GeneralizableElement.isRoot xmi.value = "false"/>' newline
+	'<Foundation.Core.GeneralizableElement.isLeaf xmi.value = "false"/>' newline
+	'<Foundation.Core.GeneralizableElement.isAbstract xmi.value = "'
+		if :Abstract?; then 'true' else 'false' endif '"/>'
+	'<Foundation.Core.Class.isActive xmi.value = "false"/>' newline
+	if  ~(); then
+		do ~Superclass
+		{ 
+			do >Generalization [UML]
+			{
+			do ~Specialization
+				{ 
+				'<Foundation.Core.GeneralizableElement.generalization>'
+				'<Foundation.Core.Generalization xmi.idref = "G.' oid;1 '_' oid '"/><!--' id '-->' newline
+				'</Foundation.Core.GeneralizableElement.generalization>'
+				}
+			}
+		}
+		do ~Specialization
+		{ 
+			do >Generalization [UML]
+			{ 
+			'<Foundation.Core.GeneralizableElement.specialization>'
+			'<Foundation.Core.Generalization xmi.idref = "G.' oid '_' oid;1 '"/><!--' id '-->' newline
+			'</Foundation.Core.GeneralizableElement.specialization>'
+			}
+		}
+		do ~Association role
+		{ 
+			'<Foundation.Core.Classifier.associationEnd>'
+			'<Foundation.Core.AssociationEnd xmi.idref = "G.' oid '"/><!--' id '-->' newline
+			'</Foundation.Core.Classifier.associationEnd>'
+		}
+		do ~Part
+		{ 
+			'<Foundation.Core.Classifier.associationEnd>'
+			'<Foundation.Core.AssociationEnd xmi.idref = "G.' oid '"/><!--' id '-->' newline
+			'</Foundation.Core.Classifier.associationEnd>'
+		}
+		do ~Whole
+		{ 
+			'<Foundation.Core.Classifier.associationEnd>'
+			'<Foundation.Core.AssociationEnd xmi.idref = "G.' oid '"/><!--' id '-->' newline
+			'</Foundation.Core.Classifier.associationEnd>'
+		}
+	endif
+	'<Foundation.Core.Classifier.feature>' newline
+	do :Attributes; 
+		{subreport '_XMI attributes' run}
+	do :Operations 
+		{subreport '_XMI operations' run}
+	'</Foundation.Core.Classifier.feature>
+	</Foundation.Core.Class>' newline newline
+	'</Foundation.Core.Namespace.ownedElement>' newline
+	}
+endreport

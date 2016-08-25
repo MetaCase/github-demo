@@ -1,0 +1,9 @@
+Report '_sym_isactive'
+do decompositions {
+	do :Type {
+		if :IsActive = 'True'; then
+			'Active'
+		endif
+	}
+}
+endreport

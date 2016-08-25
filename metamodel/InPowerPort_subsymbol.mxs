@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="InPowerPort_subsymbol">
+		<objectSymbol offset="40,30" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="42,32 58,32 58,48 42,48 42,32" targetPointX="50" targetPointY="40" usesGrid="true"></defaultConnectable>
+			<svg baseProfile="tiny" height="50" version="1.2" width="60" xmlns="http://www.w3.org/2000/svg">
+				<g fill="none" stroke="none" stroke-width="1" sym:height="16" sym:width="16" sym:x="4.2e1" sym:y="3.2e1">
+					<rect fill="rgb(224,255,224)" height="16" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="16" x="42" y="32">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<polygon fill="rgb(0,128,0)" points="44.4,34.4 44.4,45.6 55.6,40" stroke="rgb(0,128,0)" stroke-width="1">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</polygon>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+				<line stroke="rgb(255,0,0)" stroke-width="1" x1="40" x2="60" y1="30" y2="50">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</line>
+				<line stroke="rgb(255,0,0)" stroke-width="1" x1="60" x2="40" y1="30" y2="50">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</line>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

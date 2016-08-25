@@ -1,0 +1,78 @@
+Report 'Smalltalk'
+/*	Creates st-file from a class diagram according to the following rules:
+*	Uses single inheritance
+*	Documentation of classes are included into comments 
+*	Attributes and operations are listed according their type: class, instance, or class-instance
+*	Documentation of classes and their operations are generated from models
+*	Aggregation structures between classes are generated into attributes of different datatype 
+*/
+foreach .Class [UML]
+{	filename subreport '_default directory' run id '.st' write
+	'''From MetaEdit+, graph: ' id;1 '''!' newline newline
+	if ~Specialization; then
+		~Specialization>Generalization [UML]~Superclass.():Class name;
+	else 'Object' endif
+ 	' subclass: #' id newline
+ 	'	instanceVariableNames: '''
+ 	do :Attributes; {if :Scope; = 'instance' then :Name; ' ' endif }
+	do :Attributes; {if :Scope; = '' then :Name; ' ' endif}
+	do ~Whole~Part
+  	{	if :Multiplicity; = '1' 
+			then 'a' do .() {id}
+		else if :Multiplicity; = '0..1' 
+			then 'a' do .() {id}
+			else if :Multiplicity; = '' 
+				then 'a' do .() {id} 
+				else if :Ordered?; = 'T' 
+					then 'collOf' do .() {id}  's'
+					else 'setOf' do .() {id}  's'
+		endif endif endif endif
+		' '
+	}
+ 	'''' newline
+	'	classVariableNames: '''
+	do :Attributes; {if :Scope; = 'class' then :Name; ' ' endif}
+  	'''' newline
+	'	poolDictionaries: ''''' newline
+  	'	category: ''' :Package; '''!'
+	newline newline
+	id ' class'
+  	newline
+  	'	instanceVariableNames: '''
+ 	do :Attributes;
+  	{ 	if :Scope; = 'class-instance' then
+			:Name;
+	    		' '
+		endif
+ 	}
+	'''!' newline newline
+	id ' comment: '''
+	if :Documentation; then 
+		:Documentation; 
+		if ~Whole~Part; then newline endif
+	endif
+	do ~Whole~Part
+  	{	'Aggregation structure '
+		if :Multiplicity; = '1' 
+			then 'a' do .() {id} 
+		else if :Multiplicity; = '0..1' 
+			then 'a' do .() {id}
+			else if :Multiplicity; = '' 
+				then 'a' do .() {id} 
+				else if :Ordered?; = 'T' 
+					then 'collOf' do .() {id}  's'
+					else 'setOf' do .() {id}  's'
+		endif endif endif endif
+		' has been added to instance variables.'
+		newline
+	} '''!'
+   	newline newline newline
+ 	do :Operations; {if :Operation type; <> 'class' then subreport '_Smalltalk method' run endif}
+    	'"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!'
+	newline newline newline
+	do :Operations; {if :Operation type; = 'class' then subreport '_Smalltalk method' run endif}
+	''
+	newline
+	close
+}
+endreport

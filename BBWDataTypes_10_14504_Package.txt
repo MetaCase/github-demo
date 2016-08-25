@@ -1,0 +1,105 @@
+Graph_PackageModel_sysadmin_3555309892
+BBWDataTypes
+10_14504
+Package
+Graph: BBWDataTypes <Package> 10_14504
+	__UUID: EQbXO9ysRJWvc6UFPPq2sA
+	Short name: BBWDataTypes
+	Name: 
+	Description: 
+Object: MyFloat <EANumerical> 10_10594
+	__UUID: 27l5WWjuQwK0Pa07lKMlgA
+	Short name: MyFloat
+	Name: 
+	Min: 1
+	Max: 4
+	Unit: MyTimeUnit
+	Object: MyTimeUnit <Unit> 10_10622
+		__UUID: BVNCN7MGSLmdAwSa5IEARQ
+		Short name: MyTimeUnit
+		Name: 
+		Factor: 1
+		Offset: 0
+		Symbol: ms
+		Quantity: MyTimeQuantity
+		Object: MyTimeQuantity <Quantity> 10_10656
+			__UUID: r/P2/T70SbmRNPg07rPakA
+			Short name: MyTimeQuantity
+			Name: 
+			AmountOfSubstanceExp: 0
+			ElectricCurrentExp: 0
+			LengthExp: 0
+			LuminousIntensityExp: 0
+			MassExp: 0
+			ThermodynamicTemperatureExp: 0
+			TimeExp: 1
+			Description: 
+		UnitReference: 
+		Description: 
+	Description: 
+Object: MyTimeQuantity <Quantity> 10_10656
+	__UUID: r/P2/T70SbmRNPg07rPakA
+	Short name: MyTimeQuantity
+	Name: 
+	AmountOfSubstanceExp: 0
+	ElectricCurrentExp: 0
+	LengthExp: 0
+	LuminousIntensityExp: 0
+	MassExp: 0
+	ThermodynamicTemperatureExp: 0
+	TimeExp: 1
+	Description: 
+Object: AA_TorqueType <RangeableValueType> 10_10562
+	__UUID: s8iMOlwdQ+WZAAlOkpuddQ
+	Short name: AA_TorqueType
+	Name: 
+	Accuracy: 1
+	Resolution: 1
+	SignificantDigits: 3
+	BaseRangeable: MyFloat
+	Object: MyFloat <EANumerical> 10_10594
+		__UUID: 27l5WWjuQwK0Pa07lKMlgA
+		Short name: MyFloat
+		Name: 
+		Min: 1
+		Max: 4
+		Unit: MyTimeUnit
+		Description: 
+	Description: 
+Object: AA_PercentType <RangeableValueType> 10_10754
+	__UUID: uotvCne1TqebD/jaYChk/w
+	Short name: AA_PercentType
+	Name: 
+	Accuracy: 1
+	Resolution: 1.0
+	SignificantDigits: 3
+	BaseRangeable: MyFloat
+	Description: 
+Object: AA_VehicleSpeedType <RangeableValueType> 10_10810
+	__UUID: r7q2xXO6SF2tG5/xjq6VpQ
+	Short name: AA_VehicleSpeedType
+	Name: 
+	Accuracy: 1
+	Resolution: 1
+	SignificantDigits: 3
+	BaseRangeable: MyFloat
+	Description: 
+Object: AA_WheelSpeedType <RangeableValueType> 10_10866
+	__UUID: W7eM8eClSXmqqfms6f+imw
+	Short name: AA_WheelSpeedType
+	Name: 
+	Accuracy: 1
+	Resolution: 1
+	SignificantDigits: 3
+	BaseRangeable: MyFloat
+	Description: 
+Object: MyTimeUnit <Unit> 10_10622
+	__UUID: BVNCN7MGSLmdAwSa5IEARQ
+	Short name: MyTimeUnit
+	Name: 
+	Factor: 1
+	Offset: 0
+	Symbol: ms
+	Quantity: MyTimeQuantity
+	UnitReference: 
+	Description: 

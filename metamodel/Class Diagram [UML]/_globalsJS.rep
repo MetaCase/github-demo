@@ -1,0 +1,177 @@
+Report '_globalsJS'
+'// define the global variables here, and any functions needed for all WebApplication pages (including the App home page)
+
+var dbName, pageName, tableName, pageSize, 
+referredAsForeign, wholeForeign, assocForeign, allForeign, 
+fcol, i, cols, midCols, insertCols, updateCols, paramCols, mcol,
+db, rowID;
+
+// set this to true to debug SQL errors
+var debug = false;
+
+
+// define SQL debugging functions to be used as callbacks
+function dbgSqlWin(sql, args) {
+  return function (tx, response) { 
+    if (debug) console.log("SQL succeeded: " + response.rows.length + " rows." + "\n" + sql + "\n" + args); 
+  }
+}
+
+
+function dbgSqlWinThen(sql, args, callback) {
+  return function (tx, response) { 
+    if (debug) console.log("SQL succeeded: " + response.rows.length + " rows." + "\n" + sql + "\n" + args); 
+    return callback(tx, response);
+  }
+}
+
+
+function dbgSqlFail(sql, args) {
+  return function (tx, err) { 
+    if (debug) {
+      console.log("SQL failed:\n" + err.message + "\n" + sql + "\n" + args); 
+      debugger;
+    }
+  }
+}
+
+
+function dbgTxWin(sql, args) {
+  return function (tx) { 
+    if (debug) console.log("TX succeeded:\n" + sql + "\n" + args); 
+  }
+}
+
+
+function dbgTxFail(sql, args) {
+  return function (err) { 
+    if (debug) {
+      console.log("TX failed:\n" + err.message + "\n" + sql + "\n" + args); 
+      debugger;
+    }
+  }
+}
+
+
+function initDB() {
+  var success = false;
+  try { 
+    if (typeof openDatabase !== "function") throw new Error("Your browser does not support HTML5 Web SQL Database - please open the page in Chrome, Safari or Opera.");
+    db = openDatabase(dbName, "", dbName,  1 * 1024 * 1024);
+    if (db) {
+      // define utility SQL functions that are a bit more concise to call
+      // and include error logging and debugging when debug==true
+      db.execute = function(sql, args){
+        db.transaction(
+          function(tx) {
+            tx.executeSql(
+              sql, 
+              args, 
+              dbgSqlWin(sql, args), 
+              dbgSqlFail(sql, args)
+            );
+          }, 
+        dbgTxFail(sql, args), 
+        dbgTxWin(sql, args));
+      };
+      db.executeThen = function(sql, args, onSuccess){
+        db.transaction(
+          function(tx) {
+            tx.executeSql(
+              sql, 
+              args, 
+              dbgSqlWinThen(sql, args, onSuccess),
+              dbgSqlFail(sql, args)
+            );
+          }, 
+          dbgTxFail(sql, args), 
+          dbgTxWin(sql, args));
+      };
+      createDBTable(tableName, midCols);
+      success = true;
+    }
+  } catch (ex) {
+    setError("Could not open database: " + ex.message);
+  }
+  return success;
+}
+
+
+function createDBTable(_tableName, _cols) {
+  // Create the table or update the existing table
+
+  // Make the SQL for the new table schema
+  var createCols = "rowID integer PRIMARY KEY AUTOINCREMENT, ";
+  for (var i=0; i < _cols.length; i++){
+    var col = _cols[i];
+    col.elt = getElementById(col.name);
+    createCols += col.name + " " + col.datatype;
+    if (col.hasOwnProperty("defaultValue")){
+      createCols += " DEFAULT "; 
+		if (col.datatype == "integer"){
+        createCols += col.defaultValue;
+      } else {
+        createCols += "''" + col.defaultValue + "''";
+      }
+    }
+    createCols += ", ";
+  }
+  createCols += "Timestamp integer";
+  var createSql = "CREATE TABLE " + _tableName + " (" + createCols + ")";
+
+  // Check whether the table already exists
+  var oldSql = "";
+  db.executeThen("select sql from sqlite_master where name=?",[_tableName], function (tx, rs) { 
+    if (rs.rows.length>0) {
+      oldSql = rs.rows.item(0).sql; 
+    }
+    if (oldSql == "") {
+      // Create for the first time
+      db.execute(createSql);
+    } else if (oldSql == createSql){
+      // Table exists with current schema: no changes needed
+    } else {
+      // Table exists but has out of date schema: migrate contents to new schema.
+      // Copy the old table contents to a temp table then back to the new table
+      var oldCols = oldSql.slice(oldSql.indexOf("(")+1,oldSql.lastIndexOf(")"));
+      var oldColArray = oldCols.split(", ");
+      var sharedColArray = [];
+      for (var j=0; j<oldColArray.length; j++){
+        var oldColName=(oldColArray[j].split(" "))[0];
+        var match = j == 0 || j == oldColArray.length-1;
+        for (var k=0; k<_cols.length; k++){
+          if (_cols[k].name == oldColName) {
+            match = true;
+          }
+        }
+        if (match){
+          sharedColArray.push(oldColName);
+        }
+      }
+      sharedCols = sharedColArray.join();
+      db.transaction(function (tx) {
+        tx.executeSql("CREATE TEMPORARY TABLE tmp_" + oldSql.substr("CREATE TABLE ".length));
+        tx.executeSql("INSERT INTO tmp_" + _tableName + " (" +  sharedCols + ") SELECT " +  sharedCols + " FROM " + _tableName);
+        tx.executeSql("DROP TABLE " + _tableName);
+        tx.executeSql(createSql);
+        tx.executeSql("INSERT INTO " + _tableName + " (" +  sharedCols + ") SELECT " + sharedCols + " FROM tmp_" + _tableName);
+        tx.executeSql("DROP TABLE tmp_" + _tableName);
+      });
+    }
+  });
+}
+
+
+function dropDBTablesThen(tblNames, lastCallback) {
+  if (tblNames.length == 0) {
+    lastCallback();
+  } else {
+    db.executeThen("DROP TABLE " + tblNames[0], [], function () {
+      dropDBTablesThen(tblNames.slice(1), lastCallback);
+    });
+  }
+}
+
+
+'
+endreport

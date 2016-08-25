@@ -1,0 +1,4 @@
+Report '!Check'
+/* Check generator the validate the EAST-ADL FunctionalModels */
+Check()
+endreport

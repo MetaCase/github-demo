@@ -1,0 +1,5 @@
+_outdent()
+to '%removeFirst
+/^.(.*)$/ $$1'
+endto
+$indent=$indent%removeFirst

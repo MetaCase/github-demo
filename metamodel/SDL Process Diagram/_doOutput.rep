@@ -1,0 +1,7 @@
+_doOutput()
+'	OUTPUT ' :Name%var '(' :Parameters ')'
+if :To process; then 
+	' TO ' :To process%var;
+endif
+';' 
+_nextTransition()

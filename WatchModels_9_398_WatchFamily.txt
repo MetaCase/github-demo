@@ -1,0 +1,120 @@
+Graph_ClockProject_sysadmin_3150641461
+WatchModels
+9_398
+WatchFamily
+Graph: WatchModels <WatchFamily> 9_398
+	Name: WatchModels
+	Models selected for generation: 
+	Generation target platform: C#: Windows
+	MIDP Emulator: Sun
+	Language Frameworks: C# Java
+	Object: C# <Language Framework> 9_672
+		Language: C#
+		Included Components: AbstractDisplay.cs AbstractWatchApplication.cs AbstractWatchApplication.cs (C#: API) AbstractWatchApplication.cs (C#: WP 7) Alarm.cs DecompPair.cs DisplayInfo.cs Icon.cs Master.cs Master.cs (C#: API) Master.cs (C#: WP 7) METime.cs Result.cs AbstractWatchWindow.cs AbstractWatchWindow.cs (C#: WP 7) WatchCanvas.xaml WatchCanvas.xaml (C#: WP 7) WatchCanvas.xaml.cs WatchCanvas.xaml.cs (C#: WP 7) Zone.cs App.xaml App.xaml (C#: WP 7) App.xaml.cs App.xaml.cs (C#: WP 7)
+	Object: Java <Language Framework> 9_983
+		Language: Java
+		Included Components: AbstractDisplay.java AbstractDisplay.java (Java: MIDP) AbstractWatchApplet.java AbstractWatchApplet.java (Java: Android) AbstractWatchApplet.java (Java: MIDP) AbstractWatchApplication.java AbstractWatchApplication.java (Java: API) AbstractWatchApplication.java (Java: MIDP) Alarm.java DecompPair.java DisplayInfo.java Icon.java Master.java Master.java (Java: API) Master.java (Java: MIDP) METime.java Result.java WatchCanvas.java (Java: Non-mobile) WatchCanvas.java (Java: MIDP) Zone.java
+	Documentation: This is the top level diagram for the Watch Example, showing the product family of digital watches. The domain-specific modelling language used here is specifically designed for modelling watch applications. For more details see the Watch Example help, and also the GOPRR and UML projects, and Chapter 9 in "Domain-Specific Modeling", http://dsmbook.com.
+
+Each Watch relationship links to one physical Display definition and one Logical Watch defining its behavior.
+Object: X234 <Display> 9_703
+	Display name: X234
+	Icons: stopwatch timer
+	Object: stopwatch <Icon> 9_3293
+		IconID: stopwatch
+	Object: timer <Icon> 9_1352
+		IconID: timer
+	UnitZones: Zone1 Zone2 Zone3
+	Object: Zone1 <UnitZone> 9_1476
+		Zone name: Zone1
+	Object: Zone2 <UnitZone> 9_2722
+		Zone name: Zone2
+	Object: Zone3 <UnitZone> 9_709
+		Zone name: Zone3
+	Buttons: Mode Set Up Down
+	Object: Mode <Button> 9_2489
+		Button name: Mode
+	Object: Set <Button> 9_1072
+		Button name: Set
+	Object: Up <Button> 9_886
+		Button name: Up
+	Object: Down <Button> 9_1963
+		Button name: Down
+Object: X334 <Display> 9_711
+	Display name: X334
+	Icons: alarm stopwatch timer
+	Object: alarm <Icon> 9_2116
+		IconID: alarm
+	UnitZones: Zone1 Zone2 Zone3
+	Buttons: Mode Set Up Down
+Object: X032 <Display> 9_2719
+	Display name: X032
+	Icons: 
+	UnitZones: Zone1 Zone2 Zone3
+	Buttons: Mode Set
+Object: X022 <Display> 9_3154
+	Display name: X022
+	Icons: 
+	UnitZones: Zone1 Zone2
+	Buttons: Mode Set
+Object: TAST <LogicalWatch> 9_1659
+	Decomposed to: TAST <WatchApplication>
+Object: Simple <LogicalWatch> 9_1947
+	Decomposed to: Simple <WatchApplication>
+Object: TST <LogicalWatch> 9_2409
+	Decomposed to: TST <WatchApplication>
+Object: TASTW <LogicalWatch> 9_3405
+	Decomposed to: TASTW <WatchApplication>
+Object: To generate fully functional C# or Java watches from these models:
+
+1) To be able to generate, compile and execute code from the watch models, you need to have Visual Studio 2010, 2012 or 2013 or .NET 3.5 or 4.0 for C#, or JDK 7 or 8 for Java. You should specify their paths with Graph | Edit Generators, in the __Paths generator. For more information please refer to the documentation.
+
+2) Set the generation target platform in Graph | Properties... (e.g. C#: Windows, Java: Windows, Java: Linux or Java: Mac OS X).
+
+3) To build the watch models, press the "Build" button from the toolbar, or choose Graph | Generate... and "Autobuild".
+
+On Windows, Linux and Mac OS X the generated code will be compiled and executed automatically. On other platforms you have to manually compile and execute the code which is generated into the reports directory.
+
+Note also that from each WatchApplication graph, you can generate some skeleton C code with the 'C state machine' generator. This code would need linking with a real C framework for buttons etc. before it could be compiled and run. <Note [Watch]> 9_1180
+	Note text: To generate fully functional C# or Java watches from these models:
+
+1) To be able to generate, compile and execute code from the watch models, you need to have Visual Studio 2010, 2012 or 2013 or .NET 3.5 or 4.0 for C#, or JDK 7 or 8 for Java. You should specify their paths with Graph | Edit Generators, in the __Paths generator. For more information please refer to the documentation.
+
+2) Set the generation target platform in Graph | Properties... (e.g. C#: Windows, Java: Windows, Java: Linux or Java: Mac OS X).
+
+3) To build the watch models, press the "Build" button from the toolbar, or choose Graph | Generate... and "Autobuild".
+
+On Windows, Linux and Mac OS X the generated code will be compiled and executed automatically. On other platforms you have to manually compile and execute the code which is generated into the reports directory.
+
+Note also that from each WatchApplication graph, you can generate some skeleton C code with the 'C state machine' generator. This code would need linking with a real C framework for buttons etc. before it could be compiled and run.
+Object: This is the top level diagram for the Watch Example, showing the product family of digital watches. The domain-specific modelling language used here is specifically designed for modelling watch applications. For more details see the Watch Example help, and also the GOPRR and UML projects, and Chapter 9 in "Domain-Specific Modeling", http://dsmbook.com.
+
+Each Watch relationship links to one physical Display definition and one Logical Watch defining its behavior. <Note [Watch]> 9_1940
+	Note text: This is the top level diagram for the Watch Example, showing the product family of digital watches. The domain-specific modelling language used here is specifically designed for modelling watch applications. For more details see the Watch Example help, and also the GOPRR and UML projects, and Chapter 9 in "Domain-Specific Modeling", http://dsmbook.com.
+
+Each Watch relationship links to one physical Display definition and one Logical Watch defining its behavior.
+Relationship: Sporty <Watch> 9_1210
+	Model name: Sporty
+	Documentation: Sporty - a watch for an Athlete...
+  Role: Display <Display>  Object: <Display> 9_703
+  Role: LogicalWatch <LogicalWatch>  Object: <LogicalWatch> 9_2409
+Relationship: Celestron <Watch> 9_1262
+	Model name: Celestron
+	Documentation: Celestron - a watch for Him...
+  Role: Display <Display>  Object: <Display> 9_2719
+  Role: LogicalWatch <LogicalWatch>  Object: <LogicalWatch> 9_1947
+Relationship: Celestra <Watch> 9_2150
+	Model name: Celestra
+	Documentation: Celestra - a watch for Her...
+  Role: Display <Display>  Object: <Display> 9_3154
+  Role: LogicalWatch <LogicalWatch>  Object: <LogicalWatch> 9_1947
+Relationship: Delicia <Watch> 9_2630
+	Model name: Delicia
+	Documentation: Delicia - a watch for a delicate person...
+  Role: Display <Display>  Object: <Display> 9_711
+  Role: LogicalWatch <LogicalWatch>  Object: <LogicalWatch> 9_1659
+Relationship: Ace <Watch> 9_3482
+	Model name: Ace
+	Documentation: Ace Venturer - a watch for an Adventurer...
+  Role: Display <Display>  Object: <Display> 9_711
+  Role: LogicalWatch <LogicalWatch>  Object: <LogicalWatch> 9_3405

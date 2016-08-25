@@ -1,0 +1,76 @@
+Graph_Use_case_diagram_sysadmin_3019387999
+Ball Game requirements
+5_604
+Use Case Diagram
+Graph: Ball Game requirements <Use Case Diagram> 5_604
+	Model name: Ball Game requirements
+	Status: draft
+	Authors: Joe Smith
+	Object: Joe Smith <Person> 5_12069
+		Name: Joe Smith
+		E-mail: mailto:info@metacase.com
+		Contact address: www.metacase.com
+	Documentation: This model describes the use cases for the ball game application.
+Object: Player <Actor [UML]> 5_1835
+	Actor name: Player
+	Documentation: Player who plays the ball game or views the high scores.
+Object: Ball game <System [UML]> 5_7915
+	System name: Ball game
+	Documentation: 
+Object: View high scores <Use case [UML]> 5_1801
+	Use case name: View high scores
+	Attributes: 
+	Operations: 
+	Documentation file: 
+	Extension points: 
+	Documentation: Scores of the best games and stored automatically and the user can view top 10 list. The list includes scores and player names.
+Object: Play a game <Use case [UML]> 5_7895
+	Use case name: Play a game
+	Attributes: 
+	Operations: 
+	Documentation file: 
+	Extension points: 
+	Documentation: The user can play a game which a traditional ball game: player moves the paddle and tries to remove the bricks from the field by hitting them with the ball. The player has three balls per game.
+	Explode to: Ball Game behaviour - Design <Sequence Diagram>
+Relationship:  <Association [UML]> 5_6557
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Use case [UML]> 5_7895
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Actor [UML]> 5_1835
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+Relationship:  <Association [UML]> 5_9915
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Use case [UML]> 5_1801
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Actor [UML]> 5_1835
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 

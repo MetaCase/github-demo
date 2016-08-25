@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol">
+	<librarySymbol name="Class [UML] Slot">
+		<objectSymbol offset="75,30" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" targetPointX="75" targetPointY="30" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="45" version="1.2" width="180" xmlns="http://www.w3.org/2000/svg">
+				<template aligmentPointX="0.5" aligmentPointY="0.5" isMovable="false" revealConnectables="false" rotation="false" scaleFilter="0,0" subsymbolExtentX="15" subsymbolExtentY="15" useTargetpoint="false" width="1" xmlns="http://www.metacase.com/symbol">
+					<pathLayout allocation="start" layoutDistance="40" lineSegmentTable="" points="75,37.5" startDistance="0">
+						<layoutPath allocation="start" lastSelectedSegment="1" layoutDistance="99999" lineSegmentTable="true" points="0,0 15,0" startDistance="7.5"></layoutPath>
+					</pathLayout>
+					<generatorNPSource>if :Visibility = 'public' or :Visibility = 'protected' or :Visibility = 'private' then
+	type
+endif
+</generatorNPSource>
+					<librarySubsymbolSource>ReportTextSource::Visibility</librarySubsymbolSource>
+					<metaInfo></metaInfo>
+				</template>
+				<template aligmentPointX="0" aligmentPointY="0" isMovable="false" revealConnectables="true" rotation="false" scaleFilter="1,1" subsymbolExtentX="105" subsymbolExtentY="15" useTargetpoint="false" width="0" xmlns="http://www.metacase.com/symbol">
+					<pathLayout allocation="start" layoutDistance="40" lineSegmentTable="" points="75,30" startDistance="0">
+						<layoutPath allocation="start" layoutDistance="999999" lineSegmentTable="true" points="0,0 105,0" startDistance="0"></layoutPath>
+					</pathLayout>
+					<noneNPSource></noneNPSource>
+					<npSubsymbolSource></npSubsymbolSource>
+					<metaInfo></metaInfo>
+				</template>
+				<rect fill="none" height="15" rx="0" ry="0" stroke="none" stroke-width="1" width="105" x="75" y="30">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</rect>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

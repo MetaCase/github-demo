@@ -1,0 +1,60 @@
+_validatePackageForEAXML()
+variable 'packages_visited' append oid ' ' close
+@path = ' '
+foreach .( * | ^Comment | ^Generic* | ^User* ) {
+	if @path =~ id%var%wildsp; then
+		_reportWarnings()
+		'Warning: ' :Short name;1 ' <' type;1 '> contains several elements with the same name/identifier ' id newline
+	else
+		local 'path' append id%var ' ' close
+	endif
+	do decompositions {
+		if not $visited =~ oid%wildsp then
+			variable 'visited' append oid ' ' close
+			if (type = 'AnalysisFunctionType') or (type = 'DesignFunctionType') or (type = 'HardwareComponentType') then
+				_validateNamingForEAXML()
+			else
+				if type = 'Package' then 
+					_validatePackageForEAXML()
+				else
+					subreport '_checkEAXMLPath' type run
+				endif
+			endif
+		else
+			if type = 'Package' then
+				_reportWarnings()
+				'Warning: Recursive package structure found for package ' id newline
+			else 
+				if type = 'SystemModel' then
+					_reportWarnings()
+					'Warning: Several packages, like ' id;2 ' refer to the same system model ' id newline
+				endif
+			endif
+		endif
+	}
+}
+
+foreach .EAType {
+	do decompositions {
+		if not $visited =~ oid%wildsp then
+			variable 'visited' append oid ' ' close
+			if type = 'AnalysisFunctionType' or type = 'DesignFunctionType' then
+				@fname = :FunctionName;
+				if @path =~ @fname%wildsp; then
+					_reportWarnings()
+					'Warning: ' id;1 ' contains several elements with the same name ' :FunctionName; newline
+				endif
+				local 'path' append @fname ' ' close
+			endif
+			if type = 'HardwareComponentType' then
+				do :Type { @hwname = :Short name; }
+				if @path =~ @hwname%wildsp; then
+					_reportWarnings()
+					'Warning: ' id;1 ' contains several elements with the same name ' do :Type { :Short name; } newline
+				endif
+				local 'path' append @fname ' ' close
+			endif
+			_validateNamingForEAXML()
+		endif
+	}
+}

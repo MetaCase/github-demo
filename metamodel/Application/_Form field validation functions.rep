@@ -1,0 +1,9 @@
+Report '_Form field validation functions'
+/* Produce form field validation functions */
+if :Form mode; =  'Edit' then
+	if :Save validation; <> '' then 
+		'	def validate(list):' newline
+		do :Save validation; {'		' id newline}
+	endif
+endif
+endreport

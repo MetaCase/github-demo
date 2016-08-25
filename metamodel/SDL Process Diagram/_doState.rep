@@ -1,0 +1,6 @@
+_doState()
+'STATE ' :State name;%SDLvar
+_nextTransition()
+newline
+'ENDSTATE ' :State name;%SDLvar ';'	
+newline newline

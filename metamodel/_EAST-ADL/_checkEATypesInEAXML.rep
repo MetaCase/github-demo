@@ -1,0 +1,19 @@
+_checkEATypesInEAXML()
+if type = 'AnalysisFunctionType' or type = 'DesignFunctionType' or type = 'HardwareComponentType' then
+	foreach .(*Prototype) {
+		do decompositions {
+			if not $TypesInEAXML =~ oid%wildsp and not $ReportedTypeDefsErrors =~ oid%wildsp then
+				variable 'ReportedTypeDefsErrors' append oid ' ' close
+				_reportWarnings()
+				'Warning: ' id ' <' type '> is not defined in any package' newline
+				_checkPrototypesInEAXML()
+			endif 
+		}
+	}
+	
+endif
+
+if type = 'AnalysisFunctionType' or type = 'DesignFunctionType' then
+	variable 'typesChecked' append oid ' ' close
+	_EAXML_CheckDataTypesInFunctionTypes()				
+endif

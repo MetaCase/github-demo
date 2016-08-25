@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="HardwareFunctionType_Icon">
+		<objectSymbol offset="90,40" scaleFilter="0,0">
+			<defaultConnectable isSticky="true" points="90,40 110,40 110,50 90,50 90,40" targetPointX="100" targetPointY="45" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="50" version="1.2" width="110" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<linearGradient gradientUnits="objectBoundingBox" id="gradient1" sym:correctGamma="true" x1="0.5" x2="0.5" y1="0.1" y2="1.1">
+						<stop offset="0" stop-color="rgb(160,32,224)"></stop>
+						<stop offset="1" stop-color="rgb(255,255,255)"></stop>
+					</linearGradient>
+				</defs>
+				<rect fill="url(#gradient1)" height="10" rx="0" ry="0" stroke="rgb(0,0,0)" stroke-width="1" width="16" x="94" y="40">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</rect>
+				<rect fill="none" height="10" rx="0" ry="0" stroke="none" stroke-width="1" width="4" x="90" y="40">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</rect>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

@@ -1,0 +1,10 @@
+_LegalTypePath()
+/* Checks that type-prototype path within a package hierarchy is not cyclic */
+local 'path' write ' ' oid ' ' close /* path variable contains all the accessed graph oids separated with whitespace */
+$cycleReported = ''
+
+foreach .(Package | SystemModel | *Prototype | EAType | RequirementsRelationshipGroup) 
+{	do decompositions 
+	{ 	_LegalTypePathNext(@path) /* navigates the hierarchy further */ }
+}
+

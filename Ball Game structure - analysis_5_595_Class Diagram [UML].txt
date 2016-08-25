@@ -1,0 +1,169 @@
+Graph_Class_diagram__UML__sysadmin_3019387957
+Ball Game structure - analysis
+5_595
+Class Diagram [UML]
+Graph: Ball Game structure - analysis <Class Diagram [UML]> 5_595
+	Model name: Ball Game structure - analysis
+	Status: draft
+	Authors: Joe Smith
+	Object: Joe Smith <Person> 5_12069
+		Name: Joe Smith
+		E-mail: mailto:info@metacase.com
+		Contact address: www.metacase.com
+	Documentation: Preliminary classes of the game are identified.
+Object: Paddle <Class [UML]> 5_1495
+	Class name: Paddle
+	Attributes: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: T
+Object: Wall <Class [UML]> 5_1519
+	Class name: Wall
+	Attributes: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: T
+Object: Ball <Class [UML]> 5_10925
+	Class name: Ball
+	Attributes: +position
+	Object: +position <Attribute [UML]> 5_13695
+		Name: position
+		Data type: 
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: The ball must include location informtion.
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Brick <Class [UML]> 5_10944
+	Class name: Brick
+	Attributes: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: T
+Object: BallGame <Class [UML]> 5_10964
+	Class name: BallGame
+	Attributes: 
+	Operations: 
+	Package: 
+	Abstract?: T
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: T
+Object: This model describes the class structure of the game identified in the analysis phase. <Note text> 5_5515
+	Note text: This model describes the class structure of the game identified in the analysis phase.
+	Stereotype: 
+Relationship:  <Aggregation> 5_2393
+	Association name: 
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_1519
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 5_10964
+	Multiplicity: 
+	Composition?: F
+Relationship:  <Aggregation> 5_6254
+	Association name: 
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_10925
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 5_10964
+	Multiplicity: 
+	Composition?: F
+Relationship:  <Aggregation> 5_9606
+	Association name: 
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_1495
+	Role name: 
+	Multiplicity: 
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 5_10964
+	Multiplicity: 
+	Composition?: F
+Relationship:  <Aggregation> 5_12992
+	Association name: 
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_10944
+	Role name: 
+	Multiplicity: *
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+  Role:  <Whole>  Object: <Class [UML]> 5_1519
+	Multiplicity: 
+	Composition?: F

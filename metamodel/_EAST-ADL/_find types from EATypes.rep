@@ -1,0 +1,14 @@
+_find\ types\ from\ EATypes()
+/* Collects variable packaged_types containing all accessed type, prototypes via the EAType */
+if not $packaged_types =~ oid%wildsp then
+	variable 'packaged_types' append oid ' ' close
+	foreach .() {
+		if type =~ '*Prototype' then
+			variable 'packaged_types' append oid ' ' close
+			do decompositions { subreport '_find types from EATypes' run }
+		endif
+		if (type =~'*Port') OR (type =~ '*Pin*') then 
+			variable 'packaged_types' append oid ' ' close
+		endif
+	}
+endif

@@ -1,0 +1,13 @@
+_collectAllPackagedRequirements()
+/* Creates a variable listing all the packaged Requirements */
+foreach .(*Requirement | Package)
+{	if type =~ '*Requirement' then
+		if not $requirementsInThisPackageHiearchy =~ oid%wildsp then
+			variable 'requirementsInThisPackageHiearchy' append oid ' ' close
+		endif
+	else
+		if type = 'Package' then
+			do decompositions { _collectAllPackagedRequirements() }
+		endif
+	endif
+}

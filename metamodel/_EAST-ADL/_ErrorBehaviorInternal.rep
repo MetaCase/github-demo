@@ -1,0 +1,61 @@
+_ErrorBehaviorInternal()
+/* no incoming ports, have just internal error */
+'		<object id="_IFP' oid '" type="Object_InternalFaultPrototype_user_3548398352">
+			<slot name="Short name">
+				<value>
+					<string>':FunctionName '_VariableCorrupted</string>
+				</value>
+			</slot>
+		</object>
+'
+foreach .(OutFlowPort | ClientPort) {
+'		<binding id="_b' oid '">
+			<relationship type="Relationship_reference_sysadmin_3524947284"></relationship>
+			<connection id="1">
+				<role type="Role_FailureKind_sysadmin_3627561116">
+					<slot name="Short name">
+						<value>
+							<string>O</string>
+						</value>
+					</slot>
+					<slot name="Name">
+						<value>
+							<string>' id '_OmissionFailure</string>
+						</value>
+					</slot>
+				</role>
+				<object href="#_IFP' oid;1 '"></object>
+			</connection>
+			<connection id="2">
+				<role type="Role_refer_to_sysadmin_3524947529"></role>
+				<object href="#_' oid '"></object>
+			</connection>
+		</binding>' newline
+}
+
+'		<diagram displayGrid="false" grid="10,10" timeStamp="" useGrid="true" xmlns="http://www.metacase.com/gxlGOPRRRepr">
+			<graph href="#_'oid '" xmlns="http://www.metacase.com/gxlGOPRR"></graph>' newline
+foreach .(OutFlowPort | ClientPort ) {
+'			<objectRepr id="_r' oid '" place="' x ',' y '">
+				<object href="#_' oid'" xmlns="http://www.metacase.com/gxlGOPRR"></object>
+			</objectRepr>' newline
+}
+
+/* internal faults */
+'			<objectRepr id="_rIFP' oid '" place="150,50">
+				<object href="#_IFP' oid '" xmlns="http://www.metacase.com/gxlGOPRR"></object>
+			</objectRepr>' newline			
+
+foreach  .(OutFlowPort | ClientPort) {
+'			<bindingRepr isStraight="true" oid="_br' oid '" place="300,200">
+				<binding href="#_b' oid '" xmlns="http://www.metacase.com/gxlGOPRR"></binding>
+				<connectionRepr id="1">
+					<objectRepr href="#_rIFP' oid;1 '"></objectRepr>
+				</connectionRepr>
+				<connectionRepr id="2">
+					<objectRepr href="#_r' oid '"></objectRepr>
+				</connectionRepr>
+			</bindingRepr>' newline 
+}
+'		</diagram>
+' 

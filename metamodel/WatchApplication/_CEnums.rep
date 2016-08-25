@@ -1,0 +1,14 @@
+Report '_CEnums'
+	'typedef enum { Start, '
+	foreach .State [Watch];
+	{	id ', '
+	}
+	'Stop } States;'
+	newline
+	'typedef enum { None'
+	foreach .Button
+	{	', ' id 
+	}
+	' } Buttons;'
+	newline newline
+endreport

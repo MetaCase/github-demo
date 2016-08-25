@@ -1,0 +1,42 @@
+Report '_proxy and lookup relationships'
+/* Proxy */
+foreach .proxy 
+{	do ~From>next_element proxy
+{	do ~From;1>next_element proxy
+{	
+if oid <> oid;1 then
+	if :name; = :name;1 then
+		variable 'proxy_overlapping_values' append :name; newline close
+	endif
+endif
+}
+}
+do $proxy_overlapping_values where id <>'' unique id {
+	variable 'warnings_found' append '+1' close
+	'Warning: Proxy ' id;1 ' has overlapping flow values: ' 
+	dowhile ~From;1>next_element proxy; where :name = id;1
+	{	:name ', '
+	}
+	newline}
+}
+
+/* Lookup */
+foreach .lookup 
+{	do ~From>next_element lookup
+{	do ~From;1>next_element lookup
+{	
+if oid <> oid;1 then
+	if :name; = :name;1 then
+			variable 'lookup_overlapping_values' append :name; newline close
+	endif
+endif
+}
+}
+do $lookup_overlapping_values where id <>'' unique id {
+	variable 'warnings_found' append '+1' close
+	'Warning: Lookup ' id;1 ' has overlapping flow values: ' 
+	dowhile ~From;1>next_element lookup; where :name = id;1
+	{	:name ', '
+	}
+	newline}}
+endreport

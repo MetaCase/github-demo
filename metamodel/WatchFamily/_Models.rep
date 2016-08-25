@@ -1,0 +1,15 @@
+Report '_Models'
+/* This report and its subreports generate the framework source code */
+if :Generation target platform; =~ 'C#*' then
+	$lang = 'Cs'
+else
+	$lang = 'Java'
+endif
+
+$cr=''
+
+do _WatchesToGenerate()
+{	subreport '_' $lang '_Watch' run 
+}
+
+endreport

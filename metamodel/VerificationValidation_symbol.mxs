@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="VerificationValidation_symbol">
+		<objectSymbol offset="41,20" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" points="41,20 60,20 60,39 41,39 41,20" targetPointX="50.5" targetPointY="29.5" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="39" version="1.2" width="60" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<radialGradient cx="0.37" cy="0.642857" gradientUnits="objectBoundingBox" id="gradient1" r="0.715508" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="0.649419" stop-color="rgb(0,0,255)"></stop>
+						<stop offset="1" stop-color="rgb(0,0,128)"></stop>
+					</radialGradient>
+					<radialGradient cx="0.37" cy="0.642857" gradientUnits="objectBoundingBox" id="gradient2" r="0.715508" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,255)"></stop>
+						<stop offset="0.649419" stop-color="rgb(0,0,255)"></stop>
+						<stop offset="1" stop-color="rgb(0,0,128)"></stop>
+					</radialGradient>
+				</defs>
+				<polygon fill="url(#gradient1)" points="42.5,20 41.5,20 41,20.8572 45.35,39 46.3,39 52,25.4286 52,22.7143 51.05,20 50.1,20 46.11,32.4857 44.4,25.4286" stroke="rgb(0,0,0)" stroke-width="1">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</polygon>
+				<polygon fill="url(#gradient2)" points="50.5,20 49.5,20 49,20.8572 53.35,39 54.3,39 60,25.4286 60,22.7143 59.05,20 58.1,20 54.11,32.4857 52.4,25.4286" stroke="rgb(0,0,0)" stroke-width="1">
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</polygon>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

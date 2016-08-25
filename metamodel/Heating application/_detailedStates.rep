@@ -1,0 +1,35 @@
+_detailedStates()
+'ACTION ' _gName() '_SM_rg:' newline newline
+
+'(* ' id ' state machine generated from MetaEdit+ *)' newline
+if :Description; then '(* ' :Description ' *)' newline; endif
+
+_setSMvariables()
+
+'CASE '_gName()'_SM_eCurrentState OF' newline newline
+
+_initialState()
+
+foreach .State {
+	'	MDL_'id;1%firstUpper%var'_SM_'id%var%upper':' newline newline
+	do  >Entry action {
+		'		IF MDL_' id;2%firstUpper%var'_SM_bIsEntry THEN' 
+		_stateAction();	
+		'		END_IF' newline newline
+	}
+	
+	_transition()
+	
+	do  >Exit action {
+		'		IF MDL_' id;2%firstUpper%var'_SM_bATransitionWasPerformed THEN' 
+			_stateAction();	
+		'		END_IF' newline newline
+	}
+}
+'	ELSE
+		F_Assert(FALSE, ''Wrong ' _gName()'_SM_rg state identifier'');
+		
+END_CASE
+
+END_ACTION
+'

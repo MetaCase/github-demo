@@ -1,0 +1,84 @@
+==========================
+Graph Type
+==========================
+System/Entity Matrix
+	System/Entity Matrix identifies connections between data classes, i.e. entities, and systems. Hence, it shows what information belong to certain systems. Objects of this method are 'system' and 'entity' and a relationship called 'usage'.
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+System
+	System specify either manual or computer based systems that are available in the company or that are planned. Examples of systems are invoicing system or customer order entry.
+	---------------------------------------------
+	Name: String
+	Documentation: Text
+Entity
+	Entities are objects about which the system stores information. Examples of entities are 'order', 'customer' and 'worker'. An entity is represented by a solid rectangle with a name inside it. Entity has two properties: name and documentation. An entity name is reserved for entering the identifying name of the entity and documentation for entering additional information about entity.
+	---------------------------------------------
+	Entity name: String
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Usage
+	Usage identifies relationships between systems and entities. It has label as property.
+	---------------------------------------------
+	Relationship name: String
+
+==========================
+Role Types
+==========================
+Data class part
+System part
+
+==========================
+Extra Types
+==========================
+Entity Relationship Diagram
+	Entity Relationship Diagrams are used to specify the data structures of the system, e.g. to model the contents of the data stores in more detail. 
+	
+	The objects in this method are 'entity' and 'attribute'. Entities can be related to each other with 'relationship'.
+	
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+_Business Systems Planning
+_Structured Analysis and Design
+Person
+	Person is used to describe developers involved in a project (i.e. attached to the project model) and authors of developed models. Person can be characterized with a name, e-mail address, and with a contact address. 
+	---------------------------------------------
+	Name: String
+	E-mail: String
+	Contact address: Text
+
+==========================
+Bindings
+==========================
+Usage
+	Data class part: Entity
+	System part: System
+Usage
+	System part: System
+	Data class part: Entity
+
+==========================
+Constraints
+==========================
+Property "Entity name" in Entity must have unique values
+Property "Name" in System must have unique values
+
+==========================
+Subgraphs
+==========================
+Explosions:
+	Entity
+		Entity Relationship Diagram
+

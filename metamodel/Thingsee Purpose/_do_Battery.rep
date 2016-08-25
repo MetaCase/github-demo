@@ -1,0 +1,21 @@
+_do_Battery()
+@sep = ''
+
+'                  "thresholds": {' 
+if :Trigger if battery over \(\%\); = '' and :Trigger if battery under \(\%\); = '' then
+	newline
+	'                    "isAny": true'
+else 
+	if :Trigger if battery over \(\%\); <> '' then
+		newline
+		'                    "isGt": ' :Trigger if battery over \(\%\); 
+		@sep = ','
+	endif
+	if :Trigger if battery under \(\%\); <> '' then
+		@sep newline
+		'                    "isLt": ' :Trigger if battery under \(\%\); 
+	endif
+endif
+newline
+'                  }
+'

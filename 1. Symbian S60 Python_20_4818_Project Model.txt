@@ -1,0 +1,22 @@
+Graph_Project_Model_sysadmin_3084195615
+1. Symbian S60 Python
+20_4818
+Project Model
+Graph: 1. Symbian S60 Python <Project Model> 20_4818
+	Project name: 1. Symbian S60 Python
+	Status: 
+	Project manager: 
+	Authors: 
+	Documentation: The Graphs in this Project Model demonstrate the modeling of applications for mobile phones, as described in Chapter 8 of the book "Domain-Specific Modeling", http://dsmbook.com. A short introduction is provided as a PDF file in the main MetaEdit+ help index.
+Object: Application: Conference registration <Graph> 20_4834
+	Decomposed to: Conference registration <Application>
+Object: Application: Calculate <Graph> 20_4837
+	Decomposed to: Calculate <Application>
+Object: Application: Route Service <Graph> 20_4840
+	Decomposed to: Route Service <Application>
+Object: Application: Restaurant finder <Graph> 20_4843
+	Decomposed to: Restaurant finder <Application>
+Object: Application: HelloWorld <Graph> 20_4846
+	Decomposed to: HelloWorld <Application>
+Object: The Graphs in this Project Model demonstrate the modeling of applications for mobile phones, as described in Chapter 8 of the book "Domain-Specific Modeling", http://dsmbook.com. A short introduction is provided as a PDF file in the main MetaEdit+ help index. <Note> 20_5049
+	Documentation: The Graphs in this Project Model demonstrate the modeling of applications for mobile phones, as described in Chapter 8 of the book "Domain-Specific Modeling", http://dsmbook.com. A short introduction is provided as a PDF file in the main MetaEdit+ help index.

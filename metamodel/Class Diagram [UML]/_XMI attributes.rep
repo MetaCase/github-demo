@@ -1,0 +1,30 @@
+Report '_XMI attributes'
+/*	Attribute will get its id from attribute oid + classes oid
+*	visibility value comes from visibility field otherwise its set to "public"
+*	ownerScope value comes from scope field, if empty its set to "instance"
+*	multiplicity value is set to "1..1"
+*	changeable value is set to "none"
+*	targetScope value is set to "instance"
+*	data type value id comes from Data type fields oid + Classes oid 
+*/
+'<Foundation.Core.Attribute xmi.id = "S.' oid '_' oid;1 '">' newline
+'<Foundation.Core.ModelElement.name>' :Name;%xml '</Foundation.Core.ModelElement.name>' newline
+'<Foundation.Core.ModelElement.visibility xmi.value = "' :Visibility; '"/>'
+'<Foundation.Core.Feature.ownerScope xmi.value = "' 
+if :Scope; ='instance' 
+	then :Scope;
+	else 'classifier'
+endif
+'"/>' newline
+'<Foundation.Core.StructuralFeature.multiplicity>1..1</Foundation.Core.StructuralFeature.multiplicity>' newline
+'<Foundation.Core.StructuralFeature.changeable xmi.value = "none"/>' newline
+'<Foundation.Core.StructuralFeature.targetScope xmi.value = "instance"/>' newline
+'<Foundation.Core.Attribute.initialValue><Foundation.Data_Types.Expression/></Foundation.Core.Attribute.initialValue>' newline
+'<Foundation.Core.StructuralFeature.type><Foundation.Core.DataType ' newline
+	if :Data type; then
+		'xmi.idref ="G.' :Data type;%xml oid '_' oid;1 '"'
+	endif
+	'/>' newline
+'</Foundation.Core.StructuralFeature.type>' newline
+'</Foundation.Core.Attribute>' newline
+endreport

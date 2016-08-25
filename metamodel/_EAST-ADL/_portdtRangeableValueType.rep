@@ -1,0 +1,41 @@
+_portdtRangeableValueType()
+'					<object id="_'oid'" type="Object_RangeableValueType_sysadmin_3536997383">
+						<slot name="Short name">
+							<value>
+								<string>Err' :Short name%xml '</string>
+							</value>
+						</slot>
+						<slot name="Name">
+							<value>
+								<string>' :Name%xml '</string>
+							</value>
+						</slot>												
+						<slot name="Accuracy">
+							<value>
+								<string>' :Accuracy%xml '</string>
+							</value>
+						</slot>
+						<slot name="Resolution">
+							<value>
+								<string>' :Resolution%xml '</string>
+							</value>
+						</slot>
+						<slot name="SignificantDigits">
+							<value>
+								<string>' :SignificantDigits%xml '</string>
+							</value>
+						</slot>
+						<slot name="BaseRangeable">
+							<value>'
+								do :BaseRangeable {
+									if not $reportedDatatypes  =~ oid%wildsp then
+										variable 'reportedDatatypes' append oid ' ' close
+										subreport '_portdt' type run 
+									else
+										'<object href="#_' oid '"></object>'
+									endif
+								}	
+							'</value>
+						</slot>
+					</object>
+'

@@ -1,0 +1,18 @@
+_out_And()
+
+@ins='0'
+@in1=@in2='0'
+do .()~() 
+{	if #():Direction = 'in' then
+		local 'in' @++ins write
+			do ~()
+			{	subreport '_out_' do .() { type } run
+			}
+		close
+	endif
+}
+if @in1='1' and @in2='1' then
+	'1'
+else
+	'0'
+endif

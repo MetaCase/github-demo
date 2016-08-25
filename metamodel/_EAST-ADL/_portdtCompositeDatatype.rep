@@ -1,0 +1,47 @@
+_portdtCompositeDatatype()
+'					<object id="_'oid'" type="Object_CompositeDatatype_sysadmin_3536998574">
+						<slot name="Short name">
+							<value>
+								<string>Err' :Short name%xml '</string>
+							</value>
+						</slot>
+						<slot name="Name">
+							<value>
+								<string>' :Name%xml '</string>
+							</value>
+						</slot>												
+						<slot name="DatatypePrototypes">
+							<value>
+								<seq>'
+								do :DatatypePrototypes {
+									'<object oid="_'oid'" type="Object_EADatatypePrototype_sysadmin_3536998910">
+										<slot name="Short name">
+											<value>
+												<string>' :Short name%xml '</string>
+											</value>
+										</slot>
+										<slot name="Name">
+											<value>
+												<string>' :Name%xml '</string>
+											</value>
+										</slot>																
+										<slot name="Type">
+											<value>'
+											do :Type {
+												if not $reportedDatatypes  =~ oid%wildsp then
+													variable 'reportedDatatypes' append oid ' ' close
+													subreport '_portdt' type run 
+												else
+													'<object href="#_' oid '"></object>' newline
+												endif
+											}	
+											'</value>
+										</slot>
+									</object>
+									'
+								}
+'								</seq>
+							</value>
+						</slot>
+					</object>
+'

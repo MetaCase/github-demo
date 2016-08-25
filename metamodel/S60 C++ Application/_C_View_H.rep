@@ -1,0 +1,98 @@
+Report '_C_View_H'
+filename
+	subreport '_default directory' run 
+	'inc\' 
+	subreport '_app' run 
+	id 'View.h'
+write
+'/*
+* ============================================================================
+*  Name     : C' subreport '_app' run id 'View from CAknView
+*  Part of  : ' subreport '_app' run '
+*  ' subreport '_copyright' run '
+* ============================================================================
+*/
+
+#ifndef ' to '%upper' translate subreport '_app' run id endto 'VIEW_H
+#define ' to '%upper' translate subreport '_app' run id endto 'VIEW_H
+
+// INCLUDES
+#include <aknview.h>
+
+
+// CONSTANTS
+// UID of view
+const TUid K' id 'ViewId = {' :View id; '};
+
+// FORWARD DECLARATIONS
+class C' subreport '_app' run id 'Container;
+
+// CLASS DECLARATION
+
+/**
+*  C' subreport '_app' run id 'View view class.
+* 
+*/
+class C' subreport '_app' run id 'View : public CAknView
+    {
+    public:
+
+    public: // Constructors and destructor
+
+        /**
+        * EPOC default constructor.
+        * @param aResId Resource ID used to create the view
+        */
+        void ConstructL(TInt aResId);
+
+        /**
+        * Destructor.
+        */
+        virtual ~C' subreport '_app' run id 'View();
+
+    public: // Functions from base classes
+        
+        /**
+        * From CAknView, return Uid.
+        * @return Uid Uid value
+        */
+        TUid Id() const;
+
+        /**
+        * From CAknView, takes care of command handling.
+        * @param aCommand Command
+        */
+        void HandleCommandL(TInt aCommand);
+
+    private:
+'
+subreport '_C_View_Headers' run 
+'
+    private:
+
+        /**
+        * From CAknExView, activate an AknView.
+        * @param aPrevViewId Specified TVwsViewId
+        * @param aCustomMessageId Specified TUid
+        * @param aCustomMessage Specified TDesC8
+        */
+        void DoActivateL(const TVwsViewId& aPrevViewId,TUid aCustomMessageId,
+            const TDesC8& aCustomMessage);
+
+        /**
+        * From AknView, deactivate an AknView
+        */
+        void DoDeactivate();
+
+    public:
+
+    private: // Data
+        C' subreport '_app' run id 'Container* iContainer;
+    };
+
+#endif    // ' to '%upper' translate subreport '_app' run id endto 'VIEW_H
+
+// End of File
+'
+close
+endreport

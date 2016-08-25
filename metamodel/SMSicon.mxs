@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbolLibrary xmlns="http://www.metacase.com/symbol" xmlns:sym="http://www.metacase.com/symbol">
+	<librarySymbol name="SMSicon">
+		<objectSymbol offset="35,35" scaleFilter="1,1">
+			<defaultConnectable isSticky="true" targetPointX="50" targetPointY="30" usesGrid="false"></defaultConnectable>
+			<svg baseProfile="tiny" height="55" version="1.2" width="65" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<radialGradient cx="0.5" cy="0.5" gradientUnits="objectBoundingBox" id="gradient1" r="0.707107" sym:correctGamma="true" sym:fillType="PathFill">
+						<stop offset="0" stop-color="rgb(255,255,64)"></stop>
+						<stop offset="1" stop-color="rgb(255,255,224)"></stop>
+					</radialGradient>
+				</defs>
+				<g fill="none" stroke="none" stroke-width="1" sym:height="20" sym:width="30" sym:x="3.5e1" sym:y="3.5e1">
+					<rect fill="rgb(213,213,213)" height="19.2771" rx="6" ry="4" stroke="rgb(213,213,213)" stroke-width="1" width="29.3233" x="35.6767" y="35.7229">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<rect fill="url(#gradient1)" height="19.2771" rx="6" ry="4" stroke="rgb(64,64,64)" stroke-width="1" width="29.3233" x="35" y="35">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</rect>
+					<path d="M37.2556,37.4096 L43.4587,42.3795 L49.6617,44.6386 L55.8647,42.3795 L62.0677,37.4096" fill="none" stroke="rgb(128,128,128)" stroke-width="1" sym:controlPoints="37.2556,37.4096 49.6617,44.6386 62.0677,37.4096">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</path>
+					<line stroke="rgb(128,128,128)" stroke-width="1" x1="39.5113" x2="46.7293" y1="49.4578" y2="44.1566">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<line stroke="rgb(128,128,128)" stroke-width="1" x1="59.812" x2="51.9173" y1="49.4578" y2="44.1566">
+						<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+					</line>
+					<metaInfo xmlns="http://www.metacase.com/symbol"></metaInfo>
+				</g>
+			</svg>
+		</objectSymbol>
+	</librarySymbol>
+</symbolLibrary>

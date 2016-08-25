@@ -1,0 +1,11 @@
+Report '_doText'
+
+do :Text fragments
+{
+	'	Say  '  :Start address;  '  '  :Length  '   '''
+	:Label  ''''  newline
+}
+
+subreport '_followFlow' run
+
+endreport

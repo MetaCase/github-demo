@@ -1,0 +1,15 @@
+Report '_checkings for the graph'
+/* Checkings for the model */
+if not id; then
+	_reportWarnings()
+	'Warning: There is no identifier for model <' type '>' newline
+else
+	do :Type 
+	{
+		if not :Short name; =/ '[a-zA-Z]([a-zA-Z0-9]|_[a-zA-Z0-9])*_?' then
+			_reportWarnings()
+			'Warning: There are illegal character(s) in graph''s name ' :Short name; ' <' type '>' newline
+		endif
+	}
+endif
+endreport

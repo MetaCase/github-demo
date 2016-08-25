@@ -1,0 +1,14 @@
+Report '_Cs_Watch_Xaml_for_Windows'
+'<?xml version="1.0" encoding="UTF-8"?>
+<src:AbstractWatchWindow x:Class="Digital_watch.' :Model name; '"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:src="clr-namespace:Digital_watch"
+        xmlns:local="clr-namespace:Digital_watch"
+        Title="' :Model name; '" Height="300" Width="300">
+    <Grid>
+        <local:WatchCanvas x:Name="WatchCanv" />
+    </Grid>
+</src:AbstractWatchWindow>
+'
+endreport

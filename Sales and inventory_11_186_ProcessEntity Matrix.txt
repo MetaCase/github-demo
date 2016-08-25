@@ -1,0 +1,165 @@
+Graph_Process_Entity_Matrix_user_3013235724
+Sales and inventory
+11_186
+Process/Entity Matrix
+Graph: Sales and inventory <Process/Entity Matrix> 11_186
+	Model name: Sales and inventory
+	Status: draft
+	Authors: David Hill
+	Object: David Hill <Person> 11_3854
+		Name: David Hill
+		E-mail: mailto:info@metacase.com
+		Contact address: Park Court
+Upper Essex Street
+City 5
+B8 6QB
+	Documentation: Sales and inventory was made by DH 5.5.2006
+Object: Customer service <Business process> 11_606
+	Name: Customer service
+	Type: services
+	Value adding: 
+	Costs: 
+	Documentation: 
+Object: Unpack <Business process> 11_608
+	Name: Unpack
+	Type: 
+	Value adding: 
+	Costs: 
+	Documentation: 
+Object: Receiving <Business process> 11_2055
+	Name: Receiving
+	Type: inbound
+	Value adding: 
+	Costs: 
+	Documentation: Two persons are responsible for making rough check for goods delivered and receive them.
+
+Object: Acquisition <Business process> 11_2774
+	Name: Acquisition
+	Type: inbound
+	Value adding: 
+	Costs: 
+	Documentation: Acquisition takes care of ordering the products to the company's own inventories when it's needed.
+Object: Priority check <Business process> 11_2848
+	Name: Priority check
+	Type: operation
+	Value adding: 
+	Costs: 
+	Documentation: 
+Object: Forwarding <Business process> 11_4082
+	Name: Forwarding
+	Type: outbound
+	Value adding: 
+	Costs: 
+	Documentation: Forwarding process take care of purchasing the products from abroad.
+Object: Buy-order <Entity> 11_313
+	Entity name: Buy-order
+	Documentation: Sale department can do a new buy-order, when the "do buy order"-level of has been achieved.
+	Explode to: Orders and products <Entity Relationship Diagram>
+Object: Delivery info <Entity> 11_394
+	Entity name: Delivery info
+	Documentation: 
+Object: Inventory info <Entity> 11_1170
+	Entity name: Inventory info
+	Documentation: Inventory info contains details of all products stored in the inventory
+Object: Supplier <Entity> 11_1865
+	Entity name: Supplier
+	Documentation: Supplier delivers the products and part to the company.
+	Explode to: Orders and products <Entity Relationship Diagram>
+Object: Product <Entity> 11_3234
+	Entity name: Product
+	Documentation: Product is stored in the central warehouse
+	Explode to: Orders and products <Entity Relationship Diagram>
+Object: Prices <Entity> 11_3469
+	Entity name: Prices
+	Documentation: 
+Object: Reminder order <Entity> 11_3835
+	Entity name: Reminder order
+	Documentation: 
+Relationship: read <Data usage> 11_330
+	Data usage: read
+  Role: Data class part <Data class part>  Object: <Entity> 11_394
+  Role: Process part <Process part>  Object: <Business process> 11_2848
+Relationship: read <Data usage> 11_333
+	Data usage: read
+  Role: Data class part <Data class part>  Object: <Entity> 11_1170
+  Role: Process part <Process part>  Object: <Business process> 11_606
+Relationship: update <Data usage> 11_544
+	Data usage: update
+  Role: Data class part <Data class part>  Object: <Entity> 11_1865
+  Role: Process part <Process part>  Object: <Business process> 11_2848
+Relationship: read <Data usage> 11_756
+	Data usage: read
+  Role: Data class part <Data class part>  Object: <Entity> 11_1865
+  Role: Process part <Process part>  Object: <Business process> 11_2774
+Relationship: read <Data usage> 11_964
+	Data usage: read
+  Role: Data class part <Data class part>  Object: <Entity> 11_3835
+  Role: Process part <Process part>  Object: <Business process> 11_2848
+Relationship: update <Data usage> 11_966
+	Data usage: update
+  Role: Data class part <Data class part>  Object: <Entity> 11_1170
+  Role: Process part <Process part>  Object: <Business process> 11_608
+Relationship: read <Data usage> 11_1653
+	Data usage: read
+  Role: Data class part <Data class part>  Object: <Entity> 11_3234
+  Role: Process part <Process part>  Object: <Business process> 11_2774
+Relationship: read <Data usage> 11_1872
+	Data usage: read
+  Role: Data class part <Data class part>  Object: <Entity> 11_3469
+  Role: Process part <Process part>  Object: <Business process> 11_2774
+Relationship: read <Data usage> 11_2061
+	Data usage: read
+  Role: Data class part <Data class part>  Object: <Entity> 11_313
+  Role: Process part <Process part>  Object: <Business process> 11_2055
+Relationship: create <Data usage> 11_2297
+	Data usage: create
+  Role: Data class part <Data class part>  Object: <Entity> 11_313
+  Role: Process part <Process part>  Object: <Business process> 11_2774
+Relationship: read <Data usage> 11_2302
+	Data usage: read
+  Role: Data class part <Data class part>  Object: <Entity> 11_1865
+  Role: Process part <Process part>  Object: <Business process> 11_2055
+Relationship: update <Data usage> 11_2509
+	Data usage: update
+  Role: Data class part <Data class part>  Object: <Entity> 11_394
+  Role: Process part <Process part>  Object: <Business process> 11_4082
+Relationship: read <Data usage> 11_3183
+	Data usage: read
+  Role: Data class part <Data class part>  Object: <Entity> 11_394
+  Role: Process part <Process part>  Object: <Business process> 11_2774
+Relationship: read <Data usage> 11_3368
+	Data usage: read
+  Role: Data class part <Data class part>  Object: <Entity> 11_3234
+  Role: Process part <Process part>  Object: <Business process> 11_608
+Relationship: read <Data usage> 11_3371
+	Data usage: read
+  Role: Data class part <Data class part>  Object: <Entity> 11_3234
+  Role: Process part <Process part>  Object: <Business process> 11_2848
+Relationship: update <Data usage> 11_3548
+	Data usage: update
+  Role: Data class part <Data class part>  Object: <Entity> 11_394
+  Role: Process part <Process part>  Object: <Business process> 11_608
+Relationship: read <Data usage> 11_3737
+	Data usage: read
+  Role: Data class part <Data class part>  Object: <Entity> 11_3234
+  Role: Process part <Process part>  Object: <Business process> 11_2055
+Relationship: create <Data usage> 11_3922
+	Data usage: create
+  Role: Data class part <Data class part>  Object: <Entity> 11_394
+  Role: Process part <Process part>  Object: <Business process> 11_2055
+Relationship: update <Data usage> 11_4316
+	Data usage: update
+  Role: Data class part <Data class part>  Object: <Entity> 11_1170
+  Role: Process part <Process part>  Object: <Business process> 11_2774
+Relationship: update <Data usage> 11_5343
+	Data usage: update
+  Role: Data class part <Data class part>  Object: <Entity> 11_1170
+  Role: Process part <Process part>  Object: <Business process> 11_2055
+Relationship: update <Data usage> 11_5353
+	Data usage: update
+  Role: Data class part <Data class part>  Object: <Entity> 11_394
+  Role: Process part <Process part>  Object: <Business process> 11_606
+Relationship: create <Data usage> 11_5363
+	Data usage: create
+  Role: Data class part <Data class part>  Object: <Entity> 11_3835
+  Role: Process part <Process part>  Object: <Business process> 11_606

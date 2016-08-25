@@ -1,0 +1,172 @@
+Graph_BPMN_user_3356593652
+Travel Booking
+7_289
+BPMN
+Graph: Travel Booking <BPMN> 7_289
+	Id: 
+	Model name: Travel Booking
+	Version: 
+	Author: 
+	Language: English
+	Documentation: 
+Object: Reply <End> 7_434
+	Result: Message
+	Object: Message <Message> 7_769
+		Message: 
+		Implementation: Web Service
+	Event name: Reply
+	Description: 
+Object: Reply <End> 7_609
+	Result: Message
+	Object: Message <Message> 7_2014
+		Message: 
+		Implementation: Web Service
+	Event name: Reply
+	Description: 
+Object: Gateway <Gateway> 7_879
+	Gateway type: Parallel
+	Decision: 
+Object: Gateway <Gateway> 7_1588
+	Gateway type: 
+	Decision: 
+Object: Receive <Start> 7_1582
+	Trigger: Message
+	Object: Message <Message> 7_1994
+		Message: 
+		Implementation: Web Service
+	Event name: Receive
+	Description: 
+Object: Data Map <Task> 7_614
+	Task name: Data Map
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Handle Fault <Task> 7_691
+	Task name: Handle Fault
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Check Credit Card <Task> 7_1047
+	Task name: Check Credit Card
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Check Hotel Reservation <Task> 7_1149
+	Task name: Check Hotel Reservation
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Check Flight Reservation <Task> 7_1304
+	Task name: Check Flight Reservation
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Confirmation <Task> 7_1755
+	Task name: Confirmation
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Check Car Reservation <Task> 7_1857
+	Task name: Check Car Reservation
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Object: Evaluate Reservation Result <Task> 7_2012
+	Task name: Evaluate Reservation Result
+	Task type: 
+	LoopType: 
+	AdHoc: 
+	Intermediate: 
+	Compensation: F
+	Description: 
+Relationship:  <Sequence flow> 7_487
+	Name: 
+  Role: F <From>  Object: <Task> 7_1047
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_1149
+Relationship:  <Sequence flow> 7_515
+	Name: 
+  Role: F <From>  Object: <Task> 7_1047
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_691
+Relationship:  <Sequence flow> 7_531
+	Name: 
+  Role: F <From>  Object: <Task> 7_1047
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_614
+Relationship:  <Sequence flow> 7_712
+	Name: 
+  Role: F <From>  Object: <Task> 7_614
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_1857
+Relationship:  <Sequence flow> 7_1002
+	Name: 
+  Role: F <From>  Object: <Start> 7_1582
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_1047
+Relationship:  <Sequence flow> 7_1028
+	Name: 
+  Role: F <From>  Object: <Task> 7_691
+	Conditional: F
+  Role: To <To>  Object: <End> 7_609
+Relationship:  <Sequence flow> 7_1051
+	Name: 
+  Role: F <From>  Object: <Task> 7_1755
+	Conditional: F
+  Role: To <To>  Object: <End> 7_434
+Relationship: Check Again <Sequence flow> 7_1074
+	Name: Check Again
+  Role: F <Gateway from>  Object: <Gateway> 7_1588
+	Is default?: F
+  Role: Gateway to <Gateway to>  Object: <Task> 7_1857
+Relationship:  <Sequence flow> 7_1525
+	Name: 
+  Role: F <From>  Object: <Task> 7_1857
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_2012
+Relationship: Done <Sequence flow> 7_1557
+	Name: Done
+  Role: F <Gateway from>  Object: <Gateway> 7_1588
+	Is default?: F
+  Role: Gateway to <Gateway to>  Object: <Gateway> 7_879
+Relationship:  <Sequence flow> 7_1585
+	Name: 
+  Role: F <From>  Object: <Task> 7_1149
+	Conditional: F
+  Role: To <To>  Object: <Gateway> 7_879
+Relationship:  <Sequence flow> 7_1834
+	Name: 
+  Role: F <Gateway from>  Object: <Gateway> 7_879
+	Is default?: F
+  Role: Gateway to <Gateway to>  Object: <Task> 7_1755
+Relationship:  <Sequence flow> 7_1861
+	Name: 
+  Role: F <From>  Object: <Task> 7_2012
+	Conditional: F
+  Role: To <To>  Object: <Gateway> 7_1588
+Relationship:  <Sequence flow> 7_2041
+	Name: 
+  Role: F <From>  Object: <Task> 7_1047
+	Conditional: F
+  Role: To <To>  Object: <Task> 7_1304

@@ -1,0 +1,28 @@
+_portdtEnumeration()
+'					<object id="_'oid'" type="Object_Enumeration_sysadmin_3536996326">
+						<slot name="Short name">
+							<value>
+								<string>Err' :Short name%xml '</string>
+							</value>
+						</slot>
+						<slot name="Name">
+							<value>
+								<string>' :Name%xml '</string>
+							</value>
+						</slot>												
+						<slot name="IsMultiValued">
+							<value>
+								<bool>' if :IsMultiValued; then 'true' else 'false' endif '</bool>
+							</value>
+						</slot>
+						<slot name="Literals">
+							<value>
+								<seq>'
+									do :Literals {
+										'									<string>' id%xml '</string>' newline
+									}
+'								</seq>
+							</value>
+						</slot>
+					</object>
+'

@@ -1,0 +1,64 @@
+Report 'Double axis checking'
+/* Following reports the mismatching types in each axis. It wont result the reused objects */
+subreport '_translators' run
+$type_of_object = ''
+/* Y axis */
+foreach .() where x = '0' orderby y
+{	
+	if $type_of_object = '' then 
+		/* First object type of the axis */
+		if type = 'DesignFunctionPrototype' or type = 'FunctionConnector' or type = 'FunctionConnectors' then
+			$type_of_object = 'FunctionPrototype'
+		else
+			$type_of_object = 'HDA'
+		endif
+	else
+		/* Rest of the object types */
+		if type = 'DesignFunctionPrototype' or type = 'FunctionConnector' or type = 'FunctionConnectors' then
+			$currentType = 'FunctionPrototype'
+		else
+			$currentType = 'HDA'
+		endif
+		/* Reporting */
+		if $currentType <> $type_of_object then
+			$yaxisError = 'Vertical Y-axis contains mixed types'
+		endif
+	endif
+}
+
+/* X axis */
+$type_of_object = ''
+foreach .() where y = '0' orderby x
+{	
+	if $type_of_object = '' then 
+		/* First object type of the axis */
+		if type = 'DesignFunctionPrototype' or type = 'FunctionConnector' or type = 'FunctionConnectors' then
+			$type_of_object = 'FunctionPrototype'
+		else
+			$type_of_object = 'HDA'
+		endif
+	else
+		/* Rest of the object types */
+		if type = 'DesignFunctionPrototype' or type = 'FunctionConnector' or type = 'FunctionConnectors' then
+			$currentType = 'FunctionPrototype'
+		else
+			$currentType = 'HDA'
+		endif
+		/* Reporting */
+		if $currentType <> $type_of_object then
+			$xaxisError = 'Horizontal X-axis contains mixed types'
+		endif			
+	endif
+}
+
+/* Reporting summary */
+if $xaxisError; then 
+	_reportWarnings()
+	'Warning: ' $xaxisError; newline 
+endif
+
+if $yaxisError; then 
+	_reportWarnings()
+	'Warning: ' $yaxisError newline 
+endif
+endreport

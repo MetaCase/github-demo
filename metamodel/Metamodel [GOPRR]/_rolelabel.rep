@@ -1,0 +1,13 @@
+Report '_rolelabel'
+@propIx = ''
+do :Role { do :Properties; where @++propIx {} }
+if @propIx then '   ' endif
+:Role
+if @propIx then ':' @propIx endif
+if :Minimum cardinality; <> '1' or :Maximum cardinality; <> '1' then 
+	newline :Minimum cardinality; ',' :Maximum cardinality; 
+endif
+if :Dynamic Ports; then
+	newline :Dynamic Ports;
+endif
+endreport

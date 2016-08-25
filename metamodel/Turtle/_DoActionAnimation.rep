@@ -1,0 +1,6 @@
+_DoActionAnimation()
+$indent 'turtle.tracer(' 
+if :Display Every Nth Frame; then :Display Every Nth Frame; ', ' endif
+:Milliseconds Per Frame; 
+')'
+newline

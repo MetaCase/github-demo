@@ -1,0 +1,19 @@
+Report '_export graph type to MXT'
+'<graph'
+subreport '_typeNPContent' run
+@ns = _namespace()
+@gOid = oid
+do :Object order; where _AddToObjSet(@ns, @gOid) {_types()}
+foreach .Object [GOPRR]; where _AddToObjSet(@ns, @gOid){_types()}
+foreach .Object set [GOPRR]; {do :Objects; where _AddToObjSet(@ns, @gOid) {_types()}}
+foreach >Binding [GOPRR] {do :Relationship; {_types()}}
+foreach ~(First role [GOPRR]|Intermediate role [GOPRR]|Last role [GOPRR])
+orderby type, :Order, id, oid
+{ do :Role; {_types()}}
+foreach >Binding [GOPRR] {_bindings()}
+foreach ~Last role [GOPRR]; where :Can be drawn in both directions; = 'T' { subreport '_reverse role order' run} 
+_constraints()
+if type;2 <> 'Metamodel for multiple graphs [GOPRR]' then
+	'</graph>' newline
+endif
+endreport

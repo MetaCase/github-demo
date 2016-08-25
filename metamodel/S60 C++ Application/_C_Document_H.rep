@@ -1,0 +1,82 @@
+Report '_C_Document_H'
+filename
+	subreport '_default directory' run
+	'inc\'
+	subreport '_app' run
+	'Document.h'
+write
+'/*
+* ============================================================================
+*  Name     : C' subreport '_app' run 'Document from CEikDocument
+*  Part of  : ' subreport '_app' run '
+*  ' subreport '_copyright' run '
+* ============================================================================
+*/
+
+#ifndef ' to '%upper' translate subreport '_app' run endto 'DOCUMENT_H
+#define ' to '%upper' translate subreport '_app' run endto 'DOCUMENT_H
+
+// INCLUDES
+#include <eikdoc.h>
+
+// CONSTANTS
+
+// FORWARD DECLARATIONS
+class  CEikAppUi;
+
+// CLASS DECLARATION
+
+/**
+*  C' subreport '_app' run 'Document application class.
+*/
+class C' subreport '_app' run 'Document : public CEikDocument
+    {
+    public: // Constructors and destructor
+        /**
+        * Two-phased constructor.
+        * @param aApp Reference to Application class object
+        */
+        static C' subreport '_app' run 'Document* NewL(CEikApplication& aApp);
+
+        /**
+        * Destructor.
+        */
+        virtual ~C' subreport '_app' run 'Document();
+
+    public: // New functions
+
+    public: // Functions from base classes
+
+    protected:  // New functions
+
+    protected:  // Functions from base classes
+
+    private:
+
+        /**
+        * C++ default constructor.
+        * @param aApp Reference to Application class object
+        */
+        C' subreport '_app' run 'Document(CEikApplication& aApp);
+
+        /**
+        * EPOC default constructor.
+        */
+        void ConstructL();
+
+    private:
+
+        /**
+        * From CEikDocument, create C' subreport '_app' run 'AppUi "App UI" object.
+        * @return Pointer to created AppUi class object.
+        */
+        CEikAppUi* CreateAppUiL();
+    };
+
+#endif    // ' to '%upper' translate subreport '_app' run endto 'DOCUMENT_H
+
+// End of File
+
+'
+close
+endreport

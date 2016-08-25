@@ -1,0 +1,40 @@
+Report '_EAST-ADL Dictionary in HTML'
+'<a name="' oid '"></a>' newline
+'<h2>Graph documentation: ' id%xml '</h2>' newline
+do :() {
+	'<b>' to '%xml' translate containers endto ': </b>'
+	id%xml '<br />' newline
+}
+@matrix = 'F'
+foreach .() {
+	if x = '0' or y = '0' then @matrix = 'T' endif
+}
+if @matrix = 'F' then
+	filename subreport '_default directory' run subreport '_id and oid' run '.png' print
+	'<img src="' subreport '_id and oid' run '.png" border="0" usemap="#' subreport '_default directory' run subreport '_id and oid' run '.png"><br />' newline
+else
+	_MatrixToHTMLTable()
+endif
+foreach .() 
+{ 
+	'<a name="' oid '"></a>'
+	'<h3>' subreport '__id and type' run '</h3>'
+	'Properties:'
+	subreport '__Table HTML' run
+	_propsDeeplyInHTML()
+	do decompositions 
+	{	'<tr><th align="left" bgcolor="#F2F2F2">' type%xml '</th><td>'
+		'<a href="' subreport '_id and oid' run '.html">' id '</a>' 
+		'</td></tr>' newline		
+		subreport '_EAST-ADL graphs in HTML' run		 
+	}
+	do explosions 
+	{	'<tr><th align="left" bgcolor="#F2F2F2">' type '</th><td>'
+		'<a href="' subreport '_id and oid' run '.html">' id '</a>'
+		'</td></tr>' newline				
+		subreport '_EAST-ADL graphs in HTML' run		 		
+	}
+	'</table><br />' newline
+	'<hr />' newline
+}
+endreport

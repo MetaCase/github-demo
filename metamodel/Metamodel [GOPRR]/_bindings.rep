@@ -1,0 +1,10 @@
+Report '_bindings'
+'<binding>
+<relationship href="#'
+do :Relationship; { subreport '_type_name_oid' run }
+'"></relationship>' newline
+do ~(First role [GOPRR] | Intermediate role [GOPRR] | Last role [GOPRR]) 
+orderby type, :Order, id, oid
+{subreport '_binding role' run}
+'</binding>' newline
+endreport

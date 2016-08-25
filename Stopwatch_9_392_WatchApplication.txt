@@ -1,0 +1,115 @@
+Graph_ClockApplication_sysadmin_3150525787
+Stopwatch
+9_392
+WatchApplication
+Graph: Stopwatch <WatchApplication> 9_392
+	Application name: Stopwatch
+	Documentation: Application for timing events. Stopwatch allows the user to start, stop and reset the timing device. 
+Object: Action <Action> 9_755
+Object: Action <Action> 9_1531
+Object: Action <Action> 9_1713
+Object: Up <Button> 9_886
+	Button name: Up
+Object: Down <Button> 9_1963
+	Button name: Down
+Object: Mode <Button> 9_2489
+	Button name: Mode
+Object: running <DisplayFn> 9_453
+	Name: running
+	Central: SECOND
+Object:  <DisplayFn> 9_2464
+	Name: 
+	Central: SECOND
+Object: stopwatch <Icon> 9_2777
+	IconID: stopwatch
+Object: Start [Watch] <Start [Watch]> 9_457
+Object: Running <State [Watch]> 9_1547
+	State name: Running
+	DisplayFn: running
+	Object: running <DisplayFn> 9_453
+		Name: running
+		Central: SECOND
+	Blinking: 
+	Documentation: In this state the stopwatch is running and the current running time is shown on display (calculated in the 'running' DisplayFn from sysTime - startTime).
+Object: Stopped <State [Watch]> 9_3446
+	State name: Stopped
+	DisplayFn: 
+	Object:  <DisplayFn> 9_2464
+		Name: 
+		Central: SECOND
+	Blinking: 
+	Documentation: In this state the Stopwatch is stopped and current stop time is shown on the display.
+Object: Stop [Watch] <Stop [Watch]> 9_2000
+Object: startTime <Variable> 9_1230
+	Name: startTime
+	Type: METime
+	Documentation: Variable that stores the start time of the running stopwatch.
+Object: stopTime <Variable> 9_3196
+	Name: stopTime
+	Type: METime
+	Documentation: Variable that stores the current stop time: how many seconds had elapsed when the stopwatch was stopped.
+Object: sysTime <VariableRef> 9_2804
+	Name: sysTime
+	Type: METime
+	Documentation: This is the underlying system's real clock, unaffected by changing clockOffset to set the time the running Watch perceives.
+Relationship: Icon <Icon> 9_1807
+  Role:  <ActionBody>  Object: <Action> 9_1531
+	Order: 
+  Role: Off <Boolean>  Object: <Icon> 9_2777
+	Operation: Off
+Relationship: Icon <Icon> 9_3137
+  Role:  <ActionBody>  Object: <Action> 9_755
+	Order: 
+  Role: On <Boolean>  Object: <Icon> 9_2777
+	Operation: On
+Relationship: Set <Set> 9_674
+  Role:  <ActionBody>  Object: <Action> 9_1531
+	Order: 
+  Role: Get <Get>  Object: <VariableRef> 9_2804
+  Role: Minus <Minus>  Object: <Variable> 9_1230
+  Role: Set <Set>  Object: <Variable> 9_3196
+Relationship: Set <Set> 9_1310
+  Role:  <ActionBody>  Object: <Action> 9_755
+	Order: 
+  Role: Get <Get>  Object: <VariableRef> 9_2804
+  Role: Minus <Minus>  Object: <Variable> 9_3196
+  Role: Set <Set>  Object: <Variable> 9_1230
+Relationship: Set <Set> 9_1535
+  Role: DisplayFnBody <DisplayFnBody>  Object: <DisplayFn> 9_2464
+  Role: Get <Get>  Object: <Variable> 9_3196
+Relationship: Set <Set> 9_1879
+  Role:  <ActionBody>  Object: <Action> 9_1713
+	Order: 
+  Role: Get <Get>  Object: <Variable> 9_1230
+  Role: Minus <Minus>  Object: <Variable> 9_1230
+  Role: Set <Set>  Object: <Variable> 9_3196
+Relationship: Set <Set> 9_2909
+  Role: DisplayFnBody <DisplayFnBody>  Object: <DisplayFn> 9_453
+  Role: Get <Get>  Object: <VariableRef> 9_2804
+  Role: Minus <Minus>  Object: <Variable> 9_1230
+Relationship: Transition <Transition> 9_507
+  Role: Event <Event>  Object: <Button> 9_2489
+  Role: From <From>  Object: <State [Watch]> 9_1547
+  Role: To <To>  Object: <Stop [Watch]> 9_2000
+Relationship: Transition <Transition> 9_589
+  Role: From <From>  Object: <Start [Watch]> 9_457
+  Role: To <To>  Object: <State [Watch]> 9_3446
+Relationship: Transition <Transition> 9_720
+  Role: Event <Event>  Object: <Button> 9_2489
+  Role: From <From>  Object: <State [Watch]> 9_3446
+  Role: To <To>  Object: <Stop [Watch]> 9_2000
+Relationship: Transition <Transition> 9_1717
+  Role: Action <Action>  Object: <Action> 9_755
+  Role: Event <Event>  Object: <Button> 9_886
+  Role: From <From>  Object: <State [Watch]> 9_3446
+  Role: To <To>  Object: <State [Watch]> 9_1547
+Relationship: Transition <Transition> 9_2050
+  Role: Action <Action>  Object: <Action> 9_1713
+  Role: Event <Event>  Object: <Button> 9_1963
+  Role: From <From>  Object: <State [Watch]> 9_3446
+  Role: To <To>  Object: <State [Watch]> 9_3446
+Relationship: Transition <Transition> 9_2226
+  Role: Action <Action>  Object: <Action> 9_1531
+  Role: Event <Event>  Object: <Button> 9_886
+  Role: From <From>  Object: <State [Watch]> 9_1547
+  Role: To <To>  Object: <State [Watch]> 9_3446

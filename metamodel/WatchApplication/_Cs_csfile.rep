@@ -1,0 +1,17 @@
+Report '_Cs_csfile'
+
+variable 'sourceFile' write id '.cs' close
+if not $sourceFiles =~ $sourceFile%wildsp then		
+	variable 'sourceFiles' append $sourceFile ' ' close
+
+	filename $srcPath id '.cs' encoding 'UTF-8' write
+		subreport '_Cs_LogicalWatches' run 
+	close 
+
+	foreach .State [Watch];
+	{	do decompositions;
+		{ subreport '_Cs_csfile' run
+		}
+	}
+endif
+endreport

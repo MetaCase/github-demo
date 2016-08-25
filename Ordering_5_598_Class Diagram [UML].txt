@@ -1,0 +1,244 @@
+Graph_Class_diagram__UML__sysadmin_3019387957
+Ordering
+5_598
+Class Diagram [UML]
+Graph: Ordering <Class Diagram [UML]> 5_598
+	Model name: Ordering
+	Status: 
+	Authors: 
+	Documentation: Although UML is not a good example of a domain-specific modeling language, it can still be made more effective with a domain-specific generator. 
+
+Running the "Web Application" generator will produce an HTML5 Web SQL Database application running on your local disk, with an HTML user interface, behavior in JavaScript, and back end in an SQLite database running in your browser (currently Chrome, Safari or Opera). 
+
+A short introduction is provided as a PDF file in the main MetaEdit+ help index.
+Object: OrderLine <Class [UML]> 5_777
+	Class name: OrderLine
+	Attributes: +amount:integer +discount:integer
+	Object: +amount:integer <Attribute [UML]> 5_13900
+		Name: amount
+		Data type: integer
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +discount:integer <Attribute [UML]> 5_910
+		Name: discount
+		Data type: integer
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Product <Class [UML]> 5_808
+	Class name: Product
+	Attributes: +name:string +cost:integer
+	Object: +name:string <Attribute [UML]> 5_4296
+		Name: name
+		Data type: string
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +cost:integer <Attribute [UML]> 5_9812
+		Name: cost
+		Data type: integer
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Order <Class [UML]> 5_7104
+	Class name: Order
+	Attributes: +dateReceived:string
+	Object: +dateReceived:string <Attribute [UML]> 5_3500
+		Name: dateReceived
+		Data type: string
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Customer <Class [UML]> 5_12558
+	Class name: Customer
+	Attributes: +firstName:string +lastName:string +company:string
+	Object: +firstName:string <Attribute [UML]> 5_6459
+		Name: firstName
+		Data type: string
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +lastName:string <Attribute [UML]> 5_11874
+		Name: lastName
+		Data type: string
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Object: +company:string <Attribute [UML]> 5_8485
+		Name: company
+		Data type: string
+		Default value: 
+		Stereotype: 
+		Visibility: public
+		Scope: instance
+		Access: 
+		Derived?: F
+		Persistent?: F
+		Constraints: 
+		Documentation: 
+	Operations: 
+	Package: 
+	Abstract?: F
+	Persistent?: F
+	Stereotype: 
+	Overridability: 
+	Role: 
+	Parameters: 
+	Constraints: 
+	Invariant: 
+	Derivation rules: 
+	Responsibility: 
+	Documentation: 
+	Simple symbol?: F
+Object: Although UML is not a good example of a domain-specific modeling language, it can still be made more effective with a domain-specific generator. 
+
+Running the "Web Application" generator will produce an HTML5 Web SQL Database application running on your local disk, with an HTML user interface, behavior in JavaScript, and back end in an SQLite database running in your browser (currently Chrome, Safari or Opera). 
+
+A short introduction is provided as a PDF file in the main MetaEdit+ help index. <Note text> 5_7086
+	Note text: Although UML is not a good example of a domain-specific modeling language, it can still be made more effective with a domain-specific generator. 
+
+Running the "Web Application" generator will produce an HTML5 Web SQL Database application running on your local disk, with an HTML user interface, behavior in JavaScript, and back end in an SQLite database running in your browser (currently Chrome, Safari or Opera). 
+
+A short introduction is provided as a PDF file in the main MetaEdit+ help index.
+	Stereotype: 
+Relationship:  <Aggregation> 5_5784
+	Association name: 
+	Derivation rules: 
+	Documentation: 
+  Role:  <Part>  Object: <Class [UML]> 5_777
+	Role name: 
+	Multiplicity: 0..*
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: 
+  Role: 1 <Whole>  Object: <Class [UML]> 5_7104
+	Multiplicity: 1
+	Composition?: T
+Relationship:  <Association [UML]> 5_1803
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 5_7104
+	Role name: 
+	Multiplicity: 0..*
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: 
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 5_12558
+	Role name: 
+	Multiplicity: 1
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: +firstName:string +lastName:string +company:string
+	Association name: 
+Relationship:  <Association [UML]> 5_9136
+	Association name: 
+	Derived?: F
+	Derivation rules: 
+	Documentation: 
+  Role:  <Association role>  Object: <Class [UML]> 5_808
+	Role name: 
+	Multiplicity: 1
+	Ordered?: F
+	Navigable?: T
+	Properties: 
+	Qualifiers: +name:string +cost:integer
+	Association name: 
+  Role:  <Association role>  Object: <Class [UML]> 5_777
+	Role name: 
+	Multiplicity: 0..*
+	Ordered?: F
+	Navigable?: F
+	Properties: 
+	Qualifiers: 
+	Association name: 

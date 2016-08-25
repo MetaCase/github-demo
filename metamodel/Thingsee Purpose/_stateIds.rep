@@ -1,0 +1,9 @@
+_stateIds()
+@stid = '0'
+foreach .State; where :Start state; = 'T' {
+	variable 'state_' oid write @stid close
+}
+foreach .State; where :Start state; = 'F' {
+	@stid++%null
+	variable 'state_' oid write @stid close
+}

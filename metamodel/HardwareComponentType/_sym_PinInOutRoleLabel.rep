@@ -1,0 +1,7 @@
+_sym_PinInOutRoleLabel()
+/* shows pin name for in and out pins in the role */
+do #() {
+	if type =~ '*PinInOut' then
+		id
+	endif
+}

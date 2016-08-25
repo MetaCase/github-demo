@@ -1,0 +1,16 @@
+Report '_create strings.xml'
+filename $projPath 'res' sep 'values' sep 'strings.xml' encoding 'UTF-8' write
+'<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="app_name">Digital Watch example</string>
+    <string name="button1">Ace</string>
+'
+do _WatchesToGenerate()
+{
+'    <string name="button' :Model name; '">' :Model name; '</string>
+'
+}
+'</resources>
+'
+close
+endreport

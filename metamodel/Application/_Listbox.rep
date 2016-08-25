@@ -1,0 +1,47 @@
+Report '_Listbox'
+/* Produces the Listbox code */
+newline
+'# ' :Listbox name; ' listbox and its functions ' newline
+'def ' subreport '_Internal name' run '():' newline
+'	global ' subreport '_Return variable name' run newline
+'	global next_state' newline
+newline
+do :Content creation function; {subreport '_Function with indent' run}
+if :Content creation functions return variable \(optional\); then
+	'	' :Content creation functions return variable \(optional\); ' = ' :Content creation function; 
+	do :Content creation function; {
+		if not :Parameters; then 
+			'()'
+		endif
+	}
+	newline
+endif
+newline
+subreport '_listbox selection' run newline
+subreport '_local_exit_handler' run newline
+subreport '_left softkey menu functions' run
+if :Listbox name; then 
+	'	old_title = appuifw.app.title' newline
+	'	appuifw.app.title = u"' :Listbox name; '"' newline
+	subreport '_left softkey menus' run
+	'	appuifw.app.exit_key_handler = local_exit_handler' newline
+endif
+'	' subreport '_Return variable name' run ' = appuifw.Listbox('
+if :Content creation functions return variable \(optional\); then 
+	:Content creation functions return variable \(optional\);
+else
+	:Content creation function; '()'
+endif
+', '
+if ~Selection OK; then 
+	do ~Selection OK~To.() {'listbox_callback'}
+else
+	'lock.signal'
+endif
+')' newline
+'	appuifw.app.body = ' subreport '_Return variable name' run newline
+'	lock.wait()' newline
+if :Listbox name; then '	appuifw.app.title = old_title' newline endif
+'	appuifw.app.body = None' newline
+'	return (next_state, True)' newline
+endreport

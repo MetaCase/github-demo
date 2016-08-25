@@ -1,0 +1,9 @@
+Report '__LiveCheck'
+/* LiveCheck reports to be run at the LiveCheck pane */
+if :Show report; ='Checking' then
+	subreport '_all checks' run
+else
+	subreport 'Unconnected pins' run
+endif
+
+endreport

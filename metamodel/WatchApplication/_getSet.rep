@@ -1,0 +1,9 @@
+Report '_getSet'
+'	public ' :Type; ' get' id '() {
+		return ' id ';
+	}
+	public void set' id '(' :Type; ' t1) {
+		' id ' = t1;
+	}
+'	
+endreport

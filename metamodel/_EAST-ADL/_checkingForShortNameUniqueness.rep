@@ -1,0 +1,11 @@
+_checkingForShortNameUniqueness()
+@portsAndPrototypes = ' '
+foreach .( *Prototype | *Port | *Pin* ) 
+{	@name = :Short name;
+	if @portsAndPrototypes =~ @name%wildsp; then
+		_reportWarnings()
+		'Warning: ' id;1 ' contains several elements (prototypes, pins, ports) having same identifier ' :Short name; '. Please rename them as unique in the model!'  newline
+	else
+		local 'portsAndPrototypes' append @name%var ' ' close
+	endif
+}

@@ -1,0 +1,51 @@
+Report 'Delphi'
+/*	Creates unit-definitions for each class including:
+*	Interface and implementation sections
+*	Attribute and operation types (public, private, protected, published)
+*	Aggregation structures are generated into public properties
+*	Operations can be either functions or procedures
+*	Class level operations included
+*	If methodbody is not available, begin end -pair generated
+*	Virtual and dynamic functions and procedures are inspected from protocol of the method.
+*	Documentation about classes, attributes and operations are included into comments
+*/
+foreach .Class [UML] {
+	filename subreport '_default directory' run id '.pas'
+	md5start '		{ MEPMD5 ' md5stop ' }' newline merge
+	'{ From MetaEdit+, graph: ' id;1 ' }' newline
+	'{ Type declarations (pas file) for class ' id ' }' newline newline 'unit ' :Class name; 'Unit;' newline newline 'interface' newline newline	
+	if ~Client; then 
+		'uses ' newline '	'
+		dowhile ~Client>Dependency [UML]~Supplier.() {id ', '}
+		';' newline newline	
+	endif
+	'type' newline  	
+	'	' :Class name; ' = class '
+  	if ~Specialization; then
+		'(' ~Specialization>Generalization [UML]~Superclass.():Class name; ')'
+	else '(TObject)'
+	endif 
+	newline	
+	if :Documentation; <> '' then
+		'	{' dowhile :Documentation; {id newline '	  '} '}' 
+	endif
+	
+	to '%words' newline '\  \' newline endto
+	do 'private protected public published'%words { subreport '_Delphi visibility' run }
+	'end;'
+
+	newline newline	'implementation'
+	newline newline	
+	do :Operations; orderby :Visibility, id {
+		subreport '_Delphi implementation' run
+	}
+	'{ Protected block for manually added implementation procedures }' newline	
+	md5id oid ' manually added procedures' md5block
+	'		{ Enter code here }' newline	
+	md5sum newline
+	'end.' newline	
+	'{ End of unit ' :Class name; 'Unit }'
+  	newline
+	close
+ }
+endreport

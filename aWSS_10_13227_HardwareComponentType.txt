@@ -1,0 +1,22 @@
+Graph_HardwareDesignArchitecture_user_3400132575
+aWSS
+10_13227
+HardwareComponentType
+Graph: aWSS <HardwareComponentType> 10_13227
+	__UUID: p1eq1EJ3RdWl31X1SnkZwQ
+	Type: aWSS <SensorType>
+	Object: aWSS <SensorType> <SensorType> 10_13244
+		__UUID: p+qAX6HXRqKhG/YLp1W9gA
+		Short name: aWSS
+		Name: BBW
+		Description: 
+	Show report: Checking
+	Show allocated prototypes: F
+	Show oid: F
+Object: WheelSpeed <IOHardwarePinOut> 10_13268
+	__UUID: Dg19FsFdQ/m1oOHjk8g3lQ
+	Short name: WheelSpeed
+	Name: 
+	IsGround: F
+	Type: analog
+	Description: 

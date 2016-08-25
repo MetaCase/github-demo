@@ -1,0 +1,170 @@
+==========================
+Graph Type
+==========================
+State Machine Diagram
+	A state machine diagram is used to show the state space of an instance of a class, the events that cause a transition from one state to another, and the actions that result from a state change.
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Start
+	A start denotes to the starting point of the state transition diagram. It is represented by a black dot.
+	---------------------------------------------
+State [UML]
+	A state represents a stage in the lifecycle of an instance of a class. A state is represented by a rounded rectangle and it has following properties: state name, internal activities that are related to the state, documentation and transparency of a state symbol. Information about operations can be reused from class diagram by using preperty sharing... in the event name list. 'Symbol transparent?' field allows to draw states which have substates (i.e. with a large state symbol and several states inside the transparent state symbol).
+	---------------------------------------------
+	State name: String
+	Internal actions: OrderedCollection (Internal activity)
+	Documentation: Text
+	Symbol transparent?: Boolean
+Decision
+	Decision is used to extend a simple transition to describe multiple output transitions. A decision may include a condition or each output transition may have own conditions (similar to simple transitions). 
+	---------------------------------------------
+	Condition: Text
+Package
+	A package is used for grouping elements and organizing models: a system may be thought of as a single high-level package included other model elements and other packages. Depending on the graph type used a package can contain a set of use cases, classes or other packages. Each package is represented with a folder symbol with name of the package inside the symbol and steretotype of the package above the symbol.
+	---------------------------------------------
+	Package name: String
+	Stereotype: String
+	Documentation: Text
+History indicator
+	History indicator is used to memorize internal states: it remembers a state so that it is possible to go back to that state at a later time, in case an activity has to be interrupted or reversed. A history indicator may have at most one outgoing transition to identify the default "previous state" if the region of a state has never been entered.
+	---------------------------------------------
+	History type: String
+Point
+	Point allows to describe different transitions:
+	* entry point of a state machine
+	* exit point within any region of the samta machine
+	* join/fork to describe symbol for joining multiple transitions into a one, or dividing one transition to many.
+	* junction to describe symbol for both n-ary send and received transitions.
+	---------------------------------------------
+	Point type: String
+Terminate
+	Terminate describes that the execution of the state machine by means of its context object is terminated.
+	---------------------------------------------
+Stop
+	A stop denotes to the end of the state transition diagram. It is represented by two circles.
+	---------------------------------------------
+Note text
+	Note is a special object for adding additional text anywhere in the graphs. It can be linked to another design objects with a note connection relationship.
+	---------------------------------------------
+	Note text: Text
+	Stereotype: String
+
+==========================
+Relationship Types
+==========================
+Transition [UML]
+	A transition denotes to a change of a object's state. Each transition can be specified with an event that triggers the transition together with possible arguments, with actions that are done during the transition, with a condition that is evaluated before transition can occur and with a additonal textual documentation. Each transition may have also a set of send clauses which containt three properties:
+	- destination expression is an expression that evaluates to an object or a set of objects
+	- operation name meaningful to the destination object, and
+	- arguments for entering the parameters of the triggering event and the attributes and links of the owning object.
+	---------------------------------------------
+	Trigger: String
+	Constraint: Text
+	Activity: String
+	Arguments: OrderedCollection (Argument)
+	Documentation: Text
+Dependency [UML]
+	Dependency show client-supplier links dependencies between logical elements. The client, pointed by an arrow, is dependent in some way on the client.
+	---------------------------------------------
+	Stereotype: String
+	Alias name: String
+Note connection
+	Note connection can be used to link a note text to related element in a model. A note connection is represented by a grey line.
+	---------------------------------------------
+
+==========================
+Role Types
+==========================
+Client
+Condition from
+	Condition value: Text
+From
+Note part
+Object part
+Supplier
+To
+
+==========================
+Extra Types
+==========================
+_Unified Modeling Language
+	This UML metamodel is based on the 2.0 Draft Adopted Specification.
+	---------------------------------------------
+Argument
+	Argument: String
+	Parameter: Parameter
+Internal activity
+	Activity: String
+	Activity label: String
+	Arguments: OrderedCollection (Argument)
+	Documentation: Text
+Parameter
+	Parameter: String
+	Data type: String
+	Direction: String
+	Default value: String
+Person
+	Person is used to describe developers involved in a project (i.e. attached to the project model) and authors of developed models. Person can be characterized with a name, e-mail address, and with a contact address. 
+	---------------------------------------------
+	Name: String
+	E-mail: String
+	Contact address: Text
+Communication
+	Communication shows the dialog between the actor and use case.
+	---------------------------------------------
+
+==========================
+Bindings
+==========================
+Dependency [UML]
+	Client: Package
+	Supplier: Package
+Note connection
+	Note part: Note text
+	Object part: Decision, History indicator, Package, Point, Start, State [UML], Stop, Terminate
+Note connection
+	Object part: Decision, History indicator, Package, Point, Start, State [UML], Stop, Terminate
+	Note part: Note text
+Transition [UML]
+	Condition from: Decision
+	To: Decision, History indicator, Package, Point, State [UML], Stop, Terminate
+Transition [UML]
+	From: History indicator, Package, Point, Start, State [UML]
+1..N	To: History indicator, Package, Point, State [UML], Stop, Terminate
+Transition [UML]
+	From: Package, Point, State [UML]
+	To: Decision
+
+==========================
+Constraints
+==========================
+History indicator may be in at most 1 From role
+Start may be in at most 1 Transition [UML] relationship
+Property "Package name" in Package must have unique values
+Property "State name" in State [UML] must have unique values
+
+==========================
+Subgraphs
+==========================
+Decompositions:
+	Package
+		State Machine Diagram
+	State [UML]
+		State Machine Diagram
+
+==========================
+Generators
+==========================
+Transitions between states
+
+==========================
+Sub-Generators
+==========================
+

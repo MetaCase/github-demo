@@ -1,0 +1,62 @@
+==========================
+Graph Type
+==========================
+Problem Table
+	Problem Table can be used to summarize problems faced during the development of system architectures. It has only one object called 'problem'.
+	---------------------------------------------
+	Model name: String
+	Status: String
+	Authors: OrderedCollection (Person)
+	Documentation: Text
+
+==========================
+Object Types
+==========================
+Problem [BSP]
+	Problem is an object that summarizes some of the key aspects when identifying and defining problems. Each problem can be further characterized with six properties:
+	- problem cause to specify reason for the problem
+	- problem result to specify what is the outcome of the problem, e.g. how organization must perform because of the problem.
+	- value to enter estimated costs of the problem.
+	- causing process to enter problem related processes
+	- causing entity to enter problem related entities
+	- suggested solution to enter proposed strategies to solve the problem.
+	
+	---------------------------------------------
+	Problem cause: Text
+	Problem result: Text
+	Value: String
+	Causing process: String
+	Causing entity: String
+	Suggested solution: Text
+
+==========================
+Relationship Types
+==========================
+
+==========================
+Role Types
+==========================
+
+==========================
+Extra Types
+==========================
+_Business Systems Planning
+Person
+	Person is used to describe developers involved in a project (i.e. attached to the project model) and authors of developed models. Person can be characterized with a name, e-mail address, and with a contact address. 
+	---------------------------------------------
+	Name: String
+	E-mail: String
+	Contact address: Text
+
+==========================
+Bindings
+==========================
+
+==========================
+Constraints
+==========================
+
+==========================
+Subgraphs
+==========================
+

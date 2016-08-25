@@ -1,0 +1,10 @@
+Report '_DisplayFns'
+foreach .DisplayFn
+{'			case d' oid ':' newline
+	do >()
+	{	'				return '
+		subreport '_calcValue' run
+		';' newline
+	}
+} 
+endreport

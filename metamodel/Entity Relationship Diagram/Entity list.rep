@@ -1,0 +1,18 @@
+Report 'Entity list'
+'LIST OF ENTITIES AND THEIR ATTRIBUTES'
+newline newline
+foreach .Entity 
+	{ 'ENTITY NAME: ' id
+	newline
+	'ATTRIBUTES: '
+	newline
+	do >Attribute of~Attribute part.ERAttribute
+		{ '- '
+		:Attribute name; 
+		if :Type of data; then ' (' :Type of data; ')' else ' (unspecified data type)' endif
+		if :Documentation; then do :Documentation; {newline '	' id} endif
+		newline
+		}
+	newline
+	}
+endreport

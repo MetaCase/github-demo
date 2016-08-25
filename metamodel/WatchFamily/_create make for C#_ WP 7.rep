@@ -1,0 +1,48 @@
+Report '_create make for C#: WP 7'
+
+if not $IDE = 'visualstudio' then
+	filename $projPath 'vs.bat' write
+		to '%undent' translate
+			'@echo off' newline
+			'cd /D ' $projPath newline
+
+			'set vs=' $visualStudioWP newline
+			'if exist "%vs%" goto foundvs' newline
+
+			'start ':Name;'.sln' newline
+			'goto end' newline
+
+			':foundvs' newline
+			'echo.' newline
+			'echo MetaEdit+ generated graph ' :Name; ' and will now run Visual Studio with generated code as Visual Studio WP solution.' newline
+			'echo.' newline
+			'echo The generated source code and Visual Studio project files were placed under the ' $projPath ' and ' $srcPath ' directories.' newline
+			'echo.' newline
+			'echo This window will close when you close the Visual Studio.' newline
+			'echo.' newline
+			'@echo on' newline
+			'"%vs%" ':Name;'.sln /Run' newline
+			'@echo off' newline
+			'goto end' newline
+	
+			':end' newline
+			'exit'
+		endto
+	close
+endif
+
+subreport '_create MainPage' run
+
+filename $srcPath :Name; '.png' print
+
+subreport '_create Visual Studio manifest' run
+
+filename $projPath :Name;'.sln' encoding 'UTF-8' write
+	subreport '_create Visual Studio sln file' run 
+close
+
+filename $srcPath :Name; '.csproj' encoding 'UTF-8' write
+	subreport '_create Visual studio wp 7 csproj file' run
+close
+
+endreport

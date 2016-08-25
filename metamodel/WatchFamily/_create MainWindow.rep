@@ -1,0 +1,87 @@
+Report '_create MainWindow'
+
+variable 'XAMLFiles' append 
+	$cr 'MainWindow'
+close
+$cr = newline
+
+filename $srcPath 'MainWindow.xaml.cs' encoding 'UTF-8' write
+	'using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace Digital_watch
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+'
+
+$modelCount='0'
+
+do _WatchesToGenerate()
+{	$modelCount++%null
+'      private void button' :Model name; '_Click(object sender, RoutedEventArgs e)
+       {
+           Window win = new ' :Model name; '();
+           win.Show();
+       }
+' 
+}
+
+'      private void Window_Closed(object sender, EventArgs e)
+       {
+           Application curApp = Application.Current;
+           curApp.Shutdown();
+       }   
+    }
+}'
+close 
+
+
+filename $srcPath 'MainWindow.xaml' encoding 'UTF-8' write
+	to '%undent' translate
+		'<?xml version="1.0" encoding="UTF-8"?>
+		<Window x:Class="Digital_watch.MainWindow"
+		        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		        Title="' :Name '" Height="' math '52*' $modelCount '+ 120' evaluate '"
+		        Width="300" Closed="Window_Closed">
+		    <Grid >
+		        <Grid.RowDefinitions>
+		            <RowDefinition Height="Auto" />
+		            <RowDefinition Height="Auto" />
+		            <RowDefinition Height="Auto" />
+		        </Grid.RowDefinitions>
+		        <Label Grid.Row="1" Content="' :Name '" Height="Auto" HorizontalAlignment="Center" Margin="10" Name="label1" VerticalAlignment="Top" Width="Auto" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Normal" />
+		        <StackPanel Grid.Row="2" Height="' math '52*' $modelCount evaluate '" HorizontalAlignment="Center" Name="stackPanel1" VerticalAlignment="Center" Width="Auto">
+		'
+
+		do _WatchesToGenerate()
+		{ 
+			'            <Button Content="' :Model name; '" Height="41" Name="button' :Model name; '" Width="183" Margin="5" Click="button' :Model name; '_Click" />' newline
+		}
+
+		'
+		        </StackPanel>
+		    </Grid>
+		</Window>
+		'
+	endto
+close 
+endreport

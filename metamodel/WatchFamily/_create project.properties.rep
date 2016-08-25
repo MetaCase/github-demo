@@ -1,0 +1,7 @@
+Report '_create project.properties'
+filename $projPath 'project.properties' write
+'
+# Project target.
+target=android-8'
+close
+endreport

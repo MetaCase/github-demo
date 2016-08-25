@@ -1,0 +1,26 @@
+Report '_Text_editor'
+/* Produce Text editor code */
+'# Text editor ' :Editor title; newline
+'def ' subreport '_Internal name' run '():' newline
+subreport '_local_exit_handler' run newline
+subreport '_left softkey menu functions' run
+if :Return variable \(optional\); then
+	'	global ' subreport '_Return variable name' run newline
+endif
+'	old_title = appuifw.app.title' newline
+	if :Text editor title; then 
+		'	appuifw.app.title = u"' :Text editor title; '"' newline
+	endif
+subreport '_left softkey menus' run
+'	appuifw.app.exit_key_handler = local_exit_handler' newline
+'	' subreport '_Return variable name' run ' = appuifw.Text()' newline
+	if :Initial text; then
+		'	' subreport '_Return variable name' run '.set(u"' :Initial text; '")' newline
+	else
+		'	' subreport '_Return variable name' run '.clear()' newline
+	endif
+	do :Editing code; {'	' id newline}
+	'	appuifw.app.body=' subreport '_Return variable name' run newline
+	'	lock.wait()' newline
+	'	return (next_state, True)' newline
+endreport

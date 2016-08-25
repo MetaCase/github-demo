@@ -1,0 +1,54 @@
+_validateUnit()
+/* Validation checks for Unit */
+subreport '_name checks' run
+
+/* Factor is undefined */
+if :Factor = '' then
+	_reportWarnings()
+	@errorType = 'Factor'
+	'Warning: '
+	if type;2 <> 'Package' then
+		/* When the Type is used in some FAA/FDA model */	
+		_reportError_level2(@errorType)
+		_extendedCheckOutput_level3()
+	else
+		/* When the Type is defined in Package model */	
+		_reportError_level1(@errorType)
+		_extendedCheckOutput_level2()
+	endif
+	newline
+endif
+
+/* Offset is undefined */
+if :Offset = '' then
+	_reportWarnings()
+	@errorType = 'Offset'
+	'Warning: '
+	if type;2 <> 'Package' then
+		/* When the Type is used in some FAA/FDA model */	
+		_reportError_level2(@errorType)
+		_extendedCheckOutput_level3()
+	else
+		/* When the Type is defined in Package model */	
+		_reportError_level1(@errorType)
+		_extendedCheckOutput_level2()
+	endif
+	newline
+endif
+
+/* Symbol is undefined */
+if :Symbol = '' then
+	_reportWarnings()
+	@errorType = 'Symbol'
+	'Warning: '
+	if type;2 <> 'Package' then
+		/* When the Type is used in some FAA/FDA model */	
+		_reportError_level2(@errorType)
+		_extendedCheckOutput_level3()
+	else
+		/* When the Type is defined in Package model */	
+		_reportError_level1(@errorType)
+		_extendedCheckOutput_level2()
+	endif
+	newline
+endif

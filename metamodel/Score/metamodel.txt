@@ -1,0 +1,63 @@
+==========================
+Graph Type
+==========================
+Score
+	Title: String
+
+==========================
+Object Types
+==========================
+Pattern
+	Name: String
+	Notes: OrderedCollection (Note)
+Staffs
+Note
+	Note is a special object for adding additional text anywhere in the graphs. Note belongs to many languages and has only one property, Documentation.
+	---------------------------------------------
+	Documentation: Text
+
+==========================
+Relationship Types
+==========================
+Flow
+
+==========================
+Role Types
+==========================
+From
+To
+
+==========================
+Extra Types
+==========================
+Note
+	Note Name: String
+	Octave: String
+	Accidental: String
+
+==========================
+Bindings
+==========================
+Flow
+	From: Pattern
+	To: Pattern
+
+==========================
+Constraints
+==========================
+
+==========================
+Subgraphs
+==========================
+
+==========================
+Generators
+==========================
+
+==========================
+Sub-Generators
+==========================
+_Note
+_Notes
+_PatternNotes
+

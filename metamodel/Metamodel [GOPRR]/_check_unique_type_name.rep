@@ -1,0 +1,13 @@
+_check_unique_type_name()
+local 'oidValue' write 
+	variable type '_' id  read 
+close
+
+if @oidValue = '' then
+	variable type '_' id write oid close
+else	
+	if @oidValue <> oid then
+		'Warning: ' id ' is used for several different ' type ' types.' newline
+		$warnings++%null
+	endif
+endif

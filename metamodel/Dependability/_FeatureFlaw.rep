@@ -1,0 +1,14 @@
+_FeatureFlaw()
+foreach .FeatureFlaw 
+{	/* Referred Item */
+	if not ~DepFrom~ItemTo.Item; then
+		_reportWarnings()
+		'Warning: ' id ' <' type '> does not refer to any Item' 
+		if $extendedCheck = 'T' then
+			' in the model ' id;1 ' <' type;1 '>. '
+		else
+			'. Create a relationship between ' type ' and Item!'
+		endif
+		newline
+	endif
+}

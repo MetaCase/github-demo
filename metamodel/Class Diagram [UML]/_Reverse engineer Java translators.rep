@@ -1,0 +1,50 @@
+Report '_Reverse engineer Java translators'
+
+subreport '_translators' run
+
+/* Translator for translating the white spaces into newlines */
+to '%spaces
+/\s+/ $\
+'
+endto
+
+/* Translator for translating the white spaces and = signs into newlines */
+to '%spacesAndEquals
+/\s+/ $\
+
+= \
+'
+endto
+to '%strip
+; $'
+endto
+
+/* Translator to backslash escape characters illegal in a translator */
+to '%literal
+\\ $:B?CKSL?SH:\\
+\  $:B?CKSL?SH:\ 
+\/ $:B?CKSL?SH:\/
+\$ $:B?CKSL?SH:\$
+\% $:B?CKSL?SH:\%
+\- $:B?CKSL?SH:\-
+\* $:B?CKSL?SH:\*
+\
+ $:B?CKSL?SH:\
+
+$:B?CKSL?SH: $\\
+' /* workaround for \->\\, necessary because of a bug in 4.5 SR1 */
+endto
+
+/* Translator to extract package name from filename beginning with $baseDir and ending with *.java */
+to '%package
+$' $dir%literal ' $
+/\\?[^\\.]*\.java/ $
+$\\ $.'
+endto
+
+/* Remove C-style comments (but not Java double backslash) */
+to '%removeCComments
+///[*]([^*]|([*]+([^*//])))*[*]+/// $'
+endto
+
+endreport

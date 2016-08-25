@@ -1,0 +1,12 @@
+_SymAllocatedFunctions()
+do graphs; where type = 'SystemModel' {
+	foreach .Allocations {
+		do explosions {
+			foreach .(Hardware*); where oid = oid;4 {
+				do >FunctionAllocation.(DesignFunctionPrototype | FunctionConnector*) {
+					id newline
+				}
+			}
+		} 
+	}
+}

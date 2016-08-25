@@ -1,0 +1,60 @@
+Graph_eSWT_model_user_3387784239
+Secure code check
+20_701
+Mobile Application Specification
+Graph: Secure code check <Mobile Application Specification> 20_701
+	Model name: Secure code check
+	Description: 
+	View: User view
+	Display: Primary
+	UI category: U2
+Object: entered code <Condition> 20_1184
+	Condition: entered code
+	Comparison: =
+	Condition value: stored secure code
+Object: Give security code <Query> 20_2523
+	Query title: Give security code
+	Title ID: QUERY_PASSWORD_TEXT
+	Title icon: 
+	Prompt: Security code:
+	Prompt ID: PROMPT_PASSWORD_TEXT
+	Query type: Password
+	Style: Application modal
+Object: Start <Start> 20_2014
+Object: Complete <Stop> 20_1073
+	Stop type: Complete
+Object: Removed <TimedMessageBox> 20_1513
+	Message text: Removed
+	Message text ID: MB_ITEM_REMOVED_TEXT
+	Style: Information
+	Timeout: 3
+Object: Code error <TimedMessageBox> 20_1714
+	Message text: Code error
+	Message text ID: MB_ERROR
+	Style: Error
+	Timeout: 3
+Relationship: Back <Back> 20_2644
+  Role: Back from <Back from>  Port: RSK <Softkey port>  Object: <Query> 20_2523
+  Role: Back to <Back to>  Object: <Stop> 20_1073
+Relationship: False <Condition> 20_847
+	Result: False
+  Role: Condition from <Condition from>  Object: <Condition> 20_1184
+  Role: Condition to <Condition to>  Object: <TimedMessageBox> 20_1714
+Relationship: True <Condition> 20_1429
+	Result: True
+  Role: Condition from <Condition from>  Object: <Condition> 20_1184
+  Role: Condition to <Condition to>  Object: <TimedMessageBox> 20_1513
+Relationship: Flow <Flow> 20_1458
+  Role: From <From>  Object: <TimedMessageBox> 20_1513
+  Role: To <To>  Object: <Stop> 20_1073
+Relationship: Flow <Flow> 20_2072
+  Role: From <From>  Object: <TimedMessageBox> 20_1714
+  Role: To <To>  Object: <Query> 20_2523
+Relationship: Flow <Flow> 20_2394
+  Role: From <From>  Object: <Start> 20_2014
+  Role: To <To>  Object: <Query> 20_2523
+Relationship: OK <Soft key> 20_2043
+	Soft key label: OK
+	Softkey label ID: SK_OK
+  Role: From <From>  Port: MSK <Softkey port>  Object: <Query> 20_2523
+  Role: To <To>  Object: <Condition> 20_1184

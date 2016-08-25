@@ -1,0 +1,5 @@
+Report '_APIGetSensorData'
+'long ' 'get' :Measured variable; ' (string SensorID);
+(returns the current ' :Measured variable;%lower ' data from the named sensor)
+' newline
+endreport

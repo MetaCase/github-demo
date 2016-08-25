@@ -1,0 +1,57 @@
+Report '_create make for Java: Android'
+
+subreport '_create Android resource files' run
+if $IDE = 'eclipse' then
+	subreport '_write main class to INI file' arguments '' run
+	subreport '_write project name to INI file' arguments 'android' run
+endif
+
+filename $projPath 'makeWatch.bat' write
+'CD /D ' $projPath '
+SET PATH=%PATH%;' $androidSDK '\tools;' $androidSDK '\platform-tools
+CALL android update project -p . --target android-8
+CALL ant clean debug
+
+SET name=metaedit_emulator
+SET port=5580
+FOR /F "tokens=1" %%G IN (''adb devices'') do (
+    IF %%G==emulator-%port% (
+       ECHO found running emulator on port %port%
+       GOTO :install
+    )
+)
+IF NOT EXIST "%USERPROFILE%\.android\avd\%name%.ini" (
+   ECHO creating emulator %name%
+   ECHO no | CALL android create avd -n %name% -t android-8 --force
+)
+'
+if $IDE = '' then
+'
+ECHO launching android virtual device: %name%
+CALL emulator -no-boot-anim -port %port% -avd %name%
+ECHO waiting for android device..
+CALL adb wait-for-device
+ECHO found android device
+
+:loop
+ECHO waiting for the device to be ready..
+FOR /F "tokens=1 delims=:" %%G IN (''adb shell pm path android'') DO SET state=%%G
+IF NOT %state%==package (
+ping -n 1 127.0.0.1 > nul
+GOTO :loop
+)
+
+:install
+ECHO installing _' :Name '...
+CALL adb -s emulator-%port% install -r bin\_' :Name 'Activity-debug.apk
+
+ECHO launching the ' :Name ' application...
+CALL adb shell am start -a android.intent.action.MAIN -n ' dowhile $generatedpackage { id '.' } '/._' :Name 'Activity
+ECHO done!
+EXIT
+'
+endif
+
+close
+
+endreport
